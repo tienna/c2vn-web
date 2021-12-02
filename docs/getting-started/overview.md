@@ -2,9 +2,12 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Tổng quan
 
 Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed do eiusmod tempor incididunt ut labore
+
+Lorem ipsum dolor sit amet consectetuer adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet consectetuer adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum 
+
 
 ## Getting Started
 
@@ -17,7 +20,7 @@ lorem ipsum dolor sit amet consectetuer adipiscing elit, sed do eiusmod tempor i
 Generate a new Docusaurus site using the **classic template**:
 
 ```shell
-npm init docusaurus@latest my-website classic
+code block
 ```
 
 ## Start your site
@@ -25,11 +28,7 @@ npm init docusaurus@latest my-website classic
 Run the development server:
 
 ```shell
-cd my-website
-
-npm run start
+code block
 ```
 
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+[this is the link](/docs/getting-started/overview)

@@ -11,12 +11,12 @@
 }
 
 html[data-theme=light] .heroBanner {
-  background-image: url(/img/cardano-banner.jpeg);
+  background-image: url(/img/bg-banner2.jpeg);
   background-color: #383fd0;
 }
 
 html[data-theme=dark] .heroBanner {
-  background-image: url(/img/cardano-banner.jpeg);
+  background-image: url(/img/bg-banner2.jpeg);
   background-color: #2da48d;
 }
 

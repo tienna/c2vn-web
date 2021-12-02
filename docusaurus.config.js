@@ -6,13 +6,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Cardano Smart Contract',
-    tagline: 'Bring smart contract to Vietnam',
-    url: 'https://test-site.com',
+    title: 'Cardano2vn',
+    tagline: 'Bứt phá giới hạn',
+    url: 'https://cardano2vn.io',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/favicon.png',
+    favicon: 'img/2.png',
     organizationName: 'cardanovn', // Usually your GitHub org/user name.
     projectName: 'cardanovn-portal', // Usually your repo name.
 
@@ -24,12 +24,12 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+                    editUrl: 'https://github.com/cardano2vn/cardanovn-portal/edit/main/',
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+                    editUrl: 'https://github.com/cardano2vn/cardanovn-portal/edit/main/blog/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -42,20 +42,20 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
         navbar: {
-            title: 'Cardano Smart Contract',
+            title: 'Cardano2vn',
             logo: {
-                alt: 'Cardano Smart Contract Logo',
-                src: 'img/logo.svg',
+                alt: 'Cardano2vn Logo',
+                src: 'img/2.png',
             },
             items: [{
                     type: 'doc',
-                    docId: 'intro',
+                    docId: 'getting-started/overview',
                     position: 'left',
-                    label: 'Tutorial',
+                    label: 'Bắt đầu',
                 },
                 { to: '/blog', label: 'Blog', position: 'left' },
                 {
-                    href: 'https://github.com/facebook/docusaurus',
+                    href: 'https://github.com/cardano2vn',
                     label: 'GitHub',
                     position: 'right',
                 },
@@ -64,14 +64,14 @@ const config = {
         footer: {
             style: 'dark',
             links: [{
-                    title: 'Docs',
+                    title: 'Tài liệu',
                     items: [{
-                        label: 'Tutorial',
-                        to: '/docs/intro',
+                        label: 'Bắt đầu',
+                        to: '/docs/getting-started/overview',
                     }, ],
                 },
                 {
-                    title: 'Community',
+                    title: 'Cộng đồng',
                     items: [{
                             label: 'Telegram',
                             href: 'https://telegram.org/',
@@ -94,12 +94,16 @@ const config = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus',
+                            href: 'https://github.com/',
+                        },
+                        { 
+                            label: "About Us",
+                            to: "/about-us",
                         },
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} Cardano VN, Inc. Built with ❤️.`,
+            copyright: `Copyright © ${new Date().getFullYear()} cardano2vn.io,. Break the blocks`,
         },
         prism: {
             theme: lightCodeTheme,

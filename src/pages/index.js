@@ -11,13 +11,13 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className={clsx("container", styles.container)}>
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <h1 className="hero__title">Mang Cardano về Việt Nam</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Tutorial Intro 🇻🇳
+            to="/docs/getting-started/overview">
+            Bắt đầu
           </Link>
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Mang Cardano về Việt Nam">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
