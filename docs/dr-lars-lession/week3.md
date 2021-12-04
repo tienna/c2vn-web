@@ -6,66 +6,46 @@ Week 03 - Script Context
 Note
 :::
 
-This is a written version of [Lecture \#3, Iteration
-\#2](https://www.youtube.com/watch?v=6_rfCCY9_gY).
+Đây là phiên bản đã dịch của [Bài giảng số 3 Dr. Lars](https://youtu.be/WG3uw-TkW2k).
 
-In this lecture we learn about the script context (the third validation
-argument), handling time, and parameterized contracts.
+Trong bài giảng này, chúng ta tìm hiểu về context script (đối số xác thực thứ ba), thời gian xử lý và các hợp đồng được tham số hóa.
+
+Đoạn mã trong bài giảng này sử dụng Plutus commit
 
 The code in this lecture uses Plutus commit
 `81ba78edb1d634a13371397d8c8b19829345ce0d`.
-:::
 
-Before We Start
+Trước khi chúng ta bắt đầu
 ---------------
 
-Since the last lecture there has been an update to the playground, which
-is present in the Plutus commit we are using for this lecture (see note
-above).
+Kể từ bài giảng cuối cùng đã có một bản cập nhật cho sân chơi, có trong bản cam kết Plutus mà chúng tôi đang sử dụng cho bài giảng này (xem ghi chú ở trên).
 
-There was an issue whereby the timeout, which was hardcoded into the
-playground was too short. This would cause simulations to fail if they
-took longer than the hardcoded timeout.
+Đã xảy ra sự cố khi thời gian chờ được mã hóa cứng vào sân chơi quá ngắn. Điều này sẽ khiến mô phỏng không thành công nếu chúng mất nhiều thời gian hơn thời gian chờ mã cứng.
 
-There is now an option when you start the Plutus Playground Server which
-allows you to specify the timeout. The following example sets the
-timeout to 120 seconds.
+Bây giờ có một tùy chọn khi bạn khởi động Máy chủ sân chơi Plutus cho phép bạn chỉ định thời gian chờ. Ví dụ sau đặt thời gian chờ thành 120 giây.
 
 ``` {.}
 plutus-playground-server -i 120s
 ```
 
-Recap
+Tóm tắt lại
 -----
 
-When we explained the (E)UTxO model in the first lecture, we mentioned
-that in order to unlock a script address, the script attached to the
-address is run, and that script gets three pieces of information - the
-*datum*, the *redeemer* and the *context*.
+Khi chúng tôi đã giải thích (E) UTxO mô hình trong bài giảng đầu tiên, chúng tôi đề cập rằng để mở khóa một địa chỉ kịch bản, kịch bản gắn liền với địa chỉ được chạy, và kịch bản mà được ba mẩu thông tin - 
+*datum*,  *redeemer* và *context*.
 
-In the second lecture, we saw examples of that, and we saw how it
-actually works in Haskell.
+Trong bài giảng thứ hai, chúng ta đã xem các ví dụ về điều đó và chúng ta đã thấy nó thực sự hoạt động như thế nào trong Haskell.
 
-We saw the low-level implementation, where all three arguments are
-represented by the `Data` type. We also saw that in practice this is not
-used.
+Chúng tôi đã thấy việc triển khai cấp thấp, trong đó cả ba đối số đều được biểu thị bằng kiểu `Data`. Chúng tôi cũng thấy rằng trong thực tế điều này không được sử dụng.
 
-Instead, we use the typed version, where the datum and redeemer can be
-custom types (as long as they implement the `IsData` type class), and
-where the third argument is of type `ScriptContext`.
+Thay vào đó, chúng tôi sử dụng phiên bản đã nhập, trong đó dữ liệu và công cụ đổi có thể là kiểu tùy chỉnh (miễn là chúng triển khai lớp kiểu `IsData`) và trong đó đối số thứ ba là kiểu `ScriptContext`.
 
-In the examples we have seen so far we have looked at the datum and the
-redeemer, but we have always ignored the context. But the context is, of
-course, very important. So, in this lecture we will start looking at the
-context.
+Trong các ví dụ mà chúng tôi đã thấy cho đến nay, chúng tôi đã xem xét dữ liệu và công cụ đổi, nhưng chúng tôi luôn bỏ qua ngữ cảnh. Nhưng bối cảnh, tất nhiên, rất quan trọng. Vì vậy, trong bài giảng này, chúng ta sẽ bắt đầu xem xét context.
 
 ScriptContext
 -------------
 
-The `ScriptContext` type is defined in package `plutus-ledger-api`,
-which is a package that, until now, we haven\'t needed. But now we do
-need it, and it is included in this week\'s `.cabal` file. It is defined
-in module `Plutus.V1.Ledger.Contexts`.
+`ScriptContext` được định nghĩa trong gói `plutus-ledger-api`, mà là một gói phần mềm đó, cho đến bây giờ, chúng tôi đã không cần thiết. Nhưng bây giờ chúng tôi cần nó, và nó đã được đưa vào files `.cabal` của tuần này . Nó được định nghĩa trong mô-đun `Plutus.V1.Ledger.Contexts`.
 
 ``` {.haskell}
 data ScriptContext = ScriptContext { 
@@ -74,10 +54,9 @@ data ScriptContext = ScriptContext {
       }
 ```
 
-It is a record type with two fields.
+Nó là một loại bản ghi có hai trường.
 
-The second field is of type `ScriptPurpose`, which is defined in the
-same module. It defines for which purpose a script is being run.
+Trường thứ hai thuộc loại `ScriptPurpose`, được xác định trong cùng một mô-đun. Nó xác định mục đích mà một tập lệnh đang được chạy.
 
 ``` {.haskell}
 data ScriptPurpose
@@ -87,20 +66,13 @@ data ScriptPurpose
    | Certifying DCert
 ```
 
-For us, the most important is `Spending`. This is what we have talked
-about so far in the context of the (E)UTxO model. This is when a script
-is run in order to validate a spending input for a transaction.
+Đối với chúng tôi, quan trọng nhất là `Spending`. Đây là những gì chúng ta đã nói cho đến nay trong context của mô hình (E) UTxO. Đây là khi một tập lệnh được chạy để xác thực đầu vào chi tiêu cho một giao dịch.
 
-The `Minting` purpose comes into play when you want to define a native
-token. Its purpose us to describe under which circumstances the native
-token can be minted or burned.
+Các `Minting` dùng khi bạn muốn định nghĩa một token gốc. Mục đích của nó là chúng tôi mô tả trong những trường hợp nào token gốc có thể được đúc hoặc đốt.
 
-There are also two new brand new purposes - `Rewarding` - related to
-staking and `Certifying` - related to stake delegation.
+Ngoài ra còn có hai mục đích hoàn toàn mới -`Rewarding`-  liên quan đến đặt cược và _`Certifying`_  liên quan đến ủy quyền cổ phần.
 
-The most interesting field, the one that contains the actual context, is
-`scriptContextTxInfo`, which is of type `TxInfo`, also defined in the
-same module.
+Trường thú vị nhất, trường chứa ngữ cảnh thực tế `scriptContextTxInfo` là trường thuộc loại `TxInfo`, cũng được xác định trong cùng một mô-đun.
 
 ``` {.haskell}
 data TxInfo = TxInfo
@@ -118,126 +90,61 @@ data TxInfo = TxInfo
    } deriving (Generic)
 ```
 
-It describes the spending transaction. In the (E)UTxO model, the context
-of validation is the spending transaction and its inputs and outputs.
-This context is expressed in the `TxInfo` type.
+Nó mô tả giao dịch chi tiêu. Trong mô hình (E) UTxO, bối cảnh xác thực là giao dịch chi tiêu và các đầu vào và đầu ra của nó. Bối cảnh này được thể hiện trong `TxInfo`.
 
-There are a couple of fields that are global to the whole transaction
-and in particular we have the list of all the inputs `txInfoInputs` and
-the list of all the outputs `txInfoOutputs`. Each of those has a variety
-of fields to drill into each individual input or output.
+Có một số trường là toàn cầu cho toàn bộ giao dịch và cụ thể là chúng tôi có danh sách tất cả các đầu vào `txInfoInputs` và danh sách tất cả các đầu ra `txInfoOutputs`. Mỗi người trong số họ có nhiều lĩnh vực khác nhau để đi sâu vào từng đầu vào hoặc đầu ra riêng lẻ.
 
-We also see fields for fees `txFee`, the forge value `txInfoForge`, used
-when minting or burning native tokens.
+Chúng tôi cũng thấy các trường về phí `txFee`, giá trị giả mạo `txInfoForge`, được sử dụng khi đúc hoặc đốt các token gốc.
 
-Then we have a list of delegation certificates in `txInfoDCert` and a
-field `txInfoWdrl` to hold information about staking withdrawals.
+Sau đó, chúng tôi có một danh sách các chứng chỉ ủy quyền trong `txInfoDCert` và một trường `txInfoWdrl` để nắm giữ thông tin về việc rút tiền đặt cược.
 
-The field `txInfoValidRange`, which we will look at in much more detail
-in a moment, defines the slot range for which this transaction is valid.
+Trường `txInfoValidRange` mà chúng ta sẽ xem xét chi tiết hơn trong giây lát, xác định phạm vi vị trí mà giao dịch này hợp lệ.
 
-`txInfoSignatories` is the list of public keys that have signed this
-transaction.
+`txInfoSignatories` là danh sách các khóa công khai đã ký kết giao dịch này.
 
-Transactions that spend a script output need to include the datum of the
-script output. The `txInfoData` field is a list associating datums with
-their respective hashes. If there is a transaction output to a script
-address that carries some datum, you don\'t need to include the datum,
-you can just include the datum hash. However, scripts that spend an
-output do need to include the datum, in which case it will be included
-in the `txInfoData` list.
+Các giao dịch sử dụng đầu ra tập lệnh cần phải bao gồm dữ liệu của đầu ra tập lệnh. Các `txInfoData` lĩnh vực là một danh sách liên kết datums với băm tương ứng của họ. Nếu có một đầu ra giao dịch tới một địa chỉ tập lệnh mang một số dữ liệu nào đó, bạn không cần phải bao gồm dữ liệu đó, bạn chỉ có thể bao gồm băm dữ liệu. Tuy nhiên, các tập lệnh sử dụng một đầu ra cần phải bao gồm dữ liệu, trong trường hợp đó, nó sẽ được đưa vào danh sách `txInfoData` .
 
-Finally, the `txInfoId` field is the ID of this transaction.
+Cuối cùng, trường `txInfoId` là ID của giao dịch này.
 
 ### txInfoValidRange
 
-While there is a lot of information contained in this `txInfo` type, for
-our first example of how to use the third argument to validation, we
-will concentrate on the `txInfoValidRange` field.
+Mặc dù có rất nhiều thông tin chứa trong kiểu `txInfo`, nhưng đối với ví dụ đầu tiên của chúng tôi về cách sử dụng đối số thứ ba để xác thực, chúng tôi sẽ tập trung vào trường `txInfoValidRange` này.
 
-This brings us to an interesting dilemma. We have stressed several times
-that the big advantage that Cardano has over something like Ethereum is
-that validation can happen in the wallet. But we have also noted that a
-transaction can still fail on-chain following validation if, when the
-transaction arrives on the blockchain, it has been consumed already by
-someone else. In this case, the transaction fails without having to pay
-fees.
+Điều này đưa chúng ta đến một tình huống khó xử thú vị. Chúng tôi đã nhấn mạnh nhiều lần rằng lợi thế lớn mà Cardano có so với một thứ như Ethereum là việc xác thực có thể xảy ra trong ví. Nhưng chúng tôi cũng đã lưu ý rằng một giao dịch vẫn có thể không thành công on-chain sau khi xác thực, nếu khi giao dịch trên blockchain, nó đã bị người khác sử dụng. Trong trường hợp này, giao dịch không thành công mà không phải trả phí.
 
-What should never happen under normal circumstances is that a validation
-script runs and then fails. This is because you can always run the
-validation under exactly the same conditions in the wallet, so it would
-fail before you ever submit it.
+Điều không bao giờ nên xảy ra trong các trường hợp bình thường là một tập lệnh xác thực chạy và sau đó không thành công. Điều này là do bạn luôn có thể chạy xác thực trong cùng một điều kiện trong ví, vì vậy nó sẽ không thành công trước khi bạn gửi nó.
 
-So that is a very nice feature, but it is not obvious how to manage time
-in that context. Time is important, because we want to be able to
-express that a certain transaction is only valid before or only valid
-after a certain time has been reached.
+Vì vậy, đó là một tính năng rất hay, nhưng không rõ ràng là làm thế nào để quản lý thời gian trong context đó. Thời gian rất quan trọng, bởi vì chúng tôi muốn thể hiện rằng một giao dịch nhất định chỉ có hiệu lực trước hoặc chỉ có hiệu lực sau khi đã đạt đến một thời điểm nhất định.
 
-We saw an example of this in lecture one - the auction example, where
-bids are only allowed until the deadline has been reached, and the
-`close` endpoint can only be called after the deadline has passed.
+Chúng ta đã thấy một ví dụ về điều này trong bài giảng một - ví dụ đấu giá (bid), trong đó giá thầu chỉ được phép cho đến khi đạt đến thời hạn cuối cùng và `close` chỉ khi có thể gọi _Endpoint_ sau khi thời hạn đã qua.
 
-That seems to be a contradiction, because time is obviously flowing. So,
-when you try to validate a transaction that you are constructing in your
-wallet, the time that you are doing that can, of course, be different
-than the time that the transaction arrives at a node for validation. So,
-it\'s not clear how to bring these two together so that validation is
-deterministic, and to guarantee that if, and only if, validation
-succeeds in the wallet, it will also succeed in the node.
+Điều đó dường như là một sự mâu thuẫn, bởi vì thời gian rõ ràng là đang trôi. Vì vậy, khi bạn cố gắng xác thực một giao dịch mà bạn đang tạo trong ví của mình, tất nhiên, thời gian bạn đang thực hiện có thể khác với thời gian giao dịch đến một nút để xác thực. Vì vậy, không rõ làm thế nào để kết hợp hai điều này lại với nhau để xác thực là xác định và để đảm bảo rằng nếu và chỉ khi, xác thực thành công trong ví, thì nó cũng sẽ thành công trong nút.
 
-The way Cardano solves that, is by adding the slot range field
-`txInfoValidRange` to a transaction, which essentially says \"This
-transaction is valid between *this* and *that* slot\".
+Cách Cardano giải quyết điều đó, là bằng cách thêm trường phạm vi vị trí `txInfoValidRange` vào một giao dịch, về cơ bản nói rằng "Giao dịch này hợp lệ giữa vị trí này và vị trí kia ".
 
-When a transaction gets submitted to the blockchain and validated by a
-node, then before any scripts are run, some general checks are made, for
-example that all inputs are present and that the balances add up, that
-the fees are included and so on.
+Khi một giao dịch được gửi đến blockchain và được xác thực bởi một nút, sau đó trước khi chạy bất kỳ tập lệnh nào, một số kiểm tra chung sẽ được thực hiện, chẳng hạn như tất cả các đầu vào đều có mặt và số dư cộng lại, phí được bao gồm, v.v.
 
-One of those checks that happens before validation is to check that the
-slot range is valid. The node will look at the current time and check
-that it falls into the valid slot range of the transaction. If it does
-not, then validation fails immediately without ever running the
-validator scripts.
+Một trong những kiểm tra xảy ra trước khi xác thực là kiểm tra xem phạm vi vị trí có hợp lệ hay không. Nút sẽ xem xét thời điểm hiện tại và kiểm tra xem nó có nằm trong phạm vi vị trí hợp lệ của giao dịch hay không. Nếu không, thì xác thực không thành công ngay lập tức mà không bao giờ chạy các tập lệnh trình xác thực.
 
-So, if the pre-checks succeed, then this means that the current time
-does fall into the valid slot range. This, in turn, means that we are
-completely deterministic again. The validation script can simply assume
-that it is being run at a valid slot.
+Vì vậy, nếu kiểm tra trước thành công, thì điều này có nghĩa là thời gian hiện tại rơi vào phạm vi vị trí hợp lệ. Đến lượt nó, điều này có nghĩa là chúng ta lại hoàn toàn xác định được. Tập lệnh xác thực có thể đơn giản giả định rằng nó đang được chạy tại một vị trí hợp lệ.
 
-By default, a script will use the infinite slot range, one that covers
-all slots starting from the genesis block and running until the end of
-time.
+Theo mặc định, một tập lệnh sẽ sử dụng phạm vi vị trí vô hạn, một tập lệnh bao gồm tất cả các vị trí bắt đầu từ khối gốc và chạy cho đến hết thời gian.
 
-There is one slight complication with this, and that is that Ouroboros,
-the consensus protocol powering Cardano doesn\'t use POSIX time, it uses
-slots. But Plutus uses real time, so we need to be able to convert back
-and forth between real time and slots. This is no problem so long as the
-slot time is fixed. Right now it is one second, so right now it is easy.
+Có một sự phức tạp nhỏ với điều này, đó là Ouroboros, giao thức đồng thuận cung cấp năng lượng cho Cardano không sử dụng thời gian POSIX, nó sử dụng các khe cắm. Nhưng Plutus sử dụng thời gian thực, vì vậy chúng ta cần có khả năng chuyển đổi qua lại giữa thời gian thực và thời điểm. Điều này không có vấn đề gì miễn là thời gian rãnh được cố định. Ngay bây giờ là một giây, vì vậy ngay bây giờ nó là dễ dàng.
 
-However, this could change in the future. There could be a hard fork
-with some parameter change that would change the slot time. We can\'t
-know that in advance. We don\'t know what the slot length will be in ten
-years, for example.
+Tuy nhiên, điều này có thể thay đổi trong tương lai. Có thể có một đợt hard fork với một số thay đổi thông số sẽ thay đổi thời gian của vị trí. Chúng tôi không thể biết trước điều đó. Ví dụ, chúng tôi không biết độ dài vị trí sẽ là bao nhiêu trong 10 năm nữa.
 
-That means that slot intervals that are defined for transactions
-mustn\'t have a definite upper bound that is too far in the future. It
-must only be as far in the future as it is possible to know what the
-slot length will be. This happens to be something like 36 hours. We know
-that if there is going to be a hard fork, we would know about it at
-least 36 hours in advance.
+Điều đó có nghĩa là các khoảng thời gian được xác định cho các giao dịch không được có giới hạn trên xác định là quá xa trong tương lai. Chỉ càng xa trong tương lai thì người ta mới có thể biết được độ dài rãnh sẽ là bao nhiêu. Điều này xảy ra tương tự như 36 giờ. Chúng tôi biết rằng nếu sắp có một đợt hard fork, chúng tôi sẽ biết về nó trước ít nhất 36 giờ.
 
 ### POSIXTimeRange
 
-Let\'s look at this `POSIXTimeRange` type, which is defined in
-`Plutus.V1.Ledger.Time`.
+Hãy xem `POSIXTimeRange` này , được định nghĩa trong `Plutus.V1.Ledger.Time`.
 
 ``` {.haskell}
 type POSIXTimeRange = Interval POSIXTime.
 ```
 
-It is a type synonym for `Interval POSIXTime` and we see that `Interval`
-is defined by a `LowerBound` and an `UpperBound`.
+Nó là một loại từ đồng nghĩa với `Interval POSIXTime` và chúng ta thấy rằng nó `Interval` được định nghĩa bởi  `LowerBound` và `UpperBound`.
 
 ``` {.haskell}
 Interval
@@ -245,109 +152,96 @@ Interval
       inTo   :: UpperBound a      
 ```
 
-If we drill into `LowerBound` we see the constructor
+Nếu chúng ta đi sâu vào, `LowerBound` chúng ta sẽ thấy hàm tạo
 
 ``` {.haskell}
 data LowerBound a = LowerBound (Extended a) Closure
 ```
 
-`Closure` is a synonym for `Bool` and specifies whether a bound is
-included in the `Interval` or not.
+`Closure` là một từ đông nghĩa với `Bool` và chắc chắn rằng có đưa vào `Interval` hay không.
 
-`Extended` can be `NegInf` for negative infinity, `PosInf` for positive
-infinity, or `Finite a`.
+`Extended` có thể là `NegInf` âm vô cùng, `PosInf` dương vô cùng, hoặc `Finite`.
 
-We also find some helper functions including the `member` function which
-checks if a given `a` is part of a given `Interval`, so long as the type
-of `a` is a subtype of `Ord`, which is the case for `POSIXTime`.
+Chúng tôi cũng tìm thấy một số hàm trợ giúp bao gồm cả hàm `member` kiểm tra xem một cái đã cho `a` có phải là một phần của một cái đã cho hay không `Interval`, miễn là kiểu của `a` là một kiểu con của `Ord`, đây là trường hợp cho `POSIXTime`.
 
 ``` {.haskell}
 member :: Ord a => a -> Interval a -> Bool
 member a i = i `contains` singleton a
 ```
 
-`interval` is a smart constructor for the `Interval` type which creates
-an `Interval` with an inclusive upper and lower bound.
+`interval` là một hàm tạo thông minh cho `Interval` Kiểu này tạo `Interval` với giới hạn trên và dưới.
 
 ``` {.haskell}
 interval :: a -> a -> Interval a
 interval s s' = Interval (lowerBound s) (upperBound s')
 ```
 
-Then we have `from` which constructs an `Interval` which starts at `a`
-and lasts until eternity.
+Sau đó chúng ta có `from` với `Interval` cái này bắt đầu từ `a`
+và kéo dài đến vô cùng.
 
 ``` {.haskell}
 from :: a -> Interval a
 from s = Interval (lowerBound s) (UpperBound PosInf True)
 ```
 
-And we have `to`, which is the opposite. It constructs an `Interval`
-starting from the genesis block up to, and including `a`.
+Và chúng ta có `to`, nó là ngước lại với `from`. Nó cũng được dùng `Interval`
+nó bắt đầu block genesis tới `a`, và bao gồm cả `a`.
 
 ``` {.haskell}
 to :: a -> Interval a
 to s = Interval (LowerBound NegInf True) (upperBound s)
 ```
 
-`always` is the default `Interval` which includes all times.
+`always` luôn mặc định `Interval` bao gồm tất cả từ âm vô cùng đến dương vô cùng.
 
 ``` {.haskell}
 always :: Interval a
 always = Interval (LowerBound NegInf True) (UpperBound PosInf True)
 ```
 
-And we have the opposite, `never`, which contains no slots.
+và có điều ngươc lại, `never`, Nó không chứa slots nào.
 
 ``` {.haskell}
 never :: Interval a
 never = Interval (LowerBound PosInf True) (UpperBound NegInf True)
 ```
 
-There is also the `singleton` helper, which constructs an interval which
-consists of just one slot.
+Ngoài ra còn trình trợ giúp `singleton`, nó bao gồm một slot
 
 ``` {.haskell}
 singleton :: a -> Interval a
 singleton s = interval s s      
 ```
 
-The function `hull` gives the smallest interval containing both the
-given intervals.
+Hàm `hull` cho khoảng nhỏ nhất chứa cả hai khoảng đã cho.
 
 ``` {.haskell}
 hull :: Ord a => Interval a -> Interval a -> Interval a
 hull (Interval l1 h1) (Interval l2 h2) = Interval (min l1 l2) (max h1 h2)
 ```
 
-The `intersection` function determines the largest interval that is
-contained in both the given intervals. This is an `Interval` that starts
-from the largest lower bound of the two intervals and extends until the
-smallest upper bound.
+Chức năng `intersection` xác định khoảng thời gian lớn nhất được chứa trong cả khoảng thời gian nhất định. Đây là một `Interval` bắt đầu từ giới hạn dưới lớn nhất của hai khoảng và kéo dài cho đến giới hạn trên nhỏ nhất.
 
 ``` {.haskell}
 intersection :: Ord a => Interval a -> Interval a -> Interval a
 intersection (Interval l1 h1) (Interval l2 h2) = Interval (max l1 l2) (min h1 h2)    
 ```
 
-The `overlaps` function checks whether two intervals overlap, that is,
-whether there is a value that is a member of both intervals.
+Hàm `overlaps` kiểm tra chức năng cho dù hai khoảng thời gian chồng lên nhau, có nghĩa là, cho dù có một giá trị chồng lên nhau của cả hai khoảng thời gian.
 
 ``` {.haskell}
 overlaps :: Ord a => Interval a -> Interval a -> Bool
 overlaps l r = isEmpty (l `intersection` r)
 ```
 
-`contains` takes two intervals and determines if the second interval is
-completely contained within the first one.
+`contains` tlấy hai khoảng và xác định xem khoảng thứ hai có hoàn toàn nằm trong khoảng thời gian đầu tiên hay không.
 
 ``` {.haskell}
 contains :: Ord a => Interval a -> Interval a -> Bool
 contains (Interval l1 h1) (Interval l2 h2) = l1 <= l2 && h2 <= h1
 ```
 
-And we have the `before` and `after` functions to determine, if a given
-time is, respectively, before or after everything in a given `Interval`.
+Và chúng tôi có các chức năng `before` và `after` để xác định nếu một thời gian nhất định tương ứng, trước hoặc sau mọi thứ trong một thời gian nhất định `Interval`.
 
 ``` {.haskell}
 before :: Ord a => a -> Interval a -> Bool
@@ -357,21 +251,21 @@ after :: Ord a => a -> Interval a -> Bool
 after h (Interval _ t) = upperBound h > t
 ```
 
-Let\'s have a play in the REPL.
+Hãy vào trong REPL.
 
 ``` {.haskell}
 Prelude Week03.Homework1> import Plutus.V1.Ledger.Interval
 Prelude Plutus.V1.Ledger.Interval Week03.Homework1>
 ```
 
-Let\'s construct the `Interval` between 10 and 20, inclusive.
+Hãy xây dựng `Interval` từ 10 đến 20, bao gồm cả hai đầu.
 
 ``` {.haskell}
 Prelude Plutus.V1.Ledger.Interval Week03.Homework1> interval (10 :: Integer) 20
 Interval {ivFrom = LowerBound (Finite 10) True, ivTo = UpperBound (Finite 20) True}
 ```
 
-We can check whether a value is a member of an interval:
+Chúng ta có thể kiểm tra xem một giá trị có phải là thành viên của một khoảng hay không:
 
 ``` {.haskell}
 Prelude Plutus.V1.Ledger.Interval Week03.Homework1> member 9 $ interval (10 :: Integer) 20
@@ -390,8 +284,7 @@ Prelude Plutus.V1.Ledger.Interval Week03.Homework1> member 21 $ interval (10 :: 
 False
 ```
 
-We can use the `from` constructor. Here the lower bound is again a
-finite slot, but the upper bound is positive infinity.
+Chúng ta có thể sử dụng hàm `from`. Ở đây giới hạn dưới lại là một slot hữu hạn, nhưng giới hạn trên là dương vô cùng.
 
 ``` {.haskell}
 Prelude Plutus.V1.Ledger.Interval Week03.Homework1> member 21 $ from (30 :: Integer)
