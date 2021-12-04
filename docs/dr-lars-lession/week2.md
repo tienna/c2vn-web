@@ -14,7 +14,8 @@ Nó bao gồm mức thấp và mức cao tập lệnh xác thực on-chain.
 > 81ba78edb1d634a13371397d8c8b19829345ce0d
 :::
 
-Trước khi bắt đầu \-\-\-\-\-\-\-\-\-\-\-\-\-\--
+Trước khi bắt đầu 
+-----------------
 
 Hãy nói về một điểm quan trọng được đưa ra bởi một trong những người
 tiên phong sau bài giảng số 1.
