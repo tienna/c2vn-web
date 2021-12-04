@@ -1,6 +1,6 @@
 # Plutus Pioneer Program
 
-Đây là nhánh của tôi về Chương trình tiên phong của Plutus, nơi tôi sẽ cập nhật các ví dụ về chi nhánh chính mới nhất của Plutus.
+Đây là nhánh của tôi về Chương trình tiên phong của Plutus, nơi tôi sẽ cập nhật các ví dụ chính mới nhất của Plutus.
 
 Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
 
