@@ -10,10 +10,7 @@ Note
 
 Trong bài giảng này, chúng ta tìm hiểu về context script (đối số xác thực thứ ba), thời gian xử lý và các hợp đồng được tham số hóa.
 
-Đoạn mã trong bài giảng này sử dụng Plutus commit
-
-The code in this lecture uses Plutus commit
-`81ba78edb1d634a13371397d8c8b19829345ce0d`.
+Đoạn mã trong bài giảng này sử dụng Plutus commit là `81ba78edb1d634a13371397d8c8b19829345ce0d`.
 
 Trước khi chúng ta bắt đầu
 ---------------
