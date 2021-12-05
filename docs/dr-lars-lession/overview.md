@@ -28,7 +28,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
 
 -  Bài giảng số 4: [Video](https://youtu.be/6Reuh0xZDjY), [Html](week4.md)
 
-  - Monads
+  - Monads.
   - Đơn nguyên `EmulatorTrace`.
   - Đơn nguyên `Contract`.
 
