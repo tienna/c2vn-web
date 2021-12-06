@@ -53,7 +53,7 @@ Một trong những lý do cho điều đó là cách thức hoạt động củ
 biên dịch Plutus. Chúng tôi đã thấy làm thế nào để việc biên dịch sang
 Plutus thành công, tất cả mã được sử dụng bởi hàm xác nhận phải có sẵn
 trong Oxford Brackets. Điều này có nghĩa là tất cả các chức năng được sử
-dụng bởi chức năng *mkValidator* phải sử dụng pragma INLINABLE.
+dụng bởi chức năng `mkValidator` phải sử dụng pragma INLINABLE.
 
 ``` {.haskell}
 {-# INLINABLE mkValidator #-}
@@ -178,19 +178,19 @@ foo :: IO Int
 foo = ...
 ```
 
-*IO* là một phương thức khởi tạo kiểu nhận một đối số, giống như một số
-ví dụ khác về các hàm tạo kiểu như *Maybe* and *List* . Tuy nhiên, không
-giống như những ví dụ đó, *IO* đặc biệt, theo nghĩa là bạn không thể
+`IO` là một phương thức khởi tạo kiểu nhận một đối số, giống như một số
+ví dụ khác về các hàm tạo kiểu như `Maybe` and `List` . Tuy nhiên, không
+giống như những ví dụ đó, `IO` đặc biệt, theo nghĩa là bạn không thể
 triển khai nó bằng chính ngôn ngữ. Nó là một nguyên thủy được tích hợp
 sẵn.
 
-Giá trị trả về *IO Int* cho chúng ta biết rằng đây là một công thức để
+Giá trị trả về `IO Int` cho chúng ta biết rằng đây là một công thức để
 tính Int và công thức này có thể gây ra các phản ứng phụ. Một danh sách
-các hướng dẫn cho máy tính biết phải làm gì để kết thúc với một *Int* .
+các hướng dẫn cho máy tính biết phải làm gì để kết thúc với một `Int` .
 
 Điều quan trọng cần lưu ý là tính minh bạch của tham chiếu không bị phá
 vỡ ở đây. Kết quả đánh giá foo là chính công thức, không phải giá trị
-*Int* . Và vì công thức luôn giống nhau, nên tính minh bạch của tham
+`Int` . Và vì công thức luôn giống nhau, nên tính minh bạch của tham
 chiếu được duy trì.
 
 Cách duy nhất để thực sự thực hiện một công thức như vậy trong chương
@@ -206,11 +206,11 @@ main :: IO ()
 main = putStrLn "Hello, world!"
 ```
 
-Ở đây, *main* là một công thức thực hiện một số tác dụng phụ và trả về
+Ở đây, `main` là một công thức thực hiện một số tác dụng phụ và trả về
 Đơn vị - không có gì đáng quan tâm.
 
-Hãy xem *putStrLn* trong REPL. Chúng tôi thấy rằng đó là một hành động
-IO sử dụng *String* và không trả về kết quả thú vị nào.
+Hãy xem `putStrLn` trong REPL. Chúng tôi thấy rằng đó là một hành động
+IO sử dụng `String` và không trả về kết quả thú vị nào.
 
 ``` {.haskell}
 Prelude Week04.Contract> :t putStrLn
@@ -236,8 +236,8 @@ cabal run hello
 
 Chúng ta sẽ xem xét nhanh tệp cabal ngay bây giờ.
 
-Trong các bài giảng trước, chúng ta chỉ cần phần thư viện *library*
-trong tệp *plutus-pioneer-program-week04.cabal* vì chúng ta chỉ xử lý
+Trong các bài giảng trước, chúng ta chỉ cần phần thư viện `library`
+trong tệp `plutus-pioneer-program-week04.cabal` vì chúng ta chỉ xử lý
 các hàm thư viện. Bây giờ, chúng ta cần thêm một khổ thơ có thể thực thi
 được .
 
@@ -251,9 +251,9 @@ ghc-options:         -Wall -O2
 ```
 
 Điều này chỉ định thư mục nguồn và tệp nào giữ chức năng chính. Thông
-thường tên tệp phải khớp với tên mô-đun, nhưng *main* là một ngoại lệ.
+thường tên tệp phải khớp với tên mô-đun, nhưng `main` là một ngoại lệ.
 
-Thay vì chỉ yêu cầu loại *putStrLn* , chúng ta có thể chạy nó trong
+Thay vì chỉ yêu cầu loại `putStrLn` , chúng ta có thể chạy nó trong
 REPL. Như đã đề cập, REPL cho phép chúng ta thực hiện các hành động IO.
 
 ``` {.haskell}
@@ -263,7 +263,7 @@ Hello, world!
 
 ### getLine
 
-Hãy xem *getLine*
+Hãy xem `getLine`
 
 ``` {.haskell}
 Prelude Week04.Contract> :t getLine
@@ -296,12 +296,12 @@ không bao giờ là đủ để đạt được điều gì đó phức tạp, 
 cách để kết hợp các hành động IO nguyên thủy này thành những công thức
 lớn hơn, phức tạp hơn.
 
-Một điều chúng ta có thể làm là sử dụng phiên bản kiểu *Functor* của IO.
-Hãy xem xét các trường hợp loại của *IO* trong REPL.
+Một điều chúng ta có thể làm là sử dụng phiên bản kiểu `Functor` của IO.
+Hãy xem xét các trường hợp loại của `IO` trong REPL.
 
 ``` {.haskell}
 Prelude Week04.Contract> :i IO
-type IO :: * -> *
+type IO :: ` -> `
 newtype IO a
 = ghc-prim-0.6.1:GHC.Types.IO (ghc-prim-0.6.1:GHC.Prim.State#
                                  ghc-prim-0.6.1:GHC.Prim.RealWorld
@@ -317,13 +317,13 @@ instance Semigroup a => Semigroup (IO a) -- Defined in ‘GHC.Base’
 instance MonadFail IO -- Defined in ‘Control.Monad.Fail’
 ```
 
-Chúng ta thấy cá thể *Monad* đáng sợ , nhưng chúng ta cũng thấy một cá
-thể *Functor*. *Functor* là một loại lớp rất quan trọng trong Haskell.
+Chúng ta thấy cá thể `Monad` đáng sợ , nhưng chúng ta cũng thấy một cá
+thể `Functor`. `Functor` là một loại lớp rất quan trọng trong Haskell.
 Nếu chúng ta nhìn vào nó trong REPL:
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Functor
-type Functor :: (* -> *) -> Constraint
+type Functor :: (` -> `) -> Constraint
 class Functor f where
 fmap :: (a -> b) -> f a -> f b
 (<$) :: a -> f b -> f a
@@ -346,23 +346,23 @@ tiện lợi.
 fmap :: (a -> b) -> f a -> f b
 ```
 
-Hàm này *fmap* , mà tất cả *Functor*s có cho chúng ta biết rằng, nếu
-chúng ta cấp cho nó quyền truy cập vào một hàm có thể biến *a* thàng *b*
+Hàm này `fmap` , mà tất cả `Functor`s có cho chúng ta biết rằng, nếu
+chúng ta cấp cho nó quyền truy cập vào một hàm có thể biến `a` thàng `b`
 , thì nó có thể biến fa thành fb cho chúng ta. Ở đây, chúng ta quan tâm
 đến trường hợp f là IO .
 
-Nếu chúng ta chuyên biệt hóa hàm cho *IO* , chúng ta sẽ có một hàm như:
+Nếu chúng ta chuyên biệt hóa hàm cho `IO` , chúng ta sẽ có một hàm như:
 
 ``` {.haskell}
 fmap' :: (a -> b) -> IO a -> IO b
 ```
 
-Làm thế nào để làm việc đó. À, *IO a* là một công thức có tác dụng phụ
-và tạo ra *a* . Vì vậy, làm thế nào để chúng ta có được một *b* trong số
+Làm thế nào để làm việc đó. À, `IO a` là một công thức có tác dụng phụ
+và tạo ra `a` . Vì vậy, làm thế nào để chúng ta có được một `b` trong số
 đó? Chúng tôi thực hiện công thức, nhưng, trước khi trả về a , chúng tôi
-áp dụng hàm *(a -\> b)* cho *a* và trả về kết quả là *b* .
+áp dụng hàm `(a -\> b)` cho `a` và trả về kết quả là `b` .
 
-Trong REPL, chúng ta hãy xem xét hàm *toUpper* .
+Trong REPL, chúng ta hãy xem xét hàm `toUpper` .
 
 ``` {.haskell}
 Prelude Week04.Contract> import Data.Char
@@ -373,24 +373,24 @@ Prelude Data.Char Week04.Contract> toUpper 'q'
 ```
 
 Nếu chúng ta muốn áp dụng được cho một chuỗi chứ không phải là một Char
-chúng ta có thể sử dụng bản đồ chức năng. Các chuỗi *String*s trong
-Haskell chỉ là *Char*s .
+chúng ta có thể sử dụng bản đồ chức năng. Các chuỗi `String`s trong
+Haskell chỉ là `Char`s .
 
 ``` {.haskell}
 Prelude Data.Char Week04.Contract> map toUpper "Haskell"
 "HASKELL"
 ```
 
-Hàm *map toUpper* là một hàm chuyển từ *String* to *String*.
+Hàm `map toUpper` là một hàm chuyển từ `String` to `String`.
 
 ``` {.haskell}
 Prelude Data.Char Week04.Contract> :t map toUpper
 map toUpper :: [Char] -> [Char]
 ```
 
-Và chúng ta có thể sử dụng kết hợp với *fmap*. Nếu chúng ta sử dụng *map
-toUpper* làm chức năng chuyển đổi *a* thành *b* , chúng ta có thể thấy
-loại đầu ra của fmap sẽ như thế nào khi áp dụng cho *IO a* .
+Và chúng ta có thể sử dụng kết hợp với `fmap`. Nếu chúng ta sử dụng `map
+toUpper` làm chức năng chuyển đổi `a` thành `b` , chúng ta có thể thấy
+loại đầu ra của fmap sẽ như thế nào khi áp dụng cho `IO a` .
 
 ``` {.haskell}
 Prelude Data.Char Week04.Contract> :t fmap (map toUpper) getLine
@@ -405,8 +405,8 @@ haskell
 "HASKELL"
 ```
 
-Chúng ta cũng có thể sử dụng toán tử *\>\>* . Điều này chuỗi hai hành
-động *IO* lại với nhau, bỏ qua kết quả của hành động đầu tiên. Trong ví
+Chúng ta cũng có thể sử dụng toán tử `\>\>` . Điều này chuỗi hai hành
+động `IO` lại với nhau, bỏ qua kết quả của hành động đầu tiên. Trong ví
 dụ sau, cả hai hành động sẽ được thực hiện theo trình tự.
 
 ``` {.haskell}
@@ -415,30 +415,20 @@ Hello
 World
 ```
 
-Here, there is no result from *putStrLn*, but if there were, it would
-have been ignored. Its side effects would have been performed, its
-result ignored, then the second *putStrLn* side effects would been
-performed before returning the result of the second call.
+Ở đây, không có kết quả từ `putStrLn` , nhưng nếu có, nó sẽ bị bỏ qua. Các tác dụng không mong muốn của nó sẽ được thực hiện, kết quả của nó bị bỏ qua, sau đó các tác dụng không mong muốn thứ hai của `putStrLn` sẽ được thực hiện trước khi trả về kết quả của lần gọi thứ hai.
 
-Then, there is an important operator that does not ignore the result of
-the first *IO* action, and that is called *bind*. It is written as the
-*\>\>=* symbol.
+Sau đó, có một toán tử quan trọng không bỏ qua kết quả của hành động IO đầu tiên , và đó được gọi là ràng buộc . Nó được viết dưới dạng ký hiệu `\>\>=` .
 
 ``` {.haskell}
 Prelude Week04.Contract> :t (>>=)
 (>>=) :: Monad m => m a -> (a -> m b) -> m b
 ```
 
-We see the *Monad* constraint, but we can ignore that for now and just
-think of *IO*.
+Chúng tôi thấy ràng buộc `Monad` , nhưng chúng tôi có thể bỏ qua điều đó ngay bây giờ và chỉ nghĩ về `IO` .
 
-What this says is that if I have a recipe that performs side effects
-then gives me a result *a*, and given that I have a function that takes
-an *a* and gives me back a recipe that returns a *b*, then I can combine
-the recipe *m a* with the recipe *m b* by taking the value *a* and using
-it in the recipe that results in the value *b*.
+Điều này nói lên rằng nếu tôi có một công thức thực hiện các tác dụng phụ sau đó cho tôi kết quả `a` , và cho rằng tôi có một hàm nhận `a` và trả lại cho tôi một công thức trả về `b` , thì tôi có thể kết hợp công thức `m a`. với công thức mb bằng cách lấy giá trị a và sử dụng nó trong công thức thu được giá trị `b` .
 
-An example will make this clear.
+Một ví dụ sẽ làm rõ điều này.
 
 ``` {.haskell}
 Prelude Week04.Contract> getLine >>= putStrLn
@@ -446,38 +436,29 @@ Haskell
 Haskell
 ```
 
-Here, the function *getLine* is of type *IO String*. The return value
-*a* is passed to the function *(a -\> m b)* which then generates a
-recipe *putStrLn* with an input value of *a* and an output of type *IO
-()*. Then, *putStrLn* performs its side effects and returns *Unit*.
+Ở đây, hàm `getLine`  có kiểu `IO String` . Giá trị trả về `a` được chuyển cho hàm `(a -\> m b)` , sau đó tạo ra một công thức `putStrLn` với giá trị đầu vào là `a` và đầu ra là kiểu `IO ()` . Sau đó, `putStrLn` thực hiện các tác dụng phụ của nó và trả về `Unit` .
 
-There is another, very important, way to create *IO* actions, and that
-is to create recipes that immediately return results without performing
-any side effects.
+Có một cách khác, rất quan trọng, để tạo các hành động `IO` , và đó là tạo các công thức nấu ăn ngay lập tức trả về kết quả mà không thực hiện bất kỳ tác dụng phụ nào.
 
-That is done with a function called *return*.
+Điều đó được thực hiện với một chức năng được gọi là `return`.
 
 ``` {.haskell}
 Prelude Week04.Contract> :t return
 return :: Monad m => a -> m a
 ```
 
-Again, it is general for any Monad, we only need to think about *IO*
-right now.
+Một lần nữa, nó là chung cho bất kỳ Đơn nguyên (Monad) nào, chúng ta chỉ cần nghĩ về `IO` ngay bây giờ.
 
-It takes a value *a* and returns a recipe that produces the value *a*.
-In the case of *return*, the recipe does not actually create any side
-effects.
+Nó nhận một giá trị `a` và trả về một công thức tạo ra giá trị `a` . Trong trường hợp trả lại , công thức thực sự không tạo ra bất kỳ tác dụng phụ nào.
 
-For example:
+Ví dụ:
 
 ``` {.haskell}
 Prelude Week04.Contract> return "Haskell" :: IO String
 "Haskell"
 ```
 
-We needed to specify the return type so that the REPL knows which Monad
-we are using:
+Chúng tôi cần chỉ định kiểu trả về để REPL biết chúng tôi đang sử dụng `Monad` nào: 
 
 ``` {.haskell}
 Prelude Week04.Contract> :t return "Haskell" :: IO String
@@ -487,10 +468,7 @@ Prelude Week04.Contract> :t return "Haskell"
 return "Haskell" :: Monad m => m [Char]
 ```
 
-If we now go back to our *main* program, we can now write relatively
-complex *IO* actions. For example, we can define an *IO* action that
-will ask for two strings and print result of concatenating those two
-strings to the console.
+Nếu bây giờ chúng ta quay lại `main` của mình, bây giờ chúng ta có thể viết các hành động `IO`  tương đối phức tạp . Ví dụ, chúng ta có thể xác định một hành động `IO`  sẽ yêu cầu hai chuỗi và in kết quả của việc nối hai chuỗi đó với bảng điều khiển.
 
 ``` {.haskell}
 main :: IO ()
@@ -502,8 +480,7 @@ bar = getLine >>= \s ->
       putStrLn (s ++ t)
 ```
 
-And then, when we run it, the program will wait for two inputs and then
-output the concatenated result.
+Và sau đó, khi chúng tôi chạy nó, chương trình sẽ đợi hai đầu vào và sau đó xuất ra kết quả được nối.
 
 ``` {.bash}
 cabal run hello
@@ -511,22 +488,17 @@ one
 two
 onetwo
 ```
+Bây giờ điều này là đủ cho các mục đích của chúng tôi, mặc dù chúng tôi sẽ không cần Đơn nguyên `IO` cho đến khi có lẽ sau này trong khóa học khi chúng tôi nói về việc thực sự triển khai các hợp đồng Plutus. Tuy nhiên, `IO` Monad là một ví dụ quan trọng và là một ví dụ tốt để bắt đầu.
 
-This is enough now for our purposes, although we won\'t need the *IO*
-Monad until perhaps later in the course when we talk about actually
-deploying Plutus contracts. However, the *IO* Monad is an important
-example, and a good one to start with.
-
-So, for now, let\'s completely forget about *IO* and just write pure,
-functional Haskell, using the *Maybe* type.
+Vì vậy, hiện tại, chúng ta hãy hoàn toàn quên `IO` và chỉ viết Haskell thuần túy, có chức năng, sử dụng kiểu `Maybe` .
 
 ### Maybe
 
-The *Maybe* type is one of the most useful types in Haskell.
+Kiểu `Maybe`  là một trong những loại hữu ích nhất trong Haskell.
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Maybe
-type Maybe :: * -> *
+type Maybe :: ` -> `
 data Maybe a = Nothing | Just a
    -- Defined in ‘GHC.Maybe’
 instance Applicative Maybe -- Defined in ‘GHC.Base’
@@ -544,44 +516,40 @@ instance Traversable Maybe -- Defined in ‘Data.Traversable’
 instance MonadFail Maybe -- Defined in ‘Control.Monad.Fail’
 ```
 
-It is often called something like *Optional* in other programming
-languages.
+Nó thường được gọi là `Optional` trong các ngôn ngữ lập trình khác.
 
-It has two constructors - *Nothing*, which takes no arguments, and
-*Just*, which takes one argument.
+Nó có hai hàm tạo - `Nothing` , không nhận đối số và `Just` - có một đối số.
 
 ``` {.haskell}
 data Maybe a = Nothing | Just a
 ```
 
-Let\'s look at an example.
+Hãy xem một ví dụ.
 
-In Haskell, if you want to pass a *String* to a value that has a *read*
-instance, you will normally do this with the *read* function.
+Trong Haskell, nếu bạn muốn truyền `String` đến một giá trị có thể hiện `read` , bạn sẽ thường làm điều này với hàm `read` .
+
 
 ``` {.haskell}
 Week04.Maybe> read "42" :: Int
 42
 ```
 
-But, *read* is a bit unpleasant, because if we have something that
-can\'t be parsed as an *Int*, then we get an error.
+Tuy nhiên, `read` hơi khó chịu, bởi vì nếu chúng ta có thứ gì đó không thể phân tích cú pháp thành `Int` , thì chúng ta sẽ gặp lỗi.
 
 ``` {.haskell}
 Week04.Maybe> read "42+u" :: Int
 *** Exception: Prelude.read: no parse
 ```
 
-Let\'s import *readMaybe* to do it in a better way.
+Hãy import `readMaybe` để làm điều đó theo cách tốt hơn.
 
 ``` {.haskell}
 Prelude Week04.Maybe> import Text.Read (readMaybe)
 Prelude Text.Read Week04.Contract>
 ```
 
-The function *readMaybe* does the same as *read*, but it returns a
-*Maybe*, and in the case where it cannot parse, it will return a *Maybe*
-created with the *Nothing* constructor.
+Hàm `readMaybe` làm tương tự như `read`, nhưng nó trả về một `Maybe` và trong trường hợp nó không thể phân tích cú pháp, nó sẽ trả về một `Maybe` được tạo bằng phương thức khởi tạo `Nothing` .
+
 
 ``` {.haskell}
 Prelude Text.Read Week04.Contract> readMaybe "42" :: Maybe Int
@@ -591,16 +559,13 @@ Prelude Text.Read Week04.Contract> readMaybe "42+u" :: Maybe Int
 Nothing
 ```
 
-Let\'s say we want to create a new function that returns a *Maybe*.
+Giả sử chúng ta muốn tạo một hàm mới trả về a `Maybe`.
 
     foo :: String -> String -> String -> Maybe Int
 
-The idea is that the function should try to parse all three *String*s as
-*Int*s. If all the *String*s can be successfully parsed as *Int*s, then
-we want to add those three *Int*s to get a sum. If one of the parses
-fails, we want to return *Nothing*.
+Ý tưởng là hàm nên cố gắng phân tích cú pháp cả ba `Strings` là `Ints`. Nếu tất cả các Strings có thể được phân tích cú pháp thành công thành `Ints`, thì chúng ta muốn cộng ba `Ints` đó để có được một tổng. Nếu một trong các phân tích cú pháp không thành công, chúng tôi muốn quay lại `Nothing`.
 
-One way to do that would be:
+Một cách để làm điều đó sẽ là:
 
 ``` {.haskell}
 foo :: String -> String -> String -> Maybe Int
@@ -613,7 +578,7 @@ foo x y z = case readMaybe x of
             Just m  -> Just (k + l + m)
 ```
 
-Let\'s see if it works. First, the case where is succeeds:
+Hãy xem nếu nó hoạt động. Đầu tiên, trường hợp thành công:
 
 ``` {.haskell}
 Prelude Week04.Contract> :l Week04.Maybe 
@@ -621,24 +586,20 @@ Prelude Week04.Maybe> foo "1" "2" "3"
 Just 6
 ```
 
-But, if one of the values can\'t be parsed, we get *Nothing*:
+Tuy nhiên, nếu một trong các giá trị không thể được phân tích cú pháp, chúng tôi nhận được `Nothing`:
 
 ``` {.haskell}
 Prelude Week04.Maybe> foo "" "2" "3"
 Nothing
 ```
 
-The code is not ideal because we repeat the same pattern three times.
-Each time we have to consider the two cases - whether the result of the
-read is a *Just* or a *Nothing*.
+Mã này không lý tưởng vì chúng ta lặp lại cùng một mẫu ba lần. Mỗi lần chúng ta phải xem xét hai trường hợp - kết quả của phép đọc là `Just` hoặc `Nothing`.
 
 Ask Haskellers, we hate repetition like this.
 
-The thing we want to do is very simple. We want to pass the three
-*String*s and add the result, but with all those cases it is very noisy
-and very ugly. We want to abstract away this pattern.
+Điều chúng tôi muốn làm rất đơn giản. Chúng tôi muốn vượt qua ba `Strings` và thêm kết quả, nhưng với tất cả những trường hợp đó, nó rất ồn và rất xấu. Chúng tôi muốn loại bỏ mô hình này.
 
-One way to do that would be to define something like:
+Một cách để làm điều đó là xác định một cái gì đó như:
 
 ``` {.haskell}
 bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
@@ -646,7 +607,7 @@ bindMaybe Nothing = Nothing
 bindMaybe (Just x) f = f x
 ```
 
-Let\'s write the same function again using *bindMaybe*.
+Hãy viết lại cùng một chức năng bằng cách sử dụng `bindMaybe`.
 
 ``` {.haskell}
 foo' :: String -> String -> String -> Maybe Int
@@ -656,8 +617,7 @@ foo' x y z = readMaybe x `bindMaybe` \k ->
             Just (k + l + m)
 ```
 
-And then, in the REPL, we get the same results for *foo\'* as we got for
-*foo*.
+Và sau đó, trong REPL, chúng tôi nhận được kết quả tương tự `foo\'`như chúng tôi đã nhận được `foo`.
 
 ``` {.haskell}
 Prelude Week04.Maybe> foo "1" "2" "3"
@@ -667,39 +627,33 @@ Prelude Week04.Maybe> foo "" "2" "3"
 Nothing
 ```
 
-This does exactly the same as *foo*, but it is much more compact, there
-is far less noise, and the business logic is much clearer.
+Điều này thực hiện chính xác như `foo`, nhưng nó nhỏ gọn hơn nhiều, ít tiếng ồn hơn và logic kinh doanh rõ ràng hơn nhiều.
 
-It may, or may not, help to view the function with it not being used
-with infix notation:
+Nó có thể, hoặc có thể không, giúp xem chức năng mà nó không được sử dụng với ký hiệu infix:
 
 ``` {.haskell}
 Prelude Text.Read Week04.Maybe> bindMaybe (readMaybe "42" :: Maybe Int) (\x -> Just x)
 Just 42
 ```
 
-Here you can see the function clearly taking the *Maybe* and then the
-function that takes the *a* from the *Maybe* and uses it as the input to
-a function that returns a new *Maybe*.
+Ở đây bạn có thể thấy rõ ràng hàm lấy `Maybe` và sau đó là hàm lấy `a` từ `Maybe` và sử dụng nó làm đầu vào cho một hàm trả về một mới  `Maybe`.
 
-This produces nothing useful, until we add the second *readMaybe*
+Điều này tạo ra không có gì hữu ích, cho đến khi chúng tôi thêm `readMaybe`
 
 ``` {.haskell}
 Prelude Text.Read Week04.Maybe> bindMaybe (readMaybe "42" :: Maybe Int) (\x -> bindMaybe (readMaybe "5" :: Maybe Int) (\y -> Just (y + x)))
 Just 47
 ```
 
-In some ways *Nothing* is a bit like an exception in other languages. If
-any of the computations returns *Nothing*, the remainder of the
-computations in the block are not performed and *Nothing* is returned.
+Theo một số cách `Nothing` ithì hơi giống một ngoại lệ trong các ngôn ngữ khác. Nếu bất kỳ phép tính nào trả về  `Nothing`,  phần còn lại của phép tính trong khối không được thực hiện và  `Nothing` được trả về.
 
-### Either
+### Một trong hai (Either)
 
-Another very useful type in Haskell is the *Either* type.
+Một kiểu rất hữu ích khác trong Haskell là kiểu `Either` .
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Either
-type Either :: * -> * -> *
+type Either :: ` -> ` -> `
 data Either a b = Left a | Right b
    -- Defined in ‘Data.Either’
 instance Applicative (Either e) -- Defined in ‘Data.Either’
@@ -718,35 +672,27 @@ instance Foldable (Either a) -- Defined in ‘Data.Foldable’
 instance Traversable (Either a) -- Defined in ‘Data.Traversable’
 ```
 
-*Either* takes two parameters, *a* and *b*. Like *Maybe* it has two
-constructors, but unlike *Maybe* both take a value. It can *Either* be
-an *a* or a *b*. The two constructors are *Left* and *Right*.
+`Either` nhận hai tham số `a` and `b`.  Giống như `Maybe` nó có hai hàm tạo, nhưng không giống như `Maybe` cả hai đều nhận một giá trị. Nó có thể `Either` là một `a` hoặc một là `b`. Hai hàm tạo là `Left` and `Right`.
 
-For example:
+Ví dụ:
 
 ``` {.haskell}
 Prelude Week04.Contract> Left "Haskell" :: Either String Int
 Left "Haskell"
 ```
 
-Or
+hoặc
 
 ``` {.haskell}
 Prelude Week04.Contract> Right 7 :: Either String Int
 Right 7
 ```
 
-If we take the exception analogy a little further, then one issue with
-*Maybe* is that if we return *Nothing*, there is no error message. But,
-if we want something that gives a message, we can replace *Maybe* with
-an *Either* type.
+Nếu chúng ta xem xét phép loại suy ngoại lệ xa hơn một chút, thì một vấn đề `Maybe` là nếu chúng ta quay trở lại `Nothing`, không có thông báo lỗi. Tuy nhiên, nếu chúng ta muốn một thứ gì đó đưa ra một thông điệp, chúng ta có thể thay thế `Maybe`bằng `Either`.
 
-In that case, *Right* can correspond to *Just* and *Left* can correspond
-to an error, as *Nothing* did. But, depending on what type we choose for
-*a*, we can give appropriate error messages.
+Trong trường hợp đó, `Right` có thể tương ứng với `Just`và `Left` có thể tương ứng với một lỗi, như `Nothing` đã làm. Tuy nhiên, tùy thuộc vào loại mà chúng tôi chọn cho `a`, chúng tôi có thể đưa ra các thông báo lỗi thích hợp.
 
-Let\'s define something called *readEither* and see what it does when it
-can and when it cannot parse its input.
+Hãy định nghĩa một cái gì đó được gọi `readEither` và xem nó làm gì khi có thể và khi nào nó không thể phân tích cú pháp đầu vào của nó.
 
 ``` {.haskell}
 readEither :: Read a => String -> Either String a
@@ -765,8 +711,7 @@ Prelude Week04.Either> readEither "42+u" :: Either String Int
 Left "can't parse: 42+u"
 ```
 
-Using this, we can now rewrite *foo* in terms of *Either*. First, using
-the long-winded method:
+Sử dụng điều này, bây giờ chúng ta có thể viết lại `foo` bằng `Either`. Đầu tiên, sử dụng phương pháp dài dòng:
 
 ``` {.haskell}
 foo :: String -> String -> String -> Either String Int
@@ -779,24 +724,23 @@ foo x y z = case readEither x of
             Right m  -> Right (k + l + m)
 ```
 
-Let\'s try it. First, the happy path:
+Hãy thử nó. Đầu tiên, đường dẫn tốt:
 
 ``` {.haskell}
 Prelude Week04.Either> foo "1" "2" "3"
 Right 6
 ```
 
-Then, when we have a problem:
+sau đó có vấn đề:
 
 ``` {.haskell}
 Prelude Week04.Either> foo "ays" "2" "3"
 Left "can't parse: ays"
 ```
 
-But, we have the same problem that we had with *Maybe*; we have a lot of
-repetition.
+hưng, chúng tôi có cùng một vấn đề mà chúng tôi đã gặp phải `Maybe`; chúng tôi có rất nhiều sự lặp lại.
 
-The solution is similar.
+Giải pháp cũng tương tự.
 
 ``` {.haskell}
 bindEither :: Either String a -> (a -> Either String b) -> Either String b
@@ -810,49 +754,38 @@ foo' x y z = readEither x `bindEither` \k ->
             Right (k + l + m)
 ```
 
-You can run this again in the REPL and it will behave in the same way as
-its long-winded version.
+Bạn có thể chạy lại điều này trong REPL và nó sẽ hoạt động giống như phiên bản dài dòng của nó.
 
 ### Writer
 
-So far we have looked at three examples: *IO a*, *Maybe a* and *Either
-String a*. *IO a* represents plans that can involve side effects and,
-when executed, produce an *a*. *Maybe a* and *Either String a* represent
-computations that can produce an *a* but can also fail. The difference
-between *Maybe* and *Either* is just that *Maybe* does not produce any
-error message, but *Either* does.
+Cho đến nay chúng tôi đã xem xét ba ví dụ: `IO a`, `Maybe a` và `Either String a`. `IO a` đại diện cho các kế hoạch có thể liên quan đến các tác dụng phụ và khi được thực hiện, tạo ra một `a`. `Maybe a` và `Either String a` đại diện cho các phép tính có thể tạo ra  `a` nhưng cũng có thể thất bại. Sự khác biệt giữa `Maybe` và `Either` chỉ `Maybe` không tạo ra bất kỳ thông báo lỗi nào, nhưng  `Either` thì có.
 
-Now let\'s look at a completely different example that captures the idea
-of computations that can also produce log output.
+Bây giờ chúng ta hãy xem xét một ví dụ hoàn toàn khác ghi lại ý tưởng về các phép tính cũng có thể tạo ra đầu ra nhật ký.
 
-We can represent that with a type.
+Chúng ta có thể biểu diễn điều đó bằng một kiểu.
 
 ``` {.haskell}
 data Writer a = Writer a [String]
    deriving Show
 ```
 
-As an example, let\'s write a function that returns a *Writer* for an
-*Int* and writes a log message.
+Ví dụ, hãy viết một hàm trả về  `Writer` cho  `Int` và viết một thông báo nhật ký.
 
 ``` {.haskell}
 number :: Int -> Writer Int
 number n = Writer n $ ["number: " ++ show n]
 ```
 
-In the REPL:
+Trong REPL:
 
 ``` {.haskell}
 Prelude Week04.Writer> number 42
 Writer 42 ["number: 42"]
 ```
 
-Now, let\'s do something similar to that which we have done with *Maybe*
-and *Either*.
+Bây giờ, chúng ta hãy làm điều gì đó tương tự như chúng ta đã làm với `Maybe`và  `Either`.
 
-Let\'s write a function that takes three logging computations that each
-produce an *Int* and we want to return a single computation that
-produces the sum of those *Int*s.
+Hãy viết một hàm sử dụng ba phép tính ghi nhật ký mà mỗi phép tính tạo ra một `Int` và chúng ta muốn trả về một phép tính duy nhất tạo ra tổng của các phép tính đó `Int`.
 
 ``` {.haskell}
 foo :: Writer Int -> Writer Int -> Writer Int -> Writer Int
@@ -860,23 +793,21 @@ foo (Writer k xs) (Writer l ys) (Writer m zs) =
 Writer (K + l + m) $ xs ++ ys ++ zs
 ```
 
-In the REPL:
+Trong REPL:
 
 ``` {.haskell}
 Prelude Week04.Writer> foo (number 1) (number 2) (number 3)
 Writer 6 ["number: 1","number: 2","number: 3"]
 ```
 
-Now, let\'s write another useful function that takes a list of message
-and producers a *Writer* with no useful result.
+Bây giờ, hãy viết một hàm hữu ích khác có danh sách thông báo và các nhà sản xuất một `Writer` không có kết quả hữu ích.
 
 ``` {.haskell}
 tell :: [String] -> Writer ()
 tell = Writer ()
 ```
 
-Now, we can update *foo* to add an extra log message showing the sum of
-the numbers.
+Bây giờ, chúng tôi có thể cập nhật `foo` để thêm một thông báo nhật ký bổ sung hiển thị tổng các số.
 
 ``` {.haskell}
 foo :: Writer Int -> Writer Int -> Writer Int -> Writer Int
@@ -906,12 +837,12 @@ in
    Writer b $ xs ++ ys
 ```
 
-Here, the *bindWriter* function is returning the *Writer b* and
-producing log messages which are a concatenation of the *xs* that we
-pattern matched on input, and the *ys* that we pattern matched when
-calling *f a* in order to produce the *Writer b*.
+Here, the `bindWriter` function is returning the `Writer b` and
+producing log messages which are a concatenation of the `xs` that we
+pattern matched on input, and the `ys` that we pattern matched when
+calling `f a` in order to produce the `Writer b`.
 
-Now, we can rewrite *foo* using *bindWriter* and make it much nicer.
+Now, we can rewrite `foo` using `bindWriter` and make it much nicer.
 
 ``` {.haskell}
 foo' :: Writer Int -> Writer Int -> Writer Int -> Writer Int
@@ -923,7 +854,7 @@ foo' x y z = x `bindWriter` \k ->
                Writer s []
 ```
 
-What we did with *foo* before, we can now do with *foo\'*, and we get
+What we did with `foo` before, we can now do with `foo\'`, and we get
 the same result.
 
 ``` {.haskell}
@@ -937,10 +868,10 @@ don\'t have to explicitly combine the log messages, where we could make
 a mistake and forget one, or get the order wrong. Instead, we abstract
 all that away and can just concentrate on the business logic.
 
-Although the pattern is the same as with *Maybe* and *Either*, note that
+Although the pattern is the same as with `Maybe` and `Either`, note that
 the special aspect of these computations is completely different. With
-*Maybe* and *Either* we dealt with the notion of failure, whereas here,
-with the *Writer*, there is no failure, but we instead have additional
+`Maybe` and `Either` we dealt with the notion of failure, whereas here,
+with the `Writer`, there is no failure, but we instead have additional
 output.
 
 ### What is a Monad?
@@ -948,11 +879,11 @@ output.
 Now, we are in a position to explain what a Monad is.
 
 Looking back at the four examples, what did they have in common? In all
-four cases, We had a type constructor with one type parameter - *IO*,
-*Maybe*, *Either String* and *Writer* all take a type parameter.
+four cases, We had a type constructor with one type parameter - `IO`,
+`Maybe`, `Either String` and `Writer` all take a type parameter.
 
-And, for all four of these examples, we had a bind function. For *IO*,
-we had the *\>\>=* function and for the others we had the bind functions
+And, for all four of these examples, we had a bind function. For `IO`,
+we had the `\>\>=` function and for the others we had the bind functions
 that we wrote ourselves.
 
 ``` {.haskell}
@@ -961,27 +892,27 @@ bindEither :: Either String a -> (a -> Either String b) -> Either String b
 bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
 ```
 
-How the bind works depends on the case. In the case of *IO* it is
+How the bind works depends on the case. In the case of `IO` it is
 built-in magic, but you can think of it as just combining the two plans
-describing the actions to take during computation. For *bindMaybe* and
-*bindEither* the logic is for the whole plan to fail if any part of it
-fails, and for *bindWriter*, the logic was to combine the list of log
+describing the actions to take during computation. For `bindMaybe` and
+`bindEither` the logic is for the whole plan to fail if any part of it
+fails, and for `bindWriter`, the logic was to combine the list of log
 messages.
 
 And that is the main idea of Monads. It\'s a concept of computation with
 some additional side effects, and the ability to bind two such
 computations together.
 
-There is another aspect that we briefly mentioned in the case of *IO*
+There is another aspect that we briefly mentioned in the case of `IO`
 but not for the other examples - another thing that we can always do.
 
 Whenever we have such a concept of computation with side effects, we
 also also always have the ability to produce a computation of this kind
-that *doesn\'t* have any side effects.
+that `doesn\'t` have any side effects.
 
-In the example of *IO*, this was done with *return*. Given an *a*, you
-can create an *IO a* which is the recipe that always simply returns the
-*a* with no side effects. Each of the other example has this ability as
+In the example of `IO`, this was done with `return`. Given an `a`, you
+can create an `IO a` which is the recipe that always simply returns the
+`a` with no side effects. Each of the other example has this ability as
 well, as shown below.
 
 ``` {.haskell}
@@ -1001,7 +932,7 @@ If we look in the REPL:
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Monad
-type Monad :: (* -> *) -> Constraint
+type Monad :: (` -> `) -> Constraint
 class Applicative m => Monad m where
 (>>=) :: m a -> (a -> m b) -> m b
 (>>) :: m a -> m b -> m b
@@ -1026,14 +957,14 @@ We see the bind function
 (>>=) :: m a -> (a -> m b) -> m b
 ```
 
-And the *return* function that takes a pure value and turns it into a
+And the `return` function that takes a pure value and turns it into a
 computation that has potential for side effects, but does not use them.
 
 ``` {.haskell}
 return :: a -> m a
 ```
 
-The other function *\>\>* can easily be defined in terms of *\>\>=*, but
+The other function `\>\>` can easily be defined in terms of `\>\>=`, but
 is provided for convenience.
 
 ``` {.haskell}
@@ -1041,22 +972,22 @@ is provided for convenience.
 ```
 
 What this function does is to throw away the result of the first
-computation, so you could define it in terms of *\>\>=* by just ignoring
+computation, so you could define it in terms of `\>\>=` by just ignoring
 the argument to the function parameter.
 
-There\'s another technical computation. We see that *Monad* has the
-super class *Applicative*, so every Monad is *Applicative*.
+There\'s another technical computation. We see that `Monad` has the
+super class `Applicative`, so every Monad is `Applicative`.
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Applicative
-type Applicative :: (* -> *) -> Constraint
+type Applicative :: (` -> `) -> Constraint
 class Functor f => Applicative f where
 pure :: a -> f a
-(<*>) :: f (a -> b) -> f a -> f b
+(<`>) :: f (a -> b) -> f a -> f b
 GHC.Base.liftA2 :: (a -> b -> c) -> f a -> f b -> f c
-(*>) :: f a -> f b -> f b
-(<*) :: f a -> f b -> f a
-{-# MINIMAL pure, ((<*>) | liftA2) #-}
+(`>) :: f a -> f b -> f b
+(<`) :: f a -> f b -> f a
+{-# MINIMAL pure, ((<`>) | liftA2) #-}
    -- Defined in ‘GHC.Base’
 instance Applicative (Either e) -- Defined in ‘Data.Either’
 instance Applicative [] -- Defined in ‘GHC.Base’
@@ -1075,19 +1006,19 @@ We see it has a bunch of functions, but we only need the first two.
 
 ``` {.haskell}
 pure :: a -> f a
-(<*>) :: f (a -> b) -> f a -> f b
+(<`>) :: f (a -> b) -> f a -> f b
 ```
 
-The function *pure* has the same type signature as *return*. Then there
-is \<\*\> (pronounced \'ap\') which looks a bit more complicated. But,
-the truth is that, once you have *return* and *\>\>=* in a Monad, we can
-easily define both *pure* and \<\*\>.
+The function `pure` has the same type signature as `return`. Then there
+is \<\`\> (pronounced \'ap\') which looks a bit more complicated. But,
+the truth is that, once you have `return` and `\>\>=` in a Monad, we can
+easily define both `pure` and \<\`\>.
 
-We see that *Applicative* also has a superclass *Functor*.
+We see that `Applicative` also has a superclass `Functor`.
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Functor
-type Functor :: (* -> *) -> Constraint
+type Functor :: (` -> `) -> Constraint
 class Functor f where
 fmap :: (a -> b) -> f a -> f b
 (<$) :: a -> f b -> f a
@@ -1103,22 +1034,22 @@ instance Functor ((,,) a b) -- Defined in ‘GHC.Base’
 instance Functor ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-As we mentioned in the context of *IO*, *Functor* has the *fmap*
-function which, given a function from *a* to *b* will turn an *f a* into
-an *f b*.
+As we mentioned in the context of `IO`, `Functor` has the `fmap`
+function which, given a function from `a` to `b` will turn an `f a` into
+an `f b`.
 
-The prototypical example for *fmap* is lists where *fmap* is just *map*.
-Given a function from *a* to *b*, you can create a list of type *b* from
-a list of type *a* by applying the *map* function to each of the
+The prototypical example for `fmap` is lists where `fmap` is just `map`.
+Given a function from `a` to `b`, you can create a list of type `b` from
+a list of type `a` by applying the `map` function to each of the
 elements of the list.
 
-Again, once you have *return* and *\>\>=*, it is easy to define *fmap*.
+Again, once you have `return` and `\>\>=`, it is easy to define `fmap`.
 
-So, whenever you want to define a Monad, you just define *return* and
-*\>\>=*, and to make the compiler happy and to give instances for
-*Functor* and *Applicative*, there\'s always a standard way of doing it.
+So, whenever you want to define a Monad, you just define `return` and
+`\>\>=`, and to make the compiler happy and to give instances for
+`Functor` and `Applicative`, there\'s always a standard way of doing it.
 
-We can do this in the example of *Writer*.
+We can do this in the example of `Writer`.
 
 ``` {.haskell}
 import Control.Monad
@@ -1128,14 +1059,14 @@ instance Functor Writer where
 
 instance Applicative Writer where
    pure = return
-   (<*>) = ap
+   (<`>) = ap
 
 instance Monad Writer where
    return a = Writer a []
    (>>=) = bindWriter
 ```
 
-We don\'t have to do the same for *Maybe*, *Either* or *IO* because they
+We don\'t have to do the same for `Maybe`, `Either` or `IO` because they
 are already Monads defined by the Prelude.
 
 ### Why Is This useful?
@@ -1148,7 +1079,7 @@ functions that don\'t care which Monad we are dealing with - they will
 work with all Monads.
 
 Let\'s generalize the example where we compute the sum of three
-integers. We use a *let* in the example below for reasons that will
+integers. We use a `let` in the example below for reasons that will
 become clear in moment.
 
 ``` {.haskell}
@@ -1160,7 +1091,7 @@ threeInts mx my mz =
    let s = k + l + m in return s
 ```
 
-Now we have this function, we can return to the *Maybe* example and
+Now we have this function, we can return to the `Maybe` example and
 rewrite it.
 
 ``` {.haskell}
@@ -1168,17 +1099,17 @@ foo'' :: String -> String -> String -> Maybe Int
 foo'' x y z = threeInts (readMaybe x) (readMaybe y) (readMaybe z)
 ```
 
-We can do the same for the *Either* example.
+We can do the same for the `Either` example.
 
 ``` {.haskell}
 foo'' :: String -> String -> String -> Either String Int
 foo'' x y z = threeInts (readEither x) (readEither y) (readEither z)
 ```
 
-The *Writer* example is not exactly the same.
+The `Writer` example is not exactly the same.
 
 If we are happy not to have the log message for the sum, it is very
-simple as it is already an instance of *threeInts*.
+simple as it is already an instance of `threeInts`.
 
 ``` {.haskell}
 foo'' :: Writer Int -> Writer Int -> Writer Int -> Writer Int
@@ -1202,10 +1133,10 @@ use for all Monads.
 
 One way to think about a Monad is as a computation with a super power.
 
-In the case of *IO*, the super power would be having real-world
-side-effects. In the case of *Maybe*, the super power is being able to
-fail. The super power of *Either* is to fail with an error message. And
-in the case of *Writer*, the super power is to log messages.
+In the case of `IO`, the super power would be having real-world
+side-effects. In the case of `Maybe`, the super power is being able to
+fail. The super power of `Either` is to fail with an error message. And
+in the case of `Writer`, the super power is to log messages.
 
 There is a saying in the Haskell community that Haskell has an
 overloaded semi-colon. The explanation for this is that in many
@@ -1216,7 +1147,7 @@ depends on the language. For example, there could be an exception, in
 which case computation would stop and wouldn\'t continue with the next
 lines.
 
-In a sense, *bind* is like a semi-colon. And the cool thing about
+In a sense, `bind` is like a semi-colon. And the cool thing about
 Haskell is that it is a programmable semi-colon. We get to say what the
 logic is for combining two computations together.
 
@@ -1225,10 +1156,10 @@ Each Monad comes with its own \"semi-colon\".
 ### \'do\' notation
 
 Because this pattern is so common and monadic computations are all over
-the place, there is a special notation for this in Haskell, called *do*
+the place, there is a special notation for this in Haskell, called `do`
 notation.
 
-It is syntactic sugar. Let\'s rewrite *threeInts* using *do* notation.
+It is syntactic sugar. Let\'s rewrite `threeInts` using `do` notation.
 
 ``` {.haskell}
 threeInts' :: Monad m => m Int -> m Int -> m Int -> m Int
@@ -1240,17 +1171,17 @@ threeInts' mx my mz = do
    return s
 ```
 
-This does exactly the same thing as the non-*do* version, but it has
+This does exactly the same thing as the non-`do` version, but it has
 less noise.
 
-Note that the *let* statement does not use an *in* part. It does not
-need to inside a *do* block.
+Note that the `let` statement does not use an `in` part. It does not
+need to inside a `do` block.
 
 And that\'s Monads. There is a lot more to say about them but hopefully
 you now have an idea of what Monads are and how they work.
 
 Often you are in a situation where you want several effects at once -for
-example you may want optional failure *and* log messages. There are ways
+example you may want optional failure `and` log messages. There are ways
 to do that in Haskell. For example there are Monad Transformers where
 one can basically build custom Monads with the features that you want.
 
@@ -1281,22 +1212,22 @@ EmulatorTrace monad.
 
 You may have wondered if there is a way to execute Plutus code for
 testing purposes without using the Plutus Playground. There is indeed,
-and this is done using the *EmulatorTrace* Monad.
+and this is done using the `EmulatorTrace` Monad.
 
 You can think of a program in this monad as what we do manually in the
-*simulator* tab of the playground. That is, we define the initial
+`simulator` tab of the playground. That is, we define the initial
 conditions, we define the actions such as which wallets invoke which
 endpoints with which parameters and we define the waiting periods
 between actions.
 
-The relevant definitions are in the package *plutus-contract* in module
-*Plutus.Trace.Emulator*.
+The relevant definitions are in the package `plutus-contract` in module
+`Plutus.Trace.Emulator`.
 
 ``` {.haskell}
 module Plutus.Trace.Emulator
 ```
 
-The most basic function is called *runEmulatorTrace*.
+The most basic function is called `runEmulatorTrace`.
 
 ``` {.haskell}
 -- | Run an emulator trace to completion, returning a tuple of the final state
@@ -1313,13 +1244,13 @@ runEmulatorTrace cfg trace =
     $ runEmulatorStream cfg trace
 ```
 
-It gets something called an *EmulatorConfig* and an *EmulatorTrace ()*,
+It gets something called an `EmulatorConfig` and an `EmulatorTrace ()`,
 which is a pure computation where no real-world side effects are
 involved. It is a pure function that executes the trace on an emulated
-blockchain, and then gives a result as a list of *EmulatorEvent*s, maybe
-an error, if there was one, and then finally the final *EmulatorState*.
+blockchain, and then gives a result as a list of `EmulatorEvent`s, maybe
+an error, if there was one, and then finally the final `EmulatorState`.
 
-*EmulatorConfig* is defined in a different module in the same package:
+`EmulatorConfig` is defined in a different module in the same package:
 
 ``` {.haskell}
 module Wallet.Emulator.Stream
@@ -1332,12 +1263,12 @@ EmulatorConfig
 type InitialChainState = Either InitialDistribution Block
 ```
 
-We see it only has one field, which is of type *InitialChainState* and
-it is either *InitialDistribution* or *Block*.
+We see it only has one field, which is of type `InitialChainState` and
+it is either `InitialDistribution` or `Block`.
 
-*InitialDistribution* is defined in another module in the same package,
-and it is a type synonym for a map of key value pairs of *Wallet*s to
-*Value*s, as you would expect. *Value* can be either lovelace or native
+`InitialDistribution` is defined in another module in the same package,
+and it is a type synonym for a map of key value pairs of `Wallet`s to
+`Value`s, as you would expect. `Value` can be either lovelace or native
 tokens.
 
 ``` {.haskell}
@@ -1346,9 +1277,9 @@ module Plutus.Contract.Trace
 type InitialDistribution = Map Wallet Value
 ```
 
-In the same module, we see something called *defaultDist* which returns
+In the same module, we see something called `defaultDist` which returns
 a default distribution for all wallets. It does this by passing the 10
-wallets defined by *allWallets* to *defaultDistFor* which takes a list
+wallets defined by `allWallets` to `defaultDistFor` which takes a list
 of wallets.
 
 ``` {.haskell}
@@ -1397,37 +1328,37 @@ runEmulatorTrace
       Wallet.Emulator.MultiAgent.EmulatorState)
 ```
 
-So, we need an *EmulatorConfig* which we know takes an
-*InitialChainState*.
+So, we need an `EmulatorConfig` which we know takes an
+`InitialChainState`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Week04.Contract> import Wallet.Emulator.Stream 
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator.Stream Week04.Contract> :i InitialChainState 
-type InitialChainState :: *
+type InitialChainState :: `
 type InitialChainState =
 Either InitialDistribution Ledger.Blockchain.Block
       -- Defined in ‘Wallet.Emulator.Stream’
 ```
 
-If we take the *Left* of the *defaultDist* will will get an
-*InitialDistribution*.
+If we take the `Left` of the `defaultDist` will will get an
+`InitialDistribution`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator.Stream Week04.Contract> :t Left defaultDist
 Left defaultDist :: Either InitialDistribution b
 ```
 
-Which we can then use to construct an *EmulatorConfig*.
+Which we can then use to construct an `EmulatorConfig`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator.Stream Week04.Contract> EmulatorConfig $ Left defaultDist
 EmulatorConfig {_initialChainState = Left (fromList [(Wallet 1,Value (Map [(,Map [("",100000000)])])),(Wallet 2,Value (Map [(,Map [("",100000000)])])),(Wallet 3,Value (Map [(,Map [("",100000000)])])),(Wallet 4,Value (Map [(,Map [("",100000000)])])),(Wallet 5,Value (Map [(,Map [("",100000000)])])),(Wallet 6,Value (Map [(,Map [("",100000000)])])),(Wallet 7,Value (Map [(,Map [("",100000000)])])),(Wallet 8,Value (Map [(,Map [("",100000000)])])),(Wallet 9,Value (Map [(,Map [("",100000000)])])),(Wallet 10,Value (Map [(,Map [("",100000000)])]))])}
 ```
 
-So, let\'s try out *runEmulatorTrace*. Recall that, as well as and
-*EmulatorConfig*, we also need to pass in an *EmulatorTrace*, and the
-most simple one we can create is simply one that returns Unit - *return
-()*.
+So, let\'s try out `runEmulatorTrace`. Recall that, as well as and
+`EmulatorConfig`, we also need to pass in an `EmulatorTrace`, and the
+most simple one we can create is simply one that returns Unit - `return
+()`.
 
 ``` {.haskell}
 runEmulatorTrace (EmulatorConfig $ Left defaultDist) $ return ()
@@ -1438,8 +1369,8 @@ to the console, even though we are not doing anything with the trace. If
 you want to make it useful, you must somehow filter all this data down
 to something that sensible, and aggregate it in some way.
 
-Luckily, there are other functions as well as *runEmulatorTrace*. One of
-them is *runEmulatorTraceIo* which runs the emulation then outputs the
+Luckily, there are other functions as well as `runEmulatorTrace`. One of
+them is `runEmulatorTraceIo` which runs the emulation then outputs the
 trace in a nice form on the screen.
 
 ``` {.haskell}
@@ -1449,7 +1380,7 @@ runEmulatorTraceIO
 runEmulatorTraceIO = runEmulatorTraceIO' def def
 ```
 
-To use this function, we don\'t need to specify an *EmulatorConfig* like
+To use this function, we don\'t need to specify an `EmulatorConfig` like
 we did before, because by default will will just use the default
 distribution.
 
@@ -1490,8 +1421,8 @@ And we see a much more manageable, concise output. Nothing happens, but
 we see the Genesis transaction and then the final balances for each
 wallet.
 
-If you want more control, there is also *runEmulatorTraceIO\'*, which
-does take an *EmulatorConfig*, so we could specify a different
+If you want more control, there is also `runEmulatorTraceIO\'`, which
+does take an `EmulatorConfig`, so we could specify a different
 distribution.
 
 ``` {.haskell}
@@ -1504,7 +1435,7 @@ runEmulatorTraceIO' tcfg cfg trace
 = runPrintEffect (outputHandle tcfg) $ runEmulatorTraceEff tcfg cfg trace
 ```
 
-It also takes a *TraceConfig*, which has two fields.
+It also takes a `TraceConfig`, which has two fields.
 
 ``` {.haskell}
 data TraceConfig = TraceConfig
@@ -1515,13 +1446,13 @@ data TraceConfig = TraceConfig
 }
 ```
 
-The first field, *showEvent* is a function that specifies which
-*EmulatorEvent*s are displayed and how they are displayed. It takes an
-*EmulatorEvent* as an argument and can return *Nothing* it the event
-should not be displayed, or a *Just* with a *String* showing how the
+The first field, `showEvent` is a function that specifies which
+`EmulatorEvent`s are displayed and how they are displayed. It takes an
+`EmulatorEvent` as an argument and can return `Nothing` it the event
+should not be displayed, or a `Just` with a `String` showing how the
 event will be displayed.
 
-Here is the default *TraceConfig* used by *runEmulatorTraceIO*. We can
+Here is the default `TraceConfig` used by `runEmulatorTraceIO`. We can
 see that most events are ignored and that we only get output for some of
 the events.
 
@@ -1546,13 +1477,13 @@ WalletEvent _ _                                                      -> Nothing
 ev                                                                   -> Just . renderString . layoutPretty defaultLayoutOptions . pretty $ ev
 ```
 
-The second field is a handle which defaults to *stdout*, but we could
+The second field is a handle which defaults to `stdout`, but we could
 also specify a file here.
 
-Now let\'s look at a more interesting trace, using the *Vesting*
+Now let\'s look at a more interesting trace, using the `Vesting`
 contract from the last lecture.
 
-First, we define a *Trace*.
+First, we define a `Trace`.
 
 ``` {.haskell}
 myTrace :: EmulatorTrace ()
@@ -1570,20 +1501,20 @@ void $ waitNSlots 1
 ```
 
 The first thing we have to do is to activate the wallets using the
-monadic function *activateContractWallet*. We bind the result of this
-function to *h1*, and then bind the result of a second call (for Wallet
-2) to *h2*. Those two values - *h1* and *h2* are handles to their
+monadic function `activateContractWallet`. We bind the result of this
+function to `h1`, and then bind the result of a second call (for Wallet
+2) to `h2`. Those two values - `h1` and `h2` are handles to their
 respective wallets.
 
-Next, we use *callEndpoint* to simulate Wallet 1 calling the *give*
+Next, we use `callEndpoint` to simulate Wallet 1 calling the `give`
 endpoint, with the shown parameters. We then wait for 20 slots. The
-function *waitUntilSlot* actually returns a value representing the slot
+function `waitUntilSlot` actually returns a value representing the slot
 that was reached, but, as we are not interested in that value here, we
-use *void* to ignore it. We then simulate the call to the *grab*
+use `void` to ignore it. We then simulate the call to the `grab`
 endpoint by Wallet 2.
 
-Now, we can write a function to call *runEmulatorTraceIO* with out
-*Trace*.
+Now, we can write a function to call `runEmulatorTraceIO` with out
+`Trace`.
 
 ``` {.haskell}
 test :: IO ()
@@ -1658,12 +1589,12 @@ Wallet 10:
 ```
 
 This output is very similar to the output we see in the playground. We
-can see the Genesis transaction as well as both the *give* and *grab*
-transactions from the *Trace*. We can also see some log output from the
-contract itself, prefixed with *CONTRACT LOG*.
+can see the Genesis transaction as well as both the `give` and `grab`
+transactions from the `Trace`. We can also see some log output from the
+contract itself, prefixed with `CONTRACT LOG`.
 
-We can also log from inside the *Trace* monad. We could, for example,
-lof the result of the final *waitNSlots* call:
+We can also log from inside the `Trace` monad. We could, for example,
+lof the result of the final `waitNSlots` call:
 
 ``` {.haskell}
 myTrace :: EmulatorTrace ()
@@ -1697,13 +1628,13 @@ newtype Contract w s e a = Contract { unContract :: Eff (ContractEffs w s e) a }
       deriving newtype (Functor, Applicative, Monad)
 ```
 
-The *a* is the same as in every Monad - it denotes the result type of
+The `a` is the same as in every Monad - it denotes the result type of
 the computation.
 
 We will go into the other three in more detail later but just briefly:
 
 -   w is like our Writer monad example, it allows us to write log
-    messages of type *w*.
+    messages of type `w`.
 -   s describes the blockchain capabilities, e.g. waiting for a slot,
     submitting transactions, getting the wallet\'s public key. It can
     also contain specific endpoints.
@@ -1716,24 +1647,24 @@ myContract1 :: Contract () BlockchainActions Text ()
 myContract1 = Contract.logInfo @String "Hello from the contract!"
 ```
 
-Here, we pass a *Contract* constructed with *Unit* as the *w* type and
-*BlockchainActions* as the second argument, *s*. This gives us access to
+Here, we pass a `Contract` constructed with `Unit` as the `w` type and
+`BlockchainActions` as the second argument, `s`. This gives us access to
 all the blockchain actions - the only thing we can\'t do is to call
 specific endpoints.
 
-For *e* - the error message type, we use *Text*. *Text* is a Haskell
-type which is like *String*, but it is much more efficient.
+For `e` - the error message type, we use `Text`. `Text` is a Haskell
+type which is like `String`, but it is much more efficient.
 
-We don\'t want a specific result, so we use *Unit* for the type *a*.
+We don\'t want a specific result, so we use `Unit` for the type `a`.
 
-For the function body, we write a log message. We use *\@String*
-because, we have imported the type *Data.Text* and we have used the
-*OverloadedStrings* GHC compiler option, so the compiler needs to know
-what type we are referencing - a *Text* or a *String*. We can use
-*\@String* if we also use the compiler option *TypeApplications*.
+For the function body, we write a log message. We use `\@String`
+because, we have imported the type `Data.Text` and we have used the
+`OverloadedStrings` GHC compiler option, so the compiler needs to know
+what type we are referencing - a `Text` or a `String`. We can use
+`\@String` if we also use the compiler option `TypeApplications`.
 
-Let\'s now define a *Trace* that starts the contract in the wallet, and
-a *test* function to run it.
+Let\'s now define a `Trace` that starts the contract in the wallet, and
+a `test` function to run it.
 
 ``` {.haskell}
 myTrace1 :: EmulatorTrace ()
@@ -1787,7 +1718,7 @@ void $ Contract.throwError "BOOM!"
 Contract.logInfo @String "Hello from the contract!"
 ```
 
-Recall that we chose the type *Text* as the error message.
+Recall that we chose the type `Text` as the error message.
 
 ``` {.}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test1
@@ -1824,7 +1755,7 @@ Now, we don\'t get the log message, but we do get told that the contract
 stopped with an error and we see our exception message.
 
 Another thing you can do is to handle exceptions. We will use the
-*handleError* function from module *Plutus.Contract.Types*.
+`handleError` function from module `Plutus.Contract.Types`.
 
 ``` {.haskell}
 handleError ::
@@ -1836,12 +1767,12 @@ handleError f (Contract c) = Contract c' where
       c' = E.handleError @e (raiseUnderN @'[E.Error e'] c) (fmap unContract f)
 ```
 
-The *handleError* function takes an error handler and a *Contract*
-instance. The error handler takes an argument of type *e* from our
-contract, and returns a new *Contract* with the same type parameters as
-the first, but we can change the type of the *e* argument - the error
-type, which is expressed in the return *Contract* argument list as
-*e\'*.
+The `handleError` function takes an error handler and a `Contract`
+instance. The error handler takes an argument of type `e` from our
+contract, and returns a new `Contract` with the same type parameters as
+the first, but we can change the type of the `e` argument - the error
+type, which is expressed in the return `Contract` argument list as
+`e\'`.
 
 ``` {.haskell}
 myContract2 :: Contract () BlockchainActions Void ()
@@ -1856,7 +1787,7 @@ test2 :: IO ()
 test2 = runEmulatorTraceIO myTrace2
 ```
 
-We use the type *Void* as the error type. *Void* is a type that can hold
+We use the type `Void` as the error type. `Void` is a type that can hold
 no value, so, by using this type we are saying that there cannot be any
 errors for this contract.
 
@@ -1865,8 +1796,8 @@ errors for this contract.
 Note
 :::
 
-The function *unpack* is defined in the *Data.Text* module. It converts
-a value of type *Text* to a value of type *String*.
+The function `unpack` is defined in the `Data.Text` module. It converts
+a value of type `Text` to a value of type `String`.
 :::
 
 ``` {.}
@@ -1894,18 +1825,18 @@ thrown by your contract code. There are operations, such as submitting a
 transaction where there are insufficient inputs to make a payment for an
 output, where Plutus will throw an exception.
 
-Next, let\'s look at the *s* parameter, the second parameter to
-*Contract*, that determines the available blockchain actions.
+Next, let\'s look at the `s` parameter, the second parameter to
+`Contract`, that determines the available blockchain actions.
 
-In the first two examples we just used the *BlockChainActions* type
+In the first two examples we just used the `BlockChainActions` type
 which has all the standard functionality but without support for
 specific endpoints. If we want support for specific endpoints, we must
 use a different type.
 
 The way that is usually done is by using a type synonym. The following
-example will create a type synonym *MySchema* that has all the
-capabilities of *BlockChainActions* but with the addition of being able
-to call endpoint *foo* with an argument of type *Int*.
+example will create a type synonym `MySchema` that has all the
+capabilities of `BlockChainActions` but with the addition of being able
+to call endpoint `foo` with an argument of type `Int`.
 
 ``` {.haskell}
 type MySchema = BlockchainActions .\/ Endpoint "foo" Int
@@ -1916,12 +1847,12 @@ type MySchema = BlockchainActions .\/ Endpoint "foo" Int
 Note
 :::
 
-The operator *.\\/* is a type operator - it operates on types, not
-values. In order to use this we need to use the *TypeOperators* and
-*DataKinds* compiler options.
+The operator `.\\/` is a type operator - it operates on types, not
+values. In order to use this we need to use the `TypeOperators` and
+`DataKinds` compiler options.
 :::
 
-Now, we can use the *MySchema* type to define our contract.
+Now, we can use the `MySchema` type to define our contract.
 
 ``` {.haskell}
 myContract3 :: Contract () MySchema Text ()
@@ -1930,13 +1861,13 @@ myContract3 = do
       Contract.logInfo n
 ```
 
-This contract will block until the endpoint *foo* is called with, in our
-case, an *Int*. Then the value of the *Int* parameter will be bound to
-*n*. Because of this, it is no longer enough for us to just activate the
+This contract will block until the endpoint `foo` is called with, in our
+case, an `Int`. Then the value of the `Int` parameter will be bound to
+`n`. Because of this, it is no longer enough for us to just activate the
 contract to test it. Now, we must invoke the endpoint as well.
 
 In order to do this, we now need to handle from
-*activateContractWallet*, which we can then use to call the endpoint.
+`activateContractWallet`, which we can then use to call the endpoint.
 
 ``` {.haskell}
 myTrace3 :: EmulatorTrace ()
@@ -1964,13 +1895,13 @@ Wallet 10:
 {, ""}: 100000000
 ```
 
-Finally, let\'s look at the first type parameter, the writer. The *w*
+Finally, let\'s look at the first type parameter, the writer. The `w`
 cannot be an arbitrary type, it must be an instance of the type class
-*Monoid*.
+`Monoid`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> :i Monoid
-type Monoid :: * -> Constraint
+type Monoid :: ` -> Constraint
 class Semigroup a => Monoid a where
 mempty :: a
 mappend :: a -> a -> a
@@ -1996,14 +1927,14 @@ instance Monoid () -- Defined in ‘GHC.Base’
 ```
 
 This is a very important and very common type class in Haskell. It
-defines *mempty* and *mappend*.
+defines `mempty` and `mappend`.
 
-The function *mempty* is like the neutral element, and *mappend*
+The function `mempty` is like the neutral element, and `mappend`
 combines two elements of this type to create a new element of the same
 type.
 
-The prime example of a *Monoid* is *List*, when *mempty* is the empty
-list *\[\]*, and *mappend* is concatenation *++*.
+The prime example of a `Monoid` is `List`, when `mempty` is the empty
+list `\[\]`, and `mappend` is concatenation `++`.
 
 For example:
 
@@ -2014,7 +1945,7 @@ Prelude> mappend [1, 2, 3 :: Int] [4, 5, 6]
 [1,2,3,4,5,6]
 ```
 
-The are many, many other examples of the *Monoid* type, and we will see
+The are many, many other examples of the `Monoid` type, and we will see
 other instances in this course.
 
 But for now, let\'s stick with lists and write our last example.
@@ -2029,11 +1960,11 @@ myContract4 = do
     void $ Contract.waitNSlots 10
 ```
 
-Rather than using *Unit* as our *w* type, we are using *\[Int\]*. This
-allows us to use the *tell* function as shown.
+Rather than using `Unit` as our `w` type, we are using `\[Int\]`. This
+allows us to use the `tell` function as shown.
 
 This now gives us access to those messages during the trace, using the
-*observableState* function.
+`observableState` function.
 
 ``` {.haskell}
 myTrace4 :: EmulatorTrace ()
@@ -2056,8 +1987,8 @@ test4 :: IO ()
 test4 = runEmulatorTraceIO myTrace4
 ```
 
-If we run this in the REPL, we can see the *USER LOG* messages created
-using the *tell* function.
+If we run this in the REPL, we can see the `USER LOG` messages created
+using the `tell` function.
 
 ``` {.}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test4
@@ -2098,5 +2029,5 @@ Wallet 10:
 
 Using this mechanism, it is possible to pass information from the
 contract running in the wallet to the outside world. Using endpoints we
-can pass information into a contract. And using the *tell* mechanism we
+can pass information into a contract. And using the `tell` mechanism we
 can get information out of the wallet.
