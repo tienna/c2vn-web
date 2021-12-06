@@ -1,19 +1,16 @@
 Week 04 - Monads
 ================
 
-::: {.note}
-::: {.title}
-Note
-:::
 
 Đây là phiên bản viết của Bài [giảng số
 4](https://youtu.be/HLJOcKlEucI).
 
-Trong bài giảng này, chúng ta tìm hiểu về Đơn nguyên. Đặc biệt là các
+Trong bài giảng này, chúng ta tìm hiểu về Đơn nguyên (monads). Đặc biệt là các
 monads EmulatorTrace và Contract..
 :::
 
-Tổng quat \-\-\-\-\-\-\--
+Tổng quat 
+---------
 
 Chúng tôi đã dành hai bài giảng cuối cùng để nói về phần on-chain của
 Plutus - logic xác thực được biên dịch thành tập lệnh Plutus và thực sự
