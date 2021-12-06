@@ -67,7 +67,7 @@ const FeatureList = [
   },
   {
     title: 'Vận hành một  Stake Pool',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('../../static/img/card-operate-a-stake-pool.svg').default,
     description: (
       <>
         Tìm hiểu những gì cần thiết để trở thành nhà điều hành nhóm cổ phần Cardano (Stake Pool) từ góc độ kỹ thuật và tiếp thị.

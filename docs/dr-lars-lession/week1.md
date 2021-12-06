@@ -1,11 +1,6 @@
 Week 01 - English Auction
 =========================
 
-::: {.note}
-::: {.title}
-Note
-:::
-
 Đây là phiên bản bằng văn bản của [Lecture \#1 -
 Dr.Lars](https://youtu.be/CJD8ctJqDw0).
 

@@ -125,6 +125,13 @@ const sidebars = {
       // },
       // "operate-a-stake-pool/marketing-stake-pool",
     ],
+    "Khoá đào tạo Plutus của Dr. Lars": [
+        "dr-lars-lession/overview",
+        "dr-lars-lession/week1",
+        "dr-lars-lession/week2",
+        "dr-lars-lession/week3",
+        "dr-lars-lession/week4",
+    ]
     // "Contribute to the Developer Portal": [
     //   "portal-contributors",
     //   "portal-contribute",

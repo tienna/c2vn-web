@@ -1,11 +1,6 @@
 Week 02 - Validation
 ====================
 
-::: {.note}
-::: {.title}
-Note
-:::
-
 Đây là tài liệu [Bài giảng \#2, Dr. Lars](https://youtu.be/7nDGZkUIeUQ).
 
 Nó bao gồm mức thấp và mức cao tập lệnh xác thực on-chain.
@@ -93,7 +88,7 @@ phần dữ liệu tùy ý bổ sung được gọi là Datum, bạn có thể c
 phần nhỏ của trạng thái nằm trên UTxO. Cuối cùng, chúng ta có bối cảnh.
 Có nhiều lựa chọn khác nhau về bối cảnh này có thể là gì. Nó có thể rất
 hạn chế, chỉ bao gồm Chúa cứu thế (như trong Bitcoin) hoặc rất toàn cầu,
-bao gồm toàn bộ trạng thái của blockchain (như trong Ethereum). Trong
+bao gồm toàn bộ trạng thái của blockchain (như trong Etheum). Trong
 Cardano, đó là giao dịch đang được xác thực, bao gồm tất cả các đầu vào
 và đầu ra của nó.
 
@@ -472,15 +467,21 @@ scrAddress = ScriptAddress valHash
 Bây giờ chúng ta có một địa chỉ tập lệnh được biểu diễn dưới dạng
 `scrAddress`.
 
-Chúng ta có thể xem xét hai kết quả này trong REPL .. code:: haskell
+Chúng ta có thể xem xét hai kết quả này trong REPL
 
-> Prelude PlutusTx Ledger.Scripts Week02.Gift\> valHash
-> c3168d465a84b7f50c2eeb51ccacd53a305bd7883787adb54236d8d17535ca14
->
-> Prelude PlutusTx Ledger.Scripts Week02.Gift\> scrAddress Address
-> {addressCredential = ScriptCredential
-> c3168d465a84b7f50c2eeb51ccacd53a305bd7883787adb54236d8d17535ca14,
-> addressStakingCredential = Nothing}
+``` haskell
+
+Prelude PlutusTx Ledger.Scripts Week02.Gift
+
+valHash
+c3168d465a84b7f50c2eeb51ccacd53a305bd7883787adb54236d8d17535ca14
+Prelude PlutusTx Ledger.Scripts Week02.Gift
+
+scrAddress Address
+{addressCredential = ScriptCredential
+c3168d465a84b7f50c2eeb51ccacd53a305bd7883787adb54236d8d17535ca14,
+addressStakingCredential = Nothing}
+```
 
 Ngoại trừ hàm logic `mkValidator` (trong trường hợp của chúng ta là một
 dòng), phần còn lại của mã chúng ta đã viết cho đến nay là bản soạn sẵn
@@ -512,7 +513,7 @@ thành `Datum`. Trong trường hợp này `Data` được sử dụng bằng c�
 dụng `Constr` hàm tạo lấy 0 và một danh sách trống.
 
 Cuối cùng số tiền cần gửi đến địa chỉ được chỉ định bằng cách sử dụng
-chức năng trợ giúp `Ada.lovelaceValueOf`.
+chức năng trợ giúp `ADA.lovelaceValueOf`.
 
 Giao dịch sau đó được gửi đi, tập lệnh chờ nó được xác nhận và sau đó in
 thông báo nhật ký.
@@ -520,7 +521,7 @@ thông báo nhật ký.
 ``` {.haskell}
 give :: AsContractError e => Integer -> Contract w s e ()
 give amount = do
-   let tx = mustPayToOtherScript valHash (Datum $ Constr 0 []) $ Ada.lovelaceValueOf amount
+   let tx = mustPayToOtherScript valHash (Datum $ Constr 0 []) $ ADA.lovelaceValueOf amount
    ledgerTx <- submitTx tx
    void $ awaitTxConfirmed $ txId ledgerTx
    logInfo @String $ printf "made a gift of %d lovelace" amount
@@ -601,7 +602,7 @@ playground and nhấn nút `Simulate`.
 
 ![](img/playground_week2_1.png)
 
-Giờ hãy thêm một chiếc ví thứ ba và cung cấp cho tất cả các ví 10 Ada
+Giờ hãy thêm một chiếc ví thứ ba và cung cấp cho tất cả các ví 10 ADA
 (10 triệu lovelace).
 
 ![](img/iteration2/pic__00024.png)
@@ -611,7 +612,7 @@ và ví 3 lấy tất cả.
 
 Bạn sẽ thấy rằng sân chơi đã hiển thị các nút giao diện người dùng cho
 hai endpoints `give` và `grab`. Sử dung `endpoint give` để tạo ví 1 tặng
-4 Ada và để tạo ví 2 tặng 6 Ada. Sau đó, thêm hành động chờ để đợi 1
+4 ADA và để tạo ví 2 tặng 6 ADA. Sau đó, thêm hành động chờ để đợi 1
 khối, và sau đó sử dụng vào endpoints `grab` để tạo ví 3 lấy tiền. Sau
 đó, thêm một hành động chờ khác để đợi 1 khối.
 
@@ -633,19 +634,21 @@ trọng cần lưu ý là cả hai giao dịch `give` đều xảy ra tại cùn
 điểm.
 
 Chúng tôi thấy ba kết quả đầu ra. Đầu ra đầu tiên là phí 10 lovelace
-được trả bằng ví 2. Đầu ra thứ hai là 6 Ada được gửi đến địa chỉ tập
-lệnh và đầu ra thứ ba là trả về thay đổi cho ví 2, là 4 Ada trừ đi phí.
+được trả bằng ví 2. Đầu ra thứ hai là 6 ADA được gửi đến địa chỉ tập
+lệnh và đầu ra thứ ba là trả về thay đổi cho ví 2, là 4 ADA trừ đi phí.
 
 ![](img/iteration2/pic__00027.png)
 
 Và thứ hai, Tx 1, là từ ví 1. Một lần nữa, với các UTxO đầu ra tương tự.
 
-![Bây giờ chúng ta có hai UTxO ở địa chỉ tập
-lệnh.](img/iteration2/pic__00028.png)
+Bây giờ chúng ta có hai UTxO ở địa chỉ tập
+lệnh.
+
+![](img/iteration2/pic__00028.png)
 
 Sau đó, chúng tôi có `grab` tại vị trí 2 được kích hoạt bởi ví 3. Chúng
 tôi thấy hai UTxO từ tập lệnh là đầu vào và sau đó là hai đầu ra. Một
-đầu ra là phí và đầu ra còn lại, được trả cho ví 3, là 10 Ada trừ đi các
+đầu ra là phí và đầu ra còn lại, được trả cho ví 3, là 10 ADA trừ đi các
 khoản phí đó. Bạn sẽ nhận thấy rằng phí hiện cao hơn chúng ta đã thấy
 trước đây và điều này là do một tập lệnh hiện đã được thực thi, điều này
 làm cho nó đắt hơn. Tuy nhiên, các khoản phí ở đây vẫn chưa được hiệu
@@ -878,7 +881,7 @@ bởi vì các điểm cuối (Endpoint) đã thay đổi và kịch bản cũ k
 lệ.
 
 Hãy thiết lập một kịch bản chỉ sử dụng hai ví. Ví một sẽ cung cấp cho 3
-Ada oo hợp đồng và ví 2 sẽ cố gắng lấy chúng, nhưng lần này, ví 2 sẽ cần
+ADA oo hợp đồng và ví 2 sẽ cố gắng lấy chúng, nhưng lần này, ví 2 sẽ cần
 chuyển vào một giá trị sẽ được sử dụng để tạo người đổi.
 
 Đối với lần thử đầu tiên, chúng tôi sẽ thêm giá trị người đổi sai, trong
@@ -887,7 +890,7 @@ trường hợp này là 100.
 ![](img/iteration2/pic__00033.png)
 
 Nếu chúng tôi nhấp vào `Evaluate`, chúng ta thấy rằng chúng ta chỉ có
-hai giao dịch và chúng ta thấy rằng Ada vẫn còn trong tập lệnh, điều này
+hai giao dịch và chúng ta thấy rằng ADA vẫn còn trong tập lệnh, điều này
 cho thấy rằng ví 2 không lấy được nó.
 
 ![](img/iteration2/pic__00034.png)
@@ -1107,7 +1110,7 @@ Có một thay đổi nhỏ đối với giveđiểm cuối. Mặc dù chúng t�
 xét chi tiết phần này của mã, nhưng có thể thực hiện các thay đổi sau.
 
 ``` {.haskell}
-let tx = mustPayToTheScript () $ Ada.lovelaceValueOf amount
+let tx = mustPayToTheScript () $ ADA.lovelaceValueOf amount
 ledgerTx <- submitTxConstraints inst tx
 ```
 
