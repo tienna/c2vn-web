@@ -55,9 +55,9 @@ Nếu bạn có kinh nghiệm với các nền tảng hợp đồng thông minh 
 - CCardano được xây dựng với sự nghiêm ngặt của các phương pháp phát triển chính thức đảm bảo cao. Cơ chế đồng thuận [Ouroboros](https://cardano.org/ouroboros/) wđã được đưa ra với một số bài báo được đánh giá ngang hàng được trình bày trong các hội nghị cấp cao nhất và các ấn phẩm về an ninh mạng và mật mã. Nếu bạn xây dựng trên Cardano, bạn xây dựng trên nền tảng này.
 
 ## Những gì bạn có thể xây dựng trên Cardano ngay hôm nay
-- You can [integrate Cardano](../integrate-cardano) into existing websites and services.
-- You can issue [native tokens](../native-tokens/) and [NFTs](../native-tokens/minting-nfts).
-- You can add [metadata to transactions](../transaction-metadata/) to give transactions a story, a background or even an identity. 
-- You can prove the existence of a file, text or any other data at a specific point in time with [transaction metadata](../transaction-metadata/). You can even use [transaction metadata](../transaction-metadata/) to validate and verify external physical products and genuine articles.
-- You can [setup, manage and maintain a stake pool](../operate-a-stake-pool/) on Cardano.
-- You can [create smart contracts](../smart-contracts/).
+- Bạn có thể [tích hợp Cardano](../integrate-cardano) vào website và dịch vụ hiện có.
+- Bạn có thể phát hành [native tokens](../native-tokens/) và [NFTs](../native-tokens/minting-nfts).
+- Bạn có thể thêm [metadata của giao dịch](../transaction-metadata/) để ucung cấp thêm thông tin cho giao dịch, hoặc danh tính người gửi, nhận. 
+- Bạn có thể chứng minh sự tồn tại của tệp, văn bản hoặc bất kỳ dữ liệu nào khác tại một thời điểm cụ thể bằng [transaction metadata](../transaction-metadata/). và bạn có thể dụng [metadata của giao dịch](../transaction-metadata/)để xác minh sản phẩm vật lý và các sản phẩm chính hangx.
+- Bạn có thể [thiết lập, quản lý và duy trì một nhóm cổ phần](../operate-a-stake-pool/) trên Cardano.
+- Bạn có thể [tạo hợp đồng thông minh](../smart-contracts/).
