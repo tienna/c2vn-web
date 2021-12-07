@@ -1,52 +1,59 @@
 ---
-id: marlowe
-title: Marlowe
-sidebar_label: Marlowe
-description: Marlowe
-image: ./img/og-developer-portal.png
---- 
+id: Marlowe
+title: Ngôn ngữ Marlowe
+sidebar_label: Ngôn ngữ Marlowe
+description: Ngôn ngữ Marlowe
+image: "./img/og-developer-portal.png ."
+---
 
 ## Bắt đầu với Haskell
-Marlowe là ngôn ngữ "dành riêng cho miền -(DSL)" cho phép người dùng xây dựng các ứng dụng blockchain phù hợp với các hợp đồng tài chính..
 
-Hãy xem hướng dẫn [Marlowe Tutorial](https://alpha.marlowe.iohkdev.io/doc/marlowe/tutorials/index.html) nếu bạn muốn học Marlowe từ đầu hoặc học thông qua sân chơi Marlowe  [Marlowe Playground](https://alpha.marlowe.iohkdev.io/): 
+Marlowe là ngôn ngữ "dành riêng cho miền -(DSL)" cho phép người dùng xây dựng các ứng dụng blockchain phù hợp với các hợp đồng tài chính.
 
-[![Marlowe Playground](../../static/img/get-started/smart-contracts/marlowe-playground.jpg)](https://alpha.marlowe.iohkdev.io/)
+Hãy xem [ Hướng dẫn Marlowe {/ a0} nếu bạn muốn tìm hiểu Marlowe ngay từ đầu hoặc đi thẳng vào ](https://alpha.marlowe.iohkdev.io/doc/marlowe/tutorials/index.html)[ Sân chơi Marlowe {/ a1}:](https://alpha.marlowe.iohkdev.io/)
 
-Trao đổi thêm về Marlowe tại [Marlowe on the Cardano Forum](https://forum.cardano.org/c/developers/cardano-marlowe/149) or if you prefer Telegram there is a dedicated [Marlowe Telegram Group](https://t.me/IOHK_Marlowe).
+[](https://alpha.marlowe.iohkdev.io/)
 
-## The Marlowe platform
-With the Marlowe DSL you gain huge efficiencies because you can get much better security, much better certainty, much better [guarantees of termination](https://en.wikipedia.org/wiki/Halting_problem), and correctness of behavior compared to a [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) language.
+Trao đổi với về Marlowe [Plutus trên Diễn đàn Cardano](https://forum.cardano.org/c/developers/cardano-marlowe/149) hoặc nếu bạn thích Discord, hãy đến với [Discord kỹ thuật IOG](https://t.me/IOHK_Marlowe) .
 
-The design guarantees the following:
-- Contracts are finite. No recursion or loops.
-- Contracts will terminate. Timeout on all actions.
-- Contracts have a defined lifetime. 
-- No assets retained on close. 
-- Conservation of value.
+## Nền tảng ngôn ngữ Marlowe
 
-## Marlowe Playground 
-The Marlowe Playground is an easy-to-use, visual, and modular plug-and-play smart contract builder and simulator. Watch this 4 minute long tour of the Marlowe Playground: build, simulate and analyse Marlowe contracts.
+Với Marlowe DSL, bạn đạt được hiệu quả rất lớn vì bạn có thể có được bảo mật tốt hơn, độ chắc chắn tốt hơn nhiều, [ đảm bảo chấm dứt {/ a0} tốt hơn nhiều và tính đúng đắn của hành vi so với ](https://en.wikipedia.org/wiki/Halting_problem) [ Turing-complete {/ a1 } ngôn ngữ.](https://en.wikipedia.org/wiki/Turing_completeness)
+
+Thiết kế đảm bảo các yếu tố sau:
+
+- Hợp đồng là hữu hạn,  Không có đệ quy hoặc vòng lặp.
+- Hợp đồng sẽ chấm dứt. Hết thời gian cho tất cả các hành động
+- Hợp đồng phải có thời hạn xác định.
+- Không có tài sản nào được giữ lại khi đóng.
+- Bảo tồn giá trị.
+
+## Sân chơi Marlowe.
+
+Marlowe Playground là một trình mô phỏng và xây dựng hợp đồng thông minh plug-and-play dễ sử dụng, trực quan và mô-đun. Xem chuyến tham quan Sân chơi Marlowe dài 4 phút này: xây dựng, mô phỏng và phân tích các hợp đồng của Marlowe.
+
 <iframe width="100%" height="325" src="https://www.youtube.com/embed/axP-jYQ_6lo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
-## Presentations
-- [Blockchain Essentials](https://www.youtube.com/watch?v=yi8-xaoTQT4)
-- [Domain-specific languages](https://www.youtube.com/watch?v=T4W19TdJHMw)
-- [Financial contracts](https://www.youtube.com/watch?v=1HRaRVyj2BI)
-- [Onto blockchain](https://www.youtube.com/watch?v=dhcmKmAZslc)
-- [Escrow onto blockchain](https://www.youtube.com/watch?v=ADMCMDQK7Yo)
-- [Marlowe in full](https://www.youtube.com/watch?v=Ro8iBh7V7oc)
+## Các bài trình bày.
 
-## Further Tutorials
-- [A first contract](https://www.youtube.com/watch?v=es4qpcHxr0I)
-- [Elaborating the contract](https://www.youtube.com/watch?v=DS_ebkGwmXw)
-- [Choices and observations](https://www.youtube.com/watch?v=25fnB7C8mPE)
-- [Writing Marlowe contracts in JavaScript](https://www.youtube.com/watch?v=6tkZ3hlYZ7k)
-- [Using Haskell in the playground](https://www.youtube.com/watch?v=S0crHs-wTAc)
-- [Using JavaScript in the playground](https://www.youtube.com/watch?v=Oeuyy5AAQ3o)
-- [Building Marlowe directly in the playground](https://www.youtube.com/watch?v=9lHkCq0H4pw)
-- [Building contracts in Blockly](https://www.youtube.com/watch?v=9SKB5MfA_L8)
-- [Simulation in the playground](https://www.youtube.com/watch?v=3aFoN2wg9oc)
-- [Oracles in the playground](https://www.youtube.com/watch?v=LsTQEPMxyIU)
-- [Analysis in the playground](https://www.youtube.com/watch?v=VmoUAifui38)
-- [ACTUS labs](https://www.youtube.com/watch?v=6PPWFZEfkks)
+- [Căn bản về blockchain ](https://www.youtube.com/watch?v=yi8-xaoTQT4)
+- [Ngôn ngữ miền riêng biệt](https://www.youtube.com/watch?v=T4W19TdJHMw)
+- [Hợp đồng tài chính ](https://www.youtube.com/watch?v=1HRaRVyj2BI)
+- [Lên Blockchain](https://www.youtube.com/watch?v=dhcmKmAZslc)
+- [Ký quỹ vào blockchain ](https://www.youtube.com/watch?v=ADMCMDQK7Yo)
+- [Bản Marlowe đầy đủ](https://www.youtube.com/watch?v=Ro8iBh7V7oc)
+
+## Các hướng dẫn làm rõ.
+
+- [Hợp đồng đầu tiên](https://www.youtube.com/watch?v=es4qpcHxr0I)
+- [Xây dựng hợp đồng ](https://www.youtube.com/watch?v=DS_ebkGwmXw)
+- [Lựa chọn và quan sát ](https://www.youtube.com/watch?v=25fnB7C8mPE)
+- [Viết hợp đồng Marlowe bằng JavaScript ](https://www.youtube.com/watch?v=6tkZ3hlYZ7k)
+- Sử dụng JavaScript trong sân chơi
+- Sử dụng JavaScript trong sân chơi lập trình
+- [Xây dựng ứng dụng trên Marlowe trực tiếp trong sân chơi](https://www.youtube.com/watch?v=9lHkCq0H4pw)
+- [Xây dựng hợp đồng trong Blockly ](https://www.youtube.com/watch?v=9SKB5MfA_L8)
+- [Mô phỏng trong sân chơi ](https://www.youtube.com/watch?v=3aFoN2wg9oc)
+- [Oracles trong sân chơi ](https://www.youtube.com/watch?v=LsTQEPMxyIU)
+- [Phaan tích trong sân chơi](https://www.youtube.com/watch?v=VmoUAifui38)
+- [Phòng thực hành ACTUS  ](https://www.youtube.com/watch?v=6PPWFZEfkks)
