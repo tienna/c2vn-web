@@ -1,9 +1,8 @@
 ---
-id: Ngôn ngữ Plutus
+id: plutus
 title: Ngôn ngữ Plutus
 sidebar_label: Ngôn ngữ Plutus
 description: Ngôn ngữ Plutus
-image: "./img/og-developer-portal.png ."
 ---
 
 ## Bắt đầu với Haskell

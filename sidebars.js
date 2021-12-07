@@ -63,15 +63,15 @@ const sidebars = {
       "smart-contracts/plutus",
     ],
     "Tích hợp với Cardano": [
-      "integrate-cardano/overview",
-      "integrate-cardano/creating-wallet-faucet",
-      "integrate-cardano/multi-witness-transactions-cli",
-      "integrate-cardano/listening-for-payments-cli",
-      "integrate-cardano/listening-for-payments-wallet",
-      "integrate-cardano/testnet-faucet",
+      "integrate-cardano/note",
+      // "integrate-cardano/creating-wallet-faucet",
+      // "integrate-cardano/multi-witness-transactions-cli",
+      // "integrate-cardano/listening-for-payments-cli",
+      // "integrate-cardano/listening-for-payments-wallet",
+      // "integrate-cardano/testnet-faucet",
     ],
     "Vận hành một Stake Pool": [
-      "operate-a-stake-pool/overview",
+      "operate-a-stake-pool/note",
       // {
       //   type: "category",
       //   label: "Stake Pool Course",

@@ -1,9 +1,8 @@
 ---
-id: Marlowe
+id: marlowe
 title: Ngôn ngữ Marlowe
 sidebar_label: Ngôn ngữ Marlowe
 description: Ngôn ngữ Marlowe
-image: "./img/og-developer-portal.png ."
 ---
 
 ## Bắt đầu với Haskell

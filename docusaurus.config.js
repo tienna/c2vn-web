@@ -10,7 +10,7 @@ const config = {
     tagline: 'Bứt phá giới hạn',
     url: 'https://cardano2vn.io',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'ignore',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/2.png',
     organizationName: 'cardanovn', // Usually your GitHub org/user name.
@@ -68,21 +68,21 @@ const config = {
                     items: [{
                         label: 'Bắt đầu',
                         to: '/docs/getting-started/overview',
-                    }, ],
+                    },],
                 },
                 {
                     title: 'Cộng đồng',
                     items: [{
                             label: 'Telegram',
-                            href: 'https://telegram.org/',
+                            href: 'https://t.me/cardano2vn',
                         },
                         {
-                            label: 'Discord',
-                            href: 'https://discordapp.com/',
+                            label: 'Youtube',
+                            href: 'https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA',
                         },
                         {
-                            label: 'Twitter',
-                            href: 'https://twitter.com/',
+                            label: 'Github',
+                            href: 'https://github.com/cardano2vn',
                         },
                     ],
                 },
@@ -91,10 +91,6 @@ const config = {
                     items: [{
                             label: 'Blog',
                             to: '/blog',
-                        },
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/',
                         },
                         { 
                             label: "About Us",

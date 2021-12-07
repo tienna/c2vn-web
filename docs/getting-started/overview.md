@@ -1,12 +1,12 @@
 ---
 id: overview
-slug: /get-started/
-title: Get Started
+title: Bắt đầu
 sidebar_label: Overview
-description: Get Started
-image: ./img/og-developer-portal.png
+description: Getting Started
 --- 
-![Bắt đầu với Cardano ](../../static/img/card-get-started-title.svg)
+Bắt đầu với Cardano
+
+<!-- ![](../..//static/img/1.png) -->
 
 Xin chào bạn đến với Cardano2vn. Đây là bản dịch của trang https://developers.cardano.org/; Nếu bạn quan tâm đến ví Cardano wallet bạn có thể tham khảo [showcase section](../../showcase).
 

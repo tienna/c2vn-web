@@ -33,7 +33,7 @@ const FeatureList = [
         Khám phá ví Cardano và tìm hiểu cách tích hợp Cardano vào các ứng dụng và trang web
       </>
     ),
-    targetUrl: "docs/integrate-cardano/overview",
+    targetUrl: "docs/integrate-cardano/note",
   },
   {
     title: 'Xây dựng với Siêu dữ liệu giao dịch',
@@ -73,7 +73,7 @@ const FeatureList = [
         Tìm hiểu những gì cần thiết để trở thành nhà điều hành nhóm cổ phần Cardano (Stake Pool) từ góc độ kỹ thuật và tiếp thị.
       </>
     ),
-    targetUrl: "docs/operate-a-stake-pool/overview"
+    targetUrl: "docs/operate-a-stake-pool/note"
   },
   {
     title: 'Trở thành một phần của Quản trị',
