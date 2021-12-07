@@ -6,14 +6,14 @@ description: Marlowe
 image: ./img/og-developer-portal.png
 --- 
 
-## Get started with Marlowe 
-Marlowe is the domain-specific language (DSL) that allows users to build blockchain applications tailored to financial contracts.
+## Bắt đầu với Haskell
+Marlowe là ngôn ngữ "dành riêng cho miền -(DSL)" cho phép người dùng xây dựng các ứng dụng blockchain phù hợp với các hợp đồng tài chính..
 
-Take a look at the [Marlowe Tutorial](https://alpha.marlowe.iohkdev.io/doc/marlowe/tutorials/index.html) if you want to learn Marlowe from the beginning or dive straight into the [Marlowe Playground](https://alpha.marlowe.iohkdev.io/): 
+Hãy xem hướng dẫn [Marlowe Tutorial](https://alpha.marlowe.iohkdev.io/doc/marlowe/tutorials/index.html) nếu bạn muốn học Marlowe từ đầu hoặc học thông qua sân chơi Marlowe  [Marlowe Playground](https://alpha.marlowe.iohkdev.io/): 
 
 [![Marlowe Playground](../../static/img/get-started/smart-contracts/marlowe-playground.jpg)](https://alpha.marlowe.iohkdev.io/)
 
-Talk to others about [Marlowe on the Cardano Forum](https://forum.cardano.org/c/developers/cardano-marlowe/149) or if you prefer Telegram there is a dedicated [Marlowe Telegram Group](https://t.me/IOHK_Marlowe).
+Trao đổi thêm về Marlowe tại [Marlowe on the Cardano Forum](https://forum.cardano.org/c/developers/cardano-marlowe/149) or if you prefer Telegram there is a dedicated [Marlowe Telegram Group](https://t.me/IOHK_Marlowe).
 
 ## The Marlowe platform
 With the Marlowe DSL you gain huge efficiencies because you can get much better security, much better certainty, much better [guarantees of termination](https://en.wikipedia.org/wiki/Halting_problem), and correctness of behavior compared to a [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) language.
