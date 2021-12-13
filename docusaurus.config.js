@@ -12,7 +12,7 @@ const config = {
     baseUrl: '/',
     onBrokenLinks: 'ignore',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/2.png',
+    favicon: 'img/logo/2.png',
     organizationName: 'cardanovn', // Usually your GitHub org/user name.
     projectName: 'cardanovn-portal', // Usually your repo name.
 
@@ -45,7 +45,7 @@ const config = {
             title: 'Cardano2vn',
             logo: {
                 alt: 'Cardano2vn Logo',
-                src: 'img/2.png',
+                src: 'img/logo/2.png',
             },
             items: [{
                     type: 'doc',
@@ -99,7 +99,7 @@ const config = {
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} cardano2vn.io,. Break the blocks`,
+            copyright: `The content of this site is referenced and copied from the <a href="https://developers.cardano.org/" target="_blank" rel="noopener noreferrer">Cardano Developer</a>, ${new Date().getFullYear()}`,
         },
         prism: {
             theme: lightCodeTheme,

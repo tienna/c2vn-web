@@ -131,7 +131,10 @@ const sidebars = {
         "dr-lars-lession/week2",
         "dr-lars-lession/week3",
         "dr-lars-lession/week4",
-    ]
+    ],
+    // "Mang Project Catalyst Townhall đến Việt Nam": [
+    //   "vn-townhall-channel/note",
+    // ],
     // "Contribute to the Developer Portal": [
     //   "portal-contributors",
     //   "portal-contribute",

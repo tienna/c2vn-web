@@ -1,21 +1,22 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './TeamMembers.module.css';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const MemberList = [
   {
     name: 'To Nguyen Duy Tan',
-    title: 'Engineer',
+    title: 'Lead Engineer',
     imageUrl: '../img/team/tantnd.jpg',
     description: (
       <>
-        Lorem ipsum dolor sit.
+        An experienced engineer in Devevelop and Operation
       </>
     ),
     socialLink: (
-        <>
-        linkedin: linkedin.com/in/tantnd
-        </>
+      <a href="https://linkedin.com/in/tantnd" target="_blank">
+        <LinkedInIcon color="primary"></LinkedInIcon>
+      </a>
     ),
   },
   {
@@ -24,29 +25,28 @@ const MemberList = [
     imageUrl: '../img/team/tienna.jpg',
     description: (
       <>
-        Founder of the VILAI stake pool
-        linkedin.com/in/tienna
+        Founder of the VILAI stake pool, former Experts at HPE
       </>
     ),
     socialLink: (
-        <>
-        linkedin: linkedin.com/in/tienna
-        </>
+        <a href="http://linkedin.com/in/tienna" target="_blank">
+          <LinkedInIcon color="primary"></LinkedInIcon>
+        </a>
     ),
   },
   {
     name: 'Nguyen Van Hieu',
-    title: 'Engineer',
+    title: 'MSc. Electronics and Telecommunication',
     imageUrl: '../img/team/hieunv.jpg',
     description: (
       <>
-        Computer Science Experts
+        Founder of HADA stake pool, member of Plutus Pioneer Program, Researcher at VAST.
       </>
     ),
     socialLink: (
-        <>
-        linkedin: linkedin.com/in/
-        </>
+        <a href="http://linkedin.com/in/nguyen-van-hieu-b4410121b">
+          <LinkedInIcon color="primary"></LinkedInIcon>
+        </a>
     ),
   },
 ];
