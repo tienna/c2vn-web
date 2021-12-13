@@ -826,7 +826,7 @@ Prelude Week04.Writer> foo (number 1) (number 2) (number 3)
 Writer 6 ["number: 1","number: 2","number: 3","sum: 6"]
 ```
 
-As before, we can write a bind function:
+Như trước đây, chúng ta có thể viết một hàm ràng buộc:
 
 ``` {.haskell}
 bindWriter :: Writer a -> (a -> Writer b) -> Writer b
@@ -837,12 +837,9 @@ in
    Writer b $ xs ++ ys
 ```
 
-Here, the `bindWriter` function is returning the `Writer b` and
-producing log messages which are a concatenation of the `xs` that we
-pattern matched on input, and the `ys` that we pattern matched when
-calling `f a` in order to produce the `Writer b`.
+Ở đây, `bindWriter` hàm được trả lại `Writer b` và sản xuất thông điệp log đó là một nối của `xs` mà chúng ta mô hình phù hợp trên đầu vào, và `ys` mà chúng ta mô hình phù hợp khi gọi `f a` để sản xuất các `Writer b` .
 
-Now, we can rewrite `foo` using `bindWriter` and make it much nicer.
+Bây giờ, chúng ta có thể viết lại `foo` bằng `bindWriter` và làm cho nó đẹp hơn nhiều.
 
 ``` {.haskell}
 foo' :: Writer Int -> Writer Int -> Writer Int -> Writer Int
@@ -854,37 +851,26 @@ foo' x y z = x `bindWriter` \k ->
                Writer s []
 ```
 
-What we did with `foo` before, we can now do with `foo\'`, and we get
-the same result.
+Những gì chúng tôi đã làm với `foo\'`trước đây, bây giờ chúng tôi có thể làm với foo ' , và chúng tôi nhận được kết quả tương tự.
 
 ``` {.haskell}
 Prelude Week04.Writer> foo' (number 1) (number 2) (number 3)
 Writer 6 ["number: 1","number: 2","number: 3","sum: 6"]
 ```
 
-Admittedly, it is longer than it was before, but it is much nicer. We no
-longer need to do the pattern matching to extract the messages. We
-don\'t have to explicitly combine the log messages, where we could make
-a mistake and forget one, or get the order wrong. Instead, we abstract
-all that away and can just concentrate on the business logic.
+Phải thừa nhận rằng nó dài hơn trước, nhưng nó đẹp hơn rất nhiều. Chúng tôi không còn cần thực hiện đối sánh mẫu để trích xuất các thông báo. Chúng tôi không cần phải kết hợp các thông báo nhật ký một cách rõ ràng, nơi chúng tôi có thể mắc lỗi và quên một hoặc sai thứ tự. Thay vào đó, chúng tôi trừu tượng hóa tất cả những thứ đó đi và chỉ có thể tập trung vào logic kinh doanh.
 
-Although the pattern is the same as with `Maybe` and `Either`, note that
-the special aspect of these computations is completely different. With
-`Maybe` and `Either` we dealt with the notion of failure, whereas here,
-with the `Writer`, there is no failure, but we instead have additional
-output.
+Mặc dù mô hình giống như với `Maybe` and `Either`, lưu ý rằng khía cạnh đặc biệt của các tính toán này là hoàn toàn khác nhau. Với `Maybe` and `Either`, chúng tôi xử lý khái niệm thất bại, trong khi ở đây, với `Writer`, không có thất bại, mà thay vào đó chúng tôi có thêm đầu ra.
+
 
 ### What is a Monad?
 
-Now, we are in a position to explain what a Monad is.
+Bây giờ, chúng ta có thể giải thích Monad là gì.
 
-Looking back at the four examples, what did they have in common? In all
-four cases, We had a type constructor with one type parameter - `IO`,
-`Maybe`, `Either String` and `Writer` all take a type parameter.
+Nhìn lại bốn ví dụ, chúng có điểm gì chung? Trong tất cả bốn trường hợp, Chúng tôi đã có một constructor loại với một tham số kiểu -  `IO`,
+`Maybe`, `Either String` and `Writer` cả phải mất một tham số kiểu.
 
-And, for all four of these examples, we had a bind function. For `IO`,
-we had the `\>\>=` function and for the others we had the bind functions
-that we wrote ourselves.
+Và, đối với tất cả bốn ví dụ này, chúng tôi có một hàm ràng buộc. Đối với `IO`, chúng tôi có `\>\>=` chức năng và đối với những người khác, chúng tôi có các chức năng ràng buộc mà chúng tôi tự viết. 
 
 ``` {.haskell}
 bindWriter :: Writer a -> (a -> Writer b) -> Writer b
@@ -892,28 +878,16 @@ bindEither :: Either String a -> (a -> Either String b) -> Either String b
 bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
 ```
 
-How the bind works depends on the case. In the case of `IO` it is
-built-in magic, but you can think of it as just combining the two plans
-describing the actions to take during computation. For `bindMaybe` and
-`bindEither` the logic is for the whole plan to fail if any part of it
-fails, and for `bindWriter`, the logic was to combine the list of log
-messages.
+Cách thức hoạt động của ràng buộc tùy thuộc vào từng trường hợp. Trong trường hợp của `IO` nó là phép thuật tích hợp sẵn, nhưng bạn có thể nghĩ nó chỉ là kết hợp hai kế hoạch mô tả các hành động cần thực hiện trong quá trình tính toán. Đối với `bindMaybe` và `bindEither` logic là toàn bộ kế hoạch sẽ thất bại nếu bất kỳ phần nào của nó không thành công và đối với `bindWriter`, logic là kết hợp danh sách các thông báo nhật ký.
 
-And that is the main idea of Monads. It\'s a concept of computation with
-some additional side effects, and the ability to bind two such
-computations together.
+Và đó là ý tưởng chính của Monads. Đó là một khái niệm về tính toán với một số tác dụng phụ bổ sung và khả năng liên kết hai phép tính đó lại với nhau.
 
-There is another aspect that we briefly mentioned in the case of `IO`
-but not for the other examples - another thing that we can always do.
+Có một khía cạnh khác mà chúng tôi đã đề cập ngắn gọn trong trường hợp IO nhưng không phải đối với các ví dụ khác - một điều khác mà chúng tôi luôn có thể làm.
 
-Whenever we have such a concept of computation with side effects, we
-also also always have the ability to produce a computation of this kind
-that `doesn\'t` have any side effects.
+Bất cứ khi nào chúng ta có khái niệm tính toán với các tác dụng phụ như vậy, chúng ta cũng luôn có khả năng tạo ra một phép tính kiểu này `doesn\'t` có bất kỳ tác dụng phụ nào.
 
-In the example of `IO`, this was done with `return`. Given an `a`, you
-can create an `IO a` which is the recipe that always simply returns the
-`a` with no side effects. Each of the other example has this ability as
-well, as shown below.
+Trong ví dụ của `IO`, điều này đã được thực hiện với `return`. Với một `a`, bạn có thể tạo một `IO a` công thức luôn trả về đơn giản mà akhông có tác dụng phụ. Mỗi ví dụ khác cũng có khả năng này, như được hiển thị bên dưới.
+
 
 ``` {.haskell}
 return              :: a -> IO a
@@ -922,13 +896,11 @@ Right               :: a -> Either String a
 (\a -> Writer a []) :: a -> Writer a
 ```
 
-And it is the combination of these two features that defines a Monad.
+Và chính sự kết hợp của hai đặc điểm này đã xác định một Đơn nguyên.
 
--   the ability to bind two computations together
--   the possibility to construct a computation from a pure value without
-    making use of any of the potential side effects
-
-If we look in the REPL:
+khả năng liên kết hai phép tính với nhau
+khả năng xây dựng một phép tính từ một giá trị thuần túy mà không sử dụng bất kỳ tác dụng phụ tiềm ẩn nào
+Nếu chúng ta xem trong REPL:
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Monad
@@ -951,14 +923,13 @@ instance (Monoid a, Monoid b) => Monad ((,,) a b)
 instance Monoid a => Monad ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-We see the bind function
+Chúng tôi thấy chức năng ràng buộc
 
 ``` {.haskell}
 (>>=) :: m a -> (a -> m b) -> m b
 ```
 
-And the `return` function that takes a pure value and turns it into a
-computation that has potential for side effects, but does not use them.
+Và `return` hàm nhận một giá trị thuần túy và biến nó thành một phép tính tiềm ẩn tác dụng phụ, nhưng không sử dụng chúng.
 
 ``` {.haskell}
 return :: a -> m a
@@ -966,17 +937,16 @@ return :: a -> m a
 
 The other function `\>\>` can easily be defined in terms of `\>\>=`, but
 is provided for convenience.
+Các chức năng khác `\>\>` có thể dễ dàng được xác định về mặt `\>\>=`, nhưng được cung cấp để thuận tiện.
 
 ``` {.haskell}
 (>>) :: m a -> m b -> m b
 ```
 
-What this function does is to throw away the result of the first
-computation, so you could define it in terms of `\>\>=` by just ignoring
-the argument to the function parameter.
+Những gì hàm này làm là loại bỏ kết quả của phép tính đầu tiên, vì vậy bạn có thể xác định nó theo nghĩa `\>\>=` chỉ bằng cách bỏ qua đối số của tham số hàm.
 
-There\'s another technical computation. We see that `Monad` has the
-super class `Applicative`, so every Monad is `Applicative`.
+Có một tính toán kỹ thuật khác. Chúng tôi thấy rằng Monadcó siêu lớp `Applicative`, vì vậy mọi Đơn nguyên đều như vậy `Applicative`.
+
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Applicative
@@ -1002,19 +972,17 @@ instance (Monoid a, Monoid b) => Applicative ((,,) a b)
 instance Monoid a => Applicative ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-We see it has a bunch of functions, but we only need the first two.
+Chúng tôi thấy nó có một loạt các chức năng, nhưng chúng tôi chỉ cần hai chức năng đầu tiên.
 
 ``` {.haskell}
 pure :: a -> f a
 (<`>) :: f (a -> b) -> f a -> f b
 ```
 
-The function `pure` has the same type signature as `return`. Then there
-is \<\`\> (pronounced \'ap\') which looks a bit more complicated. But,
-the truth is that, once you have `return` and `\>\>=` in a Monad, we can
-easily define both `pure` and \<\`\>.
+Hàm `pure` có cùng kiểu chữ ký với `return`. Sau đó, có `\<\>` (phát âm là 'ap') trông phức tạp hơn một chút. Nhưng, sự thật là, một khi bạn có returnvà `\>\>=` ở trong Đơn nguyên, chúng ta có thể dễ dàng xác định cả hai purevà `\<\>`.
 
-We see that `Applicative` also has a superclass `Functor`.
+Chúng tôi thấy rằng `Applicative` cũng có một lớp cha `Functor`.
+
 
 ``` {.haskell}
 Prelude Week04.Contract> :i Functor
@@ -1034,22 +1002,16 @@ instance Functor ((,,) a b) -- Defined in ‘GHC.Base’
 instance Functor ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-As we mentioned in the context of `IO`, `Functor` has the `fmap`
-function which, given a function from `a` to `b` will turn an `f a` into
-an `f b`.
+Như chúng ta đã đề cập trong ngữ cảnh `IO`, `Functor` có một hàm `fmap`, được cho trước một hàm từ `a` to `b`sẽ biến một `f a` thành một `f b`.
 
-The prototypical example for `fmap` is lists where `fmap` is just `map`.
-Given a function from `a` to `b`, you can create a list of type `b` from
-a list of type `a` by applying the `map` function to each of the
-elements of the list.
+Ví dụ nguyên mẫu cho `fmap` là danh sách ở đâu chính `fmap` là `fmap`. Cho một hàm từ `a` to `b`, bạn có thể tạo một danh sách kiểu btừ một danh sách kiểu abằng cách áp dụng maphàm cho từng phần tử của danh sách.
 
-Again, once you have `return` and `\>\>=`, it is easy to define `fmap`.
+Một lần nữa, một khi bạn có `return` and `\>\>=`, thật dễ dàng để xác định `fmap`.
 
-So, whenever you want to define a Monad, you just define `return` and
-`\>\>=`, and to make the compiler happy and to give instances for
-`Functor` and `Applicative`, there\'s always a standard way of doing it.
+Vì vậy, bất cứ khi nào bạn muốn xác định Đơn nguyên, bạn chỉ cần xác định `return` và `\>\>=`, và để làm cho trình biên dịch hài lòng và đưa ra các thể hiện cho `Functor` and `Applicative`, luôn có một cách tiêu chuẩn để làm điều đó.
 
-We can do this in the example of `Writer`.
+Chúng ta có thể làm điều này trong ví dụ của `Writer`.
+
 
 ``` {.haskell}
 import Control.Monad
@@ -1066,21 +1028,15 @@ instance Monad Writer where
    (>>=) = bindWriter
 ```
 
-We don\'t have to do the same for `Maybe`, `Either` or `IO` because they
-are already Monads defined by the Prelude.
+Chúng ta không cần phải làm như vậy đối với `Maybe`, `Either` or `IO` vì chúng đã là Đơn nguyên được xác định bởi Khúc dạo đầu.
 
-### Why Is This useful?
+### Tại sao điều này hữu ích?
 
-It is always useful, in general, to identify a common pattern and give
-it a name.
+Nói chung, nó luôn hữu ích để xác định một mẫu chung và đặt tên cho nó.
 
-But, maybe the most important advantage is that there are lots of
-functions that don\'t care which Monad we are dealing with - they will
-work with all Monads.
+Nhưng, có lẽ lợi thế quan trọng nhất là có rất nhiều chức năng không quan tâm đến Đơn vị nào mà chúng ta đang xử lý - chúng sẽ hoạt động với tất cả Đơn vị.
 
-Let\'s generalize the example where we compute the sum of three
-integers. We use a `let` in the example below for reasons that will
-become clear in moment.
+Hãy tổng quát hóa ví dụ nơi chúng ta tính tổng của ba số nguyên. Chúng tôi sử dụng một `let` trong ví dụ bên dưới vì những lý do sẽ trở nên rõ ràng trong giây lát.`
 
 ``` {.haskell}
 threeInts :: Monad m => m Int -> m Int -> m Int -> m Int
@@ -1091,33 +1047,30 @@ threeInts mx my mz =
    let s = k + l + m in return s
 ```
 
-Now we have this function, we can return to the `Maybe` example and
-rewrite it.
+Bây giờ chúng ta có chức năng này, chúng ta có thể quay lại `Maybe` ví dụ và viết lại nó.
 
 ``` {.haskell}
 foo'' :: String -> String -> String -> Maybe Int
 foo'' x y z = threeInts (readMaybe x) (readMaybe y) (readMaybe z)
 ```
 
-We can do the same for the `Either` example.
+Chúng ta có thể làm tương tự cho `Either` ví dụ. 
 
 ``` {.haskell}
 foo'' :: String -> String -> String -> Either String Int
 foo'' x y z = threeInts (readEither x) (readEither y) (readEither z)
 ```
 
-The `Writer` example is not exactly the same.
+Các `Writer`  ví dụ không phải là giống hệt nhau.
 
-If we are happy not to have the log message for the sum, it is very
-simple as it is already an instance of `threeInts`.
+Nếu chúng tôi không hài lòng khi không có thông báo nhật ký cho tổng, nó rất đơn giản vì nó đã là một ví dụ của
 
 ``` {.haskell}
 foo'' :: Writer Int -> Writer Int -> Writer Int -> Writer Int
 foo'' x y z = threeInts
 ```
 
-However, if we want the final log message, it becomes a little more
-complicated.
+Tuy nhiên, nếu chúng ta muốn thông báo nhật ký cuối cùng, nó sẽ trở nên phức tạp hơn một chút.
 
 ``` {.haskell}
 foo'' :: Writer Int -> Writer Int -> Writer Int -> Writer Int
@@ -1127,39 +1080,24 @@ foo'' x y z = do
    return s
 ```
 
-If you look into the Control.Monad module in the standard Haskell
-Prelude, you will see that there are many useful functions that you can
-use for all Monads.
+Nếu bạn nhìn vào mô-đun Control.Monad trong Haskell Prelude tiêu chuẩn, bạn sẽ thấy rằng có rất nhiều chức năng hữu ích mà bạn có thể sử dụng cho tất cả các Đơn nguyên.
 
-One way to think about a Monad is as a computation with a super power.
+Một cách để nghĩ về Đơn nguyên là tính toán với một siêu năng lực.
 
-In the case of `IO`, the super power would be having real-world
-side-effects. In the case of `Maybe`, the super power is being able to
-fail. The super power of `Either` is to fail with an error message. And
-in the case of `Writer`, the super power is to log messages.
+Trong trường hợp của `IO`, siêu sức mạnh sẽ có tác dụng phụ trong thế giới thực. Trong trường hợp của `Maybe`, siêu sức mạnh có thể bị hỏng. Sức mạnh siêu việt của `Either`là không thành công với một thông báo lỗi. Và trong trường hợp của `Writer`, siêu sức mạnh là ghi lại các tin nhắn.
 
-There is a saying in the Haskell community that Haskell has an
-overloaded semi-colon. The explanation for this is that in many
-imperative programming languages, you have semi-colons that end with a
-semi-colon - each statement is executed one after the other, each
-separated by a semi-colon. But, what exactly the semi-colon means
-depends on the language. For example, there could be an exception, in
-which case computation would stop and wouldn\'t continue with the next
-lines.
+Có một câu nói trong cộng đồng Haskell rằng Haskell có dấu chấm phẩy quá tải. Giải thích cho điều này là trong nhiều ngôn ngữ lập trình mệnh lệnh, bạn có dấu chấm phẩy kết thúc bằng dấu chấm phẩy - mỗi câu lệnh được thực thi lần lượt, mỗi câu cách nhau bằng dấu chấm phẩy. Nhưng, chính xác dấu chấm phẩy có nghĩa là gì phụ thuộc vào ngôn ngữ. Ví dụ, có thể có một ngoại lệ, trong trường hợp đó, quá trình tính toán sẽ dừng lại và không tiếp tục với các dòng tiếp theo.
 
-In a sense, `bind` is like a semi-colon. And the cool thing about
-Haskell is that it is a programmable semi-colon. We get to say what the
-logic is for combining two computations together.
+Theo một nghĩa nào đó, `bind` giống như dấu chấm phẩy. Và điều thú vị về Haskell là nó là một dấu chấm phẩy có thể lập trình được. Chúng ta có thể nói logic là gì để kết hợp hai phép tính với nhau.
 
-Each Monad comes with its own \"semi-colon\".
+Mỗi Đơn nguyên đi kèm với "dấu chấm phẩy" riêng.
 
-### \'do\' notation
+### ký hiệu \'do\' 
 
-Because this pattern is so common and monadic computations are all over
-the place, there is a special notation for this in Haskell, called `do`
-notation.
+Bởi vì mô hình này rất phổ biến và các phép tính đơn lẻ ở khắp nơi, có một ký hiệu đặc biệt cho điều này trong Haskell, được gọi là ký hiệu `do `.
 
-It is syntactic sugar. Let\'s rewrite `threeInts` using `do` notation.
+Nó là đường cú pháp. Hãy viết lại `threeInts` sbằng cách sử dụng ký hiệu`do`.
+
 
 ``` {.haskell}
 threeInts' :: Monad m => m Int -> m Int -> m Int -> m Int
@@ -1171,63 +1109,40 @@ threeInts' mx my mz = do
    return s
 ```
 
-This does exactly the same thing as the non-`do` version, but it has
-less noise.
+Điều này thực hiện chính xác những điều tương tự như `non-do` phiên bản, nhưng nó có ít tiếng ồn hơn.
 
-Note that the `let` statement does not use an `in` part. It does not
-need to inside a `do` block.
+Lưu ý rằng `let` câu lệnh không sử dụng một `in` phần. Nó không cần phải bên trong một khối `do`.
 
-And that\'s Monads. There is a lot more to say about them but hopefully
-you now have an idea of what Monads are and how they work.
+Và đó là `Monads`. Còn rất nhiều điều để nói về chúng nhưng hy vọng bây giờ bạn đã biết được `Monads` là gì và chúng hoạt động như thế nào.
 
-Often you are in a situation where you want several effects at once -for
-example you may want optional failure `and` log messages. There are ways
-to do that in Haskell. For example there are Monad Transformers where
-one can basically build custom Monads with the features that you want.
+Thường thì bạn ở trong một tình huống mà bạn muốn có nhiều hiệu ứng cùng một lúc - ví dụ, bạn có thể muốn andthông báo nhật ký lỗi tùy chọn . Có nhiều cách để làm điều đó trong Haskell. Ví dụ, có Monad Transformers nơi về cơ bản người ta có thể xây dựng các Monad tùy chỉnh với các tính năng mà bạn muốn.
 
-There are other approaches. One is called Effect Systems, which has a
-similar objective. And this is incidentally what Plutus uses for
-important Monads. In particular the Contact Monad in the wallet, and the
-Trace Monad which is used to test Plutus code.
+Có những cách tiếp cận khác. Một được gọi là Hệ thống Hiệu ứng, có mục tiêu tương tự. Và đây tình cờ là thứ mà Plutus sử dụng cho các Môn phái quan trọng. Đặc biệt là Đơn vị liên hệ trong ví và Đơn vị theo dõi được sử dụng để kiểm tra mã Plutus.
 
-The good news is that you don\'t need to understand Effect Systems to
-work with these Monads. You just need to know that you are working with
-a Monad, and what super powers it has.
+Tin tốt là bạn không cần phải hiểu Hệ thống Hiệu ứng để làm việc với các Đơn nguyên này. Bạn chỉ cần biết rằng bạn đang làm việc với Monad, và nó có siêu năng lực nào.
 
 Plutus Monads
 -------------
 
-Now that we have seen how to write monadic code, either by using bind
-and return or by using do notation, we can look a very important Monad,
-namely the Contract Monad, which you may have already noticed in
-previous code examples.
+Bây giờ chúng ta đã thấy cách viết mã đơn nguyên, bằng cách sử dụng ràng buộc và trả về hoặc bằng cách sử dụng ký hiệu, chúng ta có thể xem một Đơn nguyên rất quan trọng, đó là Đơn nguyên hợp đồng, mà bạn có thể đã nhận thấy trong các ví dụ mã trước đó.
 
-The Contract Monad defines code that will run in the wallet, which is
-the off-chain part of Plutus.
+Đơn nguyên hợp đồng xác định mã sẽ chạy trong ví, đây là phần ngoài chuỗi của Plutus.
 
-But, before we go into details, we will talk about a second Monad, the
-EmulatorTrace monad.
+Tuy nhiên, trước khi đi vào chi tiết, chúng ta sẽ nói về Đơn nguyên thứ hai, Đơn nguyên EmulatorTrace.
 
 ### The EmulatorTrace Monad
 
-You may have wondered if there is a way to execute Plutus code for
-testing purposes without using the Plutus Playground. There is indeed,
-and this is done using the `EmulatorTrace` Monad.
+Bạn có thể đã tự hỏi liệu có cách nào để thực thi mã Plutus cho mục đích thử nghiệm mà không cần sử dụng Sân chơi Plutus hay không. Thực sự là có, và điều này được thực hiện bằng cách sử dụng `EmulatorTrace Monad`.
 
-You can think of a program in this monad as what we do manually in the
-`simulator` tab of the playground. That is, we define the initial
-conditions, we define the actions such as which wallets invoke which
-endpoints with which parameters and we define the waiting periods
-between actions.
+Bạn có thể nghĩ về một chương trình trong đơn nguyên này giống như những gì chúng tôi thực hiện thủ công trong `simulator` tab của sân chơi. Nghĩa là, chúng tôi xác định các điều kiện ban đầu, chúng tôi xác định các hành động chẳng hạn như ví nào gọi điểm cuối nào với các tham số nào và chúng tôi xác định khoảng thời gian chờ giữa các hành động.
 
-The relevant definitions are in the package `plutus-contract` in module
-`Plutus.Trace.Emulator`.
+Các định nghĩa liên quan nằm trong gói `plutus-contract` trong mô-đun `Plutus.Trace.Emulator`.
 
 ``` {.haskell}
 module Plutus.Trace.Emulator
 ```
 
-The most basic function is called `runEmulatorTrace`.
+Chức năng cơ bản nhất được gọi `runEmulatorTrace`.
 
 ``` {.haskell}
 -- | Run an emulator trace to completion, returning a tuple of the final state
@@ -1244,13 +1159,10 @@ runEmulatorTrace cfg trace =
     $ runEmulatorStream cfg trace
 ```
 
-It gets something called an `EmulatorConfig` and an `EmulatorTrace ()`,
-which is a pure computation where no real-world side effects are
-involved. It is a pure function that executes the trace on an emulated
-blockchain, and then gives a result as a list of `EmulatorEvent`s, maybe
-an error, if there was one, and then finally the final `EmulatorState`.
+Nó nhận được một thứ gọi là một `EmulatorConfig` và `EmulatorTrace ()`, là một phép tính thuần túy mà không có tác dụng phụ trong thế giới thực. Nó là một chức năng thuần túy thực hiện theo dõi trên một blockchain được mô phỏng, sau đó đưa ra kết quả là một danh sách các `EmulatorState`, có thể là lỗi, nếu có, và cuối cùng là kết quả cuối cùng `EmulatorState`.
 
-`EmulatorConfig` is defined in a different module in the same package:
+`EmulatorConfig` được định nghĩa trong một mô-đun khác trong cùng một gói:
+
 
 ``` {.haskell}
 module Wallet.Emulator.Stream
@@ -1263,13 +1175,9 @@ EmulatorConfig
 type InitialChainState = Either InitialDistribution Block
 ```
 
-We see it only has one field, which is of type `InitialChainState` and
-it is either `InitialDistribution` or `Block`.
+Chúng tôi thấy nó chỉ có một trường, thuộc loại `InitialChainState` và nó là`InitialDistribution` hoặc `Block`.
 
-`InitialDistribution` is defined in another module in the same package,
-and it is a type synonym for a map of key value pairs of `Wallet`s to
-`Value`s, as you would expect. `Value` can be either lovelace or native
-tokens.
+`InitialDistribution` được định nghĩa trong một mô-đun khác trong cùng một gói và nó là một từ đồng nghĩa kiểu cho một bản đồ các cặp giá trị khóa từ  `Wallet`s dến `Value`s, như bạn mong đợi. `Value` có thể là mã thông báo đáng yêu hoặc mã nguồn gốc.
 
 ``` {.haskell}
 module Plutus.Contract.Trace
@@ -1277,10 +1185,7 @@ module Plutus.Contract.Trace
 type InitialDistribution = Map Wallet Value
 ```
 
-In the same module, we see something called `defaultDist` which returns
-a default distribution for all wallets. It does this by passing the 10
-wallets defined by `allWallets` to `defaultDistFor` which takes a list
-of wallets.
+Trong cùng một mô-đun, chúng ta thấy một thứ được gọi là `defaultDist` nó trả về phân phối mặc định cho tất cả các ví. Nó làm điều này bằng cách đi qua 10 ví xác định bởi `allWallets` để `defaultDistFor` mà phải mang một danh sách các ví.
 
 ``` {.haskell}
 -- | The wallets used in mockchain simulations by default. There are
@@ -1295,7 +1200,7 @@ defaultDistFor :: [EM.Wallet] -> InitialDistribution
 defaultDistFor wallets = Map.fromList $ zip wallets (repeat (Ada.lovelaceValueOf 100_000_000))
 ```
 
-We can try this out in the REPL:
+Chúng tôi có thể thử điều này trong REPL:
 
 ``` {.haskell}
 Prelude Week04.Contract> import Plutus.Trace.Emulator
@@ -1304,20 +1209,18 @@ Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Week04.Contract> defaultDist
 fromList [(Wallet 1,Value (Map [(,Map [("",100000000)])])),(Wallet 2,Value (Map [(,Map [("",100000000)])])),(Wallet 3,Value (Map [(,Map [("",100000000)])])),(Wallet 4,Value (Map [(,Map [("",100000000)])])),(Wallet 5,Value (Map [(,Map [("",100000000)])])),(Wallet 6,Value (Map [(,Map [("",100000000)])])),(Wallet 7,Value (Map [(,Map [("",100000000)])])),(Wallet 8,Value (Map [(,Map [("",100000000)])])),(Wallet 9,Value (Map [(,Map [("",100000000)])])),(Wallet 10,Value (Map [(,Map [("",100000000)])]))]
 ```
 
-We can see that each of the 10 wallets has been given an initial
-distribution of 100,000,000 lovelace.
+Chúng ta có thể thấy rằng mỗi ví trong số 10 ví đã được phân phối ban đầu là 100.000.000 lovelace.
 
-We can also get the balances for a specific wallet or wallets:
+Chúng tôi cũng có thể lấy số dư cho một ví cụ thể hoặc các ví:
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Week04.Contract> defaultDistFor [Wallet 1]
 fromList [(Wallet 1,Value (Map [(,Map [("",100000000)])]))]
 ```
 
-If you want different initial values, of if you want native tokens, then
-you have to specify that manually.
+Nếu bạn muốn các giá trị ban đầu khác nhau, nếu bạn muốn mã thông báo gốc, thì bạn phải chỉ định giá trị đó theo cách thủ công.
 
-Let\'s see what we need to run our first trace:
+Hãy xem những gì chúng ta cần để chạy dấu vết đầu tiên của mình:
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Week04.Contract> :t runEmulatorTrace
@@ -1328,8 +1231,7 @@ runEmulatorTrace
       Wallet.Emulator.MultiAgent.EmulatorState)
 ```
 
-So, we need an `EmulatorConfig` which we know takes an
-`InitialChainState`.
+ vậy, chúng ta cần một `EmulatorConfig` cái mà chúng ta biết cần một cái `InitialChainState`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Week04.Contract> import Wallet.Emulator.Stream 
@@ -1340,7 +1242,7 @@ Either InitialDistribution Ledger.Blockchain.Block
       -- Defined in ‘Wallet.Emulator.Stream’
 ```
 
-If we take the `Left` of the `defaultDist` will will get an
+Nếu chúng ta thực hiện `Left` của `defaultDist` chúc sẽ nhận được một
 `InitialDistribution`.
 
 ``` {.haskell}
@@ -1348,30 +1250,22 @@ Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator.Stream Week0
 Left defaultDist :: Either InitialDistribution b
 ```
 
-Which we can then use to construct an `EmulatorConfig`.
+Sau đó, chúng ta có thể sử dụng để tạo một `EmulatorConfig`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator.Stream Week04.Contract> EmulatorConfig $ Left defaultDist
 EmulatorConfig {_initialChainState = Left (fromList [(Wallet 1,Value (Map [(,Map [("",100000000)])])),(Wallet 2,Value (Map [(,Map [("",100000000)])])),(Wallet 3,Value (Map [(,Map [("",100000000)])])),(Wallet 4,Value (Map [(,Map [("",100000000)])])),(Wallet 5,Value (Map [(,Map [("",100000000)])])),(Wallet 6,Value (Map [(,Map [("",100000000)])])),(Wallet 7,Value (Map [(,Map [("",100000000)])])),(Wallet 8,Value (Map [(,Map [("",100000000)])])),(Wallet 9,Value (Map [(,Map [("",100000000)])])),(Wallet 10,Value (Map [(,Map [("",100000000)])]))])}
 ```
 
-So, let\'s try out `runEmulatorTrace`. Recall that, as well as and
-`EmulatorConfig`, we also need to pass in an `EmulatorTrace`, and the
-most simple one we can create is simply one that returns Unit - `return
-()`.
+Vì vậy, chúng ta hãy thử `runEmulatorTrace`. Nhớ lại rằng, cũng như và`EmulatorConfig`, chúng ta cũng cần chuyển vào một `EmulatorTrace`và cái đơn giản nhất mà chúng ta có thể tạo chỉ đơn giản là một cái trả về Unit - `return ()`.
 
 ``` {.haskell}
 runEmulatorTrace (EmulatorConfig $ Left defaultDist) $ return ()
 ```
 
-If you run this in the REPL you will get a crazy amount of data output
-to the console, even though we are not doing anything with the trace. If
-you want to make it useful, you must somehow filter all this data down
-to something that sensible, and aggregate it in some way.
+Nếu bạn chạy điều này trong REPL, bạn sẽ nhận được một lượng lớn dữ liệu xuất ra bảng điều khiển, mặc dù chúng tôi không làm gì với dấu vết. Nếu bạn muốn làm cho nó trở nên hữu ích, bằng cách nào đó, bạn phải lọc tất cả dữ liệu này thành một thứ hợp lý và tổng hợp nó theo một cách nào đó.
 
-Luckily, there are other functions as well as `runEmulatorTrace`. One of
-them is `runEmulatorTraceIo` which runs the emulation then outputs the
-trace in a nice form on the screen.
+May mắn thay, có những chức năng khác `runEmulatorTrace`. Một trong số đó là `runEmulatorTraceIo` chạy mô phỏng sau đó xuất ra ở dạng đẹp trên màn hình.
 
 ``` {.haskell}
 runEmulatorTraceIO
@@ -1380,11 +1274,9 @@ runEmulatorTraceIO
 runEmulatorTraceIO = runEmulatorTraceIO' def def
 ```
 
-To use this function, we don\'t need to specify an `EmulatorConfig` like
-we did before, because by default will will just use the default
-distribution.
+Để sử dụng hàm này, chúng ta không cần chỉ định `EmulatorConfig` như chúng ta đã làm trước đây, vì theo mặc định sẽ chỉ sử dụng phân phối mặc định.
 
-In the REPL:
+Trong REPL:
 
 ``` {.haskell}
 Prelude...> runEmulatorTraceIO $ return ()
@@ -1424,6 +1316,9 @@ wallet.
 If you want more control, there is also `runEmulatorTraceIO\'`, which
 does take an `EmulatorConfig`, so we could specify a different
 distribution.
+Và chúng tôi thấy một đầu ra ngắn gọn, dễ quản lý hơn nhiều. Không có gì xảy ra, nhưng chúng tôi thấy giao dịch Genesis và sau đó là số dư cuối cùng cho mỗi ví.
+
+Nếu bạn muốn kiểm soát nhiều hơn, thì cũng có `runEmulatorTraceIO\'`, điều này có nghĩa là `EmulatorConfig`, vì vậy chúng tôi có thể chỉ định một phân phối khác.
 
 ``` {.haskell}
 runEmulatorTraceIO'
@@ -1435,7 +1330,7 @@ runEmulatorTraceIO' tcfg cfg trace
 = runPrintEffect (outputHandle tcfg) $ runEmulatorTraceEff tcfg cfg trace
 ```
 
-It also takes a `TraceConfig`, which has two fields.
+Nó cũng có một  `TraceConfig`, có hai trường.
 
 ``` {.haskell}
 data TraceConfig = TraceConfig
@@ -1455,6 +1350,9 @@ event will be displayed.
 Here is the default `TraceConfig` used by `runEmulatorTraceIO`. We can
 see that most events are ignored and that we only get output for some of
 the events.
+Trường đầu tiên, `showEvent` là một hàm chỉ định cái mà các `EmulatorEvent`s được hiển thị và cách chúng được hiển thị. Nó nhận một `EmulatorEvent` đối số như một đối số và có thể trả về `Nothing ` nó nếu sự kiện sẽ không được hiển thị hoặc một `Just` với một `String` cách hiển thị sự kiện sẽ được hiển thị.
+
+Đây là mặc định `TraceConfig` được sử dụng bởi `runEmulatorTraceIO`. Chúng ta có thể thấy rằng hầu hết các sự kiện đều bị bỏ qua và chúng ta chỉ nhận được kết quả cho một số sự kiện.
 
 ``` {.haskell}
 instance Default TraceConfig where
@@ -1477,13 +1375,11 @@ WalletEvent _ _                                                      -> Nothing
 ev                                                                   -> Just . renderString . layoutPretty defaultLayoutOptions . pretty $ ev
 ```
 
-The second field is a handle which defaults to `stdout`, but we could
-also specify a file here.
+Trường thứ hai là một xử lý được đặt mặc định `stdout`, nhưng chúng tôi cũng có thể chỉ định một tệp ở đây.
 
-Now let\'s look at a more interesting trace, using the `Vesting`
-contract from the last lecture.
+Bây giờ chúng ta hãy xem xét một dấu vết thú vị hơn, sử dụng `Vesting` hợp đồng từ bài giảng trước.
 
-First, we define a `Trace`.
+Đầu tiên, chúng tôi xác định một `Trace`.
 
 ``` {.haskell}
 myTrace :: EmulatorTrace ()
@@ -1500,28 +1396,18 @@ callEndpoint @"grab" h2 ()
 void $ waitNSlots 1
 ```
 
-The first thing we have to do is to activate the wallets using the
-monadic function `activateContractWallet`. We bind the result of this
-function to `h1`, and then bind the result of a second call (for Wallet
-2) to `h2`. Those two values - `h1` and `h2` are handles to their
-respective wallets.
+Điều đầu tiên chúng ta phải làm là kích hoạt ví bằng cách sử dụng chức năng đơn nguyên `activateContractWallet`. Chúng ta liên kết kết quả của hàm này với `h1`, và sau đó liên kết kết quả của cuộc gọi thứ hai (đối với Wallet 2) với `h2`. Hai giá trị đó - `h1`và `h2`được xử lý đối với ví tương ứng của chúng.
 
-Next, we use `callEndpoint` to simulate Wallet 1 calling the `give`
-endpoint, with the shown parameters. We then wait for 20 slots. The
-function `waitUntilSlot` actually returns a value representing the slot
-that was reached, but, as we are not interested in that value here, we
-use `void` to ignore it. We then simulate the call to the `grab`
-endpoint by Wallet 2.
+Tiếp theo, chúng tôi sử dụng `callEndpoint` để mô phỏng Ví 1 gọi `give` điểm cuối, với các thông số được hiển thị. Sau đó, chúng tôi chờ đợi đến vị trí 20. Hàm `waitUntilSlot` thực sự trả về một giá trị đại diện cho vị trí đã đạt đến, nhưng vì chúng tôi không quan tâm đến giá trị đó ở đây, chúng tôi sử dụng `void` để bỏ qua nó. Sau đó, chúng tôi mô phỏng cuộc gọi đến `grab` điểm cuối bằng Ví 2.
 
-Now, we can write a function to call `runEmulatorTraceIO` with out
-`Trace`.
+Bây giờ, chúng ta có thể viết một hàm để gọi `runEmulatorTraceIO` với out `Trace`.
 
 ``` {.haskell}
 test :: IO ()
 test = runEmulatorTraceIO myTrace
 ```
 
-And, we can then run this in the REPL:
+Và, sau đó chúng ta có thể chạy điều này trong REPL:
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test
@@ -1588,13 +1474,9 @@ Wallet 10:
     {, ""}: 100000000
 ```
 
-This output is very similar to the output we see in the playground. We
-can see the Genesis transaction as well as both the `give` and `grab`
-transactions from the `Trace`. We can also see some log output from the
-contract itself, prefixed with `CONTRACT LOG`.
+Đầu ra này rất giống với đầu ra mà chúng ta thấy trong playground. Chúng ta có thể thấy giao dịch Genesis cũng như cả giao dịch `give`và `grab` giao dịch từ `Trace`. Chúng ta cũng có thể thấy một số đầu ra nhật ký từ chính hợp đồng, có tiền tố là `CONTRACT LOG`.
 
-We can also log from inside the `Trace` monad. We could, for example,
-lof the result of the final `waitNSlots` call:
+Chúng tôi cũng có thể đăng nhập từ bên trong `Trace` đơn nguyên. Ví dụ, chúng tôi có thể xem kết quả của `waitNSlots` cuộc gọi cuối cùng :
 
 ``` {.haskell}
 myTrace :: EmulatorTrace ()
@@ -1605,7 +1487,7 @@ s <- waitNSlots 1
 Extras.logInfo $ "reached slot " ++ show s
 ```
 
-We would then see this output when we run the emulation:
+Sau đó, chúng tôi sẽ thấy kết quả này khi chúng tôi chạy mô phỏng:
 
 ``` {.}
 ...
@@ -1616,55 +1498,41 @@ Slot 00021: SlotAdd Slot 22
 ...
 ```
 
-Now let\'s look at the Contract Monad.
+Bây giờ chúng ta hãy nhìn vào Contract Monad.
 
 ### The Contract Monad
 
-The purpose of the Contract Monad is to define off-chain code that runs
-in the wallet. It has four type parameters:
+Mục đích của Đơn nguyên hợp đồng là xác định mã ngoài chuỗi chạy trong ví. Nó có bốn tham số kiểu:
 
 ``` {.haskell}
 newtype Contract w s e a = Contract { unContract :: Eff (ContractEffs w s e) a }
       deriving newtype (Functor, Applicative, Monad)
 ```
 
-The `a` is the same as in every Monad - it denotes the result type of
-the computation.
 
-We will go into the other three in more detail later but just briefly:
+`a` như trong mọi Đơn nguyên - nó biểu thị kiểu kết quả của phép tính.
 
--   w is like our Writer monad example, it allows us to write log
-    messages of type `w`.
--   s describes the blockchain capabilities, e.g. waiting for a slot,
-    submitting transactions, getting the wallet\'s public key. It can
-    also contain specific endpoints.
--   e describes the type of error messages that this monad can throw.
+Chúng ta sẽ đi vào chi tiết hơn ba phần khác sau nhưng chỉ ngắn gọn:
 
-Let\'s write an example.
+- w giống như ví dụ đơn nguyên `Writer` của chúng tôi, nó cho phép chúng tôi viết các thông báo kiểu nhật ký `w`.
+- s mô tả các khả năng của blockchain, ví dụ như đợi một vị trí, gửi giao dịch, lấy khóa công khai của ví. Nó cũng có thể chứa các điểm cuối cụ thể.
+- e mô tả loại thông báo lỗi mà đơn nguyên này có thể ném ra.
+Hãy viết một ví dụ.
 
 ``` {.haskell}
 myContract1 :: Contract () BlockchainActions Text ()
 myContract1 = Contract.logInfo @String "Hello from the contract!"
 ```
 
-Here, we pass a `Contract` constructed with `Unit` as the `w` type and
-`BlockchainActions` as the second argument, `s`. This gives us access to
-all the blockchain actions - the only thing we can\'t do is to call
-specific endpoints.
+Ở đây , Chung tôi đưa `Contract` xây dựng với `Unit` như là kiểu `w`và `BlockchainActions` như là đối số thứ 2 `s`. Điều này cho phép chúng tôi truy cập vào tất cả các hành động của blockchain - điều duy nhất chúng tôi không thể làm là gọi các điểm cuối cụ thể.
 
-For `e` - the error message type, we use `Text`. `Text` is a Haskell
-type which is like `String`, but it is much more efficient.
+Đối với `e` - loại thông báo lỗi, Chúng tôi sử dụng `Text`. `Text` trong Haskell được sử dụng như là `String`, nhưng nó hiệu quả hơn nhiều
 
-We don\'t want a specific result, so we use `Unit` for the type `a`.
+Chúng tôi không muốn một kết quả cụ thể, vì vậy chúng tôi sử dụng `Unit` thay cho  `a`.
 
-For the function body, we write a log message. We use `\@String`
-because, we have imported the type `Data.Text` and we have used the
-`OverloadedStrings` GHC compiler option, so the compiler needs to know
-what type we are referencing - a `Text` or a `String`. We can use
-`\@String` if we also use the compiler option `TypeApplications`.
+Đối với phần thân hàm, chúng tôi viết một thông báo nhật ký. Chúng tôi sử dụng `\@String`. bởi vì, chúng tôi đã imported kiể `Data.Text` Và sử dụng `OverloadedStrings` trong GHC biên dịch, vì vậy trình biên dịch cần biết loại mà chúng tôi đang tham chiếu - một `Text` hoặc một `String`. Chung tôi có thể sử dụng`\@String` Nếu chúng tôi sử dụng tùy biến biên dichij `TypeApplications`.
 
-Let\'s now define a `Trace` that starts the contract in the wallet, and
-a `test` function to run it.
+Bây giờ chung ta định nghĩa `Trace` bắt đầu chạy hợp đồng trong ví và hàm `test` để chạy nó.
 
 ``` {.haskell}
 myTrace1 :: EmulatorTrace ()
@@ -1674,8 +1542,7 @@ test1 :: IO ()
 test1 = runEmulatorTraceIO myTrace1
 ```
 
-If we run this in the REPL, we will see our log message from the
-contract.
+Nếu chúng tôi chạy điều này trong REPL, chúng tôi sẽ thấy thông báo nhật ký của chúng tôi từ hợp đồng..
 
 ``` {.Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test1
 Slot 00000: TxnValidate af5e6d25b5ecb26185289a03d50786b7ac4425b21849143ed7e18bcd70dc4db8
@@ -1709,7 +1576,7 @@ Wallet 10:
 {, \"\"}: 100000000}
 ```
 
-Now, let\'s throw an exception.
+Bây giờ, hãy xém một ngoại lệ.
 
 ``` {.haskell}
 myContract1 :: Contract () BlockchainActions Text ()
@@ -1718,7 +1585,7 @@ void $ Contract.throwError "BOOM!"
 Contract.logInfo @String "Hello from the contract!"
 ```
 
-Recall that we chose the type `Text` as the error message.
+Nhớ lại rằng chúng tôi đã chọn loại `Text` làm thông báo lỗi. 
 
 ``` {.}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test1
@@ -1751,11 +1618,9 @@ Wallet 10:
 {, ""}: 100000000
 ```
 
-Now, we don\'t get the log message, but we do get told that the contract
-stopped with an error and we see our exception message.
+Bây giờ, chúng tôi không nhận được thông báo nhật ký, nhưng chúng tôi được thông báo rằng hợp đồng đã dừng do lỗi và chúng tôi thấy thông báo ngoại lệ của mình.
 
-Another thing you can do is to handle exceptions. We will use the
-`handleError` function from module `Plutus.Contract.Types`.
+Một điều khác bạn có thể làm là xử lý các trường hợp ngoại lệ. Chúng tôi sẽ sử dụng hàm `handleError` từ mô-đun`Plutus.Contract.Types`.
 
 ``` {.haskell}
 handleError ::
@@ -1767,12 +1632,7 @@ handleError f (Contract c) = Contract c' where
       c' = E.handleError @e (raiseUnderN @'[E.Error e'] c) (fmap unContract f)
 ```
 
-The `handleError` function takes an error handler and a `Contract`
-instance. The error handler takes an argument of type `e` from our
-contract, and returns a new `Contract` with the same type parameters as
-the first, but we can change the type of the `e` argument - the error
-type, which is expressed in the return `Contract` argument list as
-`e\'`.
+Các hàm `handleError` và hàm `Contract` xử lý lỗi . TTrình xử lý lỗi nhận một đối số kiểu `e` từ hợp đồng của chúng tôi và trả về một đối số mới  `Contract` như một tham số thứ nhất, nhưng chúng ta có thể thay đổi kiểu của `e`  - kiểu lỗi, được thể hiện trong danh sách đối số `Contract` như là `e\'`.
 
 ``` {.haskell}
 myContract2 :: Contract () BlockchainActions Void ()
@@ -1787,18 +1647,11 @@ test2 :: IO ()
 test2 = runEmulatorTraceIO myTrace2
 ```
 
-We use the type `Void` as the error type. `Void` is a type that can hold
-no value, so, by using this type we are saying that there cannot be any
-errors for this contract.
+Chúng tôi sử dụng loại `Void` làm loại lỗi. `Void` là một loại không có giá trị, vì vậy, bằng cách sử dụng loại này, chúng tôi muốn nói rằng không thể có bất kỳ sai sót nào đối với hợp đồng này.
 
-::: {.note}
-::: {.title}
-Note
-:::
+*Chú ý*
 
-The function `unpack` is defined in the `Data.Text` module. It converts
-a value of type `Text` to a value of type `String`.
-:::
+Hàm `unpack` được định nghĩa trong module `Data.Text`. nó chuyển đổi một giá trị kiểu `Text` thành giá trị kiểu `String`.
 
 ``` {.}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test2
@@ -1814,45 +1667,26 @@ Final balances
 ...
 ```
 
-We no longer get the error message, but, instead we get a message from
-the error handler showing the exception that was thrown by Contract1.
-Note that we still do not get the message \"Hello from the contract!\".
-Contract 1 still stopped processing after its error, but there was no
-overall contract error due to the exception being caught and handled.
+Chúng tôi không còn nhận được thông báo lỗi nữa, nhưng thay vào đó chúng tôi nhận được thông báo từ trình xử lý lỗi hiển thị ngoại lệ đã được đưa ra bởi Contract1. Lưu ý rằng chúng tôi vẫn không nhận được thông báo "Xin chào từ hợp đồng!". Hợp đồng 1 vẫn ngừng xử lý sau lỗi của nó, nhưng không có lỗi tổng thể của hợp đồng do ngoại lệ được phát hiện và xử lý.
 
-Of course, exceptions can also happen even if they are not explicitly
-thrown by your contract code. There are operations, such as submitting a
-transaction where there are insufficient inputs to make a payment for an
-output, where Plutus will throw an exception.
+Tất nhiên, các trường hợp ngoại lệ cũng có thể xảy ra ngay cả khi chúng không được mã hợp đồng của bạn đưa ra một cách rõ ràng. Có những hoạt động, chẳng hạn như gửi một giao dịch mà không có đủ đầu vào để thanh toán cho một đầu ra, trong đó Plutus sẽ đưa ra một ngoại lệ.
 
-Next, let\'s look at the `s` parameter, the second parameter to
-`Contract`, that determines the available blockchain actions.
+Tiếp theo, hãy xem tham số`s`, tham số thứ hai `Contract`, xác định các hành động blockchain có sẵn.
 
-In the first two examples we just used the `BlockChainActions` type
-which has all the standard functionality but without support for
-specific endpoints. If we want support for specific endpoints, we must
-use a different type.
+Trong hai ví dụ đầu tiên, chúng tôi chỉ sử dụng `BlockChainActions` kiểu có tất cả các chức năng tiêu chuẩn nhưng không hỗ trợ cho các điểm cuối cụ thể. Nếu chúng tôi muốn hỗ trợ cho các điểm cuối cụ thể, chúng tôi phải sử dụng một loại khác.
 
-The way that is usually done is by using a type synonym. The following
-example will create a type synonym `MySchema` that has all the
-capabilities of `BlockChainActions` but with the addition of being able
-to call endpoint `foo` with an argument of type `Int`.
+Cách thường được thực hiện là sử dụng từ đồng nghĩa loại. Ví dụ sau đây sẽ tạo ra một từ đồng nghĩa kiểu `MySchema` có tất cả các khả năng `BlockChainActions` nhưng với việc bổ sung khả năng gọi điểm cuối `foo` với một đối số kiểu `Int`.
 
 ``` {.haskell}
 type MySchema = BlockchainActions .\/ Endpoint "foo" Int
 ```
 
-::: {.note}
-::: {.title}
-Note
-:::
+*Chú ý*
 
-The operator `.\\/` is a type operator - it operates on types, not
-values. In order to use this we need to use the `TypeOperators` and
-`DataKinds` compiler options.
-:::
+Toán tử `.\\/` là một kiểu hoạt động - nó hoạt động trên kiểu không giá trị. Để sử dụng điều này chúng ta sử dụng các tùy chọn `TypeOperators` và `DataKinds` biên dịch.
 
 Now, we can use the `MySchema` type to define our contract.
+Bây giờ, chúng ta có thể sử dụng khiểu `MySchema` để xác định hợp đồng của mình.
 
 ``` {.haskell}
 myContract3 :: Contract () MySchema Text ()
@@ -1861,13 +1695,9 @@ myContract3 = do
       Contract.logInfo n
 ```
 
-This contract will block until the endpoint `foo` is called with, in our
-case, an `Int`. Then the value of the `Int` parameter will be bound to
-`n`. Because of this, it is no longer enough for us to just activate the
-contract to test it. Now, we must invoke the endpoint as well.
+Hợp đồng này sẽ chặn cho đến khi điểm cuối `foo` được gọi, trong trường hợp của chúng tôi, là một `Int`. Khi đó giá trị của tham  số`Int` sẽ được ràng buộc với n. Bởi vì điều này, chúng tôi không còn đủ để chỉ cần kích hoạt hợp đồng để kiểm tra nó. Bây giờ, chúng ta cũng phải gọi điểm cuối (endpoint).
 
-In order to do this, we now need to handle from
-`activateContractWallet`, which we can then use to call the endpoint.
+Để làm điều này, bây giờ chúng ta cần phải xử lý từ `activateContractWallet` đó, sau đó chúng ta có thể sử dụng để gọi điểm cuối .
 
 ``` {.haskell}
 myTrace3 :: EmulatorTrace ()
@@ -1879,7 +1709,7 @@ test3 :: IO ()
 test3 = runEmulatorTraceIO myTrace3
 ```
 
-Running this in the REPL:
+Chạy điều này trong REPL:
 
 ``` {.}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test3
@@ -1895,9 +1725,7 @@ Wallet 10:
 {, ""}: 100000000
 ```
 
-Finally, let\'s look at the first type parameter, the writer. The `w`
-cannot be an arbitrary type, it must be an instance of the type class
-`Monoid`.
+Cuối cùng, hãy xem tham số kiểu đầu tiên, người viết. Không thể `w`  là một kiểu tùy ý, nó phải là một thể hiện của lớp kiểu `Monoid`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> :i Monoid
@@ -1926,17 +1754,13 @@ instance (Monoid a, Monoid b) => Monoid (a, b)
 instance Monoid () -- Defined in ‘GHC.Base’
 ```
 
-This is a very important and very common type class in Haskell. It
-defines `mempty` and `mappend`.
+Đây là một lớp kiểu rất quan trọng và rất phổ biến trong Haskell. Nó định nghĩa `mempty` và `mappend`.
 
-The function `mempty` is like the neutral element, and `mappend`
-combines two elements of this type to create a new element of the same
-type.
+Hàm `mempty` giống như phần tử trung lập và `mappend` kết hợp hai phần tử của loại này để tạo ra một phần tử mới cùng loại.
 
-The prime example of a `Monoid` is `List`, when `mempty` is the empty
-list `\[\]`, and `mappend` is concatenation `++`.
+Ví dụ `Monoid` là `List`, khi `mempty` là danh sách empty `\[\]`, và `mappend` là nối `++`.
 
-For example:
+Ví dụ:
 
 ``` {.haskell}
 Prelude> mempty :: [Int]
@@ -1945,10 +1769,9 @@ Prelude> mappend [1, 2, 3 :: Int] [4, 5, 6]
 [1,2,3,4,5,6]
 ```
 
-The are many, many other examples of the `Monoid` type, and we will see
-other instances in this course.
+Có rất nhiều ví dụ khác về `Monoid`, và chúng ta sẽ thấy các trường hợp khác trong khóa học này.
 
-But for now, let\'s stick with lists and write our last example.
+Nhưng bây giờ, chúng ta hãy gắn bó với các danh sách và viết ví dụ cuối cùng của chúng ta.
 
 ``` {.haskell}
 myContract4 :: Contract [Int] BlockchainActions Text ()
@@ -1960,11 +1783,10 @@ myContract4 = do
     void $ Contract.waitNSlots 10
 ```
 
-Rather than using `Unit` as our `w` type, we are using `\[Int\]`. This
-allows us to use the `tell` function as shown.
 
-This now gives us access to those messages during the trace, using the
-`observableState` function.
+Thay vì sử dụng `Unit` như là kiểu `w`, Chúng tôi sử dụng`\[Int\]`.Điều này cho phép chúng tôi sử dụng `tell` như là show.
+
+Điều này bây giờ cho phép chúng tôi truy cập vào các thông báo đó trong quá trình theo dõi, bằng cách sử dụng hàm `observableState` .
 
 ``` {.haskell}
 myTrace4 :: EmulatorTrace ()
@@ -1987,8 +1809,7 @@ test4 :: IO ()
 test4 = runEmulatorTraceIO myTrace4
 ```
 
-If we run this in the REPL, we can see the `USER LOG` messages created
-using the `tell` function.
+Nếu chúng ta chạy điều này trong REPL, chúng ta có thể thấy các `USER LOG` thông báo được tạo bằng cách sử dụng hàm `tell`.
 
 ``` {.}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator Week04.Trace Wallet.Emulator.Stream Week04.Contract> test4
@@ -2027,7 +1848,4 @@ Wallet 10:
     {, ""}: 100000000
 ```
 
-Using this mechanism, it is possible to pass information from the
-contract running in the wallet to the outside world. Using endpoints we
-can pass information into a contract. And using the `tell` mechanism we
-can get information out of the wallet.
+Sử dụng cơ chế này, có thể truyền thông tin từ hợp đồng đang chạy trong ví ra thế giới bên ngoài. Sử dụng thiết bị đầu cuối, chúng tôi có thể chuyển thông tin vào một hợp đồng. Và bằng cách sử dụng cơ chế `tell`, chúng tôi có thể lấy thông tin ra khỏi ví.
