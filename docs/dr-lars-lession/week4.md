@@ -7,7 +7,6 @@ Week 04 - Monads
 
 Trong bài giảng này, chúng ta tìm hiểu về Đơn nguyên (monads). Đặc biệt là các
 monads EmulatorTrace và Contract..
-:::
 
 Tổng quat 
 ---------
@@ -220,7 +219,7 @@ Prelude Week04.Contract> :t putStrLn "Hello, world!"
 putStrLn "Hello, world!" :: IO ()
 ```
 
-Chúng tôi cũng có thể chạy điều này. Mở ứng dụng / tệp Main.sh và chỉnh
+Chúng tôi cũng có thể chạy điều này. Mở ứng dụng /Main.sh và chỉnh
 sửa chức năng chính để nó đọc:
 
 ``` {.haskell}
