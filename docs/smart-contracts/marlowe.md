@@ -31,11 +31,11 @@ Thiết kế đảm bảo các yếu tố sau:
 
 Marlowe Playground là một trình mô phỏng và xây dựng hợp đồng thông minh plug-and-play dễ sử dụng, trực quan và mô-đun. Xem chuyến tham quan Sân chơi Marlowe dài 4 phút này: xây dựng, mô phỏng và phân tích các hợp đồng của Marlowe.
 
-<iframe width="100%" height="325" src="https://www.youtube.com/embed/axP-jYQ_6lo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+<iframe width="100%" height="325" src="https://youtu.be/bJWM2eJMaXw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 ## Các bài trình bày.
 
-- [Căn bản về blockchain ](https://www.youtube.com/watch?v=yi8-xaoTQT4)
+- [Căn bản về blockchain ](https://youtu.be/HuesykLxsBM)
 - [Ngôn ngữ miền riêng biệt](https://www.youtube.com/watch?v=T4W19TdJHMw)
 - [Hợp đồng tài chính ](https://www.youtube.com/watch?v=1HRaRVyj2BI)
 - [Lên Blockchain](https://www.youtube.com/watch?v=dhcmKmAZslc)
