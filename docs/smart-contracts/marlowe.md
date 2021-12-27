@@ -36,9 +36,9 @@ Marlowe Playground là một trình mô phỏng và xây dựng hợp đồng th
 ## Các bài trình bày.
 
 - [Căn bản về blockchain ](https://youtu.be/HuesykLxsBM)
-- [Ngôn ngữ miền riêng biệt](https://www.youtube.com/watch?v=T4W19TdJHMw)
-- [Hợp đồng tài chính ](https://www.youtube.com/watch?v=1HRaRVyj2BI)
-- [Lên Blockchain](https://www.youtube.com/watch?v=dhcmKmAZslc)
+- [Ngôn ngữ miền riêng biệt](https://www.youtube.com/watch?v=_vJcFdIJOdg)
+- [Hợp đồng tài chính ](https://www.youtube.com/watch?v=8KjGjtuJa4M)
+- [Lên Blockchain](https://www.youtube.com/watch?v=3LjVAXjmTIY)
 - [Ký quỹ vào blockchain ](https://www.youtube.com/watch?v=ADMCMDQK7Yo)
 - [Bản Marlowe đầy đủ](https://www.youtube.com/watch?v=Ro8iBh7V7oc)
 
