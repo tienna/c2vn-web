@@ -3,7 +3,7 @@ Week 06 - Oracles
 
 Ghi chú
 
-Đây là phiên bản viết của [Bài giảng số 6](https://youtu.be/bcf0vTJ-NtE).
+Đây là phiên bản viết của [Bài giảng số 6](https://www.youtube.com/watch?v=X9fOkkpj-aU).
 
 Trong bài giảng này, chúng ta học về oracles và sử dụng PAB (Plutus Application Backend).
 
