@@ -31,7 +31,7 @@ Thiết kế đảm bảo các yếu tố sau:
 
 Marlowe Playground là một trình mô phỏng và xây dựng hợp đồng thông minh plug-and-play dễ sử dụng, trực quan và mô-đun. Xem chuyến tham quan Sân chơi Marlowe dài 4 phút này: xây dựng, mô phỏng và phân tích các hợp đồng của Marlowe.
 
-<iframe width="100%" height="325" src="https://youtu.be/bJWM2eJMaXw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bJWM2eJMaXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Các bài trình bày.
 
