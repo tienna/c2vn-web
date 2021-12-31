@@ -44,12 +44,12 @@ Marlowe Playground là một trình mô phỏng và xây dựng hợp đồng th
 
 ## Các hướng dẫn làm rõ.
 
-- [Hợp đồng đầu tiên](https://www.youtube.com/watch?v=es4qpcHxr0I)
-- [Xây dựng hợp đồng ](https://www.youtube.com/watch?v=DS_ebkGwmXw)
-- [Lựa chọn và quan sát ](https://www.youtube.com/watch?v=25fnB7C8mPE)
-- [Viết hợp đồng Marlowe bằng JavaScript ](https://www.youtube.com/watch?v=6tkZ3hlYZ7k)
-- Sử dụng JavaScript trong sân chơi
-- Sử dụng JavaScript trong sân chơi lập trình
+- [Hợp đồng đầu tiên](https://youtu.be/iVaT0aVwooE)
+- [Xây dựng hợp đồng ](https://youtu.be/OYJ3bPfGSLg)
+- [Lựa chọn và quan sát ](https://youtu.be/VS-sRTJf2pU)
+- [Viết hợp đồng Marlowe bằng JavaScript ](https://youtu.be/zeIroiF71-I)
+- [Sử dụng Haskell trong sân chơi](https://youtu.be/ud9tMMpVprU)
+- [Sử dụng JavaScript trong sân chơi lập trình](https://youtu.be/XgFzA-DeTX0)
 - [Xây dựng ứng dụng trên Marlowe trực tiếp trong sân chơi](https://www.youtube.com/watch?v=9lHkCq0H4pw)
 - [Xây dựng hợp đồng trong Blockly ](https://www.youtube.com/watch?v=9SKB5MfA_L8)
 - [Mô phỏng trong sân chơi ](https://www.youtube.com/watch?v=3aFoN2wg9oc)
