@@ -1373,14 +1373,14 @@
     "react-json-view" "^1.21.3"
     "tslib" "^2.1.0"
 
-"@docusaurus/plugin-google-analytics@2.0.0-beta.ff31de0ff":
+"@docusaurus/plugin-google-analytics@^2.0.0-beta.ff31de0ff", "@docusaurus/plugin-google-analytics@2.0.0-beta.ff31de0ff":
   "integrity" "sha512-An3rdHpVjf8RZiZqxcQMO+nTE6vz6isowP1QsfPjiyVLFercQ116RuBodUTjkyOV/rCL1bHvdh9B2G8dp79Zbw=="
   "resolved" "https://registry.npmjs.org/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-beta.ff31de0ff.tgz"
   "version" "2.0.0-beta.ff31de0ff"
   dependencies:
     "@docusaurus/core" "2.0.0-beta.ff31de0ff"
 
-"@docusaurus/plugin-google-gtag@2.0.0-beta.ff31de0ff":
+"@docusaurus/plugin-google-gtag@^2.0.0-beta.ff31de0ff", "@docusaurus/plugin-google-gtag@2.0.0-beta.ff31de0ff":
   "integrity" "sha512-4nNafEi8wfikxVKY8JKClglSP0vd5ahlSix4b1wsYNcPqxeJQHwx2VIkRDIPdvO9ySFdRMetzWr/pNMsxb/xpA=="
   "resolved" "https://registry.npmjs.org/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-beta.ff31de0ff.tgz"
   "version" "2.0.0-beta.ff31de0ff"
