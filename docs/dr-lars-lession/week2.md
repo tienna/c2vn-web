@@ -812,7 +812,7 @@ chúng tôi sẽ thấy thông báo lỗi tùy chỉnh mà chúng tôi đã thê
 
 ![](img/iteration2/pic__00032.png)
 
-Ví dụ 3 - Forty Two (42) \~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~
+### Ví dụ 3 - Forty Two (42)
 
 Đối với ví dụ tiếp theo, chúng tôi sẽ viết một trình xác nhận không hoàn
 toàn bỏ qua tất cả các đối số của nó. Chúng tôi sẽ viết một bài báo mong

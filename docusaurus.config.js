@@ -15,12 +15,11 @@ const config = {
     favicon: 'img/logo/2.png',
     organizationName: 'cardanovn', // Usually your GitHub org/user name.
     projectName: 'cardanovn-portal', // Usually your repo name.
-
     presets: [
         [
             '@docusaurus/preset-classic',
-            /** @type {import('@docusaurus/preset-classic').Options} */
-            ({
+            // /** @type {import('@docusaurus/preset-classic').Options} */
+            {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
@@ -34,13 +33,22 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
-            }),
+            },
         ],
     ],
-
+    
     themeConfig:
+    
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-        ({
+    ({
+        googleAnalytics: {
+            trackingID: 'G-NYJGVMHGCD',
+            anonymizeIP: true,
+        },
+        gtag: {
+            trackingID: 'G-NYJGVMHGCD',
+            anonymizeIP: true,
+        },
         navbar: {
             title: 'Cardano2vn',
             logo: {
@@ -48,64 +56,64 @@ const config = {
                 src: 'img/logo/2.png',
             },
             items: [{
-                    type: 'doc',
-                    docId: 'getting-started/overview',
-                    position: 'left',
-                    label: 'Bắt đầu',
-                },
-                { to: '/blog', label: 'Blog', position: 'left' },
-                {
-                    href: 'https://github.com/cardano2vn',
-                    label: 'GitHub',
-                    position: 'right',
-                },
-            ],
+                type: 'doc',
+                docId: 'getting-started/overview',
+                position: 'left',
+                label: 'Bắt đầu',
+            },
+            { to: '/blog', label: 'Blog', position: 'left' },
+            {
+                href: 'https://github.com/cardano2vn',
+                label: 'GitHub',
+                position: 'right',
+            },
+        ],
+    },
+    footer: {
+        style: 'dark',
+        links: [{
+            title: 'Tài liệu',
+            items: [{
+                label: 'Bắt đầu',
+                to: '/docs/getting-started/overview',
+            },],
         },
-        footer: {
-            style: 'dark',
-            links: [{
-                    title: 'Tài liệu',
-                    items: [{
-                        label: 'Bắt đầu',
-                        to: '/docs/getting-started/overview',
-                    },],
-                },
-                {
-                    title: 'Cộng đồng',
-                    items: [{
-                            label: 'Telegram',
-                            href: 'https://t.me/cardano2vn',
-                        },
-                        {
-                            label: 'Youtube',
-                            href: 'https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA',
-                        },
-                        {
-                            label: 'Github',
-                            href: 'https://github.com/cardano2vn',
-                        },
-                    ],
-                },
-                {
-                    title: 'More',
-                    items: [{
-                            label: 'Blog',
-                            to: '/blog',
-                        },
-                        { 
-                            label: "About Us",
-                            to: "/about-us",
-                        },
-                    ],
-                },
-            ],
-            copyright: `The content of this site is referenced and copied from the <a href="https://developers.cardano.org/" target="_blank" rel="noopener noreferrer">Cardano Developer</a>, ${new Date().getFullYear()}`,
+        {
+            title: 'Cộng đồng',
+            items: [{
+                label: 'Telegram',
+                href: 'https://t.me/cardano2vn',
+            },
+            {
+                label: 'Youtube',
+                href: 'https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA',
+            },
+            {
+                label: 'Github',
+                href: 'https://github.com/cardano2vn',
+            },
+        ],
+    },
+    {
+        title: 'More',
+        items: [{
+            label: 'Blog',
+            to: '/blog',
         },
-        prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme,
+        { 
+            label: "About Us",
+            to: "/about-us",
         },
-    }),
+    ],
+},
+],
+    copyright: `The content of this site is referenced and copied from the <a href="https://developers.cardano.org/" target="_blank" rel="noopener noreferrer">Cardano Developer</a>, ${new Date().getFullYear()}`,
+},
+prism: {
+    theme: lightCodeTheme,
+    darkTheme: darkCodeTheme,
+},
+}),
 };
 
 module.exports = config;

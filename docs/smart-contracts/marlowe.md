@@ -31,7 +31,7 @@ Thiết kế đảm bảo các yếu tố sau:
 
 Marlowe Playground là một trình mô phỏng và xây dựng hợp đồng thông minh plug-and-play dễ sử dụng, trực quan và mô-đun. Xem chuyến tham quan Sân chơi Marlowe dài 4 phút này: xây dựng, mô phỏng và phân tích các hợp đồng của Marlowe.
 
-<iframe width="100%" height="325" src="https://youtu.be/bJWM2eJMaXw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bJWM2eJMaXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Các bài trình bày.
 
@@ -39,20 +39,20 @@ Marlowe Playground là một trình mô phỏng và xây dựng hợp đồng th
 - [Ngôn ngữ miền riêng biệt](https://www.youtube.com/watch?v=_vJcFdIJOdg)
 - [Hợp đồng tài chính ](https://www.youtube.com/watch?v=8KjGjtuJa4M)
 - [Lên Blockchain](https://www.youtube.com/watch?v=3LjVAXjmTIY)
-- [Ký quỹ vào blockchain ](https://www.youtube.com/watch?v=ADMCMDQK7Yo)
-- [Bản Marlowe đầy đủ](https://www.youtube.com/watch?v=Ro8iBh7V7oc)
+- [Ký quỹ vào blockchain ](https://youtu.be/loJUypCitnw)
+- [Bản Marlowe đầy đủ](https://youtu.be/TtyLBfANjEM)
 
 ## Các hướng dẫn làm rõ.
 
-- [Hợp đồng đầu tiên](https://www.youtube.com/watch?v=es4qpcHxr0I)
-- [Xây dựng hợp đồng ](https://www.youtube.com/watch?v=DS_ebkGwmXw)
-- [Lựa chọn và quan sát ](https://www.youtube.com/watch?v=25fnB7C8mPE)
-- [Viết hợp đồng Marlowe bằng JavaScript ](https://www.youtube.com/watch?v=6tkZ3hlYZ7k)
-- Sử dụng JavaScript trong sân chơi
-- Sử dụng JavaScript trong sân chơi lập trình
-- [Xây dựng ứng dụng trên Marlowe trực tiếp trong sân chơi](https://www.youtube.com/watch?v=9lHkCq0H4pw)
-- [Xây dựng hợp đồng trong Blockly ](https://www.youtube.com/watch?v=9SKB5MfA_L8)
-- [Mô phỏng trong sân chơi ](https://www.youtube.com/watch?v=3aFoN2wg9oc)
-- [Oracles trong sân chơi ](https://www.youtube.com/watch?v=LsTQEPMxyIU)
-- [Phaan tích trong sân chơi](https://www.youtube.com/watch?v=VmoUAifui38)
-- [Phòng thực hành ACTUS  ](https://www.youtube.com/watch?v=6PPWFZEfkks)
+- [Hợp đồng đầu tiên](https://youtu.be/iVaT0aVwooE)
+- [Xây dựng hợp đồng ](https://youtu.be/OYJ3bPfGSLg)
+- [Lựa chọn và quan sát ](https://youtu.be/VS-sRTJf2pU)
+- [Viết hợp đồng Marlowe bằng JavaScript ](https://youtu.be/zeIroiF71-I)
+- [Sử dụng Haskell trong sân chơi](https://youtu.be/ud9tMMpVprU)
+- [Sử dụng JavaScript trong sân chơi lập trình](https://youtu.be/XgFzA-DeTX0)
+- [Xây dựng ứng dụng trên Marlowe trực tiếp trong sân chơi](https://youtu.be/HEIY8AVSrX4)
+- [Xây dựng hợp đồng trong Blockly ](https://youtu.be/7UThKUej9-8)
+- [Mô phỏng trong sân chơi ](https://youtu.be/X3cgdmJ-3o0)
+- [Oracles trong sân chơi ](https://youtu.be/v0VpOsqDgRs)
+- [Phaan tích trong sân chơi](https://youtu.be/bF8VM3qSSPg)
+- [Phòng thực hành ACTUS  ](https://youtu.be/DabQO6BLxPo)
