@@ -5,7 +5,7 @@ Week 04 - Monads
 Đây là phiên bản viết của Bài [giảng số
 4](https://youtu.be/HLJOcKlEucI).
 
-Trong bài giảng này, chúng ta tìm hiểu về Đơn nguyên (monads). Đặc biệt là các
+Trong bài giảng này, chúng ta tìm hiểu về monad (monads). Đặc biệt là các
 monads EmulatorTrace và Contract..
 
 Tổng quat 
@@ -81,8 +81,8 @@ phải lo lắng về việc biên dịch sang tập lệnh Plutus - nó chỉ l
 dụng các tính năng Haskell phức tạp hơn nhiều - ví dụ như cái gọi là hệ
 thống hiệu ứng, phát trực tuyến và đặc biệt là monads.
 
-Tất cả mã off-chain (mã ví), được viết bằng một đơn nguyên đặc biệt -
-Đơn nguyên hợp đồng.
+Tất cả mã off-chain (mã ví), được viết bằng một monad đặc biệt -
+hợp đồng monad.
 
 Các tu viện nổi tiếng trong thế giới Haskell. Đây thường là trở ngại đầu
 tiên khi bắt đầu lập trình viên Haskell.
@@ -92,8 +92,8 @@ sánh với burritos, và tất cả các loại ẩn dụ được sử dụng 
 thích khái niệm. Nhưng ở đây, ít nhất chúng ta hãy cố gắng cung cấp một
 khóa học cơ bản về monads cho những người mới sử dụng Haskell.
 
-Trước khi đến với các đơn nguyên chung, chúng ta sẽ bắt đầu với IO , đó
-là cách xử lý các tác dụng phụ của IO trong Haskell. Tuy nhiên, trước
+Trước khi đến với các monad chung, chúng ta sẽ bắt đầu với IO , đó
+là cách xử lý các tác dụng của IO trong Haskell. Tuy nhiên, trước
 khi đến với Haskell, chúng ta hãy xem xét một ngôn ngữ chính thống như
 Java.
 
@@ -153,7 +153,7 @@ nhưng chúng ta có thể bỏ qua điều này.
 Điều này làm cho các tác vụ như tái cấu trúc và kiểm tra dễ dàng hơn
 nhiều.
 
-Điều này là rất tốt, nhưng bạn cần có tác dụng phụ để có ảnh hưởng đến
+Điều này là rất tốt, nhưng bạn cần có tác dụng để có ảnh hưởng đến
 thế giới. Nếu không, tất cả những gì chương trình của bạn làm là làm
 nóng bộ xử lý.
 
@@ -163,12 +163,12 @@ hạn.
 
 Có một [video nổi tiếng của Simon Peyton-Jones là Haskell Is
 Useless](https://www.youtube.com/watch?v=iSmkqocn0oQ) giải thích rằng
-ngôn ngữ thuần túy, không có tác dụng phụ thì rất đẹp về mặt toán học,
-nhưng cuối cùng thì bạn cũng cần có tác dụng phụ để biến bất cứ điều gì
+ngôn ngữ thuần túy, không có tác dụng thì rất đẹp về mặt toán học,
+nhưng cuối cùng thì bạn cũng cần có tác dụng để biến bất cứ điều gì
 xảy ra.
 
-Và Haskell có một cách để xử lý các tác dụng phụ và đó là Đơn nguyên IO.
-Tuy nhiên, đừng lo lắng về phần đơn nguyên.
+Và Haskell có một cách để xử lý các tác dụng và đó là monad IO.
+Tuy nhiên, đừng lo lắng về phần monad.
 
 Đây là cách chúng tôi làm điều đó trong Haskell.
 
@@ -205,7 +205,7 @@ main :: IO ()
 main = putStrLn "Hello, world!"
 ```
 
-Ở đây, `main` là một công thức thực hiện một số tác dụng phụ và trả về
+Ở đây, `main` là một công thức thực hiện một số tác dụng và trả về
 Đơn vị - không có gì đáng quan tâm.
 
 Hãy xem `putStrLn` trong REPL. Chúng tôi thấy rằng đó là một hành động
@@ -271,7 +271,7 @@ getLine :: IO String
 
 Điều này cho thấy rằng đó là một công thức, có thể tạo ra các hiệu ứng
 phụ, khi được thực thi sẽ tạo ra một Chuỗi . Trong trường hợp getLine ,
-tác dụng phụ được đề cập là nó sẽ đợi người dùng nhập từ bàn phím.
+tác dụng được đề cập là nó sẽ đợi người dùng nhập từ bàn phím.
 
 Nếu chúng ta thực thi getLine trong REPL.
 
@@ -356,7 +356,7 @@ Nếu chúng ta chuyên biệt hóa hàm cho `IO` , chúng ta sẽ có một hà
 fmap' :: (a -> b) -> IO a -> IO b
 ```
 
-Làm thế nào để làm việc đó. À, `IO a` là một công thức có tác dụng phụ
+Làm thế nào để làm việc đó. À, `IO a` là một công thức có tác dụng
 và tạo ra `a` . Vì vậy, làm thế nào để chúng ta có được một `b` trong số
 đó? Chúng tôi thực hiện công thức, nhưng, trước khi trả về a , chúng tôi
 áp dụng hàm `(a -\> b)` cho `a` và trả về kết quả là `b` .
@@ -425,7 +425,7 @@ Prelude Week04.Contract> :t (>>=)
 
 Chúng tôi thấy ràng buộc `Monad` , nhưng chúng tôi có thể bỏ qua điều đó ngay bây giờ và chỉ nghĩ về `IO` .
 
-Điều này nói lên rằng nếu tôi có một công thức thực hiện các tác dụng phụ sau đó cho tôi kết quả `a` , và cho rằng tôi có một hàm nhận `a` và trả lại cho tôi một công thức trả về `b` , thì tôi có thể kết hợp công thức `m a`. với công thức mb bằng cách lấy giá trị a và sử dụng nó trong công thức thu được giá trị `b` .
+Điều này nói lên rằng nếu tôi có một công thức thực hiện các tác dụng sau đó cho tôi kết quả `a` , và cho rằng tôi có một hàm nhận `a` và trả lại cho tôi một công thức trả về `b` , thì tôi có thể kết hợp công thức `m a`. với công thức mb bằng cách lấy giá trị a và sử dụng nó trong công thức thu được giá trị `b` .
 
 Một ví dụ sẽ làm rõ điều này.
 
@@ -435,9 +435,9 @@ Haskell
 Haskell
 ```
 
-Ở đây, hàm `getLine`  có kiểu `IO String` . Giá trị trả về `a` được chuyển cho hàm `(a -\> m b)` , sau đó tạo ra một công thức `putStrLn` với giá trị đầu vào là `a` và đầu ra là kiểu `IO ()` . Sau đó, `putStrLn` thực hiện các tác dụng phụ của nó và trả về `Unit` .
+Ở đây, hàm `getLine`  có kiểu `IO String` . Giá trị trả về `a` được chuyển cho hàm `(a -\> m b)` , sau đó tạo ra một công thức `putStrLn` với giá trị đầu vào là `a` và đầu ra là kiểu `IO ()` . Sau đó, `putStrLn` thực hiện các tác dụng của nó và trả về `Unit` .
 
-Có một cách khác, rất quan trọng, để tạo các hành động `IO` , và đó là tạo các công thức nấu ăn ngay lập tức trả về kết quả mà không thực hiện bất kỳ tác dụng phụ nào.
+Có một cách khác, rất quan trọng, để tạo các hành động `IO` , và đó là tạo các công thức nấu ăn ngay lập tức trả về kết quả mà không thực hiện bất kỳ tác dụng nào.
 
 Điều đó được thực hiện với một chức năng được gọi là `return`.
 
@@ -446,9 +446,9 @@ Prelude Week04.Contract> :t return
 return :: Monad m => a -> m a
 ```
 
-Một lần nữa, nó là chung cho bất kỳ Đơn nguyên (Monad) nào, chúng ta chỉ cần nghĩ về `IO` ngay bây giờ.
+Một lần nữa, nó là chung cho bất kỳ monad (Monad) nào, chúng ta chỉ cần nghĩ về `IO` ngay bây giờ.
 
-Nó nhận một giá trị `a` và trả về một công thức tạo ra giá trị `a` . Trong trường hợp trả lại , công thức thực sự không tạo ra bất kỳ tác dụng phụ nào.
+Nó nhận một giá trị `a` và trả về một công thức tạo ra giá trị `a` . Trong trường hợp trả lại , công thức thực sự không tạo ra bất kỳ tác dụng nào.
 
 Ví dụ:
 
@@ -487,7 +487,7 @@ one
 two
 onetwo
 ```
-Bây giờ điều này là đủ cho các mục đích của chúng tôi, mặc dù chúng tôi sẽ không cần Đơn nguyên `IO` cho đến khi có lẽ sau này trong khóa học khi chúng tôi nói về việc thực sự triển khai các hợp đồng Plutus. Tuy nhiên, `IO` Monad là một ví dụ quan trọng và là một ví dụ tốt để bắt đầu.
+Bây giờ điều này là đủ cho các mục đích của chúng tôi, mặc dù chúng tôi sẽ không cần monad `IO` cho đến khi có lẽ sau này trong khóa học khi chúng tôi nói về việc thực sự triển khai các hợp đồng Plutus. Tuy nhiên, `IO` Monad là một ví dụ quan trọng và là một ví dụ tốt để bắt đầu.
 
 Vì vậy, hiện tại, chúng ta hãy hoàn toàn quên `IO` và chỉ viết Haskell thuần túy, có chức năng, sử dụng kiểu `Maybe` .
 
@@ -757,7 +757,7 @@ Bạn có thể chạy lại điều này trong REPL và nó sẽ hoạt động
 
 ### Writer
 
-Cho đến nay chúng tôi đã xem xét ba ví dụ: `IO a`, `Maybe a` và `Either String a`. `IO a` đại diện cho các kế hoạch có thể liên quan đến các tác dụng phụ và khi được thực hiện, tạo ra một `a`. `Maybe a` và `Either String a` đại diện cho các phép tính có thể tạo ra  `a` nhưng cũng có thể thất bại. Sự khác biệt giữa `Maybe` và `Either` chỉ `Maybe` không tạo ra bất kỳ thông báo lỗi nào, nhưng  `Either` thì có.
+Cho đến nay chúng tôi đã xem xét ba ví dụ: `IO a`, `Maybe a` và `Either String a`. `IO a` đại diện cho các kế hoạch có thể liên quan đến các tác dụng và khi được thực hiện, tạo ra một `a`. `Maybe a` và `Either String a` đại diện cho các phép tính có thể tạo ra  `a` nhưng cũng có thể thất bại. Sự khác biệt giữa `Maybe` và `Either` chỉ `Maybe` không tạo ra bất kỳ thông báo lỗi nào, nhưng  `Either` thì có.
 
 Bây giờ chúng ta hãy xem xét một ví dụ hoàn toàn khác ghi lại ý tưởng về các phép tính cũng có thể tạo ra đầu ra nhật ký.
 
@@ -879,13 +879,13 @@ bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
 
 Cách thức hoạt động của ràng buộc tùy thuộc vào từng trường hợp. Trong trường hợp của `IO` nó là phép thuật tích hợp sẵn, nhưng bạn có thể nghĩ nó chỉ là kết hợp hai kế hoạch mô tả các hành động cần thực hiện trong quá trình tính toán. Đối với `bindMaybe` và `bindEither` logic là toàn bộ kế hoạch sẽ thất bại nếu bất kỳ phần nào của nó không thành công và đối với `bindWriter`, logic là kết hợp danh sách các thông báo nhật ký.
 
-Và đó là ý tưởng chính của Monads. Đó là một khái niệm về tính toán với một số tác dụng phụ bổ sung và khả năng liên kết hai phép tính đó lại với nhau.
+Và đó là ý tưởng chính của Monads. Đó là một khái niệm về tính toán với một số tác dụng bổ sung và khả năng liên kết hai phép tính đó lại với nhau.
 
 Có một khía cạnh khác mà chúng tôi đã đề cập ngắn gọn trong trường hợp IO nhưng không phải đối với các ví dụ khác - một điều khác mà chúng tôi luôn có thể làm.
 
-Bất cứ khi nào chúng ta có khái niệm tính toán với các tác dụng phụ như vậy, chúng ta cũng luôn có khả năng tạo ra một phép tính kiểu này `doesn\'t` có bất kỳ tác dụng phụ nào.
+Bất cứ khi nào chúng ta có khái niệm tính toán với các tác dụng như vậy, chúng ta cũng luôn có khả năng tạo ra một phép tính kiểu này `doesn\'t` có bất kỳ tác dụng nào.
 
-Trong ví dụ của `IO`, điều này đã được thực hiện với `return`. Với một `a`, bạn có thể tạo một `IO a` công thức luôn trả về đơn giản mà akhông có tác dụng phụ. Mỗi ví dụ khác cũng có khả năng này, như được hiển thị bên dưới.
+Trong ví dụ của `IO`, điều này đã được thực hiện với `return`. Với một `a`, bạn có thể tạo một `IO a` công thức luôn trả về đơn giản mà akhông có tác dụng. Mỗi ví dụ khác cũng có khả năng này, như được hiển thị bên dưới.
 
 
 ``` {.haskell}
@@ -895,10 +895,10 @@ Right               :: a -> Either String a
 (\a -> Writer a []) :: a -> Writer a
 ```
 
-Và chính sự kết hợp của hai đặc điểm này đã xác định một Đơn nguyên.
+Và chính sự kết hợp của hai đặc điểm này đã xác định một monad.
 
 khả năng liên kết hai phép tính với nhau
-khả năng xây dựng một phép tính từ một giá trị thuần túy mà không sử dụng bất kỳ tác dụng phụ tiềm ẩn nào
+khả năng xây dựng một phép tính từ một giá trị thuần túy mà không sử dụng bất kỳ tác dụng tiềm ẩn nào
 Nếu chúng ta xem trong REPL:
 
 ``` {.haskell}
@@ -928,7 +928,7 @@ Chúng tôi thấy chức năng ràng buộc
 (>>=) :: m a -> (a -> m b) -> m b
 ```
 
-Và `return` hàm nhận một giá trị thuần túy và biến nó thành một phép tính tiềm ẩn tác dụng phụ, nhưng không sử dụng chúng.
+Và `return` hàm nhận một giá trị thuần túy và biến nó thành một phép tính tiềm ẩn tác dụng, nhưng không sử dụng chúng.
 
 ``` {.haskell}
 return :: a -> m a
@@ -944,7 +944,7 @@ Các chức năng khác `\>\>` có thể dễ dàng được xác định về m
 
 Những gì hàm này làm là loại bỏ kết quả của phép tính đầu tiên, vì vậy bạn có thể xác định nó theo nghĩa `\>\>=` chỉ bằng cách bỏ qua đối số của tham số hàm.
 
-Có một tính toán kỹ thuật khác. Chúng tôi thấy rằng Monadcó siêu lớp `Applicative`, vì vậy mọi Đơn nguyên đều như vậy `Applicative`.
+Có một tính toán kỹ thuật khác. Chúng tôi thấy rằng Monadcó siêu lớp `Applicative`, vì vậy mọi monad đều như vậy `Applicative`.
 
 
 ``` {.haskell}
@@ -978,7 +978,7 @@ pure :: a -> f a
 (<`>) :: f (a -> b) -> f a -> f b
 ```
 
-Hàm `pure` có cùng kiểu chữ ký với `return`. Sau đó, có `\<\>` (phát âm là 'ap') trông phức tạp hơn một chút. Nhưng, sự thật là, một khi bạn có returnvà `\>\>=` ở trong Đơn nguyên, chúng ta có thể dễ dàng xác định cả hai purevà `\<\>`.
+Hàm `pure` có cùng kiểu chữ ký với `return`. Sau đó, có `\<\>` (phát âm là 'ap') trông phức tạp hơn một chút. Nhưng, sự thật là, một khi bạn có returnvà `\>\>=` ở trong monad, chúng ta có thể dễ dàng xác định cả hai purevà `\<\>`.
 
 Chúng tôi thấy rằng `Applicative` cũng có một lớp cha `Functor`.
 
@@ -1007,7 +1007,7 @@ Ví dụ nguyên mẫu cho `fmap` là danh sách ở đâu chính `fmap` là `fm
 
 Một lần nữa, một khi bạn có `return` and `\>\>=`, thật dễ dàng để xác định `fmap`.
 
-Vì vậy, bất cứ khi nào bạn muốn xác định Đơn nguyên, bạn chỉ cần xác định `return` và `\>\>=`, và để làm cho trình biên dịch hài lòng và đưa ra các thể hiện cho `Functor` and `Applicative`, luôn có một cách tiêu chuẩn để làm điều đó.
+Vì vậy, bất cứ khi nào bạn muốn xác định monad, bạn chỉ cần xác định `return` và `\>\>=`, và để làm cho trình biên dịch hài lòng và đưa ra các thể hiện cho `Functor` and `Applicative`, luôn có một cách tiêu chuẩn để làm điều đó.
 
 Chúng ta có thể làm điều này trong ví dụ của `Writer`.
 
@@ -1027,7 +1027,7 @@ instance Monad Writer where
    (>>=) = bindWriter
 ```
 
-Chúng ta không cần phải làm như vậy đối với `Maybe`, `Either` or `IO` vì chúng đã là Đơn nguyên được xác định bởi Khúc dạo đầu.
+Chúng ta không cần phải làm như vậy đối với `Maybe`, `Either` or `IO` vì chúng đã là monad được xác định bởi Khúc dạo đầu.
 
 ### Tại sao điều này hữu ích?
 
@@ -1079,17 +1079,17 @@ foo'' x y z = do
    return s
 ```
 
-Nếu bạn nhìn vào mô-đun Control.Monad trong Haskell Prelude tiêu chuẩn, bạn sẽ thấy rằng có rất nhiều chức năng hữu ích mà bạn có thể sử dụng cho tất cả các Đơn nguyên.
+Nếu bạn nhìn vào mô-đun Control.Monad trong Haskell Prelude tiêu chuẩn, bạn sẽ thấy rằng có rất nhiều chức năng hữu ích mà bạn có thể sử dụng cho tất cả các monad.
 
-Một cách để nghĩ về Đơn nguyên là tính toán với một siêu năng lực.
+Một cách để nghĩ về monad là tính toán với một siêu năng lực.
 
-Trong trường hợp của `IO`, siêu sức mạnh sẽ có tác dụng phụ trong thế giới thực. Trong trường hợp của `Maybe`, siêu sức mạnh có thể bị hỏng. Sức mạnh siêu việt của `Either`là không thành công với một thông báo lỗi. Và trong trường hợp của `Writer`, siêu sức mạnh là ghi lại các tin nhắn.
+Trong trường hợp của `IO`, siêu sức mạnh sẽ có tác dụng trong thế giới thực. Trong trường hợp của `Maybe`, siêu sức mạnh có thể bị hỏng. Sức mạnh siêu việt của `Either`là không thành công với một thông báo lỗi. Và trong trường hợp của `Writer`, siêu sức mạnh là ghi lại các tin nhắn.
 
 Có một câu nói trong cộng đồng Haskell rằng Haskell có dấu chấm phẩy quá tải. Giải thích cho điều này là trong nhiều ngôn ngữ lập trình mệnh lệnh, bạn có dấu chấm phẩy kết thúc bằng dấu chấm phẩy - mỗi câu lệnh được thực thi lần lượt, mỗi câu cách nhau bằng dấu chấm phẩy. Nhưng, chính xác dấu chấm phẩy có nghĩa là gì phụ thuộc vào ngôn ngữ. Ví dụ, có thể có một ngoại lệ, trong trường hợp đó, quá trình tính toán sẽ dừng lại và không tiếp tục với các dòng tiếp theo.
 
 Theo một nghĩa nào đó, `bind` giống như dấu chấm phẩy. Và điều thú vị về Haskell là nó là một dấu chấm phẩy có thể lập trình được. Chúng ta có thể nói logic là gì để kết hợp hai phép tính với nhau.
 
-Mỗi Đơn nguyên đi kèm với "dấu chấm phẩy" riêng.
+Mỗi monad đi kèm với "dấu chấm phẩy" riêng.
 
 ### ký hiệu \'do\' 
 
@@ -1118,22 +1118,22 @@ Thường thì bạn ở trong một tình huống mà bạn muốn có nhiều 
 
 Có những cách tiếp cận khác. Một được gọi là Hệ thống Hiệu ứng, có mục tiêu tương tự. Và đây tình cờ là thứ mà Plutus sử dụng cho các Môn phái quan trọng. Đặc biệt là Đơn vị liên hệ trong ví và Đơn vị theo dõi được sử dụng để kiểm tra mã Plutus.
 
-Tin tốt là bạn không cần phải hiểu Hệ thống Hiệu ứng để làm việc với các Đơn nguyên này. Bạn chỉ cần biết rằng bạn đang làm việc với Monad, và nó có siêu năng lực nào.
+Tin tốt là bạn không cần phải hiểu Hệ thống Hiệu ứng để làm việc với các monad này. Bạn chỉ cần biết rằng bạn đang làm việc với Monad, và nó có siêu năng lực nào.
 
 Plutus Monads
 -------------
 
-Bây giờ chúng ta đã thấy cách viết mã đơn nguyên, bằng cách sử dụng ràng buộc và trả về hoặc bằng cách sử dụng ký hiệu, chúng ta có thể xem một Đơn nguyên rất quan trọng, đó là Đơn nguyên hợp đồng, mà bạn có thể đã nhận thấy trong các ví dụ mã trước đó.
+Bây giờ chúng ta đã thấy cách viết mã monad, bằng cách sử dụng ràng buộc và trả về hoặc bằng cách sử dụng ký hiệu, chúng ta có thể xem một monad rất quan trọng, đó là hợp đồng monad, mà bạn có thể đã nhận thấy trong các ví dụ mã trước đó.
 
-Đơn nguyên hợp đồng xác định mã sẽ chạy trong ví, đây là phần ngoài chuỗi của Plutus.
+hợp đồng monad xác định mã sẽ chạy trong ví, đây là phần ngoài chuỗi của Plutus.
 
-Tuy nhiên, trước khi đi vào chi tiết, chúng ta sẽ nói về Đơn nguyên thứ hai, Đơn nguyên EmulatorTrace.
+Tuy nhiên, trước khi đi vào chi tiết, chúng ta sẽ nói về monad thứ hai, monad EmulatorTrace.
 
 ### The EmulatorTrace Monad
 
 Bạn có thể đã tự hỏi liệu có cách nào để thực thi mã Plutus cho mục đích thử nghiệm mà không cần sử dụng Sân chơi Plutus hay không. Thực sự là có, và điều này được thực hiện bằng cách sử dụng `EmulatorTrace Monad`.
 
-Bạn có thể nghĩ về một chương trình trong đơn nguyên này giống như những gì chúng tôi thực hiện thủ công trong `simulator` tab của sân chơi. Nghĩa là, chúng tôi xác định các điều kiện ban đầu, chúng tôi xác định các hành động chẳng hạn như ví nào gọi điểm cuối nào với các tham số nào và chúng tôi xác định khoảng thời gian chờ giữa các hành động.
+Bạn có thể nghĩ về một chương trình trong monad này giống như những gì chúng tôi thực hiện thủ công trong `simulator` tab của sân chơi. Nghĩa là, chúng tôi xác định các điều kiện ban đầu, chúng tôi xác định các hành động chẳng hạn như ví nào gọi điểm cuối nào với các tham số nào và chúng tôi xác định khoảng thời gian chờ giữa các hành động.
 
 Các định nghĩa liên quan nằm trong gói `plutus-contract` trong mô-đun `Plutus.Trace.Emulator`.
 
@@ -1158,7 +1158,7 @@ runEmulatorTrace cfg trace =
     $ runEmulatorStream cfg trace
 ```
 
-Nó nhận được một thứ gọi là một `EmulatorConfig` và `EmulatorTrace ()`, là một phép tính thuần túy mà không có tác dụng phụ trong thế giới thực. Nó là một chức năng thuần túy thực hiện theo dõi trên một blockchain được mô phỏng, sau đó đưa ra kết quả là một danh sách các `EmulatorState`, có thể là lỗi, nếu có, và cuối cùng là kết quả cuối cùng `EmulatorState`.
+Nó nhận được một thứ gọi là một `EmulatorConfig` và `EmulatorTrace ()`, là một phép tính thuần túy mà không có tác dụng trong thế giới thực. Nó là một chức năng thuần túy thực hiện theo dõi trên một blockchain được mô phỏng, sau đó đưa ra kết quả là một danh sách các `EmulatorState`, có thể là lỗi, nếu có, và cuối cùng là kết quả cuối cùng `EmulatorState`.
 
 `EmulatorConfig` được định nghĩa trong một mô-đun khác trong cùng một gói:
 
@@ -1395,7 +1395,7 @@ callEndpoint @"grab" h2 ()
 void $ waitNSlots 1
 ```
 
-Điều đầu tiên chúng ta phải làm là kích hoạt ví bằng cách sử dụng chức năng đơn nguyên `activateContractWallet`. Chúng ta liên kết kết quả của hàm này với `h1`, và sau đó liên kết kết quả của cuộc gọi thứ hai (đối với Wallet 2) với `h2`. Hai giá trị đó - `h1`và `h2`được xử lý đối với ví tương ứng của chúng.
+Điều đầu tiên chúng ta phải làm là kích hoạt ví bằng cách sử dụng chức năng monad `activateContractWallet`. Chúng ta liên kết kết quả của hàm này với `h1`, và sau đó liên kết kết quả của cuộc gọi thứ hai (đối với Wallet 2) với `h2`. Hai giá trị đó - `h1`và `h2`được xử lý đối với ví tương ứng của chúng.
 
 Tiếp theo, chúng tôi sử dụng `callEndpoint` để mô phỏng Ví 1 gọi `give` điểm cuối, với các thông số được hiển thị. Sau đó, chúng tôi chờ đợi đến vị trí 20. Hàm `waitUntilSlot` thực sự trả về một giá trị đại diện cho vị trí đã đạt đến, nhưng vì chúng tôi không quan tâm đến giá trị đó ở đây, chúng tôi sử dụng `void` để bỏ qua nó. Sau đó, chúng tôi mô phỏng cuộc gọi đến `grab` điểm cuối bằng Ví 2.
 
@@ -1475,7 +1475,7 @@ Wallet 10:
 
 Đầu ra này rất giống với đầu ra mà chúng ta thấy trong playground. Chúng ta có thể thấy giao dịch Genesis cũng như cả giao dịch `give`và `grab` giao dịch từ `Trace`. Chúng ta cũng có thể thấy một số đầu ra nhật ký từ chính hợp đồng, có tiền tố là `CONTRACT LOG`.
 
-Chúng tôi cũng có thể đăng nhập từ bên trong `Trace` đơn nguyên. Ví dụ, chúng tôi có thể xem kết quả của `waitNSlots` cuộc gọi cuối cùng :
+Chúng tôi cũng có thể đăng nhập từ bên trong `Trace` monad. Ví dụ, chúng tôi có thể xem kết quả của `waitNSlots` cuộc gọi cuối cùng :
 
 ``` {.haskell}
 myTrace :: EmulatorTrace ()
@@ -1501,7 +1501,7 @@ Bây giờ chúng ta hãy nhìn vào Contract Monad.
 
 ### The Contract Monad
 
-Mục đích của Đơn nguyên hợp đồng là xác định mã ngoài chuỗi chạy trong ví. Nó có bốn tham số kiểu:
+Mục đích của hợp đồng monad là xác định mã ngoài chuỗi chạy trong ví. Nó có bốn tham số kiểu:
 
 ``` {.haskell}
 newtype Contract w s e a = Contract { unContract :: Eff (ContractEffs w s e) a }
@@ -1509,13 +1509,13 @@ newtype Contract w s e a = Contract { unContract :: Eff (ContractEffs w s e) a }
 ```
 
 
-`a` như trong mọi Đơn nguyên - nó biểu thị kiểu kết quả của phép tính.
+`a` như trong mọi monad - nó biểu thị kiểu kết quả của phép tính.
 
 Chúng ta sẽ đi vào chi tiết hơn ba phần khác sau nhưng chỉ ngắn gọn:
 
-- w giống như ví dụ đơn nguyên `Writer` của chúng tôi, nó cho phép chúng tôi viết các thông báo kiểu nhật ký `w`.
+- w giống như ví dụ monad `Writer` của chúng tôi, nó cho phép chúng tôi viết các thông báo kiểu nhật ký `w`.
 - s mô tả các khả năng của blockchain, ví dụ như đợi một vị trí, gửi giao dịch, lấy khóa công khai của ví. Nó cũng có thể chứa các điểm cuối cụ thể.
-- e mô tả loại thông báo lỗi mà đơn nguyên này có thể ném ra.
+- e mô tả loại thông báo lỗi mà monad này có thể ném ra.
 Hãy viết một ví dụ.
 
 ``` {.haskell}
