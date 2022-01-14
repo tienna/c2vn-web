@@ -105,5 +105,5 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
 ## Tài nguyên bổ sung
 
 - [Kho lưu trữ Plutus](https://github.com/input-output-hk/plutus)
-- [Tìm hiểu bạn một Haskell vì điều tốt!](http://learnyouahaskell.com/)
-- [Khóa học về Haskell & Cryptocurrencies Mông Cổ](https://www.youtube.com/playlist?list=PLJ3w5xyG4JWmBVIigNBytJhvSSfZZzfTm)
+- [Tìm hiểu Haskell!](http://learnyouahaskell.com/)
+- [Khóa học về Haskell & Cryptocurrencies ở Mông Cổ](https://www.youtube.com/playlist?list=PLJ3w5xyG4JWmBVIigNBytJhvSSfZZzfTm)
