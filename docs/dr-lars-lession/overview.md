@@ -26,29 +26,29 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Xử lý thời gian (Time handling).
   - Hợp đồng được tham số hóa (Parameterized contracts).
 
--  Bài giảng số 4: [Video](https://youtu.be/6Reuh0xZDjY), [Html](week4.md)
+- Bài giảng số 4: [Video](https://youtu.be/6Reuh0xZDjY), [Html](week4.md)
 
   - Monads.
   - Đơn nguyên `EmulatorTrace`.
   - Đơn nguyên `Contract`.
 
--  Bài giảng số 5: [Video](https://youtu.be/6VbhY162GQA), [Html](week5.md)
+- Bài giảng số 5: [Video](https://youtu.be/6VbhY162GQA), [Html](week5.md)
 
   - Values.
   - Mã thông báo gốc và chính sách đúc tiền
   - NFT's.
 
--  Bài giảng số 6: [Video](https://youtu.be/wY7R-PJn66g), [Html](week6.md)
+- Bài giảng số 6: [Video](https://youtu.be/wY7R-PJn66g), [Html](week6.md)
 
   - Oracles.
   - Sử dụng PAB.
 
--  Bài giảng số 7: [Video](https://youtu.be/oJupInqvJUI), [Html](week7.md)
+- Bài giảng số 7: [Video](https://youtu.be/oJupInqvJUI), [Html](week7.md)
 
   - Commit schemes.
   - Máy trạng thái (State machines).
 
--  Bài giảng số 8: [Video](https://youtu.be/JMRwkMgaBOg), [Html](week8.md)
+- Bài giảng số 8: [Video](https://youtu.be/JMRwkMgaBOg), [Html](week8.md)
 
   - Ví dụ khác về state machine: token sale.
   - Kiểm tra tự động sử dụng dấu vết giả lập (emulator traces).
@@ -56,13 +56,13 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Kiểm tra tài sản với `QuickCheck`.
   - Thử nghiệm hợp đồng Plutus với thử nghiệm dựa trên tài sản.
 
--  Bài giảng số 9: [Video](https://youtu.be/-RpCqHuxfQQ), [Html](week9.md)
+- Bài giảng số 9: [Video](https://youtu.be/-RpCqHuxfQQ), [Html](week9.md)
 
   - Tổng quan về Marlowe.  [Site](https://github.com/input-output-hk/plutus-pioneer-program/blob/main/Marlowe_Plutus_Pioneers_June_2021.pdf)
   - Marlowe trong Plutus.
   - Giới thiệu Marlowe Playground.
 
--  Bài giảng số 10: [Video](https://youtu.be/Dg36h9YPMz4), [Html](week10.md)
+- Bài giảng số 10: [Video](https://youtu.be/Dg36h9YPMz4), [Html](week10.md)
 
   - Giới thiệu Uniswap.
   - Triển khai Uniswap trong Plutus.
