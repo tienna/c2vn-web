@@ -136,6 +136,7 @@ const sidebars = {
         "dr-lars-lession/week7",
         "dr-lars-lession/week8",
         "dr-lars-lession/week9",
+        "dr-lars-lession/week10",
     ],
     // "Mang Project Catalyst Townhall đến Việt Nam": [
     //   "vn-townhall-channel/note",
