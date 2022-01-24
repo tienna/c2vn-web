@@ -73,15 +73,15 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
 ## Các Code ví dụ 
 
 - Lecture #1:  [English Auction](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week01/src/Week01)
-- Lecture #2:  [Simple Validation](code/week02/src/Week02/)
-- Lecture #3:  [Validation Context & Parameterized Contracts](code/week03)
-- Lecture #4:  [Monads, `EmulatorTrace` & `Contract`](code/week04)
-- Lecture #5:  [Minting Policies](code/week05)
-- Lecture #6:  [Oracles](code/week06)
-- Lecture #7:  [State Machines](code/week07)
-- Lecture #8:  [Testing](code/week08)
-- Lecture #9:  [Marlowe](code/week09)
-- Lecture #10: [Uniswap](code/week10)
+- Lecture #2:  [Simple Validation](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week02/src/Week02)
+- Lecture #3:  [Validation Context & Parameterized Contracts](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week03/src/Week03)
+- Lecture #4:  [Monads, `EmulatorTrace` & `Contract`](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week04/src/Week04)
+- Lecture #5:  [Minting Policies](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week05/src/Week05)
+- Lecture #6:  [Oracles](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week06/src/Week06)
+- Lecture #7:  [State Machines](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week07/src/Week07)
+- Lecture #8:  [Testing](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week08/src/Week08)
+- Lecture #9:  [Marlowe](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week09/src/Week09)
+- Lecture #10: [Uniswap](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week10/src/Week10)
 
 
 ## Một số mô-đun Plutus
