@@ -5,6 +5,8 @@ Chú ý:
 
 Đây là phiên bản viết của  [Bài giảng số 10 Dr.Lars](https://youtu.be/X_q4AHMsw5Y).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X_q4AHMsw5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Trong bài giảng này, chúng ta xem xét việc triển khai Uniswap trong Plutus.
 
 Đây là bài giảng cuối cùng trong Chương trình Tiên phong của Plutus. Tuy nhiên, sẽ có một bài giảng đặc biệt khi có thể triển khai các hợp đồng tới testnet.
