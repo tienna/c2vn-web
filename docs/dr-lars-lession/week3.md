@@ -4,6 +4,8 @@ Week 03 - Script Context
 
 Đây là phiên bản đã dịch của [Bài giảng số 3 Dr. Lars](https://youtu.be/WG3uw-TkW2k).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WG3uw-TkW2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Trong bài giảng này, chúng ta tìm hiểu về context script (đối số xác thực thứ ba), thời gian xử lý và các hợp đồng được tham số hóa.
 
 Đoạn mã trong bài giảng này sử dụng Plutus commit là `81ba78edb1d634a13371397d8c8b19829345ce0d`.
