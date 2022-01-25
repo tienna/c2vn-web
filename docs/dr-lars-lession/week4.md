@@ -5,6 +5,8 @@ Week 04 - Monads
 Đây là phiên bản viết của Bài [giảng số
 4](https://youtu.be/HLJOcKlEucI).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HLJOcKlEucI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Trong bài giảng này, chúng ta tìm hiểu về monad (monads). Đặc biệt là các
 monads EmulatorTrace và Contract..
 
