@@ -5,6 +5,8 @@ Chú ý:
 
 Đây là phiên bản viết của [Bài giảng số 8 Dr.Lars](https://www.youtube.com/watch?v=tGjEvumVBk8).
 
+<iframe width="100%" height="325" src="https://www.youtube.com/embed/tGjEvumVBk8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+
 Trong bài giảng này, chúng tôi đề cập đến một ví dụ máy trạng thái khác, kiểm tra tự động bằng cách sử dụng dấu vết giả lập, quang học và kiểm tra dựa trên thuộc tính.
 
 Tuần này, chúng ta đã sử dụng Plutus commit: 
