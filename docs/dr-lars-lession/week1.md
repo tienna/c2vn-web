@@ -4,7 +4,7 @@ Week 01 - English Auction
 Đây là phiên bản bằng văn bản của [Lecture \#1 -
 Dr.Lars](https://youtu.be/CJD8ctJqDw0).
 
-<iframe width="100%" height="325" src="https://youtu.be/CJD8ctJqDw0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+<iframe width="100%" height="325" src="https://www.youtube.com/watch?v=CJD8ctJqDw0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 Nó bao gồm phần giới thiệu về Plutus, mô hình (E) UTxO (và cách nó so
 sánh với các mô hình khác) và kết thúc bằng một phiên đấu giá bằng tiếng
@@ -16,7 +16,7 @@ lặp hai của chương trình.
 
 Cam kết Plutus được sử dụng trong các ghi chú này là
 ea0ca4e9f9821a9dbfc5255fa0f42b6f2b3887c4.
-:::
+
 
 Welcome
 -------
@@ -69,15 +69,13 @@ Alice của 100 Ada, và chiếc khác thuộc về Bob của 50 Ada.
 
 Alice muốn gửi 10 ADA cho Bob, vì vậy cô ấy cần tạo một giao dịch.
 
-::: {.note}
-::: {.title}
-Note
-:::
 
-Một giao dịch là một cái gì đó có chứa một số lượng đầu vào tùy ý và một
+Note
+
+- Một giao dịch là một cái gì đó có chứa một số lượng đầu vào tùy ý và một
 số lượng đầu ra tùy ý. Tác dụng của một giao dịch là tiêu thụ đầu vào và
 sản xuất đầu ra mới.
-:::
+
 
 Điều quan trọng là bạn chỉ có thể sử dụng các UTxO hoàn chỉnh như đầu
 vào. Alice không thể đơn giản chia 100 ADA hiện có của cô ấy thành 90 và
