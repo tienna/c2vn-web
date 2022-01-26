@@ -14,7 +14,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Chạy một hợp đồng đấu giá mẫu trên một Playground
   - Bài tập về nhà
   
-  <iframe width="100%" height="325" src="https://www.youtube.com/embed/CJD8ctJqDw0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/CJD8ctJqDw0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 - Bài giảng số 2: [Video ](https://youtu.be/7nDGZkUIeUQ), [Html](week2.md)
 
@@ -22,7 +22,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Low-level, Các tập lệnh xác thực on-chain chưa được định kiểu.
   - High-level, Các tập lệnh xác thực on-chain định kiểu.
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/7nDGZkUIeUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/7nDGZkUIeUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 3: [Video ](https://youtu.be/WG3uw-TkW2k), [Html](week3.md)
 
@@ -30,7 +30,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Xử lý thời gian (Time handling).
   - Hợp đồng được tham số hóa (Parameterized contracts).
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/WG3uw-TkW2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/WG3uw-TkW2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 4: [Video](https://youtu.be/HLJOcKlEucI), [Html](week4.md)
 
@@ -38,7 +38,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Đơn nguyên `EmulatorTrace`.
   - Đơn nguyên `Contract`.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HLJOcKlEucI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/HLJOcKlEucI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 5: [Video](https://youtu.be/6VbhY162GQA), [Html](week5.md)
 
@@ -46,21 +46,21 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Mã thông báo gốc và chính sách đúc tiền
   - NFT's.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6VbhY162GQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/6VbhY162GQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 6: [Video](https://www.youtube.com/watch?v=X9fOkkpj-aU), [Html](week6.md)
 
   - Oracles.
   - Sử dụng PAB.
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/X9fOkkpj-aU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/X9fOkkpj-aU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 7: [Video](https://youtu.be/ptsltoZNl50), [Html](week7.md)
 
   - Commit schemes.
   - Máy trạng thái (State machines).
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ptsltoZNl50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/ptsltoZNl50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 8: [Video](https://www.youtube.com/watch?v=tGjEvumVBk8), [Html](week8.md)
 
@@ -70,7 +70,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Kiểm tra tài sản với `QuickCheck`.
   - Thử nghiệm hợp đồng Plutus với thử nghiệm dựa trên tài sản.
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/tGjEvumVBk8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/tGjEvumVBk8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 9: [Video](https://youtu.be/J5as459k10E), [Html](week9.md)
 
@@ -78,7 +78,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Marlowe trong Plutus.
   - Giới thiệu Marlowe Playground.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J5as459k10E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/J5as459k10E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Bài giảng số 10: [Video](https://youtu.be/X_q4AHMsw5Y), [Html](week10.md)
 
@@ -88,7 +88,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
   - Demo.
   - Sử dụng `curl` để tương tác với PAB.
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/X_q4AHMsw5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="325" src="https://www.youtube.com/embed/X_q4AHMsw5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Các Code ví dụ 
 
