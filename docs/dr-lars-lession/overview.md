@@ -50,7 +50,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
 
 - Bài giảng số 8: [Video](https://www.youtube.com/watch?v=tGjEvumVBk8), [Html](week8.md)
 
-  - Ví dụ khác về state machine: token sale.
+  - Ví dụ khác về state machine: Token Sale.
   - Kiểm tra tự động sử dụng dấu vết giả lập (emulator traces).
   - Chuyển tiếp (Interlude): optics.
   - Kiểm tra tài sản với `QuickCheck`.
@@ -81,26 +81,7 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
 - Lecture #7:  [State Machines](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week07/src/Week07)
 - Lecture #8:  [Testing](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week08/src/Week08)
 - Lecture #9:  [Marlowe](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week09/src/Week09)
-- Lecture #10: [Uniswap](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week10/src/Week10)
-
-
-## Một số mô-đun Plutus
-
-- [`Language.Marlowe.Semantics`](https://github.com/input-output-hk/plutus/blob/master/marlowe/src/Language/Marlowe/Semantics.hs), chứa các kiểu và ngữ nghĩa Marlowe.
-- [`Plutus.Contract.StateMachine`](https://github.com/input-output-hk/plutus/blob/master/plutus-contract/src/Plutus/Contract/StateMachine.hs), chứa các loại và chức năng để sử dụng máy trạng thái.
-- [`Plutus.Contract.Test`](https://github.com/input-output-hk/plutus/blob/master/plutus-contract/src/Plutus/Contract/Test.hs), cung cấp nhiều cách khác nhau để viết các bài kiểm tra cho các hợp đồng Plutus.
-- [`Plutus.Contract.Test.ContractModel`](https://github.com/input-output-hk/plutus/blob/master/plutus-contract/src/Plutus/Contract/Test/ContractModel.hs), hỗ trợ kiểm tra dựa trên tài sản của các hợp đồng Plutus.
-- [`Plutus.Contracts.Uniswap`](https://github.com/input-output-hk/plutus/blob/master/plutus-use-cases/src/Plutus/Contracts/Uniswap.hs),  một triển khai Uniswap trong Plutus.
-- [`Plutus.PAB.Webserver.API`](https://github.com/input-output-hk/plutus/blob/master/plutus-pab/src/Plutus/PAB/Webserver/API.hs), chứa giao diện HTTP do PAB cung cấp.
-- [`Plutus.Trace.Emulator`](https://github.com/input-output-hk/plutus/blob/master/plutus-contract/src/Plutus/Trace/Emulator.hs), chứa các loại và chức năng liên quan đến dấu vết.
-- [`Plutus.V1.Ledger.Ada`](https://github.com/input-output-hk/plutus/blob/master/plutus-ledger-api/src/Plutus/V1/Ledger/Ada.hs), chứa hỗ trợ cho tiền tệ Ada.
-- [`Plutus.V1.Ledger.Contexts`](https://github.com/input-output-hk/plutus/blob/master/plutus-ledger-api/src/Plutus/V1/Ledger/Contexts.hs), chứa định nghĩa của các kiểu liên quan đến context-related.
-- [`Plutus.V1.Ledger.Interval`](https://github.com/input-output-hk/plutus/blob/master/plutus-ledger-api/src/Plutus/V1/Ledger/Interval.hs), chứa định nghĩa và các hàm trợ giúp cho `Interval` .
-- [`Plutus.V1.Ledger.Slot`](https://github.com/input-output-hk/plutus/blob/master/plutus-ledger-api/src/Plutus/V1/Ledger/Slot.hs), c chứa định nghĩa của `Slot`.
-- [`Plutus.V1.Ledger.Value`](https://github.com/input-output-hk/plutus/blob/master/plutus-ledger-api/src/Plutus/V1/Ledger/Value.hs), cchứa định nghĩa và các hàm trợ giúp cho `Value`.
-- [`PlutusTx.Data`](https://github.com/input-output-hk/plutus/blob/master/plutus-tx/src/PlutusTx/Data.hs), chứa định nghĩa của kiểu `Data`.
-- [`PlutusTx.IsData.Class`](https://github.com/input-output-hk/plutus/blob/master/plutus-tx/src/PlutusTx/IsData/Class.hs), định nghĩa lớp `IsData`.
-
+- Lecture #10: [Uniswap](https://github.com/cardano2vn/cardanovn-portal/tree/main/docs/dr-lars-lession/code/week10)
 
 ## Tài nguyên bổ sung
 
