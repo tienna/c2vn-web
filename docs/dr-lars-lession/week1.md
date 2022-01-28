@@ -169,7 +169,7 @@ chọn.
 
 ### Tập lệnh Context
 
-#### Phương pháp tiếp cận của Bitcoin
+### Phương pháp tiếp cận của Bitcoin
 
 Một tùy chọn là tất cả những gì script thấy là `Redeemer`. Trong trường
 hợp này, `Redeemer` chứa tất cả logic cần thiết để xác minh giao dịch.
@@ -182,7 +182,7 @@ dụng nó để xác định xem có được sử dụng UTxO hay không.
 Nhưng đây không phải là lựa chọn duy nhất. Chúng tôi có thể quyết định
 cung cấp thêm thông tin vào tập lệnh.
 
-#### Phương pháp tiếp cận của Ethereum
+### Phương pháp tiếp cận của Ethereum
 
 Ethereum sử dụng một khái niệm khác. Trong Ethereum, tập lệnh có thể
 thấy mọi thứ - toàn bộ chuỗi khối - một thái cực ngược lại với Bitcoin.
@@ -197,7 +197,7 @@ cả các loại các vấn đề an ninh và nguy hiểm. Rất khó cho các n
 triển của một Hợp đồng thông minh Ethereum để dự đoán mọi thứ có thể xảy
 ra.
 
-#### Phương pháp tiếp cận của Cardano
+### Phương pháp tiếp cận của Cardano
 
 Những gì Cardano làm là một cái gì đó ở giữa.
 
@@ -288,7 +288,7 @@ Plutus đơn giản và từ từ thêm những thứ phức tạp hơn, nó s�
 vị hơn và chứng minh những gì Plutus có thể làm. Sau đó, chúng ta có thể
 sử dụng nó để xem xét một số khái niệm chi tiết hơn.
 
-### Howph đồng đấu giá English Auction
+### Hợp đồng đấu giá English Auction
 
 Như ví dụ giới thiệu của chúng tôi, chúng tôi sẽ xem xét một cuộc Đấu
 giá `English Auction`. Ai đó muốn đấu giá NFT (token không thể thay
@@ -398,11 +398,11 @@ quay trở lại Alice hay không, tuy nhiên, nó không thực sự cần ki�
 người nhận vì giao dịch sẽ được kích hoạt bởi Alice và cô ấy có thể gửi
 NFT đến bất cứ nơi nào cô ấy muốn.
 
-#### Mã On-chain và Off-chain
+### Mã On-chain và Off-chain
 
 Điều quan trọng cần nhận ra về Plutus là có mã On-chain và Off-chain.
 
-##### Mã On-chain
+### Mã On-chain
 
 Mã trên chuỗi là các tập lệnh mà chúng ta đã thảo luận - các tập lệnh từ
 mô hình UTxO. Ngoài các địa chỉ khóa công khai, chúng tôi có địa chỉ tập
@@ -424,7 +424,7 @@ dịch xuống `Plutus Core`.
 Nhiệm vụ của một tập lệnh là nói có hay không về việc liệu một giao dịch
 có thể sử dụng một đầu ra hay không.
 
-##### Mã Off-chain
+### Mã Off-chain
 
 Để mở khóa UTxO, bạn phải có khả năng xây dựng một giao dịch sẽ vượt qua
 quá trình xác thực và đó là trách nhiệm của bộ phận ngoài chuỗi của
