@@ -112,7 +112,7 @@ Charlie. Bob sẽ phải sử dụng cả hai UTxO của mình làm đầu vào.
 ![](img/4.png)
 
 Khi nào thì được phép chi tiêu?
-~~~~~~
+-------------------------------
 
 Rõ ràng sẽ không phải là một ý kiến hay nếu bất kỳ giao dịch nào có thể
 chi tiêu UTxO tùy ý. Nếu đúng như vậy thì Bob có thể tiêu tiền của
