@@ -7,58 +7,54 @@ Dr.Lars](https://youtu.be/CJD8ctJqDw0).
 <iframe width="100%" height="325" src="https://www.youtube.com/embed/CJD8ctJqDw0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 Nó bao gồm phần giới thiệu về Plutus, mô hình (E) UTxO (và cách nó so
-sánh với các mô hình khác) và kết thúc bằng một phiên đấu giá bằng tiếng
-Anh ví dụ được quản lý bằng hợp đồng thông minh Plutus chạy trên Plutus
+sánh với các mô hình khác) và kết thúc bằng một ví dụ phiên đấu giá English Auction được quản lý bằng hợp đồng thông minh Plutus chạy trên Plutus
 Playground.
 
-Các ghi chú này đã được cập nhật để phản ánh những thay đổi trong lần
-lặp hai của chương trình.
+Các ghi chú này đã được cập nhật để phản ánh những thay đổi trong lần này chương trình.
 
-Cam kết Plutus được sử dụng trong các ghi chú này là
+Cam kết Plutus được sử dụng trong các ghi chú này là:
 ea0ca4e9f9821a9dbfc5255fa0f42b6f2b3887c4.
 
 
-Welcome
+Mở đầu
 -------
 
 Học Plutus không dễ dàng, và có một số lý do cho điều đó.
 
-1.  Plutus sử dụng mô hình (E) UTxO. Điều này khác và ít trực quan hơn
-    so với phương pháp Ethereum để tạo hợp đồng thông minh. Nó có rất
+1.  Plutus sử dụng mô hình (E)UTxO. Điều này khác và ít trực quan hơn
+    so với phương pháp của Ethereum để tạo hợp đồng thông minh. Nó có rất
     nhiều lợi thế, nhưng nó đòi hỏi một cách suy nghĩ mới về hợp đồng.
-    Và đó là trước khi chúng ta bắt đầu với chính ngôn ngữ.
+    và đó là trước khi chúng ta bắt đầu với chính ngôn ngữ.
 2.  Plutus là mới và vẫn đang được phát triển nhanh chóng.
 3.  Dụng cụ vẫn chưa phải là lý tưởng. Vì vậy, các nhà phát triển
     Haskell có kinh nghiệm sẽ lưu ý rằng trải nghiệm với Plutus không dễ
     chịu, vì ví dụ, khi cố gắng truy cập tài liệu hoặc nhận các gợi ý cú
     pháp từ REPL. Nó cũng có thể là một thách thức để xây dựng Plutus
-    trong lần đầu tiên địa điểm. Cách dễ nhất hiện nay là sử dụng Nix.
+    trong lần đầu tiên ở local. Cách dễ nhất hiện nay là sử dụng Nix.
     Nhóm Plutus là đang làm việc để cung cấp hình ảnh Docker, điều này
     sẽ hữu ích.
-4.  Plutus là Haskell, ít nhiều có thể có một học tập khó khăn đường
-    cong cho những người đến từ nền tảng lập trình mệnh lệnh.
+4.  Plutus là Haskell, ít nhiều có thể có một học tập khó khăn cho những người đến từ nền tảng lập trình mệnh lệnh.
 5.  Plutus là thương hiệu mới và điều này có nghĩa là không có nhiều trợ
-    giúp tài nguyên có sẵn, chẳng hạn như các bài đăng trên
-    StackOverflow.
+    giúp tài nguyên có sẵn, chẳng hạn như các bài đăng trên StackOverflow.
 
-The (E)UTxO Model
+Mô hình (E)UTxO
 -----------------
 
-### Overview
+### Giới thiệu
 
 Một trong những điều quan trọng nhất bạn cần hiểu để viết hợp đồng thông
-minh Plutus là mô hình kế toán mà Cardano sử dụng, mô hình Đầu ra Giao
-dịch Chưa gửi Mở rộng.
+minh Plutus là mô hình EUTxO mà Cardano sử dụng, mô hình Đầu ra Giao
+dịch chưa sử dụng (mở rộng).
 
 Mô hình UTxO, không có (E) là mô hình được giới thiệu bởi Bitcoin, nhưng
 có những mô hình khác. Ví dụ như Ethereum, sử dụng cái gọi là mô hình
-dựa trên tài khoản, đó là mô hình bạn đã quen với ngân hàng, nơi mọi
+dựa trên tài khoản mô hình kế toán, đó là mô hình bạn đã quen với ngân hàng, nơi mọi
 người đều có tài khoản, mỗi tài khoản có số dư và nếu bạn chuyển tiền từ
 tài khoản này sang tài khoản khác thì số dư được cập nhật cho phù hợp.
 
 Đó không phải là cách mô hình UTxO hoạt động.
 
-Kết quả đầu ra của giao dịch chưa được gửi đúng như tên gọi. họ đang kết
+Kết quả đầu ra của giao dịch chưa được sử dụng đúng như tên gọi. Nó là đang kết
 quả giao dịch từ các giao dịch trước đó đã xảy ra trên blockchain chưa
 được chi tiêu.
 
@@ -76,15 +72,14 @@ Note
 số lượng đầu ra tùy ý. Tác dụng của một giao dịch là tiêu thụ đầu vào và
 sản xuất đầu ra mới.
 
-
-Điều quan trọng là bạn chỉ có thể sử dụng các UTxO hoàn chỉnh như đầu
+Điều quan trọng là bạn chỉ có thể sử dụng các UTxO hoàn chỉnh làm đầu
 vào. Alice không thể đơn giản chia 100 ADA hiện có của cô ấy thành 90 và
-a 10, cô ấy phải sử dụng 100 ADA đầy đủ làm đầu vào cho một giao dịch.
+ 10, cô ấy phải sử dụng 100 ADA đầy đủ làm đầu vào cho một giao dịch.
 
 ![](img/2.png)
 
 Sau khi được giao dịch sử dụng, đầu vào của Alice không còn là UTxO
-(giao dịch chưa sử dụng). Nó sẽ đã được sử dụng làm đầu vào cho Tx 1. Vì
+(giao dịch chưa sử dụng). Nó sẽ đã được sử dụng làm đầu vào cho Tx1. Vì
 vậy, cô ấy cần tạo đầu ra cho giao dịch của mình.
 
 Cô ấy muốn trả 10 ADA cho Bob, vì vậy một đầu ra sẽ là 10 ADA (cho Bob).
@@ -101,32 +96,26 @@ hai trường hợp ngoại lệ.
 
 1.  
 
-    Phí giao dịch. Trong một chuỗi khối thực, bạn phải trả phí cho mỗi
-
-    :   các giao dịch.
+    Phí giao dịch. Trong một chuỗi khối thực, bạn phải trả phí cho mỗi các giao dịch.
 
 2.  
 
-    Mã thông báo gốc. Các giao dịch có thể tạo mã thông báo mới,
-
-    :   hoặc để ghi mã thông báo, trong trường hợp đó, đầu vào sẽ thấp
-        hơn hoặc cao hơn so với kết quả đầu ra, tùy thuộc vào tình
-        huống.
+    token gốc. Các giao dịch có thể tạo token mới, hoặc để ghi token, trong trường hợp đó, đầu vào sẽ thấp hơn hoặc cao hơn so với kết quả đầu ra, tùy thuộc vào tình huống.
 
 Hãy xem một ví dụ phức tạp hơn một chút.
 
 Alice và Bob muốn chuyển 55 ADA mỗi người cho Charlie. Alice không có
 lựa chọn, vì cô ấy chỉ có một UTxO. Bob cũng không có lựa chọn nào vì
-hai UTxO của anh ấy đủ lớn để bao phủ 55 ADA mà anh ấy muốn gửi tới -
+hai UTxO của anh ấy không đủ 55 ADA mà anh ấy muốn gửi tới -
 Charlie. Bob sẽ phải sử dụng cả hai UTxO của mình làm đầu vào.
 
 ![](img/4.png)
 
 Khi nào thì được phép chi tiêu?
-\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~
+~~~~~~
 
 Rõ ràng sẽ không phải là một ý kiến hay nếu bất kỳ giao dịch nào có thể
-chi tiêu UTxOs tùy ý. Nếu đúng như vậy thì Bob có thể tiêu tiền của
+chi tiêu UTxO tùy ý. Nếu đúng như vậy thì Bob có thể tiêu tiền của
 Alice mà không có sự đồng ý của cô ấy.
 
 Cách thức hoạt động là thêm chữ ký vào các giao dịch.
@@ -137,7 +126,7 @@ giao dịch thứ hai, phức tạp hơn, không thể được thực hiện tr
 Daedalus, vì vậy bạn sẽ cần để sử dụng CLI cho việc này.
 
 Mọi thứ được giải thích cho đến nay chỉ là về mô hình UTxO, không phải
-(E) Mô hình UTxO.
+Mô hình(E)UTxO.
 
 Phần mở rộng xuất hiện khi chúng ta nói về hợp đồng thông minh, vì vậy
 để hiểu điều đó, chúng ta hãy tập trung vào việc tiêu thụ UTxO của Alice
@@ -150,55 +139,55 @@ này thuộc về được phép sử dụng UTxO, dựa vào chữ ký điện 
 trường hợp này, điều đó có nghĩa là Alice phải ký vào giao dịch để việc
 sử dụng UTxO hợp lệ.
 
-Ý tưởng của mô hình (E) UTxO là làm cho điều này trở nên tổng quát hơn.
+Ý tưởng của mô hình (E)UTxO là làm cho điều này trở nên tổng quát hơn.
 
 Thay vì chỉ có một điều kiện, cụ thể là chữ ký có trong giao dịch, chúng
 tôi thay thế chữ ký này bằng tùy ý Hợp lý.
 
-Đây là nơi Plutus đến.
+Đây là nơi mà Plutus đóng vài trò.
 
 Thay vì chỉ có một địa chỉ tương ứng với một khóa công khai có thể được
 xác minh bằng chữ ký được thêm vào giao dịch, chúng tôi có các địa chỉ
-chung chung hơn, không dựa trên khóa công khai hoặc hàm băm của công
-khai khóa, nhưng thay vào đó chứa logic tùy ý quyết định trong điều kiện
-nào a UTxO cụ thể có thể được chi tiêu bằng một giao dịch cụ thể.
+chung chung hơn, không dựa trên khóa công khai hoặc hàm băm của khóa công
+khai, nhưng thay vào đó chứa logic tùy ý quyết định trong điều kiện
+nào. Một UTxO cụ thể có thể được chi tiêu bằng một giao dịch cụ thể.
 
 Vì vậy, thay vì một đầu vào được xác thực đơn giản bằng khóa công khai
 của nó, đầu vào sẽ biện minh rằng nó được phép sử dụng đầu ra này với
-một số phần dữ liệu tùy ý mà chúng tôi gọi là *Redeemer*.
+một số phần dữ liệu tùy ý mà chúng tôi gọi là `Redeemer`.
 
 ![](img/6.png)
 
 Chúng tôi thay thế địa chỉ khóa công khai (của Alice trong ví dụ của
 chúng tôi) bằng một tập lệnh và chúng tôi thay thế chữ ký điện tử bằng
-một \* Redeemer \*.
+một `Redeemer`.
 
-Nó chính xác nghĩa là gì? Ý chúng tôi là *arbitrary logic* là gì?
+Nó chính xác nghĩa là gì? Ý chúng tôi là `arbitrary logic` là gì?
 
-Điều quan trọng là phải xem xét bối cảnh mà kịch bản có. Có một số tùy
+Điều quan trọng là phải xem xét context mà kịch bản có. Có một số tùy
 chọn.
 
-### Script Context
+### Tập lệnh Context
 
-#### The Bitcoin approach
+#### Phương pháp tiếp cận của Bitcoin
 
-Một tùy chọn là tất cả những gì script thấy là Redeemer. Trong trường
-hợp này, Redeemer chứa tất cả logic cần thiết để xác minh giao dịch.
+Một tùy chọn là tất cả những gì script thấy là `Redeemer`. Trong trường
+hợp này, `Redeemer` chứa tất cả logic cần thiết để xác minh giao dịch.
 Tình cờ, đây là những gì Bitcoin làm. Trong Bitcoin, có những hợp đồng,
 nhưng chúng không phải là rất thông minh. Chúng được gọi là Bitcoin
-Script, hoạt động chính xác như thế này. Có một tập lệnh trên UTxO bên
-và người mua lại ở phía đầu vào, và tập lệnh nhận được người đổi và sử
+Script, hoạt động chính xác như thế này. Có một tập lệnh trên UTxO
+và `Redeemer` ở phía đầu vào, và tập lệnh nhận được `Redeemer` và sử
 dụng nó để xác định xem có được sử dụng UTxO hay không.
 
 Nhưng đây không phải là lựa chọn duy nhất. Chúng tôi có thể quyết định
 cung cấp thêm thông tin vào tập lệnh.
 
-#### The Ethereum approach
+#### Phương pháp tiếp cận của Ethereum
 
 Ethereum sử dụng một khái niệm khác. Trong Ethereum, tập lệnh có thể
 thấy mọi thứ - toàn bộ chuỗi khối - một thái cực ngược lại với Bitcoin.
-Trong Bitcoin, tập lệnh có rất ít bối cảnh, tất cả những gì nó có thể
-thấy là người mua chuộc. Trong Ethereum, các tập lệnh Solidity có thể
+Trong Bitcoin, tập lệnh có rất ít `context`, tất cả những gì nó có thể
+thấy là `Redeemer`. Trong Ethereum, các tập lệnh `Solidity` có thể
 thấy trạng thái hoàn chỉnh của chuỗi khối.
 
 Điều này làm cho các tập lệnh Ethereum mạnh mẽ hơn, nhưng nó cũng đi kèm
@@ -208,27 +197,26 @@ cả các loại các vấn đề an ninh và nguy hiểm. Rất khó cho các n
 triển của một Hợp đồng thông minh Ethereum để dự đoán mọi thứ có thể xảy
 ra.
 
-#### The Cardano approach
+#### Phương pháp tiếp cận của Cardano
 
 Những gì Cardano làm là một cái gì đó ở giữa.
 
 Trong Plutus, tập lệnh không thể nhìn thấy toàn bộ chuỗi khối, nhưng nó
 có thể thấy toàn bộ giao dịch đang được xác thực. Ngược lại với Bitcoin,
-nó không thể chỉ nhìn thấy người mua lại một đầu vào mà còn có thể thấy
+nó không thể chỉ nhìn thấy `Redeemer` một đầu vào mà còn có thể thấy
 tất cả các đầu vào và đầu ra của giao dịch và chính giao dịch đó. Tập
 lệnh Plutus có thể sử dụng thông tin này để quyết định xem việc sử dụng
 đầu ra có ổn hay không.
 
 Có một thành phần cuối cùng mà các tập lệnh Plutus cần để trở nên mạnh
-mẽ và biểu cảm như các tập lệnh Ethereum. Đó là cái gọi là Datum. Đó là
+mẽ và biểu cảm như các tập lệnh Ethereum. Đó là cái gọi là `Datum`. Đó là
 một phần dữ liệu có thể được liên kết với UTxO cùng với giá trị UTxO.
 
 ![](img/7.png)
 
 Với điều này, có thể chứng minh về mặt toán học rằng Plutus ít nhất là
 mạnh mẽ như mô hình Ethereum - bất kỳ logic nào bạn có thể diễn đạt
-Ethereum, bạn cũng có thể thể hiện nó bằng cách sử dụng mô hình (E)
-UTxO.
+Ethereum, bạn cũng có thể thể hiện nó bằng cách sử dụng mô hình (E)UTxO.
 
 Nhưng nó cũng có rất nhiều lợi thế so với mô hình Ethereum. Vì ví dụ,
 trong Plutus, có thể kiểm tra xem liệu một giao dịch có xác thực trong
@@ -236,11 +224,11 @@ ví của bạn, trước khi bạn gửi nó vào chuỗi.
 
 Tuy nhiên, mọi thứ vẫn có thể sai với xác thực ngoài chuỗi. Vì ví dụ
 trong tình huống bạn gửi một giao dịch đã được được xác thực trong ví
-nhưng bị từ chối khi nó cố gắng sử dụng sản lượng trên chuỗi đã được
+nhưng bị từ chối khi nó cố gắng sử dụng UTxO đó trên chuỗi đã được
 tiêu thụ bởi một giao dịch khác.
 
 Trong trường hợp này, giao dịch của bạn sẽ không thành công mà bạn không
-phải trả bất kỳ khoản nào lệ phí.
+phải trả bất kỳ khoản  lệ phí nào.
 
 Nhưng nếu tất cả các yếu tố đầu vào vẫn ở đó mà giao dịch của bạn mong
 đợi, thì bạn có thể chắc chắn rằng giao dịch sẽ xác thực và sẽ có hiệu
@@ -259,12 +247,12 @@ ngay cả khi giao dịch cuối cùng không thành công do lỗi. Và điều
 Ngoài ra, việc phân tích tập lệnh Plutus cũng dễ dàng hơn và kiểm tra
 hoặc thậm chí chứng minh rằng nó an toàn, bởi vì bạn không cần phải xem
 xét toàn bộ trạng thái của blockchain, điều này không thể biết trước
-được. Bạn có thể tập trung vào bối cảnh chỉ bao gồm chi tiêu Giao dịch.
+được. Bạn có thể tập trung vào context chỉ bao gồm chi tiêu giao dịch.
 Vì vậy, bạn có một phạm vi hạn chế hơn nhiều và điều đó làm cho nó dễ
 dàng hơn nhiều để hiểu những gì một tập lệnh thực sự đang làm và những
 gì có thể có thể xảy ra sai sót.
 
-Ai chịu trách nhiệm cung cấp dữ liệu, người đổi và trình xác thực? Quy
+Ai chịu trách nhiệm cung cấp datum, `Redeemer` và trình xác thực? Quy
 tắc trong Plutus là giao dịch chi tiêu phải thực hiện điều đó trong khi
 giao dịch sản xuất chỉ phải cung cấp hàm băm.
 
@@ -273,42 +261,42 @@ lệnh thì giao dịch sản xuất này chỉ phải bao gồm băm của tậ
 của dữ liệu thuộc đầu ra. Theo tùy chọn, nó có thể bao gồm cả datum và
 script.
 
-Nếu một giao dịch muốn sử dụng đầu ra như vậy thì \* giao dịch \* đó
-phải cung cấp dữ liệu, trình đổi và tập lệnh. Có nghĩa là để chi tiêu
-đầu vào nhất định, bạn cần biết dữ liệu, bởi vì chỉ băm được hiển thị
+Nếu một giao dịch muốn sử dụng đầu ra như vậy thì `giao dịch` đó
+phải cung cấp `datum`, `redeemer` và `script`. Có nghĩa là để chi tiêu
+đầu vào nhất định, bạn cần biết `datum`, bởi vì chỉ băm được khóa
 công khai trên blockchain.
 
 Đây đôi khi là một vấn đề và không phải những gì bạn muốn và đó là lý do
-tại sao bạn có tùy chọn bao gồm dữ liệu trong giao dịch sản xuất. Nếu
+tại sao bạn có tùy chọn bao gồm datum trong giao dịch sản xuất. Nếu
 điều này là không thể, chỉ những người biết dữ liệu bằng một số phương
 tiện khác ngoài việc nhìn vào chuỗi khối sẽ có thể chi tiêu một đầu ra
 như vậy.
 
-Mô hình (E) UTxO không bị ràng buộc với một ngôn ngữ lập trình cụ thể.
+Mô hình (E)UTxO không bị ràng buộc với một ngôn ngữ lập trình cụ thể.
 Gì chúng tôi có Plutus, là Haskell, nhưng về cơ bản, bạn có thể sử dụng
 cùng một mô hình với một ngôn ngữ lập trình hoàn toàn khác và chúng tôi
 định viết trình biên dịch cho các ngôn ngữ lập trình khác cho Plutus
 Script là ngôn ngữ \"hợp ngữ\" bên dưới Plutus.
 
 Chạy một hợp đồng đấu giá mẫu trên một Sân chơi địa phương
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+--------------
 
-hay vì bắt đầu theo cách truyền thống, tức là bắt đầu rất đơn giản và
-thực hiện một khóa học sụp đổ trên Haskell, tiếp theo là một số hợp đồng
+Hãy bắt đầu theo cách truyền thống, tức là bắt đầu rất đơn giản và
+thực hiện một khóa học trên Haskell, tiếp theo là một số hợp đồng
 Plutus đơn giản và từ từ thêm những thứ phức tạp hơn, nó sẽ thú vị hơn,
 đặc biệt là đối với bài giảng đầu tiên, để giới thiệu một hợp đồng thú
 vị hơn và chứng minh những gì Plutus có thể làm. Sau đó, chúng ta có thể
 sử dụng nó để xem xét một số khái niệm chi tiết hơn.
 
-### The English Auction contract
+### Howph đồng đấu giá English Auction
 
 Như ví dụ giới thiệu của chúng tôi, chúng tôi sẽ xem xét một cuộc Đấu
-giá bằng tiếng Anh. Ai đó muốn đấu giá NFT (Mã thông báo không thể thay
-thế) - mã thông báo gốc trên Cardano chỉ tồn tại một lần. NFT có thể đại
+giá `English Auction`. Ai đó muốn đấu giá NFT (token không thể thay
+thế) - token gốc trên Cardano chỉ tồn tại một lần. NFT có thể đại
 diện cho một số nghệ thuật kỹ thuật số hoặc có thể là một số tài sản
 trong thế giới thực.
 
-Phiên đấu giá được tham số hóa bởi chủ sở hữu mã thông báo, chính mã
+Phiên đấu giá được tham số hóa bởi chủ sở hữu token, chính mã
 thông báo, giá thầu tối thiểu và thời hạn.
 
 Vì vậy, giả sử Alice có một NFT và muốn bán đấu giá nó.
@@ -318,31 +306,30 @@ Vì vậy, giả sử Alice có một NFT và muốn bán đấu giá nó.
 Cô ấy tạo UTxO ở đầu ra tập lệnh. Chúng ta sẽ xem xét mã sau, nhưng
 trước tiên chúng ta sẽ chỉ xem xét các ý tưởng của mô hình UTxO.
 
-Giá trị của UTxO là NFT và dữ liệu là \* Không có gì \*. Sau này nó sẽ
-là người trả giá cao nhất và trả giá cao nhất. Nhưng hiện tại, vẫn chưa
+Giá trị của UTxO là NFT và dữ liệu là `Nothing`. Sau này nó sẽ
+là người trả giá cao nhất và trả giá cao nhất sẽ thắng. Nhưng hiện tại, vẫn chưa
 có giá thầu.
 
-Trong chuỗi khối thực, bạn không thể có UTxO chỉ chứa các mã thông báo
+Trong chuỗi khối thực, bạn không thể có UTxO chỉ chứa các token
 gốc, chúng luôn phải đi kèm với một số Ada, nhưng để đơn giản, chúng tôi
 sẽ bỏ qua điều đó ở đây.
 
-Không phải giả sử Bob muốn đặt giá thầu 100 Ada.
+giả sử Bob muốn đặt giá thầu 100 Ada.
 
 ![](img/iteration2/pic__00001.png)
 
 Để làm điều này, Bob tạo một giao dịch với hai đầu vào và một đầu ra.
 Đầu vào đầu tiên là đấu giá UTxO và đầu vào thứ hai là giá thầu 100 Ada
-của Bob. Đầu ra, một lần nữa, ở tập lệnh đầu ra, nhưng bây giờ giá trị
-và mức dữ liệu đã thay đổi. Trước đây số liệu là \* Không có gì \* nhưng
+của Bob. Đầu ra một lần nữa, ở tập lệnh đầu ra, nhưng bây giờ giá trị
+và mức dữ liệu đã thay đổi. Trước đây số liệu là `Nothing` nhưng
 bây giờ là (Bob, 100).
 
 Giá trị đã thay đổi vì bây giờ không chỉ có NFT trong UTxO mà còn có giá
-thầu Ada 100.
+thầu  100 Ada.
 
-Với tư cách là người mua lại, để mở khóa phiên đấu giá ban đầu UTxO,
-chúng tôi sử dụng một thứ gọi là \* Giá thầu *. Đây chỉ là một kiểu dữ
-liệu đại số. Cũng sẽ có các giá trị khác nhưng một trong số đó là* Giá
-thầu \*. Và kịch bản đấu giá sẽ kiểm tra xem tất cả các điều kiện đã
+Với tư cách là `Redeemer`, để mở khóa phiên đấu giá ban đầu UTxO,
+chúng tôi sử dụng một thứ gọi là `Bid`. Đây chỉ là một kiểu dữ
+liệu đại số. Cũng sẽ có các giá trị khác nhưng một trong số đó là `Bid`. Và kịch bản đấu giá sẽ kiểm tra xem tất cả các điều kiện đã
 được thỏa mãn hay chưa. Vì vậy, trong trường hợp này, kịch bản phải kiểm
 tra xem giá thầu có xảy ra trước thời hạn hay không, giá thầu đó có đủ
 cao hay không.
@@ -362,20 +349,17 @@ thầu (lần này là giá thầu của Charlie là 200 Ada), và đấu giá U
 trong những kết quả đầu ra là phiên đấu giá được cập nhật UTxO. Cũng sẽ
 có đầu ra thứ hai, sẽ là UTxO trả về giá thầu 100 Ada của Bob.
 
-::: {.note}
-::: {.title}
 Note
-:::
 
-Trên thực tế, phiên đấu giá UTxO không được cập nhật vì không có gì thay
+Trên thực tế, phiên đấu giá UTxO không được cập nhật vì `Nothing` thay
 đổi.
 
 Điều thực sự xảy ra là phiên đấu giá cũ UTxO được sử dụng và một phiên
 đấu giá mới được tạo ra, nhưng nó có cảm giác cập nhật trạng thái của
 phiên đấu giá UTxO
-:::
 
-Lần này, chúng tôi lại sử dụng trình đổi \* Bi.d \*. Lần này kịch bản
+
+Lần này, chúng tôi lại sử dụng `redeemer` là `Bid`. Lần này kịch bản
 phải kiểm tra xem thời hạn đã đến chưa, giá thầu cao hơn giá thầu trước
 đó, nó phải kiểm tra xem phiên đấu giá UTxO có được tạo chính xác hay
 không và phải kiểm tra xem người trả giá cao nhất trước đó có nhận lại
@@ -389,12 +373,11 @@ là Alice, người muốn thu giá hoặc có thể là Charlie, người muố
 Đó có thể là bất kỳ ai, nhưng Alice và Charlie có động cơ để làm như
 vậy.
 
-Giao dịch này sẽ có một đầu vào - đấu giá UTxO, lần này với trình đổi \*
-Clos.e \* - và nó sẽ có hai đầu ra. Một trong những kết quả đầu ra dành
+Giao dịch này sẽ có một đầu vào - đấu giá UTxO, lần này với `redeemer` là `Close` - và nó sẽ có hai đầu ra. Một trong những kết quả đầu ra dành
 cho người trả giá cao nhất, Charlie và anh ta nhận được NFT và đầu ra
 thứ hai thuộc về Alice, người có giá thầu cao nhất.
 
-Trong trường hợp \* Clos.e \*, tập lệnh phải kiểm tra xem đã đến thời
+Trong trường hợp `Close`, tập lệnh phải kiểm tra xem đã đến thời
 hạn hay chưa và người chiến thắng sẽ nhận được NFT và người chủ đấu giá
 nhận được giá thầu cao nhất.
 
@@ -406,7 +389,7 @@ giá thầu nào.
 Alice tạo phiên đấu giá, nhưng không nhận được giá thầu nào. Trong
 trường hợp này, phải có một cơ chế để Alice lấy lại NFT của mình.
 
-Vì vậy, cô ấy tạo một giao dịch với người mua lại \* Clos.e \*, nhưng
+Vì vậy, cô ấy tạo một giao dịch với `Redeemer` là `Close`, nhưng
 hiện tại vì không có người đặt giá thầu, NFT không đến tay người trả giá
 cao nhất mà chỉ quay trở lại Alice.
 
@@ -415,12 +398,11 @@ quay trở lại Alice hay không, tuy nhiên, nó không thực sự cần ki�
 người nhận vì giao dịch sẽ được kích hoạt bởi Alice và cô ấy có thể gửi
 NFT đến bất cứ nơi nào cô ấy muốn.
 
-#### On-chain and Off-chain code
+#### Mã On-chain và Off-chain
 
-Điều quan trọng cần nhận ra về Plutus là có mã trên chuỗi và mã ngoài
-chuỗi.
+Điều quan trọng cần nhận ra về Plutus là có mã On-chain và Off-chain.
 
-##### On-chain
+##### Mã On-chain
 
 Mã trên chuỗi là các tập lệnh mà chúng ta đã thảo luận - các tập lệnh từ
 mô hình UTxO. Ngoài các địa chỉ khóa công khai, chúng tôi có địa chỉ tập
@@ -434,43 +416,39 @@ chấp nhận nó vào mempool của nó và cuối cùng thành một khối. �
 tập lệnh tương ứng được thực thi. Nếu tập lệnh không thành công, giao
 dịch không hợp lệ.
 
-Ngôn ngữ lập trình mà tập lệnh này được thể hiện được gọi là Plutus
-Core, nhưng bạn không bao giờ viết Plutus Core bằng tay. Thay vào đó,
-bạn viết Haskell và nó được biên dịch xuống Plutus Core. Luôn luôn có
+Ngôn ngữ lập trình mà tập lệnh này được thể hiện được gọi là `Plutus Core`, nhưng bạn không bao giờ viết Plutus Core bằng tay. Thay vào đó,
+bạn viết Haskell và nó được biên dịch xuống `Plutus Core`. Luôn luôn có
 thể có các ngôn ngữ cấp cao khác như Solidity, C hoặc Python có thể biên
-dịch xuống Plutus Core.
+dịch xuống `Plutus Core`.
 
 Nhiệm vụ của một tập lệnh là nói có hay không về việc liệu một giao dịch
 có thể sử dụng một đầu ra hay không.
 
-##### Off-chain
+##### Mã Off-chain
 
 Để mở khóa UTxO, bạn phải có khả năng xây dựng một giao dịch sẽ vượt qua
 quá trình xác thực và đó là trách nhiệm của bộ phận ngoài chuỗi của
 Plutus. Đây là phần chạy trên ví chứ không phải trên blockchain và sẽ
 xây dựng các giao dịch phù hợp.
 
-Một trong những điều thú vị về Plutus là cả các bộ phận trên dây chuyền
-và các bộ phận ngoài dây chuyền đều được viết bằng Haskell. Một lợi thế
+Một trong những điều thú vị về Plutus là cả các bộ phận On-chain và Off-chain đều được viết bằng Haskell. Một lợi thế
 rõ ràng của điều đó là bạn không phải học hai ngôn ngữ lập trình. Ưu
-điểm khác là bạn có thể chia sẻ mã giữa các bộ phận trong chuỗi và ngoài
-chuỗi.
+điểm khác là bạn có thể chia sẻ mã giữa các bộ phận On-chain và Off-chain.
 
 Ở phần sau của khóa học này, chúng ta sẽ nói về các máy trạng thái và
-sau đó sự chia sẻ này giữa mã nội bộ và mã ngoài chuỗi trở nên trực tiếp
+sau đó sự chia sẻ này giữa mã On-chain và Off-chain trở nên trực tiếp
 hơn, nhưng ngay cả khi không có máy trạng thái vẫn có rất nhiều cơ hội
 để chia sẻ mã.
 
 Chúng ta sẽ có một cái nhìn ngắn gọn về mã nhưng đừng lo lắng, bạn sẽ
 không hiểu nó tại thời điểm này.
 
-Mã cho hợp đồng \"English Auction\" tại
+Mã cho hợp đồng "English Auction" tại
 
     /path/to/plutus-pioneer-program/repo/code/week01/src/Week01/EnglishAuction.hs
 
-Chúng tôi thấy kiểu dữ liệu \* Auction \* đại diện cho các tham số cho
-hợp đồng mà trong ví dụ của chúng tôi là Alice bắt đầu. Các tham số \*
-aCurrency \* và \* aToken \* đại diện cho NFT.
+Chúng tôi thấy kiểu dữ liệu ` Auction` đại diện cho các tham số cho
+hợp đồng mà trong ví dụ của chúng tôi là Alice bắt đầu. Các tham số `aCurrency` và `aToken` đại diện cho NFT.
 
 ``` {.haskell}
 data Auction = Auction
@@ -482,8 +460,7 @@ data Auction = Auction
    } deriving (Show, Generic, ToJSON, FromJSON, ToSchema)
 ```
 
-Bạn cũng thấy các kiểu dữ liệu khác, nhưng trọng tâm của mã là hàm \*
-mkAuctionValidator \*. Đây là chức năng xác định xem một giao dịch nhất
+Bạn cũng thấy các kiểu dữ liệu khác, nhưng trọng tâm của mã là hàm `mkAuctionValidator`. Đây là chức năng xác định xem một giao dịch nhất
 định có được phép sử dụng UTxO tại địa chỉ tập lệnh này hay không.
 
 ``` {.haskell}
@@ -511,9 +488,9 @@ mkAuctionValidator ad redeemer ctx =
       ...
 ```
 
-Và đây là nơi diễn ra quá trình biên dịch sang Plutus Core. Nó sử dụng
+Và đây là nơi diễn ra quá trình biên dịch sang `Plutus Core`. Nó sử dụng
 một thứ gọi là Template Haskell để lấy chức năng Haskell ở trên và biên
-dịch nó thành Plutus Core.
+dịch nó thành `Plutus Core`.
 
 ``` {.haskell}
 auctionTypedValidator :: Scripts.TypedValidator Auctioning
@@ -524,9 +501,9 @@ auctionTypedValidator = Scripts.mkTypedValidator @Auctioning
     wrap = Scripts.wrapValidator
 ```
 
-Phần off-chain của mã xác định các điểm cuối có thể được gọi.
+Phần off-chain của mã xác định các endpoint có thể được gọi.
 
-Chúng tôi có ba điểm cuối cho ví dụ này và mỗi điểm có một kiểu dữ liệu
+Chúng tôi có ba endpoint cho ví dụ này và mỗi endpoint có một kiểu dữ liệu
 được xác định để đại diện cho các tham số của chúng.
 
 ``` {.haskell}
@@ -551,7 +528,7 @@ data CloseParams = CloseParams
 
 Sau đó, các hoạt động off-chain được xác định.
 
-Đầu tiên là logic \* start \*.
+Đầu tiên là endpoint `start`.
 
 ``` {.haskell}
 start :: AsContractError e => StartParams -> Contract w s e ()
@@ -575,7 +552,7 @@ start StartParams{..} = do
     logInfo @String $ printf "started auction %s for token %s" (show a) (show v)
 ```
 
-sau đó là *bid*.
+sau đó là endpoint `bid`.
 
 ``` {.haskell}
 bid :: forall w s. BidParams -> Contract w s Text ()
@@ -611,7 +588,7 @@ bid BidParams{..} = do
         (show bpToken)
 ```
 
-và cuối cùng là *close* .
+và cuối cùng là endpoint `close` .
 
 ``` {.haskell}
 close :: forall w s. CloseParams -> Contract w s Text ()
@@ -642,7 +619,7 @@ close CloseParams{..} = do
         (show cpToken)
 ```
 
-Có một mã để ràng buộc mọi thứ đó.
+Có một đoạn mã để ràng buộc mọi thứ đó.
 
 ``` {.haskell}
 endpoints :: Contract () AuctionSchema Text ()
@@ -653,7 +630,7 @@ endpoints = (start' `select` bid' `select` close') >> endpoints
     close' = endpoint @"close" >>= close
 ```
 
-Và những dòng cuối cùng chỉ là những người trợ giúp để tạo một NFT mẫu
+Và những dòng cuối cùng chỉ là những trợ giúp để tạo một NFT mẫu
 để cho phép chúng tôi thử đấu giá NFT này trong playground.
 
 ``` {.haskell}
@@ -665,7 +642,7 @@ myToken = KnownCurrency (ValidatorHash "f") "Token" (TokenName "T" :| [])
 mkKnownCurrencies ['myToken]
 ```
 
-Một ví dụ về việc sử dụng lại mã là hàm \* minBid \*.
+Một ví dụ về việc sử dụng lại mã là hàm `minBid`.
 
 ``` {.haskell}
 minBid :: AuctionDatum -> Integer
@@ -678,12 +655,12 @@ Chức năng này được sử dụng trong phần on-chain để xác thực, 
 trong mã off-chain, trong ví, trước khi nó làm phiền đến việc tạo giao
 dịch, để kiểm tra xem nó có đáng làm như vậy hay không.
 
-To the Playground
+Đi đến Playground
 -----------------
 
 chúng ta sẽ chạy tại Plutus Playground của tôi.
 
-### Plutus Setup
+### Cài đặt Plutus
 
 Trước khi biên dịch mã hợp đồng mẫu, chúng ta cần thiết lập Plutus. Bạn
 nên thiết lập một trình bao Nix từ kho lưu trữ chính của Plutus, tại đó
@@ -717,9 +694,7 @@ cd /path/to/plutus/repo/plutus-playground-client
 npm run start
 ```
 
-To check that everything is in order, you can then compile the code for
-Week 01. This is not necessary to run the code in the playground, as the
-playground can compile the code itself.
+Để kiểm tra xem mọi thứ có theo thứ tự hay không, sau đó bạn có thể biên dịch mã cho week01. Điều này không cần thiết để chạy mã trong sân chơi, vì sân chơi có thể tự biên dịch mã.
 
 ``` {.bash}
 cd /path/to/plutus-pioneer-program/repo/code/week01
@@ -727,7 +702,7 @@ cabal build all
 ```
 
 Nếu mọi thứ suôn sẻ trong thiết lập ở trên, bạn sẽ có thể mở sân chơi
-tại https: // localhost: 8009. Bạn có thể sẽ nhận được lỗi chứng chỉ,
+tại https://localhost:8009. Bạn có thể sẽ nhận được lỗi chứng chỉ,
 lỗi này có thể được bỏ qua.
 
 ![](img/plutus_playground.png)
@@ -752,36 +727,33 @@ myToken = KnownCurrency (ValidatorHash "f") "Token" (TokenName "T" :| [])
 mkKnownCurrencies ['myToken]
 ```
 
-Chúng tôi sẽ coi mã thông báo T là mã thông báo không thể thay thế (NFT)
+Chúng tôi sẽ coi token T là token không thể thay thế (NFT)
 và mô phỏng điều này bằng cách thay đổi các ví sao cho Ví 1 có 1 T và
 các ví khác có 0 T.
 
 Ngoài ra, 10 lovelace thấp đến mức nực cười, vì vậy hãy cho mỗi ví 1000
 Ada, tức là 1.000.000.000 lovelace.
 
-Nhấp vào tùy chọn \"Thêm Ví\", sau đó điều chỉnh số dư cho phù hợp:
+Nhấp vào tùy chọn "add wallet", sau đó điều chỉnh số dư cho phù hợp:
 
 ![](img/iteration2/pic__00005.png)
 
-Bạn có thể thấy trong sân chơi rằng hợp đồng có ba endpoin.ts: star.t,
-bi.d và close.
+Bạn có thể thấy trong sân chơi rằng hợp đồng có ba `endpoints`: `start`, `bid` và `close`.
 
-Theo mặc định, điểm cuối \"Pay to Wallet\" luôn ở đó trong sân chơi. Nó
+Theo mặc định, endpoint "Pay to Wallet" luôn ở đó trong sân chơi. Nó
 cho phép chuyển Lovelace từ ví này sang ví khác một cách đơn giản.
 
-Nhấp vào \"bắt đầu\" trên ví 1, để tạo phiên đấu giá:
+Nhấp vào "start" trên ví 1, để tạo phiên đấu giá:
 
 Đây là nơi người bán sẽ đặt ra các quy tắc cho cuộc đấu giá.
 
-Trường getSlot chỉ định thời hạn cho cuộc đấu giá. Hợp đồng không cho
+Trường `getSlot` chỉ định thời hạn cho cuộc đấu giá. Hợp đồng không cho
 phép đấu thầu sau thời hạn này.
 
-Giả sử rằng thời hạn là Ô số 10.
+Giả sử rằng thời hạn là 10 slot.
 
 Thời gian được đo bằng thời gian POSIX (giây kể từ ngày 1 tháng 1 năm
-1970), vì vậy chúng ta cần tính giá trị này. May mắn thay, trong gói \*
-plutus-ledger \* trong mô-đun \* Ledger.Timeslot *, có một hàm*
-slotToPOSIXTime \*. Nếu chúng tôi nhập cái này vào REPL, chúng tôi có
+1970), vì vậy chúng ta cần tính giá trị này. May mắn thay, trong gói `plutus-ledger` trong mô-đun `Ledger.Timeslot`, có một hàm `slotToPOSIXTime`. Nếu chúng tôi nhập cái này vào REPL, chúng tôi có
 thể nhận được giá trị mà chúng tôi cần. Mô phỏng bắt đầu vào đầu kỷ
 nguyên Shelley, vì vậy giá trị này - 1596059101 - phản ánh điều đó và
 giá trị này sẽ là vào ngày 29 tháng 7 năm 2020 - vị trí thứ 10 của kỷ
@@ -795,24 +767,24 @@ POSIXTime {getPOSIXTime = 1596059101}
 
 Thêm giá trị này vào trường thời hạn.
 
-SpMinField chỉ định số lượng ADA tối thiểu phải được đặt giá thầu. Nếu
+`SpMinField` chỉ định số lượng ADA tối thiểu phải được đặt giá thầu. Nếu
 không đạt mức tối thiểu này trước thời hạn, sẽ không có cuộc đấu thầu
 nào thành công. Hãy thực hiện 100 Ada này.
 
-Nhập 100000000 vào trường spMinBid.
+Nhập 100000000 vào trường `spMinBid`.
 
-Hai trường cuối cùng - spCurrencySymbol và unTokenName chỉ định đơn vị
-tiền tệ của NFT là chủ đề của phiên đấu giá. Trong Plutus, mã thông báo
+Hai trường cuối cùng - `spCurrencySymbol` và `unTokenName` chỉ định đơn vị
+tiền tệ của NFT là chủ đề của phiên đấu giá. Trong Plutus, token
 gốc được xác định bằng ký hiệu tiền tệ và tên.
 
-Trong trường hợp này, ký hiệu là 66 và tên mã thông báo, như chúng ta đã
+Trong trường hợp này, ký hiệu là 66 và tên token, như chúng ta đã
 thấy là T.
 
 Nhập các giá trị này vào các trường tương ứng của chúng.
 
 ![](img/iteration2/pic__00006.png)
 
-Chúng tôi cũng có thể chèn các hành động \"đợi\", để đợi một số khe cắm.
+Chúng tôi cũng có thể chèn các hành động "wait", để đợi một số slot.
 Chúng tôi sẽ cần đợi ít nhất một thời điểm để giao dịch bắt đầu phiên
 đấu giá hoàn tất.
 
@@ -820,9 +792,9 @@ Chúng tôi sẽ cần đợi ít nhất một thời điểm để giao dịch 
 
 Bây giờ đấu thầu có thể bắt đầu.
 
-Giả sử rằng Ví 2 và 3 muốn đặt giá thầu cho mã thông báo này.
+Giả sử rằng Ví 2 và 3 muốn đặt giá thầu cho token này.
 
-Ví 2 nhanh hơn và đặt giá thầu 100 Ada bằng cách gọi endpoin.t giá thầu
+Ví 2 nhanh hơn và đặt giá thầu 100 Ada bằng cách gọi endpoint giá thầu
 với các thông số như được hiển thị bên dưới.
 
 ![](img/iteration2/pic__00008.png)
@@ -839,30 +811,28 @@ thời điểm sau thời hạn của phiên đấu giá.
 
 ![](img/iteration2/pic__00010.png)
 
-Tại thời điểm này, bất kỳ ai cũng có thể gọi điểm cuối \* close \*.
+Tại thời điểm này, bất kỳ ai cũng có thể gọi endpoint `close`.
 Phiên đấu giá sẽ không tự giải quyết, nó cần được kích hoạt bởi một điểm
 cuối.
 
-Khi điểm cuối \* đóng \* được kích hoạt, cuộc đấu giá sẽ được giải quyết
+Khi endpoint `Close` được kích hoạt, cuộc đấu giá sẽ được giải quyết
 theo các quy tắc.
 
 -   
 
-    Nếu có ít nhất một giá thầu, người trả giá cao nhất sẽ nhận được
-
-    :   mã thông báo. Đây sẽ luôn là người trả giá cuối cùng vì kịch bản
+    Nếu có ít nhất một giá thầu, người trả giá cao nhất sẽ nhận được token. Đây sẽ luôn là người trả giá cuối cùng vì kịch bản
         sẽ không cho phép giá thầu không cao hơn giá thầu cao nhất hiện
         có hoặc giá thầu thấp hơn mức giá thầu tối thiểu.
 
--   Nếu không có người đặt giá thầu, Ví 1 sẽ lấy lại mã thông báo.
+-   Nếu không có người đặt giá thầu, Ví 1 sẽ lấy lại token.
 
-Giả sử Alice (Ví 1) gọi điểm cuối \* close \*. Chúng tôi sẽ thêm hành
+Giả sử Alice (Ví 1) gọi endpoint `close`. Chúng tôi sẽ thêm hành
 động này và cũng thêm một hành động chờ khác mà chúng tôi cần ở cuối để
 xem giao dịch cuối cùng khi chúng tôi chạy mô phỏng.
 
 ![](img/iteration2/pic__00011.png)
 
-Bây giờ, hãy nhấp vào nút \"Đánh giá\" - nút ở cuối hoặc nút ở đầu
+Bây giờ, hãy nhấp vào nút "Evaluate" - nút ở cuối hoặc nút ở đầu
 trang.
 
 Sau một lúc, bạn sẽ thấy chế độ xem giả lập.
@@ -879,7 +849,7 @@ Genesis thiết lập số dư ban đầu của ví. Có ba đầu ra cho giao d
 Bây giờ hãy nhấp vào giao dịch Slot 1.
 
 Giao dịch có một đầu vào và ba đầu ra. Đầu vào là chỉ UTxO mà Wallet 1
-có. Mặc dù đó là hai mã thông báo, 1000 Ada và 1T, chúng nằm trong một
+có. Mặc dù đó là hai token, 1000 Ada và 1T, chúng nằm trong một
 UTxO. Như đã đề cập trước đó, UTxO luôn cần được sử dụng toàn bộ, vì vậy
 toàn bộ UTxO được gửi dưới dạng đầu vào.
 
@@ -905,8 +875,8 @@ anh ấy trừ đi các khoản phí và giá thầu. Đầu ra thứ ba khóa g
 hợp đồng.
 
 Trình xác thực tập lệnh ở đây phải đảm bảo rằng Wallet 2 không thể chỉ
-lấy mã thông báo, vì vậy nó sẽ chỉ xác thực trong trường hợp có đầu ra
-mà mã thông báo kết thúc trong hợp đồng một lần nữa. Hãy nhớ rằng trong
+lấy token, vì vậy nó sẽ chỉ xác thực trong trường hợp có đầu ra
+mà token kết thúc trong hợp đồng một lần nữa. Hãy nhớ rằng trong
 mô hình (E) UTxO, tất cả các đầu vào và đầu ra đều hiển thị với tập
 lệnh.
 
@@ -925,11 +895,11 @@ Lovelace của Wallet 2 cho địa chỉ của Wallet 2.
 
 Một lần nữa, logic trong tập lệnh phải đảm bảo rằng tất cả những điều
 này được xử lý chính xác, tức là giá thầu mới cao hơn giá thầu trước đó
-và mã thông báo T tiếp tục bị khóa trong hợp đồng cùng với giá thầu mới.
+và token T tiếp tục bị khóa trong hợp đồng cùng với giá thầu mới.
 
 ![](img/iteration2/pic__00015.png)
 
-Giao dịch cuối cùng là hành động \* đóng \*. Hai đầu vào này - một từ
+Giao dịch cuối cùng là hành động `Close`. Hai đầu vào này - một từ
 Alice để trả phí và đầu vào thứ hai là tập lệnh UTxO làm đầu vào. Có bốn
 kết quả đầu ra - phí từ Alice và sự thay đổi trở lại Alice, sau đó là
 giá thầu thành công 200 Ada cho Alice và chuyển NFT cho Charlie.
