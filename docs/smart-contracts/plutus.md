@@ -11,7 +11,7 @@ Plutus là nền tảng hợp đồng thông minh của chuỗi khối Cardano. 
 
 Hãy xem [ Hướng dẫn về Plutus {/ a0} nếu bạn muốn học Plutus từ đầu. Nếu bạn chưa biết Haskell, hãy xem xét ](https://plutus.readthedocs.io/en/latest/plutus/tutorials/plutus-playground.html)[ bắt đầu với Haskell {/ a1}](#get-started-with-haskell)
 
-[Theo dõi nội dung cập nhật của Chris Moreton](https://plutus-pioneer-program.readthedocs.io/en/latest/plutus_pioneer_program.html) . Với một nỗ lực cao, anh ấy chép lại các bài giảng của Chương trình Tiên phong Plutus.
+[Theo dõi nội dung bản dịch của Chris Moreton](https://cardano2vn.io/docs/dr-lars-lession/overview) . Với một nỗ lực cao, anh ấy chép lại các bài giảng của Chương trình Tiên phong Plutus.
 
 Nói chuyện với những người khác về [Plutus trên Diễn đàn Cardano](https://forum.cardano.org/c/developers/cardano-plutus/148) hoặc nếu bạn thích Discord, hãy đến với [Discord kỹ thuật IOG](https://discord.com/invite/w6TwW9bGA6) .
 
