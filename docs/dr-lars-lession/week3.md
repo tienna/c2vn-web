@@ -26,21 +26,20 @@ plutus-playground-server -i 120s
 Tóm tắt lại
 -----
 
-Khi chúng tôi đã giải thích (E) UTxO mô hình trong bài giảng đầu tiên, chúng tôi đề cập rằng để mở khóa một địa chỉ kịch bản, kịch bản gắn liền với địa chỉ được chạy, và kịch bản mà được ba mẩu thông tin - 
-*datum*,  *redeemer* và *context*.
+Khi chúng tôi đã giải thích mô hình (E) UTxO  trong bài giảng đầu tiên, chúng tôi đề cập rằng để mở khóa một địa chỉ kịch bản, kịch bản gắn liền với địa chỉ được chạy, và kịch bản này có được ba thông tin - *datum*,  *redeemer* và *context*.
 
 Trong bài giảng thứ hai, chúng ta đã xem các ví dụ về điều đó và chúng ta đã thấy nó thực sự hoạt động như thế nào trong Haskell.
 
 Chúng tôi đã thấy việc triển khai cấp thấp, trong đó cả ba đối số đều được biểu thị bằng kiểu `Data`. Chúng tôi cũng thấy rằng trong thực tế điều này không được sử dụng.
 
-Thay vào đó, chúng tôi sử dụng phiên bản đã nhập, trong đó dữ liệu và công cụ đổi có thể là kiểu tùy chỉnh (miễn là chúng triển khai lớp kiểu `IsData`) và trong đó đối số thứ ba là kiểu `ScriptContext`.
+Thay vào đó, chúng tôi sử dụng phiên bản `Typed`, trong đó Datum và Redeemer có thể là kiểu tùy chỉnh (miễn là chúng triển khai lớp kiểu `IsData`) và trong đó đối số thứ ba là kiểu `ScriptContext`.
 
-Trong các ví dụ mà chúng tôi đã thấy cho đến nay, chúng tôi đã xem xét dữ liệu và công cụ đổi, nhưng chúng tôi luôn bỏ qua ngữ cảnh. Nhưng bối cảnh, tất nhiên, rất quan trọng. Vì vậy, trong bài giảng này, chúng ta sẽ bắt đầu xem xét context.
+Trong các ví dụ mà chúng tôi đã thấy cho đến nay, chúng tôi đã xem xét Datum và Redeemer, nhưng chúng tôi luôn bỏ qua Context. Nhưng Context rất quan trọng. Vì vậy, trong bài giảng này, chúng ta sẽ bắt đầu xem xét với Context.
 
 ScriptContext
 -------------
 
-`ScriptContext` được định nghĩa trong gói `plutus-ledger-api`, mà là một gói phần mềm đó, cho đến bây giờ, chúng tôi đã không cần thiết. Nhưng bây giờ chúng tôi cần nó, và nó đã được đưa vào files `.cabal` của tuần này . Nó được định nghĩa trong mô-đun `Plutus.V1.Ledger.Contexts`.
+`ScriptContext` được định nghĩa trong gói `plutus-ledger-api`, mà là một gói phần mềm, cho đến bây giờ, chúng tôi đã không cần thiết. Nhưng bây giờ chúng tôi cần nó, và nó đã được đưa vào files `.cabal` của tuần này . Nó được định nghĩa trong mô-đun `Plutus.V1.Ledger.Contexts`.
 
 ``` {.haskell}
 data ScriptContext = ScriptContext { 
@@ -65,9 +64,9 @@ data ScriptPurpose
 
 Các `Minting` dùng khi bạn muốn định nghĩa một token gốc. Mục đích của nó là chúng tôi mô tả trong những trường hợp nào token gốc có thể được đúc hoặc đốt.
 
-Ngoài ra còn có hai mục đích hoàn toàn mới -`Rewarding`-  liên quan đến đặt cược và _`Certifying`_  liên quan đến ủy quyền cổ phần.
+Ngoài ra còn có hai mục đích hoàn toàn mới -`Rewarding`-  liên quan đến đặt cược và `Certifying` liên quan đến ủy quyền cổ phần.
 
-Trường thú vị nhất, trường chứa ngữ cảnh thực tế `scriptContextTxInfo` là trường thuộc loại `TxInfo`, cũng được xác định trong cùng một mô-đun.
+Trường thú vị nhất, trường chứa Context thực tế `scriptContextTxInfo` là trường thuộc loại `TxInfo`, cũng được xác định trong cùng một mô-đun.
 
 ``` {.haskell}
 data TxInfo = TxInfo
@@ -85,9 +84,9 @@ data TxInfo = TxInfo
    } deriving (Generic)
 ```
 
-Nó mô tả giao dịch chi tiêu. Trong mô hình (E) UTxO, bối cảnh xác thực là giao dịch chi tiêu và các đầu vào và đầu ra của nó. Bối cảnh này được thể hiện trong `TxInfo`.
+Nó mô tả giao dịch chi tiêu. Trong mô hình (E) UTxO, Context xác thực là giao dịch chi tiêu và các đầu vào và đầu ra của nó. Context này được thể hiện trong `TxInfo`.
 
-Có một số trường là toàn cầu cho toàn bộ giao dịch và cụ thể là chúng tôi có danh sách tất cả các đầu vào `txInfoInputs` và danh sách tất cả các đầu ra `txInfoOutputs`. Mỗi người trong số họ có nhiều lĩnh vực khác nhau để đi sâu vào từng đầu vào hoặc đầu ra riêng lẻ.
+Có một số trường là toàn cầu cho toàn bộ giao dịch và cụ thể là chúng tôi có danh sách tất cả các đầu vào `txInfoInputs` và danh sách tất cả các đầu ra `txInfoOutputs`. Mỗi thứ trong số chúng có nhiều trường khác nhau để đi sâu vào từng đầu vào hoặc đầu ra riêng lẻ.
 
 Chúng tôi cũng thấy các trường về phí `txFee`, giá trị giả mạo `txInfoForge`, được sử dụng khi đúc hoặc đốt các token gốc.
 
@@ -97,7 +96,7 @@ Trường `txInfoValidRange` mà chúng ta sẽ xem xét chi tiết hơn trong g
 
 `txInfoSignatories` là danh sách các khóa công khai đã ký kết giao dịch này.
 
-Các giao dịch sử dụng đầu ra tập lệnh cần phải bao gồm dữ liệu của đầu ra tập lệnh. Các `txInfoData` lĩnh vực là một danh sách liên kết datums với băm tương ứng của họ. Nếu có một đầu ra giao dịch tới một địa chỉ tập lệnh mang một số dữ liệu nào đó, bạn không cần phải bao gồm dữ liệu đó, bạn chỉ có thể bao gồm băm dữ liệu. Tuy nhiên, các tập lệnh sử dụng một đầu ra cần phải bao gồm dữ liệu, trong trường hợp đó, nó sẽ được đưa vào danh sách `txInfoData` .
+Các giao dịch sử dụng đầu ra tập lệnh cần phải bao gồm dữ liệu của đầu ra tập lệnh. Các `txInfoData` lĩnh vực là một danh sách liên kết `Datum` với băm tương ứng của nọ. Nếu có một đầu ra giao dịch tới một địa chỉ tập lệnh mang một số dữ liệu nào đó, bạn không cần phải bao gồm dữ liệu đó, bạn chỉ có thể bao gồm dữ liệu băm . Tuy nhiên, các tập lệnh sử dụng một đầu ra cần phải bao gồm Datum, trong trường hợp đó, nó sẽ được đưa vào danh sách `txInfoData` .
 
 Cuối cùng, trường `txInfoId` là ID của giao dịch này.
 
@@ -105,19 +104,19 @@ Cuối cùng, trường `txInfoId` là ID của giao dịch này.
 
 Mặc dù có rất nhiều thông tin chứa trong kiểu `txInfo`, nhưng đối với ví dụ đầu tiên của chúng tôi về cách sử dụng đối số thứ ba để xác thực, chúng tôi sẽ tập trung vào trường `txInfoValidRange` này.
 
-Điều này đưa chúng ta đến một tình huống khó xử thú vị. Chúng tôi đã nhấn mạnh nhiều lần rằng lợi thế lớn mà Cardano có so với một thứ như Ethereum là việc xác thực có thể xảy ra trong ví. Nhưng chúng tôi cũng đã lưu ý rằng một giao dịch vẫn có thể không thành công on-chain sau khi xác thực, nếu khi giao dịch trên blockchain, nó đã bị người khác sử dụng. Trong trường hợp này, giao dịch không thành công mà không phải trả phí.
+Điều này đưa chúng ta đến một tình huống khó xử thú vị. Chúng tôi đã nhấn mạnh nhiều lần rằng lợi thế lớn mà Cardano có so với Ethereum là việc xác thực có thể xảy ra trong ví. Nhưng chúng tôi cũng đã lưu ý rằng một giao dịch vẫn có thể không thành công trên on-chain sau khi xác thực, nếu khi giao dịch trên blockchain, nó đã bị người khác sử dụng. Trong trường hợp này, giao dịch không thành công mà không phải trả phí.
 
 Điều không bao giờ nên xảy ra trong các trường hợp bình thường là một tập lệnh xác thực chạy và sau đó không thành công. Điều này là do bạn luôn có thể chạy xác thực trong cùng một điều kiện trong ví, vì vậy nó sẽ không thành công trước khi bạn gửi nó.
 
-Vì vậy, đó là một tính năng rất hay, nhưng không rõ ràng là làm thế nào để quản lý thời gian trong context đó. Thời gian rất quan trọng, bởi vì chúng tôi muốn thể hiện rằng một giao dịch nhất định chỉ có hiệu lực trước hoặc chỉ có hiệu lực sau khi đã đạt đến một thời điểm nhất định.
+Vì vậy, đó là một tính năng rất hay, nhưng không rõ ràng là làm thế nào để quản lý thời gian trong `Context` đó. Thời gian rất quan trọng, bởi vì chúng tôi muốn thể hiện rằng một giao dịch nhất định chỉ có hiệu lực trước hoặc chỉ có hiệu lực sau khi đã đạt đến một thời điểm nhất định.
 
-Chúng ta đã thấy một ví dụ về điều này trong bài giảng một - ví dụ đấu giá (bid), trong đó giá thầu chỉ được phép cho đến khi đạt đến thời hạn cuối cùng và `close` chỉ khi có thể gọi _Endpoint_ sau khi thời hạn đã qua.
+Chúng ta đã thấy một ví dụ về điều này trong bài giảng 1 - ví dụ đấu giá (bid), trong đó giá thầu chỉ được phép cho đến khi đạt đến thời hạn cuối cùng và Endpoint `close` chỉ khi có thể gọi sau khi thời hạn đã qua.
 
 Điều đó dường như là một sự mâu thuẫn, bởi vì thời gian rõ ràng là đang trôi. Vì vậy, khi bạn cố gắng xác thực một giao dịch mà bạn đang tạo trong ví của mình, tất nhiên, thời gian bạn đang thực hiện có thể khác với thời gian giao dịch đến một nút để xác thực. Vì vậy, không rõ làm thế nào để kết hợp hai điều này lại với nhau để xác thực là xác định và để đảm bảo rằng nếu và chỉ khi, xác thực thành công trong ví, thì nó cũng sẽ thành công trong nút.
 
-Cách Cardano giải quyết điều đó, là bằng cách thêm trường phạm vi vị trí `txInfoValidRange` vào một giao dịch, về cơ bản nói rằng "Giao dịch này hợp lệ giữa vị trí này và vị trí kia ".
+Cách Cardano giải quyết điều đó, là bằng cách thêm trường phạm vi vị trí `txInfoValidRange` vào một giao dịch, về cơ bản nói rằng `"Giao dịch này hợp lệ giữa vị trí này và vị trí kia"`.
 
-Khi một giao dịch được gửi đến blockchain và được xác thực bởi một nút, sau đó trước khi chạy bất kỳ tập lệnh nào, một số kiểm tra chung sẽ được thực hiện, chẳng hạn như tất cả các đầu vào đều có mặt và số dư cộng lại, phí được bao gồm, v.v.
+Khi một giao dịch được gửi đến blockchain và được xác thực bởi một nút, sau đó trước khi chạy bất kỳ tập lệnh nào, một số kiểm tra chung sẽ được thực hiện, chẳng hạn như tất cả các đầu vào đều có và số dư cộng lại cả phí được bao gồm, v.v.
 
 Một trong những kiểm tra xảy ra trước khi xác thực là kiểm tra xem phạm vi vị trí có hợp lệ hay không. Nút sẽ xem xét thời điểm hiện tại và kiểm tra xem nó có nằm trong phạm vi vị trí hợp lệ của giao dịch hay không. Nếu không, thì xác thực không thành công ngay lập tức mà không bao giờ chạy các tập lệnh trình xác thực.
 
@@ -125,11 +124,11 @@ Vì vậy, nếu kiểm tra trước thành công, thì điều này có nghĩa 
 
 Theo mặc định, một tập lệnh sẽ sử dụng phạm vi vị trí vô hạn, một tập lệnh bao gồm tất cả các vị trí bắt đầu từ khối gốc và chạy cho đến hết thời gian.
 
-Có một sự phức tạp nhỏ với điều này, đó là Ouroboros, giao thức đồng thuận cung cấp năng lượng cho Cardano không sử dụng thời gian POSIX, nó sử dụng các khe cắm. Nhưng Plutus sử dụng thời gian thực, vì vậy chúng ta cần có khả năng chuyển đổi qua lại giữa thời gian thực và thời điểm. Điều này không có vấn đề gì miễn là thời gian rãnh được cố định. Ngay bây giờ là một giây, vì vậy ngay bây giờ nó là dễ dàng.
+Có một sự phức tạp nhỏ với điều này, đó là Ouroboros, giao thức đồng thuận cung cấp năng lượng cho Cardano không sử dụng thời gian POSIX, nó sử dụng các khe slot. Nhưng Plutus sử dụng thời gian thực, vì vậy chúng ta cần có khả năng chuyển đổi qua lại giữa thời gian thực và khe slot. Điều này không có vấn đề gì miễn là thời gian slot được cố định. Ngay bây giờ là một giây, vì vậy ngay bây giờ nó là dễ dàng.
 
 Tuy nhiên, điều này có thể thay đổi trong tương lai. Có thể có một đợt hard fork với một số thay đổi thông số sẽ thay đổi thời gian của vị trí. Chúng tôi không thể biết trước điều đó. Ví dụ, chúng tôi không biết độ dài vị trí sẽ là bao nhiêu trong 10 năm nữa.
 
-Điều đó có nghĩa là các khoảng thời gian được xác định cho các giao dịch không được có giới hạn trên xác định là quá xa trong tương lai. Chỉ càng xa trong tương lai thì người ta mới có thể biết được độ dài rãnh sẽ là bao nhiêu. Điều này xảy ra tương tự như 36 giờ. Chúng tôi biết rằng nếu sắp có một đợt hard fork, chúng tôi sẽ biết về nó trước ít nhất 36 giờ.
+Điều đó có nghĩa là các khoảng thời gian được xác định cho các giao dịch không được có giới hạn trên xác định là quá xa trong tương lai. Chỉ càng xa trong tương lai thì người ta mới có thể biết được độ dài slot sẽ là bao nhiêu. Điều này xảy ra tương tự như 36 giờ. Chúng tôi biết rằng nếu sắp có một đợt hard fork, chúng tôi sẽ biết về nó trước ít nhất 36 giờ.
 
 ### POSIXTimeRange
 
@@ -139,7 +138,7 @@ Hãy xem `POSIXTimeRange` này , được định nghĩa trong `Plutus.V1.Ledger
 type POSIXTimeRange = Interval POSIXTime.
 ```
 
-Nó là một loại từ đồng nghĩa với `Interval POSIXTime` và chúng ta thấy rằng nó `Interval` được định nghĩa bởi  `LowerBound` và `UpperBound`.
+Nó là một từ đồng nghĩa với `Interval POSIXTime` và chúng ta thấy rằng nó `Interval` được định nghĩa bởi  `LowerBound` và `UpperBound`.
 
 ``` {.haskell}
 Interval
@@ -215,7 +214,7 @@ hull :: Ord a => Interval a -> Interval a -> Interval a
 hull (Interval l1 h1) (Interval l2 h2) = Interval (min l1 l2) (max h1 h2)
 ```
 
-Chức năng `intersection` xác định khoảng thời gian lớn nhất được chứa trong cả khoảng thời gian nhất định. Đây là một `Interval` bắt đầu từ giới hạn dưới lớn nhất của hai khoảng và kéo dài cho đến giới hạn trên nhỏ nhất.
+Hàm `intersection` xác định khoảng thời gian lớn nhất được chứa trong khoảng thời gian nhất định. Đây là một `Interval` bắt đầu từ giới hạn dưới lớn nhất của hai khoảng và kéo dài cho đến giới hạn trên nhỏ nhất.
 
 ``` {.haskell}
 intersection :: Ord a => Interval a -> Interval a -> Interval a
@@ -229,7 +228,7 @@ overlaps :: Ord a => Interval a -> Interval a -> Bool
 overlaps l r = isEmpty (l `intersection` r)
 ```
 
-`contains` tlấy hai khoảng và xác định xem khoảng thứ hai có hoàn toàn nằm trong khoảng thời gian đầu tiên hay không.
+`contains` lấy hai khoảng và xác định xem khoảng thứ hai có hoàn toàn nằm trong khoảng thời gian đầu hay không.
 
 ``` {.haskell}
 contains :: Ord a => Interval a -> Interval a -> Bool
@@ -292,7 +291,7 @@ Prelude Plutus.V1.Ledger.Interval Week03.Homework1> member 300000 $ from (30 :: 
 True
 ```
 
-Và hàm tạo `to`. Ở đây giới hạn dưới là âm vô cùng, trong khi giới hạn trên là số slot hữu hạn.
+Và hàm `to`. Ở đây giới hạn dưới là âm vô cùng, trong khi giới hạn trên là số slot hữu hạn.
 
 ``` {.haskell}
 Prelude Plutus.V1.Ledger.Interval Week03.Homework1> member 300000 $ to (30 :: Integer)
@@ -315,7 +314,7 @@ Prelude Plutus.V1.Ledger.Interval Week03.Homework1> intersection (interval (10 :
 Interval {ivFrom = LowerBound (Finite 18) True, ivTo = UpperBound (Finite 20) True}
 ```
 
-Như mong đợi, chúng tôi nhận được những `Interval` chạy từ 18 đến 20, bao gồm cả giá trị hai đầu.
+Như mong đợi, chúng tôi nhận được `Interval` chạy từ 18 đến 20, bao gồm cả giá trị hai đầu.
 
 Chúng tôi có thể kiểm tra xem một cái `Interval` có chứa cái khác hay không.
 
@@ -329,12 +328,6 @@ True
 Prelude Plutus.V1.Ledger.Interval Week03.Homework1> contains (to (100 :: Integer)) $ interval 30 101
 False
 ```
-
-We see that as soon as the second `Interval` extends to 101, it is no
-longer fully contained within the `Interval` that runs to 100.
-
-However, if we check with `overlaps`, then it will be true because there
-are elements, such as 40, that are contained in both intervals.
 
 Chúng tôi thấy rằng ngay sau khi giây thứ hai `Interval` kéo dài đến 101, nó không còn được chứa đầy đủ bên trong giá trị `Interval` chạy đến 100.
 
@@ -351,15 +344,15 @@ False
 Ví dụ - Vesting
 -----------------
 
-Hãy tưởng tượng bạn muốn tặng một món quà của Ada cho một đứa trẻ. Bạn muốn đứa trẻ sở hữu Ada, nhưng bạn chỉ muốn đứa trẻ có quyền truy cập vào nó khi tròn mười tám tuổi.
+Hãy tưởng tượng bạn muốn tặng một món quà bằng Ada cho một đứa trẻ. Bạn muốn đứa trẻ sở hữu Ada, nhưng bạn chỉ muốn đứa trẻ có quyền truy cập vào nó khi tròn mười tám tuổi.
 
-Sử dụng Plutus, nó rất dễ thực hiện. Là hợp đồng đầu tiên của chúng tôi sẽ xem xét đối số ngữ cảnh, chúng tôi sẽ thực hiện một hợp đồng thực hiện một kế hoạch vesting. Tiền sẽ được đưa vào một kịch bản và sau đó nó có thể được lấy bởi một người nào đó, nhưng chỉ khi đến một thời hạn nhất định.
+Sử dụng Plutus, nó rất dễ thực hiện. Là hợp đồng đầu tiên của chúng tôi sẽ xem xét đối số Context, chúng tôi sẽ thực hiện một hợp đồng thực hiện một kế hoạch `vesting`. Tiền sẽ được đưa vào một hợp đồng và sau đó nó có thể được lấy bởi một người nào đó, nhưng chỉ khi đến một thời hạn nhất định.
 
 Chúng tôi bắt đầu bằng cách sao chép hợp đồng `IsData` từ bài giảng 2 vào một mô-đun mới được gọi là `Vesting`.
 
-Bước đầu tiên là suy nghĩ về các loại cho dữ liệu và công cụ đổi.
+Bước đầu tiên là suy nghĩ về các loại `Datum` và `Redeemer`.
 
-Đối với dữ liệu, điều hợp lý là có hai phần thông tin, người thụ hưởng và thời hạn. Vì vậy, hãy xác định loại này:
+Đối với `Datum`, điều hợp lý là có hai phần thông tin, người thụ hưởng và thời hạn. Vì vậy, hãy xác định loại này:
 
 
 ``` {.haskell}
@@ -371,7 +364,7 @@ data VestingDatum = VestingDatum
 PlutusTx.unstableMakeIsData ''VestingDatum
 ```
 
-Để biết ai đó có thể chi tiêu đầu ra tập lệnh này hay không, cần có hai thông tin, tức là chữ ký của người thụ hưởng và thời gian của giao dịch. Trong trường hợp này, cả hai phần thông tin đó đều được chứa trong chính giao dịch. Điều này có nghĩa là chúng tôi không cần bất kỳ thông tin nào trong trình redeemer, vì vậy chúng tôi chỉ có thể sử dụng  `()` cho trình redeemer.
+Để biết ai đó có thể chi tiêu đầu ra tập lệnh này hay không, cần có hai thông tin, tức là chữ ký của người thụ hưởng và thời gian của giao dịch. Trong trường hợp này, cả hai phần thông tin đó đều được chứa trong chính giao dịch. Điều này có nghĩa là chúng tôi không cần bất kỳ thông tin nào trong trình `Redeemer`, vì vậy chúng tôi chỉ có thể sử dụng  `()` cho trình `Redeemer`.
 
 ``` {.haskell}
 mkValidator :: VestingDatum -> () -> ScriptContext -> Bool
@@ -379,7 +372,7 @@ mkValidator :: VestingDatum -> () -> ScriptContext -> Bool
 
 Chúng ta cần kiểm tra hai điều kiện.
 
-1.  Chỉ người thụ hưởng chính xác mới có thể mở khóa UTxO tại địa chỉ này. Chúng tôi có thể xác nhận điều này bằng cách kiểm tra xem chữ ký của người thụ hưởng có được bao gồm trong giao dịch hay không.
+1.  Chỉ người thụ hưởng chính xác mới có thể mở khóa UTxO tại địa chỉ này. Chúng tôi có thể xác nhận điều này bằng cách kiểm tra xem chữ ký của người thụ hưởng có được trong giao dịch hay không.
 2.  Rằng giao dịch này chỉ được thực hiện sau khi đến thời hạn cuối cùng.
 
 Chúng tôi có thể chỉ viết điều này trong một lần, nhưng chúng tôi sẽ viết nó theo kiểu từ trên xuống và ủy quyền cho một số chức năng trợ giúp.
@@ -411,16 +404,16 @@ Nhớ lại rằng trước khi chạy tập lệnh trình xác thực, các ki�
 
 Trong trường hợp phạm vi vượt qua thời hạn, mã trình xác thực không thể biết liệu thời điểm hiện tại là trước hay sau thời hạn. Trong trường hợp này, người xác nhận phải tuyên bố rằng giao dịch không hợp lệ.
 
-Tuy nhiên, ví dụ thứ hai trong sơ đồ là tốt. Chúng tôi vẫn chưa biết chính xác thời gian hiện tại là bao nhiêu, nhưng chúng tôi biết rằng dù thời gian là bao nhiêu thì cũng sẽ đến sau thời hạn.
+Tuy nhiên, ví dụ thứ hai trong sơ đồ là đúng. Chúng tôi vẫn chưa biết chính xác thời gian hiện tại là bao nhiêu, nhưng chúng tôi biết rằng dù thời gian là bao nhiêu thì cũng sẽ đến sau thời hạn.
 
-Vì vậy, những gì chúng tôi đang kiểm tra là toàn bộ khoảng thời gian hiệu lực nằm ở bên phải của thời hạn. Một cách để làm điều này là sử dụng  hàm `contains` để kiểm tra xem khoảng thời gian hiệu lực có được chứa đầy đủ trong khoảng thời gian bắt đầu từ thời hạn và kéo dài cho đến hết thời gian hay không. 
+Vì vậy, những gì chúng tôi đang kiểm tra là toàn bộ khoảng thời gian hiệu lực nằm ở bên phải của thời hạn cuối cùng. Một cách để làm điều này là sử dụng  hàm `contains` để kiểm tra xem khoảng thời gian hiệu lực có được chứa đầy đủ trong khoảng thời gian bắt đầu từ thời hạn và kéo dài cho đến hết thời gian hay không. 
 
 ``` {.haskell}
 deadlineReached :: Bool
 deadlineReached = contains (from $ deadline dat) $ txInfoValidRange info
 ```
 
-Điều đó hoàn thành logic xác thực. Hãy quan tâm đến một số tấm boilerplate.
+Điều đó hoàn thành logic xác thực. Hãy quan tâm đến một số boilerplate.
 
 ``` {.haskell}
 data Vesting
@@ -438,9 +431,9 @@ typedValidator = Scripts.mkTypedValidator @Vesting
 
 Chúng tôi sẽ tập trung nhiều hơn vào phần ví của script sau, nhưng đây là những thay đổi.
 
-Ngoài ra thêm vào tham số mới `LANGUAGE` và một số imports bổ xung, chung tôi có tạo kiểu `GiveParams`, và sửa endpoint `grab` để không yêu cầu tham số.
+Ngoài ra thêm vào tham số mới `LANGUAGE` và một số module bổ xung, chung tôi có tạo kiểu `GiveParams`, và sửa endpoint `grab` để không yêu cầu tham số.
 
-Các kiểu `VestingSchema` định nghĩa endpoints cái mà Chúng ta muốn để lộ cho người dùng. Như trong ví dụ cuối cùng của chúng tôi, `give` sẽ được sử dụng bởi người dùng đặt tiền vào hợp đồng, sau đó `grab` sẽ được sử dụng bởi người dùng muốn nhận tiền.
+Các kiểu `VestingSchema` định nghĩa endpoints cái mà Chúng ta muốn  cho người dùng biết. Như trong ví dụ cuối cùng của chúng tôi, `give` sẽ được sử dụng bởi người dùng đặt tiền vào hợp đồng, sau đó `grab` sẽ được sử dụng bởi người dùng muốn nhận tiền.
 
 ``` {.haskell}
 type VestingSchema =
@@ -448,7 +441,7 @@ type VestingSchema =
    .\/ Endpoint "grab" ()
 ```
 
-Vậy chúng ta cần những thông số nào `give`? Endpoint sẽ tạo một UTxO tại địa chỉ tập lệnh vesting với một số tiền và một mức dữ liệu. Nếu bạn nhớ lại, datum của chúng tôi chứa người thụ hưởng và thời hạn. Vì vậy, có ba phần thông tin mà chúng ta phải chuyển đến endpoint `give`.
+Vậy chúng ta cần những thông số nào `give`? Endpoint sẽ tạo một UTxO tại địa chỉ tập lệnh vesting với một số tiền và một D`atum`. Nếu bạn nhớ lại, `Datum` của chúng tôi chứa người thụ hưởng và thời hạn. Vì vậy, có ba phần thông tin mà chúng ta phải chuyển đến endpoint `give`.
 
 ``` {.haskell}
 data GiveParams = GiveParams
@@ -458,9 +451,9 @@ data GiveParams = GiveParams
    } deriving (Generic, ToJSON, FromJSON, ToSchema)
 ```
 
- Endpoint `grab`  không yêu cầu bất kỳ tham số nào vì người thụ hưởng sẽ chỉ tìm các UTxO ở địa chỉ tập lệnh và sau đó có thể kiểm tra xem họ có phải là người thụ hưởng hay không và thời hạn đã qua hay chưa. Nếu vậy, họ có thể tiêu thụ chúng.
+ Endpoint `grab`  không yêu cầu bất kỳ tham số nào vì người thụ hưởng sẽ chỉ tìm các UTxO ở địa chỉ tập lệnh và sau đó có thể kiểm tra xem họ có phải là người thụ hưởng hay không và thời hạn đã qua hay chưa. Nếu vậy, họ có thể dùng chúng.
 
-Hãy nhanh chóng nhìn vào endpoint `give` .
+Giờ hãy nhìn vào endpoint `give` .
 
 ``` {.haskell}
 give :: AsContractError e => GiveParams -> Contract w s e ()
@@ -519,19 +512,19 @@ grab = do
 
 Đầu tiên, chúng tôi lấy thời gian hiện tại và tính toán băm khóa công khai của chúng tôi. Sau đó, chúng tôi tra cứu tất cả các UTxO tại địa chỉ này và lọc chúng bằng cách sử dụng hàm `isSuitable` trợ giúp, được định nghĩa trong mệnh đề `where`.
 
-Trước tiên, nó kiểm tra băm datum và nếu tìm thấy nó, nó sẽ cố gắng tìm kiếm datum tương ứng. Nhớ lại rằng giao dịch sản xuất, trong trường hợp `give` này không phải cung cấp datum, nó chỉ cần cung cấp băm datum. Tuy nhiên, trong trường hợp của chúng ta, chúng ta cần có sẵn dữ liệu cho endpoint `grab` , vì vậy endpoint `give` cung cấp datum.
+Trước tiên, nó kiểm tra băm Datum và nếu tìm thấy nó, nó sẽ cố gắng tìm kiếm Datum tương ứng. Nhớ lại rằng giao dịch sản xuất, trong trường hợp `give` này không phải cung cấp datum, nó chỉ cần cung cấp băm datum. Tuy nhiên, trong trường hợp của chúng ta, chúng ta cần có sẵn dữ liệu cho endpoint `grab` , vì vậy endpoint `give` cung cấp Datum.
 
-Nếu endpoint `grab` tìm thấy datum, nó phải giải thích nó thành kiểu`Vesting` .
+Nếu endpoint `grab` tìm thấy Datum, nó phải chuyển thành kiểu`Vesting` .
 
 Nếu tất cả những điều này thành công, chúng tôi có thể kiểm tra xem chúng tôi có phải là người thụ hưởng hay không và thời hạn đã qua hay chưa.
 
 Tại thời điểm này, `utxos` chứa tất cả các UTxO mà chúng ta có thể sử dụng. Nếu chúng tôi không tìm thấy, thì chúng tôi chỉ cần ghi lại một thông báo cho hiệu ứng đó. Nếu có ít nhất một giao dịch, thì chúng tôi tạo một giao dịch sử dụng tất cả chúng làm đầu vào và thanh toán tiền vào ví của chúng tôi.
 
-Như `lookups`, chúng tôi cung cấp danh sách các UTxO cũng như tập lệnh trình xác thực. Nhớ lại rằng, để sử dụng UTxO tại địa chỉ này, giao dịch chi tiêu phải cung cấp tập lệnh xác thực.
+Nhìn  hàm `lookups`, chúng tôi cung cấp danh sách các UTxO cũng như tập lệnh trình xác thực. Nhớ lại rằng, để sử dụng UTxO tại địa chỉ này, giao dịch chi tiêu phải cung cấp tập lệnh xác thực.
 
-Sau đó, chúng tôi tạo một giao dịch sử dụng tất cả các UTxO phù hợp cùng với một ràng buộc mà nó phải xác thực trong đó `Interval` kéo dài từ slot hiện tại cho đến hết thời gian. Nếu chúng tôi không cung cấp khoảng thời gian ở đây, thì việc xác thực sẽ không thành công, vì khoảng thời gian mặc định là từ ban đầu cho đến khi kết thúc thời gian. Xác thực trên chuỗi sẽ từ chối điều này vì nó cần một khoảng thời gian được chứa đầy đủ trong khoảng thời gian kéo dài từ thời hạn cho đến khi kết thúc thời gian.
+Sau đó, chúng tôi tạo một giao dịch sử dụng tất cả các UTxO phù hợp cùng với một ràng buộc mà nó phải xác thực trong đó `Interval` kéo dài từ slot hiện tại cho đến hết thời hạn. Nếu chúng tôi không cung cấp khoảng thời gian ở đây, thì việc xác thực sẽ không thành công, vì khoảng thời gian mặc định là từ ban đầu cho đến khi kết thúc thời gian. Xác thực On-chain sẽ từ chối điều này vì nó cần một khoảng thời gian được chứa đầy đủ trong khoảng thời gian kéo dài từ thời hạn cho đến khi kết thúc thời gian.
 
-Chúng tôi có thể sử dụng  `Interval` `now`, nhưng nếu có bất kỳ sự cố nào, chẳng hạn như sự chậm trễ của mạng và giao dịch đến một nút muộn hơn một hoặc hai vị trí, thì quá trình xác thực sẽ không hoạt động nữa.
+Chúng tôi có thể sử dụng  `Interval` `now`, nhưng nếu có bất kỳ sự cố nào, chẳng hạn như sự chậm trễ của mạng và giao dịch đến một nút muộn hơn một hoặc hai slot, thì quá trình xác thực sẽ không hoạt động nữa.
 
 và giờ, chúng ta chỉ tập hợp các endpoints.
 
@@ -551,13 +544,13 @@ mkSchemaDefinitions ''VestingSchema
 mkKnownCurrencies []
 ```
 
-### In the playground
+### Trong sân chơi (playground)
 
-Đầu tiên, hãy thêm một ví thứ ba. Chúng tôi sẽ tạo một kịch bản trong đó Ví 1 tạo hai quà tặng cho Ví 2 với thời hạn khác nhau và cũng tạo một quà tặng cho Ví 3.
+Đầu tiên, hãy thêm một ví thứ ba. Chúng tôi sẽ tạo một kịch bản trong đó Ví 1 tạo hai quà tặng cho Ví 2 với thời hạn khác và cũng tạo một quà tặng cho Ví 3 với thời hạn khác.
 
 ![](img/iteration2/pic__00043.png)
 
-Thông thường, có thể gửi cả hai givegiao dịch trong cùng một vị trí, nhưng cách mã của chúng tôi được triển khai, chúng tôi chờ xác nhận, có nghĩa là chúng tôi cần thêm hành động chờ. Đây có thể không phải là cách tốt nhất để làm điều đó, nhưng đó là cách làm trong thời điểm hiện tại.
+Thông thường, có thể gửi cả hai giao dịch `give` trong cùng một vị trí, nhưng cách mã của chúng tôi được triển khai, chúng tôi chờ xác nhận, có nghĩa là chúng tôi cần thêm hành động chờ. Đây có thể không phải là cách tốt nhất để làm điều đó, nhưng đó là cách làm trong thời điểm hiện tại.
 
 ![](img/iteration2/pic__00044.png)
 
@@ -578,7 +571,7 @@ dac073e0123bdea59dd9b3bda9cf6037f63aca82627d7abcd5c4ac29dd74003e
 
 ![](img/iteration2/pic__00047.png)
 
-Vấn đề tiếp theo là thời hạn. Trong bài giảng trước, chúng ta đã biết cách chuyển đổi giữa các vị trí và thời gian POSIX. Điều này đã thay đổi. Trước đây, bạn chỉ cần một vị trí và xuất hiện thời gian POSIX. Bây giờ có một cuộc tranh cãi thứ hai.
+Vấn đề tiếp theo là thời hạn. Trong bài giảng trước, chúng ta đã biết cách chuyển đổi giữa các vị trí (slot) và thời gian POSIX. Điều này đã thay đổi. Trước đây, bạn chỉ cần một vị trí và xuất hiện thời gian POSIX. Bây giờ có một cuộc tranh cãi thứ hai.
 
 ``` {.haskell}
 Prelude Ledger Wallet.Emulator Week03.Vesting> import Ledger.TimeSlot 
@@ -586,7 +579,7 @@ Prelude Ledger Wallet.Emulator Ledger.TimeSlot Week03.Vesting> :t slotToBeginPOS
 slotToBeginPOSIXTime :: SlotConfig -> Slot -> POSIXTime
 ```
 
-Cũng có những phiên bản slotToBeginPOSIXTimecó thời gian bắt đầu và kết thúc. Điều này là do một thời điểm không chỉ là một thời điểm, mà là một khoảng thời gian.
+Cũng có những phiên bản `slotToBeginPOSIXTime` có thời gian bắt đầu và kết thúc. Điều này là do một thời điểm không chỉ là một thời điểm, mà là một khoảng thời gian.
 
 Vậy đây là `SlotConfig`?
 
@@ -602,7 +595,7 @@ instance Show SlotConfig -- Defined in ‘Ledger.TimeSlot’
 
 Nó tính theo độ dài vị trí và thời gian mà vị trí số 0 bắt đầu.
 
-Vì vậy, bây giờ chúng ta phải tìm ra những gì SlotConfigđể sử dụng cho sân chơi. May mắn thay, nó là mặc định. Để làm được điều đó, chúng ta cần sử dụng `Data.Default`.
+Vì vậy, bây giờ chúng ta phải tìm ra những gì `SlotConfig` để sử dụng cho sân chơi. May mắn thay, nó là mặc định. Để làm được điều đó, chúng ta cần sử dụng `Data.Default`.
 
 ``` {.haskell}
 Prelude Ledger Wallet.Emulator Ledger.TimeSlot Week03.Vesting> import Data.Default
@@ -632,19 +625,19 @@ Sau khi đánh giá, đầu tiên chúng ta thấy giao dịch Genesis.
 
 ![](img/iteration2/pic__00050.png)
 
-Nếu chúng ta xem xét giao dịch tiếp theo, chúng ta thấy quà tặng từ Ví 1 đến Ví 2 với thời hạn là 10. Tại đây, mười Ada bị khóa địa chỉ tập lệnh.
+Nếu chúng ta xem xét giao dịch tiếp theo, chúng ta thấy quà tặng từ Ví 1 đến Ví 2 với thời hạn là 10 slot. Tại đây, 10 Ada bị khóa tại địa chỉ tập lệnh.
 
 ![](img/iteration2/pic__00051.png)
 
-Giao dịch tiếp theo là quà tặng từ Ví 1 đến Ví 2 với thời hạn là 20. Một UTxO mới hiện đã được tạo tại địa chỉ tập lệnh với mười Ada.
+Giao dịch tiếp theo là quà tặng từ Ví 1 đến Ví 2 với thời hạn là 20 slot. Một UTxO mới hiện đã được tạo tại địa chỉ tập lệnh với 10 Ada.
 
 ![](img/iteration2/pic__00052.png)
 
-Và món quà thứ ba, lần này là Ví 3, với thời hạn là 10. Ví 1 hiện có khoảng 70 Ada và một UTxO khác được tạo với 10 Ada bị khóa tại địa chỉ tập lệnh.
+Và món quà thứ ba, lần này là Ví 3, với thời hạn là 10 slot. Ví 1 hiện còn khoảng 70 Ada và một UTxO khác được tạo với 10 Ada bị khóa tại địa chỉ tập lệnh.
 
 ![](img/iteration2/pic__00053.png)
 
-Tại vị trí số 10, Ví tiền 3 lấy thành công. UTxO thứ ba là đầu vào, một số khoản phí được thanh toán và sau đó phần còn lại của cuộc tình được gửi đến Ví 3.
+Tại vị trí số 10, Ví 3 lấy ADA thành công. UTxO thứ ba là đầu vào, một số khoản phí được thanh toán và sau đó phần còn lại của được gửi đến Ví 3.
 
 ![](img/iteration2/pic__00054.png)
 
@@ -672,9 +665,9 @@ Mã off-chain của chúng tôi được viết theo cách mà nó sẽ chỉ g�
 
 Nếu bạn muốn kiểm tra trình xác thực, bạn có thể sửa đổi mã ví để điểm cuối lấy cố gắng lấy mọi thứ và sau đó xác thực sẽ không thành công nếu bạn không phải là người thụ hưởng hoặc chưa đến thời hạn.
 
-Bạn cần lưu ý rằng bất kỳ ai cũng có thể viết mã ngoài chuỗi. Vì vậy, mặc dù nó hoạt động ngay bây giờ miễn là bạn sử dụng grabđiểm cuối mà chúng tôi đã tự viết, ai đó có thể viết một đoạn mã off-chain khác không lọc các UTxO như chúng tôi đã làm. Trong trường hợp này, nếu trình xác nhận không đúng, điều gì đó có thể sai khủng khiếp.
+Bạn cần lưu ý rằng bất kỳ ai cũng có thể viết mã ngoài chuỗi. Vì vậy, mặc dù nó hoạt động ngay bây giờ miễn là bạn sử dụng endpoint`grab`  mà chúng tôi đã tự viết, ai đó có thể viết một đoạn mã off-chain khác không lọc các UTxO như chúng tôi đã làm. Trong trường hợp này, nếu trình xác nhận không đúng, điều gì đó có thể sai khủng khiếp.
 
-Ví dụ 2 - Parameterized Contract
+Ví dụ 2 - Tham số hóa hợp đồng (Parameterized Contract)
 ----------------------------------
 
 Chúng ta sẽ bắt đầu ví dụ tiếp theo bằng cách sao chép mã từ ví dụ vesting vào một mô-đun mới có tên `Week03.Parameterized`.
@@ -685,9 +678,9 @@ Lưu ý rằng trong ví dụ vesting, chúng tôi đã sử dụng kiểu `Vest
 
 Tất cả các ví dụ về hợp đồng mà chúng tôi đã thấy cho đến nay đã được sửa chữa. Chúng tôi đã sử dụng `TypedValidator` làm hằng số thời gian biên dịch. Ý tưởng của tập lệnh được tham số hóa là bạn có thể có một tham số và tùy thuộc vào giá trị của tham số, bạn nhận được các giá trị khác nhau của `TypedValidator`.
 
-SVì vậy, thay vì xác định một tập lệnh, với một địa chỉ tập lệnh duy nhất, với tất cả các UTxO ở cùng một địa chỉ, bạn có thể xác định một họ tập lệnh được tham số hóa bởi một tham số nhất định. Trong trường hợp của chúng tôi, điều này có nghĩa là các UTxO cho những người thụ hưởng khác nhau và / hoặc thời hạn sẽ là một địa chỉ tập lệnh khác, vì chúng sẽ có trình xác thực được tham số hóa cụ thể cho các tham số của họ thay vì cụ thể cho dữ liệu của UTxO.
+Vì vậy, thay vì xác định một tập lệnh, với một địa chỉ tập lệnh duy nhất, với tất cả các UTxO ở cùng một địa chỉ, bạn có thể xác định một họ tập lệnh được tham số hóa bởi một tham số nhất định. Trong trường hợp của chúng tôi, điều này có nghĩa là các UTxO cho những người thụ hưởng khác nhau and/or thời hạn sẽ là một địa chỉ tập lệnh khác, vì chúng sẽ có trình xác thực được tham số hóa cụ thể cho các tham số của nó thay vì cụ thể cho `Datum` của UTxO.
 
-Chúng tôi sẽ trình bày cách thực hiện điều này bằng cách sử dụng một tham số thay vì sử dụng số liệu cho người thụ hưởng và giá trị thời hạn.
+Chúng tôi sẽ trình bày cách thực hiện điều này bằng cách sử dụng một tham số thay vì sử dụng Datum cho người thụ hưởng và giá trị thời hạn.
 
 Hãy bắt đầu bằng cách đổi tên `VestingDatum` thành một cái gì đó phù hợp hơn.
 
@@ -765,7 +758,7 @@ scrAddress :: VestingParam -> Ledger.Address
 scrAddress = scriptAddress . validator
 ```
 
-Bây giờ, chúng ta hãy tìm hiểu những gì sai với hàm `typedValidator` .
+Bây giờ, chúng ta hãy tìm hiểu những gì sai với hàm `typedValidator`.
 
 Nếu chúng tôi cố gắng khởi chạy REPL, chúng tôi sẽ gặp lỗi biên dịch.
 
@@ -788,7 +781,7 @@ Nhớ lại rằng mọi thứ bên trong dấu ngoặc [] phải được biế
 
  `p` không biết đến lúc biên dịch, bởi vì chúng tôi có ý định cung cấp nó khi chạy. May mắn thay, có một cách để giải quyết vấn đề này.
 
-Về phía Haskell, chúng tôi có hàm `mkValidator` của mình và chúng tôi có `p` kiểu `VestingParam`. Chúng tôi có thể biên dịch `mkValidator` sang Plutus core, nhưng chúng tôi không thể biên dịch `p` sang Plutus core vì chúng tôi không biết nó là gì. Nhưng, nếu chúng ta có thể sử dụng phiên bản đã biên dịch `p`, chúng ta có thể áp dụng phiên bản đã biên dịch này cho phiên bản đã biên dịch mkValidatorvà điều này sẽ mang lại cho chúng ta những gì chúng ta muốn.
+Về phía Haskell, chúng tôi có hàm `mkValidator` của mình và chúng tôi có `p` kiểu `VestingParam`. Chúng tôi có thể biên dịch `mkValidator` sang Plutus core, nhưng chúng tôi không thể biên dịch `p` sang Plutus core vì chúng tôi không biết nó là gì. Nhưng, nếu chúng ta có thể sử dụng phiên bản đã biên dịch `p`, chúng ta có thể áp dụng phiên bản đã biên dịch này cho phiên bản đã biên dịch `mkValidator` và điều này sẽ mang lại cho chúng ta những gì chúng ta muốn.
 
 Điều này dường như không giải quyết được gì, bởi vì chúng tôi vẫn cần một phiên bản đã biên dịch `p` và chúng tôi có cùng một vấn đề `p` chưa được biết tại thời điểm biên dịch.
 
@@ -814,7 +807,7 @@ Chúng ta sẽ sử dụng một hàm khác, được định nghĩa trong cùng
 module PlutusTx.Lift
 ```
 
-Hàm chúng ta sẽ sử dụng được gọi  `liftCode`.
+Hàm chúng ta sẽ sử dụng được gọi `liftCode`.
 
 ``` {.haskell}
 -- | Get a Plutus Core program corresponding to the given value as a 'CompiledCodeIn', throwing any errors that occur as exceptions and ignoring fresh names.
@@ -853,7 +846,7 @@ Bây giờ nó sẽ biên dịch.
 
 ### Off-Chain
 
-Mã ngoài chuỗi không thay đổi nhiều.
+Mã Off-Chain không thay đổi nhiều.
 
 Các `GiveParams` vẫn giống nhau.
 
@@ -874,10 +867,10 @@ type VestingSchema =
       .\/ Endpoint "grab" POSIXTime
 ```
 
-endpoint`give` tương tự như ví dụ vesting, nhưng có một số khác biệt.
+endpoint`give` tương tự như ví dụ `vesting`, nhưng có một số khác biệt.
 
 Thay vì tính toán dữ liệu, chúng tôi sẽ xây dựng một cái gì đó kiểu
-`VestingParam`.Chúng tôi cũng thay đổi tham chiếu đến datum trong
+`VestingParam`.Chúng tôi cũng thay đổi tham chiếu đến `Datum` trong
 `mustPayToTheScript` để trở thành `()`, và chúng tôi cung cấp các loại `p` để `typedValidator` như nó không còn là một hằng số.
 
 ``` {.haskell}
@@ -944,7 +937,7 @@ endpoints = (give' `select` grab') >> endpoints
     grab' = endpoint @"grab" >>= grab
 ```
 
-### Quay lại playground
+### Quay lại với sân chơi (playground)
 
 Bây giờ chúng tôi sẽ sao chép và dán hợp đồng mới này vào sân chơi và thiết lập một kịch bản mới.
 
