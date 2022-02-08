@@ -9,7 +9,9 @@ description: Ngôn ngữ Plutus
 
 Plutus là nền tảng hợp đồng thông minh của chuỗi khối Cardano. Nó cho phép bạn viết các ứng dụng tương tác với chuỗi khối Cardano.
 
-Hãy xem [ Hướng dẫn về Plutus {/ a0} nếu bạn muốn học Plutus từ đầu. Nếu bạn chưa biết Haskell, hãy xem xét ](https://plutus.readthedocs.io/en/latest/plutus/tutorials/plutus-playground.html)[ bắt đầu với Haskell {/ a1}](#get-started-with-haskell)
+Hướng dẫn về Plutus, nếu bạn muốn học Plutus từ đầu, [Hãy xem ở đây](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/plutus-playground.html)
+
+Nếu bạn chưa biết Haskell [Bắt đầu với Haskell](#get-started-with-haskell)
 
 [Theo dõi nội dung bản dịch của Chris Moreton](https://cardano2vn.io/docs/dr-lars-lession/overview) . Với một nỗ lực cao, anh ấy chép lại các bài giảng của Chương trình Tiên phong Plutus.
 
@@ -33,24 +35,24 @@ Plutus Playground là một trình soạn thảo mã và trình mô phỏng tron
 
 [](https://playground.plutus.iohkdev.io)
 
-Có một hướng dẫn bằng văn bản về [ cách biên dịch và kiểm tra Ứng dụng Plutus {/ a0} hoặc bạn có thể xem hướng dẫn bằng video này:](https://plutus.readthedocs.io/en/latest/plutus/tutorials/plutus-playground.html)
+Có một hướng dẫn bằng văn bản về [ cách biên dịch và kiểm tra Ứng dụng Plutus {/ a0} hoặc bạn có thể xem hướng dẫn bằng video này:](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/plutus-playground.html)
 
 <iframe width="100%" height="325" src="https://www.youtube.com/embed/DhRS-JvoCw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 ## Các bài thực hành làm rõ
 
-- [Viết một ứng dụng Plutus cơ bản trong Plutus Playground ](https://plutus.readthedocs.io/en/latest/plutus/tutorials/basic-apps.html)
-- [Sử dụng Plutus Tx ](https://plutus.readthedocs.io/en/latest/plutus/tutorials/plutus-tx.html)
-- [Viết các tập lệnh xác thực cơ bản](https://plutus.readthedocs.io/en/latest/plutus/tutorials/basic-validators.html)
-- [Viết các chính sách đúc tiền cơ bản ](https://plutus.readthedocs.io/en/latest/plutus/tutorials/basic-minting-policies.html)
-- [Thử nghiệm dựa trên tài sản của các hợp đồng Plutus/a0}](https://plutus.readthedocs.io/en/latest/plutus/tutorials/contract-testing.html)
+- [Viết một ứng dụng Plutus cơ bản trong Plutus Playground ](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/basic-apps.html)
+- [Sử dụng Plutus Tx ](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/plutus-tx.html)
+- [Viết các tập lệnh xác thực cơ bản](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/basic-validators.html)
+- [Viết các chính sách đúc tiền cơ bản ](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/basic-minting-policies.html)
+- [Thử nghiệm dựa trên tài sản của các hợp đồng Plutus/a0}](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/contract-testing.html)
 
 ## Hướng dẫn
 
-- [Cách xuất script, datums và redemmers ](https://plutus.readthedocs.io/en/latest/plutus/howtos/exporting-a-script.html)
-- [Cách viết một ứng dụng Plutus có thể mở rộng ](https://plutus.readthedocs.io/en/latest/plutus/howtos/writing-a-scalable-app.html)
-- [Cách xử lý các sự kiện blockchain ](https://plutus.readthedocs.io/en/latest/plutus/howtos/handling-blockchain-events.html)
-- [Cách phân tích chi phí và kích thước của tập lệnh Plutus ](https://plutus.readthedocs.io/en/latest/plutus/howtos/analysing-scripts.html)
+- [Cách xuất script, datums và redemmers ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/exporting-a-script.html)
+- [Cách viết một ứng dụng Plutus có thể mở rộng ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/writing-a-scalable-app.html)
+- [Cách xử lý các sự kiện blockchain ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/handling-blockchain-events.html)
+- [Cách phân tích chi phí và kích thước của tập lệnh Plutus ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/analysing-scripts.html)
 
 ## Bắt đầu với Haskell.
 
