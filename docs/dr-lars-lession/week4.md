@@ -3,58 +3,42 @@ Week 04 - Monads
 
 
 Đây là phiên bản viết của Bài [giảng số
-4](https://youtu.be/HLJOcKlEucI).
+4 Dr. Lars](https://youtu.be/HLJOcKlEucI).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HLJOcKlEucI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Trong bài giảng này, chúng ta tìm hiểu về monad (monads). Đặc biệt là các
-monads EmulatorTrace và Contract..
+Trong bài giảng này, chúng ta tìm hiểu về Monad (Monads). Đặc biệt là các Monads EmulatorTrace và Contract..
 
 Tổng quat 
 ---------
 
 Chúng tôi đã dành hai bài giảng cuối cùng để nói về phần on-chain của
-Plutus - logic xác thực được biên dịch thành tập lệnh Plutus và thực sự
-sống trên blockchain và được thực hiện bởi các nút xác thực giao dịch.
+Plutus - logic xác thực được biên dịch thành tập lệnh Plutus và thực sự chạy trên blockchain và được thực hiện bởi các nút xác thực giao dịch.
 
 Còn rất nhiều điều để nói về bộ phận on-chain đó.
 
-Chúng tôi chưa xem xét các ví dụ phức tạp hơn về xác thực sử dụng ngữ
-cảnh phức tạp hơn và chúng tôi chưa thấy cách mã thông báo gốc hoạt động
-như thế nào (tập lệnh Plutus cũng được sử dụng để xác thực việc đúc và
-đốt mã thông báo gốc).
+Chúng tôi chưa xem xét các ví dụ phức tạp hơn về xác thực sử dụng `Context` phức tạp hơn và chúng tôi chưa thấy cách token gốc hoạt động như thế nào (tập lệnh Plutus cũng được sử dụng để xác thực việc đúc và đốt token gốc).
 
 Chúng ta chắc chắn sẽ phải nói về những chủ đề đó, và quay lại vấn đề
 đó.
 
-Tuy nhiên, trước khi đi vào quá nhiều chủ đề phức tạp về xác thực trên
-chuỗi, chúng ta không được bỏ qua phần ngoài chuỗi, vì nó cũng quan
+Tuy nhiên, trước khi đi vào quá nhiều chủ đề phức tạp về xác thực on-chain, chúng ta không được bỏ qua phần off-chain, vì nó cũng quan
 trọng không kém.
 
 Phần on-chain đảm nhận việc xác thực nhưng để có thứ gì đó được xác
-thực, chúng ta phải xây dựng một giao dịch và gửi nó lên blockchain. Và,
-đó là những gì phần off-chain thực hiện.
+thực, chúng ta phải xây dựng một giao dịch và gửi nó lên blockchain. Và, đó là những gì phần off-chain thực hiện.
 
-Vì vậy, chúng ta sẽ bắt đầu nói về cách viết mã Plutus ngoài chuỗi.
+Vì vậy, chúng ta sẽ bắt đầu nói về cách viết mã Plutus off-chain.
 
 Thật không may, có một vấn đề nhỏ liên quan đến các tính năng Haskell
 cần thiết.
 
-Phần on-chain mà chúng ta đã thấy cho đến nay hơi xa lạ và cần làm quen
-một chút, do thực tế là chúng ta có thêm sự phức tạp của quá trình biên
-dịch sang tập lệnh Plutus. Nhưng, chúng ta không thực sự phải lo lắng về
-điều đó nếu chúng ta sử dụng phép thuật Template Haskell. Trong trường
-hợp đó, hàm xác nhận chỉ là một hàm đơn giản.
+Phần on-chain mà chúng ta đã thấy cho đến nay hơi xa lạ và cần làm quen một chút, do thực tế là chúng ta có thêm sự phức tạp của quá trình biên dịch sang tập lệnh Plutus. Nhưng, chúng ta không thực sự phải lo lắng về điều đó nếu chúng ta sử dụng Template Haskell. Trong trường hợp đó, hàm xác nhận chỉ là một hàm đơn giản.
 
-Và nó thực sự là một hàm Haskell rất đơn giản theo quan điểm kỹ thuật.
-Chúng tôi không sử dụng bất kỳ tính năng Haskell ưa thích nào để viết
-hàm này.
+Và nó thực sự là một hàm Haskell rất đơn giản theo quan điểm kỹ thuật. Chúng tôi không sử dụng bất kỳ tính năng Haskell ưa thích nào để viết hàm này.
 
-Một trong những lý do cho điều đó là cách thức hoạt động của quá trình
-biên dịch Plutus. Chúng tôi đã thấy làm thế nào để việc biên dịch sang
-Plutus thành công, tất cả mã được sử dụng bởi hàm xác nhận phải có sẵn
-trong Oxford Brackets. Điều này có nghĩa là tất cả các chức năng được sử
-dụng bởi chức năng `mkValidator` phải sử dụng pragma INLINABLE.
+Một trong những lý do cho điều đó là cách thức hoạt động của quá trìn 
+biên dịch Plutus. Chúng tôi đã thấy làm thế nào để việc biên dịch sang Plutus thành công, tất cả mã được sử dụng bởi hàm xác nhận phải có sẵn trong Oxford Brackets. Điều này có nghĩa là tất cả các hàm được sử dụng bởi hàm `mkValidator` phải sử dụng pragma `INLINABLE`.
 
 ``` {.haskell}
 {-# INLINABLE mkValidator #-}
@@ -64,40 +48,28 @@ mkValidator _ _ _ = ()
 $$(PlutusTx.compile [|| mkValidator ||])
 ```
 
-Và hãy nhớ lại rằng vì các hàm Haskell tiêu chuẩn không có pragma CÓ THỂ
-LỆNH này, nên có một mô-đun Plutus Prelude mới tương tự như Haskell
-Prelude tiêu chuẩn, nhưng với các chức năng được xác định với pragma
-INLINABLE.
+Và hãy nhớ lại rằng vì các hàm Haskell tiêu chuẩn không có pragma `INLINABLE` này, nên có một mô-đun Plutus.Prelude mới tương tự như Haskell Prelude tiêu chuẩn, nhưng với các hàm được xác định với pragma `INLINABLE`.
 
 Nhưng, tất nhiên, có hàng trăm thư viện Haskell ngoài kia và hầu hết
 chúng không được viết với Plutus, vì vậy chúng tôi không thể sử dụng
-chúng trong quá trình xác thực. Và, điều đó có tác dụng là xác thực bên
-trong Haskell sẽ tương đối đơn giản và sẽ không có nhiều phụ thuộc.
+chúng trong quá trình xác thực. Và, điều đó có tác dụng là xác thực bên trong Haskell sẽ tương đối đơn giản và sẽ không có nhiều phụ thuộc.
 
 Monads
 ------
 
-Trong phần off-chain của Plutus, tình hình đã đảo ngược. Chúng ta không
-phải lo lắng về việc biên dịch sang tập lệnh Plutus - nó chỉ là Haskell
-đơn giản. Tuy nhiên, mặt trái của nó là, cách nó được thực hiện, nó sử
-dụng các tính năng Haskell phức tạp hơn nhiều - ví dụ như cái gọi là hệ
-thống hiệu ứng, phát trực tuyến và đặc biệt là monads.
+Trong phần off-chain của Plutus, tình hình đã đảo ngược. Chúng ta không phải lo lắng về việc biên dịch sang tập lệnh Plutus - nó chỉ là Haskell đơn giản. Tuy nhiên, mặt trái của nó là, cách nó được thực hiện, nó sử dụng các tính năng Haskell phức tạp hơn nhiều - ví dụ như cái gọi là hệ thống hiệu ứng, phát trực tuyến và đặc biệt là Monads.
 
-Tất cả mã off-chain (mã ví), được viết bằng một monad đặc biệt -
-hợp đồng monad.
+Tất cả mã off-chain (mã ví), được viết bằng một Monad đặc biệt -
+hợp đồng Monad.
 
-Các tu viện nổi tiếng trong thế giới Haskell. Đây thường là trở ngại đầu
-tiên khi bắt đầu lập trình viên Haskell.
+Các Monads nổi tiếng trong thế giới Haskell. Đây thường là trở ngại đầu tiên khi bắt đầu lập trình Haskell.
 
 Có rất nhiều hướng dẫn cố gắng giải thích các Monads. Monads được so
-sánh với burritos, và tất cả các loại ẩn dụ được sử dụng để cố gắng giải
-thích khái niệm. Nhưng ở đây, ít nhất chúng ta hãy cố gắng cung cấp một
-khóa học cơ bản về monads cho những người mới sử dụng Haskell.
+sánh với burritos, và tất cả các loại ẩn dụ được sử dụng để cố gắng giải thích khái niệm. Nhưng ở đây, ít nhất chúng ta hãy cố gắng cung cấp một khóa học cơ bản về Monads cho những người mới sử dụng Haskell.
 
-Trước khi đến với các monad chung, chúng ta sẽ bắt đầu với IO , đó
+Trước khi đến với các Monad chung, chúng ta sẽ bắt đầu với IO , đó
 là cách xử lý các tác dụng của IO trong Haskell. Tuy nhiên, trước
-khi đến với Haskell, chúng ta hãy xem xét một ngôn ngữ chính thống như
-Java.
+khi đến với Haskell, chúng ta hãy xem xét một ngôn ngữ chính thống như Java.
 
 Hãy xem xét phương pháp Java sau đây.
 
@@ -107,8 +79,7 @@ public static int foo() {
 }
 ```
 
-Hàm này không có đối số và nó trả về `int`. Hãy tưởng tượng nó được gọi
-hai lần trong mã.
+Hàm này không có đối số và nó trả về `int`. Hãy tưởng tượng nó được gọi hai lần trong mã.
 
 ``` {.java}
 ...
@@ -117,47 +88,33 @@ final int a = foo();
 final int b = foo();
 ```
 
-Bây giờ, chúng ta lưu ý rằng, chừng nào chúng ta không biết điều gì đang
-xảy ra bên trong hàm foo(), thì giá trị trả về của biểu thức sau là
-không xác định.
+Bây giờ, chúng ta lưu ý rằng, chừng nào chúng ta không biết điều gì đang xảy ra bên trong hàm foo(), thì giá trị trả về của biểu thức sau là không xác định.
 
 ``` {.java}
 a == b; // true or false? at compile time, we don't know
 ```
 
-Chúng tôi không biết có `a` giống như `b` vậy không vì trong Java, hoàn
-toàn có thể xảy ra một số IO bên trong `foo`. Ví dụ: có mã là mã yêu cầu
-người dùng nhập đầu vào trên bảng điều khiển và sử dụng mã này để tính
-toán giá trị trả về.
+Chúng tôi không biết `a` giống như `b` vậy không vì trong Java, hoàn
+toàn có thể xảy ra một số IO bên trong `foo`. Ví dụ: có mã là mã yêu cầu người dùng nhập đầu vào trên bảng điều khiển và sử dụng mã này để tính toán giá trị trả về.
 
-Điều này có nghĩa là, để lập luận về mã, chúng ta cần phải nhìn vào bên
-trong `foo`, điều này làm cho việc thử nghiệm trở nên khó khăn hơn. Và
-nó có nghĩa là, `foo` ví dụ , đó là lệnh gọi trả về đầu tiên `13`- chúng
-ta không thể thay thế tất cả các lệnh gọi khác đến `foo` bằng giá trị
-trả về đã biết của `13`.
+Điều này có nghĩa là, để lập luận về mã, chúng ta cần phải nhìn vào bên trong `foo`, điều này làm cho việc thử nghiệm trở nên khó khăn hơn. Và nó có nghĩa là ví dụ `foo` , đó là lệnh gọi trả về đầu tiên `13`- chúng ta không thể thay thế tất cả các lệnh gọi khác đến `foo` bằng giá trị trả về đã biết của `13`.
 
-Ở Haskell, tình hình rất khác vì Haskell là một ngôn ngữ chức năng thuần
-túy. Chữ ký tương đương trong Haskell sẽ giống như sau:
+Ở Haskell, tình hình rất khác vì Haskell là một ngôn ngữ hàm thuần túy. Chữ ký tương đương trong Haskell sẽ giống như sau:
 
 ``` {.haskell}
 foo :: Int
 foo = ...
 ```
 
-Bây giờ, nếu chúng ta gặp trường hợp chúng ta gọi `foo` hai lần, mặc dù
-chúng ta không biết giá trị của `foo` là gì, chúng ta biết chắc rằng hai
-giá trị trả về sẽ giống nhau.
+Bây giờ, nếu chúng ta gặp trường hợp chúng ta gọi `foo` hai lần, mặc dù chúng ta không biết giá trị của `foo` là gì, chúng ta biết chắc rằng hai giá trị trả về sẽ giống nhau.
 
 Đây là một tính năng rất quan trọng được gọi là tính minh bạch tham
-chiếu . Trên thực tế, có một số cửa thoát hiểm để giải quyết vấn đề này,
-nhưng chúng ta có thể bỏ qua điều này.
+chiếu. Trên thực tế, có một số cách để giải quyết vấn đề này, nhưng chúng ta có thể bỏ qua điều này.
 
 Điều này làm cho các tác vụ như tái cấu trúc và kiểm tra dễ dàng hơn
 nhiều.
 
-Điều này là rất tốt, nhưng bạn cần có tác dụng để có ảnh hưởng đến
-thế giới. Nếu không, tất cả những gì chương trình của bạn làm là làm
-nóng bộ xử lý.
+Điều này là rất tốt, nhưng bạn cần có side-effects để có ảnh hưởng đến thế giới. Nếu không, tất cả những gì chương trình của bạn làm chỉ làm nóng bộ xử lý.
 
 Bạn cần đầu vào và đầu ra. Bạn phải có khả năng ghi kết quả đầu ra ra
 màn hình, hoặc đọc đầu vào từ bàn phím, kết nối mạng hoặc tệp, chẳng
@@ -166,11 +123,10 @@ hạn.
 Có một [video nổi tiếng của Simon Peyton-Jones là Haskell Is
 Useless](https://www.youtube.com/watch?v=iSmkqocn0oQ) giải thích rằng
 ngôn ngữ thuần túy, không có tác dụng thì rất đẹp về mặt toán học,
-nhưng cuối cùng thì bạn cũng cần có tác dụng để biến bất cứ điều gì
-xảy ra.
+nhưng cuối cùng thì bạn cũng cần có side-effects để biến bất cứ điều gì xảy ra.
 
-Và Haskell có một cách để xử lý các tác dụng và đó là monad IO.
-Tuy nhiên, đừng lo lắng về phần monad.
+Và Haskell có một cách để xử lý các side-effects và đó là `Monad IO`.
+Tuy nhiên, đừng lo lắng về phần `Monad`.
 
 Đây là cách chúng tôi làm điều đó trong Haskell.
 
@@ -179,28 +135,18 @@ foo :: IO Int
 foo = ...
 ```
 
-`IO` là một phương thức khởi tạo kiểu nhận một đối số, giống như một số
-ví dụ khác về các hàm tạo kiểu như `Maybe` and `List` . Tuy nhiên, không
-giống như những ví dụ đó, `IO` đặc biệt, theo nghĩa là bạn không thể
-triển khai nó bằng chính ngôn ngữ. Nó là một nguyên thủy được tích hợp
-sẵn.
+`IO` là một phương thức khởi tạo kiểu nhận một đối số, giống như một số ví dụ khác về các hàm tạo kiểu như `Maybe` and `List` . Tuy nhiên, không giống như những ví dụ đó, `IO` đặc biệt, theo nghĩa là bạn không thể triển khai nó bằng chính ngôn ngữ. Nó là một nguyên thủy được tích hợp sẵn.
 
-Giá trị trả về `IO Int` cho chúng ta biết rằng đây là một công thức để
-tính Int và công thức này có thể gây ra các phản ứng phụ. Một danh sách
-các hướng dẫn cho máy tính biết phải làm gì để kết thúc với một `Int` .
+Giá trị trả về `IO Int` cho chúng ta biết rằng đây là một công thức để tính `Int` và công thức này có thể gây ra các phản ứng phụ. Một danh sách các hướng dẫn cho máy tính biết phải làm gì để kết thúc với một `Int` .
 
-Điều quan trọng cần lưu ý là tính minh bạch của tham chiếu không bị phá
-vỡ ở đây. Kết quả đánh giá foo là chính công thức, không phải giá trị
-`Int` . Và vì công thức luôn giống nhau, nên tính minh bạch của tham
-chiếu được duy trì.
+Điều quan trọng cần lưu ý là tính minh bạch của tham chiếu không bị phá vỡ ở đây. Kết quả đánh giá `foo` là chính công thức, không phải giá trị `Int`. Và vì công thức luôn giống nhau, nên tính minh bạch của tham chiếu được duy trì.
 
 Cách duy nhất để thực sự thực hiện một công thức như vậy trong chương
-trình Haskell là từ điểm nhập chính của chương trình - hàm chính . Bạn
-cũng có thể thực hiện các hành động IO trong REPL.
+trình Haskell là từ điểm nhập chính của chương trình - hàm chính . Bạn cũng có thể thực hiện các hành động `IO` trong REPL.
 
 ### Hello World
 
-Hello World in Haskell trông như thế này:
+`Hello World` trong Haskell trông như thế này:
 
 ``` {.haskell}
 main :: IO ()
@@ -208,10 +154,9 @@ main = putStrLn "Hello, world!"
 ```
 
 Ở đây, `main` là một công thức thực hiện một số tác dụng và trả về
-Đơn vị - không có gì đáng quan tâm.
+`Unit` - `Nothing`.
 
-Hãy xem `putStrLn` trong REPL. Chúng tôi thấy rằng đó là một hành động
-IO sử dụng `String` và không trả về kết quả thú vị nào.
+Hãy xem `putStrLn` trong REPL. Chúng tôi thấy rằng đó là một hành động `IO` sử dụng `String` và không trả về kết quả thú vị nào.
 
 ``` {.haskell}
 Prelude Week04.Contract> :t putStrLn
@@ -222,7 +167,7 @@ putStrLn "Hello, world!" :: IO ()
 ```
 
 Chúng tôi cũng có thể chạy điều này. Mở ứng dụng /Main.sh và chỉnh
-sửa chức năng chính để nó đọc:
+sửa hàm chính để nó đọc:
 
 ``` {.haskell}
 main :: IO ()
@@ -239,8 +184,7 @@ Chúng ta sẽ xem xét nhanh tệp cabal ngay bây giờ.
 
 Trong các bài giảng trước, chúng ta chỉ cần phần thư viện `library`
 trong tệp `plutus-pioneer-program-week04.cabal` vì chúng ta chỉ xử lý
-các hàm thư viện. Bây giờ, chúng ta cần thêm một khổ thơ có thể thực thi
-được .
+các hàm thư viện. Bây giờ, chúng ta cần thêm một đoạn code sau có thể thực thi được .
 
 ``` {.cabal}
 executable hello
@@ -251,7 +195,7 @@ default-language:    Haskell2010
 ghc-options:         -Wall -O2
 ```
 
-Điều này chỉ định thư mục nguồn và tệp nào giữ chức năng chính. Thông
+Điều này chỉ định thư mục nguồn và tệp nào giữ hàm chính. Thông
 thường tên tệp phải khớp với tên mô-đun, nhưng `main` là một ngoại lệ.
 
 Thay vì chỉ yêu cầu loại `putStrLn` , chúng ta có thể chạy nó trong
@@ -271,34 +215,26 @@ Prelude Week04.Contract> :t getLine
 getLine :: IO String
 ```
 
-Điều này cho thấy rằng đó là một công thức, có thể tạo ra các hiệu ứng
-phụ, khi được thực thi sẽ tạo ra một Chuỗi . Trong trường hợp getLine ,
-tác dụng được đề cập là nó sẽ đợi người dùng nhập từ bàn phím.
+Điều này cho thấy rằng đó là một công thức, có thể tạo ra các hiệu ứng phụ, khi được thực thi sẽ tạo ra một Chuỗi . Trong trường hợp `getLine`, side-effect được đề cập là nó sẽ đợi người dùng nhập từ bàn phím.
 
-Nếu chúng ta thực thi getLine trong REPL.
+Nếu chúng ta thực thi `getLine` trong REPL.
 
 ``` {.haskell}
 Prelude Week04.Contract> getLine
 ```
 
-Nó chờ nhập bàn phím. Sau đó, nếu chúng ta nhập một cái gì đó, nó sẽ trả
-về kết quả.
+Nó chờ nhập bàn phím. Sau đó, nếu chúng ta nhập một cái gì đó, nó sẽ trả về kết quả.
 
 ``` {.haskell}
 Haskell
 "Haskell"
 ```
 
-Có một loạt các hành động IO được định nghĩa trong Haskell để thực hiện
-tất cả các loại như đọc tệp, ghi tệp, đọc từ và ghi vào ổ cắm.
+Có một loạt các hành động IO được định nghĩa trong Haskell để thực hiện tất cả các loại như đọc tệp, ghi tệp, đọc và ghi vào sockets.
 
-Nhưng cho dù bạn có bao nhiêu hành động được xác định trước, điều đó sẽ
-không bao giờ là đủ để đạt được điều gì đó phức tạp, vì vậy cần phải có
-cách để kết hợp các hành động IO nguyên thủy này thành những công thức
-lớn hơn, phức tạp hơn.
+Nhưng cho dù bạn có bao nhiêu hành động được xác định trước, điều đó sẽ không bao giờ là đủ để đạt được điều gì đó phức tạp, vì vậy cần phải có cách để kết hợp các hành động IO nguyên thủy này thành những công thức lớn hơn, phức tạp hơn.
 
-Một điều chúng ta có thể làm là sử dụng phiên bản kiểu `Functor` của IO.
-Hãy xem xét các trường hợp loại của `IO` trong REPL.
+Một điều chúng ta có thể làm là sử dụng phiên bản kiểu `Functor` của `IO`. Hãy xem xét các trường hợp loại của `IO` trong REPL.
 
 ``` {.haskell}
 Prelude Week04.Contract> :i IO
@@ -318,8 +254,7 @@ instance Semigroup a => Semigroup (IO a) -- Defined in ‘GHC.Base’
 instance MonadFail IO -- Defined in ‘Control.Monad.Fail’
 ```
 
-Chúng ta thấy cá thể `Monad` đáng sợ , nhưng chúng ta cũng thấy một cá
-thể `Functor`. `Functor` là một loại lớp rất quan trọng trong Haskell.
+Chúng ta thấy cá thể `Monad` đáng sợ , nhưng chúng ta cũng thấy một cá thể `Functor`. `Functor` là một loại lớp rất quan trọng trong Haskell.
 Nếu chúng ta nhìn vào nó trong REPL:
 
 ``` {.haskell}
@@ -340,17 +275,16 @@ instance Functor ((,,) a b) -- Defined in ‘GHC.Base’
 instance Functor ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-Phương pháp quan trọng ở đây là fmap . Hàm thứ hai (\<\$) là một hàm
+Phương pháp quan trọng ở đây là `fmap`. Hàm thứ hai (<$) là một hàm
 tiện lợi.
 
 ``` {.haskell}
 fmap :: (a -> b) -> f a -> f b
 ```
 
-Hàm này `fmap` , mà tất cả `Functor`s có cho chúng ta biết rằng, nếu
-chúng ta cấp cho nó quyền truy cập vào một hàm có thể biến `a` thàng `b`
-, thì nó có thể biến fa thành fb cho chúng ta. Ở đây, chúng ta quan tâm
-đến trường hợp f là IO .
+Hàm này `fmap` , mà tất cả `Functor` có cho chúng ta biết rằng, nếu
+chúng ta cấp cho nó quyền truy cập vào một hàm có thể biến `a` thành `b` , thì nó có thể biến `fa` thành `fb`. Ở đây, chúng ta quan tâm
+đến trường hợp `f` là `IO` .
 
 Nếu chúng ta chuyên biệt hóa hàm cho `IO` , chúng ta sẽ có một hàm như:
 
@@ -359,9 +293,7 @@ fmap' :: (a -> b) -> IO a -> IO b
 ```
 
 Làm thế nào để làm việc đó. À, `IO a` là một công thức có tác dụng
-và tạo ra `a` . Vì vậy, làm thế nào để chúng ta có được một `b` trong số
-đó? Chúng tôi thực hiện công thức, nhưng, trước khi trả về a , chúng tôi
-áp dụng hàm `(a -\> b)` cho `a` và trả về kết quả là `b` .
+và tạo ra `a`. Vì vậy, làm thế nào để chúng ta có được một `b` trong số đó? Chúng tôi thực hiện công thức, nhưng, trước khi trả về `a`, chúng tôi áp dụng hàm `(a -> b)` cho `a` và trả về kết quả là `b` .
 
 Trong REPL, chúng ta hãy xem xét hàm `toUpper` .
 
@@ -373,9 +305,7 @@ Prelude Data.Char Week04.Contract> toUpper 'q'
 'Q'
 ```
 
-Nếu chúng ta muốn áp dụng được cho một chuỗi chứ không phải là một Char
-chúng ta có thể sử dụng bản đồ chức năng. Các chuỗi `String`s trong
-Haskell chỉ là `Char`s .
+Nếu chúng ta muốn áp dụng được cho một chuỗi chứ không phải là một `Char` chúng ta có thể sử dụng bản đồ hàm. Các chuỗi `String` trong Haskell chỉ là các `Char`.
 
 ``` {.haskell}
 Prelude Data.Char Week04.Contract> map toUpper "Haskell"
@@ -389,9 +319,7 @@ Prelude Data.Char Week04.Contract> :t map toUpper
 map toUpper :: [Char] -> [Char]
 ```
 
-Và chúng ta có thể sử dụng kết hợp với `fmap`. Nếu chúng ta sử dụng `map
-toUpper` làm chức năng chuyển đổi `a` thành `b` , chúng ta có thể thấy
-loại đầu ra của fmap sẽ như thế nào khi áp dụng cho `IO a` .
+Và chúng ta có thể sử dụng kết hợp với `fmap`. Nếu chúng ta sử dụng `map toUpper` làm hàm chuyển đổi `a` thành `b` , chúng ta có thể thấy loại đầu ra của `fmap` sẽ như thế nào khi áp dụng cho `IO a`.
 
 ``` {.haskell}
 Prelude Data.Char Week04.Contract> :t fmap (map toUpper) getLine
@@ -406,9 +334,8 @@ haskell
 "HASKELL"
 ```
 
-Chúng ta cũng có thể sử dụng toán tử `\>\>` . Điều này chuỗi hai hành
-động `IO` lại với nhau, bỏ qua kết quả của hành động đầu tiên. Trong ví
-dụ sau, cả hai hành động sẽ được thực hiện theo trình tự.
+Chúng ta cũng có thể sử dụng toán tử `>>`. Điều này chuỗi hai hành
+động `IO` lại với nhau, bỏ qua kết quả của hành động đầu tiên. Trong ví dụ sau, cả hai hành động sẽ được thực hiện theo trình tự.
 
 ``` {.haskell}
 Prelude Week04.Contract> putStrLn "Hello" >> putStrLn "World"
@@ -416,9 +343,9 @@ Hello
 World
 ```
 
-Ở đây, không có kết quả từ `putStrLn` , nhưng nếu có, nó sẽ bị bỏ qua. Các tác dụng không mong muốn của nó sẽ được thực hiện, kết quả của nó bị bỏ qua, sau đó các tác dụng không mong muốn thứ hai của `putStrLn` sẽ được thực hiện trước khi trả về kết quả của lần gọi thứ hai.
+Ở đây, không có kết quả từ `putStrLn`, nhưng nếu có, nó sẽ bị bỏ qua. Các tác dụng không mong muốn của nó sẽ được thực hiện, kết quả của nó bị bỏ qua, sau đó các tác dụng không mong muốn thứ hai của `putStrLn` sẽ được thực hiện trước khi trả về kết quả của lần gọi thứ hai.
 
-Sau đó, có một toán tử quan trọng không bỏ qua kết quả của hành động IO đầu tiên , và đó được gọi là ràng buộc . Nó được viết dưới dạng ký hiệu `\>\>=` .
+Sau đó, có một toán tử quan trọng không bỏ qua kết quả của hành động `IO` đầu tiên , và đó được gọi là ràng buộc . Nó được viết dưới dạng ký hiệu `>>=` .
 
 ``` {.haskell}
 Prelude Week04.Contract> :t (>>=)
@@ -427,7 +354,7 @@ Prelude Week04.Contract> :t (>>=)
 
 Chúng tôi thấy ràng buộc `Monad` , nhưng chúng tôi có thể bỏ qua điều đó ngay bây giờ và chỉ nghĩ về `IO` .
 
-Điều này nói lên rằng nếu tôi có một công thức thực hiện các tác dụng sau đó cho tôi kết quả `a` , và cho rằng tôi có một hàm nhận `a` và trả lại cho tôi một công thức trả về `b` , thì tôi có thể kết hợp công thức `m a`. với công thức mb bằng cách lấy giá trị a và sử dụng nó trong công thức thu được giá trị `b` .
+Điều này nói lên rằng nếu tôi có một công thức thực hiện các tác dụng sau đó cho tôi kết quả `a`, và cho rằng tôi có một hàm nhận `a` và trả lại cho tôi một công thức trả về `b` , thì tôi có thể kết hợp công thức `m a`. với công thức `mb` bằng cách lấy giá trị `a` và sử dụng nó trong công thức thu được giá trị `b` .
 
 Một ví dụ sẽ làm rõ điều này.
 
@@ -437,20 +364,20 @@ Haskell
 Haskell
 ```
 
-Ở đây, hàm `getLine`  có kiểu `IO String` . Giá trị trả về `a` được chuyển cho hàm `(a -\> m b)` , sau đó tạo ra một công thức `putStrLn` với giá trị đầu vào là `a` và đầu ra là kiểu `IO ()` . Sau đó, `putStrLn` thực hiện các tác dụng của nó và trả về `Unit` .
+Ở đây, hàm `getLine`  có kiểu `IO String` . Giá trị trả về `a` được chuyển cho hàm `(a -> m b)` , sau đó tạo ra một công thức `putStrLn` với giá trị đầu vào là `a` và đầu ra là kiểu `IO ()` . Sau đó, `putStrLn` thực hiện các tác dụng của nó và trả về `Unit` .
 
-Có một cách khác, rất quan trọng, để tạo các hành động `IO` , và đó là tạo các công thức nấu ăn ngay lập tức trả về kết quả mà không thực hiện bất kỳ tác dụng nào.
+Có một cách khác, rất quan trọng, để tạo các hành động `IO` , và đó là tạo các công thức  ngay lập tức trả về kết quả mà không thực hiện bất kỳ tác dụng nào.
 
-Điều đó được thực hiện với một chức năng được gọi là `return`.
+Điều đó được thực hiện với một hàm được gọi là `return`.
 
 ``` {.haskell}
 Prelude Week04.Contract> :t return
 return :: Monad m => a -> m a
 ```
 
-Một lần nữa, nó là chung cho bất kỳ monad (Monad) nào, chúng ta chỉ cần nghĩ về `IO` ngay bây giờ.
+Một lần nữa, nó là chung cho bất kỳ `Monad` nào, chúng ta chỉ cần nghĩ về `IO` ngay bây giờ.
 
-Nó nhận một giá trị `a` và trả về một công thức tạo ra giá trị `a` . Trong trường hợp trả lại , công thức thực sự không tạo ra bất kỳ tác dụng nào.
+Nó nhận một giá trị `a` và trả về một công thức tạo ra giá trị `a` . Trong trường hợp trả lại, công thức thực sự không tạo ra bất kỳ tác dụng nào.
 
 Ví dụ:
 
@@ -489,9 +416,9 @@ one
 two
 onetwo
 ```
-Bây giờ điều này là đủ cho các mục đích của chúng tôi, mặc dù chúng tôi sẽ không cần monad `IO` cho đến khi có lẽ sau này trong khóa học khi chúng tôi nói về việc thực sự triển khai các hợp đồng Plutus. Tuy nhiên, `IO` Monad là một ví dụ quan trọng và là một ví dụ tốt để bắt đầu.
+Bây giờ điều này là đủ cho các mục đích của chúng tôi, mặc dù chúng tôi sẽ không cần `IO Monad` cho đến khi có lẽ sau này trong khóa học khi chúng tôi nói về việc thực sự triển khai các hợp đồng Plutus. Tuy nhiên, `IO Monad` là một ví dụ quan trọng và là một ví dụ tốt để bắt đầu.
 
-Vì vậy, hiện tại, chúng ta hãy hoàn toàn quên `IO` và chỉ viết Haskell thuần túy, có chức năng, sử dụng kiểu `Maybe` .
+Vì vậy, hiện tại, chúng ta hãy hoàn toàn quên `IO` và chỉ viết Haskell thuần túy, có hàm, sử dụng kiểu `Maybe` .
 
 ### Maybe
 
@@ -519,7 +446,7 @@ instance MonadFail Maybe -- Defined in ‘Control.Monad.Fail’
 
 Nó thường được gọi là `Optional` trong các ngôn ngữ lập trình khác.
 
-Nó có hai hàm tạo - `Nothing` , không nhận đối số và `Just` - có một đối số.
+Nó có hai hàm tạo `Nothing` - không nhận đối số và `Just` - có một đối số.
 
 ``` {.haskell}
 data Maybe a = Nothing | Just a
@@ -562,9 +489,11 @@ Nothing
 
 Giả sử chúng ta muốn tạo một hàm mới trả về a `Maybe`.
 
+``` {.haskell}
     foo :: String -> String -> String -> Maybe Int
+```
 
-Ý tưởng là hàm nên cố gắng phân tích cú pháp cả ba `Strings` là `Ints`. Nếu tất cả các Strings có thể được phân tích cú pháp thành công thành `Ints`, thì chúng ta muốn cộng ba `Ints` đó để có được một tổng. Nếu một trong các phân tích cú pháp không thành công, chúng tôi muốn quay lại `Nothing`.
+Ý tưởng là hàm nên cố gắng phân tích cú pháp cả ba `String` như là `Int`. Nếu tất cả các `String` có thể được phân tích cú pháp thành công thành `Int`, thì chúng ta muốn cộng ba `Int` đó để có được một tổng. Nếu một trong các phân tích cú pháp không thành công, chúng tôi muốn quay lại `Nothing`.
 
 Một cách để làm điều đó sẽ là:
 
@@ -596,7 +525,7 @@ Nothing
 
 Mã này không lý tưởng vì chúng ta lặp lại cùng một mẫu ba lần. Mỗi lần chúng ta phải xem xét hai trường hợp - kết quả của phép đọc là `Just` hoặc `Nothing`.
 
-Ask Haskellers, we hate repetition like this.
+Trong Haskell ghét sự lặp lại như thế này.
 
 Điều chúng tôi muốn làm rất đơn giản. Chúng tôi muốn vượt qua ba `Strings` và thêm kết quả, nhưng với tất cả những trường hợp đó, nó rất ồn và rất xấu. Chúng tôi muốn loại bỏ mô hình này.
 
@@ -608,7 +537,7 @@ bindMaybe Nothing = Nothing
 bindMaybe (Just x) f = f x
 ```
 
-Hãy viết lại cùng một chức năng bằng cách sử dụng `bindMaybe`.
+Hãy viết lại cùng một hàm bằng cách sử dụng `bindMaybe`.
 
 ``` {.haskell}
 foo' :: String -> String -> String -> Maybe Int
@@ -618,7 +547,7 @@ foo' x y z = readMaybe x `bindMaybe` \k ->
             Just (k + l + m)
 ```
 
-Và sau đó, trong REPL, chúng tôi nhận được kết quả tương tự `foo\'`như chúng tôi đã nhận được `foo`.
+Và sau đó, trong REPL, chúng tôi nhận được kết quả tương tự `foo'`như chúng tôi đã nhận được `foo`.
 
 ``` {.haskell}
 Prelude Week04.Maybe> foo "1" "2" "3"
@@ -628,27 +557,27 @@ Prelude Week04.Maybe> foo "" "2" "3"
 Nothing
 ```
 
-Điều này thực hiện chính xác như `foo`, nhưng nó nhỏ gọn hơn nhiều, ít tiếng ồn hơn và logic kinh doanh rõ ràng hơn nhiều.
+Điều này thực hiện chính xác như `foo`, nhưng nó nhỏ gọn hơn nhiều, ít phức tạp hơn và logic rõ ràng hơn nhiều.
 
-Nó có thể, hoặc có thể không, giúp xem chức năng mà nó không được sử dụng với ký hiệu infix:
+Nó có thể, hoặc có thể không, giúp xem hàm mà nó không được sử dụng với ký hiệu infix:
 
 ``` {.haskell}
 Prelude Text.Read Week04.Maybe> bindMaybe (readMaybe "42" :: Maybe Int) (\x -> Just x)
 Just 42
 ```
 
-Ở đây bạn có thể thấy rõ ràng hàm lấy `Maybe` và sau đó là hàm lấy `a` từ `Maybe` và sử dụng nó làm đầu vào cho một hàm trả về một mới  `Maybe`.
+Ở đây bạn có thể thấy rõ ràng hàm `Maybe` và sau đó là hàm lấy `a` từ `Maybe` và sử dụng nó làm đầu vào cho một hàm trả về một `Maybe` mới.
 
-Điều này tạo ra không có gì hữu ích, cho đến khi chúng tôi thêm `readMaybe`
+Điều này tạo ra `Nothing` hữu ích, cho đến khi chúng tôi thêm `readMaybe`
 
 ``` {.haskell}
 Prelude Text.Read Week04.Maybe> bindMaybe (readMaybe "42" :: Maybe Int) (\x -> bindMaybe (readMaybe "5" :: Maybe Int) (\y -> Just (y + x)))
 Just 47
 ```
 
-Theo một số cách `Nothing` ithì hơi giống một ngoại lệ trong các ngôn ngữ khác. Nếu bất kỳ phép tính nào trả về  `Nothing`,  phần còn lại của phép tính trong khối không được thực hiện và  `Nothing` được trả về.
+Theo một số cách `Nothing` thì hơi giống một ngoại lệ trong các ngôn ngữ khác. Nếu bất kỳ phép tính nào trả về  `Nothing`,  phần còn lại của phép tính trong khối không được thực hiện và  `Nothing` được trả về.
 
-### Một trong hai (Either)
+### Kiểu Either
 
 Một kiểu rất hữu ích khác trong Haskell là kiểu `Either` .
 
@@ -673,7 +602,7 @@ instance Foldable (Either a) -- Defined in ‘Data.Foldable’
 instance Traversable (Either a) -- Defined in ‘Data.Traversable’
 ```
 
-`Either` nhận hai tham số `a` and `b`.  Giống như `Maybe` nó có hai hàm tạo, nhưng không giống như `Maybe` cả hai đều nhận một giá trị. Nó có thể `Either` là một `a` hoặc một là `b`. Hai hàm tạo là `Left` and `Right`.
+`Either` nhận hai tham số `a` và `b`.  Giống như `Maybe` nó có hai hàm tạo, nhưng không giống như `Maybe` cả hai đều nhận một giá trị. Nó có thể `Either` là một `a` hoặc một là `b`. Hai hàm tạo là `Left` and `Right`.
 
 Ví dụ:
 
@@ -691,7 +620,7 @@ Right 7
 
 Nếu chúng ta xem xét phép loại suy ngoại lệ xa hơn một chút, thì một vấn đề `Maybe` là nếu chúng ta quay trở lại `Nothing`, không có thông báo lỗi. Tuy nhiên, nếu chúng ta muốn một thứ gì đó đưa ra một thông điệp, chúng ta có thể thay thế `Maybe`bằng `Either`.
 
-Trong trường hợp đó, `Right` có thể tương ứng với `Just`và `Left` có thể tương ứng với một lỗi, như `Nothing` đã làm. Tuy nhiên, tùy thuộc vào loại mà chúng tôi chọn cho `a`, chúng tôi có thể đưa ra các thông báo lỗi thích hợp.
+Trong trường hợp đó, `Right` có thể tương ứng với `Just` và `Left` có thể tương ứng với một lỗi, như `Nothing` đã làm. Tuy nhiên, tùy thuộc vào loại mà chúng tôi chọn cho `a`, chúng tôi có thể đưa ra các thông báo lỗi thích hợp.
 
 Hãy định nghĩa một cái gì đó được gọi `readEither` và xem nó làm gì khi có thể và khi nào nó không thể phân tích cú pháp đầu vào của nó.
 
@@ -725,7 +654,7 @@ foo x y z = case readEither x of
             Right m  -> Right (k + l + m)
 ```
 
-Hãy thử nó. Đầu tiên, đường dẫn tốt:
+Hãy thử nó. Đầu tiên vẫn tốt:
 
 ``` {.haskell}
 Prelude Week04.Either> foo "1" "2" "3"
@@ -739,7 +668,7 @@ Prelude Week04.Either> foo "ays" "2" "3"
 Left "can't parse: ays"
 ```
 
-hưng, chúng tôi có cùng một vấn đề mà chúng tôi đã gặp phải `Maybe`; chúng tôi có rất nhiều sự lặp lại.
+Nhưng chúng tôi có cùng một vấn đề mà chúng tôi đã gặp phải `Maybe`; chúng tôi có rất nhiều sự lặp lại.
 
 Giải pháp cũng tương tự.
 
@@ -838,7 +767,7 @@ in
    Writer b $ xs ++ ys
 ```
 
-Ở đây, `bindWriter` hàm được trả lại `Writer b` và sản xuất thông điệp log đó là một nối của `xs` mà chúng ta mô hình phù hợp trên đầu vào, và `ys` mà chúng ta mô hình phù hợp khi gọi `f a` để sản xuất các `Writer b` .
+Ở đây, `bindWriter` hàm được trả lại `Writer b` và tạo thông điệp log đó là một nối của `xs` mà chúng ta mô hình phù hợp trên đầu vào, và `ys` mà chúng ta mô hình phù hợp khi gọi `f a` để sản xuất các `Writer b` .
 
 Bây giờ, chúng ta có thể viết lại `foo` bằng `bindWriter` và làm cho nó đẹp hơn nhiều.
 
@@ -852,7 +781,7 @@ foo' x y z = x `bindWriter` \k ->
                Writer s []
 ```
 
-Những gì chúng tôi đã làm với `foo\'`trước đây, bây giờ chúng tôi có thể làm với foo ' , và chúng tôi nhận được kết quả tương tự.
+Những gì chúng tôi đã làm với `foo'`trước đây, bây giờ chúng tôi có thể làm với `foo'` , và chúng tôi nhận được kết quả tương tự.
 
 ``` {.haskell}
 Prelude Week04.Writer> foo' (number 1) (number 2) (number 3)
@@ -864,14 +793,13 @@ Phải thừa nhận rằng nó dài hơn trước, nhưng nó đẹp hơn rất
 Mặc dù mô hình giống như với `Maybe` and `Either`, lưu ý rằng khía cạnh đặc biệt của các tính toán này là hoàn toàn khác nhau. Với `Maybe` and `Either`, chúng tôi xử lý khái niệm thất bại, trong khi ở đây, với `Writer`, không có thất bại, mà thay vào đó chúng tôi có thêm đầu ra.
 
 
-### What is a Monad?
+### Monad là gì?
 
 Bây giờ, chúng ta có thể giải thích Monad là gì.
 
-Nhìn lại bốn ví dụ, chúng có điểm gì chung? Trong tất cả bốn trường hợp, Chúng tôi đã có một constructor loại với một tham số kiểu -  `IO`,
-`Maybe`, `Either String` and `Writer` cả phải mất một tham số kiểu.
+Nhìn lại bốn ví dụ, chúng có điểm gì chung? Trong tất cả bốn trường hợp, Chúng tôi đã có một loại cấu trúc (constructor)  với một tham số kiểu -  `IO`, `Maybe`, `Either String` and `Writer` tất cả phải mất một tham số kiểu.
 
-Và, đối với tất cả bốn ví dụ này, chúng tôi có một hàm ràng buộc. Đối với `IO`, chúng tôi có `\>\>=` chức năng và đối với những người khác, chúng tôi có các chức năng ràng buộc mà chúng tôi tự viết. 
+Và, đối với tất cả bốn ví dụ này, chúng tôi có một hàm ràng buộc. Đối với `IO`, chúng tôi có `>>=` hàm và đối với những hàm khác, chúng tôi có các hàm ràng buộc mà chúng tôi tự viết. 
 
 ``` {.haskell}
 bindWriter :: Writer a -> (a -> Writer b) -> Writer b
@@ -879,15 +807,15 @@ bindEither :: Either String a -> (a -> Either String b) -> Either String b
 bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
 ```
 
-Cách thức hoạt động của ràng buộc tùy thuộc vào từng trường hợp. Trong trường hợp của `IO` nó là phép thuật tích hợp sẵn, nhưng bạn có thể nghĩ nó chỉ là kết hợp hai kế hoạch mô tả các hành động cần thực hiện trong quá trình tính toán. Đối với `bindMaybe` và `bindEither` logic là toàn bộ kế hoạch sẽ thất bại nếu bất kỳ phần nào của nó không thành công và đối với `bindWriter`, logic là kết hợp danh sách các thông báo nhật ký.
+Cách thức hoạt động của hàm ràng buộc tùy thuộc vào từng trường hợp. Trong trường hợp của `IO` nó tích hợp sẵn, nhưng bạn có thể nghĩ nó chỉ là kết hợp hai kế hoạch mô tả các hành động cần thực hiện trong quá trình tính toán. Đối với `bindMaybe` và `bindEither` logic là toàn bộ kế hoạch sẽ thất bại nếu bất kỳ phần nào của nó không thành công và đối với `bindWriter`, logic là kết hợp danh sách các thông báo nhật ký.
 
-Và đó là ý tưởng chính của Monads. Đó là một khái niệm về tính toán với một số tác dụng bổ sung và khả năng liên kết hai phép tính đó lại với nhau.
+Và đó là ý tưởng chính của `Monads`. Đó là một khái niệm về tính toán với một số tác dụng bổ sung và khả năng liên kết hai phép tính đó lại với nhau.
 
 Có một khía cạnh khác mà chúng tôi đã đề cập ngắn gọn trong trường hợp IO nhưng không phải đối với các ví dụ khác - một điều khác mà chúng tôi luôn có thể làm.
 
-Bất cứ khi nào chúng ta có khái niệm tính toán với các tác dụng như vậy, chúng ta cũng luôn có khả năng tạo ra một phép tính kiểu này `doesn\'t` có bất kỳ tác dụng nào.
+Bất cứ khi nào chúng ta có khái niệm tính toán với các tác dụng như vậy, chúng ta cũng luôn có khả năng tạo ra một phép tính kiểu này không có bất kỳ tác dụng nào.
 
-Trong ví dụ của `IO`, điều này đã được thực hiện với `return`. Với một `a`, bạn có thể tạo một `IO a` công thức luôn trả về đơn giản mà akhông có tác dụng. Mỗi ví dụ khác cũng có khả năng này, như được hiển thị bên dưới.
+Trong ví dụ của `IO`, điều này đã được thực hiện với `return`. Với một `a`, bạn có thể tạo một `IO a` công thức luôn trả về đơn giản mà `a` không có tác dụng. Mỗi ví dụ khác cũng có khả năng này, như được hiển thị bên dưới.
 
 
 ``` {.haskell}
@@ -897,10 +825,11 @@ Right               :: a -> Either String a
 (\a -> Writer a []) :: a -> Writer a
 ```
 
-Và chính sự kết hợp của hai đặc điểm này đã xác định một monad.
+Và chính sự kết hợp của hai đặc điểm này đã xác định một Monad.
 
-khả năng liên kết hai phép tính với nhau
-khả năng xây dựng một phép tính từ một giá trị thuần túy mà không sử dụng bất kỳ tác dụng tiềm ẩn nào
+- Khả năng liên kết hai phép tính với nhau
+- Khả năng xây dựng một phép tính từ một giá trị thuần túy mà không sử dụng bất kỳ tác dụng tiềm ẩn nào
+
 Nếu chúng ta xem trong REPL:
 
 ``` {.haskell}
@@ -924,7 +853,7 @@ instance (Monoid a, Monoid b) => Monad ((,,) a b)
 instance Monoid a => Monad ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-Chúng tôi thấy chức năng ràng buộc
+Chúng tôi thấy hàm ràng buộc
 
 ``` {.haskell}
 (>>=) :: m a -> (a -> m b) -> m b
@@ -936,17 +865,15 @@ Và `return` hàm nhận một giá trị thuần túy và biến nó thành m�
 return :: a -> m a
 ```
 
-The other function `\>\>` can easily be defined in terms of `\>\>=`, but
-is provided for convenience.
-Các chức năng khác `\>\>` có thể dễ dàng được xác định về mặt `\>\>=`, nhưng được cung cấp để thuận tiện.
+Các hàm khác `>>` có thể dễ dàng được xác định `>>=`, nhưng được cung cấp để thuận tiện.
 
 ``` {.haskell}
 (>>) :: m a -> m b -> m b
 ```
 
-Những gì hàm này làm là loại bỏ kết quả của phép tính đầu tiên, vì vậy bạn có thể xác định nó theo nghĩa `\>\>=` chỉ bằng cách bỏ qua đối số của tham số hàm.
+Những gì hàm này làm là loại bỏ kết quả của phép tính đầu tiên, vì vậy bạn có thể xác định nó `>>=` theo nghĩa chỉ bằng cách bỏ qua đối số của tham số hàm.
 
-Có một tính toán kỹ thuật khác. Chúng tôi thấy rằng Monadcó siêu lớp `Applicative`, vì vậy mọi monad đều như vậy `Applicative`.
+Có một tính toán kỹ thuật khác. Chúng tôi thấy rằng `Monad` có siêu lớp `Applicative`, vì vậy mọi `Monad` đều như vậy `Applicative`.
 
 
 ``` {.haskell}
@@ -973,14 +900,14 @@ instance (Monoid a, Monoid b) => Applicative ((,,) a b)
 instance Monoid a => Applicative ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-Chúng tôi thấy nó có một loạt các chức năng, nhưng chúng tôi chỉ cần hai chức năng đầu tiên.
+Chúng tôi thấy nó có một loạt các hàm, nhưng chúng tôi chỉ cần hai hàm đầu tiên.
 
 ``` {.haskell}
 pure :: a -> f a
-(<`>) :: f (a -> b) -> f a -> f b
+(<*>) :: f (a -> b) -> f a -> f b
 ```
 
-Hàm `pure` có cùng kiểu chữ ký với `return`. Sau đó, có `\<\>` (phát âm là 'ap') trông phức tạp hơn một chút. Nhưng, sự thật là, một khi bạn có returnvà `\>\>=` ở trong monad, chúng ta có thể dễ dàng xác định cả hai purevà `\<\>`.
+Hàm `pure` có cùng kiểu chữ ký với `return`. Sau đó, có `<*>` (phát âm là 'ap') trông phức tạp hơn một chút. Nhưng, sự thật là, một khi bạn có `return` và `>>=` ở trong Monad, chúng ta có thể dễ dàng xác định cả hai `pure` và `<*>`.
 
 Chúng tôi thấy rằng `Applicative` cũng có một lớp cha `Functor`.
 
@@ -1003,13 +930,13 @@ instance Functor ((,,) a b) -- Defined in ‘GHC.Base’
 instance Functor ((,) a) -- Defined in ‘GHC.Base’
 ```
 
-Như chúng ta đã đề cập trong ngữ cảnh `IO`, `Functor` có một hàm `fmap`, được cho trước một hàm từ `a` to `b`sẽ biến một `f a` thành một `f b`.
+Như chúng ta đã đề cập trong `Context` `IO`, `Functor` có một hàm `fmap`, được cho trước một hàm từ `a` tới `b` sẽ biến một `f a` thành một `f b`.
 
 Ví dụ nguyên mẫu cho `fmap` là danh sách ở đâu chính `fmap` là `fmap`. Cho một hàm từ `a` to `b`, bạn có thể tạo một danh sách kiểu btừ một danh sách kiểu abằng cách áp dụng maphàm cho từng phần tử của danh sách.
 
 Một lần nữa, một khi bạn có `return` and `\>\>=`, thật dễ dàng để xác định `fmap`.
 
-Vì vậy, bất cứ khi nào bạn muốn xác định monad, bạn chỉ cần xác định `return` và `\>\>=`, và để làm cho trình biên dịch hài lòng và đưa ra các thể hiện cho `Functor` and `Applicative`, luôn có một cách tiêu chuẩn để làm điều đó.
+Vì vậy, bất cứ khi nào bạn muốn xác định Monad, bạn chỉ cần xác định `return` và `>>=`, và để làm cho trình biên dịch hài lòng và đưa ra các thể hiện cho `Functor` and `Applicative`, luôn có một cách tiêu chuẩn để làm điều đó.
 
 Chúng ta có thể làm điều này trong ví dụ của `Writer`.
 
@@ -1022,20 +949,20 @@ instance Functor Writer where
 
 instance Applicative Writer where
    pure = return
-   (<`>) = ap
+   (<*>) = ap
 
 instance Monad Writer where
    return a = Writer a []
    (>>=) = bindWriter
 ```
 
-Chúng ta không cần phải làm như vậy đối với `Maybe`, `Either` or `IO` vì chúng đã là monad được xác định bởi Khúc dạo đầu.
+Chúng ta không cần phải làm như vậy đối với `Maybe`, `Either` or `IO` vì chúng đã là Monad được xác định bởi Prelude.
 
 ### Tại sao điều này hữu ích?
 
 Nói chung, nó luôn hữu ích để xác định một mẫu chung và đặt tên cho nó.
 
-Nhưng, có lẽ lợi thế quan trọng nhất là có rất nhiều chức năng không quan tâm đến Đơn vị nào mà chúng ta đang xử lý - chúng sẽ hoạt động với tất cả Đơn vị.
+Nhưng, có lẽ lợi thế quan trọng nhất là có rất nhiều hàm không quan tâm đến `Unit` nào mà chúng ta đang xử lý - chúng sẽ hoạt động với tất cả `Unit`.
 
 Hãy tổng quát hóa ví dụ nơi chúng ta tính tổng của ba số nguyên. Chúng tôi sử dụng một `let` trong ví dụ bên dưới vì những lý do sẽ trở nên rõ ràng trong giây lát.`
 
@@ -1048,7 +975,7 @@ threeInts mx my mz =
    let s = k + l + m in return s
 ```
 
-Bây giờ chúng ta có chức năng này, chúng ta có thể quay lại `Maybe` ví dụ và viết lại nó.
+Bây giờ chúng ta có hàm này, chúng ta có thể quay lại `Maybe` ví dụ và viết lại nó.
 
 ``` {.haskell}
 foo'' :: String -> String -> String -> Maybe Int
@@ -1081,9 +1008,9 @@ foo'' x y z = do
    return s
 ```
 
-Nếu bạn nhìn vào mô-đun Control.Monad trong Haskell Prelude tiêu chuẩn, bạn sẽ thấy rằng có rất nhiều chức năng hữu ích mà bạn có thể sử dụng cho tất cả các monad.
+Nếu bạn nhìn vào mô-đun Control.Monad trong Haskell Prelude tiêu chuẩn, bạn sẽ thấy rằng có rất nhiều hàm hữu ích mà bạn có thể sử dụng cho tất cả các Monad.
 
-Một cách để nghĩ về monad là tính toán với một siêu năng lực.
+Một cách để nghĩ về Monad là tính toán với một siêu năng lực.
 
 Trong trường hợp của `IO`, siêu sức mạnh sẽ có tác dụng trong thế giới thực. Trong trường hợp của `Maybe`, siêu sức mạnh có thể bị hỏng. Sức mạnh siêu việt của `Either`là không thành công với một thông báo lỗi. Và trong trường hợp của `Writer`, siêu sức mạnh là ghi lại các tin nhắn.
 
@@ -1091,13 +1018,13 @@ Có một câu nói trong cộng đồng Haskell rằng Haskell có dấu chấm
 
 Theo một nghĩa nào đó, `bind` giống như dấu chấm phẩy. Và điều thú vị về Haskell là nó là một dấu chấm phẩy có thể lập trình được. Chúng ta có thể nói logic là gì để kết hợp hai phép tính với nhau.
 
-Mỗi monad đi kèm với "dấu chấm phẩy" riêng.
+Mỗi `Monad` đi kèm với "dấu chấm phẩy" riêng.
 
-### ký hiệu \'do\' 
+### ký hiệu 'do' 
 
-Bởi vì mô hình này rất phổ biến và các phép tính đơn lẻ ở khắp nơi, có một ký hiệu đặc biệt cho điều này trong Haskell, được gọi là ký hiệu `do `.
+Bởi vì mô hình này rất phổ biến và các phép tính đơn lẻ ở khắp nơi, có một ký hiệu đặc biệt cho điều này trong Haskell, được gọi là ký hiệu `do`.
 
-Nó là đường cú pháp. Hãy viết lại `threeInts` sbằng cách sử dụng ký hiệu`do`.
+Nó là cú pháp. Hãy viết lại `threeInts` bằng cách sử dụng ký hiệu`do`.
 
 
 ``` {.haskell}
@@ -1118,24 +1045,24 @@ Và đó là `Monads`. Còn rất nhiều điều để nói về chúng nhưng 
 
 Thường thì bạn ở trong một tình huống mà bạn muốn có nhiều hiệu ứng cùng một lúc - ví dụ, bạn có thể muốn andthông báo nhật ký lỗi tùy chọn . Có nhiều cách để làm điều đó trong Haskell. Ví dụ, có Monad Transformers nơi về cơ bản người ta có thể xây dựng các Monad tùy chỉnh với các tính năng mà bạn muốn.
 
-Có những cách tiếp cận khác. Một được gọi là Hệ thống Hiệu ứng, có mục tiêu tương tự. Và đây tình cờ là thứ mà Plutus sử dụng cho các Môn phái quan trọng. Đặc biệt là Đơn vị liên hệ trong ví và Đơn vị theo dõi được sử dụng để kiểm tra mã Plutus.
+Có những cách tiếp cận khác. Một được gọi là Hệ thống Hiệu ứng, có mục tiêu tương tự. Và đây tình cờ là thứ mà Plutus sử dụng cho các Môn phái quan trọng. Đặc biệt là `Unit` liên hệ trong ví và `Unit` theo dõi được sử dụng để kiểm tra mã Plutus.
 
-Tin tốt là bạn không cần phải hiểu Hệ thống Hiệu ứng để làm việc với các monad này. Bạn chỉ cần biết rằng bạn đang làm việc với Monad, và nó có siêu năng lực nào.
+Tin tốt là bạn không cần phải hiểu Hệ thống Hiệu ứng để làm việc với các Monad này. Bạn chỉ cần biết rằng bạn đang làm việc với Monad, và nó có siêu năng lực nào.
 
 Plutus Monads
 -------------
 
-Bây giờ chúng ta đã thấy cách viết mã monad, bằng cách sử dụng ràng buộc và trả về hoặc bằng cách sử dụng ký hiệu, chúng ta có thể xem một monad rất quan trọng, đó là hợp đồng monad, mà bạn có thể đã nhận thấy trong các ví dụ mã trước đó.
+Bây giờ chúng ta đã thấy cách viết mã Monad, bằng cách sử dụng ràng buộc và trả về hoặc bằng cách sử dụng ký hiệu, chúng ta có thể xem một Monad rất quan trọng, đó là hợp đồng Monad, mà bạn có thể đã nhận thấy trong các ví dụ trước đó.
 
-hợp đồng monad xác định mã sẽ chạy trong ví, đây là phần ngoài chuỗi của Plutus.
+hợp đồng Monad xác định mã sẽ chạy trong ví, đây là phần off-chain của Plutus.
 
-Tuy nhiên, trước khi đi vào chi tiết, chúng ta sẽ nói về monad thứ hai, monad EmulatorTrace.
+Tuy nhiên, trước khi đi vào chi tiết, chúng ta sẽ nói về Monad thứ hai- Monad EmulatorTrace.
 
-### The EmulatorTrace Monad
+###  EmulatorTrace Monad
 
 Bạn có thể đã tự hỏi liệu có cách nào để thực thi mã Plutus cho mục đích thử nghiệm mà không cần sử dụng Sân chơi Plutus hay không. Thực sự là có, và điều này được thực hiện bằng cách sử dụng `EmulatorTrace Monad`.
 
-Bạn có thể nghĩ về một chương trình trong monad này giống như những gì chúng tôi thực hiện thủ công trong `simulator` tab của sân chơi. Nghĩa là, chúng tôi xác định các điều kiện ban đầu, chúng tôi xác định các hành động chẳng hạn như ví nào gọi điểm cuối nào với các tham số nào và chúng tôi xác định khoảng thời gian chờ giữa các hành động.
+Bạn có thể nghĩ về một chương trình trong Monad này giống như những gì chúng tôi thực hiện thủ công trong tab `simulator`  của sân chơi. Nghĩa là, chúng tôi xác định các điều kiện ban đầu, chúng tôi xác định các hành động chẳng hạn như ví nào gọi endpoint nào với các tham số nào và chúng tôi xác định khoảng thời gian chờ giữa các hành động.
 
 Các định nghĩa liên quan nằm trong gói `plutus-contract` trong mô-đun `Plutus.Trace.Emulator`.
 
@@ -1143,7 +1070,7 @@ Các định nghĩa liên quan nằm trong gói `plutus-contract` trong mô-đun
 module Plutus.Trace.Emulator
 ```
 
-Chức năng cơ bản nhất được gọi `runEmulatorTrace`.
+hàm cơ bản nhất được gọi `runEmulatorTrace`.
 
 ``` {.haskell}
 -- | Run an emulator trace to completion, returning a tuple of the final state
@@ -1160,7 +1087,7 @@ runEmulatorTrace cfg trace =
     $ runEmulatorStream cfg trace
 ```
 
-Nó nhận được một thứ gọi là một `EmulatorConfig` và `EmulatorTrace ()`, là một phép tính thuần túy mà không có tác dụng trong thế giới thực. Nó là một chức năng thuần túy thực hiện theo dõi trên một blockchain được mô phỏng, sau đó đưa ra kết quả là một danh sách các `EmulatorState`, có thể là lỗi, nếu có, và cuối cùng là kết quả cuối cùng `EmulatorState`.
+Nó nhận được một thứ gọi là một `EmulatorConfig` và `EmulatorTrace ()`, là một phép tính thuần túy mà không có tác dụng trong thế giới thực. Nó là một hàm thuần túy thực hiện theo dõi trên một blockchain được mô phỏng, sau đó đưa ra kết quả là một danh sách các `EmulatorState`, có thể là lỗi nếu có, và cuối cùng là kết quả cuối cùng `EmulatorState`.
 
 `EmulatorConfig` được định nghĩa trong một mô-đun khác trong cùng một gói:
 
@@ -1178,7 +1105,7 @@ type InitialChainState = Either InitialDistribution Block
 
 Chúng tôi thấy nó chỉ có một trường, thuộc loại `InitialChainState` và nó là`InitialDistribution` hoặc `Block`.
 
-`InitialDistribution` được định nghĩa trong một mô-đun khác trong cùng một gói và nó là một từ đồng nghĩa kiểu cho một bản đồ các cặp giá trị khóa từ  `Wallet`s dến `Value`s, như bạn mong đợi. `Value` có thể là mã thông báo đáng yêu hoặc mã nguồn gốc.
+`InitialDistribution` được định nghĩa trong một mô-đun khác trong cùng một gói và nó là một từ đồng nghĩa kiểu cho một bản đồ các cặp giá trị khóa từ  `Wallet` đến `Value`, như bạn mong đợi. `Value` có thể là token lovelace hoặc token gốc.
 
 ``` {.haskell}
 module Plutus.Contract.Trace
@@ -1219,7 +1146,7 @@ Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Week04.Contract> defaultDist
 fromList [(Wallet 1,Value (Map [(,Map [("",100000000)])]))]
 ```
 
-Nếu bạn muốn các giá trị ban đầu khác nhau, nếu bạn muốn mã thông báo gốc, thì bạn phải chỉ định giá trị đó theo cách thủ công.
+Nếu bạn muốn các giá trị ban đầu khác nhau, nếu bạn muốn token gốc, thì bạn phải chỉ định giá trị đó theo cách thủ công.
 
 Hãy xem những gì chúng ta cần để chạy dấu vết đầu tiên của mình:
 
@@ -1243,8 +1170,7 @@ Either InitialDistribution Ledger.Blockchain.Block
       -- Defined in ‘Wallet.Emulator.Stream’
 ```
 
-Nếu chúng ta thực hiện `Left` của `defaultDist` chúc sẽ nhận được một
-`InitialDistribution`.
+Nếu chúng ta thực hiện `Left` của `defaultDist` chúc sẽ nhận được một `InitialDistribution`.
 
 ``` {.haskell}
 Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator.Stream Week04.Contract> :t Left defaultDist
@@ -1258,7 +1184,7 @@ Prelude Plutus.Trace.Emulator Plutus.Contract.Trace Wallet.Emulator.Stream Week0
 EmulatorConfig {_initialChainState = Left (fromList [(Wallet 1,Value (Map [(,Map [("",100000000)])])),(Wallet 2,Value (Map [(,Map [("",100000000)])])),(Wallet 3,Value (Map [(,Map [("",100000000)])])),(Wallet 4,Value (Map [(,Map [("",100000000)])])),(Wallet 5,Value (Map [(,Map [("",100000000)])])),(Wallet 6,Value (Map [(,Map [("",100000000)])])),(Wallet 7,Value (Map [(,Map [("",100000000)])])),(Wallet 8,Value (Map [(,Map [("",100000000)])])),(Wallet 9,Value (Map [(,Map [("",100000000)])])),(Wallet 10,Value (Map [(,Map [("",100000000)])]))])}
 ```
 
-Vì vậy, chúng ta hãy thử `runEmulatorTrace`. Nhớ lại rằng, cũng như và`EmulatorConfig`, chúng ta cũng cần chuyển vào một `EmulatorTrace`và cái đơn giản nhất mà chúng ta có thể tạo chỉ đơn giản là một cái trả về Unit - `return ()`.
+Vì vậy, chúng ta hãy thử `runEmulatorTrace`. Nhớ lại rằng, cũng như và `EmulatorConfig`, chúng ta cũng cần chuyển vào một `EmulatorTrace` và cái đơn giản nhất mà chúng ta có thể tạo chỉ đơn giản là một cái trả về `Unit` - `return ()`.
 
 ``` {.haskell}
 runEmulatorTrace (EmulatorConfig $ Left defaultDist) $ return ()
@@ -1266,7 +1192,7 @@ runEmulatorTrace (EmulatorConfig $ Left defaultDist) $ return ()
 
 Nếu bạn chạy điều này trong REPL, bạn sẽ nhận được một lượng lớn dữ liệu xuất ra bảng điều khiển, mặc dù chúng tôi không làm gì với dấu vết. Nếu bạn muốn làm cho nó trở nên hữu ích, bằng cách nào đó, bạn phải lọc tất cả dữ liệu này thành một thứ hợp lý và tổng hợp nó theo một cách nào đó.
 
-May mắn thay, có những chức năng khác `runEmulatorTrace`. Một trong số đó là `runEmulatorTraceIo` chạy mô phỏng sau đó xuất ra ở dạng đẹp trên màn hình.
+May mắn thay, có những hàm khác `runEmulatorTrace`. Một trong số đó là `runEmulatorTraceIo` chạy mô phỏng sau đó xuất ra ở dạng đẹp trên màn hình.
 
 ``` {.haskell}
 runEmulatorTraceIO
@@ -1316,10 +1242,9 @@ wallet.
 
 If you want more control, there is also `runEmulatorTraceIO\'`, which
 does take an `EmulatorConfig`, so we could specify a different
-distribution.
-Và chúng tôi thấy một đầu ra ngắn gọn, dễ quản lý hơn nhiều. Không có gì xảy ra, nhưng chúng tôi thấy giao dịch Genesis và sau đó là số dư cuối cùng cho mỗi ví.
+distribution. Và chúng tôi thấy một đầu ra ngắn gọn, dễ quản lý hơn nhiều. `Nothing` xảy ra, nhưng chúng tôi thấy giao dịch Genesis và sau đó là số dư cuối cùng cho mỗi ví.
 
-Nếu bạn muốn kiểm soát nhiều hơn, thì cũng có `runEmulatorTraceIO\'`, điều này có nghĩa là `EmulatorConfig`, vì vậy chúng tôi có thể chỉ định một phân phối khác.
+Nếu bạn muốn kiểm soát nhiều hơn, thì cũng có `runEmulatorTraceIO'`, điều này có nghĩa là `EmulatorConfig`, vì vậy chúng tôi có thể chỉ định một phân phối khác.
 
 ``` {.haskell}
 runEmulatorTraceIO'
@@ -1342,15 +1267,6 @@ data TraceConfig = TraceConfig
 }
 ```
 
-The first field, `showEvent` is a function that specifies which
-`EmulatorEvent`s are displayed and how they are displayed. It takes an
-`EmulatorEvent` as an argument and can return `Nothing` it the event
-should not be displayed, or a `Just` with a `String` showing how the
-event will be displayed.
-
-Here is the default `TraceConfig` used by `runEmulatorTraceIO`. We can
-see that most events are ignored and that we only get output for some of
-the events.
 Trường đầu tiên, `showEvent` là một hàm chỉ định cái mà các `EmulatorEvent`s được hiển thị và cách chúng được hiển thị. Nó nhận một `EmulatorEvent` đối số như một đối số và có thể trả về `Nothing ` nó nếu sự kiện sẽ không được hiển thị hoặc một `Just` với một `String` cách hiển thị sự kiện sẽ được hiển thị.
 
 Đây là mặc định `TraceConfig` được sử dụng bởi `runEmulatorTraceIO`. Chúng ta có thể thấy rằng hầu hết các sự kiện đều bị bỏ qua và chúng ta chỉ nhận được kết quả cho một số sự kiện.
@@ -1397,9 +1313,9 @@ callEndpoint @"grab" h2 ()
 void $ waitNSlots 1
 ```
 
-Điều đầu tiên chúng ta phải làm là kích hoạt ví bằng cách sử dụng chức năng monad `activateContractWallet`. Chúng ta liên kết kết quả của hàm này với `h1`, và sau đó liên kết kết quả của cuộc gọi thứ hai (đối với Wallet 2) với `h2`. Hai giá trị đó - `h1`và `h2`được xử lý đối với ví tương ứng của chúng.
+Điều đầu tiên chúng ta phải làm là kích hoạt ví bằng cách sử dụng hàm Monad `activateContractWallet`. Chúng ta liên kết kết quả của hàm này với `h1`, và sau đó liên kết kết quả của cuộc gọi thứ hai (đối với Wallet 2) với `h2`. Hai giá trị đó - `h1` và `h2`được xử lý đối với ví tương ứng của chúng.
 
-Tiếp theo, chúng tôi sử dụng `callEndpoint` để mô phỏng Ví 1 gọi `give` điểm cuối, với các thông số được hiển thị. Sau đó, chúng tôi chờ đợi đến vị trí 20. Hàm `waitUntilSlot` thực sự trả về một giá trị đại diện cho vị trí đã đạt đến, nhưng vì chúng tôi không quan tâm đến giá trị đó ở đây, chúng tôi sử dụng `void` để bỏ qua nó. Sau đó, chúng tôi mô phỏng cuộc gọi đến `grab` điểm cuối bằng Ví 2.
+Tiếp theo, chúng tôi sử dụng `callEndpoint` để mô phỏng Ví 1 gọi endpoint `give`, với các thông số được hiển thị. Sau đó, chúng tôi chờ đợi đến vị trí 20. Hàm `waitUntilSlot` thực sự trả về một giá trị đại diện cho vị trí đã đạt đến, nhưng vì chúng tôi không quan tâm đến giá trị đó ở đây, chúng tôi sử dụng `void` để bỏ qua nó. Sau đó, chúng tôi mô phỏng cuộc gọi đến endpoint `grab` bằng Ví 2.
 
 Bây giờ, chúng ta có thể viết một hàm để gọi `runEmulatorTraceIO` với out `Trace`.
 
@@ -1477,7 +1393,7 @@ Wallet 10:
 
 Đầu ra này rất giống với đầu ra mà chúng ta thấy trong playground. Chúng ta có thể thấy giao dịch Genesis cũng như cả giao dịch `give`và `grab` giao dịch từ `Trace`. Chúng ta cũng có thể thấy một số đầu ra nhật ký từ chính hợp đồng, có tiền tố là `CONTRACT LOG`.
 
-Chúng tôi cũng có thể đăng nhập từ bên trong `Trace` monad. Ví dụ, chúng tôi có thể xem kết quả của `waitNSlots` cuộc gọi cuối cùng :
+Chúng tôi cũng có thể đăng nhập từ bên trong `Trace` Monad. Ví dụ, chúng tôi có thể xem kết quả của `waitNSlots` cuộc gọi cuối cùng :
 
 ``` {.haskell}
 myTrace :: EmulatorTrace ()
@@ -1501,9 +1417,9 @@ Slot 00021: SlotAdd Slot 22
 
 Bây giờ chúng ta hãy nhìn vào Contract Monad.
 
-### The Contract Monad
+### Hợp đồng Monad
 
-Mục đích của hợp đồng monad là xác định mã ngoài chuỗi chạy trong ví. Nó có bốn tham số kiểu:
+Mục đích của hợp đồng Monad là xác định mã off-chain chạy trong ví. Nó có bốn tham số kiểu:
 
 ``` {.haskell}
 newtype Contract w s e a = Contract { unContract :: Eff (ContractEffs w s e) a }
@@ -1511,13 +1427,14 @@ newtype Contract w s e a = Contract { unContract :: Eff (ContractEffs w s e) a }
 ```
 
 
-`a` như trong mọi monad - nó biểu thị kiểu kết quả của phép tính.
+`a` như trong mọi Monad - nó biểu thị kiểu kết quả của phép tính.
 
 Chúng ta sẽ đi vào chi tiết hơn ba phần khác sau nhưng chỉ ngắn gọn:
 
-- w giống như ví dụ monad `Writer` của chúng tôi, nó cho phép chúng tôi viết các thông báo kiểu nhật ký `w`.
-- s mô tả các khả năng của blockchain, ví dụ như đợi một vị trí, gửi giao dịch, lấy khóa công khai của ví. Nó cũng có thể chứa các điểm cuối cụ thể.
-- e mô tả loại thông báo lỗi mà monad này có thể ném ra.
+- `w` giống như ví dụ Monad `Writer` của chúng tôi, nó cho phép chúng tôi viết các thông báo kiểu nhật ký `w`.
+- `s` mô tả các khả năng của blockchain, ví dụ như đợi một vị trí, gửi giao dịch, lấy khóa công khai của ví. Nó cũng có thể chứa các endpoint cụ thể.
+- `e` mô tả loại thông báo lỗi mà Monad này có thể ném ra.
+
 Hãy viết một ví dụ.
 
 ``` {.haskell}
@@ -1525,13 +1442,13 @@ myContract1 :: Contract () BlockchainActions Text ()
 myContract1 = Contract.logInfo @String "Hello from the contract!"
 ```
 
-Ở đây , Chung tôi đưa `Contract` xây dựng với `Unit` như là kiểu `w`và `BlockchainActions` như là đối số thứ 2 `s`. Điều này cho phép chúng tôi truy cập vào tất cả các hành động của blockchain - điều duy nhất chúng tôi không thể làm là gọi các điểm cuối cụ thể.
+Ở đây, Chung tôi đưa `Contract` xây dựng với `Unit` như là kiểu `w`và `BlockchainActions` như là đối số thứ 2 `s`. Điều này cho phép chúng tôi truy cập vào tất cả các hành động của blockchain - điều duy nhất chúng tôi không thể làm là gọi các endpoint cụ thể.
 
 Đối với `e` - loại thông báo lỗi, Chúng tôi sử dụng `Text`. `Text` trong Haskell được sử dụng như là `String`, nhưng nó hiệu quả hơn nhiều
 
-Chúng tôi không muốn một kết quả cụ thể, vì vậy chúng tôi sử dụng `Unit` thay cho  `a`.
+Chúng tôi không muốn một kết quả cụ thể, vì vậy chúng tôi sử dụng `Unit` thay cho `a`.
 
-Đối với phần thân hàm, chúng tôi viết một thông báo nhật ký. Chúng tôi sử dụng `\@String`. bởi vì, chúng tôi đã imported kiể `Data.Text` Và sử dụng `OverloadedStrings` trong GHC biên dịch, vì vậy trình biên dịch cần biết loại mà chúng tôi đang tham chiếu - một `Text` hoặc một `String`. Chung tôi có thể sử dụng`\@String` Nếu chúng tôi sử dụng tùy biến biên dichij `TypeApplications`.
+Đối với phần thân hàm, chúng tôi viết một thông báo nhật ký. Chúng tôi sử dụng `@String`. bởi vì, chúng tôi đã import kiểu `Data.Text` Và sử dụng `OverloadedStrings` trong GHC biên dịch, vì vậy trình biên dịch cần biết loại mà chúng tôi đang tham chiếu - một `Text` hoặc một `String`. Chung tôi có thể sử dụng`@String` Nếu chúng tôi sử dụng tùy biến biên dichij `TypeApplications`.
 
 Bây giờ chung ta định nghĩa `Trace` bắt đầu chạy hợp đồng trong ví và hàm `test` để chạy nó.
 
@@ -1633,7 +1550,7 @@ handleError f (Contract c) = Contract c' where
       c' = E.handleError @e (raiseUnderN @'[E.Error e'] c) (fmap unContract f)
 ```
 
-Các hàm `handleError` và hàm `Contract` xử lý lỗi . TTrình xử lý lỗi nhận một đối số kiểu `e` từ hợp đồng của chúng tôi và trả về một đối số mới  `Contract` như một tham số thứ nhất, nhưng chúng ta có thể thay đổi kiểu của `e`  - kiểu lỗi, được thể hiện trong danh sách đối số `Contract` như là `e\'`.
+Các hàm `handleError` và hàm `Contract` xử lý lỗi . Trình xử lý lỗi nhận một đối số kiểu `e` từ hợp đồng của chúng tôi và trả về một đối số mới  `Contract` như một tham số thứ nhất, nhưng chúng ta có thể thay đổi kiểu của `e`  - kiểu lỗi, được thể hiện trong danh sách đối số `Contract` như là `e'`.
 
 ``` {.haskell}
 myContract2 :: Contract () BlockchainActions Void ()
@@ -1674,9 +1591,9 @@ Tất nhiên, các trường hợp ngoại lệ cũng có thể xảy ra ngay c�
 
 Tiếp theo, hãy xem tham số`s`, tham số thứ hai `Contract`, xác định các hành động blockchain có sẵn.
 
-Trong hai ví dụ đầu tiên, chúng tôi chỉ sử dụng `BlockChainActions` kiểu có tất cả các chức năng tiêu chuẩn nhưng không hỗ trợ cho các điểm cuối cụ thể. Nếu chúng tôi muốn hỗ trợ cho các điểm cuối cụ thể, chúng tôi phải sử dụng một loại khác.
+Trong hai ví dụ đầu tiên, chúng tôi chỉ sử dụng `BlockChainActions` kiểu có tất cả các hàm tiêu chuẩn nhưng không hỗ trợ cho các endpoint cụ thể. Nếu chúng tôi muốn hỗ trợ cho các endpoint cụ thể, chúng tôi phải sử dụng một loại khác.
 
-Cách thường được thực hiện là sử dụng từ đồng nghĩa loại. Ví dụ sau đây sẽ tạo ra một từ đồng nghĩa kiểu `MySchema` có tất cả các khả năng `BlockChainActions` nhưng với việc bổ sung khả năng gọi điểm cuối `foo` với một đối số kiểu `Int`.
+Cách thường được thực hiện là sử dụng từ đồng nghĩa loại. Ví dụ sau đây sẽ tạo ra một từ đồng nghĩa kiểu `MySchema` có tất cả các khả năng `BlockChainActions` nhưng với việc bổ sung khả năng gọi endpoint `foo` với một đối số kiểu `Int`.
 
 ``` {.haskell}
 type MySchema = BlockchainActions .\/ Endpoint "foo" Int
@@ -1684,9 +1601,8 @@ type MySchema = BlockchainActions .\/ Endpoint "foo" Int
 
 *Chú ý*
 
-Toán tử `.\\/` là một kiểu hoạt động - nó hoạt động trên kiểu không giá trị. Để sử dụng điều này chúng ta sử dụng các tùy chọn `TypeOperators` và `DataKinds` biên dịch.
+Toán tử `.\/` là một kiểu hoạt động - nó hoạt động trên kiểu không giá trị. Để sử dụng điều này chúng ta sử dụng các tùy chọn `TypeOperators` và `DataKinds` biên dịch.
 
-Now, we can use the `MySchema` type to define our contract.
 Bây giờ, chúng ta có thể sử dụng khiểu `MySchema` để xác định hợp đồng của mình.
 
 ``` {.haskell}
@@ -1696,9 +1612,9 @@ myContract3 = do
       Contract.logInfo n
 ```
 
-Hợp đồng này sẽ chặn cho đến khi điểm cuối `foo` được gọi, trong trường hợp của chúng tôi, là một `Int`. Khi đó giá trị của tham  số`Int` sẽ được ràng buộc với n. Bởi vì điều này, chúng tôi không còn đủ để chỉ cần kích hoạt hợp đồng để kiểm tra nó. Bây giờ, chúng ta cũng phải gọi điểm cuối (endpoint).
+Hợp đồng này sẽ chặn cho đến khi endpoint `foo` được gọi, trong trường hợp của chúng tôi, là một `Int`. Khi đó giá trị của tham  số`Int` sẽ được ràng buộc với `n`. Bởi vì điều này, chúng tôi không còn đủ để chỉ cần kích hoạt hợp đồng để kiểm tra nó. Bây giờ, chúng ta cũng phải gọi endpoint.
 
-Để làm điều này, bây giờ chúng ta cần phải xử lý từ `activateContractWallet` đó, sau đó chúng ta có thể sử dụng để gọi điểm cuối .
+Để làm điều này, bây giờ chúng ta cần phải xử lý từ `activateContractWallet` đó, sau đó chúng ta có thể sử dụng để gọi endpoint .
 
 ``` {.haskell}
 myTrace3 :: EmulatorTrace ()
@@ -1759,7 +1675,7 @@ instance Monoid () -- Defined in ‘GHC.Base’
 
 Hàm `mempty` giống như phần tử trung lập và `mappend` kết hợp hai phần tử của loại này để tạo ra một phần tử mới cùng loại.
 
-Ví dụ `Monoid` là `List`, khi `mempty` là danh sách empty `\[\]`, và `mappend` là nối `++`.
+Ví dụ `Monoid` là `List`, khi `mempty` là danh sách empty `[]`, và `mappend` là nối `++`.
 
 Ví dụ:
 
@@ -1785,7 +1701,7 @@ myContract4 = do
 ```
 
 
-Thay vì sử dụng `Unit` như là kiểu `w`, Chúng tôi sử dụng`\[Int\]`.Điều này cho phép chúng tôi sử dụng `tell` như là show.
+Thay vì sử dụng `Unit` như là kiểu `w`, Chúng tôi sử dụng`[Int]`.Điều này cho phép chúng tôi sử dụng `tell` như là show.
 
 Điều này bây giờ cho phép chúng tôi truy cập vào các thông báo đó trong quá trình theo dõi, bằng cách sử dụng hàm `observableState` .
 
