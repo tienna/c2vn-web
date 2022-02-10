@@ -7,22 +7,22 @@ Ghi chú
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6VbhY162GQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Trong bài giảng này, chúng ta tìm hiểu về mã thông báo gốc, chính sách khai thác và NFT.
+Trong bài giảng này, chúng ta tìm hiểu về token gốc, chính sách khai thác và NFT.
 
-Những ghi chú này sử dụng Plutus cam kết0c3c310cab61dbff8cbc1998a3678b367be6815a
+Những ghi chú này sử dụng Plutus cam kết: 0c3c310cab61dbff8cbc1998a3678b367be6815a
 
 Tổng quat
 --------
 
-Chúng ta sẽ nói về cách Plutus hỗ trợ các mã thông báo gốc và cách xác định các mã thông báo gốc có thể được đúc và đốt trong những điều kiện nào. Nhưng trước khi đạt được điều đó, hãy cùng khám phá xem `value` Cardano có ý nghĩa gì .
+Chúng ta sẽ nói về cách Plutus hỗ trợ các token gốc và cách xác định các token gốc có thể được đúc và đốt trong những điều kiện nào. Nhưng trước khi đạt được điều đó, hãy cùng khám phá xem `value` Cardano có ý nghĩa gì.
 
-Khi chúng ta nói về mô hình (E) UTxO, chúng ta đã biết rằng mỗi UTxO (giao dịch chưa sử dụng) đều có một địa chỉ và một giá trị. Và, chúng tôi thấy rằng, do được mở rộng sang mô hình (E) UTxO, mỗi UTxO cũng có một `Datum`. Chúng ta đã thấy các ví dụ về UTxO như vậy trong các bài giảng trước.
+Khi chúng ta nói về mô hình (E) UTxO, chúng ta đã biết rằng mỗi UTxO (giao dịch chưa sử dụng) đều có một địa chỉ và một giá trị. Và chúng tôi thấy rằng, do được mở rộng sang mô hình (E) UTxO, mỗi UTxO cũng có một `Datum`. Chúng ta đã thấy các ví dụ về UTxO như vậy trong các bài giảng trước.
 
-Trong hầu hết các ví dụ mà chúng ta đã thấy cho đến nay, giá trị chỉ đơn giản là một giá trị Ada, được gọi là lovelace. Ngoại lệ là ví dụ đầu tiên, từ bài giảng 1, cụ thể là ví dụ `English Auction` . Trong ví dụ đó, chúng tôi đã bán đấu giá một NFT. Tuy nhiên, NFT chỉ được tạo ra từ không khí mỏng trong sân chơi.
+Trong hầu hết các ví dụ mà chúng ta đã thấy cho đến nay, giá trị chỉ đơn giản là một số lượng Ada, được gọi là số lovelace. Ngoại lệ là ví dụ đầu tiên từ bài giảng 1, cụ thể là ví dụ `English Auction` . Trong ví dụ đó, chúng tôi đã bán đấu giá một NFT. Tuy nhiên, NFT chỉ được tạo ra từ hư không trong sân chơi.
 
-Tuy nhiên, trong chuỗi khối Cardano thực, ban đầu chỉ có Ada, không có mã thông báo gốc nào khác. Vì vậy, bạn phải làm gì đó để tạo các mã thông báo gốc mới hoặc ghi các mã hiện có. Trong bài giảng này, chúng ta sẽ xem cách thực hiện điều đó.
+Tuy nhiên, trong chuỗi khối Cardano thực, ban đầu chỉ có Ada, không có token gốc nào khác. Vì vậy, bạn phải làm gì đó để tạo các token gốc mới hoặc ghi các mã hiện có. Trong bài giảng này, chúng ta sẽ xem cách thực hiện điều đó.
 
-Nhưng trước hết hãy nói về các giá trị trên.
+Nhưng trước hết hãy nói về các giá trị `Value` trên.
 
 Value
 -----
@@ -36,8 +36,8 @@ module Plutus.V1.Ledger.Ada
 
 ### Kiểu Value
 
-`Value` được định nghĩa là map từ `CurrencySymbol` tới maps. từ
-`TokenName`từ `Integers`, nghe có vẻ hơi kỳ cục và phức tạp.
+`Value` được định nghĩa là một `map` từ `CurrencySymbol` tới maps. từ
+`TokenName` tới `Integers`, nghe có vẻ hơi kỳ cục và phức tạp.
 
 ``` {.haskell}
 newtype Value = Value { getValue :: Map.Map CurrencySymbol (Map.Map TokenName Integer) }
@@ -47,10 +47,10 @@ newtype Value = Value { getValue :: Map.Map CurrencySymbol (Map.Map TokenName In
     deriving Pretty via (PrettyShow Value)
 ```
 
-Điều đầu tiên cần lưu ý là mỗi mã thông báo gốc, bao gồm cả Ada, được xác định bằng hai phần dữ liệu -  `CurrencySymbol` và
+Điều đầu tiên cần lưu ý là mỗi token gốc, bao gồm cả Ada, được xác định bằng hai phần dữ liệu -  `CurrencySymbol` và
 `TokenName`.
 
-Một `CurrencySymbol` là `newtype` bao quanh là một `ByteString`.
+Một `CurrencySymbol` là `newtype` với kiểu `ByteString`.
 
 ``` {.haskell}
 newtype CurrencySymbol = CurrencySymbol { unCurrencySymbol :: Builtins.ByteString }
@@ -60,7 +60,7 @@ newtype CurrencySymbol = CurrencySymbol { unCurrencySymbol :: Builtins.ByteStrin
     deriving anyclass (Hashable, ToJSONKey, FromJSONKey,  NFData)
 ```
 
-Và điwwù này cũng đúng với `TokenName`.
+Và điều này cũng đúng với `TokenName`.
 
 ``` {.haskell}
 newtype TokenName = TokenName { unTokenName :: Builtins.ByteString }
@@ -71,7 +71,7 @@ newtype TokenName = TokenName { unTokenName :: Builtins.ByteString }
     deriving Pretty via (PrettyShow TokenName)    
 ```
 
-Chúng ta có hai `ByteStrings` định nghĩa là coin, hoặc nó còn được gọi là `asset class`.
+Chúng ta có hai biến `ByteStrings` định nghĩa là coin, hoặc nó còn được gọi là `asset class`.
 
 ``` {.haskell}
 assetClass :: CurrencySymbol -> TokenName -> AssetClass
@@ -80,7 +80,7 @@ assetClass s t = AssetClass (s, t)
 
 Ada là một lớp tài sản và các Token gốc tùy chỉnh sẽ là các lớp tài sản khác.
 
-Một `Value` chỉ đơn giản cho thấy có bao nhiêu đơn vị tồn tại cho một loại tài sản nhất định.
+Một `Value` chỉ đơn giản cho thấy có bao nhiêu đơn vị có cho một loại tài sản nhất định.
 
 Hãy bắt đầu REPL và nhập hai mô-đun có liên quan.
 
@@ -94,7 +94,7 @@ Prelude Plutus.V1.Ledger.Ada Plutus.V1.Ledger.Value Week05.Free> :set -XOverload
 
 Ghi chú:
 
-Chúng tôi cũng đã kích hoạt `OverloadedStrings` tiện ích mở rộng. Chúng ta có thể đưa vào `ByteString`dưới dạng chuỗi ký tự.
+Chúng tôi cũng đã kích hoạt tiện ích mở rộng `OverloadedStrings` . Chúng ta có thể đưa vào dưới dạng chuỗi ký tự `ByteString` .
 
 
 Bây giờ chúng ta hãy xem xét một số giá trị. Hãy bắt đầu với các giá trị lovelace. Tương tự `Ledger.Ada` module này được gọi là`adaSymbol`.
@@ -104,7 +104,7 @@ Prelude Plutus.V1.Ledger.Ada Plutus.V1.Ledger.Value Week05.Free> :t adaSymbol
 adaSymbol :: CurrencySymbol
 ```
 
-Điều này cho chúng ta ký hiệu tiền tệ của loại tài sản Ada, chỉ là loại trống `ByteString`. Tương tự, có một hàm `adaToken`, sẽ cung cấp cho chúng ta tên token.
+Điều này cho chúng ta ký hiệu tiền tệ của loại tài sản Ada, chỉ là  trống `ByteString`. Tương tự, có một hàm `adaToken`, sẽ cung cấp cho chúng ta tên token.
 
 ``` {.haskell}
 Prelude Plutus.V1.Ledger.Ada Plutus.V1.Ledger.Value Week05.Free> :t adaToken
@@ -127,11 +127,11 @@ Prelude Plutus.V1.Ledger.Ada Plutus.V1.Ledger.Value Week05.Free> lovelaceValueOf
 Value (Map [(,Map [("",123)])])
 ```
 
-Bạn sẽ luôn sử dụng một hàm trợ giúp chẳng hạn như `lovelaceValueOf` để xây dựng các map giá trị - bạn sẽ không bao giờ cần phải tạo một map trực tiếp.
+Bạn sẽ luôn sử dụng một hàm trợ giúp chẳng hạn như `lovelaceValueOf` để xây dựng các map giá trị - bạn sẽ không bao giờ cần phải tạo một `map` trực tiếp.
 
-Ở đây chúng tôi xem map. Map bên ngoài của các ký hiệu tiền tệ có một khóa, là ký hiệu trống cho Ada và bản đồ bên trong tên mã thông báo có một khóa, chuỗi trống cho Ada và giá trị là 123.
+Ở đây chúng ta xem xét `map`. `Map` bên ngoài của các ký hiệu tiền tệ có một khóa, là ký hiệu trống cho Ada và `map` bên trong tên token có một khóa, chuỗi trống cho Ada và giá trị là 123.
 
-OMột điều chúng ta có thể làm với các giá trị là kết hợp chúng. Các lớp `Value` là thể hiện của `Monoid`, vì chúng ta có thể sử dụng `mappend`, nó có thể viết `<>`, xuất phát từ  super class của `Monoid` gọi là `Semigroup`.
+Một điều chúng ta có thể làm với các giá trị là kết hợp chúng. Các lớp `Value` là thể hiện của `Monoid`, vì chúng ta có thể sử dụng `mappend`, nó có thể viết `<>`, xuất phát từ  super class của `Monoid` gọi là `Semigroup`.
 
 ``` {.haskell}
 Prelude Plutus.V1.Ledger.Ada Plutus.V1.Ledger.Value Week05.Free> lovelaceValueOf 123 <> lovelaceValueOf 10
@@ -155,16 +155,16 @@ Week05.Free> singleton "a8ff" "ABC" 7
 Value (Map [(a8ff,Map [("ABC",7)])])
 ```
 
-Đối số đầu tiền là \"a8ff\" cho `CurrencySymbol` là chuỗi ký tự mã hexa value, là lyd ro cho nó rõ ràng hơn. Đối số thứ 2 là "ABC" cho `TokenName` có thể là chuyooix ký tự tù ý.
+Đối số đầu tiền là "a8ff" cho `CurrencySymbol` là chuỗi ký tự mã hexa value, là lý ro cho nó rõ ràng hơn. Đối số thứ 2 là "ABC" cho `TokenName` có thể là chuỗi ký tự tùy ý.
 
-Và, chúng ta có thể kết hợp, như trước đây toán tử `mappend`. Bây giờ chúng ta có thể tạo một map thú vị hơn.
+Và, chúng ta có thể kết hợp, như trước đây toán tử `mappend`. Bây giờ chúng ta có thể tạo một `map` thú vị hơn.
 
 ``` {.haskell}
 Week05.Free> singleton "a8ff" "ABC" 7 <> lovelaceValueOf 42 <> singleton "a8ff" "XYZ" 100
 Value (Map [(,Map [("",42)]),(a8ff,Map [("ABC",7),("XYZ",100)])])
 ```
 
-Bây giờ, chúng ta thấy một bản đồ đại diện cho 42 lovelace cũng như hai mã thông báo `ABC` và `XYZ` cả hai đều thuộc về `CurrencySymbol` "af88", và mỗi mã có số nguyên tương ứng.
+Bây giờ, chúng ta thấy một bản đồ đại diện cho 42 lovelace cũng như hai token `ABC` và `XYZ` cả hai đều thuộc về `CurrencySymbol` "af88", và mỗi mã có số nguyên tương ứng.
 
 Hãy đặt tên cho giá trị này:
 
@@ -174,7 +174,7 @@ Week05.Free> v
 Value (Map [(,Map [("",42)]),(a8ff,Map [("ABC",7),("XYZ",100)])])
 ```
 
-Một chức năng hữu ích khác là `valueOf` cho phép chúng tôi lấy giá trị của một ký hiệu tiền tệ và tên mã thông báo nhất định.
+Một chức năng hữu ích khác là `valueOf` cho phép chúng tôi lấy giá trị của một ký hiệu tiền tệ và tên token nhất định.
 
 ``` {.haskell}
 Week05.Free> :t valueOf
@@ -203,19 +203,19 @@ Một chức năng hữu ích là `flattenValue`. Như tên cho thấy, nó làm
 Chính sách đúc tiền
 ----------------
 
-Bây giờ câu hỏi là tại sao? Tại sao chúng ta cần cả biểu tượng tiền tệ và tên mã thông báo? Tại sao chúng ta không chỉ sử dụng một mã định danh cho một loại nội dung? Và tại sao ký hiệu tiền tệ phải ở dạng chữ số thập lục phân?
+Bây giờ câu hỏi là tại sao? Tại sao chúng ta cần cả biểu tượng tiền tệ và tên token? Tại sao chúng ta không chỉ sử dụng một mã định danh cho một loại nội dung? Và tại sao ký hiệu tiền tệ phải ở dạng chữ số thập lục phân?
 
 Đây là nơi mà cái gọi là chính sách đúc tiền xuất hiện.
 
-Quy tắc là, nói chung, một giao dịch không thể tạo hoặc xóa mã thông báo. Cái gì vào cũng ra, trừ phí. Luôn luôn có một cảm giác đáng yêu phải được trả bằng mỗi giao dịch. Phí phụ thuộc vào quy mô của giao dịch và số bước mà tập lệnh xác thực thực hiện cũng như mức tiêu thụ bộ nhớ của tập lệnh.
+Quy tắc là, nói chung, một giao dịch không thể tạo hoặc xóa token. Cái gì vào cũng ra, trừ phí. Luôn luôn có một cảm giác đáng yêu phải được trả bằng mỗi giao dịch. Phí phụ thuộc vào quy mô của giao dịch và số bước mà tập lệnh xác thực thực hiện cũng như mức tiêu thụ bộ nhớ của tập lệnh.
 
-Nhưng, nếu đó là toàn bộ câu chuyện thì chúng ta không bao giờ có thể tạo ra các mã thông báo gốc. Và đây là lúc các chính sách đúc tiền được đưa ra, và sự liên quan của biểu tượng tiền tệ xuất hiện.
+Nhưng, nếu đó là toàn bộ câu chuyện thì chúng ta không bao giờ có thể tạo ra các token gốc. Và đây là lúc các chính sách đúc tiền được đưa ra, và sự liên quan của biểu tượng tiền tệ xuất hiện.
 
-Lý do mà ký hiệu tiền tệ phải bao gồm các chữ số thập lục phân là vì nó thực sự là hàm băm của một tập lệnh. Và tập lệnh này được gọi là chính sách đúc tiền và nếu chúng ta có một giao dịch mà chúng ta dự kiến ​​tạo hoặc ghi mã thông báo gốc thì đối với mỗi mã thông báo gốc mà chúng ta cố gắng tạo hoặc đốt, ký hiệu tiền tệ sẽ được tra cứu. Vì vậy, tập lệnh tương ứng cũng phải được chứa trong giao dịch. Và tập lệnh đó được thực thi cùng với các tập lệnh xác thực khác.
+Lý do mà ký hiệu tiền tệ phải bao gồm các chữ số thập lục phân là vì nó thực sự là hàm băm của một tập lệnh. Và tập lệnh này được gọi là chính sách đúc tiền và nếu chúng ta có một giao dịch mà chúng ta dự kiến ​​tạo hoặc ghi token gốc thì đối với mỗi token gốc mà chúng ta cố gắng tạo hoặc đốt, ký hiệu tiền tệ sẽ được tra cứu. Vì vậy, tập lệnh tương ứng cũng phải được chứa trong giao dịch. Và tập lệnh đó được thực thi cùng với các tập lệnh xác thực khác.
 
-Và, tương tự như các tập lệnh xác thực mà chúng ta đã thấy để xác thực đầu vào, mục đích của các tập lệnh in này là để quyết định xem giao dịch này có quyền đúc hoặc ghi mã thông báo hay không. Ada cũng phù hợp với kế hoạch này. Hãy nhớ rằng biểu tượng tiền tệ của Ada chỉ là một chuỗi rỗng, không phải là mã băm của bất kỳ tập lệnh nào. Vì vậy, không có tập lệnh nào băm thành chuỗi trống, vì vậy không có tập lệnh nào cho phép đúc hoặc đốt Ada, có nghĩa là Ada không bao giờ có thể được đúc hoặc đốt.
+Và, tương tự như các tập lệnh xác thực mà chúng ta đã thấy để xác thực đầu vào, mục đích của các tập lệnh in này là để quyết định xem giao dịch này có quyền đúc hoặc ghi token hay không. Ada cũng phù hợp với kế hoạch này. Hãy nhớ rằng biểu tượng tiền tệ của Ada chỉ là một chuỗi rỗng, không phải là mã băm của bất kỳ tập lệnh nào. Vì vậy, không có tập lệnh nào băm thành chuỗi trống, vì vậy không có tập lệnh nào cho phép đúc hoặc đốt Ada, có nghĩa là Ada không bao giờ có thể được đúc hoặc đốt.
 
-Tất cả Ada tồn tại đến từ giao dịch Genesis và tổng số Ada trong hệ thống là cố định và không bao giờ có thể thay đổi. Chỉ các mã thông báo gốc tùy chỉnh mới có thể có các chính sách đúc tiền tùy chỉnh.
+Tất cả Ada tồn tại đến từ giao dịch Genesis và tổng số Ada trong hệ thống là cố định và không bao giờ có thể thay đổi. Chỉ các token gốc tùy chỉnh mới có thể có các chính sách đúc tiền tùy chỉnh.
 
 Vì vậy, chúng ta sẽ xem xét một ví dụ về chính sách đúc tiền tiếp theo và sẽ thấy rằng nó rất giống với một tập lệnh xác thực, nhưng không giống hệt nhau.
 
@@ -262,7 +262,7 @@ data TxInfo = TxInfo
     } deriving (Generic)
 ```
 
-Đối với các chính sách đúc tiền, điều này được kích hoạt nếu `txInfoForge` trường của giao dịch chứa giá trị khác 0. Trong tất cả các giao dịch mà chúng tôi đã thấy cho đến nay, giá trị trường này bằng 0 - chúng tôi chưa bao giờ tạo hoặc phá hủy bất kỳ mã thông báo nào.
+Đối với các chính sách đúc tiền, điều này được kích hoạt nếu `txInfoForge` trường của giao dịch chứa giá trị khác 0. Trong tất cả các giao dịch mà chúng tôi đã thấy cho đến nay, giá trị trường này bằng 0 - chúng tôi chưa bao giờ tạo hoặc phá hủy bất kỳ token nào.
 
 Nếu nó `is` khác 0, thì đối với mỗi ký hiệu tiền tệ có trong `Value`, tập lệnh chính sách đúc tiền tương ứng sẽ được chạy.
 
@@ -294,7 +294,7 @@ mkPolicy :: ScriptContext -> Bool
 mkPolicy _ = True
 ```
 
-Điều này bỏ qua context và luôn trả về `True`. Điều này sẽ cho phép đúc và ghi mã thông báo tùy ý và tên mã thông báo thuộc về ký hiệu tiền tệ được liên kết với chính sách này.
+Điều này bỏ qua context và luôn trả về `True`. Điều này sẽ cho phép đúc và ghi token tùy ý và tên token thuộc về ký hiệu tiền tệ được liên kết với chính sách này.
 
 Hãy nhớ rằng, khi chúng tôi viết trình xác thực, chúng tôi cần sử dụng Template Haskell để biên dịch hàm này sang mã Plutus. Chúng tôi cần làm điều gì đó tương tự cho chính sách đúc tiền của mình.
 
@@ -329,9 +329,9 @@ Và điều này hoàn thành phần on-chain, cho việc đúc tiền đơn gi�
 
 ### Off chain
 
-Phần off-chain nên làm gì? Chà, nó sẽ cho phép các ví tùy ý đúc và đốt các mã thông báo của biểu tượng tiền tệ này.
+Phần off-chain nên làm gì? Chà, nó sẽ cho phép các ví tùy ý đúc và đốt các token của biểu tượng tiền tệ này.
 
-Chúng tôi có biểu tượng tiền tệ, vì vậy điều còn thiếu là tên mã thông báo và số tiền chúng tôi muốn đúc hoặc đốt. Và đối với điều này, chúng tôi sẽ xác định một kiểu dữ liệu `MintParams`.
+Chúng tôi có biểu tượng tiền tệ, vì vậy điều còn thiếu là tên token và số tiền chúng tôi muốn đúc hoặc đốt. Và đối với điều này, chúng tôi sẽ xác định một kiểu dữ liệu `MintParams`.
 
 ``` {.haskell}
 data MintParams = MintParams
@@ -340,7 +340,7 @@ data MintParams = MintParams
     } deriving (Generic, ToJSON, FromJSON, ToSchema)    
 ```
 
-Chúng tôi thấy hai trường - `mpTokenName` and `mpAmount`. Ý tưởng là nếu giá trị `mpAmount` là Dương, chúng ta nên tạo mã thông báo, và nếu nó là Âm, chúng ta nên đốt mã thông báo.
+Chúng tôi thấy hai trường - `mpTokenName` and `mpAmount`. Ý tưởng là nếu giá trị `mpAmount` là Dương, chúng ta nên tạo token, và nếu nó là Âm, chúng ta nên đốt token.
 
 Bước tiếp theo là xác định lược đồ. Nhớ lại rằng một trong những tham số của `Contact` monad là lược đồ xác định các hành động có sẵn mà chúng ta có thể thực hiện.
 
@@ -384,7 +384,7 @@ mint mp = do
 
 Điều đầu tiên mà chúng tôi xác định là giá trị mà chúng tôi muốn rèn luyện. Đối với điều này, chúng tôi đang sử dụng hàm `singleton` mà chúng tôi đã thử trong REPL trước đó.
 
-Các đối số của hàm `singleton`  là ký hiệu tiền tệ đại diện cho hàm băm của chính sách đúc tiền, cộng với tên mã thông báo và số tiền được trích xuất từ `MintParams`.
+Các đối số của hàm `singleton`  là ký hiệu tiền tệ đại diện cho hàm băm của chính sách đúc tiền, cộng với tên token và số tiền được trích xuất từ `MintParams`.
 
 bây giờ Chúng ta sẽ tạm thời bỏ qua đối số `lookups` ,và chuyển sang đối số `tx`.
 
@@ -392,7 +392,7 @@ Một trong những mục đích chính của `Contract` monad là xây dựng v
 
 Các điều kiện này đều có tên bắt đầu bằng `must`. Có những thứ như `mustSpendScriptOutput`, `mustPayToPublicKey` và tất cả các loại điều kiện có thể được đặt vào một điều kiện.
 
-Trong ví dụ của chúng tôi, chúng tôi đang sử dụng `mustForgeValue` và chúng tôi chuyển nó vào giá trị đã được xác định trước đó `val`. Kết quả của việc giả mạo các mã thông báo được chỉ định `val` là chúng sẽ kết thúc trong ví của chính chúng ta.
+Trong ví dụ của chúng tôi, chúng tôi đang sử dụng `mustForgeValue` và chúng tôi chuyển nó vào giá trị đã được xác định trước đó `val`. Kết quả của việc giả mạo các token được chỉ định `val` là chúng sẽ kết thúc trong ví của chính chúng ta.
 
 Khi các điều kiện được xác định, bạn cần gọi một hàm để gửi giao dịch. Có rất nhiều chức năng như vậy, nhưng trong trường hợp này, chức năng thích hợp là `submitTxConstraintsWith`.
 
@@ -402,9 +402,9 @@ Vì vậy, những gì phải làm `submitTxConstraintsWith` để tạo ra mộ
 
 Hơn nữa, nếu chúng ta đang giả mạo giá trị (nếu `mpAmount` là giá trị dương), thì giá trị đó phải đi đâu đó. Trong trường hợp này `submitTxConstraintsWith`, sẽ tạo một đầu ra gửi giá trị mới được đúc đến ví của chính chúng ta.
 
-Mặt khác, nếu chúng tôi đốt các mã thông báo (nếu `mpAmount` là số âm), thì các mã thông báo đó phải đến từ một nơi nào đó. Trong trường hợp đó, hàm `submitTxConstraintsWith` sẽ tìm một đầu vào trong ví của chính chúng ta để lấy các mã thông báo.
+Mặt khác, nếu chúng tôi đốt các token (nếu `mpAmount` là số âm), thì các token đó phải đến từ một nơi nào đó. Trong trường hợp đó, hàm `submitTxConstraintsWith` sẽ tìm một đầu vào trong ví của chính chúng ta để lấy các token.
 
-Chức năng gửi cũng có thể không thành công. Ví dụ, nếu chúng ta muốn thanh toán cho ai đó, nhưng chúng ta không có đủ tiền trong ví, nó sẽ không thành công. Hoặc, nếu chúng tôi yêu cầu ghi các mã thông báo mà chúng tôi không có, nó cũng sẽ thất bại. Khi không thành công, một ngoại lệ sẽ được đưa ra, với một thông báo lỗi thuộc kiểu `Text`.
+Chức năng gửi cũng có thể không thành công. Ví dụ, nếu chúng ta muốn thanh toán cho ai đó, nhưng chúng ta không có đủ tiền trong ví, nó sẽ không thành công. Hoặc, nếu chúng tôi yêu cầu ghi các token mà chúng tôi không có, nó cũng sẽ thất bại. Khi không thành công, một ngoại lệ sẽ được đưa ra, với một thông báo lỗi thuộc kiểu `Text`.
 
 Bây giờ, trở lại `lookups`.  Để đáp ứng các điều kiện trong hàm
 `mustForgeValue`, đôi khi thư viện cần thêm thông tin. Trong trường hợp này, để xác thực một giao dịch giả mạo giá trị, các nút xác thực giao dịch phải chạy tập lệnh chính sách.
@@ -466,7 +466,7 @@ mkKnownCurrencies []
 
 ### Trong Playground
 
-Chúng tôi đã thiết lập một kịch bản trong đó Ví 1 đúc 555 mã thông báo ABC và Ví 2 đúc 444 mã thông báo ABC. Sau đó, sau khi chờ 1 khe, Ví 1 đốt 222 mã thông báo ABC. Cuối cùng, chúng ta đợi 1 slot ở cuối.
+Chúng tôi đã thiết lập một kịch bản trong đó Ví 1 đúc 555 token ABC và Ví 2 đúc 444 token ABC. Sau đó, sau khi chờ 1 khe, Ví 1 đốt 222 token ABC. Cuối cùng, chúng ta đợi 1 slot ở cuối.
 
 ![](img/week05__00007.png)
 
@@ -474,19 +474,19 @@ Bây giờ, nếu chúng ta đánh giá điều này, trước tiên chúng ta s
 
 ![](img/week05__00008.png)
 
-Tiếp theo, chúng tôi thấy hai giao dịch tại Vị trí 1. Đầu tiên là giao dịch từ Ví 2, nơi 444 mã thông báo ABC được đúc và một khoản phí 10 lovelace được thanh toán. UTxO để thanh toán phí đã được tự động tìm thấy bởi chức năng tạo giao dịch `submitTxConstraintsWith`, như đã thảo luận trước đây.
+Tiếp theo, chúng tôi thấy hai giao dịch tại Vị trí 1. Đầu tiên là giao dịch từ Ví 2, nơi 444 token ABC được đúc và một khoản phí 10 lovelace được thanh toán. UTxO để thanh toán phí đã được tự động tìm thấy bởi chức năng tạo giao dịch `submitTxConstraintsWith`, như đã thảo luận trước đây.
 
-Chúng tôi thấy ở đây một thứ mà chúng tôi chưa từng thấy trước đây - `Forge` một phần của giao dịch, nơi các mã thông báo gốc thực sự được tạo ra. Hộp chứa ký hiệu tiền tệ (băm chính sách) và tên mã thông báo.
+Chúng tôi thấy ở đây một thứ mà chúng tôi chưa từng thấy trước đây - `Forge` một phần của giao dịch, nơi các token gốc thực sự được tạo ra. Hộp chứa ký hiệu tiền tệ (băm chính sách) và tên token.
 
-Chúng tôi cũng thấy hai kết quả đầu ra - một lần với sự thay đổi 990 lovelace và một kết quả khác với các mã thông báo mới được đúc. Trên thực tế, các kết quả đầu ra này có thể được kết hợp với nhau, nhưng ở đây chúng được thể hiện dưới dạng hai UTxO riêng biệt.
+Chúng tôi cũng thấy hai kết quả đầu ra - một lần với sự thay đổi 990 lovelace và một kết quả khác với các token mới được đúc. Trên thực tế, các kết quả đầu ra này có thể được kết hợp với nhau, nhưng ở đây chúng được thể hiện dưới dạng hai UTxO riêng biệt.
 
 ![](img/week05__00009.png)
 
-Sau đó, chúng tôi thấy giao dịch từ Ví 1, nơi có 555 mã thông báo ABC được đúc và một khoản phí 10 lovelace được thanh toán.
+Sau đó, chúng tôi thấy giao dịch từ Ví 1, nơi có 555 token ABC được đúc và một khoản phí 10 lovelace được thanh toán.
 
 ![](img/week05__00010.png)
 
-Cuối cùng, chúng tôi thấy việc đốt 222 mã thông báo bằng Ví 1. Ở đây, chúng tôi thấy rằng thuật toán đã làm một điều gì đó hơi khác một chút. Khi nhận thấy rằng một đợt ghi đang diễn ra, nó đã tìm thấy ABC token UTxO trong Wallet 1 và sử dụng chúng làm đầu vào. Chúng tôi cũng lưu ý ở đây rằng UTxO đầu ra được kết hợp, như chúng tôi đã đề cập ở trên, có thể được thực hiện thay vì sử dụng hai UTxO đầu ra.
+Cuối cùng, chúng tôi thấy việc đốt 222 token bằng Ví 1. Ở đây, chúng tôi thấy rằng thuật toán đã làm một điều gì đó hơi khác một chút. Khi nhận thấy rằng một đợt ghi đang diễn ra, nó đã tìm thấy ABC token UTxO trong Wallet 1 và sử dụng chúng làm đầu vào. Chúng tôi cũng lưu ý ở đây rằng UTxO đầu ra được kết hợp, như chúng tôi đã đề cập ở trên, có thể được thực hiện thay vì sử dụng hai UTxO đầu ra.
 
 ![](img/week05__00011.png)
 
@@ -494,7 +494,7 @@ Và chúng tôi cũng có thể xem các số dư cuối cùng để kiểm tra 
 
 ![](img/week05__00012.png)
 
-Với chính sách tiền tệ của chúng tôi, chúng tôi có thể tạo các giao dịch giả mạo và đốt tùy ý bằng bất kỳ ví nào. Vì vậy, đây có lẽ không phải là một chính sách tiền tệ tốt. Mục đích của mã thông báo là đại diện cho giá trị, nhưng nếu bất kỳ ai tại bất kỳ thời điểm nào có thể tạo ra mã thông báo mới, thì mã thông báo này sẽ không có nhiều ý nghĩa. Có thể có một số trường hợp sử dụng kỳ lạ cho nó, nhưng trên thực tế, chính sách này khá vô dụng.
+Với chính sách tiền tệ của chúng tôi, chúng tôi có thể tạo các giao dịch giả mạo và đốt tùy ý bằng bất kỳ ví nào. Vì vậy, đây có lẽ không phải là một chính sách tiền tệ tốt. Mục đích của token là đại diện cho giá trị, nhưng nếu bất kỳ ai tại bất kỳ thời điểm nào có thể tạo ra token mới, thì token này sẽ không có nhiều ý nghĩa. Có thể có một số trường hợp sử dụng kỳ lạ cho nó, nhưng trên thực tế, chính sách này khá vô dụng.
 
 ### Thử nghiệm với EmulatorTrace
 
@@ -571,7 +571,7 @@ Hãy xem một ví dụ thực tế hơn.
 
 Chúng tôi sẽ lấy một bản sao của mô-đun Miễn phí và gọi nó là Đã ký.
 
-Có lẽ ví dụ dễ nhất về chính sách đúc tiền thực tế là một chính sách mà việc đúc và đốt mã thông báo bị hạn chế đối với các giao dịch được ký bởi một hàm băm khóa công khai cụ thể. Điều đó tương tự như một ngân hàng trung ương, bằng các loại tiền tệ fiat.
+Có lẽ ví dụ dễ nhất về chính sách đúc tiền thực tế là một chính sách mà việc đúc và đốt token bị hạn chế đối với các giao dịch được ký bởi một hàm băm khóa công khai cụ thể. Điều đó tương tự như một ngân hàng trung ương, bằng các loại tiền tệ fiat.
 
 Điều này có nghĩa là các chính sách của chúng tôi không còn là không có các tham số. Chúng tôi cần mã băm khóa công khai. Ngoài ra, chúng ta cũng cần phải xem xét bối cảnh, vì vậy chúng ta không thể bỏ qua như lần trước.
 
@@ -726,30 +726,30 @@ Wallet 10:
     {, ""}: 100000000
 ```
 
-Điều này trông rất giống với trước đây, nhưng lần này, hãy lưu ý rằng, trong khi tên mã thông báo giống nhau, các ký hiệu tiền tệ khác nhau cho mỗi ví.
+Điều này trông rất giống với trước đây, nhưng lần này, hãy lưu ý rằng, trong khi tên token giống nhau, các ký hiệu tiền tệ khác nhau cho mỗi ví.
 
 NFT - Non-Fungible Tokens
 ----
 
-Bây giờ chúng ta hãy nói về NFT - Token không Fungible. NFT là các mã thông báo có số lượng chính xác là 1.
+Bây giờ chúng ta hãy nói về NFT - Token không Fungible. NFT là các token có số lượng chính xác là 1.
 
-Các ví dụ về mã thông báo gốc mà chúng tôi đã nghiên cứu cho đến nay chắc chắn không phải là NFT vì chúng tôi có thể dễ dàng đúc bao nhiêu tùy thích. Điều này không chỉ đúng trong ví dụ đầu tiên, nơi bất kỳ ai cũng có thể đúc mã thông báo, mà còn trong ví dụ thứ hai, trong đó, miễn là bạn là chủ sở hữu của mã băm khóa công khai chính xác, bạn có thể đúc mã thông báo không giới hạn cho ký hiệu tiền tệ và mã thông báo liên quan Tên.
+Các ví dụ về token gốc mà chúng tôi đã nghiên cứu cho đến nay chắc chắn không phải là NFT vì chúng tôi có thể dễ dàng đúc bao nhiêu tùy thích. Điều này không chỉ đúng trong ví dụ đầu tiên, nơi bất kỳ ai cũng có thể đúc token, mà còn trong ví dụ thứ hai, trong đó, miễn là bạn là chủ sở hữu của mã băm khóa công khai chính xác, bạn có thể đúc token không giới hạn cho ký hiệu tiền tệ và token liên quan Tên.
 
 Để tạo ra một NFT, có lẽ ý tưởng ngây thơ đầu tiên sẽ là xem xét trường giả mạo trong chính sách và thực thi một chính sách trong đó số tiền là một.
 
-Nhưng điều đó không giúp được gì cho chúng tôi. Điều đó chỉ có nghĩa là trong một giao dịch, bạn chỉ có thể đúc một mã thông báo. Nhưng không ai có thể ngăn chúng tôi gửi bao nhiêu trong số các giao dịch đó tùy thích.
+Nhưng điều đó không giúp được gì cho chúng tôi. Điều đó chỉ có nghĩa là trong một giao dịch, bạn chỉ có thể đúc một token. Nhưng không ai có thể ngăn chúng tôi gửi bao nhiêu trong số các giao dịch đó tùy thích.
 
 Tùy chọn thứ hai thực sự đã được sử dụng trên chuỗi khối Cardano. NFT đã có sẵn kể từ Mary fork, có trước Plutus, và để làm được điều này, chúng được thực hiện bằng cách sử dụng thời hạn.
 
 Trong các ví dụ trước, chúng ta đã thấy cách thời gian có thể được kết hợp trong các tập lệnh xác thực và điều tương tự cũng có thể được thực hiện trong các tập lệnh chính sách.
 
-Ý tưởng ở đây là chỉ cho phép đúc tiền trước khi thời hạn nhất định trôi qua. Sử dụng phương pháp này, nếu bạn muốn đúc NFT, bạn đúc một mã thông báo trước thời hạn, sau đó cho phép thời hạn trôi qua. Điều này đảm bảo rằng, sau thời hạn, sẽ không có mã thông báo mới nào được đúc.
+Ý tưởng ở đây là chỉ cho phép đúc tiền trước khi thời hạn nhất định trôi qua. Sử dụng phương pháp này, nếu bạn muốn đúc NFT, bạn đúc một token trước thời hạn, sau đó cho phép thời hạn trôi qua. Điều này đảm bảo rằng, sau thời hạn, sẽ không có token mới nào được đúc.
 
-Tuy nhiên, để kiểm tra rằng bạn chỉ đúc một mã thông báo trước thời hạn, bạn cần một cái gì đó giống như một công cụ khám phá chuỗi khối. Vì vậy, theo nghĩa này, chúng không phải là NFT thực sự, trong chừng mực bản thân biểu tượng tiền tệ đảm bảo rằng chúng là duy nhất.
+Tuy nhiên, để kiểm tra rằng bạn chỉ đúc một token trước thời hạn, bạn cần một cái gì đó giống như một công cụ khám phá chuỗi khối. Vì vậy, theo nghĩa này, chúng không phải là NFT thực sự, trong chừng mực bản thân biểu tượng tiền tệ đảm bảo rằng chúng là duy nhất.
 
-Sử dụng Plutus, có thể tạo ra các NFT thực sự. Nếu bạn biết tập lệnh chính sách tương ứng với ký hiệu tiền tệ, bạn có thể chắc chắn rằng chỉ có một mã thông báo đang tồn tại mà không cần phải sử dụng đến một thứ gì đó như trình khám phá chuỗi khối.
+Sử dụng Plutus, có thể tạo ra các NFT thực sự. Nếu bạn biết tập lệnh chính sách tương ứng với ký hiệu tiền tệ, bạn có thể chắc chắn rằng chỉ có một token đang tồn tại mà không cần phải sử dụng đến một thứ gì đó như trình khám phá chuỗi khối.
 
-Và, suy nghĩ về cách làm điều đó, phải có một cách để ngăn chặn việc có nhiều hơn một giao dịch đúc tiền cho mã thông báo được đề cập. Bất cứ điều gì bạn viết trong tập lệnh chính sách của mình, nó chỉ phải trả về true cho một giao dịch, do đó không thể thực hiện lại điều tương tự trong một giao dịch khác.
+Và, suy nghĩ về cách làm điều đó, phải có một cách để ngăn chặn việc có nhiều hơn một giao dịch đúc tiền cho token được đề cập. Bất cứ điều gì bạn viết trong tập lệnh chính sách của mình, nó chỉ phải trả về true cho một giao dịch, do đó không thể thực hiện lại điều tương tự trong một giao dịch khác.
 
 Lúc đầu, điều này nghe có vẻ không thể. Tại sao bạn không thể chạy lại cùng một giao dịch và xác thực lại thành công? Ngay cả khi xem xét thời hạn, điều gì ngăn giao dịch thứ hai trong cùng một vị trí vượt qua xác thực?
 
@@ -842,13 +842,13 @@ where
     hasUTxO = any (\i -> txInInfoOutRef i == oref) $ txInfoInputs info
 ```
 
-Hiện tại, chúng tôi có chính sách chỉ có thể đúc hoặc đốt một lần. Tuy nhiên, tất nhiên, trong một giao dịch duy nhất đó, chúng ta vẫn có thể đúc bao nhiêu mã thông báo tùy thích.
+Hiện tại, chúng tôi có chính sách chỉ có thể đúc hoặc đốt một lần. Tuy nhiên, tất nhiên, trong một giao dịch duy nhất đó, chúng ta vẫn có thể đúc bao nhiêu token tùy thích.
 
-Bây giờ, chúng tôi nghĩ về những gì chúng tôi thực sự muốn. Có thể chúng tôi muốn một chính sách cho phép chúng tôi đúc chỉ một mã thông báo cho biểu tượng tiền tệ. Hoặc có lẽ, chúng tôi muốn có thể đúc nhiều NFT cùng một lúc, mỗi NFT có một tên mã thông báo khác nhau.
+Bây giờ, chúng tôi nghĩ về những gì chúng tôi thực sự muốn. Có thể chúng tôi muốn một chính sách cho phép chúng tôi đúc chỉ một token cho biểu tượng tiền tệ. Hoặc có lẽ, chúng tôi muốn có thể đúc nhiều NFT cùng một lúc, mỗi NFT có một tên token khác nhau.
 
-Điều đó tùy thuộc vào chúng tôi. Nhưng, giả sử chúng ta đi với tùy chọn đầu tiên. Chúng tôi chỉ muốn đúc một mã thông báo.
+Điều đó tùy thuộc vào chúng tôi. Nhưng, giả sử chúng ta đi với tùy chọn đầu tiên. Chúng tôi chỉ muốn đúc một token.
 
-Vì vậy, sẽ hợp lý khi chuyển tên mã thông báo làm tham số.
+Vì vậy, sẽ hợp lý khi chuyển tên token làm tham số.
 
 ``` {.haskell}
 mkPolicy :: TxOutRef -> TokenName -> ScriptContext -> Bool
@@ -865,7 +865,7 @@ Và, tất nhiên, chúng tôi cần phải thực hiện `checkMintedAmount`.
 
 Trước hết, chúng ta cần truy cập vào giá trị giả mạo. Chúng tôi có được điều này từ các lĩnh vực `txInfoForge` của `TxInfo`.
 
-Làm cách nào để chúng tôi kiểm tra xem giá trị giả mạo này có đúng là 1 mã thông báo của tên mà chúng tôi yêu cầu hay không? Có một số cách tiếp cận, nhưng một là sử dụng hàm`flattenValue` mà chúng tôi sẽ nhớ lại, trả về danh sách bộ ba ký hiệu tiền tệ, tên mã thông báo và giá trị. Sau đó, chúng tôi có thể kiểm tra xem đầu ra của `flattenValue` có chính xác một bộ ba khớp với biểu tượng, mã thông báo và giá trị mà chúng tôi mong đợi hay không.
+Làm cách nào để chúng tôi kiểm tra xem giá trị giả mạo này có đúng là 1 token của tên mà chúng tôi yêu cầu hay không? Có một số cách tiếp cận, nhưng một là sử dụng hàm`flattenValue` mà chúng tôi sẽ nhớ lại, trả về danh sách bộ ba ký hiệu tiền tệ, tên token và giá trị. Sau đó, chúng tôi có thể kiểm tra xem đầu ra của `flattenValue` có chính xác một bộ ba khớp với biểu tượng, token và giá trị mà chúng tôi mong đợi hay không.
 
 Nó sẽ trông giống như thế này:
 
@@ -931,7 +931,7 @@ Chúng ta cần suy nghĩ về các yếu tố đầu vào mà chúng ta cần c
 
 Đầu tiên, chúng tôi cần một UTxO và chúng tôi cần cung cấp một UTxO của riêng mình. Tuy nhiên, chúng ta không cần chuyển nó vào vì chúng ta có thể tra cứu trực tiếp.
 
-Chúng tôi chỉ cần cung cấp tên mã thông báo, vì vậy chúng tôi không cần loại dữ liệu đặc biệt nữa, vì vậy chúng tôi có thể xóa `MintParams` và chỉ sử dụng `TokenName`.
+Chúng tôi chỉ cần cung cấp tên token, vì vậy chúng tôi không cần loại dữ liệu đặc biệt nữa, vì vậy chúng tôi có thể xóa `MintParams` và chỉ sử dụng `TokenName`.
 
 ``` {.haskell}
 type NFTSchema =
@@ -992,7 +992,7 @@ case Map.keys utxos of
         let val     = Value.singleton (curSymbol oref tn) tn 1
 ```
 
-Thứ hai, chúng tôi thêm đối số tên mã thông báo vào các tra cứu.
+Thứ hai, chúng tôi thêm đối số tên token vào các tra cứu.
 
 ``` {.haskell}
 lookups = Constraints.monetaryPolicy $ policy oref tn
