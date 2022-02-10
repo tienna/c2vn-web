@@ -9,9 +9,9 @@ description: Ngôn ngữ Plutus
 
 Plutus là nền tảng hợp đồng thông minh của chuỗi khối Cardano. Nó cho phép bạn viết các ứng dụng tương tác với chuỗi khối Cardano.
 
-Hướng dẫn về Plutus, nếu bạn muốn học Plutus từ đầu, [Hãy xem ở đây](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/plutus-playground.html)
+Hướng dẫn về Plutus, nếu bạn muốn thực hành Plutus từ đầu, [Hãy xem ở đây](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/index.html)
 
-Nếu bạn chưa biết Haskell [Bắt đầu với Haskell](#get-started-with-haskell)
+Nếu bạn chưa biết Haskell [Bắt đầu với Haskell](https://cardano2vn.io/docs/smart-contracts/plutus#b%E1%BA%AFt-%C4%91%E1%BA%A7u-v%E1%BB%9Bi-haskell-1)
 
 [Theo dõi nội dung bản dịch của Chris Moreton](https://cardano2vn.io/docs/dr-lars-lession/overview) . Với một nỗ lực cao, anh ấy chép lại các bài giảng của Chương trình Tiên phong Plutus.
 
