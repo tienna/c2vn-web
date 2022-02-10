@@ -200,12 +200,12 @@ Một chức năng hữu ích là `flattenValue`. Như tên cho thấy, nó làm
 > [(a8ff,"ABC",7),(a8ff,"XYZ",100),(,"",42)]
 > ```
 
-`policy` đúc tiền (Minting Policies)
+Chính sách đúc tiền (Minting Policies)
 ----------------
 
 Bây giờ câu hỏi là tại sao? Tại sao chúng ta cần cả biểu tượng tiền tệ và tên token? Tại sao chúng ta không chỉ sử dụng một mã định danh cho một loại tài sản? Và tại sao ký hiệu tiền tệ (currency symbol) phải ở dạng chữ số thập lục phân?
 
-Đây là nơi mà cái gọi là `policy` đúc tiền xuất hiện.
+Đây là nơi mà cái được gọi là `policy` đúc tiền xuất hiện.
 
 Quy tắc chung, một giao dịch không thể tạo hoặc xóa token. Bất kỳ cái gì có vào cũng có ra, trừ đi phí. Luôn luôn có một số lovelace phải được trả trong mỗi giao dịch. Phí phụ thuộc vào quy mô của giao dịch và số bước mà tập lệnh xác thực thực hiện cũng như mức tiêu thụ bộ nhớ của tập lệnh.
 
