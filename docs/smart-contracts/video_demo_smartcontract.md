@@ -1,4 +1,4 @@
-# video demo smartcontract
+# Video demo smartcontract
 
 Đây là các video của chúng tôi về các demo smartcontract Marlowe và Plutus.
 
