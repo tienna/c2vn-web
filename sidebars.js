@@ -61,7 +61,7 @@ const sidebars = {
       "smart-contracts/overview",
       "smart-contracts/marlowe",
       "smart-contracts/plutus",
-	  "smart-contracts/video_demo_smartcontract",
+      "smart-contracts/video_demo_smartcontract",
     ],
     "Khoá đào tạo Plutus của Dr. Lars": [
         "dr-lars-lession/overview",
