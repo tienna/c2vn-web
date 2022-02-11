@@ -4,21 +4,21 @@
 
 ## Catalyst Func 6  
 
-### Bring smart contract to Vietnam  [Video ](https://youtu.be/LP99IkCjajA)
+### 1. Bring smart contract to Vietnam  [Video ](https://youtu.be/LP99IkCjajA)
 	
-	Bring smart contract to Vietnam - Func6 - Catalyst
+  Bring smart contract to Vietnam - Func6 - Catalyst
 
-	Trong khi Học ngôn ngữ lập trình hợp đồng thông minh là chìa khóa quan trọng để đưa Cardano đến gần hơn với người dùng cuối. Việc học và triển khai càng dễ dàng, thì càng có nhiều người tham gia vào hệ thống sinh thái của Cardano. Chúng tôi sẽ tạo một tài liệu đào tạo về ngôn ngữ lập trình smart contract Plutus và Marlove bằng tiếng Việt.
+  Trong khi Học ngôn ngữ lập trình hợp đồng thông minh là chìa khóa quan trọng để đưa Cardano đến gần hơn với người dùng cuối. Việc học và triển khai càng dễ dàng, thì càng có nhiều người tham gia vào hệ thống sinh thái của Cardano. Chúng tôi sẽ tạo một tài liệu đào tạo về ngôn ngữ lập trình smart contract Plutus và Marlove bằng tiếng Việt.
 
-	Chúng tôi có kế hoạch dịch tất cả các tài liệu đào tạo cơ bản về hợp đồng thông minh có sẵn sang tiếng Việt, Thêm nhiều ví dụ thực tế hơn, hướng dẫn từng bước để tạo dApp và chia sẻ chúng với các cộng đồng / trường đại học địa phương
+  Chúng tôi có kế hoạch dịch tất cả các tài liệu đào tạo cơ bản về hợp đồng thông minh có sẵn sang tiếng Việt, Thêm nhiều ví dụ thực tế hơn, hướng dẫn từng bước để tạo dApp và chia sẻ chúng với các cộng đồng / trường đại học địa phương
 
 	[Kích vào đây xem chi tiết dự án](https://cardano.ideascale.com/c/idea/367834)
 
   <iframe width="660" height="315" src="https://www.youtube.com/embed/LP99IkCjajA" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-##  Catalyst Func 7
+## Catalyst Func 7
 
-### Localize Yoroi for Vietnam market: [Video ](https://youtu.be/LuocH09aveg)
+### 2. Localize Yoroi for Vietnam market: [Video ](https://youtu.be/LuocH09aveg)
 
 Localize Yoroi for Vietnam market  - Func 7 Catalyst
 
@@ -30,7 +30,7 @@ Localize Yoroi for Vietnam market  - Func 7 Catalyst
 	
   <iframe width="660" height="315" src="https://www.youtube.com/embed/LuocH09aveg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
-###  Catalyst Events 4 Vietnam Students : [Video ](https://youtu.be/eZoGD8O1BAU)
+### 3. Catalyst Events 4 Vietnam Students : [Video ](https://youtu.be/eZoGD8O1BAU)
 
 Catalyst Events 4 Vietnam Students - Func 7 Catalyst
   
@@ -45,7 +45,7 @@ Catalyst Events 4 Vietnam Students - Func 7 Catalyst
   <iframe width="660" height="315" src="https://www.youtube.com/embed/eZoGD8O1BAU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
   
   
-###  Cardano Technical hub in Vietnamese 
+### 4. Cardano Technical hub in Vietnamese [Video ](https://www.youtube.com/watch?v=MZ4I-ea1suM)
 
 Cardano Technical hub in Vietnamese - Func 7 Catalyst
 
@@ -55,3 +55,4 @@ Cardano Technical hub in Vietnamese - Func 7 Catalyst
 [Kích vào đây xem chi tiết dự án](https://cardano.ideascale.com/c/idea/382651)
 
 
+  <iframe width="660" height="315" src="https://www.youtube.com/embed/v=MZ4I-ea1suM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
