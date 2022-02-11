@@ -42,9 +42,8 @@ Catalyst Events 4 Vietnam Students - Func 7 Catalyst
   	[Kích vào đây xem chi tiết dự án](https://cardano.ideascale.com/c/idea/382615)
   
   
-  <iframe width="660" height="315" src="https://www.youtube.com/embed/eZoGD8O1BAU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
-  
-  
+  <iframe width="660" height="315" src="https://www.youtube.com/embed/eZoGD8O1BAU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>  
+
 ### 4. Cardano Technical hub in Vietnamese [Video ](https://www.youtube.com/watch?v=MZ4I-ea1suM)
 
 Cardano Technical hub in Vietnamese - Func 7 Catalyst
@@ -55,4 +54,4 @@ Cardano Technical hub in Vietnamese - Func 7 Catalyst
 [Kích vào đây xem chi tiết dự án](https://cardano.ideascale.com/c/idea/382651)
 
 
-  <iframe width="660" height="315" src="https://www.youtube.com/embed/v=MZ4I-ea1suM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+  <iframe width="660" height="315" src="https://www.youtube.com/embed/MZ4I-ea1suM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
