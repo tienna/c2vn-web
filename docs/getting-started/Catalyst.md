@@ -5,7 +5,9 @@
 ## Func 6 Catalyst 
 
 ### Bring smart contract to Vietnam  [Video ](https://youtu.be/LP99IkCjajA)
-- Bring smart contract to Vietnam - Func6 - Catalyst
+	
+	Bring smart contract to Vietnam - Func6 - Catalyst
+
 	Trong khi Học ngôn ngữ lập trình hợp đồng thông minh là chìa khóa quan trọng để đưa Cardano đến gần hơn với người dùng cuối. Việc học và triển khai càng dễ dàng, thì càng có nhiều người tham gia vào hệ thống sinh thái của Cardano. Chúng tôi sẽ tạo một tài liệu đào tạo về ngôn ngữ lập trình smart contract Plutus và Marlove bằng tiếng Việt.
 
 	Chúng tôi có kế hoạch dịch tất cả các tài liệu đào tạo cơ bản về hợp đồng thông minh có sẵn sang tiếng Việt, Thêm nhiều ví dụ thực tế hơn, hướng dẫn từng bước để tạo dApp và chia sẻ chúng với các cộng đồng / trường đại học địa phương
@@ -19,6 +21,7 @@
 ### Localize Yoroi for Vietnam market: [Video ](https://youtu.be/LuocH09aveg)
 
 Localize Yoroi for Vietnam market  Introduction - Func 7 Catalyst
+
   Yoroi là một ví nhẹ của Cardano. Thật đơn giản, nhanh chóng và an toàn để Yoroi trông giống như một chiếc ví hàng ngày cho người dùng Cardano. Việc thực hiện các giao dịch trên một phần mềm sử dụng ngôn ngữ không phải tiếng mẹ đẻ thường khiến người dùng cẩn trọng hơn, thao tác chậm và hay mắc lỗi. Đây cũng là rào cản khiến người dùng không thể sử dụng yoroi hoặc truy cập vào hệ sinh thái của Cardano
 
 	Giải pháp ở đây là thêm ngôn ngữ tiếng Việt vào danh sách ngôn ngữ có sẵn của ví Yoroi. Điều này sẽ giúp người dùng cảm thấy gần gũi, tin tưởng hơn với Yoroi và muốn tiếp cận nhiều hơn với hệ sinh thái của Cardano.
