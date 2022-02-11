@@ -44,6 +44,7 @@ Catalyst Events 4 Vietnam Students - Func 7 Catalyst
   
   <iframe width="660" height="315" src="https://www.youtube.com/embed/eZoGD8O1BAU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
   
+  
 ###  Cardano Technical hub in Vietnamese 
 
 Cardano Technical hub in Vietnamese - Func 7 Catalyst
