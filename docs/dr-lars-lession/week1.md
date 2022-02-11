@@ -4,7 +4,7 @@ Week 01 - English Auction
 Đây là phiên bản bằng văn bản của [Lecture \#1 -
 Dr.Lars](https://youtu.be/CJD8ctJqDw0).
 
-<iframe width="100%" height="350" src="https://www.youtube.com/embed/CJD8ctJqDw0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/CJD8ctJqDw0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 Nó bao gồm phần giới thiệu về Plutus, mô hình (E) UTxO (và cách nó so
 sánh với các mô hình khác) và kết thúc bằng một ví dụ phiên đấu giá English Auction được quản lý bằng hợp đồng thông minh Plutus chạy trên Plutus
