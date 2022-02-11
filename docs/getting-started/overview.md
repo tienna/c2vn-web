@@ -8,7 +8,7 @@ Bắt đầu với Cardano
 
 <!-- ![](../..//static/img/1.png) -->
 
-Xin chào bạn đến với Cardano2vn. Đây là bản dịch của trang https://developers.cardano.org/; Nếu bạn quan tâm đến ví Cardano wallet bạn có thể tham khảo [showcase section](../../showcase).
+Xin chào bạn đến với Cardano2vn. Đây là bản dịch của trang https://developers.cardano.org/; Nếu bạn quan tâm đến ví Cardano wallet bạn có thể tham khảo [showcase section](https://developers.cardano.org/showcase/).
 
 Cũng cần lưu ý đề cập đến các nhà phát triển Portal bìa tất cả mọi thứ bạn có thể làm **hôm nay** trên Cardano **mainnet**. 
 
