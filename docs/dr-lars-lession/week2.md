@@ -3,7 +3,7 @@ Week 02 - Validation
 
 Đây là tài liệu [Bài giảng \#2, Dr. Lars](https://youtu.be/7nDGZkUIeUQ).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7nDGZkUIeUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/7nDGZkUIeUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Nó bao gồm mức thấp và mức cao tập lệnh xác thực on-chain.
 

@@ -5,7 +5,7 @@ Ghi chú
 
 Đây là phiên bản viết của [Bài giảng số 6](https://www.youtube.com/watch?v=X9fOkkpj-aU).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X9fOkkpj-aU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/X9fOkkpj-aU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Trong bài giảng này, chúng ta học về oracles và sử dụng PAB (Plutus Application Backend).
 
