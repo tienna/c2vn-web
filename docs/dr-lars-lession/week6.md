@@ -15,25 +15,25 @@ Những ghi chú này sử dụng Plutus cam kết: 476409eaee94141e2fe076a7821f
 Tổng quat
 --------
 
-Trong bài giảng này, chúng ta sẽ xem xét một nghiên cứu điển hình, để xem làm thế nào những gì chúng ta đã học được cho đến nay có thể được biến thành một ứng dụng thực tế. Một bộ sưu tập các tệp thực thi thậm chí đi kèm với một giao diện người dùng nhỏ.
+Trong bài giảng này, chúng ta sẽ xem xét một nghiên cứu điển hình, để xem làm thế nào chúng ta đã học được cho đến nay có thể được biến thành một ứng dụng thực tế. Một bộ sưu tập các tệp thực thi thậm chí đi kèm với một giao diện người dùng nhỏ.
 
 Nó sẽ là một dApp thực sự, ngoài việc chúng ta chưa có sẵn một blockchain thực sự. Điều này sẽ chạy trên một chuỗi khối mô phỏng - một chuỗi mô hình.
 
-Ví dụ chúng ta sẽ sử dụng cho việc này là triển khai một tiên tri rất đơn giản.
+Ví dụ chúng ta sẽ sử dụng cho việc này là triển khai một Oracles rất đơn giản.
 
-Ghi chú
+	Ghi chú
 
-Trong thế giới blockchain, tiên tri là một cách để đưa thông tin thế giới thực vào blockchain, để làm cho nó có thể sử dụng được trong các hợp đồng thông minh.
+	Trong thế giới blockchain, Oracles là một cách để đưa thông tin thế giới thực vào blockchain, để làm cho nó có thể sử dụng được trong các hợp đồng thông minh.
 
 Có rất nhiều ví dụ về các trường hợp sử dụng cho oracles. Chúng ta có thể nghĩ đến các nguồn dữ liệu bên ngoài như dữ liệu thời tiết, kết quả bầu cử, dữ liệu trao đổi chứng khoán hoặc sự ngẫu nhiên. Ví dụ, bạn có thể có một hợp đồng cá cược phụ thuộc vào kết quả của một trò chơi thể thao cụ thể.
 
 Có nhiều cách khác nhau để thực hiện các câu chuyện thần thoại, với mức độ phức tạp khác nhau.
 
-Chúng tôi sẽ sử dụng một cách tiếp cận rất đơn giản, nơi chúng tôi có một nhà cung cấp dữ liệu đáng tin cậy. Và, để làm ví dụ về dữ liệu, chúng tôi sẽ sử dụng tỷ giá hối đoái ADA / USD.
+Chúng tôi sẽ sử dụng một cách tiếp cận rất đơn giản, nơi chúng tôi có một nhà cung cấp dữ liệu đáng tin cậy. Và để làm ví dụ về dữ liệu, chúng tôi sẽ sử dụng tỷ giá hối đoái ADA/USD.
 
-Có rất nhiều vấn đề với cách tiếp cận này, vì chúng ta phải tin tưởng vào nguồn dữ liệu. Có nhiều cách để giảm thiểu rủi ro nguồn dữ liệu không đáng tin cậy hoặc không đáng tin cậy. Ví dụ: chúng tôi có thể yêu cầu nhà cung cấp đưa ra một số tài sản thế chấp bị mất nếu dữ liệu không được cung cấp hoặc không chính xác. Hoặc, bạn có thể kết hợp nhiều câu thần chú thành một và chỉ chấp nhận kết quả nếu tất cả chúng đều đồng ý hoặc lấy giá trị trung bình hoặc giá trị trung bình của các nguồn khác nhau. Bạn cũng có thể nghĩ ra các cơ chế phức tạp hơn.
+Có rất nhiều vấn đề với cách tiếp cận này, vì chúng ta phải tin tưởng vào nguồn dữ liệu. Có nhiều cách để giảm thiểu rủi ro nguồn dữ liệu không đáng tin cậy. Ví dụ: chúng tôi có thể yêu cầu nhà cung cấp đưa ra một số tài sản thế chấp bị mất nếu dữ liệu không được cung cấp hoặc cung cấp không chính xác. Bạn có thể kết hợp nhiều Oracles thành một và chỉ chấp nhận kết quả nếu tất cả chúng đều giống nhau hoặc giá trị trung bình của các nguồn khác nhau. Bạn cũng có thể nghĩ ra các cơ chế phức tạp hơn.
 
-Như chúng ta đã biết, đối với bất kỳ điều gì xảy ra trên blockchain, phải có UTxO, vì vậy điều hiển nhiên cần làm là biểu thị nguồn cấp dữ liệu dưới dạng UTxO. UTxO nằm ở địa chỉ tập lệnh của oracle và trường dữ liệu của nó mang giá trị hiện tại của dữ liệu oracle.
+Như chúng ta đã biết, đối với bất kỳ điều gì xảy ra trên blockchain, phải có UTxO, vì vậy điều hiển nhiên cần làm là biểu thị nguồn cấp dữ liệu dưới dạng UTxO. UTxO nằm ở địa chỉ tập lệnh của oracle và trường Datum của nó mang giá trị hiện tại của dữ liệu oracle.
 
 ![](img/week06__00000.png)
 
@@ -41,27 +41,27 @@ Và đây là nơi chúng tôi tìm ra vấn đề đầu tiên của mình. Nh�
 
 ![](img/week06__00001.png)
 
-Bằng cách nào đó, chúng ta cần phân biệt đầu ra oracle thực sự với các đầu ra khác có thể ở cùng một địa chỉ tập lệnh. Và cách chúng tôi làm điều này là đặt một NFT trên đầu ra. Vì một NFT chỉ có thể tồn tại một lần nên chỉ có thể có một UTxO tại địa chỉ tập lệnh chứa NFT.
+Bằng cách nào đó, chúng ta cần phân biệt đầu ra oracle thực sự với các đầu ra khác có thể ở cùng một địa chỉ tập lệnh. Và cách chúng tôi làm điều này là đặt một NFT ở đầu ra. Vì một NFT chỉ có thể tồn tại một lần nên chỉ có thể có một UTxO tại địa chỉ tập lệnh chứa NFT.
 
 ![](img/week06__00002.png)
 
-Làm thế nào một lời tiên tri như vậy có thể được sử dụng?
+Làm thế nào một Oracles như vậy có thể được sử dụng?
 
-Ở đây chúng ta đến với một cái gì đó mà chúng ta chưa từng thấy trước đây. Trong tất cả các hợp đồng và trình xác thực viết mã của chúng tôi, chúng tôi luôn biết trước toàn bộ API. Trong trường hợp của một nhà tiên tri, điều này là khác nhau. Tại thời điểm mà một tiên tri được tạo ra, bạn không biết mọi người có thể muốn sử dụng nó như thế nào. Nó phải giống như một API mở, có thể hoạt động với các hợp đồng thông minh chưa được thiết kế.
+Ở đây chúng ta đến với một cái gì đó mà chúng ta chưa từng thấy trước đây. Trong tất cả các hợp đồng và trình xác thực viết mã của chúng tôi, chúng tôi luôn biết trước toàn bộ API. Trong trường hợp của một nhà Oracles, điều này là khác nhau. Tại thời điểm mà một Oracles được tạo ra, bạn không biết mọi người có thể muốn sử dụng nó như thế nào. Nó phải giống như một API mở, có thể hoạt động với các hợp đồng thông minh chưa được thiết kế.
 
 Ví dụ về trường hợp sử dụng có thể sử dụng oracle cụ thể này, chúng ta hãy xem xét một hợp đồng hoán đổi trong đó, tại địa chỉ hoán đổi, ai đó có thể gửi ADA và sau đó người khác có thể lấy những ADA đó để đổi lấy USD.
 
 ![](img/week06__00003.png)
 
-Tất nhiên, chúng ta không có USD trực tiếp trên blockchain, nhưng chúng ta có thể tưởng tượng rằng chúng được đại diện bởi một số mã thông báo gốc.
+Tất nhiên, chúng ta không có USD trực tiếp trên blockchain, nhưng chúng ta có thể tưởng tượng rằng chúng được đại diện bởi một số token gốc.
 
-Trong ví dụ này, vì giá trị của oracle là 1,75, thì nếu ai đó cung cấp 100 ADA, giá cho điều đó sẽ là 175 USD.
+Trong ví dụ này, vì giá trị của oracle là 1,75, thì nếu ai đó cung cấp 100 ADA, giá trị cho điều đó sẽ là 175 USD.
 
-Ngoài ra, chúng tôi cần một động lực để tiên tri cung cấp dữ liệu, bởi vì ngoài các chi phí khác để cung cấp dữ liệu, thì ở mức tối thiểu họ sẽ phải trả phí để tạo UTxO.
+Ngoài ra, chúng tôi cần một động lực để Oracles cung cấp dữ liệu, bởi vì ngoài các chi phí khác để cung cấp dữ liệu, thì ở mức tối thiểu họ sẽ phải trả phí để tạo UTxO.
 
 Vì vậy, giả sử rằng nhà cung cấp oracle xác định một khoản phí 1 ADA phải trả mỗi khi oracle được sử dụng.
 
-Trong ví dụ này, điều đó có nghĩa là người muốn ADA sẽ phải trả 175 USD cho người bán ADA và 1 ADA cho nhà tiên tri.
+Trong ví dụ này, điều đó có nghĩa là người muốn ADA sẽ phải trả 175 USD cho người bán ADA và 1 ADA cho nhà Oracles.
 
 Giao dịch sẽ như thế nào?
 
@@ -69,30 +69,30 @@ Giao dịch sẽ như thế nào?
 
 Trước hết, logic xác thực hoán đổi sẽ cần quyền truy cập vào giá trị oracle hiện tại, có nghĩa là UTxO oracle phải là đầu vào cho giao dịch.
 
-Sau đó, chúng ta có logic xác thực tiên tri. Trong trường hợp này, chúng tôi muốn sử dụng tiên tri. Vì vậy, giả sử chúng ta có một công cụ đổi quà được gọi là sử dụng . Bây giờ, trình xác thực tiên tri phải kiểm tra một số thứ.
+Sau đó, chúng ta có logic xác thực Oracles. Trong trường hợp này, chúng tôi muốn sử dụng Oracles. Vì vậy, giả sử chúng ta có một Redeemer được gọi là `use`. Bây giờ, trình xác thực Oracles phải kiểm tra một số thứ.
 
 1.  NFT có trong đầu vào được tiêu thụ không?
 2.  Có đầu ra từ giao dịch tại cùng một địa chỉ có chứa cùng một NFT không?
-3.  IGiá trị trong UTxO đầu ra có giống với giá trị đầu vào không?
-4.  Phí có phải không?
+3.  Giá trị trong UTxO đầu ra có giống với giá trị đầu vào không?
+4.  Phí có không?
 
 Bây giờ chúng ta có thể hoàn thành giao dịch.
 
-Chúng tôi sử dụng hai đầu vào bổ sung - phí do người mua trả và 100 ADA do người bán đặt cọc. Sau đó, chúng tôi có hai đầu ra bổ sung - 175 USD cho người bán và 100 ADA cho người mua. Và đối với những đầu vào và đầu ra mới này, người xác nhận hoán đổi có trách nhiệm đảm bảo rằng nó chính xác. Trong khi đó, trình xác nhận tiên tri chỉ quan tâm đến việc đảm bảo rằng mọi thứ liên quan đến tiên tri là chính xác.
+Chúng tôi sử dụng hai đầu vào bổ sung - phí do người mua trả và 100 ADA do người bán đặt cọc. Sau đó, chúng tôi có hai đầu ra bổ sung - 175 USD cho người bán và 100 ADA cho người mua. Và đối với những đầu vào và đầu ra mới này, người xác nhận hoán đổi có trách nhiệm đảm bảo rằng nó chính xác. Trong khi đó, trình xác nhận Oracles chỉ quan tâm đến việc đảm bảo rằng mọi thứ liên quan đến Oracles là chính xác.
 
 ![](img/week06__00005.png)
 
-Chỉ cần nhấn mạnh, hợp đồng hoán đổi này chỉ là một ví dụ. Nhà tiên tri phải có khả năng làm việc với nhiều hợp đồng thông minh khác nhau muốn sử dụng dữ liệu của nó.
+Chỉ cần nhấn mạnh, hợp đồng hoán đổi này chỉ là một ví dụ. Nhà Oracles phải có khả năng làm việc với nhiều hợp đồng thông minh khác nhau muốn sử dụng dữ liệu của nó.
 
-Nếu đây là tất cả, thì chúng ta sẽ không cần một lời tiên tri. Nếu giá trị đã được cố định, để nó luôn là 1,75 thì chúng tôi có thể chỉ cần mã hóa giá trị này vào hợp đồng của mình. Vì vậy, giá trị phải có thể thay đổi. Ít nhất, trong một ví dụ chẳng hạn như ví dụ này, nơi chúng ta có một tỷ giá hối đoái, tất nhiên, có thể thay đổi theo thời gian. Có thể có các ví dụ khác như kết quả của một trận đấu thể thao, trong đó nó là một sự kiện kỳ ​​lạ trong lịch sử, nhưng trong trường hợp này, điều quan trọng là nó có thể thay đổi.
+Nếu đây là tất cả, thì chúng ta sẽ không cần một Oracles. Nếu giá trị đã được cố định, để nó luôn là 1,75 thì chúng tôi có thể chỉ cần mã hóa giá trị này vào hợp đồng của mình. Vì vậy, giá trị phải có thể thay đổi. Ít nhất, trong một ví dụ chẳng hạn như ví dụ này, nơi chúng ta có một tỷ giá hối đoái, tất nhiên, có thể thay đổi theo thời gian. Có thể có các ví dụ khác như kết quả của một trận đấu thể thao, trong đó nó là một sự kiện kỳ ​​lạ trong lịch sử, nhưng trong trường hợp này, điều quan trọng là nó có thể thay đổi.
 
 Điều này có nghĩa là trình xác thực oracle, ngoài việc sử dụng Redeemer, phải có khả năng hỗ trợ một hoạt động khác mà nhà cung cấp oracle thực sự có thể thay đổi dữ liệu.
 
 Vì vậy, giả sử giá trị thay đổi từ 1,75 thành 1,77.
 
-Chúng tôi biết rằng trên blockchain UTxO (E), không có gì thay đổi, vì vậy bạn không thể thay đổi dữ liệu của UTxO hiện có. Tất cả những gì bạn có thể làm là sử dụng UTxO và sản xuất UTxO mới.
+Chúng tôi biết rằng trên blockchain (E)UTxO, không có gì thay đổi, vì vậy bạn không thể thay đổi dữ liệu của UTxO hiện có. Tất cả những gì bạn có thể làm là sử dụng UTxO và sản xuất UTxO mới.
 
-Chúng tôi sẽ có một giao dịch sử dụng Redeemer bản cập nhật . Logic xác nhận hơi khác. Nó giống như trước đây ở chỗ NFT cần phải có mặt trong đầu vào oracle đã tiêu thụ, và cũng cần có mặt trong đầu ra mới. Ngoài ra, giao dịch phải được ký bởi nhà cung cấp oracle. Và, chúng tôi có thể sử dụng giao dịch cập nhật này như một cơ hội để nhà cung cấp oracle thu phí.
+Chúng tôi sẽ có một giao dịch sử dụng bản cập nhật Redeemer. Logic xác nhận hơi khác. Nó giống như trước đây ở chỗ NFT cần phải có mặt trong đầu vào oracle đã tiêu thụ, và cũng cần có mặt trong đầu ra mới. Ngoài ra, giao dịch phải được ký bởi nhà cung cấp oracle. Và, chúng tôi có thể sử dụng giao dịch cập nhật này như một cơ hội để nhà cung cấp oracle thu phí.
 
 Chúng tôi nhấn mạnh rằng NFT có trong đầu ra, nhưng chúng tôi không nói gì về các giá trị khác. Tất cả các khoản phí do các giao dịch khác sử dụng dữ liệu oracle này có thể được thu trong quá trình cập nhật giao dịch.
 
@@ -100,11 +100,11 @@ Chúng tôi nhấn mạnh rằng NFT có trong đầu ra, nhưng chúng tôi kh�
 
 ### Bản tóm tắt
 
-Tóm lại, chúng tôi đại diện cho tiên tri bởi một UTxO và xác định UTxO chính xác bằng một NFT. Giá trị oracle là dữ liệu của UTxO. Chúng tôi hỗ trợ hai hoạt động.
+Tóm lại, chúng tôi đại diện cho Oracles bởi một UTxO và xác định UTxO chính xác bằng một NFT. Giá trị oracle là dữ liệu của UTxO. Chúng tôi hỗ trợ hai hoạt động.
 
-Một là sử dụng sử dụng tiên tri trong một số giao dịch tùy ý. Các sử dụng validator sẽ đảm bảo rằng các đầu vào oracle tiêu thụ mang NFT, rằng có một đầu ra mà lại mang NFT, không làm thay đổi dữ kiện, và mang phí bổ sung.
+Một là sử dụng sử dụng Oracles trong một số giao dịch tùy ý. Các  validator `use` sẽ đảm bảo rằng các đầu vào oracle tiêu thụ mang NFT, rằng có một đầu ra mà lại mang NFT, không làm thay đổi dữ kiện, và cộng phí.
 
-Thao tác thứ hai là cập nhật chỉ có thể được thực hiện bởi nhà cung cấp oracle. Đối với một giao dịch cập nhật , đầu vào oracle lại phải mang NFT, phải có đầu ra oracle cũng mang NFT. Không có hạn chế nào nữa. Số liệu có thể thay đổi và phí tích lũy có thể được lấy ra.
+Thao tác thứ hai là cập nhật chỉ có thể được thực hiện bởi nhà cung cấp oracle. Đối với một giao dịch cập nhật, đầu vào oracle lại phải mang NFT, phải có đầu ra oracle cũng mang NFT. Không có hạn chế nào nữa. Số liệu có thể thay đổi và phí tích lũy có thể được lấy ra.
 
 Oracle Core
 -----------
@@ -119,7 +119,7 @@ Bây giờ chúng ta biết nó hoạt động như thế nào, hãy xem một s
 module Week06.Oracle.Core
 ```
 
-The oracle sẽ là một hợp đồng được tham số hóa và nó sẽ phụ thuộc vào bốn trường.
+Oracle sẽ là một hợp đồng được tham số hóa và nó sẽ phụ thuộc vào bốn trường.
 
 ``` {.haskell}
 data Oracle = Oracle
@@ -130,11 +130,11 @@ data Oracle = Oracle
     } deriving (Show, Generic, FromJSON, ToJSON, Prelude.Eq, Prelude.Ord)    
 ```
 
--   `oSymbol`  là biểu tượng tiền tệ của NFT được sử dụng để xác định giao dịch. Chúng tôi không cần tên mã thông báo vì chúng tôi sẽ chỉ sử dụng chuỗi trống làm tên mã thông báo.
+-   `oSymbol`  là biểu tượng tiền tệ của NFT được sử dụng để xác định giao dịch. Chúng tôi không cần tên token vì chúng tôi sẽ chỉ sử dụng chuỗi trống làm tên token.
 -   `oOperator`  là chủ sở hữu của oracle - hàm băm của chủ sở hữu khóa công khai có thể thực hiện cập nhật
     
--   `oFee`  là khoản phí trong tình yêu phải trả mỗi khi sử dụng oracle
--   `oAsset`  đại diện cho loại tài sản mà chúng tôi muốn trao đổi tỷ giá so với Ada, trong trường hợp của chúng tôi sẽ là một số loại mã thông báo USD
+-   `oFee`  là khoản phí lovelace phải trả mỗi khi sử dụng oracle
+-   `oAsset`  đại diện cho loại tài sản mà chúng tôi muốn trao đổi tỷ giá so với Ada, trong trường hợp của chúng tôi sẽ là một số loại token USD
 
 Redeemer sẽ hỗ trợ hai hoạt động.
 
@@ -145,7 +145,7 @@ data OracleRedeemer = Update | Use
 PlutusTx.unstableMakeIsData ''OracleRedeemer
 ```
 
-Chúng ta cần xác định lớp tài sản NFT. Như đã đề cập, chúng ta sẽ sử dụng chuỗi trống cho tên mã thông báo.
+Chúng ta cần xác định lớp tài sản NFT. Như đã đề cập, chúng ta sẽ sử dụng chuỗi trống cho tên token.
 
 ``` {.haskell}
 {-# INLINABLE oracleTokenName #-}
@@ -161,7 +161,7 @@ oracleAsset :: Oracle -> AssetClass
 oracleAsset oracle = AssetClass (oSymbol oracle, oracleTokenName)
 ```
 
-Chúng tôi tạo một hàm trợ giúp nhỏ gọi là `oracleValue` . Điều này nhận một giao dịch đầu ra và một hàm tìm kiếm dữ liệu, sau đó trả về một Số nguyên . Các Integer đại diện cho tỷ giá hối đoái (ví dụ 1,75) nhân với một triệu. Điều này tránh những phức tạp có thể xảy ra khi sử dụng số thực.
+Chúng tôi tạo một hàm trợ giúp nhỏ gọi là `oracleValue`. Điều này nhận một giao dịch đầu ra và một hàm tìm kiếm dữ liệu, sau đó trả về `integer` . Các `Integer` đại diện cho tỷ giá hối đoái (ví dụ 1,75) nhân với một triệu. Điều này tránh những phức tạp có thể xảy ra khi sử dụng số thực.
 
 ``` {.haskell}
 {-# INLINABLE oracleValue #-}
@@ -172,7 +172,7 @@ oracleValue o f = do
     PlutusTx.fromData d
 ```
 
-Hàm này là một ví dụ về tính toán monadic trong monad. nó không phải là `IO`  hoặc `Contract monad`. Đầu tiên chung ta gọi `txOutDatum`, Nó không thành công nếu đâu ra không có datum. Nếu nó thành công, chúng tôi nhận được một băm datum mà chúng tôi có thể tham chiếu trong đó `dh`.  Tiếp theo, chúng tôi sử dụng hàm  `f`  được cung cấp làm đối số thứ hai để có thể biến băm dữ liệu này thành một dữ liệu. Điều này cũng có thể thất bại. Nếu nó thành công, chúng tôi có thể tham khảo kết quả trong `d`. `Datum`  chỉ là một trình bao bọc kiểu mới xung quanh `Data`,vì vậy sau đó chúng ta có thể sử dụng `PlutusTx.fromData`  để có thể biến `d`  thành `Integer`.Một lần nữa, điều này có thể không thành công, bởi vì ngay cả khi dữ liệu ở đó, nó có thể không được chuyển đổi thành giá trị số nguyên.
+Hàm này là một ví dụ về tính toán monadic trong monad. nó không phải là `IO`  hoặc `Contract monad`. Đầu tiên chung ta gọi `txOutDatum`, Nó không thành công nếu đâu ra không có `datum`. Nếu nó thành công, chúng tôi nhận được một băm `datum` mà chúng tôi có thể tham chiếu trong đó `dh`.  Tiếp theo, chúng tôi sử dụng hàm  `f`  được cung cấp làm đối số thứ hai để có thể biến băm dữ liệu này thành một dữ liệu. Điều này cũng có thể thất bại. Nếu nó thành công, chúng tôi có thể tham khảo kết quả trong `d`. `Datum`  chỉ là một trình bao bọc kiểu mới xung quanh `Data`,vì vậy sau đó chúng ta có thể sử dụng `PlutusTx.fromData`  để có thể biến `d`  thành `Integer`. Một lần nữa, điều này có thể không thành công, bởi vì ngay cả khi dữ liệu ở đó, nó có thể không được chuyển đổi thành giá trị số nguyên.
 
 Chúng ta sẽ thấy chúng ta sử dụng hàm `oracleValue`  ở đây trong giây lát.
 
@@ -258,7 +258,7 @@ ownInput = case findOwnInput ctx of
     Just i  -> txInInfoResolved i
 ```
 
-Hàm `ownInput`  trả về `TxOut`  Mà nó đang có gắng tiêu thụ, trong trường hợp này là oracle output. Trường hợp `Nothing`  có thể sẩy ra nếu ra nếu chúng ta đang ở trong một context khác, chẳng hạn như context đúc, vì vậy tình huống này sẽ không xảy ra cho chúng ta. Hàm `findOwnInput` được cung cấp bởi Plutus và sẽ nhận context, sau đó tìm các đầu vào liên quan. Hàm `txInInfoResolved`  nhận `TxOut`  từ `TxInInfo`.
+Hàm `ownInput` trả về `TxOut`  Mà nó đang có gắng tiêu thụ, trong trường hợp này là oracle output. Trường hợp `Nothing`  có thể sẩy ra nếu ra nếu chúng ta đang ở trong một context khác, chẳng hạn như context đúc, vì vậy tình huống này sẽ không xảy ra cho chúng ta. Hàm `findOwnInput` được cung cấp bởi Plutus và sẽ nhận context, sau đó tìm các đầu vào liên quan. Hàm `txInInfoResolved`  nhận `TxOut`  từ `TxInInfo`.
 
 Hàm `inputHashToken`  kiểm tra token hiện tại. Nó sử dụng hàm `assetClassValueOf`  để tìm kiếm NFT trong phản hồi `ownInput`.
 
@@ -307,10 +307,10 @@ validOutputDatum :: Bool
 validOutputDatum = isJust outputDatum
 ```
 
-Chú ý
------
+	Chú ý
 
-Nếu bạn tra cứu `findDatum`  trong REPL, Bạn sẽ thấy có một loại này `DatumHash -> TxInfo -> Maybe Datum`. Vì chúng ta đang sử dụng infix ở đây, Chúng ta có thể chuyển vào `info`  dưới dạng tham số duy nhất, và điều này sẽ dẫn đến toàn bộ biểu thức có kiểu `DatumHash -> Maybe Datum`, là kiểu mà chúng ta cần chuyển vào`oracleValue`.
+
+	Nếu bạn tra cứu `findDatum`  trong REPL, Bạn sẽ thấy có một loại này `DatumHash -> TxInfo -> Maybe Datum`. Vì chúng ta đang sử dụng infix ở đây, Chúng ta có thể chuyển vào `info`  dưới dạng tham số duy nhất, và điều này sẽ dẫn đến toàn bộ biểu thức có kiểu `DatumHash -> Maybe Datum`, là kiểu mà chúng ta cần chuyển vào`oracleValue`.
 
 
 Điều này hoạt động bằng cách cố gắng lấy giá trị dữ liệu từ băm dữ liệu và sau đó cố gắng tạo giá trị oracle từ nó. Nếu thành công, nó sẽ trả về `Just Integer`, ngược lại nó sẽ trả về `Nothing`, vì vậy hàm `validOutputDatum`  chỉ cần kiểm tra xem giá trị trả về có phải `Nothing`,hay là `Just`.
@@ -371,9 +371,9 @@ Và điều này kết thúc phần on-chain của mã oracle.
 
 ### Off-chain
 
-Chúng tôi cũng tạo một số mã ngoài chuỗi, cụ thể là để bắt đầu tiên tri và cập nhật nó. Tuy nhiên, chúng tôi không viết mã off-chain cho useoracle. Đó không phải là trách nhiệm của tác giả của hợp đồng này. Đó sẽ là trách nhiệm của người muốn sử dụng oracle - họ sẽ viết mã để tạo giao dịch với người đổi use. Đây là lần đầu tiên chúng tôi thấy trường hợp chúng tôi có một số mã trong chuỗi không được ghép nối với một số mã ngoài chuỗi.
+Chúng tôi cũng tạo một số mã off-chain, cụ thể là để bắt đầu Oracles và cập nhật nó. Tuy nhiên, chúng tôi không viết mã off-chain cho `use` của oracle. Đó không phải là trách nhiệm của hợp đồng này. Đó sẽ là trách nhiệm của người muốn sử dụng oracle - họ sẽ viết mã để tạo giao dịch với use của redeemer. Đây là lần đầu tiên chúng tôi thấy trường hợp chúng tôi có một số mã trong chuỗi không được ghép nối với một số mã off-chain.
 
-#### Starting the Oracle
+#### Bắt đầu với Oracle
 
 Để bắt đầu oracle, chúng ta cần một số tham số.
 
@@ -390,7 +390,7 @@ data OracleParams = OracleParams
 Tham số `opSymbol`  và `opToken`  đại diện cho token 
 mà chúng tôi đang cung cấp tỷ giá hối đoái Ada, trong trường hợp này là token USD.
 
-Đầu tiên, chúng tôi tạo một hàm `startOracle`, có trách nhiệm tạo ra NFT sẽ được sử dụng để xác định UTxO oracle. Các hàm`startOracle`  này sẽ không cung cấp một giá trị ban đầu cho oracle, điều này sẽ được xử lý bởi các hàm `updateOracle` . Lý do cho điều này là, nếu chúng tôi cung cấp một giá trị ban đầu, nó có thể bị lỗi thời vào thời điểm NFT được đúc.
+Đầu tiên, chúng tôi tạo một hàm `startOracle`, có trách nhiệm tạo ra NFT sẽ được sử dụng để xác định UTxO oracle. Các hàm`startOracle`  này sẽ không cung cấp một giá trị ban đầu cho oracle, điều này sẽ được xử lý bởi các hàm `updateOracle`. Lý do cho điều này là, nếu chúng tôi cung cấp một giá trị ban đầu, nó có thể bị lỗi thời vào thời điểm NFT được đúc.
 
 Chúng tôi có thể đã sử dụng cùng một mã để đúc NFT như chúng tôi đã sử dụng trong bài giảng 5. Điều này sẽ hoạt động hoàn toàn tốt.
 
@@ -426,7 +426,7 @@ Plutus.Contracts.Currency.forgeContract
 
 Phần quan trọng bắt đầu về phía cuối, nơi mà tham số đầu tiên - của kiểu `PubKeyHash`  - được định nghĩa. Đây là băm của khóa công khai của người nhận NFT.
 
-Hàm `forgeContract`  ung cấp chức năng tổng quát hơn hợp đồng NFT trước của chúng tôi. Nó cho phép tạo nhiều NFT trong một lần. Nó sẽ tạo ra một ký hiệu tiền tệ chỉ có thể được sử dụng một, tương tự như NFT của chúng tôi từ lần trước, vì vậy chỉ có thể có một giao dịch đúc tiền. Nhưng đối với một biểu tượng tiền tệ, bạn có thể đúc nhiều mã thông báo khác nhau trong cùng một giao dịch, với nhiều tên mã thông báo khác nhau và với số lượng khác nhau. Tham số thứ hai cho phép chúng tôi xác định các tên và số lượng mã thông báo này.
+Hàm `forgeContract` cung cấp chức năng tổng quát hơn hợp đồng NFT trước của chúng tôi. Nó cho phép tạo nhiều NFT trong một lần. Nó sẽ tạo ra một ký hiệu tiền tệ chỉ có thể được sử dụng một, tương tự như NFT của chúng tôi từ lần trước, vì vậy chỉ có thể có một giao dịch đúc tiền. Nhưng đối với một biểu tượng tiền tệ, bạn có thể đúc nhiều token khác nhau trong cùng một giao dịch, với nhiều tên token khác nhau và với số lượng khác nhau. Tham số thứ hai cho phép chúng tôi xác định các tên và số lượng token này.
 
 Và nó cho chúng ta một `Contract`  nó trả về một gia trị kiểu `OneShotCurrency`. Loại này dành riêng cho tiền tệ và nó không thực sự quan trọng đối với chúng tôi. Tất cả những gì quan trọng đối với chúng tôi là chúng tôi có thể lấy lại biểu tượng tiền tệ từ nó.
 
@@ -436,7 +436,7 @@ Có một vấn đề nhỏ. Điều này không tương thích với những g�
 Contract w s Text Oracle
 ```
 
-Một kiểu người viết tùy ý (vì chúng ta không sử dụng nó), một lược đồ tùy ý (miễn là chúng ta có `BlockChainActions` sẵn), `Text` thông báo lỗi và kiểu trả về `Oracle`.
+Một kiểu người viết tùy ý (vì chúng ta không sử dụng nó), một lược đồ tùy ý (miễn là chúng ta có sẵn `BlockChainActions` ), `Text` thông báo lỗi và kiểu trả về `Oracle`.
 
 Vấn đề là giá trị `Contract` trả về `forgeContract` không cho phép `Text` thông báo lỗi. Bạn có thể thấy điều này trong đầu ra chi tiết từ REPL - có một ràng buộc đối với tham số `e`.
 
@@ -479,7 +479,7 @@ startOracle op = do
 Hàm `show`  chuyển đổi lỗi cho một `String`  và hàm `pack`
 chuyển đổ một `String`  tới một kiểu `Data.Text`.
 
-Tại thời điểm này `osc`  giữ  `OneShotCurrency`, Và chúng ta có thể sử dụng hàm `currencySymbol`  để lấy ký hiệu tiền tệ như`cs`.
+Tại thời điểm này `osc`  giữ  `OneShotCurrency`, Và chúng ta có thể sử dụng hàm `currencySymbol`  để lấy ký hiệu tiền tệ như `cs`.
 
 Hàm `currencySymbol`  có kiểu:
 
@@ -494,7 +494,7 @@ và được sử dụng phù hợp
 let cs = Currency.currencySymbol osc
 ```
 
-Bây giờ chúng tôi đã đúc NFT của mình và nó có ký hiệu tiền tệ `cs`. à bây giờ chúng ta có thể xây dựng giá trị tham số `Oracle`.
+Bây giờ chúng tôi đã đúc NFT của mình và nó có ký hiệu tiền tệ `cs`. và bây giờ chúng ta có thể xây dựng giá trị tham số `Oracle`.
 
 ``` {.haskell}
 oracle = Oracle
@@ -505,9 +505,9 @@ oracle = Oracle
     }
 ```
 
-lý do là `opSymbol`  và `opToken` được định nghĩa riêng trong kiểu `OracleParams`.  `op`  hỉ là điều này làm cho việc này trở nên dễ dàng hơn khi chúng ta sử dụng playground.
+lý do là `opSymbol`  và `opToken` được định nghĩa riêng trong kiểu `OracleParams`.  `op`  chỉ là điều này làm cho việc này trở nên dễ dàng hơn khi chúng ta sử dụng playground.
 
-#### Updating the Oracle
+#### Cập nhật Oracle
 
 Hàm `updateOracle`  là phức tạp hơn.
 
@@ -531,11 +531,11 @@ findOracle oracle = do
     f o = assetClassValueOf (txOutValue $ txOutTxOut o) (oracleAsset oracle) == 1
 ```
 
-Muchj đích của `findOracle`  là để tra cứu UTxO oracle hiện có. Điều này có thể không thành công vì có thể không có tiên tri ở đó. Điều này sẽ xảy ra nếu chúng ta mới bắt đầu oracles và chưa tạo UTxO với giá trị oracle. Tuy nhiên, nếu chúng tôi tìm thấy nó, chúng tôi trả về một bộ ba chứa mã nhận dạng UTxO (TxOutRef), chính UTxO, chứa tất cả dữ liệu (TxOutTx) và giá trị oracle (tỷ giá hối đoái hiện tại do oracle nắm giữ). Các `Integer` chứa giá trị oracle được mã hóa cũng trong giá trị TxOutTx, nhưng chúng tôi thêm nó vào ba để làm cho nó dễ dàng hơn để làm việc với.
+Mục đích của `findOracle`  là để tra cứu UTxO oracle hiện có. Điều này có thể không thành công vì có thể không có Oracles ở đó. Điều này sẽ xảy ra nếu chúng ta mới bắt đầu oracles và chưa tạo UTxO với giá trị oracle. Tuy nhiên, nếu chúng tôi tìm thấy nó, chúng tôi trả về một bộ ba chứa mã nhận dạng UTxO (`TxOutRef`), chính `UTxO`, chứa tất cả dữ liệu (`TxOutTx`) và giá trị oracle (tỷ giá hối đoái hiện tại do oracle nắm giữ). Các `Integer` chứa giá trị oracle được mã hóa cũng trong giá trị TxOutTx, nhưng chúng tôi thêm nó vào ba để làm cho nó dễ dàng hơn để làm việc với.
 
 Điều đầu tiên chúng tôi làm là lấy tất cả các UTxO ở địa chỉ này. Nhưng chỉ một trong số này sẽ là thứ mà chúng tôi đang tìm kiếm - cái có chứa NFT.
 
-Chúng tôi thực hiện điều này bằng cách sử dụng hàm `Map.filter`  nhận một hàm làm tham số, trong trường hợp này, trả về True cho UTxO nơi NFT hiện diện.
+Chúng tôi thực hiện điều này bằng cách sử dụng hàm `Map.filter`  nhận một hàm làm tham số, trong trường hợp này, trả về `True` cho UTxO nơi NFT hiện diện.
 
 ``` {.haskell}
 utxos <- Map.filter f <$> utxoAt (oracleAddress oracle)
@@ -555,11 +555,11 @@ return $ case Map.toList utxos of
     _           -> Nothing
 ```
 
-Chúng tôi chuyển đổi bản đồ thành danh sách các bộ giá trị đại diện cho các cặp giá trị quan trọng của id giao dịch và chính các giao dịch.
+Chúng tôi chuyển đổi `map` thành danh sách `list` các bộ giá trị đại diện cho các cặp giá trị quan trọng của id giao dịch và chính các giao dịch.
 
 Đối với trường hợp không có phần tử, chúng tôi sử dụng trường hợp _ để đại diện cho tất cả các trường hợp khác. Đây chỉ có thể là danh sách trống, nhưng trình biên dịch không biết điều đó.
 
-Tuy nhiên, nếu chúng tôi đã tìm thấy UTxO, thì vì chúng tôi đã có id và giao dịch của nó, chúng tôi chỉ cần tìm `Integer` giá trị của nó . Phần này vẫn có thể sai. Mặc dù chúng tôi đã tìm thấy đúng UTxO, nhưng có thể có một số dữ liệu bị hỏng trong đó vì bất kỳ lý do gì.
+Tuy nhiên, nếu chúng tôi đã tìm thấy UTxO, thì vì chúng tôi đã có id và giao dịch của nó, chúng tôi chỉ cần tìm giá trị `Integer` của nó. Phần này vẫn có thể sai. Mặc dù chúng tôi đã tìm thấy đúng UTxO, nhưng có thể có một số dữ liệu bị hỏng trong đó vì bất kỳ lý do gì.
 
 Chúng tôi sử dụng hàm `oracleValue` mà chúng tôi cũng đã sử dụng để xác thực. Hàm này nhận một tham số `TxOut` theo sau là một tham số thứ hai là một hàm, được cung cấp một hàm băm dữ liệu sẽ trả về giá trị dữ liệu được liên kết.
 
@@ -569,11 +569,11 @@ Trong mã off-chain, chúng ta có thể sử dụng tham số hàm sau
 \dh -> Map.lookup dh $ txData $ txOutTxTx o
 ```
 
-Đây `txData`  là một trường của giao dịch và nó là một map từ hàm băm datum. Chúng tôi nhận được giao dịch từ `txOutTxTx o`.
+Đây `txData`  là một trường của giao dịch và nó là một map từ hàm băm `datum`. Chúng tôi nhận được giao dịch từ `txOutTxTx o`.
 
-Nếu tất cả điều này thành công, khi nào sẽ trả về bộ ba `(oref, o, x)`,trong đó `x` là `Integer`  giá trị của oracle.
+Nếu tất cả điều này thành công, khi nào sẽ trả về bộ ba `(oref, o, x)`,trong đó `x` là giá trị `Integer`   của oracle.
 
-Bây giờ chúng ta đã viết hàm `findOracle`. húng ta có thể nhìn vào hàm `updateOracle`.
+Bây giờ chúng ta đã viết hàm `findOracle`. chúng ta có thể nhìn vào hàm `updateOracle`.
 
 ``` {.haskell}
 updateOracle :: forall w s. HasBlockchainActions s => Oracle -> Integer -> Contract w s Text ()
@@ -601,9 +601,9 @@ sau đó nhìn hàm `findOracle`  hàm trợ giúp, vì chúng ta sẽ cần rà
 let c = Constraints.mustPayToTheScript x $ assetClassValue (oracleAsset oracle) 1
 ```
 
-Sau khi tìm kiếm tiên tri, có rất nhiều khả năng xảy ra - chúng tôi đã tìm thấy nó hoặc chúng tôi đã không.
+Sau khi tìm kiếm Oracles, có rất nhiều khả năng xảy ra - chúng tôi đã tìm thấy nó hoặc chúng tôi không. tìm thấy
 
-Nếu chúng tôi không tìm thấy nó, thì chúng tôi đã bắt đầu tiên tri nhưng chúng tôi chưa cung cấp giá trị ban đầu. Đây là trường hợp đầu tiên. Và trong trường hợp này, tất cả những gì chúng ta phải làm là gửi một giao dịch tạo ra giá trị đầu tiên cho oracle.
+Nếu chúng tôi không tìm thấy nó, thì chúng tôi đã bắt đầu Oracles nhưng chúng tôi chưa cung cấp giá trị ban đầu. Đây là trường hợp đầu tiên. Và trong trường hợp này, tất cả những gì chúng ta phải làm là gửi một giao dịch tạo ra giá trị đầu tiên cho oracle.
 
 ``` {.haskell}
 ledgerTx <- submitTxConstraints (oracleInst oracle) c
@@ -648,13 +648,13 @@ Constraints.otherScript (oracleValidator oracle)
 
 Chúng tôi không cần cung cấp `scriptInstanceLookups`  tra cứu trong trường hợp đầu tiên, vì chúng tôi có thể chuyển `oracleInst oracle`  đến hàm `submitTxConstraints`. Tuy nhiên, với hàm `submitTxConstraintsWith` thì chúng ta không có tùy chọn đó.
 
-Khi gửi giao dịch, chúng ta cần thúc đẩy trình biên dịch một chút để cho nó biết script mà chúng ta đang nói đến - để nó biết, chẳng hạn như The Script ở trong `mustPayToTheScript`.  Đối với điều này, chúng tôi tham khảo loại `Oracling`.
+Khi gửi giao dịch, chúng ta cần thúc đẩy trình biên dịch một chút để cho nó biết script mà chúng ta đang nói đến - để nó biết, chẳng hạn như `Script` ở trong `mustPayToTheScript`.  Đối với điều này, chúng tôi tham khảo loại `Oracling`.
 
 ``` {.haskell}
 ledgerTx <- submitTxConstraintsWith @Oracling lookups tx
 ```
 
-Hy vọng rằng bây giờ chúng ta có một giao dịch hợp lệ được gửi đi, và sau đó chúng ta đợi nó được xác nhận và viết một số thông tin ghi nhật ký.
+Hy vọng rằng bây giờ chúng ta có một giao dịch hợp lệ được gửi đi, và sau đó chúng ta đợi nó được xác nhận và viết một số thông tin  ghi vào nhật ký.
 
 ``` {.haskell}
 awaitTxConfirmed $ txId ledgerTx
@@ -708,7 +708,7 @@ instance Traversable Last -- Defined in ‘Data.Traversable’
 instance Foldable Last -- Defined in ‘Data.Foldable’
 ```
 
-Chúng ta thấy rằng nó chỉ là một cái  `newtype`  bao bọc xung quanh `Maybe`.Vấn đề là cung cấp một ví dụ cụ thể `Monoid`. TÝ tưởng, như tên cho thấy, đó là một hoạt động đơn nguyên luôn ghi nhớ giá trị Just cuối cùng. 
+Chúng ta thấy rằng nó chỉ là một cái  `newtype`  bao bọc xung quanh `Maybe`. Vấn đề là cung cấp một ví dụ cụ thể `Monoid`. Ý tưởng, như tên cho thấy, đó là một hoạt động đơn nguyên luôn ghi nhớ giá trị `Just` cuối cùng. 
 Ví dụ:
 
 ``` {.haskell}
@@ -729,11 +729,11 @@ Nếu cả hai đều `Nothing`, nó sẽ là `Nothing`.
 
 Trong hợp đồng này, chúng tôi sẽ chỉ làm điều đó một lần. Ban đầu nó sẽ như vậy `Last Nothing`. Sau đó, chúng tôi đúc NFT, và sau đó, khi chúng tôi nhận được giá trị oracle trong `runOracle`, và sau đó `tell` nó luôn là giá trị đó. Nếu các hợp đồng khác từ bên ngoài truy vấn trạng thái, chúng sẽ luôn nhận được `Just oracle`, vì vậy chúng sẽ có thể khám phá giá trị của oracle.
 
-Vì vậy, tiếp theo trong `runOracle`, húng tôi gọi hàm trợ giúp `go`. Điều này là chặn endpoint update. Ngay sau khi ai đó cung cấp một `Integer` như là một giá trị mới, nó sẽ gọi hàm  `updateOracle` với một giá trị mới, sau đó lặp lại để cho phép người khác cập nhật oracle..
+Vì vậy, tiếp theo trong `runOracle`, chúng tôi gọi hàm trợ giúp `go`. Điều này làm là chặn endpoint update. Ngay sau khi ai đó cung cấp một `Integer` như là một giá trị mới, nó sẽ gọi hàm  `updateOracle` với một giá trị mới, sau đó lặp lại để cho phép người khác cập nhật oracle..
 
 Tóm lại, `runOracle` khởi động `oracle`, `tell` là `oracle`, sau đó lặp lại để cho phép người khác cập nhật oracle.
 
-Và điều đó kết thúc mã cho chính nhà tiên tri. Những gì hiện còn thiếu là một ví dụ, một hợp đồng thực sự sử dụng oracle - một hợp đồng hoán đổi. Và cũng sử dụng Plutus Application Backend để chạy mã này trong thế giới thực hoặc trong trường hợp của chúng tôi là trong một chuỗi khối mô phỏng.
+Và điều đó kết thúc mã cho chính nhà Oracles. Những gì hiện còn thiếu là một ví dụ, một hợp đồng thực sự sử dụng oracle - một hợp đồng hoán đổi. Và cũng sử dụng Plutus Application Backend để chạy mã này trong thế giới thực hoặc trong trường hợp của chúng tôi là trong một chuỗi khối mô phỏng.
 
 Xác thực hoán đổi(Swap Validation)
 ---------------
@@ -744,7 +744,7 @@ Hợp đồng hoán đổi mẫu của chúng tôi có thể được tìm thấ
 module Week06.Oracle.swap
 ```
 
-Mục đích của hợp đồng này là để ai đó có thể ký gửi ADA và đổi nó lấy mã thông báo, trong trường hợp này là token mà chúng tôi sử dụng sẽ gọi là USDT là token USD.
+Mục đích của hợp đồng này là để ai đó có thể ký gửi ADA và đổi nó lấy token, trong trường hợp này là token mà chúng tôi sử dụng sẽ gọi là USDT là token stablecoin.
 
 Ý tưởng là giá, số lượng USDT sẽ được yêu cầu thanh toán cho ADA, sẽ được xác định bởi giá trị của oracle. Hãy nhớ rằng chúng tôi đang sử dụng một `Integer` để phản ánh tỷ giá hối đoái, với giá trị một triệu tương đương với một USDT.
 
@@ -772,23 +772,18 @@ import Week06.Oracle.core
 
 Tham số thứ hai là địa chỉ của oracle. Thông thường, với oracle , chúng ta sẽ có thể tính toán địa chỉ từ nó. Trong mô-đun cốt lõi, chúng tôi đã thấy một hàm `oracleAddress` thực hiện điều này cho chúng tôi. Nhưng đây là một chức năng mà chúng tôi không thể sử dụng trong trình xác thực, vì nó không thể được biên dịch sang tập lệnh Plutus. Vì vậy, ở đây, chúng tôi đưa địa chỉ một cách rõ ràng cho trình xác thực.
 
-Đối với dữ liệu, chúng tôi sử dụng mã băm khóa công khai của người bán. Chúng tôi không sử dụng công cụ đổi quà, vì vậy chúng tôi cung cấp cho nó một loại `Unit`.
+Đối với datum, chúng tôi sử dụng mã băm khóa công khai của người bán. Chúng tôi không sử dụng Redeemer, vì vậy chúng tôi cung cấp cho nó một loại `Unit`.
 
 Chúng tôi nhớ lại từ sơ đồ, giao dịch hoán đổi phải có ba đầu vào và ba đầu ra.
 
 ![](img/week06__00006.png)
 
-  -----------------------------------------------------------------------
-  Inputs                              Outputs
-  ----------------------------------- -----------------------------------
- Oracle, Để kiểm tra Oracle hiện tại, cái mà chúng ta không cần xem xét tỷ giá hối đoái trong xác nhận hoán đổi
-
-UTxO hoán đổi giữ các token lovelace của người bán                            
-
-  The source of the buyer\'s funds    The lovelace for the buyer
-  -----------------------------------------------------------------------
-
-Hoán đổi đầu vào đầu ra giao dịch:
+Hoán đổi đầu vào và đầu ra của giao dịch  
+|Inputs|Outputs|
+|:---:|:---:|  
+| Oracle, kiểm tra tỉ giá hối đoái hiện| Oracle,mà chúng ta không cần phải xem xét trong xác nhận hoán đổi|
+|UTxO hoán đổi |Các token lovelace của người bán|
+|Nguồn tiền của người mua|lovelace cho người mua|                           
 
 Lưu ý rằng chúng ta không cần phải lo lắng về oracle như một đầu ra. Trình xác thực oracle sẽ đảm bảo rằng giá trị không bị thay đổi và các khoản phí được thêm vào.
 
@@ -906,7 +901,7 @@ sellerPaid =
     pricePaid >= minPrice
 ```
 
-Hàm `valuePaidTo`  này là từ các thư viện Plutus. Đã cho `info` và một băm khóa công khai, nó sẽ cộng tất cả các giá trị của tất cả các đầu ra khóa công khai đi đến địa chỉ này. Sau đó, chúng tôi sử dụng `assetClassValueOf` để kiểm tra thành phần của giá trị có trong mã thông báo USD và kiểm tra xem chúng tôi có ít nhất bao nhiêu tùy theo yêu cầu của chúng tôi.
+Hàm `valuePaidTo`  này là từ các thư viện Plutus. Đã cho `info` và một băm khóa công khai, nó sẽ cộng tất cả các giá trị của tất cả các đầu ra khóa công khai đi đến địa chỉ này. Sau đó, chúng tôi sử dụng `assetClassValueOf` để kiểm tra thành phần của giá trị có trong token USD và kiểm tra xem chúng tôi có ít nhất bao nhiêu tùy theo yêu cầu của chúng tôi.
 
 Đó là chức năng cuối của phần chính trong mã trình xác thực hoán đổi. 
 
@@ -1109,7 +1104,7 @@ Hàm `findOracle`  được định nghia trong mô đun Oracle.Core từ trư�
 m <- findOracle oracle
 ```
 
-Nếu chúng tôi không tìm thấy lời tiên tri, chúng tôi sẽ chỉ ghi lại một thông báo về hiệu ứng đó.
+Nếu chúng tôi không tìm thấy Oracles, chúng tôi sẽ chỉ ghi lại một thông báo về hiệu ứng đó.
 
 ``` {.haskell}
 case m of
@@ -1160,9 +1155,9 @@ Vì vậy, bây giờ chúng ta xây dựng một giao dịch.
 let v = txOutValue (txOutTxOut o) <> lovelaceValueOf (oFee oracle)                
 ```
 
-Đây là đầu ra cho tiên tri. Nó cũng giống như đầu vào, bao gồm bất kỳ khoản phí nào đã tích lũy ở đó, cộng với khoản phí trong tình yêu mà chúng ta cần phải trả.
+Đây là đầu ra cho Oracles. Nó cũng giống như đầu vào, bao gồm bất kỳ khoản phí nào đã tích lũy ở đó, cộng với khoản phí trong tình yêu mà chúng ta cần phải trả.
 
-Sau đó, chúng tôi tạo một `Value` mã thông báo USD  đại diện mà chúng tôi cần thanh toán. 
+Sau đó, chúng tôi tạo một `Value` token USD  đại diện mà chúng tôi cần thanh toán. 
 
 ``` {.haskell}
 p = assetClassValue (oAsset oracle) $ price (lovelaces $ txOutValue $ txOutTxOut o') x
@@ -1325,7 +1320,7 @@ Mã này có thể được tìm thấy trong mô-đun sau:
 module Week06.Oracle.Test
 ```
 
-Đầu tiên, chúng ta cần xác định một mã thông báo mà chúng ta có thể kiểm tra. `assetSymbol` là một hàm băm tùy ý, dùng được cho các mục đích thử nghiệm.
+Đầu tiên, chúng ta cần xác định một token mà chúng ta có thể kiểm tra. `assetSymbol` là một hàm băm tùy ý, dùng được cho các mục đích thử nghiệm.
 
 ``` {.haskell}
 assetSymbol :: CurrencySymbol
@@ -1683,7 +1678,7 @@ Ví 1 đã trả một số phí giao dịch nhưng kết thúc với số tiề
 
 Ví 3 và 4 đều đưa ra đề nghị và số dư của chúng phản ánh tỷ giá hối đoái mà tại đó các đề nghị của chúng đã được chấp nhận.
 
-Ví 5 là người chấp nhận các đề nghị và Ada bổ sung cũng vậy, nhưng số dư Mã thông báo USD bị giảm. Lưu ý rằng Ví 5 cũng đã bị khấu trừ một số khoản phí từ số dư Ada của nó.
+Ví 5 là người chấp nhận các đề nghị và Ada bổ sung cũng vậy, nhưng số dư token USD bị giảm. Lưu ý rằng Ví 5 cũng đã bị khấu trừ một số khoản phí từ số dư Ada của nó.
 
 ``` {.}
 Final balances
@@ -1761,9 +1756,9 @@ instance Pretty OracleContracts where
 
 Ý tưởng là nó sửa đổi các phiên bản hợp đồng mà chúng tôi muốn chạy. Chúng tôi có nhiều hợp đồng khác nhau và chúng tôi muốn có một kiểu dữ liệu trong đó mỗi giá trị của kiểu dữ liệu tương ứng với một liên hệ mà cuối cùng chúng tôi muốn chạy.
 
-Phương thức khởi tạo `Init`  sẽ được sử dụng để thiết lập một môi trường nơi có sẵn Mã thông báo USD và nơi các ví có nguồn cung cấp ban đầu của chúng.
+Phương thức khởi tạo `Init`  sẽ được sử dụng để thiết lập một môi trường nơi có sẵn token USD và nơi các ví có nguồn cung cấp ban đầu của chúng.
 
-Hàm `Oracle` tạo tương ứng với `runOracle` hợp đồng sẽ bắt đầu `oracle` và cung cấp endpoint `update` , và tham số `CurrencySymbol`  sẽ được sử dụng cho Mã thông báo USD.
+Hàm `Oracle` tạo tương ứng với `runOracle` hợp đồng sẽ bắt đầu `oracle` và cung cấp endpoint `update` , và tham số `CurrencySymbol`  sẽ được sử dụng cho token USD.
 
 Cuối cùng, các Swap, tham số hóa bằng cách `Oracle` sẽ được sử dụng để chạy các hợp đồng hoán đổi, cung cấp thiết bị đầu cuối khác nhau như `offer` , `retrieve`, `use` và `funds`.
 
@@ -2347,7 +2342,7 @@ funds: [(9a91216e55e5369b926acc07c70a11d9ae7fef454e43e3e5c0aa1733f48c798a,"USDT"
 enter command (Offer amt, Retrieve, Use or Funds): 
 ```
 
-Ví 2 hiện cung cấp 10 Ada dưới dạng hoán đổi và chúng tôi kiểm tra tiền và chúng tôi thấy rằng số dư Ada đã giảm xuống (bằng 10 Ada cộng với phí giao dịch), nhưng số dư Mã thông báo USD vẫn giữ nguyên.
+Ví 2 hiện cung cấp 10 Ada dưới dạng hoán đổi và chúng tôi kiểm tra tiền và chúng tôi thấy rằng số dư Ada đã giảm xuống (bằng 10 Ada cộng với phí giao dịch), nhưng số dư token USD vẫn giữ nguyên.
 
 ``` {.}
 enter command (Offer amt, Retrieve, Use or Funds): Offer 10000000
