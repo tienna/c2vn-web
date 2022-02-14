@@ -779,12 +779,11 @@ Chúng tôi nhớ lại từ sơ đồ, giao dịch hoán đổi phải có ba �
 ![](img/week06__00006.png)
 
 Hoán đổi đầu vào và đầu ra của giao dịch  
-|Inputs|Outputs|
+| Inputs | Outputs |
 |:---:|:---:|  
-| Oracle, kiểm tra tỉ giá hối đoái hiện| Oracle,mà chúng ta không cần phải xem xét trong xác nhận hoán đổi|
-|UTxO hoán đổi |Các token lovelace của người bán|
-|Nguồn tiền của người mua|lovelace cho người mua|                           
-
+| Oracle, kiểm tra tỉ giá hối đoái hiện | Oracle,mà chúng ta không cần phải xem xét trong xác nhận hoán đổi |
+| UTxO hoán đổi | Các token lovelace của người bán |
+| Nguồn tiền của người mua | lovelace cho người mua |                           
 Lưu ý rằng chúng ta không cần phải lo lắng về oracle như một đầu ra. Trình xác thực oracle sẽ đảm bảo rằng giá trị không bị thay đổi và các khoản phí được thêm vào.
 
 Chúng tôi cũng muốn hỗ trợ trường hợp sử dụng thứ hai, trường hợp người bán có thể lấy token ADA trong trường hợp họ không muốn thực hiện hoán đổi nữa. Nếu chúng tôi không hỗ trợ trường hợp này, ADA có thể bị khóa ở đó mãi mãi, nếu không ai quyết định thực hiện hoán đổi.
