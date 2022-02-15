@@ -8,7 +8,7 @@ Bắt đầu với Cardano
 
 <!-- ![](../..//static/img/1.png) -->
 
-Xin chào bạn đến với Cardano2vn. Đây là bản dịch của trang https://developers.cardano.org/; Nếu bạn quan tâm đến ví Cardano wallet bạn có thể tham khảo [showcase section](../../showcase).
+Xin chào bạn đến với Cardano2vn. Đây là bản dịch của trang https://developers.cardano.org/; Nếu bạn quan tâm đến ví Cardano wallet bạn có thể tham khảo [showcase section](https://developers.cardano.org/showcase/).
 
 Cũng cần lưu ý đề cập đến các nhà phát triển Portal bìa tất cả mọi thứ bạn có thể làm **hôm nay** trên Cardano **mainnet**. 
 
@@ -25,10 +25,10 @@ Mục đích của Cardano là hỏi: Làm thế nào chúng ta có thể xây d
 Bên cạnh nghiên cứu mật mã, còn có nghiên cứu lý thuyết trò chơi, nghiên cứu quản lý danh tính và nghiên cứu ngôn ngữ lập trình. Quá trình học tập nghiêm ngặt này đã tạo ra hơn 100 bài báo học thuật. Hầu hết đã được chấp nhận trong các hội nghị mật mã như Eurocrypt và Asiacrypt và trải qua quy trình đánh giá ngang hàng tiêu chuẩn. Ví dụ: bài báo 
 [“Ouroboros: Một Giao thức Blockchain Bằng chứng Cổ phần An toàn Bảo mật”](https://eprint.iacr.org/2016/889.pdf) là một trong những [những bài báo bảo mật được trích dẫn nhiều nhất từ ​​năm 2015-2019](https://sweis.medium.com/most-cited-security-papers-from-2015-2019-d21515db3681). 
 
-## What you need to bring
-To get the most out of the Cardano Developer Portal, you should  have programming experience and a basic understanding of blockchain concepts of Cardano such as [UTxO](technical-concepts#unspent-transaction-output-utxo), [transactions](technical-concepts#transactions), [addresses](technical-concepts#addresses), [key derivation](technical-concepts#key-derivation), and [networking](technical-concepts#networking). 
+## Những gì bạn cần mang theo
+Để tận dụng tối đa Cổng thông tin nhà phát triển Cardano, bạn phải có kinh nghiệm lập trình và hiểu biết cơ bản về các khái niệm blockchain của Cardano như [UTxO](technical-concepts#unspent-transaction-output-utxo), [transactions](technical-concepts#transactions), [addresses](technical-concepts#addresses), [key derivation](technical-concepts#key-derivation), and [networking](technical-concepts#networking). 
 
-If you are unfamiliar with these terms, start with [technical concepts](technical-concepts), and you can complete the [stake pool course](../operate-a-stake-pool/#stake-pool-course) afterward. It will also help you understand basic concepts, even if you don't want to run a stake pool. 
+Nếu bạn không quen với những thuật ngữ này, hãy bắt đầu vớ [Khái niệm kỹ thuật](technical-concepts), và bạn cần hoàn tất khóa học [stake pool course](../operate-a-stake-pool/#stake-pool-course) Nó cũng sẽ giúp bạn hiểu các khái niệm cơ bản, ngay cả khi bạn không muốn điều hành một nhóm cổ phần (stake pool). 
 
 ##Cardano thì khác 
 Nếu bạn có kinh nghiệm với các nền tảng hợp đồng thông minh khác và muốn bắt đầu xây dựng trên Cardano, điều quan trọng là phải biết sự khác biệt của nó:

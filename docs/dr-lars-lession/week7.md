@@ -5,7 +5,7 @@ Chú ý
 
 Đây là phiên bản viết của [Bài giảng số 7 Dr.Lars](https://youtu.be/ptsltoZNl50).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ptsltoZNl50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/ptsltoZNl50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Nó bao gồm các lược đồ cam kết và máy trạng thái.
 

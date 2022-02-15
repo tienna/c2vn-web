@@ -5,7 +5,7 @@ Lưu ý
 
 Đây là phiên bản viết của [Bài giảng số 9 Dr.Lars](https://youtu.be/J5as459k10E).
 
-<iframe width="100%" height="325" src="https://www.youtube.com/embed/J5as459k10E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/J5as459k10E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 Trong bài giảng này, chúng tôi đề cập đến Marlowe - một ngôn ngữ dành riêng cho các hợp đồng tài chính trên Cardano.
 

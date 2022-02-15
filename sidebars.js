@@ -20,6 +20,7 @@ const sidebars = {
   mySidebar: {
     "Getting Started": [
       "getting-started/overview",
+	  "getting-started/Catalyst",
       // {
       //   type: "category",
       //   label: "Cardano Components",
@@ -61,6 +62,7 @@ const sidebars = {
       "smart-contracts/overview",
       "smart-contracts/marlowe",
       "smart-contracts/plutus",
+      "smart-contracts/video_demo_smartcontract",
     ],
     "Khoá đào tạo Plutus của Dr. Lars": [
         "dr-lars-lession/overview",
