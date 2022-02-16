@@ -86,8 +86,7 @@ const sidebars = {
       // "integrate-cardano/testnet-faucet",
     ],
     "Discover Native Tokens": [
-	"native-tokens/note",
-      //"native-tokens/overview",
+      "native-tokens/overview",
       //"native-tokens/minting",
       //"native-tokens/minting-nfts",
     ],
