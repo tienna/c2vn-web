@@ -86,10 +86,10 @@ const sidebars = {
       // "integrate-cardano/testnet-faucet",
     ],
     "Discover Native Tokens": [
-      "native-tokens/overview",
-      "native-tokens/minting",
-      "native-tokens/minting-nfts",
-       
+	"native-tokens/note",
+      //"native-tokens/overview",
+      //"native-tokens/minting",
+      //"native-tokens/minting-nfts",
     ],
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
