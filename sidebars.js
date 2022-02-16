@@ -21,6 +21,7 @@ const sidebars = {
     "Getting Started": [
       "getting-started/overview",
 	  "getting-started/Catalyst",
+	  
       // {
       //   type: "category",
       //   label: "Cardano Components",

@@ -781,7 +781,7 @@ Chúng tôi nhớ lại từ sơ đồ, giao dịch hoán đổi phải có ba �
 Hoán đổi đầu vào và đầu ra của giao dịch  
 
 | Inputs | Outputs |
-| :-----: | :-----: |  
+| :----: | :-----: |  
 | Oracle, kiểm tra tỉ giá hối đoái hiện | Oracle,mà chúng ta không cần phải xem xét trong xác nhận hoán đổi |
 | UTxO hoán đổi | Các token lovelace của người bán |
 | Nguồn tiền của người mua | lovelace cho người mua |                           
