@@ -76,11 +76,11 @@ const FeatureList = [
     targetUrl: "docs/operate-a-stake-pool/note"
   },
   {
-    title: 'Trở thành một phần của Quản trị',
+    title: 'Các dự án đã được cấp vốn',
     Svg: require('../../static/img/features/card-governance.svg').default,
     description: (
       <>
-        Quản trị là một chủ đề thiết yếu bao gồm các Đề xuất Cải tiến Cardano (CIP), tài trợ dự án, bỏ phiếu và các thông số mạng.
+        Tham khảo danh sách các dự án của nhóm đã được cấp vốn từ Fund6 thông qua Catalyst
       </>
     ),
     targetUrl: "docs/be-apart-of-governance/overview"

@@ -86,6 +86,11 @@ const sidebars = {
       // "integrate-cardano/listening-for-payments-wallet",
       // "integrate-cardano/testnet-faucet",
     ],
+    "Discover Native Tokens": [
+      "native-tokens/overview",
+      //"native-tokens/minting",
+      //"native-tokens/minting-nfts",
+    ],
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
       // {
