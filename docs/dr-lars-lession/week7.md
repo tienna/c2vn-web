@@ -1,7 +1,7 @@
 Week 07 - State Machines
 ========================
 
-Chú ý
+:::Chú ý
 
 Đây là phiên bản viết của [Bài giảng số 7 Dr.Lars](https://youtu.be/ptsltoZNl50).
 
@@ -11,31 +11,32 @@ Nó bao gồm các lược đồ cam kết và máy trạng thái.
 
 Tuần này, chúng tôi đã sử dụng Plutus commit: 
 530cc134364ae186f39fb2b54239fb7c5e2986e9
+:::
 
 Giới thiệu
 ------------
 
 Trong bài giảng này, chúng ta sẽ xem xét các máy trạng thái. Máy trạng thái có thể rất hữu ích để viết các hợp đồng ngắn hơn và súc tích hơn, cả on-chain và off-chain. Có hỗ trợ cấp cao hơn cho các máy trạng thái trong các thư viện Plutus được xây dựng dựa trên các cơ chế cấp thấp hơn mà chúng tôi đã thấy cho đến nay.
 
-Như một ví dụ đang chạy, chúng tôi sẽ triển khai một trò chơi nhỏ, được chơi giữa Alice và Bob. Nó hơi giống Rock, Paper, Scissors, nhưng thậm chí còn đơn giản hơn, vì chỉ có hai lựa chọn.
+Như một ví dụ đang chạy, chúng tôi sẽ triển khai một trò chơi nhỏ, được chơi giữa Alice và Bob. Nó hơi giống Oẳn tù tì,nhưng thậm chí còn đơn giản hơn, vì chỉ có hai lựa chọn.
 
 Alice và Bob đều có hai lựa chọn, họ có thể chọn 0 hoặc 1.
 
 ![](img/week07__00000.png)
 
-Nếu có người chơi trò chơi này khi đang ở trong cùng một phòng, họ sẽ thực hiện các bước di chuyển của mình cùng một lúc. Sẽ có một cử chỉ cho 0 và một cử chỉ cho 1, họ sẽ giơ tay đồng thời và, tùy thuộc vào những gì họ chơi, một trong số họ sẽ thắng.
+Nếu các người chơi trò chơi này khi đang ở trong cùng một phòng, họ sẽ thực hiện các bước di chuyển của mình cùng một lúc. Sẽ có một động tác cho 0 và một động tác cho 1, họ sẽ giơ tay đồng thời và, tùy thuộc vào những gì họ chơi, một trong số họ sẽ thắng.
 
 Nếu cả hai chơi cùng một số, Alice thắng. Nếu họ chơi các số khác nhau, Bob thắng.
 
 ![](img/week07__00001.png)
 
-Bây giờ, hãy tưởng tượng rằng Alice và Bob không thể gặp nhau trực tiếp nhưng họ vẫn muốn chơi trò chơi. Vì vậy, họ quyết định chơi nó qua thư - email hoặc thư ốc, điều đó không quan trọng. Nó sẽ hoạt động như thế nào?
+Bây giờ, hãy tưởng tượng rằng Alice và Bob không thể gặp nhau trực tiếp nhưng họ vẫn muốn chơi trò chơi. Vì vậy, họ quyết định chơi nó qua thư - email. Nó sẽ hoạt động như thế nào?
 
 Alice có thể gửi cho Bob
 
 ![](img/week07__00004.png)
 
-Tuy nhiên, điều này mang lại một lợi thế rất không công bằng cho Bob, bởi vì bây giờ anh ta mở thư của Alice, thấy rằng cô ấy đã chơi 0, và anh ta chỉ cần trả lời bằng 1, và anh ta thắng.
+Tuy nhiên, điều này mang lại một lợi thế rất không công bằng cho Bob, bởi vì bây giờ anh ta mở thư của Alice, thấy rằng cô ấy đã chơi 0, và anh ta chỉ cần trả lời bằng 1 là anh ta thắng.
 
 ![](img/week07__00003.png)
 
@@ -49,7 +50,7 @@ Có một thủ thuật rất thông minh thường được sử dụng trong c
 
 Một cách để thực hiện công việc đó là sử dụng các hàm băm.
 
-Băm đều ở khắp nơi trong thế giới blockchain. Chúng tôi đã thấy rằng các địa chỉ script chỉ là hàm băm của tập lệnh mã plutus và chúng tôi đã thấy rất nhiều ví dụ về băm khóa công khai.
+Băm có ở khắp nơi trong thế giới blockchain. Chúng tôi đã thấy rằng các địa chỉ script chỉ là hàm băm của tập lệnh mã plutus và chúng tôi đã thấy rất nhiều ví dụ về băm khóa công khai.
 
 Hàm băm là một hàm một chiều. Với một hàm băm, và rất khó, hoặc không thể, để tạo lại chuỗi byte ban đầu đã được băm.
 
@@ -75,13 +76,13 @@ Trong trò chơi này chỉ có hai sự lựa chọn, 0 và 1. Có nghĩa là c
 
 Điều này gần như tồi tệ như thể Alice vừa gửi sự lựa chọn của mình bằng văn bản rõ ràng.
 
-Những gì chúng ta có thể làm về điều này là, thay vì gửi hàm băm theo lựa chọn của mình, thay vào đó, trước tiên cô ấy chọn một chuỗi byte tùy ý và thêm vào sự nửa chọn của mình rồi mới băm. Chuỗi byte tùy ý mà Alice chọn được gọi là "nonce" - một số chỉ được sử dụng một lần.
+Những gì chúng ta có thể làm về điều này là, thay vì gửi hàm băm theo lựa chọn của mình, thay vào đó, trước tiên cô ấy chọn một chuỗi byte tùy ý và thêm vào sự nửa chọn của mình rồi mới băm. Chuỗi byte tùy ý mà Alice chọn được gọi là `"nonce"` - một số chỉ được sử dụng một lần.
 
 ![](img/week07__00008.png)
 
-Vì vậy, bây giờ không phải lúc nào cũng là một chuỗi byte giống nhau nếu cô ấy chọn 0, miễn là cô ấy chọn một số nonce ngẫu nhiên, không thể đoán trước.
+Vì vậy, bây giờ không phải lúc nào cũng là một chuỗi byte giống nhau nếu cô ấy chọn 0, miễn là cô ấy chọn một số `nonce` ngẫu nhiên, không thể đoán trước.
 
-Bây giờ, Bob nhận được thông báo này và chúng tôi tiếp tục như trước - Bob gửi lựa chọn của anh ấy, và sau đó, trong thông điệp thứ ba, Alice không chỉ cần gửi lựa chọn ban đầu của mình mà còn phải gửi cả tin nhắn nữa.
+Bây giờ, Bob nhận được thông báo này và chúng tôi tiếp tục như trước - Bob gửi lựa chọn của anh ấy, và sau đó, trong thông điệp thứ ba, Alice không chỉ cần gửi lựa chọn ban đầu của mình mà còn phải gửi cả `nonce` nữa.
 
 ![](img/week07__00010.png)
 
@@ -175,7 +176,7 @@ instance Eq GameDatum where
     GameDatum bs mc == GameDatum bs' mc' = (bs == bs') && (mc == mc')    
 ```
 
-Đây `ByteString` à hàm băm mà người chơi đầu tiên gửi và và có thể
+Đây `ByteString` là hàm băm mà người chơi đầu tiên gửi và và có thể
 `GameChoice` là `Just` di chuyển của người chơi thứ hai hoặc `Nothing` nếu họ chưa di chuyển.
 
 
@@ -186,10 +187,10 @@ data GameRedeemer = Play GameChoice | Reveal ByteString | ClaimFirst | ClaimSeco
     deriving Show
 ```
 
---- `Play` là nơi người chơi thứ hai di chuyển và như một đối số, nó có một `GameChoice`. `Reveal` dành cho trường hợp người chơi đầu tiên đã thắng và phải chứng minh điều đó bằng cách tiết lộ `nonce` của họ, và `nonce` được thể hiện bằng đối số `ByteString`. Chúng tôi không cần `Reveal`, vì họ sẽ chỉ tiết lộ nếu họ đã thắng, và chúng tôi biết nước đi nào khiến họ thắng.
+- `Play` là nơi người chơi thứ hai di chuyển và như một đối số, nó có một `GameChoice`. `Reveal` dành cho trường hợp người chơi đầu tiên đã thắng và phải chứng minh điều đó bằng cách tiết lộ `nonce` của họ, và `nonce` được thể hiện bằng đối số `ByteString`. Chúng tôi không cần `Reveal`, vì họ sẽ chỉ tiết lộ nếu họ đã thắng, và chúng tôi biết nước đi nào khiến họ thắng.
 
---- `ClaimFirst` là khi người chơi đầu tiên yêu cầu trả lại tiền đặt cược ngay cả khi người chơi thứ hai không di chuyển trước thời hạn chơi.
---- `ClaimSecond` dành cho trường hợp người chơi đầu tiên không tiết lộ trước thời hạn tiết lộ.
+- `ClaimFirst` là khi người chơi đầu tiên yêu cầu trả lại tiền đặt cược ngay cả khi người chơi thứ hai không di chuyển trước thời hạn chơi.
+- `ClaimSecond` dành cho trường hợp người chơi đầu tiên không tiết lộ trước thời hạn tiết lộ.
 
 Sau đó, chúng tôi có `lovelaces`  hàm trợ giúp của chúng tôi mà chúng tôi đã sử dụng trong các tập lệnh khác, có số lượng được giữ trong `Value`.
 
@@ -198,7 +199,7 @@ lovelaces :: Value -> Integer
 lovelaces = Ada.getLovelace . Ada.fromValue
 ```
 
-Và chúng ta có một hàm trợ giúp `gameDatum` nó hoạt động giống hệt như hàm `oracleValue`, wmà bạn có thể tìm thấy trong ghi chú của bài giảng 6.
+Và chúng ta có một hàm trợ giúp `gameDatum` nó hoạt động giống hệt như hàm `oracleValue`, mà bạn có thể tìm thấy trong ghi chú của bài giảng 6.
 
 ``` {.haskell}
 gameDatum :: TxOut -> (DatumHash -> Maybe Datum) -> Maybe GameDatum
@@ -218,10 +219,10 @@ mkGameValidator game bsZero' bsOne' dat red ctx =
 
 Đối số đầu tiên là `Game`.
 
-thứ hai và thứ ba hơi phiền phức. Chúng tôi chỉ cần chúng do thực tế là không thể sử dụng chuỗi ký tự để lấy ByteStringstrong Haskell được biên dịch thành lõi Plutus.
-Và, chúng tôi muốn các ký tự chuỗi đại diện cho các lựa chọn 0 và 1. So `bsZero'` đại diện cho `"0"` và `beOne'` đại diện cho `"1"`. Bạn sẽ thấy cách chúng tôi chuyển những điều này làm đối số phụ sau này.
+Đối số thứ hai và thứ ba hơi phiền phức. Chúng tôi chỉ cần chúng do thực tế là không thể sử dụng chuỗi ký tự để lấy `ByteStrings` trong Haskell được biên dịch thành lõi Plutus.
+Và, chúng tôi muốn các ký tự chuỗi đại diện cho các lựa chọn 0 và 1. Số `bsZero'` đại diện cho `"0"` và `beOne'` đại diện cho `"1"`. Bạn sẽ thấy cách chúng tôi chuyển những điều này làm đối số phụ sau này.
 
-Sau đó, chúng tôi chuyển các đối số thông thường cho  datum, redeemer and context.
+Sau đó, chúng tôi chuyển các đối số thông thường cho  datum, redeemer và context.
 
 Trước tiên, hãy xem xét một số chức năng của helper. Có ba hàm chúng ta đã sử dụng trước đây và đã thảo luận trong bài giảng 6.
 
@@ -242,7 +243,7 @@ ownOutput = case getContinuingOutputs ctx of
 
 Lưu ý rằng `ownInput` không bao giờ được thất bại vì chúng tôi đang trong quá trình xác thực UTxO.
 
-The `outputDatum` trợ giúp sử dụng kiểu `GameDatum` mà chúng ta đã xác định trước đó. Trong trường hợp chúng ta có chính xác một đầu ra (trả về từ ownOutput), nó sẽ cung cấp cho chúng ta datum.
+ `outputDatum` trợ giúp sử dụng kiểu `GameDatum` mà chúng ta đã xác định trước đó. Trong trường hợp chúng ta có chính xác một đầu ra (trả về từ ownOutput), nó sẽ cung cấp cho chúng ta `datum`.
 
 ``` {.haskell}
 outputDatum :: GameDatum
@@ -251,11 +252,11 @@ outputDatum = case gameDatum ownOutput (`findDatum` info) of
     Just d  -> d
 ```
 
-Hàm `checkNonce` dành cho những trường hợp người chơi đầu tiên như won và mong muốn chứng minh điều đó bằng cách tiết lộ `nonce` của họ. Đối số đầu tiên là hàm băm đã được gửi ban đầu, đối số thứ hai là hàm băm đang được tiết lộ.
+Hàm `checkNonce` dành cho những trường hợp người chơi đầu tiên thắng và mong muốn chứng minh điều đó bằng cách tiết lộ `nonce` của họ. Đối số đầu tiên là hàm băm đã được gửi ban đầu, đối số thứ hai là hàm băm đang được tiết lộ.
 
-Đối với tham số `GameChoice` - typed, chúng tôi sẽ chuyển nước đi được thực hiện bởi người chơi 2. Điều này sẽ giống với nước đi được thực hiện bởi người chơi 1 và đây là những gì hàm này sẽ xác định bằng cách sử dụng băm và nonce.
+Đối với tham số `GameChoice` - typed, chúng tôi sẽ gửi nước đi được thực hiện bởi người chơi 2. Điều này sẽ giống với nước đi được thực hiện bởi người chơi 1 và đây là những gì hàm này sẽ xác định bằng cách sử dụng băm và `nonce`.
 
-Để kiểm tra hàm băm của nonce được nối với `GameChoice`,chúng tôi sử dụng một hàm trợ giúp để chuyển đổi `GameChoice` thành  `ByteString`. Lưu ý rằng việc sử dụng `cFirst` và `cSecond` trong hàm `checkNonce` có thể được hoán đổi vòng và hàm sẽ hoạt động giống nhau - sự khác biệt là  Hai là `GameChoice` và một là `ByteString`.
+Để kiểm tra hàm băm của `nonce` được nối với `GameChoice`,chúng tôi sử dụng một hàm trợ giúp để chuyển đổi `GameChoice` thành  `ByteString`. Lưu ý rằng việc sử dụng `cFirst` và `cSecond` trong hàm `checkNonce` có thể được hoán đổi vòng và hàm sẽ hoạt động giống nhau - sự khác biệt giữa hai cái là: một là `GameChoice` và một là `ByteString`.
  
 ``` {.haskell}
 checkNonce :: ByteString -> ByteString -> GameChoice -> Bool
@@ -302,7 +303,7 @@ Tình huống đầu tiên là tình huống mà người chơi thứ hai vẫn 
     traceIfFalse "token missing from output"     (assetClassValueOf (txOutValue ownOutput) (gToken game) == 1)    
 ```
 
-Ở đây, phần đầu tiên là `GameDatum` và nó chứa hàm băm của người chơi đầu tiên và a `Nothing` cho thấy rằng người chơi thứ hai vẫn chưa di chuyển. Phần thứ hai là `GameRedeemer` và đã được xác định là thuộc loại `Play GameChoice`. Chúng tôi chỉ định `GameChoice` một phần để `c` sử dụng mẫu.
+Ở đây, phần đầu tiên là `GameDatum` và nó chứa hàm băm của người chơi đầu tiên và một `Nothing` cho thấy rằng người chơi thứ hai vẫn chưa di chuyển. Phần thứ hai là `GameRedeemer` và đã được xác định là thuộc loại `Play GameChoice`. Chúng tôi chỉ định `GameChoice` một phần để `c` sử dụng mẫu.
 
 Chúng tôi kiểm tra xem người chơi thứ hai đã ký vào giao dịch chưa.
 
@@ -335,15 +336,15 @@ Việc di chuyển phải xảy ra trước thời hạn chơi.
 traceIfFalse "missed deadline" (to (gPlayDeadline game) `contains` txInfoValidRange info)
 ```
 
-Và cuối cùng, NFT phải được chuyển vào  đầu ra UTxO.
+Và cuối cùng, NFT phải được chuyển vào đầu ra UTxO.
 
 ``` {.haskell}
 traceIfFalse "token missing from output" (assetClassValueOf (txOutValue ownOutput) (gToken game) == 1)    
 ```
 
-Tình huống thứ hai là khi cả hai người chơi đã di chuyển, và người chơi thứ hai phát hiện ra rằng họ đã thắng. Để chứng minh điều đó và nhận được tiền thắng, họ phải tiết lộ nonce của mình.
+Tình huống thứ hai là khi cả hai người chơi đã di chuyển, và người chơi thứ hai phát hiện ra rằng họ đã thắng. Để chứng minh điều đó và nhận được tiền thắng, họ phải tiết lộ `nonce` của mình.
 
-Vì vậy, giao dịch phải được ký bởi người chơi đầu tiên, nonce thực sự phải đồng ý với băm được gửi trước đó, nó phải được thực hiện trước thời hạn tiết lộ, thông tin đầu vào phải chứa cả cổ phần của cả hai người chơi và cuối cùng NFT phải quay trở lại người chơi đầu tiên.
+Vì vậy, giao dịch phải được ký bởi người chơi đầu tiên, `nonce` thực sự phải đồng ý với băm được gửi trước đó, nó phải được thực hiện trước thời hạn tiết lộ, thông tin đầu vào phải chứa cả cổ phần của cả hai người chơi và cuối cùng NFT phải quay trở lại người chơi đầu tiên.
 
 ``` {.haskell}
 (GameDatum bs (Just c), Reveal nonce) ->
@@ -382,7 +383,7 @@ _ -> False
 
 Vì vậy, bây giờ chúng ta hãy xem xét phần còn lại của mã on-chain.
 
-Như thường lệ, chúng tôi xác định một kiểu dữ liệu chứa thông tin về các loại datum and redeemer.
+Như thường lệ, chúng tôi xác định một kiểu dữ liệu chứa thông tin về các loại `datum` and `redeemer`.
 
 ``` {.haskell}
 data Gaming
@@ -399,8 +400,7 @@ bsZero = "0"
 bsOne  = "1"
 ```
 
-
-Trong Boilerplate để biên dịch `mkGameValidator` thành mã Plutus core được tham số hóa của chúng tôi . Chúng tôi áp dụng ba tham số `Game` và hai tham số `ByteString`. Hãy nhớ rằng, chúng ta cần truyền các tham số `ByteString` này vào vì chúng ta không thể coi `ByteStrings` là chuỗi ký tự trong Plutus.
+Trong Bản soạn thảo để biên dịch `mkGameValidator` thành mã Plutus core được tham số hóa của chúng tôi. Chúng tôi áp dụng ba tham số `Game` và hai tham số `ByteString`. Hãy nhớ rằng, chúng ta cần truyền các tham số `ByteString` này vào vì chúng ta không thể coi `ByteStrings` là chuỗi ký tự trong Plutus.
 
 ``` {.haskell}
 gameInst :: Game -> Scripts.ScriptInstance Gaming
@@ -424,7 +424,7 @@ gameAddress :: Game -> Ledger.Address
 gameAddress = scriptAddress . gameValidator
 ```
 
-Bây giờ, để chuẩn bị cho mã off-chain, chúng tôi sẽ cần phải tìm được UTxO phù hợp - UTxO mang NFT. Để làm điều này, chúng tôi sẽ viết một hàm trợ giúp được gọi `findGameOutput`.
+Bây giờ, để chuẩn bị cho mã off-chain, chúng tôi sẽ cần phải tìm được UTxO phù hợp - UTxO mang NFT. Để làm điều này, chúng tôi sẽ viết một hàm trợ giúp được gọi là `findGameOutput`.
 
 ``` {.haskell}
 findGameOutput :: HasBlockchainActions s => Game -> Contract w s Text (Maybe (TxOutRef, TxOutTx, GameDatum))
@@ -439,7 +439,7 @@ findGameOutput game = do
     f (_, o) = assetClassValueOf (txOutValue $ txOutTxOut o) (gToken game) == 1
 ```
 
-Hàm `findGameOutput` lấy `Game`,sau đó sử dụng `Contract monad`  để cố gắng tìm kiếm UTxO có chứa NFT. Nó trả về kiểu `Maybe`,
+Hàm `findGameOutput` lấy `Game`, sau đó sử dụng `Contract monad`  để cố gắng tìm kiếm UTxO có chứa NFT. Nó trả về kiểu `Maybe`,
 bởi vì nó không tìm thấy bất kỳ một UTxO nào chứa NFT. Nếu tìm thấy có thì trả về `Just` chứa tham chiếu giao dịch, giao dịch chính nó, và `GameDatum`.
 
 Đầu tiên, chúng tôi nhận được danh sách tất cả các UTxO tại địa chỉ trò chơi, sau đó chúng tôi sử dụng hàm `find`, chuyển vào một hàm trợ giúp `f` để kiểm tra xem đầu ra có chứa NFT hay không.
@@ -452,7 +452,7 @@ find :: Foldable t => (a -> Bool) -> t a -> Maybe a
 
 Điều này hoạt động với nhiều vùng chung hơn là chỉ danh sách, nhưng bạn có thể nghĩ đến danh sách trong ví dụ này. Nó nhận một `predicate` cho một phần tử của kiểu `Foldable`  - danh sách trong trường hợp này, và cũng lấy một vùng chứa `a` - lại một danh sách trong ví dụ này và trả về `Maybe a`.
 
-Logic là nếu nó tìm thấy một phần tử thỏa mãn vị từ, nó sẽ trả về nó dưới dạng `Just`,  ngược lại nó sẽ trả về `Nothing`.
+Logic là nếu nó tìm thấy một phần tử thỏa mãn thuộc tính, nó sẽ trả về nó dưới dạng `Just`,  ngược lại nó sẽ trả về `Nothing`.
 Ví dụ:
 
 ``` {.haskell}
@@ -514,9 +514,7 @@ let game = Game
         }
 ```
 
-The `v` value is our stake plus the NFT, which must both go into the
-UTxO.
-giá trị `v` cổ phần của chúng tôi cộng với NFT, mà cả hai phải cùng ở trên UTxO.
+Giá trị `v` số cổ phần của chúng tôi cộng với NFT, mà cả hai phải cùng ở trên UTxO.
 
 ``` {.haskell}
 let ...
@@ -531,7 +529,7 @@ let ...
     bs   = sha2_256 $ fpNonce fp `concatenate` if c == Zero then bsZero else bsOne
 ```
 
-Sau đó chúng tôi gửi giao dịch và chờ đợi như bình thường. Các ràng buộc rất đơn giản. Chúng ta chỉ cần tạo UTxI với dữ liệu di chuyển của chúng ta (chưa có gì cho người chơi thứ hai) và giá trị `v` mà chúng ta đã xác định ở trên.
+Sau đó chúng tôi gửi giao dịch và chờ đợi như bình thường. Các ràng buộc rất đơn giản. Chúng ta chỉ cần tạo UTxO với `datum` di chuyển của chúng ta (chưa có gì cho người chơi thứ hai) và giá trị `v` mà chúng ta đã xác định ở trên.
 
 ``` {.haskell}
 let ...
@@ -571,7 +569,7 @@ Just (oref, o, dat) -> case dat of
         logInfo @String "reclaimed stake"
 ```
 
-Trường hợp thứ hai là người chơi thứ hai đã di chuyển, và họ đã thua. Trong trường hợp đó, bây giờ chúng tôi phải tiết lộ nonce của mình, mà chúng tôi sử dụng công cụ redeemer `Reveal`.
+Trường hợp thứ hai là người chơi thứ hai đã di chuyển, và họ đã thua. Trong trường hợp đó, bây giờ chúng tôi phải tiết lộ `nonce` của mình, mà chúng tôi sử dụng công cụ redeemer `Reveal`.
 
 Chúng tôi phải đưa ra một ràng buộc bổ sung rằng giao dịch phải được gửi trước khi thời hạn tiết lộ thông qua.
 
@@ -593,9 +591,9 @@ Nếu người chơi thứ hai di chuyển và giành chiến thắng, không c�
 _ -> logInfo @String "second player played and won"
 ```
 
-#### Hợp đồng thứ `secondGame`
+#### Hợp đồng thứ hai `secondGame`
 
-Các thông số cho người chơi thứ hai tương tự như các thông số của người chơi thứ nhất. Lần này chúng tôi không cần băm khóa công khai của người chơi thứ hai, vì đó là của chúng tôi và chúng tôi đã biết nó là gì. Thay vào đó, chúng tôi cần băm khóa công khai của người chơi đầu tiên. Ngoài ra, chúng ta không cần nonce.
+Các thông số cho người chơi thứ hai tương tự như các thông số của người chơi thứ nhất. Lần này chúng tôi không cần băm khóa công khai của người chơi thứ hai, vì đó là của chúng tôi và chúng tôi đã biết nó là gì. Thay vào đó, chúng tôi cần băm khóa công khai của người chơi đầu tiên. Ngoài ra, chúng ta không cần `nonce`.
 
 ``` {.haskell}
 data SecondParams = SecondParams
@@ -647,7 +645,6 @@ Chúng tôi chỉ định NFT cho `token`.
 let token   = assetClassValue (gToken game) 1
 ```
 
-
 Bây giờ chúng ta tính toán giá trị mà chúng ta phải đưa vào đầu ra mới. Hãy nhớ rằng, nếu chúng ta quyết định chơi, chúng ta phải sử dụng UTxO hiện có và tạo một UTxO mới ở cùng một địa chỉ. Đầu tiên sẽ chứa tiền cược mà người chơi đầu tiên đã thêm, và bây giờ chúng ta phải thêm tiền cược của chính mình và chúng ta phải giữ NFT trong đó.
 
 ``` {.haskell}
@@ -660,10 +657,6 @@ Tiếp theo, sự lựa chọn của chúng tôi.
 let c = spChoice sp
 ```
 
-Then the constraints and their required lookups.
-
-We must consume the existing UTxO using the Play redeemer with our
-choice
 Sau đó, các ràng buộc và tra cứu yêu cầu của chúng.
 
 Chúng tôi phải sử dụng UTxO hiện có bằng cách sử dụng redeemer `Play` theo lựa chọn của chúng tôi
@@ -672,7 +665,7 @@ Chúng tôi phải sử dụng UTxO hiện có bằng cách sử dụng redeemer
 let tx = Constraints.mustSpendScriptOutput oref (Redeemer $ PlutusTx.toData $ Play c) <>
 ```
 
-Và tạo một UTxO mới với updated datum (giống như `bs`, nhưng với lựa chọn của chúng tôi), và với giá trị `v` cái mà chúng tôi đã tính toán.
+Và tạo một UTxO mới với `updated datum` (giống như `bs`, nhưng với lựa chọn của chúng tôi), và với giá trị `v` cái mà chúng tôi đã tính toán.
 
 ``` {.haskell}
 Constraints.mustPayToTheScript (GameDatum bs $ Just c) v <>
@@ -692,7 +685,7 @@ let lookups = Constraints.unspentOutputs (Map.singleton oref o)                 
               Constraints.scriptInstanceLookups (gameInst game)
 ```
 
-Sau đó, chúng tôi làm điều bình thường, chúng tôi submit, chúng tôi chờ xác nhận và chúng tôi ghi vào sổ.
+Sau đó, chúng tôi làm điều bình thường, chúng tôi `submit`, chúng tôi chờ xác nhận và chúng tôi ghi vào sổ cái.
 
 ``` {.haskell}
 ledgerTx <- submitTxConstraintsWith @Gaming lookups tx
@@ -743,7 +736,7 @@ Nếu chúng tôi không tìm thấy NFT, thì không có gì để sử dụng.
 _ -> logInfo @String "no running game found"            
 ```
 
-Đó là tất cả mã chúng ta cần cho hai hợp đồng on-chain.
+Đó là tất cả mã chúng ta cần cho hai hợp đồng on-chain (hợp đồng cho người chơi thứ nhất và hợp đồng cho người chơi thứ 2).
 
 Để làm cho chúng dễ truy cập hơn, chúng tôi xác định hai `Endpoints`, một cho trình phát đầu tiên và một cho trình phát thứ hai. Và sau đó chúng tôi xác định một hợp đồng được gọi là `endpoints` mà nó lựa chọn giữa hai `Endpoint` và gọi đệ quy chính nó.
 
@@ -765,7 +758,7 @@ Bây giờ, hãy kiểm tra nó bằng cách sử dụng monad `EmulatorTrace` .
 
 Hàm `test` kiểm tra mỗi trong số bốn kết hợp bằng cách gọi hàm`test'` mà cần lựa chọn người chơi đầu tiên và thứ hai tương ứng.
 
-hàm `test'` sử dụng `runEmulatorTraceIO'` biến thể cho phép chúng ta thiết lập các bản phân phối ví ban đầu sử dụng một `EmulatorConfig`.
+Hàm `test'` sử dụng `runEmulatorTraceIO'` biến thể cho phép chúng ta thiết lập các bản phân phối ví ban đầu sử dụng một `EmulatorConfig`.
 
 ``` {.haskell}
 test :: IO ()
@@ -788,7 +781,7 @@ test' c1 c2 = runEmulatorTraceIO' def emCfg $ myTrace c1 c2
     v = Ada.lovelaceValueOf 1000_000_000
 ```
 
-Vì NFT không phải là trọng tâm của bài giảng này, chúng tôi đã đưa ra một thử nghiệm NFT trong không khí loãng. Trong một kịch bản thế giới thực, chúng ta sẽ cần tạo ra một NFT thực, bằng cách sử dụng một trong những phương pháp chúng ta đã thấy trước đây.
+Vì NFT không phải là trọng tâm của bài giảng này, chúng tôi đã đưa ra một thử nghiệm NFT trong bài giảng khác. Trong một kịch bản thế giới thực, chúng ta sẽ cần tạo ra một NFT thực, bằng cách sử dụng một trong những phương pháp chúng ta đã thấy trước đây.
 
 Bây giờ là dấu vết. Chúng tôi chuyển hai lựa chọn trò chơi vào hàm`myTrace`.
 
@@ -972,7 +965,7 @@ Slot 00009: SlotAdd Slot 10
 Slot 00010: SlotAdd Slot 11
 ```
 
-Ví thứ hai phát hiện ra rằng thời hạn đã qua mà không được tiết lộ nonce và gọi endpoint `ClaimSecond` để nhận tiền. Khi chúng tôi xem xét số dư cuối cùng, Ví 1 một lần nữa có NFT trở lại, nhưng tình hình số dư Ada đã bị đảo ngược.
+Ví thứ hai phát hiện ra rằng thời hạn đã qua mà không được tiết lộ `nonce` và gọi endpoint `ClaimSecond` để nhận tiền. Khi chúng tôi xem xét số dư cuối cùng, Ví 1 một lần nữa có NFT trở lại, nhưng tình hình số dư Ada đã bị đảo ngược.
 
 ``` {.haskell}
 Slot 00011: ``` CONTRACT LOG: "first player didn't reveal"
@@ -1016,14 +1009,14 @@ Từ trạng thái ban đầu, có thể có hai quá trình chuyển đổi. M�
 
 Trong biểu đồ, tất cả các nút tương ứng với các trạng thái và tất cả các mũi tên tương ứng với các chuyển đổi.
 
-Trong blockchain, máy trạng thái sẽ được đại diện bởi một UTxO ở địa chỉ máy trạng thái. Trạng thái của máy sẽ là dữ liệu của UTxO đó. Quá trình chuyển đổi sẽ là một giao dịch sử dụng trạng thái hiện tại, sử dụng công cụ mua lại đặc trưng cho quá trình chuyển đổi, sau đó tạo ra một UTxO mới tại cùng một địa chỉ, nơi dữ liệu hiện phản ánh trạng thái mới.
+Trong blockchain, máy trạng thái sẽ được đại diện bởi một UTxO ở địa chỉ máy trạng thái. Trạng thái của máy sẽ là dữ liệu của UTxO đó. Quá trình chuyển đổi sẽ là một giao dịch sử dụng trạng thái hiện tại, sử dụng `redeemer` đặc trưng cho quá trình chuyển đổi, sau đó tạo ra một UTxO mới tại cùng một địa chỉ, nơi `datum ` hiện phản ánh trạng thái mới.
 
 Mô hình này rất phù hợp với nhiều tình huống và có sự hỗ trợ đặc biệt trong các thư viện của Plutus để triển khai các máy trạng thái như vậy. Chúng ta sẽ thấy rằng khi chúng ta sử dụng cách tiếp cận này, mã của chúng ta sẽ ngắn hơn nhiều.
 
 Hỗ trợ cho các máy trạng thái nằm trong gói  `plutus-contract`, trong mô-đun
-[Language.Plutus.Contract.StateMachine](https://playground.plutus.iohkdev.io/tutorial/haddock/plutus-contract/html/Language-Plutus-Contract-StateMachine.html)
+[Language.Plutus.Contract.StateMachine](https://playground.plutus.iohkdev.io/doc/haddock/plutus-contract/html/Plutus-Contract-StateMachine.html)
 
-StateMachine có hai tham số kiểu `s` và `i`, đại diện cho trạng thái và đầu vào. Chúng tương ứng với datum and redeemer tương ứng
+StateMachine có hai tham số kiểu `s` và `i`, đại diện cho trạng thái và đầu vào. Chúng tương ứng với datum and redeemer.
 
 ![](img/week07__00017.png)
 
@@ -1046,8 +1039,6 @@ Hàm `smCheck` rất giống với hàm `setTransition`. Nó lấy datum, redeem
 Cuối cùng, `smThreadToken` cho phép chúng tôi xác định UTxO đại diện cho trạng thái hiện tại. Điều này nằm ở chỗ chúng ta có nhiều hơn một UTxO đang ngồi tại địa chỉ của máy trạng thái. Nó sử dụng thủ thuật tương tự mà chúng ta đã thấy trước đây là sử dụng NFT có giá trị của UTxO chính xác. Tuy nhiên, bạn có thể luôn quay lại `Nothing` từ  `smThreadToken` và sử dụng một số cơ chế khác để xác định đúng UTxO.
 
 Trò chơi tương tự như ví dụ 1 đã được thực hiện bằng máy trạng thái, trong mô-đun sau.
-
-
 
 ``` {.haskell}
 module Week07.StateMachine
@@ -1073,17 +1064,16 @@ _               == _                 = False
 ```
 
 Redeemer giống hệt như trước đây. Các hàm `lovelaces` và
-`gameDatum`giống hệt như trước.
+`gameDatum` giống hệt như trước.
 
-ây giờ chúng ta đi đến hàm `transition`, loại tương ứng với`mkGameValidator` mà chúng ta đã sử dụng trong ví dụ trước. Về cơ bản nó là logic cốt lõi.
+Bây giờ chúng ta đi đến hàm `transition`, loại tương ứng với`mkGameValidator` mà chúng ta đã sử dụng trong ví dụ trước. Về cơ bản nó là logic cốt lõi.
 
 ``` {.haskell}
 transition :: Game -> State GameDatum -> GameRedeemer -> Maybe (TxConstraints Void Void, State GameDatum)
 ```
 
 Hàm `transition` sử dụng `Game`, sau đó là `State GameDatum`,
-mà như chúng ta thấy trong định nghĩa của `StateMachine`, bao gồm một cặp `datum` và giá trị. Thứ ba là redeemer,
-và cuối cùng trả về `Maybe` trạng thái mới và các ràng buộc đối với giao dịch.
+mà như chúng ta thấy trong định nghĩa của `StateMachine`, bao gồm một cặp `datum` và giá trị. Thứ ba là redeemer, và cuối cùng trả về `Maybe` trạng thái mới và các ràng buộc đối với giao dịch.
 
 Hãy cùng so sánh hàm `transition` của máy trạng thái(state machine) với hàm `mkGameValidator` của trò chơi thứ nhất.
 
@@ -1216,14 +1206,6 @@ Bây giờ chúng ta so sánh mã cũ và mã mới cho trường hợp thứ ba
                                              )
 ```
 
-These two match up fairly easily, with the lovelaces being the condition
-on the left in the new code, and the remaining conditions on the right
-in the new code matching up with corresponding conditions in the old
-code. Again we add the `Finished` state in the new code.
-
-The last case, where the second player has played and the first player
-does not reveal by the deadline, probably because they lost.
-
 Hai điều này khớp với nhau khá dễ dàng, với các giao diện là điều kiện ở bên trái trong mã mới và các điều kiện còn lại ở bên phải trong mã mới khớp với các điều kiện tương ứng trong mã cũ. Một lần nữa chúng tôi thêm trạng thái `Finished`  trong mã mới.
 
 Trường hợp cuối cùng, trong đó người chơi thứ hai đã chơi và người chơi đầu tiên không tiết lộ trước thời hạn, có thể là do họ đã thua.
@@ -1270,21 +1252,6 @@ final Finished = True
 final _        = False
 ```
 
-Another field to define is `smCheck`. Recall that this is where we can
-put conditions that cannot be expressed as `Constraint`s. So this is
-where we can put our nonce check.
-
-We define another helper function `check`, with two auxiliary
-`ByteString` parameters to represent the zero and one choices, for
-reasons that we have seen before. We also pass it the datum, redeemer
-and context, and it will return us a boolean.
-
-We don\'t need the script context, but we need the datum to get the
-second player\'s choice (which the first player is claiming is the same
-as theirs), and the redeemer to get the nonce that the first player is
-claiming to have used. We can then check that the hash of the choice and
-the nonce match the original hash from the datum.
-
 Một trường khác để xác định là `smCheck`. Nhớ lại rằng đây là nơi chúng ta có thể đặt các điều kiện không thể được biểu thị dưới dạng `Constraints`. Vì vậy, đây là nơi chúng tôi có thể đặt kiểm tra nonce của mình.
 
 Chúng tôi xác định một hàm trợ giúp khác `check`, với hai tham số phụ `ByteString`  để đại diện cho các lựa chọn "0" và "1", vì những lý do mà chúng tôi đã thấy trước đây. Chúng tôi cũng chuyển cho nó datum, redeemer và context, và nó sẽ trả về cho chúng tôi một boolean.
@@ -1315,11 +1282,6 @@ gameStateMachine game bsZero' bsOne' = StateMachine
     }
 ```
 
-Our old `mkGameValidator` can now be replaced by using machinery
-provided by the state machine. There is a `mkValidator` function which
-will take our state machine, generated by the `gameStateMachine`
-function and turn it into a validator with exactly the same type as we
-had in the old code.
 Cái cũ của chúng tôi `mkGameValidator` bây giờ có thể được thay thế bằng cách sử dụng state  do statemachine cung cấp. Có một  hàm `mkValidator` sẽ lấy máy trạng thái của chúng ta, được tạo bởi hàm `gameStateMachine`  và biến nó thành một trình xác thực với cùng kiểu như chúng ta đã có trong mã cũ.
 
 ``` {.haskell}
@@ -1350,14 +1312,7 @@ gameStateMachine' :: Game -> StateMachine GameDatum GameRedeemer
 gameStateMachine' game = gameStateMachine game bsZero bsOne
 ```
 
-We have the same boilerplate as before for `gameInst`, `gameValidator`
-and `gameAddress`, which we won\'t copy again here.
-
-The function `gameClient` is new. It is a `StateMachineClient`, and this
-is what we need to interact with our state machine from our wallet in
-the `Contract` monad.
-
-Chúng tôi có cùng một bảng (boilerplate) soạn sẵn như trước đây `gameInst`, `gameValidator` và `gameAddress`, chúng tôi sẽ không sao chép lại ở đây.
+Chúng tôi có cùng một bảng (bản soạn thảo) soạn sẵn như trước đây `gameInst`, `gameValidator` và `gameAddress`, chúng tôi sẽ không sao chép lại ở đây.
 
 Chức năng `gameClient` là mới. Đó là một `StateMachineClient`, và đây là những gì chúng ta cần để tương tác với máy trạng thái của mình từ ví của chúng ta trong monad `Contract`.
 
@@ -1456,9 +1411,11 @@ m <- mapError' $ getOnChainState client
 
 Như trước đây, chúng ta không bao giờ nên được `Nothing` cho `m`.
 
+``` {.haskell}
 > case m of
 >
 > :   Nothing -> throwError "game output not found"
+```
 
 Bây giờ, chúng tôi chỉ quan tâm đến tham số `TypedScriptTxOut`  mà chúng tôi gán `o` và sử dụng nó để tra cứu datum bằng cách sử dụng `tyTxOutData`.
 
@@ -1474,12 +1431,6 @@ Nó có vai trò là đầu vào cho khách hàng và redeemer. Sau đó, nó tr
 
 ![](img/week07__00024.png)
 
-Which means, that we can use `runStep` with just the client and redeemer
-to replace all the lookups, the constraints, the transaction submissions
-and the waiting.
-
-The way it works it that the `transition` function is that all the
-necessary constraints have been defined as part of the state machine.
 Điều đó có nghĩa là chúng tôi có thể chỉ sử dụng `runStep`  với khách hàng (client) và redeemer để thay thế tất cả các tra cứu, các ràng buộc, gửi giao dịch và chờ đợi.
 
 Cách nó hoạt động mà hàm `transition`  là tất cả các ràng buộc cần thiết đã được xác định như một phần của máy trạng thái.
@@ -1491,8 +1442,6 @@ GameDatum _ Nothing -> do
     logInfo @String "first player reclaimed stake"
 ```
 
-The second case is that the first player did reveal, and we again use
-the `runStep` function to transition the state machine.
 Trường hợp thứ hai là người chơi đầu tiên đã tiết lộ, và chúng tôi lại sử dụng hàm `runStep`  để giao dịch máy trạng thái .
 
 ``` {.haskell}

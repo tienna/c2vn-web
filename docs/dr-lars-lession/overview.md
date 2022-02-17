@@ -106,5 +106,6 @@ Tôi cũng sử dụng điều này để thêm nhận xét vào mã.
 ## Tài nguyên bổ sung
 
 - [Kho lưu trữ Plutus](https://github.com/input-output-hk/plutus)
+- [Playground.plutus](https://playground.plutus.iohkdev.io/doc/haddock/plutus-contract/html/)
 - [Tìm hiểu Haskell!](http://learnyouahaskell.com/)
 - [Khóa học về Haskell & Cryptocurrencies ở Mông Cổ](https://www.youtube.com/playlist?list=PLJ3w5xyG4JWmBVIigNBytJhvSSfZZzfTm)
