@@ -18,12 +18,12 @@ Hình ảnh với phần mềm Ubuntu Desktop 20.04
 
 	Các hướng gẫn này hoạt động kể từ ngày 5/12/2021. Mọi thứ sẽ thay đổi theo thời gian. Vui lòng luôn kiểm tra kho lưu trữ github được liệt kê bên dưới để biết hướng dẫn cập nhật và bất kỳ thay đổi. Những hướng dẫn này không tuân theo hướng dẫn trên github như đã liệt kê, nhưng đây là cách tôi có thể làm cho mọi thứ hoạt động. Một trong những vấn đề khó khăn nhất trong buổi học đầu tiên là làm cho nó hoạt động, đây chỉ là cách tôi đã làm được. có những lựa chọn khác.
 
-	Các hướng dẫn sẽ được chia thành 2 phần. Phần đầu tiên hướng dẫn bạn cách cài đặt Haskell và các thành phần cần thiết trực tiếp vào máy ảo. Phần thứ hai hướng dẫn bạn cách cài đặt các tệp nhị phân nix-shell và Plutus cần thiết để chạy sân chơi plutus.
+	Các hướng dẫn sẽ được chia thành 3 phần. Phần đầu tiên hướng dẫn bạn cách cài đặt Haskell và các thành phần cần thiết trực tiếp vào máy ảo. Phần thứ hai hướng dẫn bạn cách cài đặt các tệp nhị phân nix-shell và Plutus cần thiết để chạy sân chơi plutus. Phần ba tạo sân chơi plutus. 
 	
-	 `Bạn cũng có thể sử dụng nix-shell cho bài tập về nhà của mình. Nếu bạn quyết định làm điều đó, Bạn có thể bỏ qua cài đặt Haskell.`
+`Bạn cũng có thể sử dụng nix-shell cho bài tập về nhà của mình. Nếu bạn quyết định làm điều đó, Bạn có thể bỏ qua cài đặt Haskell.`
 
 
-Phần 1
+Phần 1: Cài đặt Haskell
 ------
 
 1) Tạo máy ảo với ít nhất 8 GB ram và 100 GB dung lượng lưu trữ. Đảm bảo rằng bạn chọn Ubuntu 64.
@@ -100,7 +100,7 @@ Sau khi bạn vào ubuntu của mình:
 -- Bây giờ bạn cũng có thể chạy repl và test haskel - hầu hết tất cả các ví dụ này đều có trong video bài học đầu tiên 
 
 
-Phần 2
+Phần 2: Cài đặt nix-shell
 ------
 
 -- Bây giờ chúng ta sẽ cài đặt nix
@@ -158,7 +158,7 @@ trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
 
 -- video đầu tiên hướng dẫn bạn cách khởi động ứng dụng và máy chủ sân chơi plutus
 
-Phần 3
+Phần 3: Tạo sân chơi Plutus
 ------
 
 Điều trên sẽ thiết lập môi trường của bạn với các phụ thuộc cần thiết để biên dịch các hợp đồng mẫu.
@@ -167,7 +167,7 @@ Khi bạn đã ở bên trong Nix shell, bạn có thể khởi động máy kh�
 
 Các video bài giảng được ghi lại vào nhiều thời điểm khác nhau và mã Plutus cùng với chúng được biên soạn dựa trên các cam kết cụ thể của nhánh chính của Plutus. Bạn có thể tìm thấy thẻ cam kết trong tệp cabal.project.
 
--- Bạn mở 2 terminal một cho server 1 cho client
+-- Bạn mở 2 terminal một cho server và một cho client
 
 ### Server
 
