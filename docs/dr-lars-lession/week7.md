@@ -1,7 +1,7 @@
 Week 07 - State Machines
 ========================
 
-:::Chú ý
+Chú ý
 
 Đây là phiên bản viết của [Bài giảng số 7 Dr.Lars](https://youtu.be/ptsltoZNl50).
 
@@ -11,7 +11,7 @@ Nó bao gồm các lược đồ cam kết và máy trạng thái.
 
 Tuần này, chúng tôi đã sử dụng Plutus commit: 
 530cc134364ae186f39fb2b54239fb7c5e2986e9
-:::
+
 
 Giới thiệu
 ------------
