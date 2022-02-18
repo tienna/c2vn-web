@@ -169,7 +169,7 @@ Các video bài giảng được ghi lại vào nhiều thời điểm khác nha
 
 -- Bạn mở 2 terminal một cho server 1 cho client
 
-## Server
+### Server
 
 Tại terminal 1 bạn chạy:
 
@@ -180,7 +180,7 @@ Tại terminal 1 bạn chạy:
 ```
 
 
-## Client
+### Client
 
 Tại terminal 2 bạn chạy:
 
@@ -188,6 +188,8 @@ Tại terminal 2 bạn chạy:
 	cd /path/to/plutus/repo/plutus-playground-client
 	npm run start
 ```
+
+### Biên dịch
 
 Để kiểm tra xem mọi thứ có theo thứ tự hay không, sau đó bạn có thể biên dịch mã cho week01. Điều này không cần thiết để chạy mã trong sân chơi, vì sân chơi có thể tự biên dịch mã.
 
