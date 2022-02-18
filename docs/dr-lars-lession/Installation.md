@@ -1,64 +1,56 @@
 Cài đặt playground tại máy local
 ========================
 
-Build Plutus dev environment on Ubuntu 20.04 VM
+Xây dựng môi trường nhà phát triển Plutus trên Ubuntu 20.04
 
-The Project
-Project Title
-Build Plutus environment for ubutu 20.04 VM
+Chi tiết 
 
-Details
-Purpose / Intention
-Build Plutus Dev environment using  Oracle
-VM VirtualBox
-Desired Outcome(s)
-Working dev environment for Plutus
+Xây dựng môi trường Plutus Dev sử dụng (các) Kết quả mong muốn của Oracle VM VirtualBox Môi trường dành cho nhà phát triển làm việc cho Plutus
 
-Resources
+Tài nguyên
 
-For good performance:
-A computer with VM virtualBox software installed
-32 GB of ram
-Over 100 GB of hard drive space
-Image with Ubuntu 20.04 desktop software
+Cấu hình máy tính tốt:
+Máy tính cài phần mềm VM virtualBox 32 GB ram 
+Hơn 100 GB dung lượng ổ cứng 
+Hình ảnh với phần mềm Ubuntu Desktop 20.04
 
-Notes
+	Ghi chú
 
-These directions worked as of 5/12/2021. Things will change over time. Please always check the github repositories listed below for the updated directions and any changes.
-These instructions do not follow the github directions as listed, but this is the way I was able to get everything to work. One of the most challenging problems during the beginning of class was getting this working, this is only the way I did it. there are other options.
+	Các hướng gẫn này hoạt động kể từ ngày 5/12/2021. Mọi thứ sẽ thay đổi theo thời gian. Vui lòng luôn kiểm tra kho lưu trữ github được liệt kê bên dưới để biết hướng dẫn cập nhật và bất kỳ thay đổi. Những hướng dẫn này không tuân theo hướng dẫn trên github như đã liệt kê, nhưng đây là cách tôi có thể làm cho mọi thứ hoạt động. Một trong những vấn đề khó khăn nhất trong buổi học đầu tiên là làm cho nó hoạt động, đây chỉ là cách tôi đã làm được. có những lựa chọn khác.
 
-The directions will be split into 2 sections.
-The first section shows you how to install Haskell and needed components directly onto the VM.
-The second section shows you how to install the nix-shell and Plutus binaries needed to run the plutus playground.
-** You can use the nix-shell for your homework as well. If you decide to do that, You can skip installing Haskell. **
+	Các hướng dẫn sẽ được chia thành 2 phần. Phần đầu tiên hướng dẫn bạn cách cài đặt Haskell và các thành phần cần thiết trực tiếp vào máy ảo. Phần thứ hai hướng dẫn bạn cách cài đặt các tệp nhị phân nix-shell và Plutus cần thiết để chạy sân chơi plutus.
+	
+	 `Bạn cũng có thể sử dụng nix-shell cho bài tập về nhà của mình. Nếu bạn quyết định làm điều đó, Bạn có thể bỏ qua cài đặt Haskell.`
 
 
-Section 1
+Phần 1
+------
 
-1) create VM with at least 8 gig ram and 100 gb of storage. Make sure you pick Ubuntu 64
+1) Tạo máy ảo với ít nhất 8 GB ram và 100 GB dung lượng lưu trữ. Đảm bảo rằng bạn chọn Ubuntu 64.
 
-2) start vm
+2) Bắt đầu chạy VM
 
-3) select vm image for ubuntu 20.04
+3) Chọn hình ảnh VM cho ubuntu 20.04
 
-4) go through normal process to install ubuntu on your system (VM)
+4) Thực hiện quy trình bình thường để cài đặt ubuntu trên hệ thống của bạn (VM)
 
-after you get into your ubuntu:
 
-1) update and upgrade software:
+Sau khi bạn vào ubuntu của mình:
+
+1) cập nhật và nâng cấp phần mềm:
 
 ```
 	sudo apt update
 	sudo apt upgrade -y
 ```
 
-2) install haskell
+2) Cài đặt haskell
 
 ```
 	sudo apt-get install haskell-platform
 ```
 
-3) install ghcup and all options (ghcup makes it easy to move between versions of haskell, etc)
+3) Cài đặt ghcup và tất cả các tùy chọn (ghcup giúp dễ dàng di chuyển giữa các phiên bản của haskell, v.v.)
 
 ```
 	sudo apt install curl
@@ -68,23 +60,24 @@ after you get into your ubuntu:
 	curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh 
 
 ```
--- this could take a while
+Điều này có thể mất một thời gian
 
-** RESTART YOUR TERMINAL FIRST **
+`KHỞI ĐỘNG LẠI VM ĐẦU TIÊN`
 
 ```
 	ghc --version
 ```
 
--- it should be: 8.10.4
+-- Nó phải là trở lên: 8.10.4
 
 ```
 	cabal --version
 ```
--- it should be: 3.4.0.0
+
+-- Nó phải là trở lên: 3.4.0.0
 
 
-4) clone plutus and plutus pioneer directories. you can put these anywhere. i created a seperate directory to put them in:
+4) Nhân bản plutus và thư mục tiên phong plutus. Bạn có thể đặt chúng ở bất cứ đâu. tôi đã tạo một thư mục riêng biệt để đưa chúng vào:
 
 ```
 	sudo apt install git
@@ -98,27 +91,29 @@ after you get into your ubuntu:
 	git clone https://github.com/input-output-hk/plutus-pioneer-program
 ```
 
-*** You now have everything you need to edit smart contracts and run them with the command line interface ***
+ -- Bây giờ bạn có mọi thứ bạn cần để chỉnh sửa hợp đồng thông minh và chạy chúng với giao diện dòng lệnh 
 
-*** you have to run cabal update and cabal build verytime you start on a different section of the homework ***
+ -- Bạn phải chạy cập nhật cabal và xây dựng cabal trước khi bắt đầu ở một phần khác của bài tập về nhà 
 
-*** The first time you run cabal build it will take a long time...
+-- Lần đầu tiên bạn chạy xây dựng cabal sẽ mất nhiều thời gian ...
 
-*** you also can now run the repl and test haskel - most of all these examples are in the first lesson video ***
+-- Bây giờ bạn cũng có thể chạy repl và test haskel - hầu hết tất cả các ví dụ này đều có trong video bài học đầu tiên 
 
 
-Section 2
+Phần 2
+------
 
-*** Now we are going to install nix and  ***
+-- Bây giờ chúng ta sẽ cài đặt nix
 
-1) we need to install the cache
+1) Chúng ta cần cài đặt bộ nhớ đệm
 
-Create the directory /etc/nix/:
+Tạo thư mục /etc/nix/:
 
 ```
 	sudo mkdir /etc/nix
 ```
-Use a code editor to put the following in a file called nix.conf in the nix directory (/etc/nix/nix.conf):
+
+Sử dụng trình chỉnh sửa mã để đưa nội dung sau vào tệp có tên nix.conf trong thư mục nix `(/etc/nix/nix.conf)`:
 
 ```
 substituters        = https://hydra.iohk.io https://iohk.cachix.org https://cache.nixos.org/
@@ -126,25 +121,25 @@ substituters        = https://hydra.iohk.io https://iohk.cachix.org https://cach
 trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 ```
 
-2) install nix
+2) Cài đặt nix
 
 ```
 	curl -L https://nixos.org/nix/install | sh
 ```
 
-* after you install nix make sure to install the environment variables. It will tell you how after nix is finished installing. it will look something
+* Sau khi bạn cài đặt nix, hãy đảm bảo cài đặt các biến môi trường. Nó sẽ cho bạn biết làm thế nào sau khi cài đặt xong nix. nó sẽ giống cái này
 
-* like this   .  /home/(user)/.nix-profile/etc/profile.d/nix.sh
-
-
-* you also may need to add nix to your Path. I do it by adding  ~/.nix-profile/bin   to my /etc/environment file. then I have to restart THE COMPUTER
-
-* for it to work
+* Như thế này   .  /home/(user)/.nix-profile/etc/profile.d/nix.sh
 
 
-3) run the nix command in the Plutus directory:
+* bạn cũng có thể cần thêm nix vào Đường dẫn của mình. Tôi thực hiện bằng cách thêm  ~/.nix-profile/bin   vào file /etc/environment. Sau đó bạn khởi động lại Máy tính
 
-*** Before running the following nix-build command, set the tag in plutus back to the original tag (3746610e53654a1167aeb4c6294c6096d16b0502) from the first day of class. This solved a problem I was having with the client not compiling correctly with newer dev environment creations ***
+* Để nó hoạt động
+
+
+3) Chạy lệnh nix trong thư mục Plutus::
+
+` Trước khi chạy lệnh nix-build sau, hãy đặt thẻ trong plutus trở lại thẻ ban đầu (3746610e53654a1167aeb4c6294c6096d16b0502) từ ngày học đầu tiên. Điều này đã giải quyết được sự cố mà tôi đang gặp phải với ứng dụng Client không biên dịch chính xác với các sáng tạo môi trường nhà phát triển mới hơn.`
 
 ```
 	~/cardano/plutus $ git checkout 3746610e53654a1167aeb4c6294c6096d16b0502
@@ -154,11 +149,51 @@ trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
 	~/cardano/plutus $ nix build -f default.nix plutus.haskell.packages.plutus-core.components.library
 ```
 
--- this will take a long time and you will get a warning about: dumping very large path.  You can ignore that.
+-- Điều này sẽ mất nhiều thời gian và bạn sẽ nhận được cảnh báo về việc: `dumping very large path`.   Bạn có thể bỏ qua điều đó.
 
 
-** once this is done everything is installed except the code editor you are going to use...
+-- Sau khi hoàn tất, mọi thứ đã được cài đặt ngoại trừ trình chỉnh sửa mã bạn sẽ sử dụng
 
-** the first time you run nix-shell it will also take a while
+-- Lần đầu tiên bạn chạy nix-shell, nó cũng sẽ mất một lúc
 
-** the first video walks you through the startup of the plutus playground server and application
+-- video đầu tiên hướng dẫn bạn cách khởi động ứng dụng và máy chủ sân chơi plutus
+
+Phần 3
+------
+
+Điều trên sẽ thiết lập môi trường của bạn với các phụ thuộc cần thiết để biên dịch các hợp đồng mẫu.
+
+Khi bạn đã ở bên trong Nix shell, bạn có thể khởi động máy khách và máy chủ Plutus từ kho lưu trữ Plutus của bạn.
+
+Các video bài giảng được ghi lại vào nhiều thời điểm khác nhau và mã Plutus cùng với chúng được biên soạn dựa trên các cam kết cụ thể của nhánh chính của Plutus. Bạn có thể tìm thấy thẻ cam kết trong tệp cabal.project.
+
+-- Bạn mở 2 terminal một cho server 1 cho client
+
+## Server
+
+Tại terminal 1 bạn chạy:
+
+``` 
+	cd /path/to/plutus/repo/plutus-playground-client
+	
+	plutus-playground-server
+```
+
+
+## Client
+
+Tại terminal 2 bạn chạy:
+
+```
+	cd /path/to/plutus/repo/plutus-playground-client
+	npm run start
+```
+
+Để kiểm tra xem mọi thứ có theo thứ tự hay không, sau đó bạn có thể biên dịch mã cho week01. Điều này không cần thiết để chạy mã trong sân chơi, vì sân chơi có thể tự biên dịch mã.
+
+```
+	cd /path/to/plutus-pioneer-program/repo/code/week01
+	cabal build all
+```
+
+Nếu mọi thứ suôn sẻ trong thiết lập ở trên, bạn sẽ có thể mở sân chơi tại https://localhost:8009. Bạn có thể sẽ nhận được lỗi chứng chỉ, lỗi này có thể được bỏ qua.
