@@ -52,6 +52,8 @@ Sau khi bạn vào ubuntu của mình:
 
 3) Cài đặt ghcup và tất cả các tùy chọn (ghcup giúp dễ dàng di chuyển giữa các phiên bản của haskell, v.v.)
 
+canh 1:
+
 ```
 	sudo apt install curl
 	
@@ -60,6 +62,51 @@ Sau khi bạn vào ubuntu của mình:
 	curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh 
 
 ```
+
+Cach 2:
+
+1	Install Cabal version 3.2.0.0 to our local bin folder (.local/bin)	
+
+```
+		sudo whoami
+		
+		cd
+		wget https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
+		tar -xf cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
+		rm cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz cabal.sig
+		mkdir -p ~/.cabal/bin
+		mv cabal ~/.cabal/bin/
+```		
+
+2	Installing GHC 8.10.2 version - The Glorious Glasgow Haskell Compilation System (cardano node is based on the Haskell programming language)	
+
+```
+                sudo whoami
+		
+		cd
+		wget https://downloads.haskell.org/ghc/8.10.2/ghc-8.10.2-x86_64-deb9-linux.tar.xz
+		tar -xf ghc-8.10.2-x86_64-deb9-linux.tar.xz
+		rm ghc-8.10.2-x86_64-deb9-linux.tar.xz
+		cd ghc-8.10.2
+		./configure
+		
+		sudo make install
+		cd
+```
+				
+3	Update PATH  NODE	
+```
+		echo export PATH=~/.cabal/bin:$PATH >> ~/.bashrc
+		source ~/.bashrc
+		echo $PATH
+		
+		export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+		export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+		echo export CNODE_HOME=/opt/cardano/cnode  >> $HOME/.bashrc
+		echo export CARDANO_NODE_SOCKET_PATH="$CNODE_HOME/sockets/node0.socket" >> $HOME/.bashrc
+		source ~/.bashrc
+```
+
 Điều này có thể mất một thời gian
 
 `KHỞI ĐỘNG LẠI VM ĐẦU TIÊN`
