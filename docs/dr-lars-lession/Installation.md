@@ -174,9 +174,11 @@ Các video bài giảng được ghi lại vào nhiều thời điểm khác nha
 Tại terminal 1 bạn chạy:
 
 ``` 
-	cd /path/to/plutus/repo/plutus-playground-client
-	
-	plutus-playground-server
+cd cardano/plutus
+. /home/nvhieu/.nix-profile/etc/profile.d/nix.sh
+nix-shell
+cd plutus-playground-server
+plutus-playground-server
 ```
 
 
@@ -185,8 +187,11 @@ Tại terminal 1 bạn chạy:
 Tại terminal 2 bạn chạy:
 
 ```
-	cd /path/to/plutus/repo/plutus-playground-client
-	npm run start
+cd ~/cardano/plutus
+. /home/nvhieu/.nix-profile/etc/profile.d/nix.sh
+nix-shell
+cd plutus-playground-client
+npm run start
 ```
 
 ### Biên dịch
