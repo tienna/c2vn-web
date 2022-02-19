@@ -68,13 +68,13 @@ Sau khi bạn vào ubuntu của mình:
 	ghc --version
 ```
 
--- Nó phải là trở lên: 8.10.4
+-- Nó phải là: 8.10.4
 
 ```
 	cabal --version
 ```
 
--- Nó phải là trở lên: 3.4.0.0
+-- Nó phải là: 3.4.0.0
 
 
 4) Nhân bản plutus và thư mục tiên phong plutus. Bạn có thể đặt chúng ở bất cứ đâu. tôi đã tạo một thư mục riêng biệt để đưa chúng vào:
