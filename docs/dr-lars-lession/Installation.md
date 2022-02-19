@@ -16,11 +16,13 @@ Hình ảnh với phần mềm Ubuntu Desktop 20.04
 
 	Ghi chú
 
-	Các hướng gẫn này hoạt động kể từ ngày 5/12/2021. Mọi thứ sẽ thay đổi theo thời gian. Vui lòng luôn kiểm tra kho lưu trữ github được liệt kê bên dưới để biết hướng dẫn cập nhật và bất kỳ thay đổi. Những hướng dẫn này không tuân theo hướng dẫn trên github như đã liệt kê, nhưng đây là cách tôi có thể làm cho mọi thứ hoạt động. Một trong những vấn đề khó khăn nhất trong buổi học đầu tiên là làm cho nó hoạt động, đây chỉ là cách tôi đã làm được. có những lựa chọn khác.
+Các hướng gẫn này hoạt động kể từ ngày 5/12/2021. Mọi thứ sẽ thay đổi theo thời gian. Vui lòng luôn kiểm tra kho lưu trữ github được liệt kê bên dưới để biết hướng dẫn cập nhật và bất kỳ thay đổi. Những hướng dẫn này không tuân theo hướng dẫn trên github như đã liệt kê, nhưng đây là cách tôi có thể làm cho mọi thứ hoạt động. Một trong những vấn đề khó khăn nhất trong buổi học đầu tiên là làm cho nó hoạt động, đây chỉ là cách tôi đã làm được. có những lựa chọn khác.
 
-	Các hướng dẫn sẽ được chia thành 3 phần. Phần đầu tiên hướng dẫn bạn cách cài đặt Haskell và các thành phần cần thiết trực tiếp vào máy ảo. Phần thứ hai hướng dẫn bạn cách cài đặt các tệp nhị phân nix-shell và Plutus cần thiết để chạy sân chơi plutus. Phần ba tạo sân chơi plutus. 
+Các hướng dẫn sẽ được chia thành 3 phần. Phần đầu tiên hướng dẫn bạn cách cài đặt Haskell và các thành phần cần thiết trực tiếp vào máy ảo. Phần thứ hai hướng dẫn bạn cách cài đặt các tệp nhị phân nix-shell và Plutus cần thiết để chạy sân chơi plutus. Phần ba tạo sân chơi plutus. 
 	
 `Bạn cũng có thể sử dụng nix-shell cho bài tập về nhà của mình. Nếu bạn quyết định làm điều đó, Bạn có thể bỏ qua cài đặt Haskell.`
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/ijvg8HIhdEU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe> 
 
 
 Phần 1: Cài đặt Haskell
