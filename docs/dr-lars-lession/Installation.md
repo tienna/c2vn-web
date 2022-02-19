@@ -1,4 +1,4 @@
-Cài đặt playground tại máy local
+Cài đặt playground tại local
 ========================
 
 Xây dựng môi trường nhà phát triển Plutus trên Ubuntu 20.04
