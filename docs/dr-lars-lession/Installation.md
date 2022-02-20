@@ -22,7 +22,7 @@ Các hướng dẫn sẽ được chia thành 3 phần. Phần đầu tiên hư�
 	
 `Bạn cũng có thể sử dụng nix-shell cho bài tập về nhà của mình. Nếu bạn quyết định làm điều đó, Bạn có thể bỏ qua cài đặt Haskell.`
 
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/ijvg8HIhdEU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe> 
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/uqLbe0n6EbM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe> 
 
 
 Phần 1: Cài đặt Haskell
