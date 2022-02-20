@@ -78,6 +78,8 @@ const sidebars = {
         "dr-lars-lession/week9",
         "dr-lars-lession/week10",
 		"dr-lars-lession/Installation",
+		"dr-lars-lession/setup-node-testnet",
+		
     ],
     "Tích hợp với Cardano": [
       "integrate-cardano/note",
