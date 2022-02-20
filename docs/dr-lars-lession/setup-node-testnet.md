@@ -31,9 +31,11 @@ sudo apt-get autoclean
 sudo apt-get -y install automake build-essential pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev
 
 sudo apt-get -y install python3  systemd  yarn libsodium-dev libncursesw5 libtool autoconf
-
+```
+```
 sudo apt-get -y install make g++ tmux git jq wget htop nload curl zip unzip rsync wget cron
-
+```
+```
 sudo apt-get -y install openssh-server net-tools gparted
 ```
 
