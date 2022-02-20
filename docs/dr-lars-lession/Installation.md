@@ -1,4 +1,4 @@
-Cài đặt playground tại máy local
+Cài đặt playground plutus tại local
 ========================
 
 Xây dựng môi trường nhà phát triển Plutus trên Ubuntu 20.04
@@ -16,11 +16,13 @@ Hình ảnh với phần mềm Ubuntu Desktop 20.04
 
 	Ghi chú
 
-	Các hướng gẫn này hoạt động kể từ ngày 5/12/2021. Mọi thứ sẽ thay đổi theo thời gian. Vui lòng luôn kiểm tra kho lưu trữ github được liệt kê bên dưới để biết hướng dẫn cập nhật và bất kỳ thay đổi. Những hướng dẫn này không tuân theo hướng dẫn trên github như đã liệt kê, nhưng đây là cách tôi có thể làm cho mọi thứ hoạt động. Một trong những vấn đề khó khăn nhất trong buổi học đầu tiên là làm cho nó hoạt động, đây chỉ là cách tôi đã làm được. có những lựa chọn khác.
+Các hướng gẫn này hoạt động kể từ ngày 5/12/2021. Mọi thứ sẽ thay đổi theo thời gian. Vui lòng luôn kiểm tra kho lưu trữ github được liệt kê bên dưới để biết hướng dẫn cập nhật và bất kỳ thay đổi. Những hướng dẫn này không tuân theo hướng dẫn trên github như đã liệt kê, nhưng đây là cách tôi có thể làm cho mọi thứ hoạt động. Một trong những vấn đề khó khăn nhất trong buổi học đầu tiên là làm cho nó hoạt động, đây chỉ là cách tôi đã làm được. có những lựa chọn khác.
 
-	Các hướng dẫn sẽ được chia thành 3 phần. Phần đầu tiên hướng dẫn bạn cách cài đặt Haskell và các thành phần cần thiết trực tiếp vào máy ảo. Phần thứ hai hướng dẫn bạn cách cài đặt các tệp nhị phân nix-shell và Plutus cần thiết để chạy sân chơi plutus. Phần ba tạo sân chơi plutus. 
+Các hướng dẫn sẽ được chia thành 3 phần. Phần đầu tiên hướng dẫn bạn cách cài đặt Haskell và các thành phần cần thiết trực tiếp vào máy ảo. Phần thứ hai hướng dẫn bạn cách cài đặt các tệp nhị phân nix-shell và Plutus cần thiết để chạy sân chơi plutus. Phần ba tạo sân chơi plutus. 
 	
 `Bạn cũng có thể sử dụng nix-shell cho bài tập về nhà của mình. Nếu bạn quyết định làm điều đó, Bạn có thể bỏ qua cài đặt Haskell.`
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/uqLbe0n6EbM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe> 
 
 
 Phần 1: Cài đặt Haskell
@@ -52,6 +54,8 @@ Sau khi bạn vào ubuntu của mình:
 
 3) Cài đặt ghcup và tất cả các tùy chọn (ghcup giúp dễ dàng di chuyển giữa các phiên bản của haskell, v.v.)
 
+canh 1:
+
 ```
 	sudo apt install curl
 	
@@ -60,6 +64,51 @@ Sau khi bạn vào ubuntu của mình:
 	curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh 
 
 ```
+
+Cach 2:
+
+1	Install Cabal version 3.2.0.0 to our local bin folder (.local/bin)	
+
+```
+		sudo whoami
+		
+		cd
+		wget https://downloads.haskell.org/~cabal/cabal-install-3.2.0.0/cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
+		tar -xf cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz
+		rm cabal-install-3.2.0.0-x86_64-unknown-linux.tar.xz cabal.sig
+		mkdir -p ~/.cabal/bin
+		mv cabal ~/.cabal/bin/
+```		
+
+2	Installing GHC 8.10.2 version - The Glorious Glasgow Haskell Compilation System (cardano node is based on the Haskell programming language)	
+
+```
+                sudo whoami
+		
+		cd
+		wget https://downloads.haskell.org/ghc/8.10.2/ghc-8.10.2-x86_64-deb9-linux.tar.xz
+		tar -xf ghc-8.10.2-x86_64-deb9-linux.tar.xz
+		rm ghc-8.10.2-x86_64-deb9-linux.tar.xz
+		cd ghc-8.10.2
+		./configure
+		
+		sudo make install
+		cd
+```
+				
+3	Update PATH  NODE	
+```
+		echo export PATH=~/.cabal/bin:$PATH >> ~/.bashrc
+		source ~/.bashrc
+		echo $PATH
+		
+		export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+		export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+		echo export CNODE_HOME=/opt/cardano/cnode  >> $HOME/.bashrc
+		echo export CARDANO_NODE_SOCKET_PATH="$CNODE_HOME/sockets/node0.socket" >> $HOME/.bashrc
+		source ~/.bashrc
+```
+
 Điều này có thể mất một thời gian
 
 `KHỞI ĐỘNG LẠI VM ĐẦU TIÊN`
@@ -68,13 +117,13 @@ Sau khi bạn vào ubuntu của mình:
 	ghc --version
 ```
 
--- Nó phải là trở lên: 8.10.4
+-- Nó phải là: 8.10.4
 
 ```
 	cabal --version
 ```
 
--- Nó phải là trở lên: 3.4.0.0
+-- Nó phải là: 3.4.0.0
 
 
 4) Nhân bản plutus và thư mục tiên phong plutus. Bạn có thể đặt chúng ở bất cứ đâu. tôi đã tạo một thư mục riêng biệt để đưa chúng vào:
@@ -119,6 +168,8 @@ Sử dụng trình chỉnh sửa mã để đưa nội dung sau vào tệp có t
 substituters        = https://hydra.iohk.io https://iohk.cachix.org https://cache.nixos.org/
 
 trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+
+experimental-features = nix-command flakes
 ```
 
 2) Cài đặt nix
@@ -174,9 +225,11 @@ Các video bài giảng được ghi lại vào nhiều thời điểm khác nha
 Tại terminal 1 bạn chạy:
 
 ``` 
-	cd /path/to/plutus/repo/plutus-playground-client
-	
-	plutus-playground-server
+cd cardano/plutus
+. /home/nvhieu/.nix-profile/etc/profile.d/nix.sh
+nix-shell
+cd plutus-playground-server
+plutus-playground-server
 ```
 
 
@@ -185,8 +238,11 @@ Tại terminal 1 bạn chạy:
 Tại terminal 2 bạn chạy:
 
 ```
-	cd /path/to/plutus/repo/plutus-playground-client
-	npm run start
+cd ~/cardano/plutus
+. /home/nvhieu/.nix-profile/etc/profile.d/nix.sh
+nix-shell
+cd plutus-playground-client
+npm run start
 ```
 
 ### Biên dịch
