@@ -18,6 +18,7 @@ Chúng ta cùng xem một ví dụ về Hợp đồng thông minh trên Marlowe 
 	- PAB
   
   <iframe width="560" height="315" src="https://www.youtube.com/embed/eXMkR8h5tXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+  
 
 ### Plutus là gì 2/3: [Video ](https://youtu.be/8dnDSlgPTZ8)
 
@@ -27,6 +28,10 @@ Chúng ta cùng xem một ví dụ về Hợp đồng thông minh trên Marlowe 
 	- EUTXO
 	- Datum
 	- Redeemer
+	
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/8dnDSlgPTZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>	
+ 
+ 
   ### Plutus là gì 3/3: [Video ](https://youtu.be/dhzvsE-Swws)
 
 	Phần 3 này sẽ mô tả các khái niệm:
