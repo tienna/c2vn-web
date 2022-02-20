@@ -27,7 +27,7 @@ Chúng ta cùng xem một ví dụ về Hợp đồng thông minh trên Marlowe 
 	- EUTXO
 	- Datum
 	- Redeemer
-  ### Plutus là gì 3/3: [Video ](https://youtu.be/8dnDSlgPTZ8)
+  ### Plutus là gì 3/3: [Video ](https://youtu.be/dhzvsE-Swws)
 
 	Phần 3 này sẽ mô tả các khái niệm:
 	-Smart contract
@@ -36,7 +36,7 @@ Chúng ta cùng xem một ví dụ về Hợp đồng thông minh trên Marlowe 
 	-Datum hash, datum value
 	-Redeemer value
 	Và thực hiện việc chuyển tài sản vào một smartcontract, lấy về một địa chỉ nào đó.
-  <iframe width="560" height="315" src="https://www.youtube.com/watch?v=dhzvsE-Swws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/dhzvsE-Swws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 ## Tài nguyên bổ sung
 
