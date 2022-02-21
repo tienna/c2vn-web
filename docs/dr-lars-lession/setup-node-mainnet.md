@@ -64,13 +64,59 @@ echo export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH >> $HOME/.bashrc
 echo [ -f "/home/hadavn1/.ghcup/env" ] && source "/home/hadavn1/.ghcup/env" >> $HOME/.bashrc 
 source ~/.bashrc
 ```
+### Download and install version 8.10.4 of GHC
+
+```
+cd
+wget https://downloads.haskell.org/ghc/8.10.4/ghc-8.10.4-x86_64-deb9-linux.tar.xz
+
+tar -xf ghc-8.10.4-x86_64-deb9-linux.tar.xz
+
+rm ghc-8.10.4-x86_64-deb9-linux.tar.xz
+
+cd ghc-8.10.4
+
+./configure
+
+sudo make install
+
+```
+### Install Cabal v3.4.0.0
+
+```
+cd
+
+wget https://downloads.haskell.org/~cabal/cabal-install-3.4.0.0/cabal-install-3.4.0.0-x86_64-ubuntu-16.04.tar.xz 
+
+tar -xf cabal-install-3.4.0.0-x86_64-ubuntu-16.04.tar.xz 
+
+rm cabal-install-3.4.0.0-x86_64-ubuntu-16.04.tar.xz 
+
+mkdir -p ~/.cabal/bin
+
+mv cabal ~/.cabal/bin/
+```
+Cập nhật PATH
+
+```
+echo export PATH=~/.cabal/bin:$PATH >> ~/.bashrc
+
+source ~/.bashrc
+
+echo $PATH
+
+cabal --version
+```
+
+### Tạo cấu trúc file Cntool
+
 ```
 sudo whoami
 mkdir "$HOME/tmp";
 cd "$HOME/tmp"
 curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh       
 chmod 755 prereqs.sh
-./prereqs.sh 
+./prereqs.sh -f
 ```
 
 ## B4. Cập nhật PATH
