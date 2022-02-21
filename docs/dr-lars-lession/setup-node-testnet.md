@@ -51,7 +51,7 @@ Nối dòng trên vào ~/.bashrc của bạn.
 Ví dụ: 
 
 ```
-echo export PATH=~/.cabal/bin:$PATH >> ~/.bashrc
+echo export PATH=~/.local/bin:$PATH >> ~/.bashrc
 
 source ~/.bashrc
 
@@ -60,8 +60,8 @@ echo $PATH
 Kiểm tra phiên bản cardano
 
 ```
-cardano-cli version
-cardano-node version
+cardano-cli --version
+cardano-node --version
 ```
 
 Tải xuống blockchain
