@@ -8,223 +8,112 @@ Cấu hình máy tính tốt:
 Máy tính cài phần mềm 32 GB ram 
 Hơn 100 GB dung lượng ổ cứng 
 Với hệ điều hành Ubuntu 20.04
+Cài đặt Máy chủ Ubuntu (Linux)
 
-1. Install and Update packages Ubuntu dependencies
---------------------------
+Cài đặt Cardano Node
+-----
 
-```
-sudo usermod -aG sudo <User_name>
-```
-```
-sudo apt-get update -y
-```
-```
-sudo apt-get upgrade -y
-```
-```
-sudo apt autoremove
-```
-```
-sudo apt-get autoclean
-```
-```
-sudo apt-get -y install automake build-essential pkg-config libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev
-
-sudo apt-get -y install python3  systemd  yarn libsodium-dev libncursesw5 libtool autoconf
-```
-```
-sudo apt-get -y install make g++ tmux git jq wget htop nload curl zip unzip rsync wget cron
-```
-```
-sudo apt-get -y install openssh-server net-tools gparted
-```
-
-2. Install Cabal : the Haskell build tool 
--------
-
-## Install Cabal v3.4.0.0
+Tạo nơi lưu trữ các tập tin liên quan đến Cardano.
 
 ```
-cd
-
-wget https://downloads.haskell.org/~cabal/cabal-install-3.4.0.0/cabal-install-3.4.0.0-x86_64-ubuntu-16.04.tar.xz 
-
-tar -xf cabal-install-3.4.0.0-x86_64-ubuntu-16.04.tar.xz 
-
-rm cabal-install-3.4.0.0-x86_64-ubuntu-16.04.tar.xz 
-
-mkdir -p ~/.cabal/bin
-
-mv cabal ~/.cabal/bin/
+mkdir ~/cardano
+cd ~/cardano
 ```
 
-## Install Cabal v3.6.2.0
+Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-node/ để tải phiên bản mới nhất.
 
 ```
-cd
-
-wget https://downloads.haskell.org/~cabal/cabal-install-3.6.2.0/cabal-install-3.6.2.0-x86_64-linux-alpine.tar.xz
-
-tar -xf cabal-install-3.6.2.0-x86_64-linux-alpine.tar.xz 
-
-rm cabal-install-3.6.2.0-x86_64-linux-alpine.tar.xz
-
-mkdir -p ~/.cabal/bin
-
-mv cabal ~/.cabal/bin/
+wget https://hydra.iohk.io/build/8674953/download/1/cardano-node-1.31.0-linux.tar.gz
+tar zxvf cardano-node-1.31.0-linux.tar.gz
 ```
 
-```
-echo export PATH=~/.cabal/bin:$PATH >> ~/.bashrc
+Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Nếu bạn giống tôi, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng.
 
-source ~/.bashrc
-
-echo $PATH
-
-cabal --version
-```
-
-3. Installing GHC - The Glorious Glasgow Haskell Compilation System
---------
-
-## Download and install version 8.10.4 of GHC
+Sao chép hai mã nhị phân chính vào local/bin.
 
 ```
-cd
-wget https://downloads.haskell.org/ghc/8.10.4/ghc-8.10.4-x86_64-deb9-linux.tar.xz
-
-tar -xf ghc-8.10.4-x86_64-deb9-linux.tar.xz
-
-rm ghc-8.10.4-x86_64-deb9-linux.tar.xz
-
-cd ghc-8.10.4
-
-./configure
-
-sudo make install
-
+mkdir -p ~/.local/bin
+cp ./cardano-cli ~/.local/bin/
+cp ./cardano-node ~/.local/bin/
 ```
 
-## Download and install version 8.10.7 of GHC. The easiest way to do this is to use ghcup.
+Thêm local/bin đó vào đường dẫn của shell của bạn.
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-
-ghcup install ghc 8.10.7
-
-ghcup install cabal 3.4.0.0
-
-ghcup set ghc 8.10.7
-
-ghcup set cabal 3.4.0.0
-
-cd
-
-ghc --version
+export PATH="$HOME/.local/bin/:$PATH"
+Nối dòng trên vào ~/.bashrctệp của bạn. Ví dụ:nano ~/.bashrc
 ```
 
-4. Install Libsodium
--------
+Tải xuống blockchain
+------
+
+Tạo một nơi để đặt testnet blockchain.
 
 ```
-mkdir $HOME/git
-
-cd $HOME/git
-
-git clone https://github.com/input-output-hk/libsodium
-
-cd libsodium
-
-git checkout 66f017f1
-
-./autogen.sh
-
-./configure
-
-make
-
-sudo make install
+mkdir ~/cardano/testnet
+cd ~/cardano/testnet
+mkdir testnet-db
 ```
 
-5. Update CNODE PATH
---------------
+Tải xuống tệp cấu hình testnet từ IOHK.
 
 ```
-export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
-
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-echo export CNODE_HOME=/opt/cardano/cnode  >> $HOME/.bashrc
-
-echo export CARDANO_NODE_SOCKET_PATH="$CNODE_HOME/sockets/node0.socket" >> $HOME/.bashrc
-source ~/.bashrc
+curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-topology.json
+curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-shelley-genesis.json
+curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-config.json
+curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-byron-genesis.json
+curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-alonzo-genesis.json
 ```
 
-6. Build cardano-node & cardano-cli binary
-----------------------
+Đặt một số biến môi trường.
 
 ```
-cd $HOME/git
-
-git clone https://github.com/input-output-hk/cardano-node.git
-cd cardano-node
-git fetch --all --recurse-submodules --tags && git tag
-git checkout tags/<TAGGED VERSION>
-cabal configure --with-compiler=ghc-8.10.7
-
-echo "package cardano-crypto-praos" >>  cabal.project.local
-
-echo "  flags: -external-libsodium-vrf" >>  cabal.project.local
+export CARDANO_NODE_SOCKET_PATH="$HOME/cardano/testnet-db/node.socket"
 ```
 
-## Build Core/Relay Node Online
+Kết nối với testnet và tải xuống blockchain. Quá trình này có thể mất vài giờ.
 
 ```
-cabal build all
-
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.2/cardano-node-1.24.2/x/cardano-node/build/cardano-node/cardano-node ~/.cabal/bin/
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.2/cardano-cli-1.24.2/x/cardano-cli/build/cardano-cli/cardano-cli ~/.cabal/bin/
+cardano-node run \
+--topology ~/cardano/configuration/testnet/testnet-topology.json \
+--database-path ~/cardano/testnet-db \
+--socket-path ~/cardano/testnet-db/node.socket \
+--host-addr 127.0.0.1 \
+--port 3001 \
+--config ~/cardano/configuration/testnet/testnet-config.json
 ```
 
-
-which cardano-node && which cardano-cli
-
-```
-cardano-node --version
-
-cardano-cli --version
-```
-
-## Build Air-gapped Node Offline
+Kiểm tra xem liệu nút của bạn đã được đồng bộ hóa chưa.
 
 ```
-$CNODE_HOME/scripts/cabal-build-all.sh -o
+cardano-cli query tip --testnet-magic 1097911063
 ```
 
-7. Create CNTools cnode #files #db #priv #scripts #sockets #logs
----------------
+Cài đặt Ví Cardano
+-----
+
+Mở cửa sổ shell thứ hai (sử dụng Alt + F2). Chúng tôi sẽ để nút chạy trong trình bao khác (chuyển trở lại nó bằng cách sử dụng Alt + F1). Ngoài ra, kết nối bằng Putty hoặc ứng dụng SSH yêu thích của bạn.
+
+Tải xuống tệp nhị phân được biên dịch trước cho Ví Cardano và đặt nó ở vị trí cố định. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-wallet/ để tải phiên bản mới nhất.
 
 ```
-mkdir "$HOME/tmp"
-
-cd "$HOME/tmp"
-
-curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh
-
-chmod 700 prereqs.sh
-
-./prereqs.sh
+mkdir ~/cardano/wallet
+cd ~/cardano/wallet
+wget https://hydra.iohk.io/build/8600272/download/1/cardano-wallet-v2021-11-11-linux64.tar.gz
+tar zxvf cardano-wallet-v2021-11-11-linux64.tar.gz
+cd cardano-wallet-v2021-11-11-linux64/
+cp cardano-wallet ~/.local/bin/
 ```
 
-8. Create TMUX scripts #start_all #stop_all
--------
+Chạy Ví Cardano như một máy chủ API.
 
 ```
-cd git
-git clone https://github.com/stakepool247/CardanoHaskellTestnetScripts.gitcd CardanoHaskellTestnetScripts/
-
-git checkout master
-cp *.sh $CNODE_HOME/scripts/
-cd $CNODE_HOME/scripts/
-chmod +x start_all.sh stop_all.sh node.sh
+cardano-wallet serve \
+--port 8090 \
+--database ~/cardano/testnet-db \
+--node-socket $CARDANO_NODE_SOCKET_PATH \
+--testnet ~/cardano/configuration/testnet/testnet-byron-genesis.json
 ```
+
+Để biết thêm thông tin, hãy xem Hướng dẫn sử dụng ví cardano.
+https://input-output-hk.github.io/cardano-wallet/user-guide/cli

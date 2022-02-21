@@ -1,6 +1,6 @@
-Cài đặt Node cho Cardano trên mạng Testnet
+Cài đặt Node cho Cardano trên mạng Maintnet
 ========================
-Xây dựng Node cho Cardano trên mạng Testnet với hệ điều hành Ubuntu 20.04
+Xây dựng Node cho Cardano trên mạng Mainnet với hệ điều hành Ubuntu 20.04
 
 Tài nguyên
 
