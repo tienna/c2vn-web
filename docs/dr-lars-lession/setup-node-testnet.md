@@ -26,8 +26,8 @@ cd ~/cardano
 Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-node/ để tải phiên bản mới nhất.
 
 ```
-sudo wget https://hydra.iohk.io/build/8674953/download/1/cardano-node-1.33.0-linux.tar.gz
-sudo tar zxvf cardano-node-1.33.0-linux.tar.gz
+sudo wget https://hydra.iohk.io/build/8674953/download/1/cardano-node-1.31.0-linux.tar.gz
+sudo tar zxvf cardano-node-1.31.0-linux.tar.gz
 ```
 
 Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng. Đây là hướng dẫn bạn tự xây dựng các file nhị phân https://cardano2vn.io/docs/dr-lars-lession/setup-node-mainnet
