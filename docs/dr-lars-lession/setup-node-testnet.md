@@ -28,7 +28,7 @@ sudo wget https://hydra.iohk.io/build/8674953/download/1/cardano-node-1.33.0-lin
 sudo tar zxvf cardano-node-1.33.0-linux.tar.gz
 ```
 
-Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng.
+Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng. Đây là hướng dẫn bạn tự xây dựng các file nhị phân https://cardano2vn.io/docs/dr-lars-lession/setup-node-mainnet
 
 Sao chép hai mã nhị phân chính vào local/bin.
 
