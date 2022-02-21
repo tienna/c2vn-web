@@ -37,9 +37,15 @@ sudo mkdir -p ~/.local/bin
 sudo cp ./cardano-cli ~/.local/bin/
 sudo cp ./cardano-node ~/.local/bin/
 cd ~/.local/bin
-sudo chmod 700 cardano-cli, cardano-node
+sudo chmod 700 cardano-cli
+sudo chmod 700 cardano-node
 ```
 
+Cấp quyền cho user 
+
+```
+sudo chown -R hada_gcp /opt/cardano
+```
 Thêm local/bin đó vào đường dẫn của shell của bạn.
 
 ```
