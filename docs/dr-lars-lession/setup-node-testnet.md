@@ -10,6 +10,8 @@ Hơn 100 GB dung lượng ổ cứng
 Với hệ điều hành Ubuntu 20.04
 Cài đặt Máy chủ Ubuntu (Linux)
 
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/HM9Jc8L-xOw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe> 
+
 Cài đặt Cardano Node
 -----
 
