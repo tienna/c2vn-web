@@ -8,7 +8,8 @@ Cấu hình máy tính tốt:
 Máy tính cài phần mềm 32 GB ram 
 Hơn 100 GB dung lượng ổ cứng 
 Với hệ điều hành Ubuntu 20.04
-tài liệu : https://cardano-community.github.io/guild-operators/#/basics
+
+Tài liệu : https://cardano-community.github.io/guild-operators/#/basics
 
 # A. Tạo user
 
@@ -34,7 +35,7 @@ sudo apt-get  install libsodium-dev bsdmainutils  unzip git make tmux rsync htop
 ```
 
 
-## B2 libsodium
+## B2 Cài đặt libsodium
 
 ```
 	mkdir $HOME/git	
@@ -53,7 +54,7 @@ sudo apt-get  install libsodium-dev bsdmainutils  unzip git make tmux rsync htop
 	sudo make install	
 ```
 
-## B3.  Install GHC và Install Cabal + CNtool
+## B3.  Cài đặt GHC và Cài đặt Cabal + CNtool
 
 ```
 
@@ -72,7 +73,7 @@ chmod 755 prereqs.sh
 ./prereqs.sh 
 ```
 
-## B4. update PATH
+## B4. Cập nhật PATH
 
 ```
 
@@ -128,7 +129,7 @@ sudo chmod 755 prereqs.sh
 ./prereqs.sh -clf	
 ```
 
-## B7. Chinh sua file cau hinh
+## B7. Chỉnh sửa file cấu hình
 
 ```
 cd $CNODE_HOME/scripts
