@@ -58,9 +58,9 @@ Thêm IOHK Binary Cache. Để cải thiện tốc độ xây dựng, có thể 
 
   
 ```
-$ sudo mkdir -p /etc/nix
+sudo mkdir -p /etc/nix
 
-$ cat <<EOF | sudo tee /etc/nix/nix.conf
+cat <<EOF | sudo tee /etc/nix/nix.conf
 
 substituters = https://cache.nixos.org https://hydra.iohk.io
 
@@ -76,9 +76,9 @@ Sau khi Nix được cài đặt, hãy đăng xuất và sau đó đăng nhập 
 
   
 ```
-$ git clone https://github.com/input-output-hk/cardano-node
-$ cd cardano-node
-$ git checkout -b alonzo-purple tags/alonzo-purple-1.0.2
+git clone https://github.com/input-output-hk/cardano-node
+cd cardano-node
+git checkout -b alonzo-purple tags/alonzo-purple-1.0.2
 ```
  
 Lưu thông tin sau vào một tệp có tên `plutus-tutorial.nix`:
@@ -105,7 +105,7 @@ TESTNET_MAGIC = magicId;
 
 và sau đó tải một trình bao với Nix bằng cách sử dụng tệp này với lệnh sau:
 ```
-$ nix-shell plutus-tutorial.nix
+nix-shell plutus-tutorial.nix
 ```  
 
 Quá trình này sẽ mất khoảng năm hoặc mười phút, sau đó, bạn sẽ thấy một cái gì đó tương tự như sau:
@@ -126,10 +126,10 @@ these paths will be fetched (445.08 MiB download, 5870.53 MiB unpacked):
 
 Khi bạn có phiên bản gần đây của GHC và Cabal, hãy đảm bảo sử dụng GHC 8.10.2 trở lên:
 ```
-[nix-shell:~]$ ghc --version
+ghc --version
 The Glorious Glasgow Haskell Compilation System, version 8.10.4
 
-[nix-shell:~]$ cabal --version
+cabal --version
 cabal-install version 3.4.0.0
 compiled using version 3.4.0.0 of the Cabal library
 
@@ -137,12 +137,11 @@ compiled using version 3.4.0.0 of the Cabal library
 
 ## Chạy cardano-node
 
-  
-
 Bên trong nix-shell bắt đầu một nút Cardano thụ động:
 
 ```
-$ nix-shell plutus-tutorial.nix
+nix-shell plutus-tutorial.nix
+
 [nix-shell:~]$ cardano-node-alonzo-purple
 ```
 
@@ -176,7 +175,7 @@ Tại thời điểm này, nút sẽ bắt đầu đồng bộ hóa với mạng
   
 
 ```
-$ cabal run plutus-alwayssucceeds -- 42 alwayssucceeds.plutus
+cabal run plutus-alwayssucceeds -- 42 alwayssucceeds.plutus
 ```
 
  
@@ -205,18 +204,15 @@ ExBudget {_exBudgetCPU = ExCPU 1390000, _exBudgetMemory = ExMemory 100}
 }
 ```
 
-  
-
 Sau đó, chúng tôi sẽ biên dịch kịch bản Plutus. Bây giờ, chúng ta cần xây dựng giao dịch trong Alonzo testnet bằng cách sử dụng [cardano-node-cli](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/cardano-node-cli-reference.md/) bao gồm tập lệnh Plutus.
   
 
 ## Tạo ví
 
-  
 1. **Đảm bảo rằng bạn có phiên bản được gắn thẻ mới nhất của kỷ nguyên Alonzo**.  Bây giờ bạn sẽ thấy những điều sau:
 
 ```
-[nix-shell:~/..]$ cardano-cli query tip --testnet-magic $TESTNET_MAGIC
+cardano-cli query tip --testnet-magic $TESTNET_MAGIC
 {
 "epoch": 188,
 "hash": "ec200f79ee7f35f2b8ffd3dc8cfe1f51c425fedceb2369f722ad5e5b6f5f223f",
@@ -228,31 +224,31 @@ Sau đó, chúng tôi sẽ biên dịch kịch bản Plutus. Bây giờ, chúng 
 
 ```
 
-  
-
 Lưu ý: Đảm bảo rằng “thời đại” tương ứng với “Alonzo”. Nếu bạn vừa mới bắt đầu nút, bạn có thể cần phải đợi nút của mình đồng bộ hóa trước khi bạn có thể thấy điều này. Nút thực sự không cần thiết để xây dựng một giao dịch, nhưng sẽ rất hữu ích khi gửi giao dịch đó lên mạng.
 
   
 
-2. **tạo các keys**.  Để gửi giao dịch, chúng ta cần tạo hai ví như sau. Đối với bước này, hãy tạo khóa thanh toán tại địa chỉ tương ứng:
+2. **Tạo các keys**.  Để gửi giao dịch, chúng ta cần tạo hai ví như sau. Đối với bước này, hãy tạo khóa thanh toán tại địa chỉ tương ứng:
 
 ```
 
-[nix-shell:~/..]$ cardano-cli address key-gen \
+cardano-cli address key-gen \
 --verification-key-file payment.vkey \
 --signing-key-file payment.skey
   
-[nix-shell:~/..]$ cardano-cli stake-address key-gen \
+cardano-cli stake-address key-gen \
 --verification-key-file stake.vkey \
 --signing-key-file stake.skey
 
-[nix-shell:~/..]$ cardano-cli address build \
+cardano-cli address build \
 --payment-verification-key-file payment.vkey \
 --stake-verification-key-file stake.vkey \
 --out-file payment.addr \
 --testnet-magic $TESTNET_MAGIC 
+```
 
-[nix-shell:~/..]$ cat payment.addr
+```
+cat payment.addr
 addr_test ...
 ```
 
@@ -266,10 +262,8 @@ Trong giao dịch đơn giản này, chúng tôi gửi tiền từ một địa 
 
 1. **Query UTXO**. Đầu tiên, chúng ta cần truy vấn các UTXO trong `payment. addr`:
 
-  
-
 ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment.addr) --testnet-magic $TESTNET_MAGIC
+cardano-cli query utxo --address $(cat payment.addr) --testnet-magic $TESTNET_MAGIC
 ```
 
 Xem xét địa chỉ của bạn có số dư, bạn sẽ thấy một cái gì đó như sau:
@@ -281,14 +275,13 @@ TxHash TxIx Amount
 
 77aff3e7cdedf4874f4bf6c1e79dd9a1a250b32a342d0bdb885b1f7a41a49ca6 0 1000000000000 lovelace + TxOutDatumHashNone
 ```
-
  
 2. **Build the transaction.** USử dụng thông tin này, chúng tôi có thể xây dựng một giao dịch:
 
   
 
 ```
-[nix-shell:~/..]$ cardano-cli transaction build \
+cardano-cli transaction build \
 --alonzo-era \
 --testnet-magic ${TESTNET_MAGIC} \
 --change-address $(cat payment.addr) \
@@ -310,13 +303,13 @@ Như đã thấy trong sơ đồ dòng ở trên, chúng ta có thể có một 
 3. **Sign and submit the transaction.**
 
 ```
-[nix-shell:~/..]$ cardano-cli transaction sign \
+cardano-cli transaction sign \
 --tx-body-file tx.build \
 --testnet-magic ${TESTNET_MAGIC} \
 --signing-key-file payment.skey \
 --out-file tx.signed
 
-[nix-shell:~/..]$ cardano-cli transaction submit --tx-file tx.signed --testnet-magic ${TESTNET_MAGIC}
+cardano-cli transaction submit --tx-file tx.signed --testnet-magic ${TESTNET_MAGIC}
 
 Transaction successfully submitted.
 
@@ -326,7 +319,7 @@ Bây giờ nếu chúng ta truy vấn Payment2.addr, chúng ta sẽ có một UT
 
   
 ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
+cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
 
 TxHash TxIx Amount
 
@@ -334,7 +327,7 @@ TxHash TxIx Amount
 
 4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0 1 30000000000 lovelace + TxOutDatumHashNone
  
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
+cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
   
 TxHash TxIx Amount
 
@@ -366,7 +359,7 @@ Tập lệnh này sẽ không kiểm tra bất kỳ điều gì và sẽ luôn t
 
 ```
 
-[nix-shell:~/..]$ cardano-cli address build \
+cardano-cli address build \
 --payment-script-file alwayssucceeds.plutus \
 --testnet-magic ${TESTNET_MAGIC} \
 --out-file script.addr
@@ -375,22 +368,22 @@ Tập lệnh này sẽ không kiểm tra bất kỳ điều gì và sẽ luôn t
 Bây giờ địa chỉ tập lệnh nằm trong tệp `script.addr`:
 
 ```
-[nix-shell:~/..]$ cat script.addr
+cat script.addr
 addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 ```
 
 2. Chúng tôi không đính kèm trực tiếp dữ liệu vào UTXO nhưng chúng tôi sử dụng hàm băm của nó. Để lấy mã băm của dữ liệu, hãy chạy lệnh `cardano-cli` sau:
 
 ```
-[nix-shell:~/..]$ cardano-cli transaction hash-script-data --script-data-value 12 
+cardano-cli transaction hash-script-data --script-data-value 12 
 
-[nix-shell:~/..]$ export scriptdatumhash=5e9d8bac576e8604e7c3526025bc146f5fa178173e3a5592d122687bd785b520
+export scriptdatumhash=5e9d8bac576e8604e7c3526025bc146f5fa178173e3a5592d122687bd785b520
 ```
 
 3. **Nhận các tham số giao thức**. Nhận các tham số giao thức và lưu chúng vào `pparams.json`:
 
 ```
-[nix-shell:~/..]$ cardano-cli query protocol-parameters \
+cardano-cli query protocol-parameters \
 --testnet-magic ${TESTNET_MAGIC} \
 --out-file pparams.json
 ```
@@ -398,7 +391,7 @@ addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 4. **Build the transaction.** Bây giờ, chúng ta nên tạo tx sẽ gửi ADA đến địa chỉ tập lệnh của tập lệnh AlwaysSucceeds của chúng tôi. Chúng tôi viết giao dịch trong một tệp `tx-script.build`:
 
 ```
-[nix-shell:~/..]$ cardano-cli transaction build \
+cardano-cli transaction build \
 --alonzo-era \
 --testnet-magic ${TESTNET_MAGIC} \
 --change-address $(cat payment.addr) \
@@ -412,7 +405,7 @@ addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 5. **Sign the transaction**. Ký giao dịch bằng khóa bí mật `payment.skey` và lưu giao dịch đã ký vào `tx-script.signed`:
  
 ```
-[nix-shell:~/..]$ cardano-cli transaction sign \
+cardano-cli transaction sign \
 --tx-body-file tx-script.build \
 --signing-key-file payment.skey \
 --testnet-magic ${TESTNET_MAGIC} \
@@ -422,7 +415,7 @@ addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 6. **Submit the transaction**:
 
 ```
-[nix-shell:~/..]$ cardano-cli transaction submit --testnet-magic ${TESTNET_MAGIC} --tx-file tx-script.signed
+cardano-cli transaction submit --testnet-magic ${TESTNET_MAGIC} --tx-file tx-script.signed
  
 Transaction successfully submitted.
 ```
@@ -432,7 +425,7 @@ Transaction successfully submitted.
 7. **Check the balances**. Chúng tôi có thể truy vấn cả địa chỉ cá nhân và địa chỉ tập lệnh:
 
 ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
+cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
 
 TxHash TxIx Amount
 
@@ -441,7 +434,7 @@ TxHash TxIx Amount
 2db009bc57c9855a89ec9dc8c99744552fc87df1255eedbdc1db58b1db8dfe59 0 969979663190 lovelace + TxOutDatumHashNone
 ```
 ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat script.addr) --testnet-magic ${TESTNET_MAGIC}
+cardano-cli query utxo --address $(cat script.addr) --testnet-magic ${TESTNET_MAGIC}
  
 
 TxHash TxIx Amount
@@ -454,7 +447,7 @@ TxHash TxIx Amount
 .
 ```
  ```
-[nix-shell:~/..]$ export plutusutxotxin=2db009bc57c9855a89ec9dc8c99744552fc87df1255eedbdc1db58b1db8dfe59#1
+export plutusutxotxin=2db009bc57c9855a89ec9dc8c99744552fc87df1255eedbdc1db58b1db8dfe59#1
 ```
 
 Bây giờ, chúng tôi đã gửi tiền cho một kịch bản.
@@ -469,7 +462,7 @@ Nó dẫn đến hai UTXO mới.
 1. **Check the balances**:
 
 ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
+cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
 
 TxHash TxIx Amount
 
@@ -478,13 +471,13 @@ TxHash TxIx Amount
 4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0 1 30000000000 lovelace + TxOutDatumHashNone
 ```
 ```
-[nix-shell:~/..]$ export txCollateral="4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0#1"
+export txCollateral="4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0#1"
 ```
 
 2. **Construct, sign, and submit** giao dịch mới để mở khóa:
 
 ```
-[nix-shell:~/..]$ cardano-cli transaction build \
+cardano-cli transaction build \
 --alonzo-era \
 --testnet-magic ${TESTNET_MAGIC} \
 --tx-in ${plutusutxotxin} \
@@ -500,14 +493,14 @@ TxHash TxIx Amount
 Nếu chúng tôi sử dụng UTXO là một phần của địa chỉ tập lệnh làm đầu vào của giao dịch, chúng tôi cần chỉ định các đối số `--tx-in-script-file  --tx-in datum-value  --tx-in-redeemer-value --tx-in-collateral` sau là đối số `--tx-in` chưa UTXO đó:
 
 ```
-[nix-shell:~/..]$ cardano-cli transaction sign \
+cardano-cli transaction sign \
 --tx-body-file test-alonzo.tx \
 --signing-key-file payment2.skey \
 --testnet-magic ${TESTNET_MAGIC} \
 --out-file test-alonzo.signed
 ```
 ```
-[nix-shell:~/..]$ cardano-cli transaction submit --testnet-magic ${TESTNET_MAGIC} --tx-file test-alonzo.signed 
+cardano-cli transaction submit --testnet-magic ${TESTNET_MAGIC} --tx-file test-alonzo.signed 
 
 Transaction successfully submitted.
 ```
@@ -515,10 +508,10 @@ Transaction successfully submitted.
 Bây giờ, nếu chúng tôi truy vấn cả hai địa chỉ, chúng tôi có thể thấy rằng chúng tôi đã mở khóa tiền
 
 ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
+cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
  ```
-[nix-shell:~/..]$ cardano-cli query utxo --address $(cat untyped-always-succeeds-txin.addr) --testnet-magic ${TESTNET_MAGIC}
+cardano-cli query utxo --address $(cat untyped-always-succeeds-txin.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
 Lưu ý rằng chúng tôi chỉ định số magic hiện được gán cho chuỗi Alonzo và theo cách tương tự, chúng tôi chỉ định giao dịch vừa được ký trong lệnh trước đó.
