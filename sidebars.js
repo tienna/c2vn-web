@@ -77,9 +77,6 @@ const sidebars = {
         "dr-lars-lession/week8",
         "dr-lars-lession/week9",
         "dr-lars-lession/week10",
-		"dr-lars-lession/Installation",
-		"dr-lars-lession/setup-node-mainnet",
-		"dr-lars-lession/setup-node-testnet",
 		
     ],
     "Tích hợp với Cardano": [
@@ -95,7 +92,7 @@ const sidebars = {
       //"native-tokens/minting",
       //"native-tokens/minting-nfts",
     ],
-    "Setup Application": [
+    "Cài đặt và ứng dụng": [
       "setup-application/Installation",
       "setup-application/setup-node-mainnet",
       "setup-application/setup-node-testnet",
