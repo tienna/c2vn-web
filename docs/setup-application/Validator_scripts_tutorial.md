@@ -1,20 +1,21 @@
-## Validator scripts tutorial
+Validator scripts tutorial
+=============
 
-A validator script is used to lock transaction outputs on the chain. It is attached to a script output in the extended UTXO model and determines the address of the output. It must return positively in order for the output to be spent.
+Một tập lệnh xác thực (Validator scripts) được sử dụng để khóa các đầu ra giao dịch trên chuỗi. Nó được gắn vào đầu ra tập lệnh trong mô hình UTXO mở rộng và xác định địa chỉ của đầu ra. Nó phải trả về số dương để đầu ra được chi tiêu.
 
-The purpose of the validator script is to signal failure. If it fails, it signals that the attempt to spend the output in invalid and therefore the transaction should fail. It indicates failure using the PlutusTx.Builtins.error builtin.
+Mục đích của tập lệnh trình xác thực là báo hiệu thất bại. Nếu không thành công, nó báo hiệu rằng nỗ lực chi tiêu đầu ra không hợp lệ và do đó giao dịch sẽ thất bại. Nó chỉ ra lỗi khi sử dụng nội trang PlutusTx.Builtins.error.
 
-Validator scripts are written as Haskell functions, which are compiled with Plutus Tx into Plutus Core. The type of a validator function is Data -> Data -> Data -> ()- a function which takes three arguments of type Data, and returns a value of type () (“unit” or “the empty tuple”).
+Các tập lệnh của trình xác thực được viết dưới dạng các hàm Haskell, được biên dịch với Plutus Tx thành Plutus Core. Loại hàm xác thực là Data -> Data -> Data -> () - một hàm nhận ba đối số kiểu data và trả về giá trị kiểu () (“đơn vị” hoặc “bộ giá trị trống”-“unit” or “the empty tuple”).
 
-### An intuitive understanding of a validator function.
+## Hiểu biết trực quan về hàm trình xác nhận.
 
-Let’s start with a couple of examples in pseudo code. These are examples of things that need to satisfy a “rule” before performing an “action”.
+Hãy bắt đầu với một vài ví dụ trong mã giả. Đây là những ví dụ về những thứ cần phải đáp ứng “quy tắc”-“rule” trước khi thực hiện một “hành động”-“action”.
 
-#### Example 1: Ferris Wheel
+### Example 1: Ferris Wheel
 
-For example, a kid wants to go on a ferris wheel, but before getting on, they must be taller than the safety sign.
+Ví dụ, một đứa trẻ muốn đi đu quay, nhưng trước khi lên, chúng phải cao hơn biển báo an toàn.
 
-We could express that idea in pseudo code, like:
+Chúng tôi có thể diễn đạt ý tưởng đó bằng mã giả, như:
 
 
 ```python
@@ -33,9 +34,9 @@ michael = {"height":135}
 ```
 
 
-#### Example 2: Drinking age
-Another example could be a young person trying to buy a beer in a bar.
-But before she can do that, she must first comply with the rule that she must be the legal drinking age in the country where the bar is located.
+### Example 2: Drinking age
+
+ Một ví dụ khác có thể là một người trẻ tuổi đang cố gắng mua bia trong quán bar. Nhưng trước khi có thể làm được điều đó, trước tiên cô ấy phải tuân thủ quy định rằng cô ấy phải đủ tuổi uống rượu hợp pháp tại quốc gia có quán bar.
 
 ```python
 if mayLegalyDrink(country=USA,person=sarah):
@@ -52,16 +53,17 @@ sarah = {"age":18}
 
 ```
 
-Given these two examples we can already identify a pattern.
+Với hai ví dụ này, chúng ta đã có thể xác định một `mẫu` -`pattern`.
 
-#### Validator function and script as a pattern
+### Hàm Validator và script mẫu
+
+Một hành động : `getOnFerrisWheel()`, `payBeer()` cần phải vượt qua quy tắc: `isTallEnough()`, `mayLegalyDrink()` trước khi được thực hiện. Quy tắc cần hai bit thông tin: một context `attraction`, `country` và một số dữ liệu dành riêng cho trường hợp quy tắc `michael`, `sarah` này.
+
+Bây giờ chúng ta có thể dịch những khái niệm đó thành tên mà chúng được đặt trong Plutus. Hành động được thực hiện là redeemer, quy tắc được gọi là validator function, Context là `Script Context` và dữ liệu được gọi là `datum`.
+
+Với thông tin đó, chúng ta có thể tạo một chương trình khác thực sự tóm tắt hai chương trình trước đó. Chúng ta có thể gọi nó  `performActionGivenARule` nhưng hãy sử dụng nó là Plutus name: `makeValidator`
 
 An action: `getOnFerrisWheel()`, `payBeer()` needs to pass a rule: `isTallEnough()` , `mayLegalyDrink()`, before being performed. The rule needs two bits of information: some context `attraction`, `country` and some data particular to this instance of the rule `michael`, `sarah`.
-
-Now we can translate those concepts into the names they are given in Plutus. The action to be performed is the `redeemer`, the rule is called the `validator function`, the context is the `Script Context` and the data is called the `datum`.
-
-With that information we could create another program that actually abstracts the previous two. We could call it `performActionGivenARule` but let’s use it’s Plutus name: `makeValidator`.
-
 
 ```python
 
@@ -70,7 +72,7 @@ def makeValidator(validator,context,datum,redeemer):
 
 ```
 
-With this function we can now define our previous examples simply as “contracts”.
+Với chức năng này, bây giờ chúng ta có thể định nghĩa các ví dụ trước đây của chúng ta đơn giản là `contracts`.
 
 ```python
 example1 = makeValidator(validator=isTallEnough
@@ -84,26 +86,26 @@ example2 = makeValidator(validator=mayLegalyDrink
 ```
 
 
-So with all these examples we can create an intuitive definition of a validator.
+Vì vậy, với tất cả các ví dụ này, chúng ta có thể tạo ra một định nghĩa trực quan về trình xác nhận.
 
 
-> A validator is a function that encodes a rule. Its parameters are a Context, state of the world, and a datum, a specific instance of data. It succeeds as long as it doesn’t throw an exception.
+> Trình xác thực là một hàm mã hóa một quy tắc. Các tham số của nó là `Context`, trạng thái của thế giới và datum, một phiên bản cụ thể của dữ liệu. Nó thành công miễn là nó không ném ra một ngoại lệ.
 
-Now that we know what a validator function is, let’s define a validator /script/.
+Bây giờ chúng ta đã biết hàm xác nhận là gì, hãy định nghĩa trình xác thực *script*.
 
-> A validator function that has been compiled using `PlutusTX.compile` and template Haskell is known as a validator script. The code hash will be used as the address for the script.
+> Một hàm trình xác thực đã được biên dịch bằng cách sử dụng 	`PlutusTX.compile` và template Haskell được gọi là một tập lệnh trình xác nhận. Mã băm sẽ được sử dụng làm địa chỉ cho tập lệnh.
 
-### Validators in Plutus Contracts
+## Validators trong hợp đồng Plutus 
 
-Now let’s look at actual Plutus contracts, no more pseudo code, and see how they implement validator functions and validator scripts.
+Bây giờ chúng ta hãy xem xét các hợp đồng Plutus thực tế, không còn mã giả nữa và xem cách chúng triển khai các hàm xác thực và tập lệnh trình xác thực.
 
-#### Plutus example: Vesting
-Imagine we want to give an inheritance to our child. However she may only receive the inheritance when she turns 18. Analyzing the whole example is beyond the scope of this article, but it is presented with detail in the 3rd Lecture of the Plutus Pioneer program, with the complete code, and the lecture notes by the community.
+### Ví dụ: Vesting
+Hãy tưởng tượng chúng ta muốn để lại tài sản thừa kế cho con mình. Tuy nhiên, cô ấy chỉ có thể nhận được tài sản thừa kế khi cô ấy bước sang tuổi 18. Phân tích toàn bộ ví dụ nằm ngoài phạm vi của bài viết này, nhưng nó được trình bày chi tiết trong Bài giảng thứ 3 của chương trình Plutus Pioneer, với mã hoàn chỉnh và bài giảng ghi chú bởi cộng đồng.
 
 
-##### Define the validator function
+#### Định nghĩa hàm validator
 
-So we need to create a validator function that takes into account the time when the request is being made.
+Vì vậy, chúng ta cần tạo một hàm xác nhận có tính đến thời gian yêu cầu được thực hiện.
 
 ```haskell
 {-# INLINABLE mkValidator #-}
@@ -113,10 +115,11 @@ mkValidator dat () ctx = traceIfFalse "beneficiary's signature missing" signedBy
   where
     info :: TxInfo
 ```
-Vesting [validator function (click here for complete code)](https://github.com/input-output-hk/plutus-pioneer-program/blob/3a7d675f7b53dcd846a0c286c1f56170d079e3ef/code/week01/src/Week01/EnglishAuction.hs#L102-L123)
+Vesting [validator function (Bấm vào đây để xem mã ngồn hoàn chỉnh)](https://github.com/input-output-hk/plutus-pioneer-program/blob/3a7d675f7b53dcd846a0c286c1f56170d079e3ef/code/week01/src/Week01/EnglishAuction.hs#L102-L123)
 
-##### Transform the validator function to the validator script.
-Now we create the validator Script of the validator function.
+#### Chuyển hàm validator thành script validator
+
+Bây giờ chúng ta tạo Tập lệnh xác thực của chức năng trình xác thực.
 
 ```haskell
 ...
@@ -130,8 +133,9 @@ typedValidator = Scripts.mkTypedValidator @Vesting
 ...
 ```
 
-##### Get the address for the contract
-And you can finally do some boiler plate for deployment:
+#### Tạo address cho contract
+
+Và cuối cùng bạn có thể thực hiện một số dòng lệnh củ thể để triển khai:
 
 ```haskell
 ...
@@ -150,15 +154,14 @@ scrAddress = scriptAddress validator
 
 ```
 
-#### Plutus example: English auction
+### Ví dụ: Đấu giá `English auction`
 
-The goal of an English auction is to sell something to the highest bidder. Analyzing the whole example is beyond the scope of this article, but it is presented with detail in the 1st lecture of the Plutus Pioneer program, with the complete code, and the lecture notes by the community.
+Mục tiêu của một cuộc đấu giá kiểu Anh là bán thứ gì đó cho người trả giá cao nhất. Phân tích toàn bộ ví dụ nằm ngoài phạm vi của bài viết này, nhưng nó được trình bày chi tiết trong bài giảng đầu tiên của chương trình Plutus Pioneer, với mã hoàn chỉnh và bài giảng được cộng đồng ghi chú.
 
-For a complete review of the program refer to the video lecture, or the excellent notes in .
-However we want to focus on two sections:
+Để xem lại toàn bộ chương trình, [hãy tham khảo video bài giảng](https://www.youtube.com/watch?v=CJD8ctJqDw0&list=PLbQhX3HIoPxqNPogQcvr9dwlg6Z96GZIL&index=1), hoặc các ghi chú xuất sắc. Tuy nhiên, chúng tôi muốn tập trung vào hai phần:
 
-##### Defining the validator function
-So let’s start by defining the validator function that will decide if the action `redeem` is possible given the current context and the datum.
+#### Định nghĩa hàm validator
+Vì vậy, hãy bắt đầu bằng cách xác định hàm trình xác nhận sẽ quyết định xem hành động `redeem` có thể thực hiện được với `Context` hiện tại và `datum` hay không.
 
 
 ```haskell
@@ -187,13 +190,14 @@ mkAuctionValidator ad redeemer ctx =
     info :: TxInfo
 
 ```
-English Aauction [validator function (click here for complete code)](https://github.com/input-output-hk/plutus-pioneer-program/blob/3a7d675f7b53dcd846a0c286c1f56170d079e3ef/code/week01/src/Week01/EnglishAuction.hs#L102-L123)
+English Aauction [validator function (bấm vào đây để xem code hoàn chỉnh)](https://github.com/input-output-hk/plutus-pioneer-program/blob/3a7d675f7b53dcd846a0c286c1f56170d079e3ef/code/week01/src/Week01/EnglishAuction.hs#L102-L123)
 
-Observe that the `makeAuctionValidator` is a function that takes as parameters a datum, redeemer and a context… just like our pseudo code version!
+Hãy quan sát rằng hàm `makeAuctionValidator` là một hàm nhận các tham số như datum, redeemer and a context…  giống như phiên bản pseudo của chúng tôi!
 
-##### Transform the validator function into the validator script.
 
-Now once we have the function we can create the validator *script*. Which as we established before is the validator function that has been compiled through template haskell and inlined in the program.
+#### Chuyển đổi hàm validator thành script validator .
+
+Bây giờ khi chúng ta có hàm validator, chúng ta có thể tạo tập lệnh trình xác nhận *script* . Như chúng tôi đã thiết lập trước đây là hàm xác thực đã được biên dịch thông qua haskell mẫu và được nội tuyến trong chương trình.
 
 ```haskell
 
@@ -204,13 +208,13 @@ auctionTypedValidator = Scripts.mkTypedValidator @Auctioning
   where
     wrap = Scripts.wrapValidator
 ```
-English Auction Validator Script
+ Tấp lệnh xác thực "Validator Script" kiểu Anh
 
-Now as we can see the `mkAuctionValidator` function is compiled with template haskell to plutus core. `PlutusTx.compile [|| … ||]` which in turn gets “spliced” i.e. made available to the current program with `$$(...)`
+Bây giờ như chúng ta có thể thấy, hàm `mkAuctionValidator` được biên dịnh với `template haskell` thành `plutus core`. `PlutusTx.compile [|| … ||]` tức nó được nối “spliced” i.e. với `$$(...)` trong sẵn trương trình hiện tại
 
-##### Getting the contract address boilerplate
+#### Tạo địa chỉ của contract
 
-Once the validator script is created we can calculate what it’s address is going to be:
+Khi tập lệnh trình xác thực được tạo, chúng tôi có thể tính toán địa chỉ của nó sẽ là gì:
 
 ```haskell
 
@@ -225,28 +229,28 @@ auctionAddress = Scripts.validatorHash auctionValidator
 
 ```
 
-#### Abstracting the validator script as a pattern
+### Tóm tắt tập lệnh trình xác thực 
 
-With the two previous examples is easy to abstract the pattern needed to create validator scripts:
+Với hai ví dụ trước, thật dễ dàng để trừu tượng hóa mẫu cần thiết để tạo các tập lệnh trình xác nhận:
 
-1. Define a validator function that if doesn’t throw an error means it succeeded.
-    * The validator function will receive as parameters the datum, the context and the redeemer (i.e. the action)
-1. Transform the validator function into the validator script.
-    * This requires the use of template haskell `[|| … |]]` and `PlutusTX.compile`. However it’s always the same pattern.
-1. Calculate the contract address in the blockchain
-    * It’s always the same boilerplate: calculate the script with: `Scripts.validatorScript typedValidator`
-    * Calculate the hash of the typed validator `Script.validatorHash typedValidator`
-    * Calculate the address `scriptAddress validator`
+1. Định nghĩa một hàm xác nhận mà nếu không gặp lỗi có nghĩa là nó đã thành công.
+    * Hàm trình xác thực sẽ nhận dưới dạng các tham số là datum,  context và redeemer (i.e. the action)
+2. Chuyển đổi hàm trình xác thực thành tập lệnh trình xác nhận-`script`.
+    * Điều này yêu cầu sử dụng template haskell `[|| … |]]` và `PlutusTX.compile`. Tuy nhiên, nó luôn luôn giống nhau.
+3. Tạo địa chỉ hợp đồng trong blockchain
+    * Nó luôn giống như boilerplate: tạo script với: `Scripts.validatorScript typedValidator`
+    * tính toán băm-hash của kiểu validator `Script.validatorHash typedValidator`
+    * Tính toán địa chỉ tập lệnh với `scriptAddress validator`
 
-### Takeaways
+## Takeaways
 
-* A validator function:
-  * Succeeds as long as it doesn’t throw an error.
-  * Requires a Datum (i.e. info about the action), a Redeemer (the action that wants to be performed), and a Context
-  * Is compiled to a validator script with PlutusTx.compile and template haskell
+* Một hàm validator:
+  * Thành công miễn là nó không gây ra lỗi.
+  * Yêu cầu: Datum (tức là thông tin về hành động), Redeemer (hành động muốn được thực hiện), và Context
+  * Được biên dịch thành tập lệnh trình xác thực với `PlutusTx.compile` và `template haskell`
 
-* A validator script
+* Một script validator 
 
-  * It’s generated from a validator function
-  * The code is not stored on the blockchain, *until* the reedemer transaction actually executes.
-  * You need to calculate it’s address with `scriptAddress`
+  * Nó được tạo từ một hàm xác thực
+  * Mã không được lưu trữ trên blockchain, *cho đén khi* giao dịch reedemer thực sự thực thi.
+  * Bạn cần tính toán địa chỉ của nó với `scriptAddress`

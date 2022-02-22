@@ -1,61 +1,60 @@
-## How to write Plutus transactions 
-This tutorial outlines what a Plutus transaction is and how to write one.
+Cách viết các giao dịch Plutus
+==========================
+Hướng dẫn này phác thảo giao dịch Plutus là gì và cách viết một giao dịch.
 
-### What is a Plutus transaction?
-A transaction is a piece of data that contains both inputs and outputs, and as of the Alonzo era, they can also include Plutus scripts. **Inputs** are unspent outputs from previous transactions (UTxO). As soon as an UTxO is used as input in a transaction, it becomes spent and can never be used again. The **output** is specified by an *address* (a public key or public key hash) and a *value* (consisting of an ada amount and optional additional native token amounts). This flow-diagram gives a better idea of what the components of a transaction are at a technical level:
+## Giao dịch Plutus là gì?
+Giao dịch là một phần dữ liệu chứa cả đầu vào và đầu ra, và kể từ thời Alonzo, chúng cũng có thể bao gồm các tập lệnh Plutus. Đầu vào là đầu ra chưa sử dụng từ các giao dịch trước đó (UTxO). Ngay sau khi UTxO được sử dụng làm đầu vào trong một giao dịch, nó sẽ được sử dụng và không bao giờ có thể được sử dụng lại. Đầu ra được chỉ định bởi một địa chỉ (khóa công khai hoặc mã băm khóa công khai) và một giá trị (bao gồm số lượng ada và số lượng mã thông báo gốc bổ sung tùy chọn). Sơ đồ luồng này cung cấp ý tưởng tốt hơn về các thành phần của giao dịch ở cấp độ kỹ thuật:
 
   
 
 ![Plutus-transaction](diagram-plutus-transaction.png)
   
 
-In short, inputs contain references to UTXOs introduced by previous transactions, and outputs are the new UTXOs that this transaction will produce. Also, if we think about it, this allows us to change the state of a smart contract since new data can be contained in the produced outputs.
+Nói tóm lại, đầu vào chứa các tham chiếu đến các UTXO được giới thiệu bởi các giao dịch trước đó và đầu ra là các UTXO mới mà giao dịch này sẽ tạo ra. Ngoài ra, nếu chúng ta nghĩ về nó, điều này cho phép chúng ta thay đổi trạng thái của hợp đồng thông minh vì dữ liệu mới có thể được chứa trong các đầu ra đã tạo.
+
+Điều quan trọng nữa là phải xác định `Plutus Tx` là gì. `Plutus Tx` là tên được đặt cho các phần được phân tách đặc biệt của chương trình Haskell được sử dụng để biên dịch phần trên chuỗi của ứng dụng hợp đồng thành Plutus Core (mã đã biên dịch này sau đó được sử dụng để xác thực giao dịch, do đó là "Tx") . Biểu thức Plutus Core kết quả có thể là một phần của dữ liệu giao dịch hoặc dữ liệu được lưu trữ trên sổ cái. Những đoạn mã này yêu cầu xử lý đặc biệt trên blockchain và được gọi là *Plutus script*.
 
   
 
-It is also important to define what a *Plutus Tx* is. Plutus Tx is the name given to specially-delimited sections of a Haskell program that are used to compile the on-chain part of a contract application into Plutus Core (this compiled code is then used for validating a transaction, hence the "Tx"). The resulting Plutus Core expression can be part of transaction data or data stored on the ledger. These pieces of code require special processing on the blockchain and are referred to as *Plutus script*.
+**Tại sao**
 
   
 
-**Why**
+Từ góc độ nhà phát triển Plutus, bằng cách sử dụng các giao dịch, chúng tôi có thể kiểm soát luồng thực thi tập lệnh Plutus của mình. Do đó, một giao dịch cũng có thể được coi là các thông điệp được sử dụng để tương tác với hợp đồng thông minh. Hiểu các giao dịch là một khái niệm chính để nắm vững sự phát triển của các hợp đồng thông minh.
 
   
 
-From a Plutus developer perspective, by using transactions, we can control the flow of execution of our Plutus script. Thus, a transaction can also be thought of as messages used to interact with the smart contract. Understanding transactions is a key concept to master the development of smart contracts.
+**Khi nào**
 
   
 
-**When**
-
-  
-
-A transaction ought to be created by the wallet while evaluating the off-chain code. For now, we have to assemble the transaction using cardano-cli and place the compiled Plutus script inside. At later stages though, this will be automated by the user's wallet software. The transaction, once submitted, will be validated and, therefore, the Plutus code will be evaluated by a validator node. If the script evaluates successfully, the transaction will be considered as valid. If not, the transaction will be rejected.
+Một giao dịch phải được tạo bởi ví trong khi đánh giá mã ngoài chuỗi. Hiện tại, chúng ta phải tập hợp giao dịch bằng cardano-cli và đặt tập lệnh Plutus đã biên dịch vào bên trong. Tuy nhiên, ở các giai đoạn sau, điều này sẽ được tự động hóa bởi phần mềm ví của người dùng. Giao dịch, sau khi được gửi, sẽ được xác thực và do đó, mã Plutus sẽ được đánh giá bởi một nút xác thực. Nếu tập lệnh đánh giá thành công, giao dịch sẽ được coi là hợp lệ. Nếu không, giao dịch sẽ bị từ chối.
 
   
   
 
-### Setting up the environment
+## Thiết lập môi trường
 
 If you already have a Haskell development environment set up, feel free to skip this section, otherwise follow along, we will set up a suitable environment for compiling plutus scripts using Nix.
 
   
 
-We will use Nix to provide both Haskell and Cabal, but if you desire, you could also rely on ghcup to manage these dependencies. However, we won't cover this. You can refer to the official [ghcup](https://gitlab.haskell.org/haskell/ghcup-hs) site for instructions on that.
+Chúng tôi sẽ sử dụng Nix để cung cấp cả Haskell và Cabal, nhưng nếu bạn muốn, bạn cũng có thể dựa vào ghcup để quản lý các phần phụ thuộc này. Tuy nhiên, chúng tôi sẽ không đề cập đến vấn đề này. Bạn có thể tham khảo trang web [ghcup](https://gitlab.haskell.org/haskell/ghcup-hs) chính thức để được hướng dẫn về điều đó.
 
   
 
-Nix is an amazing tool that, among other things, allows us to create isolated environments in which we can embed all dependencies needed for an application. These dependencies can even be system-level dependencies. Thus, we can create an isolated environment to ensure the application will work since all required dependencies are available.
+Nix là một công cụ tuyệt vời, trong số những thứ khác, cho phép chúng tôi tạo ra các môi trường biệt lập, trong đó chúng tôi có thể nhúng tất cả các phụ thuộc cần thiết cho một ứng dụng. Những phụ thuộc này thậm chí có thể là những phụ thuộc cấp hệ thống. Do đó, chúng ta có thể tạo một môi trường biệt lập để đảm bảo ứng dụng sẽ hoạt động vì tất cả các phụ thuộc bắt buộc đều có sẵn.
 
   
   
 
-Install Nix on any **Linux distribution**, **MacOS** or **Windows** (via WSL) via the recommended [multi-user installation](https://nixos.org/manual/nix/stable/#chap-installation). In short, you need to run this at your terminal:
+Cài đặt Nix trên bất kỳ IOS nào **Linux distribution**, **MacOS** or **Windows** (via WSL) thông qua [multi-user installation](https://nixos.org/manual/nix/stable/#chap-installation). Tóm lại, bạn cần chạy điều này tại terminal của mình:
 
 ```
 $ sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
-Add IOHK Binary Cache. To improve build speed, it is possible to set up a binary cache maintained by IOHK.
+Thêm IOHK Binary Cache. Để cải thiện tốc độ xây dựng, có thể thiết lập bộ đệm nhị phân do IOHK duy trì.
 
   
 ```
@@ -71,11 +70,9 @@ EOF
 ```
   
 
-Before Nix works in your existing shells, you need to close them and open them again. Other than that, you should be ready to go.
+Trước khi Nix hoạt động trong các trình bao hiện có của bạn, bạn cần đóng chúng và mở lại. Ngoài ra, bạn nên sẵn sàng để đi.
 
-  
-
-Once Nix is installed, log out and then log back in, so it is activated properly in your shell. Clone the following and check out the Alonzo tag.
+Sau khi Nix được cài đặt, hãy đăng xuất và sau đó đăng nhập lại, để nó được kích hoạt đúng cách trong trình bao của bạn. Sao chép phần sau và kiểm tra thẻ Alonzo.
 
   
 ```
@@ -84,7 +81,7 @@ $ cd cardano-node
 $ git checkout -b alonzo-purple tags/alonzo-purple-1.0.2
 ```
  
-Save the following into a file called `plutus-tutorial.nix`:
+Lưu thông tin sau vào một tệp có tên `plutus-tutorial.nix`:
 
 ```
 { version ? "purple", magicId ? 8, pkgs ? import <nixpkgs> { }}:
@@ -106,12 +103,12 @@ TESTNET_MAGIC = magicId;
 }
 ```
 
-and then load a shell with Nix using this file with the following command:
+và sau đó tải một trình bao với Nix bằng cách sử dụng tệp này với lệnh sau:
 ```
 $ nix-shell plutus-tutorial.nix
 ```  
 
-This will take approximately five or ten minutes, then, you should see something similar to this:
+Quá trình này sẽ mất khoảng năm hoặc mười phút, sau đó, bạn sẽ thấy một cái gì đó tương tự như sau:
 ```
 these paths will be fetched (445.08 MiB download, 5870.53 MiB unpacked):
 
@@ -125,11 +122,9 @@ these paths will be fetched (445.08 MiB download, 5870.53 MiB unpacked):
 
 ```
 
-This creates an environment with all dependencies listed in the “buildInputs” section, with GHC 8.10.4 and Cabal among those.
+Điều này tạo ra một môi trường với tất cả các phụ thuộc được liệt kê trong phần “buildInputs”, với GHC 8.10.4 và Cabal trong số đó.
 
-
-When you have recent versions of GHC and Cabal, make sure to use GHC 8.10.2 or later:
-
+Khi bạn có phiên bản gần đây của GHC và Cabal, hãy đảm bảo sử dụng GHC 8.10.2 trở lên:
 ```
 [nix-shell:~]$ ghc --version
 The Glorious Glasgow Haskell Compilation System, version 8.10.4
@@ -140,27 +135,23 @@ compiled using version 3.4.0.0 of the Cabal library
 
 ```
 
-### Running the cardano-node
+## Chạy cardano-node
 
   
 
-Inside the nix-shell start a passive Cardano node:
+Bên trong nix-shell bắt đầu một nút Cardano thụ động:
 
 ```
 $ nix-shell plutus-tutorial.nix
 [nix-shell:~]$ cardano-node-alonzo-purple
 ```
 
-At this point, the node will start syncing with the network. We are now ready to start building the Plutus transaction. Keep the node running in this shell, and open a new terminal to continue with the following steps. Remember to enter the nix-shell environment in this new terminal so you have both GHC and Cabal available.
+Tại thời điểm này, nút sẽ bắt đầu đồng bộ hóa với mạng. Bây giờ chúng tôi đã sẵn sàng để bắt đầu xây dựng giao dịch Plutus. Giữ cho nút chạy trong trình bao này và mở một thiết bị đầu cuối mới để tiếp tục các bước sau. Hãy nhớ nhập môi trường nix-shell trong thiết bị đầu cuối mới này để bạn có sẵn cả GHC và Cabal.
 
-  
-  
+### Plutus tx: Biên dịch tập lệnh Plutus
 
-### Plutus tx: Compiling a Plutus script
 
-  
-
-1. **Clone the `AlwaysSucceeds` Plutus script**. Write a Haskell program that uses it to compile our desired Plutus script, or you can use the source for the project [plutus-alwayssucceeds](https://github.com/input-output-hk/Alonzo-testnet/tree/main/resources/plutus-sources/plutus-alwayssucceeds).
+1. **Clone the `AlwaysSucceeds` Plutus script**. Viết một chương trình Haskell sử dụng nó để biên dịch tập lệnh Plutus mong muốn của chúng tôi hoặc bạn có thể sử dụng nguồn cho dự án  [plutus-alwayssucceeds](https://github.com/input-output-hk/Alonzo-testnet/tree/main/resources/plutus-sources/plutus-alwayssucceeds).
 
 
 ```
@@ -170,7 +161,7 @@ At this point, the node will start syncing with the network. We are now ready to
 ```
 
  
-2. **Compile the plutus-alwayssucceeds project**. This project contains the `AlwaysSucceeds` Plutus script. By building the plutus-alwayssucceeds project, we generate a binary that compiles this script.
+2. **Compile the plutus-alwayssucceeds project**. Dự án này  `AlwaysSucceeds` chứa tập lệnh Plutus. Bằng cách xây dựng dự án `plutus-alwayssucceeds`, chúng tôi tạo một tệp nhị phân để biên dịch tập lệnh này.
 
  
 ```
@@ -180,7 +171,7 @@ At this point, the node will start syncing with the network. We are now ready to
 ```
 
 
-3. **Execute the plutus-alwayssucceeds project**. We will pick a random number. It will be passed as an argument to the Plutus script (it is not used by the script right now, but will be required by transactions using the script). The second argument is the filename we use for the compiled Plutus script.
+3. **Execute the plutus-alwayssucceeds project**.  Chúng tôi sẽ chọn một số ngẫu nhiên. Nó sẽ được chuyển làm đối số cho tập lệnh Plutus (nó không được tập lệnh sử dụng ngay bây giờ, nhưng sẽ được yêu cầu bởi các giao dịch sử dụng tập lệnh). Đối số thứ hai là tên tệp chúng tôi sử dụng cho tập lệnh Plutus đã biên dịch.
 
   
 
@@ -189,7 +180,7 @@ $ cabal run plutus-alwayssucceeds -- 42 alwayssucceeds.plutus
 ```
 
  
-You should see something like this:
+Bạn sẽ thấy một cái gì đó như thế này:
 
 ```
 Up to date
@@ -216,20 +207,18 @@ ExBudget {_exBudgetCPU = ExCPU 1390000, _exBudgetMemory = ExMemory 100}
 
   
 
-We will then have the Plutus script compiled. Now, we need to build the transaction within the Alonzo testnet using the [cardano-node-cli](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/cardano-node-cli-reference.md/) project including the Plutus script.
-
+Sau đó, chúng tôi sẽ biên dịch kịch bản Plutus. Bây giờ, chúng ta cần xây dựng giao dịch trong Alonzo testnet bằng cách sử dụng [cardano-node-cli](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/cardano-node-cli-reference.md/) bao gồm tập lệnh Plutus.
   
 
-### Generating Wallets
+## Tạo ví
 
   
-
-1. **Ensure that you have the latest tagged version of the Alonzo era**. You should now see the following:
+1. **Đảm bảo rằng bạn có phiên bản được gắn thẻ mới nhất của kỷ nguyên Alonzo**.  Bây giờ bạn sẽ thấy những điều sau:
 
 ```
 [nix-shell:~/..]$ cardano-cli query tip --testnet-magic $TESTNET_MAGIC
 {
-"epoch": 92,
+"epoch": 188,
 "hash": "ec200f79ee7f35f2b8ffd3dc8cfe1f51c425fedceb2369f722ad5e5b6f5f223f",
 "slot": 660481,
 "block": 31229,
@@ -241,14 +230,11 @@ We will then have the Plutus script compiled. Now, we need to build the transact
 
   
 
-Note: Ensure that “era” corresponds to “Alonzo”. If you have just started the node, you might need to wait for your node to sync before you can see this. The node is not actually needed to build a transaction, but it is useful to submit the transaction to the network.
+Lưu ý: Đảm bảo rằng “thời đại” tương ứng với “Alonzo”. Nếu bạn vừa mới bắt đầu nút, bạn có thể cần phải đợi nút của mình đồng bộ hóa trước khi bạn có thể thấy điều này. Nút thực sự không cần thiết để xây dựng một giao dịch, nhưng sẽ rất hữu ích khi gửi giao dịch đó lên mạng.
 
   
 
-2. **Generate the keys**. To submit the transaction, we need to generate two wallets as follows. For this step, generate a payment key in the corresponding address:
-
-  
-  
+2. **tạo các keys**.  Để gửi giao dịch, chúng ta cần tạo hai ví như sau. Đối với bước này, hãy tạo khóa thanh toán tại địa chỉ tương ứng:
 
 ```
 
@@ -270,19 +256,15 @@ Note: Ensure that “era” corresponds to “Alonzo”. If you have just starte
 addr_test ...
 ```
 
-Make sure to generate an additional wallet using the same steps above, so you can test transactions between these addresses.
+Đảm bảo tạo ví bổ sung bằng cách sử dụng các bước tương tự ở trên để bạn có thể kiểm tra giao dịch giữa các địa chỉ này.
+
+## Xây dựng và gửi một giao dịch đơn giản (không phải Plutus)
+
+Trong giao dịch đơn giản này, chúng tôi gửi tiền từ một địa chỉ cá nhân đến một địa chỉ khác. Giả sử rằng chúng tôi có các địa chỉ này trong các tệp `payment.addr` và `payment2.addr`  và chúng tôi muốn gửi 30.000 ada từ địa chỉ đầu tiên đến địa chỉ thứ hai.
 
   
 
-### Build and submit a simple (non-Plutus) transaction
-
-  
-
-In this simple transaction, we send funds from one personal address to another address. Assume that we have these addresses in `payment.addr` and `payment2.addr` files and we want to send 30,000 ada from the first address to the second address.
-
-  
-
-1. **Query UTXO**. First, we need to query the UTXOs in the `payment. addr`:
+1. **Query UTXO**. Đầu tiên, chúng ta cần truy vấn các UTXO trong `payment. addr`:
 
   
 
@@ -290,7 +272,7 @@ In this simple transaction, we send funds from one personal address to another a
 [nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment.addr) --testnet-magic $TESTNET_MAGIC
 ```
 
-Taking into account you address has a balance, you should see something like this:
+Xem xét địa chỉ của bạn có số dư, bạn sẽ thấy một cái gì đó như sau:
 
 ```  
 TxHash TxIx Amount
@@ -301,7 +283,7 @@ TxHash TxIx Amount
 ```
 
  
-2. **Build the transaction.** Using this information, we can build a transaction:
+2. **Build the transaction.** USử dụng thông tin này, chúng tôi có thể xây dựng một giao dịch:
 
   
 
@@ -317,11 +299,11 @@ TxHash TxIx Amount
 
   
 
-In the `--tx-in` argument we set the UTXO that we are using as inputs, the format of which is TxHash#TxIx.
+Trong đối số `--tx-in` chúng tôi đặt UTXO mà chúng tôi đang sử dụng làm đầu vào, định dạng của nó là  TxHash#TxIx.
 
-The `--tx-out` arguments determine the output of the new UTXOs, the format of which is address+amount.
+Các đối số `--tx-out` xác định đầu ra của UTXO mới, định dạng `address`+`amount`.
 
-As seen in the flow-diagram above, we can have one or more inputs and outputs.
+Như đã thấy trong sơ đồ dòng ở trên, chúng ta có thể có một hoặc nhiều đầu vào và đầu ra..
 
  
 
@@ -340,7 +322,7 @@ Transaction successfully submitted.
 
 ```
 
-Now if we query payment2.addr we will have a new UTxO containing 30,000 ADAs:
+Bây giờ nếu chúng ta truy vấn Payment2.addr, chúng ta sẽ có một UTxO mới chứa 30.000 ADA:
 
   
 ```
@@ -361,20 +343,14 @@ TxHash TxIx Amount
 4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0 0 969999831639 lovelace + TxOutDatumHashNone  
 ```
 
-  
+Bây giờ chúng tôi đã gửi một giao dịch đơn giản.
 
-We have now sent a simple transaction.
+## Giao dịch để khóa tiền
 
-  
+Một giao dịch để khóa tiền rất giống với một giao dịch đơn giản. Tuy nhiên, nó có hai điểm khác biệt chính: chúng tôi khóa tiền vào một địa chỉ tập lệnh thay vì một địa chỉ cá nhân và chúng tôi cần chỉ định một hàm băm dữ liệu cho mọi đầu ra.
 
-### Transaction to lock funds
+Đầu tiên, hãy sử dụng tập lệnh trình xác thực Plutus sau:
 
-  
-
-A transaction to lock funds is very similar to a simple transaction. Still, it has two key differences: we lock funds to a script address instead of a personal one, and we need to specify a datum hash for every output.
-
-  
-First, use the following Plutus validator script:
 ```
 {-# INLINABLE mkValidator #-}
 
@@ -384,15 +360,9 @@ mkValidator _ _ _ = ()
 
 ```
 
-  
+Tập lệnh này sẽ không kiểm tra bất kỳ điều gì và sẽ luôn thành công bất kể giá trị của dữ liệu và công cụ đổi.
 
-This script will not check anything and will always succeed regardless of the value of the datum and redeemer.
-
-  
-
-1. **To calculate the script address**, we will use the Plutus script we already compiled alwayssucceeds.plutus:
-
-  
+1. **Để tính toán địa chỉ tập lệnh**, chúng tôi sẽ sử dụng tập lệnh Plutus mà chúng tôi đã biên dịch  `alwayssucceeds.plutus`:
 
 ```
 
@@ -402,20 +372,14 @@ This script will not check anything and will always succeed regardless of the va
 --out-file script.addr
 ```
 
-Now the script address is in the script.addr file:
-
-  
+Bây giờ địa chỉ tập lệnh nằm trong tệp `script.addr`:
 
 ```
 [nix-shell:~/..]$ cat script.addr
 addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 ```
 
-  
-
-2. We don’t attach the datum to a UTXO directly but we use its hash. To get the hash of the datum, run the following cardano-cli command:
-
-  
+2. Chúng tôi không đính kèm trực tiếp dữ liệu vào UTXO nhưng chúng tôi sử dụng hàm băm của nó. Để lấy mã băm của dữ liệu, hãy chạy lệnh `cardano-cli` sau:
 
 ```
 [nix-shell:~/..]$ cardano-cli transaction hash-script-data --script-data-value 12 
@@ -423,10 +387,7 @@ addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 [nix-shell:~/..]$ export scriptdatumhash=5e9d8bac576e8604e7c3526025bc146f5fa178173e3a5592d122687bd785b520
 ```
 
-
-3. **Get the protocol parameters**. Get the protocol parameters and save them to `pparams.json` using:
-
-  
+3. **Nhận các tham số giao thức**. Nhận các tham số giao thức và lưu chúng vào `pparams.json`:
 
 ```
 [nix-shell:~/..]$ cardano-cli query protocol-parameters \
@@ -434,11 +395,8 @@ addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 --out-file pparams.json
 ```
 
-  
+4. **Build the transaction.** Bây giờ, chúng ta nên tạo tx sẽ gửi ADA đến địa chỉ tập lệnh của tập lệnh AlwaysSucceeds của chúng tôi. Chúng tôi viết giao dịch trong một tệp `tx-script.build`:
 
-4. **Build the transaction.** Now, we should create the tx that will send ADA to the script address of our AlwaysSucceeds script. We write the transaction in a file `tx-script.build`:
-
- 
 ```
 [nix-shell:~/..]$ cardano-cli transaction build \
 --alonzo-era \
@@ -451,10 +409,7 @@ addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 --out-file tx-script.build
 ```
 
-  
-
-5. **Sign the transaction**. Sign the transaction with the signing key `payment.skey` and save the signed transaction in `tx-script.signed`:
-
+5. **Sign the transaction**. Ký giao dịch bằng khóa bí mật `payment.skey` và lưu giao dịch đã ký vào `tx-script.signed`:
  
 ```
 [nix-shell:~/..]$ cardano-cli transaction sign \
@@ -474,9 +429,7 @@ Transaction successfully submitted.
 
   
 
-7. **Check the balances**. We can query both personal and script addresses:
-
-  
+7. **Check the balances**. Chúng tôi có thể truy vấn cả địa chỉ cá nhân và địa chỉ tập lệnh:
 
 ```
 [nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
@@ -504,29 +457,16 @@ TxHash TxIx Amount
 [nix-shell:~/..]$ export plutusutxotxin=2db009bc57c9855a89ec9dc8c99744552fc87df1255eedbdc1db58b1db8dfe59#1
 ```
 
-  
+Bây giờ, chúng tôi đã gửi tiền cho một kịch bản.
 
-Now, we have sent funds to a script.
 
-  
-  
+## Giao dịch để mở khóa tiền từ một tập lệnh
 
-### Transaction to unlock funds from a script
+Để mở khóa tiền từ một tập lệnh, chúng tôi cần người đổi. Hãy nhớ rằng tập lệnh này sẽ luôn thành công bất kể giá trị của trình đổi quà là bao nhiêu, miễn là chúng tôi cung cấp mức dữ liệu chính xác. Vì vậy, chúng tôi có thể sử dụng bất kỳ giá trị nào làm công cụ đổi quà. Chúng tôi cũng cần một đầu vào làm tài sản thế chấp: nó bao gồm các khoản phí nếu giao dịch không thành công. Sau đó, chúng tôi cần một UTXO với đủ tiền. Chúng tôi sẽ tạo một giao dịch đơn giản bằng cách sử dụng `payment2.addr` làm ví dụ.
 
-  
-
-To unlock funds from a script, we need the redeemer. Let’s remember that this script will always succeed regardless of the value of the redeemer, so long as we provide the correct datum. So we can use any value as a redeemer. We also need an input as collateral : it covers the fees if the transaction fails. Then, we need a UTXO with enough funds. We are going to create a simple transaction using the `payment2.addr` account as an example.
-
-  
-  
-
-It results in two new UTXOs.
-
-  
+Nó dẫn đến hai UTXO mới.
 
 1. **Check the balances**:
-
-  
 
 ```
 [nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
@@ -541,13 +481,7 @@ TxHash TxIx Amount
 [nix-shell:~/..]$ export txCollateral="4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0#1"
 ```
 
-  
-  
-  
-
-2. **Construct, sign, and submit** the new transaction to unlock the funds:
-
-  
+2. **Construct, sign, and submit** giao dịch mới để mở khóa:
 
 ```
 [nix-shell:~/..]$ cardano-cli transaction build \
@@ -563,12 +497,7 @@ TxHash TxIx Amount
 --out-file test-alonzo.tx
 ```
 
-  
-  
-
-If we use a UTXO that is part of a script address as an input of the transaction, we need to specify the `--tx-in-script-file  --tx-in datum-value  --tx-in-redeemer-value --tx-in-collateral` arguments after the `--tx-in` argument containing that UTXO:
-
-  
+Nếu chúng tôi sử dụng UTXO là một phần của địa chỉ tập lệnh làm đầu vào của giao dịch, chúng tôi cần chỉ định các đối số `--tx-in-script-file  --tx-in datum-value  --tx-in-redeemer-value --tx-in-collateral` sau là đối số `--tx-in` chưa UTXO đó:
 
 ```
 [nix-shell:~/..]$ cardano-cli transaction sign \
@@ -583,7 +512,7 @@ If we use a UTXO that is part of a script address as an input of the transaction
 Transaction successfully submitted.
 ```
 
-Now, if we query both addresses we can see that we have unlocked the funds:
+Bây giờ, nếu chúng tôi truy vấn cả hai địa chỉ, chúng tôi có thể thấy rằng chúng tôi đã mở khóa tiền
 
 ```
 [nix-shell:~/..]$ cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
@@ -592,11 +521,7 @@ Now, if we query both addresses we can see that we have unlocked the funds:
 [nix-shell:~/..]$ cardano-cli query utxo --address $(cat untyped-always-succeeds-txin.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
-  
+Lưu ý rằng chúng tôi chỉ định số magic hiện được gán cho chuỗi Alonzo và theo cách tương tự, chúng tôi chỉ định giao dịch vừa được ký trong lệnh trước đó.
 
-Note that we specify the magic number that is currently assigned to the Alonzo chain, and in the same way we specify the transaction that was just signed in the previous command.
-
-  
-
-At this point, you have successfully sent your first Plutus transaction!
+Tại thời điểm này, bạn đã gửi thành công giao dịch Plutus đầu tiên của mình!
 
