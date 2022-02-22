@@ -96,6 +96,7 @@ const sidebars = {
       "setup-application/Installation",
       "setup-application/setup-node-mainnet",
       "setup-application/setup-node-testnet",
+	  "setup-application/step-by-step",
     ],	
 	
     "Vận hành một Stake Pool": [
