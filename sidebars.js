@@ -95,6 +95,12 @@ const sidebars = {
       //"native-tokens/minting",
       //"native-tokens/minting-nfts",
     ],
+    "Setup Application": [
+      "setup-application/Installation",
+      "setup-application/setup-node-mainnet",
+      "setup-application/setup-node-testnet",
+    ],	
+	
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
       // {
