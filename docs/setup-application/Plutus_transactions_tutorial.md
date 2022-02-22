@@ -45,8 +45,7 @@ Chúng tôi sẽ sử dụng Nix để cung cấp cả Haskell và Cabal, nhưng
 
 Nix là một công cụ tuyệt vời, trong số những thứ khác, cho phép chúng tôi tạo ra các môi trường biệt lập, trong đó chúng tôi có thể nhúng tất cả các phụ thuộc cần thiết cho một ứng dụng. Những phụ thuộc này thậm chí có thể là những phụ thuộc cấp hệ thống. Do đó, chúng ta có thể tạo một môi trường biệt lập để đảm bảo ứng dụng sẽ hoạt động vì tất cả các phụ thuộc bắt buộc đều có sẵn.
 
-  
-  
+
 
 Cài đặt Nix trên bất kỳ IOS nào **Linux distribution**, **MacOS** or **Windows** (via WSL) thông qua [multi-user installation](https://nixos.org/manual/nix/stable/#chap-installation). Tóm lại, bạn cần chạy điều này tại terminal của mình:
 
@@ -154,13 +153,13 @@ Tại thời điểm này, nút sẽ bắt đầu đồng bộ hóa với mạng
 
 
 ```
-[nix-shell:~]$ git clone [https://github.com/input-output-hk/Alonzo-testnet.git](https://github.com/input-output-hk/Alonzo-testnet.git)
+[nix-shell:~]$ git clone https://github.com/input-output-hk/Alonzo-testnet.git
 
 [nix-shell:~]$ cd Alonzo-testnet/resources/plutus-sources/plutus-alwayssucceeds
 ```
 
  
-2. **Compile the plutus-alwayssucceeds project**. Dự án này  `AlwaysSucceeds` chứa tập lệnh Plutus. Bằng cách xây dựng dự án `plutus-alwayssucceeds`, chúng tôi tạo một tệp nhị phân để biên dịch tập lệnh này.
+2. **Compile the plutus-alwayssucceeds project**. Dự án  `AlwaysSucceeds`  này chứa tập lệnh Plutus. Bằng cách xây dựng dự án `plutus-alwayssucceeds`, chúng tôi tạo một tệp nhị phân để biên dịch tập lệnh này.
 
  
 ```
@@ -172,13 +171,10 @@ Tại thời điểm này, nút sẽ bắt đầu đồng bộ hóa với mạng
 
 3. **Execute the plutus-alwayssucceeds project**.  Chúng tôi sẽ chọn một số ngẫu nhiên. Nó sẽ được chuyển làm đối số cho tập lệnh Plutus (nó không được tập lệnh sử dụng ngay bây giờ, nhưng sẽ được yêu cầu bởi các giao dịch sử dụng tập lệnh). Đối số thứ hai là tên tệp chúng tôi sử dụng cho tập lệnh Plutus đã biên dịch.
 
-  
-
 ```
 cabal run plutus-alwayssucceeds -- 42 alwayssucceeds.plutus
 ```
 
- 
 Bạn sẽ thấy một cái gì đó như thế này:
 
 ```
@@ -193,7 +189,10 @@ Writing output to: alwayssucceeds.plutus
 "Ex Budget"
 
 ExBudget {_exBudgetCPU = ExCPU 1390000, _exBudgetMemory = ExMemory 100}
+```
 
+Mở file kết quả.
+```
  
 [nix-shell:~/Alonzo-testnet/resources/plutus-sources/plutus-alwayssucceeds]$ cat alwayssucceeds.plutus
 
@@ -204,7 +203,7 @@ ExBudget {_exBudgetCPU = ExCPU 1390000, _exBudgetMemory = ExMemory 100}
 }
 ```
 
-Sau đó, chúng tôi sẽ biên dịch kịch bản Plutus. Bây giờ, chúng ta cần xây dựng giao dịch trong Alonzo testnet bằng cách sử dụng [cardano-node-cli](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/cardano-node-cli-reference.md/) bao gồm tập lệnh Plutus.
+Sau đó, chúng tôi sẽ biên dịch script Plutus. Bây giờ, chúng ta cần xây dựng giao dịch trong Alonzo testnet bằng cách sử dụng [cardano-node-cli](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/cardano-node-cli-reference.md/) bao gồm tập lệnh Plutus.
   
 
 ## Tạo ví
