@@ -425,8 +425,9 @@ Transaction successfully submitted.
 
 ```
 cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
-
-TxHash TxIx Amount
+```
+```
+TxHash 								TxIx 						Amount
 
 --------------------------------------------------------------------------------------
 
@@ -435,8 +436,9 @@ TxHash TxIx Amount
 ```
 cardano-cli query utxo --address $(cat script.addr) --testnet-magic ${TESTNET_MAGIC}
  
-
-TxHash TxIx Amount
+```
+```
+TxHash 									TxIx 					Amount
 
 --------------------------------------------------------------------------------------
 
@@ -462,7 +464,8 @@ Nó dẫn đến hai UTXO mới.
 
 ```
 cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
-
+```
+```
 TxHash TxIx Amount
 
 --------------------------------------------------------------------------------------
@@ -500,7 +503,8 @@ cardano-cli transaction sign \
 ```
 ```
 cardano-cli transaction submit --testnet-magic ${TESTNET_MAGIC} --tx-file test-alonzo.signed 
-
+```
+```
 Transaction successfully submitted.
 ```
 
