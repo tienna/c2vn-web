@@ -30,10 +30,10 @@ Chúng ta cùng xem một ví dụ về Hợp đồng thông minh trên Marlowe 
 	- Redeemer
 	
  <iframe width="560" height="315" src="https://www.youtube.com/embed/8dnDSlgPTZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>	
- 
- 
-  ### Plutus là gì 3/3: [Video ](https://www.youtube.com/dhzvsE-Swws)
-  
+
+
+### Plutus là gì 3/3: [Video ](https://youtu.be/dhzvsE-Swws)
+
 	Phần 3 này sẽ mô tả các khái niệm:
 	-Smart contract
 	-Script Address
