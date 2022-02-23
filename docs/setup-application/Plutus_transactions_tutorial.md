@@ -2,7 +2,7 @@ Cách viết các giao dịch Plutus
 ==========================
 Hướng dẫn này phác thảo cách viết một giao dịch và giao dịch Plutus là gì.
 
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/uqLbe0n6EbM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/_z0lISNQ69M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 
 ## Giao dịch Plutus là gì?
