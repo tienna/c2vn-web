@@ -64,4 +64,4 @@ Chương trình tiên phong của Plutus được tạo ra nhằm tuyển dụng
 
 Bạn cũng nên biết trước về Haskell hoặc lập trình chức năng, vì Plutus dựa nhiều vào Haskell và bao gồm các tính năng nâng cao như Template Haskell, lập trình cấp kiểu và hệ thống hiệu ứng.
 
-- [Đăng ký Chương trình Tiên phong của Plutus] (https://testnets.cardano.org/en/plutus-pioneer-program/)
+- [Đăng ký Chương trình Tiên phong của Plutus](https://testnets.cardano.org/en/plutus-pioneer-program/)
