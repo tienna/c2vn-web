@@ -18,8 +18,153 @@ const sidebars = {
 
   // But you can create a sidebar manually
   mySidebar: {
-    
-    
+    "Getting Started": [
+      "getting-started/overview",
+	  "getting-started/Catalyst",
+	  
+      // {
+      //   type: "category",
+      //   label: "Cardano Components",
+      //   items: [
+      //     "get-started/cardano-components",
+      //     "get-started/installing-cardano-node",
+      //     "get-started/running-cardano",
+      //     "get-started/installing-cardano-wallet",
+      //   ],
+      // },
+      // {
+      //   type: "category",
+      //   label: "Builder Tools",
+      //   items: [
+      //     "get-started/blockfrost",
+      //     "get-started/cardanocli-js",
+      //     "get-started/cardano-wallet-js",
+      //     "get-started/dandelion-apis",
+      //     "get-started/ogmios",
+      //     "get-started/cardanosharp-wallet",
+      //     {
+      //       type: "category",
+      //       label: "Serialization-Lib",
+      //       items: [
+      //         "get-started/cardano-serialization-lib/overview",
+      //         "get-started/cardano-serialization-lib/prerequisite-knowledge",
+      //         "get-started/cardano-serialization-lib/generating-keys",
+      //         "get-started/cardano-serialization-lib/generating-transactions",
+      //         "get-started/cardano-serialization-lib/transaction-metadata",
+      //       ],
+      //     },
+      //   ],
+      // },
+      // "get-started/technical-concepts",
+      // "get-started/testnets-and-devnets",
+      // "get-started/cardano-developer-community",
+    ],
+    "Tạo Hợp đồng thông minh": [
+      "smart-contracts/overview",
+      "smart-contracts/marlowe",
+      "smart-contracts/plutus",
+      "smart-contracts/video_demo_smartcontract",
+    ],
+    "Khoá đào tạo Plutus của Dr. Lars": [
+        "dr-lars-lession/overview",
+        "dr-lars-lession/week1",
+        "dr-lars-lession/week2",
+        "dr-lars-lession/week3",
+        "dr-lars-lession/week4",
+        "dr-lars-lession/week5",
+        "dr-lars-lession/week6",
+        "dr-lars-lession/week7",
+        "dr-lars-lession/week8",
+        "dr-lars-lession/week9",
+        "dr-lars-lession/week10",
+		
+    ],
+    "Tích hợp với Cardano": [
+      "integrate-cardano/overview",
+      // "integrate-cardano/creating-wallet-faucet",
+      // "integrate-cardano/multi-witness-transactions-cli",
+      // "integrate-cardano/listening-for-payments-cli",
+      // "integrate-cardano/listening-for-payments-wallet",
+      // "integrate-cardano/testnet-faucet",
+    ],
+    "Discover Native Tokens": [
+      "native-tokens/overview",
+      //"native-tokens/minting",
+      //"native-tokens/minting-nfts",
+    ],
+    "Cài đặt và ứng dụng": [
+      "setup-application/Installation",
+      "setup-application/setup-node-mainnet",
+      "setup-application/setup-node-testnet",
+      "setup-application/step-by-step",
+      "setup-application/Plutus_transactions_tutorial",
+      "setup-application/Datums_redeemer_tutorial",	   
+      "setup-application/Validator_scripts_tutorial",	  
+    ],	
+	
+    "Vận hành một Stake Pool": [
+      "operate-a-stake-pool/note",
+      // {
+      //   type: "category",
+      //   label: "Stake Pool Course",
+      //   items: [
+      //     "stake-pool-course/overview",
+      //     "stake-pool-course/introduction-to-cardano",
+      //     "stake-pool-course/lesson-1",
+      //     "stake-pool-course/lesson-2",
+      //     "stake-pool-course/lesson-3",
+      //     "stake-pool-course/lesson-4",
+      //     "stake-pool-course/lesson-5",
+      //     {
+      //       type: "category",
+      //       label: "Handbook",
+      //       items: [
+      //         "stake-pool-course/handbook/setup-virtual-box-written",
+      //         "stake-pool-course/handbook/setup-a-server-on-aws-written",
+      //         "stake-pool-course/handbook/setup-firewall",
+      //         "stake-pool-course/handbook/install-cardano-node-written",
+      //         "stake-pool-course/handbook/run-cardano-node-handbook",
+      //         "stake-pool-course/handbook/use-cli",
+      //         "stake-pool-course/handbook/utxo-model",
+      //         "stake-pool-course/handbook/keys-addresses",
+      //         "stake-pool-course/handbook/create-simple-transaction",
+      //         "stake-pool-course/handbook/create-stake-pool-keys",
+      //         "stake-pool-course/handbook/register-stake-keys",
+      //         "stake-pool-course/handbook/generate-stake-pool-keys",
+      //         "stake-pool-course/handbook/configure-topology-files",
+      //         "stake-pool-course/handbook/register-stake-pool-metadata",
+      //         "stake-pool-course/handbook/apply-logging-prometheus",
+      //       ],
+      //     },
+      //     {
+      //       type: "category",
+      //       label: "Assignments",
+      //       items: [
+      //         "stake-pool-course/assignments/assignment-1",
+      //         "stake-pool-course/assignments/assignment-2",
+      //         "stake-pool-course/assignments/kes_period",
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "category",
+      //   label: "Operator Tools",
+      //   items: [
+      //     "operate-a-stake-pool/guild-ops-suite",
+      //     "operate-a-stake-pool/ansible-cardano-node",
+      //   ],
+      // },
+      // "operate-a-stake-pool/marketing-stake-pool",
+    ],
+    // "Mang Project Catalyst Townhall đến Việt Nam": [
+    //   "vn-townhall-channel/note",
+    // ],
+    // "Contribute to the Developer Portal": [
+    //   "portal-contributors",
+    //   "portal-contribute",
+    //   "portal-style-guide",
+    // ],
   },
 };
 
