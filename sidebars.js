@@ -98,7 +98,8 @@ const sidebars = {
       "setup-application/setup-node-testnet",
       "setup-application/step-by-step",
       "setup-application/Plutus_transactions_tutorial",
-      "setup-application/Datums_redeemer_tutorial",	    
+      "setup-application/Datums_redeemer_tutorial",	   
+      "setup-application/Validator_scripts_tutorial",	  
     ],	
 	
     "Vận hành một Stake Pool": [
