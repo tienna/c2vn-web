@@ -79,19 +79,19 @@ const sidebars = {
         "dr-lars-lession/week10",
 		
     ],
-    "Tích hợp với Cardano": [
-      "integrate-cardano/overview",
+    //"Tích hợp với Cardano": [
+    //  "integrate-cardano/overview",
       // "integrate-cardano/creating-wallet-faucet",
       // "integrate-cardano/multi-witness-transactions-cli",
       // "integrate-cardano/listening-for-payments-cli",
       // "integrate-cardano/listening-for-payments-wallet",
       // "integrate-cardano/testnet-faucet",
     ],
-    "Discover Native Tokens": [
-      "native-tokens/overview",
+   // "Discover Native Tokens": [
+   //   "native-tokens/overview",
       //"native-tokens/minting",
       //"native-tokens/minting-nfts",
-    ],
+    //],
     "Cài đặt và ứng dụng": [
       "setup-application/Installation",
       "setup-application/setup-node-mainnet",
@@ -102,8 +102,8 @@ const sidebars = {
       "setup-application/Validator_scripts_tutorial",	  
     ],	
 	
-    "Vận hành một Stake Pool": [
-      "operate-a-stake-pool/overview",
+    //"Vận hành một Stake Pool": [
+    //  "operate-a-stake-pool/overview",
       // {
       //   type: "category",
       //   label: "Stake Pool Course",
@@ -156,7 +156,7 @@ const sidebars = {
       //   ],
       // },
       // "operate-a-stake-pool/marketing-stake-pool",
-    ],
+   // ],
     // "Mang Project Catalyst Townhall đến Việt Nam": [
     //   "vn-townhall-channel/note",
     // ],
