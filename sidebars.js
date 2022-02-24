@@ -103,7 +103,7 @@ const sidebars = {
     ],	
 	
     "Vận hành một Stake Pool": [
-      "operate-a-stake-pool/note",
+      "operate-a-stake-pool/overview",
       // {
       //   type: "category",
       //   label: "Stake Pool Course",
