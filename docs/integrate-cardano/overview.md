@@ -1,13 +1,21 @@
 ---
-id: note
-title: Note
-sidebar_label: Note
-description: Getting Started
----
+id: Tổng quat
+slug: /integrate-cardano/
+title: Tích hợp Cardano
+sidebar_label: Tổng quat
+description: Cách tích hợp Cardano vào các trang web và dịch vụ hiện có.
+image: ./img/og-developer-portal.png
+--- 
 
-Cảm ơn bạn đã quan tâm đến chuyên mục này.
-Chúng tôi đã được cấp vốn cho dự án  **Cardano Technical hub in Vietnamese** ở vòng cấp vốn số 7 Catalyst.
-Chúng tôi sẽ hoàn thiện mục này sớm nhất có thể.
-Thông tin dự án có tại đây https://cardano.ideascale.com/a/dtd/Cardano-Dev-hubs-in-Vietnamese/382651-48088?submitted=1
-Cảm ơn bạn đã bầu chọn cho dự án này và đã góp phần xây dựng cộng động Cardano ngày một vững mạnh
-Cảm ơn sự ủng hộ của bạn!
+
+![Integrate Cardano](../../static/img/card-integrate-cardano-title.svg)
+
+## Giới thiệu
+Sau đây, chúng tôi hướng dẫn bạn cách tích hợp Cardano vào các trang web và dịch vụ hiện có.
+
+## Chủ đề
+- [Khám phá ví Cardano](creating-wallet-faucet) - tìm hiểu cách tạo ví Cardano, nhận ada thử nghiệm và tạo các giao dịch cơ bản.
+- [Giao dịch nhiều đầu vào](multi-witness-transactions-cli) - tìm hiểu cách tạo giao dịch với nhiều đầu vào và một đầu ra.
+- [Lắng nghe các khoản thanh toán ada bằng cardano-cli](listening-for-payments-cli) - cách nghe một địa chỉ cụ thể bằng cách sử dụng cardano-cli.
+- [Lăng ghe các khoản thanh toán ada cardano-wallet](listening-for-payments-wallet) - cách nghe địa chỉ cụ thể bằng ví cardano.
+- [Testnet Faucet](testnet-faucet) - một dịch vụ cung cấp ada thử nghiệm (tAda) cho người dùng testnet Cardano. 
