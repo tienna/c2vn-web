@@ -86,7 +86,7 @@ const sidebars = {
       // "integrate-cardano/listening-for-payments-cli",
       // "integrate-cardano/listening-for-payments-wallet",
       // "integrate-cardano/testnet-faucet",
-    ],
+    //],
    // "Discover Native Tokens": [
    //   "native-tokens/overview",
       //"native-tokens/minting",
