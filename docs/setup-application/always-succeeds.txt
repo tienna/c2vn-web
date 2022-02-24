@@ -10,8 +10,8 @@ cardano-cli stake-address key-gen \
 --signing-key-file stake2.skey
 
 cardano-cli address build \
---payment-verification-key-file payment.vkey \
---stake-verification-key-file stake.vkey \
+--payment-verification-key-file payment2.vkey \
+--stake-verification-key-file stake2.vkey \
 --out-file payment2.addr \
 --testnet-magic $TESTNET_MAGIC 
 

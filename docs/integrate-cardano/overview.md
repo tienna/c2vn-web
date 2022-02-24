@@ -1,8 +1,8 @@
 ---
-id: Tổng quat
+id: overview
 slug: /integrate-cardano/
 title: Tích hợp Cardano
-sidebar_label: Tổng quat
+sidebar_label: overview
 description: Cách tích hợp Cardano vào các trang web và dịch vụ hiện có.
 image: ./img/og-developer-portal.png
 --- 

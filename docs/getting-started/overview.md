@@ -4,7 +4,7 @@ title: Bắt đầu
 sidebar_label: Overview
 description: Getting Started
 --- 
-Bắt đầu với Cardano
+Bắt đầu với Cardano.
 
 <!-- ![](../..//static/img/1.png) -->
 
