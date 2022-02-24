@@ -18,47 +18,7 @@ const sidebars = {
 
   // But you can create a sidebar manually
   mySidebar: {
-    "Getting Started": [
-      "getting-started/overview",
-	  "getting-started/Catalyst",
-	  
-      // {
-      //   type: "category",
-      //   label: "Cardano Components",
-      //   items: [
-      //     "get-started/cardano-components",
-      //     "get-started/installing-cardano-node",
-      //     "get-started/running-cardano",
-      //     "get-started/installing-cardano-wallet",
-      //   ],
-      // },
-      // {
-      //   type: "category",
-      //   label: "Builder Tools",
-      //   items: [
-      //     "get-started/blockfrost",
-      //     "get-started/cardanocli-js",
-      //     "get-started/cardano-wallet-js",
-      //     "get-started/dandelion-apis",
-      //     "get-started/ogmios",
-      //     "get-started/cardanosharp-wallet",
-      //     {
-      //       type: "category",
-      //       label: "Serialization-Lib",
-      //       items: [
-      //         "get-started/cardano-serialization-lib/overview",
-      //         "get-started/cardano-serialization-lib/prerequisite-knowledge",
-      //         "get-started/cardano-serialization-lib/generating-keys",
-      //         "get-started/cardano-serialization-lib/generating-transactions",
-      //         "get-started/cardano-serialization-lib/transaction-metadata",
-      //       ],
-      //     },
-      //   ],
-      // },
-      // "get-started/technical-concepts",
-      // "get-started/testnets-and-devnets",
-      // "get-started/cardano-developer-community",
-    ],
+
     "Tạo Hợp đồng thông minh": [
       "smart-contracts/overview",
       "smart-contracts/marlowe",
