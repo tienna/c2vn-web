@@ -80,7 +80,7 @@ const sidebars = {
 		
     ],
     "Tích hợp với Cardano": [
-      "integrate-cardano/note",
+      "integrate-cardano/overview",
       // "integrate-cardano/creating-wallet-faucet",
       // "integrate-cardano/multi-witness-transactions-cli",
       // "integrate-cardano/listening-for-payments-cli",
