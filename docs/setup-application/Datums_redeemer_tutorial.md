@@ -1,4 +1,4 @@
-Tham số Datums và redeemers
+Tham số Datums và Redeemers
 ==============================
 
 Hướng dẫn này giải thích các khái niệm về dữ liệu Plutus và bộ định nghĩa lại, đồng thời phác thảo cách làm việc với các phần tử này khi gửi giao dịch.
