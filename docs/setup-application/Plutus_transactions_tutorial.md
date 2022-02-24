@@ -1,6 +1,9 @@
 Cách viết các giao dịch Plutus
 ==========================
-Hướng dẫn này phác thảo giao dịch Plutus là gì và cách viết một giao dịch.
+Hướng dẫn này phác thảo cách viết một giao dịch và giao dịch Plutus là gì.
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/_z0lISNQ69M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+
 
 ## Giao dịch Plutus là gì?
 Giao dịch là một phần dữ liệu chứa cả đầu vào và đầu ra, và kể từ thời Alonzo, chúng cũng có thể bao gồm các tập lệnh Plutus. Đầu vào là đầu ra chưa sử dụng từ các giao dịch trước đó (UTxO). Ngay sau khi UTxO được sử dụng làm đầu vào trong một giao dịch, nó sẽ được sử dụng và không bao giờ có thể được sử dụng lại. Đầu ra được chỉ định bởi một địa chỉ (khóa công khai hoặc mã băm khóa công khai) và một giá trị (bao gồm số lượng ada và số lượng mã thông báo gốc bổ sung tùy chọn). Sơ đồ luồng này cung cấp ý tưởng tốt hơn về các thành phần của giao dịch ở cấp độ kỹ thuật:
@@ -193,9 +196,10 @@ ExBudget {_exBudgetCPU = ExCPU 1390000, _exBudgetMemory = ExMemory 100}
 
 Mở file kết quả.
 ```
- 
-[nix-shell:~/Alonzo-testnet/resources/plutus-sources/plutus-alwayssucceeds]$ cat alwayssucceeds.plutus
+cat alwayssucceeds.plutus
+```
 
+```
 {
 "type": "PlutusScriptV1",
 "description": "",
@@ -230,7 +234,6 @@ Lưu ý: Đảm bảo rằng “thời đại” tương ứng với “Alonzo�
 2. **Tạo các keys**.  Để gửi giao dịch, chúng ta cần tạo hai ví như sau. Đối với bước này, hãy tạo khóa thanh toán tại địa chỉ tương ứng:
 
 ```
-
 cardano-cli address key-gen \
 --verification-key-file payment.vkey \
 --signing-key-file payment.skey
@@ -248,8 +251,9 @@ cardano-cli address build \
 
 ```
 cat payment.addr
-addr_test ...
 ```
+addr_test ...
+
 
 Đảm bảo tạo ví bổ sung bằng cách sử dụng các bước tương tự ở trên để bạn có thể kiểm tra giao dịch giữa các địa chỉ này.
 
@@ -309,7 +313,8 @@ cardano-cli transaction sign \
 --out-file tx.signed
 
 cardano-cli transaction submit --tx-file tx.signed --testnet-magic ${TESTNET_MAGIC}
-
+```
+```
 Transaction successfully submitted.
 
 ```
@@ -319,13 +324,15 @@ Bây giờ nếu chúng ta truy vấn Payment2.addr, chúng ta sẽ có một UT
   
 ```
 cardano-cli query utxo --address $(cat payment2.addr) --testnet-magic ${TESTNET_MAGIC}
-
+```
+```
 TxHash TxIx Amount
 
 --------------------------------------------------------------------------------------
 
 4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0 1 30000000000 lovelace + TxOutDatumHashNone
- 
+```
+```
 cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
   
 TxHash TxIx Amount
@@ -368,6 +375,8 @@ Bây giờ địa chỉ tập lệnh nằm trong tệp `script.addr`:
 
 ```
 cat script.addr
+```
+```
 addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 ```
 
@@ -375,7 +384,8 @@ addr_test1wpnlxv2xv9a9ucvnvzqakwepzl9ltx7jzgm53av2e9ncv4sysemm8
 
 ```
 cardano-cli transaction hash-script-data --script-data-value 12 
-
+```
+```
 export scriptdatumhash=5e9d8bac576e8604e7c3526025bc146f5fa178173e3a5592d122687bd785b520
 ```
 
@@ -415,7 +425,8 @@ cardano-cli transaction sign \
 
 ```
 cardano-cli transaction submit --testnet-magic ${TESTNET_MAGIC} --tx-file tx-script.signed
- 
+ ```
+ ```
 Transaction successfully submitted.
 ```
 

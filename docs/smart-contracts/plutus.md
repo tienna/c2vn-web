@@ -45,14 +45,8 @@ Có một hướng dẫn bằng văn bản về [ cách biên dịch và kiểm 
 - [Sử dụng Plutus Tx ](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/plutus-tx.html)
 - [Viết các tập lệnh xác thực cơ bản](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/basic-validators.html)
 - [Viết các chính sách đúc tiền cơ bản ](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/basic-minting-policies.html)
-- [Thử nghiệm dựa trên tài sản của các hợp đồng Plutus/a0}](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/contract-testing.html)
-
-## Hướng dẫn
-
 - [Cách xuất script, datums và redemmers ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/exporting-a-script.html)
-- [Cách viết một ứng dụng Plutus có thể mở rộng ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/writing-a-scalable-app.html)
-- [Cách xử lý các sự kiện blockchain ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/handling-blockchain-events.html)
-- [Cách phân tích chi phí và kích thước của tập lệnh Plutus ](https://plutusvn.readthedocs.io/en/latest/plutus/howtos/analysing-scripts.html)
+
 
 ## Bắt đầu với Haskell.
 
@@ -70,4 +64,4 @@ Chương trình tiên phong của Plutus được tạo ra nhằm tuyển dụng
 
 Bạn cũng nên biết trước về Haskell hoặc lập trình chức năng, vì Plutus dựa nhiều vào Haskell và bao gồm các tính năng nâng cao như Template Haskell, lập trình cấp kiểu và hệ thống hiệu ứng.
 
-- Đăng ký Chương trình Tiên phong của Plutus.
+- [Đăng ký Chương trình Tiên phong của Plutus](https://testnets.cardano.org/en/plutus-pioneer-program/)
