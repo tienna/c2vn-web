@@ -1,4 +1,4 @@
-Validator scripts tutorial
+Hướng dẫn tập lệnh trình xác thực
 =============
 
 Một tập lệnh xác thực (Validator scripts) được sử dụng để khóa các đầu ra giao dịch trên chuỗi. Nó được gắn vào đầu ra tập lệnh trong mô hình UTXO mở rộng và xác định địa chỉ của đầu ra. Nó phải trả về số dương để đầu ra được chi tiêu.
@@ -63,7 +63,6 @@ Bây giờ chúng ta có thể dịch những khái niệm đó thành tên mà 
 
 Với thông tin đó, chúng ta có thể tạo một chương trình khác thực sự tóm tắt hai chương trình trước đó. Chúng ta có thể gọi nó  `performActionGivenARule` nhưng hãy sử dụng nó là Plutus name: `makeValidator`
 
-An action: `getOnFerrisWheel()`, `payBeer()` needs to pass a rule: `isTallEnough()` , `mayLegalyDrink()`, before being performed. The rule needs two bits of information: some context `attraction`, `country` and some data particular to this instance of the rule `michael`, `sarah`.
 
 ```python
 
