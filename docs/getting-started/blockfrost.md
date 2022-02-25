@@ -1,7 +1,7 @@
 ---
 id: blockfrost
 title: Get Started with Blockfrost
-sidebar_label: Blockfrost
+sidebar_label: Blockfrost.
 description: Get Started with Blockfrost
 image: ./img/og-developer-portal.png
 ---
