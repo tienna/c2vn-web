@@ -1,8 +1,8 @@
 # Các dự án được cấp vốn Catalyst - Cardano đã và đang triển khai
 
-Đây là các video của chúng tôi về các dự án đã được cấp vốn từ Catalyst Func6  - Cardano.
+Đây là các video nói về các dự án đã được cấp vốn của Cardano2vn.
 
-## Catalyst Func 6  
+## Catalyst Fund 6  
 
 ### 1. Bring smart contract to Vietnam  [Video ](https://youtu.be/LP99IkCjajA)
 	
@@ -16,11 +16,11 @@
 
   <iframe width="660" height="315" src="https://www.youtube.com/embed/LP99IkCjajA" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Catalyst Func 7
+## Catalyst Fund 7
 
 ### 2. Localize Yoroi for Vietnam market: [Video ](https://youtu.be/LuocH09aveg)
 
-Localize Yoroi for Vietnam market  - Func 7 Catalyst
+Localize Yoroi for Vietnam market  - Fund 7 Catalyst
 
   Yoroi là một ví nhẹ của Cardano. Thật đơn giản, nhanh chóng và an toàn để Yoroi trông giống như một chiếc ví hàng ngày cho người dùng Cardano. Việc thực hiện các giao dịch trên một phần mềm sử dụng ngôn ngữ không phải tiếng mẹ đẻ thường khiến người dùng cẩn trọng hơn, thao tác chậm và hay mắc lỗi. Đây cũng là rào cản khiến người dùng không thể sử dụng yoroi hoặc truy cập vào hệ sinh thái của Cardano
 
@@ -32,7 +32,7 @@ Localize Yoroi for Vietnam market  - Func 7 Catalyst
 
 ### 3. Catalyst Events 4 Vietnam Students : [Video ](https://youtu.be/eZoGD8O1BAU)
 
-Catalyst Events 4 Vietnam Students - Func 7 Catalyst
+Catalyst Events 4 Vietnam Students - Fund 7 Catalyst
   
   Sinh viên CNTT Đại học / Cao đẳng là lực lượng tiềm năng cho những ý tưởng sáng tạo. Khi những sinh viên này được định hướng và hỗ trợ, họ sẽ trở thành những người tham gia có ý nghĩa vào Project Catalyst. 
 
@@ -46,7 +46,7 @@ Catalyst Events 4 Vietnam Students - Func 7 Catalyst
 
 ### 4. Cardano Technical hub in Vietnamese [Video ](https://www.youtube.com/watch?v=MZ4I-ea1suM)
 
-Cardano Technical hub in Vietnamese - Func 7 Catalyst
+Cardano Technical hub in Vietnamese - Fund 7 Catalyst
 
   Như dữ liệu https://cardano.ideascale.com/a/pages/results từ Fund 2 đến Fund6 cho thấy có rất ít dự án kỹ thuật từ Việt Nam được đệ trình và tài trợ. Nguyên nhân là do sách hướng dẫn kỹ thuật còn rải rác ở nhiều nơi. Chưa có một trung tâm tập trung với các ngôn ngữ địa phương. Đặc biệt là thiếu các ví dụ để giải quyết các vấn đề thực tế. Đây là những tài liệu tạo động lực cho người học và giúp họ tin tưởng khi triển khai ứng dụng.
 	
