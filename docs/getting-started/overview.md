@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Bắt đầu
-sidebar_label: Overview
+sidebar_label: Bắt đầu
 description: Getting Started
 --- 
 Bắt đầu với Cardano.
