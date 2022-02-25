@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Overview
 ==========
 
@@ -63,3 +64,10 @@ This is because both can be created with a transaction issued through the cardan
 Compared to fungible native assets, which can range into millions of interchangeable tokens, an NFT is a single native asset that can not be re-minted or destroyed, living forever on the blockchain.
 
 
+=======
+# Cảm ơn bạn đã quan tâm đến chuyên mục này.
+Chúng tôi có nộp dự án  **Cardano Technical hub in Vietnamese** để hoàn thiện mục này ở vòng cấp vốn số 7
+Thông tin dự án có tại đây https://cardano.ideascale.com/a/dtd/Cardano-Dev-hubs-in-Vietnamese/382651-48088?submitted=1
+Việc bạn bầu chọn là góp phần xây dựng cộng động Cardano ngày một vững mạnh
+Cảm ơn sự ủng hộ của bạn
+>>>>>>> parent of 16793ca (update hub)

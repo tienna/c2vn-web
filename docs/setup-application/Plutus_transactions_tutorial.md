@@ -405,7 +405,7 @@ cardano-cli transaction build \
 --testnet-magic ${TESTNET_MAGIC} \
 --change-address $(cat payment.addr) \
 --tx-in 4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0#0 \
---tx-out $(cat script.addr)+2000000 \
+--tx-out $(cat script.addr)+20000000 \
 --tx-out-datum-hash ${scriptdatumhash} \
 --protocol-params-file pparams.json \
 --out-file tx-script.build
@@ -484,7 +484,7 @@ TxHash TxIx Amount
 4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0 1 30000000000 lovelace + TxOutDatumHashNone
 ```
 ```
-export txCollateral="561a64675526732728d9832fd84e489b5ca0bab2a4c9b7121def0168b4935eff#1"
+export txCollateral="4df1c8d902f01f04e49f3d7397881af33591a99fcef807ba12ed822fa4c61da0#1"
 ```
 
 2. **Construct, sign, and submit** giao dịch mới để mở khóa:
@@ -498,7 +498,7 @@ cardano-cli transaction build \
 --tx-in-datum-value 42 \
 --tx-in-redeemer-value 22 \
 --tx-in-collateral ${txCollateral} \
---change-address $(cat payment2.addr) \
+--change-address $(cat payment.addr) \
 --protocol-params-file pparams.json \
 --out-file test-alonzo.tx
 ```
