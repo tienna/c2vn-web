@@ -115,7 +115,7 @@ mkValidator dat () ctx = traceIfFalse "beneficiary's signature missing" signedBy
   where
     info :: TxInfo
 ```
-Vesting [validator function (Bấm vào đây để xem mã ngồn hoàn chỉnh)](https://github.com/input-output-hk/plutus-pioneer-program/blob/3a7d675f7b53dcd846a0c286c1f56170d079e3ef/code/week01/src/Week01/EnglishAuction.hs#L102-L123)
+Vesting [validator function (Bấm vào đây để xem mã ngồn hoàn chỉnh)](plutus-pioneer-program/code/week03/src/Week03/Vesting.hs#L44-L56)
 
 #### Chuyển hàm validator thành script validator
 
