@@ -26,10 +26,10 @@ const sidebars = {
       //   type: "category",
       //   label: "Cardano Components",
       //   items: [
-      //     "get-started/cardano-components",
-      //     "get-started/installing-cardano-node",
-      //     "get-started/running-cardano",
-      //    "get-started/installing-cardano-wallet",
+      //     "getting-started/cardano-components",
+      //     "getting-started/installing-cardano-node",
+      //     "getting-started/running-cardano",
+      //    "getting-started/installing-cardano-wallet",
       //   ],
       // },
       //{
