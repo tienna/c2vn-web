@@ -1,8 +1,8 @@
 ---
 id: listening-for-payments-cli
-title: Listening for ada payments using cardano-cli
-sidebar_label: Receiving payments (cardano-cli)
-description: How to listen for ada Payments with the cardano-cli.
+title: Thanh toán ada bằng cardano-cli
+sidebar_label: Nhận thánh toán (cardano-cli)
+description: Thanh toán ada bằng cardano-cli.
 #image: ./img/og-developer-portal.png
 --- 
 import Tabs from '@theme/Tabs';
