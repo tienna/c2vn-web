@@ -19,7 +19,8 @@ Hướng dẫn này cũng giả định rằng bạn có `cardano-node` chạy t
 
 Có nhiều lý do có thể khiến bạn muốn có chức năng lắng nghe các khoản thanh toán `ada` , nhưng một trường hợp sử dụng rất rõ ràng sẽ là đối với một thứ gì đó như **cửa hàng trực tuyến** hoặc **cổng thanh toán** có thể sử dụng token`ada` như một tiền tệ.
 
-![img](../../static/img/integrate-cardano/ada-online-shop.png)
+![](img/ada-online-shop.png)
+
 
 ## Biểu đồ kỹ thuật
 
@@ -27,7 +28,7 @@ Có nhiều lý do có thể khiến bạn muốn có chức năng lắng nghe c
 
 
 
-![img](../../static/img/integrate-cardano/ada-payment-flow.png)
+![](img/ada-payment-flow.png)
 
 
 Vì vậy, hãy tưởng tượng một tình huống rất cơ bản khi một **khách hàng** đang lướt qua một cửa hàng trực tuyến. Khi khách hàng đã chọn và thêm tất cả các mặt hàng vào **giỏ hàng** . Bước tiếp theo sẽ là kiểm tra và thanh toán các mặt hàng, Tất nhiên chúng tôi sẽ sử dụng **Cardano** cho việc đó!
