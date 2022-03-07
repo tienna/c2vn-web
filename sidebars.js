@@ -81,11 +81,11 @@ const sidebars = {
     ],
     "Tích hợp với Cardano": [
       "integrate-cardano/overview",
-      // "integrate-cardano/creating-wallet-faucet",
-      // "integrate-cardano/multi-witness-transactions-cli",
+      "integrate-cardano/creating-wallet-faucet",
+      "integrate-cardano/multi-witness-transactions-cli",
       "integrate-cardano/listening-for-payments-cli",
-      // "integrate-cardano/listening-for-payments-wallet",
-      // "integrate-cardano/testnet-faucet",
+      "integrate-cardano/listening-for-payments-wallet",
+      "integrate-cardano/testnet-faucet",
     ],
     "Discover Native Tokens": [
       "native-tokens/overview",

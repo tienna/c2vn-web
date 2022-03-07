@@ -2,7 +2,7 @@
 id: listening-for-payments-cli
 title: Thanh toán ada bằng cardano-cli
 sidebar_label: Nhận thánh toán (cardano-cli)
-description: Thanh toán ada bằng cardano-cli.
+description: Làm thế nào để xem Ada thanh toán bằng cardano-cli.
 #image: ./img/og-developer-portal.png
 --- 
 import Tabs from '@theme/Tabs';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 ## Overview
 
 :::note
-Hướng dẫn này giả định rằng bạn có hiểu biết cơ bản về `cardano-cli`, cách sử dụng nó và bạn đã cài đặt nó vào hệ thống của mình. Nếu không, chúng tôi khuyên bạn nên đọc hướng dẫn [Installing cardano-node](/docs/get-started/installing-cardano-node), [Running cardano-node](/docs/get-started/running-cardano) và [Exploring Cardano Wallets](/docs/integrate-cardano/creating-wallet-faucet) trước tiên.
+Hướng dẫn này giả định rằng bạn có hiểu biết cơ bản về `cardano-cli`, cách sử dụng nó và bạn đã cài đặt nó vào hệ thống của mình. Nếu không, chúng tôi khuyên bạn nên đọc hướng dẫn [Installing cardano-node](/docs/getting-started/installing-cardano-node), [Running cardano-node](/docs/getting-started/running-cardano) và [Exploring Cardano Wallets](/docs/integrate-cardano/creating-wallet-faucet) trước tiên.
 Hướng dẫn này cũng giả định rằng bạn có `cardano-node` chạy trên nền tảng và nối với mạng `testnet` .
 :::
 
