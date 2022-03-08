@@ -3,7 +3,7 @@ id: creating-wallet-faucet
 title: Khám phá ví Cardano
 sidebar_label: Khám phá ví Cardano
 description: Bài viết này giải thích cách bạn có thể tạo các loại Ví Cardano khác nhau và cách bạn có thể nhận một số tAda (quảng cáo thử nghiệm) từ vòi.
-#image: ./img/og-developer-portal.png
+#image: ./img/og-developer-portal.png 
 --- 
 
 ### Tổng quat 

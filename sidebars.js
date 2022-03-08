@@ -22,16 +22,16 @@ const sidebars = {
       "getting-started/overview",
       "getting-started/Catalyst",
 	  
-      // {
-      //   type: "category",
-      //   label: "Cardano Components",
-      //   items: [
-      //     "getting-started/cardano-components",
-      //     "getting-started/installing-cardano-node",
-      //     "getting-started/running-cardano",
-      //    "getting-started/installing-cardano-wallet",
-      //   ],
-      // },
+       {
+         type: "category",
+         label: "Cardano Components",
+         items: [
+           "getting-started/cardano-components",
+           "getting-started/installing-cardano-node",
+           "getting-started/running-cardano",
+          "getting-started/installing-cardano-wallet",
+         ],
+       },
       //{
       //  type: "category",
       //  label: "Builder Tools",
