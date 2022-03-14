@@ -1,7 +1,7 @@
 ---
 id: creating-wallet-faucet
-title: Khám phá ví Cardano
-sidebar_label: Khám phá ví Cardano
+title: Tạo ví Cardano và nhận tAda
+sidebar_label: Tạo ví Cardano và nhận tAda
 description: Bài viết này giải thích cách bạn có thể tạo các loại Ví Cardano khác nhau và cách bạn có thể nhận một số tAda (quảng cáo thử nghiệm) từ vòi.
 #image: ./img/og-developer-portal.png 
 --- 
@@ -24,7 +24,7 @@ Vì vậy, bạn đã cài đặt `cardano-node` và làm cho nó chạy, thậm
 
 Trước tiên, chúng ta phải xem xét các ứng dụng chúng ta có thể sử dụng để tạo ví.
 
-- [Daedalus](https://daedaluswallet.io/) : **Daedalus Wallet** là ví đầy đủ chính thức của **Cardano**, Nó là một [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface) cho Máy tính để bàn (**Linux**, **MacOS**, **Windows**). Điều đó có nghĩa là người dùng sẽ được sử dụng giao diện người dùng đẹp (Giao diện người dùng), các nút và bố cục để tương tác với chuỗi khối **Cardano**.
+- [Daedalus](https://daedaluswallet.io/) : **Daedalus Wallet** là ví đầy đủ chính thức của **Cardano**, Nó là một [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface) cho máy tính để bàn (**Linux**, **MacOS**, **Windows**). Điều đó có nghĩa là người dùng sẽ được sử dụng giao diện người dùng đẹp (Giao diện người dùng), các nút bố cục để tương tác với chuỗi khối **Cardano**.
 
    Về cơ bản, ví đầy đủ có nghĩa là nó phải đồng bộ hóa và tải xuống blockchain trước khi người dùng có thể gửi giao dịch và tương tác với ví.
     
@@ -57,26 +57,28 @@ Như đã đề cập trước đây, trong hướng dẫn này, chúng tôi s�
 #### Tạo ví bằng `cardano-cli`
 
 :::note
-In this section, We will use the path `$HOME/cardano` to store all the `cardano-cli` related files as an example, please replace it with the directory you have choosen to store the files.
+Trong phần này, chúng tôi sẽ sử dụng đường dẫn `$HOME/cardano`để lưu trữ tất cả các tập tin `cardano-cli` liên quan làm ví dụ, hãy thay thế nó bằng thư mục bạn đã chọn để lưu trữ các tập tin đó.
 :::
 
 :::important
-Please make sure your `cardano-node` is connected and synchronized to the `testnet` network before proceeding.
+Hãy đảm bảo rằng node `cardano-node` đã được kết nối và đồng bộ với mạng `testnet` trước khi tiếp tục.
 :::
 
 :::warning
-In a production environment, it might not be a good idea to store wallets / keys in a public server unless you know what you are doing.
+Trong môi trường sản xuất, việc lưu trữ ví/key trong máy chủ công cộng có thể không phải là ý kiến ​​hay trừ khi bạn biết mình đang làm gì.
+Bạn có thể tạo các `key` này ở máy nội bộ và cất giữ cẩn thận.
 :::
 
-First, lets create a directory to store all our `keys` like so:
+Đầu tiên, hãy tạo một thư mục để lưu trữ tất cả những `keys` thứ tương tự của chúng ta thấy:
 
 ```bash
 mkdir -p $HOME/cardano/keys
+cd $HOME/cardano/keys
 ```
 
-Make sure we are inside the `keys` directory like so: `cd $HOME/cardano/keys`
+Hãy đảm bảo bạn đang bên trong  thư mục `keys` giống như: `cd $HOME/cardano/keys`
 
-Next, we generate our **payment key-pair** using `cardano-cli`:
+Tiết theo, tạo một cặp key **payment key-pair** sử dụng `cardano-cli`:
 
 ```bash
 cardano-cli address key-gen \
@@ -84,13 +86,13 @@ cardano-cli address key-gen \
 --signing-key-file $HOME/cardano/keys/payment1.skey
 ```
 
-`cardano-cli address key-gen` : generates a **payment key-pair**.
+`cardano-cli address key-gen` : tạo  **cặp key payment**.
 
-`--verification-key-file` : points to the path where you want to save the `vkey` file.
+`--verification-key-file` :Trỏ đến đường đẫn muốn lưu file `vkey`.
 
-`--signing-key-file` : points to the path where you want to save the `skey` file.
+`--signing-key-file` : rỏ đến đường đẫn muốn lưu file `skey`.
 
-You should now have two files in your `keys` directory like so: 
+Bây giờ bạn sẽ có hai tệp trong thư mục của mình `keys` trông giống như sau: 
 
 ```bash
 $HOME/cardano/keys/
@@ -100,11 +102,11 @@ $HOME/cardano/keys/
 0 directories, 2 files
 ```
 
-Lets try to understand what these keys are used for in a very high-level overview that is relevant to our topic:
+Hãy cố gắng hiểu những khóa này được sử dụng để làm gì trong phần tổng quan:
 
-- `.vkey` / **Public Verification Key** : Is used to derive a **Cardano** wallet address, a wallet address is basically the hash string value that you share to other users to provide them a way to send `ada` / `tAda` or other assets in the **Cardano** blockchain into your wallet.
+- `.vkey` / **Public Verification Key** Khóa xác minh công khai: Được sử dụng để lấy địa chỉ ví **Cardano** , địa chỉ ví về cơ bản là giá trị chuỗi băm mà bạn chia sẻ với người dùng khác để cung cấp cho họ cách gửi `ada/tAda` hoặc các tài sản khác trong chuỗi khối Cardano vào ví của bạn.
 
-    **The verification key file should look something like this**:
+    **File khóa xác minh sẽ trông giống như sau**:
     ```json
     {
         "type": "PaymentVerificationKeyShelley_ed25519",
@@ -113,9 +115,9 @@ Lets try to understand what these keys are used for in a very high-level overvie
     }
     ```
 
-- `.skey` / **Private Signing Key** : Is used to sign / approve transactions for your wallet. As you can imagine, it is very important to not expose this file to the public and must be kept secure.
+- `.skey` / **Private Signing Key** Khóa ký riêng : Được sử dụng để ký / phê duyệt các giao dịch cho ví của bạn. Như bạn có thể tưởng tượng, điều rất quan trọng là không được để lộ tệp này ra công chúng và phải được bảo mật.
 
-    **The signing key file should look something like this**:
+    **File khóa ký sẽ trông giống như sau**:
     ```json
     {
         "type": "PaymentSigningKeyShelley_ed25519",
@@ -124,7 +126,7 @@ Lets try to understand what these keys are used for in a very high-level overvie
     }
     ```
 
-Since we now have our **payment key-pair**, the next step would be to generate a **wallet address** for the `testnet` network like so:
+Vì bây giờ chúng ta đã có **cặp khóa payment **, bước tiếp theo sẽ là tạo địa chỉ ví cho mạng `testnet`  như sau:
 
 ```bash
 cardano-cli address build \
@@ -133,15 +135,15 @@ cardano-cli address build \
 --testnet-magic 1097911063
 ```
 
-- `cardano-cli address build` : Generates a **wallet address** from a `vkey` file.
+- `cardano-cli address build` : Tạo địa chỉ ví từ một file `vkey` .
 
-- `--payment-verification-key-file` : The path to the `vkey` file to be used for the derivation.
+- `--payment-verification-key-file` :đường đẫn đến file `vkey` được sử dụng để dẫn xuất..
 
-- `--out-file` : The path to save the wallet address file.
+- `--out-file` :  Đường dẫn lưu tệp địa chỉ ví.
 
-- `--testnet-magic` : The **NetworkMagic** of the network that where you want to use the wallet address.
+- `--testnet-magic` : **NetworkMagic** của mạng mà bạn muốn sử dụng địa chỉ ví.
 
-You should now have `payment1.vkey`, `payment1.skey` and `payment1.addr` in your `keys` directory. It should look something like this:
+Bây giờ bạn có `payment1.vkey`, `payment1.skey` và `payment1.addr` trong thư mục `keys`. trông giống như sau:
 
 ```bash
 $HOME/cardano/keys/
@@ -152,25 +154,25 @@ $HOME/cardano/keys/
 0 directories, 3 files
 ```
 
-The `payment1.addr` file contains the derived **wallet address** from your `vkey` file. It should look something like this:
+File `payment1.addr` chứa **địa chỉ ví** có phần mở rộng `vkey` Nó sẽ trông giống như thế này:
 
 ```
 addr_test1vz95zjvtwm9u9mc83uzsfj55tzwf99fgeyt3gmwm9gdw2xgwrvsa5
 ```
 
 :::note
- You can derive more than one **wallet address** from a **Public Verification Key** for more advanced use-cases using `cardano-addresses` component. Which we discuss in more details here: ***@TODO: link to article***
+ Bạn có thể lấy nhiều địa chỉ ví từ Khóa xác minh công khai cho các trường hợp sử dụng nâng cao hơn bằng cách sử dụng thành phần`cardano-addresses` . Chúng ta sẽ thảo luận chi tiết hơn tại đây: ***@TODO: link to article***
 
-  - `mainnet` addresses are **prefixed** with the string value `addr1`. 
-  - `testnet` addresses are **prefixed** with the string value `addr_test1`. 
+  - `mainnet` địa chỉ **bắt đầu** với chuỗi `addr1`. 
+  - `testnet` địa chỉ **bắt đầu** với chuỗi `addr_test1`. 
 
 
- If you want to create a wallet address to be used on `mainnet`, please use the `--mainnet` flag instead of `--testnet-magic 1097911063`. You can learn more about the different **Cardano** blockchain networks [here](/docs/get-started/running-cardano#mainnet--production).
+ Nếu bạn muốn tạo một địa chỉ ví để sử dụng `mainnet`, vui lòng sử dụng `--mainnet` thay cho `--testnet-magic 1097911063`. Bạn có thể tìm hiểu thêm về các mạng blockchain Cardano khác nhau [tại đây](/docs/getting-started/running-cardano#mainnet/production).
 :::
 
-#### Querying the wallet **UTXO (Unspent Transaction Output)** with `cardano-cli`
+#### Truy vấn ví UTXO (Đầu ra giao dịch chưa được sử dụng) bằng`cardano-cli`
 
-Now that we have a **wallet address**, we can then query the **UTXO** of the address like so: 
+Bây giờ chúng ta đã có một địa chỉ ví , sau đó chúng ta có thể truy vấn UTXO của địa chỉ đó như sau:
 
 ```bash
 cardano-cli query utxo \
@@ -178,16 +180,16 @@ cardano-cli query utxo \
 --address $(cat $HOME/cardano/keys/payment1.addr)
 ```
 
-- `cardano-cli query utxo` : Queries the wallet address **UTXO**.
+- `cardano-cli query utxo` :Truy vấn địa chỉ ví UTXO .
 
-- `--testnet-magic 1097911063` : Specifies that we want to query the `testnet` **Cardano** network.
+- `--testnet-magic 1097911063` : hỉ định rằng chúng tôi muốn truy vấn mạng testnet Cardano .
 
-- `--address $(cat $HOME/cardano/keys/payment1.addr)` : The **wallet address** string value that we want to query, In this case we read the contents of `$HOME/cardano/keys/payment1.addr` using the `cat` command and we pass that value to the `--address` flag. That means you could also directly paste the **wallet address** value like so: 
+- `--address $(cat $HOME/cardano/keys/payment1.addr)` :Giá trị chuỗi địa chỉ ví mà chúng tôi muốn truy vấn, Trong trường hợp này, chúng tôi đọc nội dung của file `$HOME/cardano/keys/payment1.addr` sử dụng lệnh `cat` và chuyển giá trị đó cho tham số `--address`. Điều đó có nghĩa là bạn cũng có thể dán trực tiếp giá trị địa chỉ ví như sau: 
 ```
 --address addr_test1vz95zjvtwm9u9mc83uzsfj55tzwf99fgeyt3gmwm9gdw2xgwrvsa5
 ```
 
-You should see something like this:
+Và nó trông như thế này:
 
 ```
                            TxHash                                 TxIx        Amount
@@ -195,11 +197,11 @@ You should see something like this:
 ```
 
 
-Now you might find it odd that there is not much information in the result that was returned the command, but that is totally normal as there are no available **UTXO** in the specific **wallet address** that we have queried just yet as it is a new wallet.
+Bây giờ bạn có thể thấy kỳ lạ là không có nhiều thông tin trong kết quả được trả về lệnh, nhưng điều đó hoàn toàn bình thường vì không có UTXO khả dụng trong địa chỉ ví cụ thể mà chúng tôi đã truy vấn vì nó là một ví mới.
 
-Our next step is to request some `tAda` from the [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet).
+Bước tiếp theo của chúng tôi là yêu cầu một số `tAda` từ [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet).
 
-Once you requested some `tAda` from the [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet) we can then run the query again and you should see something like this:
+Sau khi bạn yêu cầu một số `tAda` từ [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet) sau đó, chúng tôi có thể chạy lại truy vấn trên và bạn sẽ thấy thông báo như sau:
 
 ```
                            TxHash                                 TxIx        Amount
@@ -207,35 +209,36 @@ Once you requested some `tAda` from the [Cardano Testnet Faucet](../integrate-ca
 cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85     0        1000000000 lovelace
 ```
 
-This result tells us that there is one **UTXO** with the amount of 1,000,000,000 `lovelaces` in our specific **wallet address**, that means our wallet has a balance of `1,000 tAda`. 
+Kết quả này cho chúng ta biết rằng có một **UTXO** với số tiền 1.000.000.000 lovelaces trong địa chỉ ví của chúng ta , điều đó có nghĩa là ví của chúng ta có số dư là `1,000 tAda`. 
 
-The result also specifies that the **UTXO** **transaction id** (`TxHash` / `TxId`) is `cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85` with the **transaction index** of `0`.
+Kết quả chỉ ra rằng **UTXO** **transaction id** (`TxHash` - `TxId`) là `cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85` với  **transaction index** `TxIx` là `0`.
 
 :::note
-In the **Cardano** blockchain, the `lovelace` is the unit used to represent `ada` in **transactions** and **UTXO**. 
+Trong chuỗi khối **Cardano** , `lovelace` là đơn vị sử dụng để đại diện cho `ada` trong các ** giao dịch** và **UTXO**. 
 
-Where `1 ada` is equal to `1,000,000 lovelace`, so moving forward we will be using `lovelace` instead of `ada` / `tAda`.
+trong đó `1 ada` ibằng `1,000,000 lovelace`, Vì vậy trong tương lai chung ta sử dụng `lovelace` thay cho `ada` / `tAda`.
 
-You can also use the `TxHash` to view the complete transaction via the **Cardano Blockchain Explorer** for the relevant network. You can check the specific transaction for the example **UTXO** here: [f3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85](https://explorer.cardano-testnet.iohkdev.io/en/transaction?id=cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85)
+Bạn cũng có thể sử dụng `TxHash` để xem toàn bộ giao dịch thông qua Cardano Blockchain Explorer cho mạng có liên quan. Bạn có thể kiểm tra giao dịch cụ thể cho ví dụ UTXO tại đây:[f3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85](https://explorer.cardano-testnet.iohkdev.io/en/transaction?id=cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85)
 
-To learn more about **UTXO (unspent transaction output)** and how transactions work for the **UTXO Model**, we recommend watching this lecture by [Dr. Lars Brünjes](https://iohk.io/en/team/lars-brunjes), Education Director at [InputOutputGlobal](https://iohk.io).
+Để tìm hiểu thêm về **UTXO (đầu ra giao dịch chưa sử dụng) ** và cách giao dịch hoạt động cho Mô hình UTXO , chúng tôi khuyên bạn nên xem bài giảng này của [Dr. Lars Brünjes](https://iohk.io/en/team/lars-brunjes), Education Director at [InputOutputGlobal](https://iohk.io).
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/EoO76YCSTLo?t=1854" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 :::
 
-#### Creating simple transactions
+#### Tạo giao dịch đơn giản
 
-To have a clearer understanding of how sending transactions work using `cardano-cli`, first lets create another wallet like so:
+Để hiểu rõ hơn về cách hoạt động của các giao dịch gửi `cardano-cli`, trước tiên hãy tạo một ví khác như sau:
 
-**Generate payment key-pair**
+**Tạo cặp key payment**
+
 ```bash
 cardano-cli address key-gen \
 --verification-key-file $HOME/cardano/keys/payment2.vkey \
 --signing-key-file $HOME/cardano/keys/payment2.skey 
 ```
 
-**Generate wallet address**
+**tạo địa chỉ ví**
 ```bash
 cardano-cli address build \
 --payment-verification-key-file $HOME/cardano/keys/payment2.vkey \
@@ -243,7 +246,7 @@ cardano-cli address build \
 --testnet-magic 1097911063
 ```
 
-Once complete you should have the following directory structure:
+Sau khi hoàn tất, bạn sẽ có cấu trúc thư mục sau:
 
 ```bash
 $HOME/cardano/keys
@@ -257,7 +260,7 @@ $HOME/cardano/keys
 0 directories, 6 files
 ```
 
-Querying the **UTXO** for the second wallet `payment2.addr` should give you a familiar result:
+Truy vấn **UTXO** cho ví thứ hai `payment2.addr` cho bạn một kết quả quen thuộc:
 
 ```bash
 cardano-cli query utxo \
@@ -265,17 +268,17 @@ cardano-cli query utxo \
 --address $(cat $HOME/cardano/keys/payment2.addr)
 ```
 
-**UTXO Result**
+**Kết quả UTXO**
 ```
                            TxHash                                 TxIx        Amount
 --------------------------------------------------------------------------------------
 ```
 
-Again, this is to be expected as the `payment2.addr` wallet address and keys has just recently been generated. So we expect that no one has sent any `tAda` to this wallet yet.
+Một lần nữa, điều này được mong đợi vì địa chỉ ví `payment2.addr` và khóa vừa được tạo gần đây. Vì vậy, chúng tôi hy vọng rằng chưa có ai gửi bất kỳ khoản tiền `tAda`  nào đến ví này.
 
-In this example, we now have two wallets. We can call them `payment1` and `payment2`. Now remember that we requested some `tAda` from the [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet) for `payment1` wallet, and thats how we have the following:
+Trong ví dụ này, bây giờ chúng ta có hai ví. Chúng tôi có thể gọi cho họ `payment1` và `payment2`. Bây giờ hãy nhớ rằng chúng tôi đã yêu cầu một số tAdatừ [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet) cho ví `payment1`,  và đó là cách chúng tôi có những thứ sau:
 
-`payment1` **wallet**: `1,000,000,000 lovelace`
+**ví** `payment1` : `1,000,000,000 lovelace`
 
 ```
 UTXO
@@ -284,24 +287,24 @@ UTXO
 cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85     0        1000000000 lovelace
 ```
 
-`payment2` **wallet**: `0 lovelace`
+**ví** `payment2` : `0 lovelace`
 ```
 UTXO
                            TxHash                                 TxIx        Amount
 --------------------------------------------------------------------------------------
 ```
 
-Now let's say we want to send `250,000,000 lovelace` to `payment2` **wallet**, how can we achieve that?
+Bây giờ giả sử chúng ta muốn gửi `250,000,000 lovelace` tới  `payment2` , và có thể làm điều đó?
 
-We start by storing the current on-chain protocol parameters to a **JSON** file:
+Chúng tôi bắt đầu bằng cách lưu trữ các tham số giao thức trên chuỗi hiện tại vào tệp JSON :
 
-**Query Protocol Parameters**
+**Tham số giao thức truy vấn**
 ```bash
 cardano-cli query protocol-parameters \
   --testnet-magic 1097911063 \
   --out-file $HOME/cardano/protocol.json
 ```
-This will produce a **JSON** file that looks something like this:
+Điều này sẽ tạo ra một tệp **JSON** trông như sau:
 ```json
 {
     "poolDeposit": 500000000,
@@ -330,9 +333,9 @@ This will produce a **JSON** file that looks something like this:
 ```
 
 
-**Create draft transaction**
+**Tạo giao dịch thô**
 
-Next, we create a draft transaction like so:
+Tiếp theo, chúng tôi tạo một giao dịch thô như sau:
 
 ```bash
 cardano-cli transaction build-raw \
@@ -343,17 +346,17 @@ cardano-cli transaction build-raw \
 --out-file $HOME/cardano/tx.draft
 ```
 
-`cardano-cli transaction build-raw` : This tells `cardano-cli` to build a raw transaction.
+`cardano-cli transaction build-raw` : Điều này cho biết `cardano-cli` xây dựng một giao dịch thô.
 
-`--tx-in` : This specifices the **UTXO** input that the transaction will use, you can add as many **UTXO** input as you want by adding multiple `--tx-in` in the `cardano-cli` arguments as long as they have a unique `TxHash` and `TxIdx` within all your inputs.
+`--tx-in` : Điều này xác định cụ thể đầu vào UTXO mà giao dịch sẽ sử dụng, bạn có thể thêm bao nhiêu đầu vào UTXO tùy thích bằng cách thêm nhiều `--tx-in` trong đối số `cardano-cli` vào miễn là chúng có một đối số duy nhất `TxHash` và `TxIdx` tất cả các đầu vào của bạn.
 
-`--tx-out` : This specifies the target **wallet address**, **assets** and **quantity** to be sent to. You can add as many **UTXO** outputs as you want as long as the total **UTXO** input can satisfy the **assets** and **quantity** specified by the output.
+`--tx-out` : Điều này chỉ định **địa chỉ ví đích** , tài sản và số lượng được gửi đến. Bạn có thể thêm bao nhiêu đầu ra UTXO tùy thích miễn là tổng đầu vào UTXO có thể đáp ứng các nội dung và số lượng được chỉ định bởi đầu ra.
 
-`--fee` : This specifies the fee amount of the transaction in `lovelace`.
+`--fee` :  Điều này chỉ định số tiền phí của giao dịch trong `lovelace`.
 
-`--out-file` : This is the path to the transaction file that will be generated.
+`--out-file` : Đây là đường dẫn đến tệp giao dịch sẽ được tạo.
 
-In this case, we are just building a draft transaction to calculate how much fee would the transaction need. We can do that by executing the following command: 
+Trong trường hợp này, chúng tôi chỉ đang xây dựng một giao dịch nháp để tính toán xem giao dịch đó sẽ cần bao nhiêu phí. Chúng ta có thể làm điều đó bằng cách thực hiện lệnh sau:
 
 ```bash
 cardano-cli transaction calculate-min-fee \
@@ -365,22 +368,23 @@ cardano-cli transaction calculate-min-fee \
 --protocol-params-file $HOME/cardano/protocol.json
 ```
 
-You should see something like this for the output: 
+Bạn sẽ thấy một cái gì đó như thế này cho đầu ra:
 
 ```bash
 174169 Lovelace
 ```
 
-You will notice that we use the `protocol.json` we queried awhile ago to calculate the transaction fee:
+Bạn sẽ nhận thấy rằng chúng tôi sử dụng số liệu `protocol.json` chúng tôi đã truy vấn cách đây một thời gian để tính phí giao dịch:
+
 ```
 --protocol-params-file $HOME/cardano/protocol.json
 ```
 
-That is because the transaction fee calculation results changes depending on the on-chain protocol parameters.
+Đó là do kết quả tính phí giao dịch thay đổi tùy thuộc vào các tham số giao thức trên chuỗi..
 
-The `--witness-count 1` basically tells `cardano-cli` that there will be only `1` **signing key** required for this transaction to be valid. Since the **UTXO** input involved in this transaction will only be coming from `payment1` wallet, so that means we indeed only need `1` key to sign the transaction.
-
-We can then finally build the real transaction like so:
+ `--witness-count 1` Về cơ bản, nó cho biết `cardano-cli` rằng sẽ chỉ có 1 khóa ký được yêu cầu để giao dịch này hợp lệ. Vì đầu vào UTXO liên quan đến giao dịch này sẽ chỉ đến từ ví `payment1` , do đó, điều đó có nghĩa là chúng tôi thực sự chỉ cần khóa `1`  để ký giao dịch.
+ 
+Sau đó, cuối cùng chúng ta có thể xây dựng giao dịch thực như vậy:
 
 ```bash
 cardano-cli transaction build-raw \
@@ -391,7 +395,7 @@ cardano-cli transaction build-raw \
 --out-file $HOME/cardano/tx.draft
 ```
 
-To recap, We want to send `250,000,000 lovelace` from `payment1` wallet to `payment2` wallet. Our `payment1` wallet had the following **UTXO**:
+Tóm lại, Chúng tôi muốn gửi `250,000,000 lovelace` từ ví `payment1` tới ví `payment2`. sau cùng ví `payment1`có **UTXO**:
 
 ```
                            TxHash                                 TxIx        Amount
@@ -399,19 +403,19 @@ To recap, We want to send `250,000,000 lovelace` from `payment1` wallet to `paym
 cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85     0        1000000000 lovelace
 ```
 
-So we will use the `TxHash` `cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85` and `TxIx` `0` as our `--tx-input`. 
+vì vậy chúng ta sử dụng `TxHash` `cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85` and `TxIx` `0` làm `--tx-input`. 
 
 ```bash
 --tx-in cf3cf4850c8862f2d698b2ece926578b3815795c9e38d2f907280f02f577cf85#0
 ```
 
-We then tell `cardano-cli` that the destination of the `250,000,000 lovelace` is the **wallet address** of `payment2`.
+Sau đó chúng tôi dùng `cardano-cli` chuyển `250,000,000 lovelace` tới ví   `payment2`.
 
 ```bash
 --tx-out $(cat $HOME/cardano/keys/payment2.addr)+250000000
 ```
 
-Now, we still have `750000000 lovelace` as the change amount, so we will simply send it back to ourselves like so:
+Bây giờ ví 1 đã thay đổi còn `750000000 lovelace` vì vậy gưởi lại cho chính mình sau:
 
 ```bash
 --tx-out $(cat $HOME/cardano/keys/payment1.addr)+749825831
@@ -421,17 +425,21 @@ Now an important question you might ask here is that, why is the amount `7498258
 
 We then specify the transaction fee like so:
 
+Bây giờ một câu hỏi quan trọng bạn có thể hỏi ở đây là, tại sao lại là số tiền `749825831 lovelace`? Hãy nhớ rằng chúng tôi đã tính toán phí `174169 lovelace ` và ai đó phải chịu phí giao dịch, vì vậy chúng tôi quyết định rằng `payment` sẽ trả phí bằng `lovelace`. Vì vậy, chúng tôi tính toán điều đó `750000000 - 174169 = 749825831` và do đó tổng còn lại sẽ là `749825831 lovelace`.
+
+Sau đó, chúng tôi chỉ định phí giao dịch như sau:
+
 ```
 --fee 174169
 ```
 
-And then we specify where we will save the transaction file:
+Và sau đó chúng tôi chỉ định nơi chúng tôi sẽ lưu tệp giao dịch:
 
 ```
 --out-file $HOME/cardano/tx.draft
 ```
 
-Now that we have the transaction file, we must sign the transaction in-order to prove that we are the owner of the input **UTXO** that was used.
+Bây giờ chúng tôi đã có tệp giao dịch, chúng tôi phải ký vào giao dịch để chứng minh rằng chúng tôi là chủ sở hữu của UTXO đầu vào đã được sử dụng.
 
 ```bash
 cardano-cli transaction sign \
@@ -441,9 +449,9 @@ cardano-cli transaction sign \
 --out-file $HOME/cardano/tx.signed
 ```
 
-`--signing-key-file $HOME/cardano/keys/payment1.skey` : This argument tells the `cardano-cli` that we will use `payment1.skey` to sign the transaction.
+`--signing-key-file $HOME/cardano/keys/payment1.skey` : Đối số này cho biết rằng `cardano-cli` chúng ta sẽ sử dụng chữ ký `payment1.skey` cho giao dịch này
 
-Finally, we submit the transaction to the blockchain!
+Cuối cùng, chúng tôi gửi giao dịch tới blockchain!
 
 ```bash
 cardano-cli transaction submit \
@@ -451,10 +459,10 @@ cardano-cli transaction submit \
 --testnet-magic 1097911063 
 ```
 :::important
-If you have waited too long to sign and submit the transaction, the fees might've changed during that time and therefore the transaction might get rejected by the network. To solve this, you simply have to **recalculate the fees, rebuild the transaction, sign it and submit it**!
+Nếu bạn đã đợi quá lâu để ký và gửi giao dịch, phí có thể đã thay đổi trong thời gian đó và do đó giao dịch có thể bị mạng từ chối. Để giải quyết vấn đề này, bạn chỉ cần **tính toán lại các khoản phí, xây dựng lại giao dịch, ký tên và gửi nó **!
 :::
 
-Checking the balances of both wallets `payment1` and `payment2`:
+Kiểm tra số dư của cả hai ví `payment1` và `payment2`:
 
 ```bash
 # payment1 wallet UTXO
@@ -471,27 +479,27 @@ Checking the balances of both wallets `payment1` and `payment2`:
 63eeeb7e43171aeea0b3d53c5a36236cf9af92d5ee39e99bfadfe0237c46bd91     0        250000000 lovelace
 ```
 
-As we can see, `payment2` now has a **UTXO** with the amount of `250,000,000 lovelace` with the change amount returned to `payment1` and has generated a new **UTXO** with the amount of `749,825,303 lovelace` as-well.
+Như chúng ta có thể thấy, `payment2` có **UTXO**  với số tiền `250,000,000 lovelace`. `payment1` có **UTXO** mới vơi số tiền là `749,825,303 lovelace`.
 
-Congratulations, You have created and sent your first **Cardano** transaction using `cardano-cli`! 🎉🎉🎉
+Xin chúc mừng, Bạn đã tạo và gửi giao dịch `Cardano` `cardano-cli` đầu tiên của mình bằng cách sử dụng ! 🎉🎉🎉
 
-#### Creating a wallet with `cardano-wallet`
+#### Tạo ví bằng `cardano-wallet`
 
 :::note
-This guide assumes you have installed `cardano-wallet` into your system. If not you can refer to [Installing cardano-wallet](/docs/get-started/installing-cardano-wallet) guide for instructions on how to do that.
+Hướng dẫn này giả định rằng bạn đã cài đặt cardano-walletvào hệ thống của mình. Nếu không, bạn có thể tham khảo Hướng dẫn [cài đặtcardano-wallet](/docs/get-started/installing-cardano-wallet) để bbiết cách thực hiện.
 
-We will use the path `$HOME/cardano/wallets` to store all the `cardano-wallet` related files as an example, please replace it with the directory you have choosen to store the files.
+Chúng tôi sẽ sử dụng đường dẫn `$HOME/cardano/wallets` để lưu trữ tất cả các `cardano-wallet` tệp liên quan làm ví dụ, vui lòng thay thế nó bằng thư mục bạn đã chọn để lưu trữ các tệp.
 :::
 
 :::important
-Please make sure your `cardano-node` is connected and synchronized to the `testnet` network before proceeding.
+Vui lòng đảm bảo rằng `cardano-node` đã kết nối và đồng bộ xong với mạng `testnet`trước khi tiếp tục.
 :::
 
 :::warning
-In a production environment, it might not be a good idea to store wallets / keys in a public server unless you know what you are doing.
+Trong môi trường sản xuất, việc lưu trữ ví / khóa trong máy chủ công cộng có thể không phải là ý kiến ​​hay trừ khi bạn biết mình đang làm gì.
 :::
 
-First, lets create a directory to store all our `wallets` like so:
+Đầu tiên, hãy tạo một thư mục để lưu trữ tất cả `wallets`:
 
 ```bash
 mkdir -p $HOME/cardano/wallets
@@ -499,7 +507,7 @@ mkdir -p $HOME/cardano/wallets
 
 **Starting cardano-wallet as a REST API server**
 
-We will be focusing on the [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) that `cardano-wallet` provides. In-order to interact with the API, we must first start the server.
+Chúng tôi sẽ tập trung vào [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer) cung cấp `cardano-wallet`. để tương tác với API, trước tiên chúng ta phải khởi động máy chủ.
 
 ```bash
 cardano-wallet serve \
@@ -509,37 +517,37 @@ cardano-wallet serve \
 --node-socket $CARDANO_NODE_SOCKET_PATH
 ```
 
-`cardano-wallet serve` : Runs `cardano-wallet` as a web server that provides a [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer).
+`cardano-wallet serve` : chạy `cardano-wallet` như một máy chủ cung cấp [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer).
 
-`--port` : Specifies the port that the web server will listen to for any requests.
+`--port` :  Chỉ định cổng mà máy chủ web sẽ lắng nghe bất kỳ yêu cầu nào.
 
-> You can choose whatever `port` number you like, but it is recommended to use `port` numbers `1024` and above. See [Registered Port](https://www.sciencedirect.com/topics/computer-science/registered-port) for more information.
+> Bạn có thể chọn bất cứ `port` nào bạn thích, nhưng nên sử dụng  `port` từ `1024` trỏ lên. Xem [Registered Port](https://www.sciencedirect.com/topics/computer-science/registered-port)để biết thêm thông tin.
 
-`--testnet` : Specifies the **Byron** genesis file path for the `testnet` network.
+`--testnet` : Chỉ định đường dẫn tệp gốc  **Byron** cho mạng `testnet` 
 
-> This should match the genesis file that the `cardano-node` you are connected is using as-well. If you meant to connect to `mainnet` then use the `--mainnet` flag and the `mainnet` **Byron** genesis file instead.
+> Điều này cũng phải khớp với tệp genesis mà `cardano-node` đang kết nối. Nếu bạn muốn kết nối với `mainnet` thì sử dụng `--mainnet` flag và file gốc là `mainnet` **Byron**.
 
-`--database` : Specifies the path where the wallet database will be saved.
+`--database` : Chỉ định đường dẫn nơi cơ sở dữ liệu ví sẽ được lưu.
 
-> It is important to note that the wallet creation function requires a passphrase so all the wallet data will be encrypted by the passphrase.
+> Điều quan trọng cần lưu ý là chức năng tạo ví yêu cầu cụm mật khẩu nên tất cả dữ liệu ví sẽ được mã hóa bằng cụm mật khẩu.
 
-`--node-socket` : Specifies the `cardano-node` socket path that will be used by the `cardano-wallet` to communicate with the node.
+`--node-socket` : Chỉ định `cardano-node` đường dẫn socket sẽ được sử dụng `cardano-wallet` để giao tiếp với nút.
 
-> The `cardano-node` uses **IPC (Inter-Process-Communication)** for communicating with the other **Cardano** components like `cardano-cli`, `cardano-wallet` and `cardano-db-sync`. In **Linux** and **MacOS** it uses something called [unix sockets](https://en.wikipedia.org/wiki/Unix_domain_socket) and [Named Pipes](https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes) in **Windows**.
+>  `cardano-node` sử dụng **IPC (Inter-Process-Communication)** cho việc giao tiếp vớ các thành phần **Cardano** như `cardano-cli`, `cardano-wallet` và `cardano-db-sync`. Trong **Linux** và **MacOS** nó đực gọi như sau [unix sockets](https://en.wikipedia.org/wiki/Unix_domain_socket) và [Named Pipes](https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes) trong **Windows**.
 > 
-> Here is an example `--socket-path` argument for **Linux**:
+> Đây là ví dụ đối số `--socket-path` cho  **Linux**:
 ```
 --socket-path $HOME/cardano/db/node.socket
 ```
-> As you can see the argument points to a file since **unix sockets** are represented as files (like everything else in **Linux**). In this case we put the socket file in the `db` directory that we have just created before.
+> Như bạn có thể thấy đối số trỏ đến một tệp vì các ổ cắm unix được biểu diễn dưới dạng tệp (giống như mọi thứ khác trong Linux ). Trong trường hợp này, chúng tôi đặt tệp socket vào thư mục `db` mà chúng tôi vừa tạo trước đó.
 > 
-> In **Windows**, the `--socket-path` argument would look something like this:
+> Trong **Windows**, Đối số `--socket-path` trông giông như sau:
 ```
 --socket-path "\\\\.\\pipe\\cardano-node-testnet"
 ```
-> As you notice its almost like a network `URI` or a network `Path` than a file, this is a key difference that you will have to be aware depending on your operating system. You can replace the string `cardano-node-testnet` in the argument to whatever you like, this example path in particular is used in the [Daedalus Testnet Wallet](https://daedaluswallet.io) for **Windows**.
+> Khi bạn nhận thấy nó gần giống như một mạng `URI` hoặc một mạng `Path` hơn là một tệp, đây là sự khác biệt chính mà bạn sẽ phải biết tùy thuộc vào hệ điều hành của mình. Bạn có thể thay thế chuỗi `cardano-node-testnet` trong đối số thành bất kỳ thứ gì bạn thích, đường dẫn ví dụ này đặc biệt được sử dụng trong [Daedalus Testnet Wallet](https://daedaluswallet.io) cho **Windows**.
 
-Once the server is running you should see sometihng like this (among other things): 
+Khi máy chủ đang chạy, bạn sẽ thấy một số thông tin như thế này (trong số những thứ khác):
 
 ```
 [cardano-wallet.network:Info:12] [2021-06-03 13:48:24.82 UTC] Protocol parameters for tip are:
@@ -563,7 +571,7 @@ Slotting parameters for tip are:
 [cardano-wallet.main:Info:4] [2021-06-03 13:48:24.86 UTC] Wallet backend server listening on http://127.0.0.1:1337/
 ```
 
-**Checking Wallet Server Information**
+**Kiểm tra thông tin máy chủ Wallet**
 
 The first thing we can do to test if the wallet server is working correctly is to query the network information via the API.
 

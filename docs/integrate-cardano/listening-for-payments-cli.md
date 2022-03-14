@@ -8,7 +8,7 @@ description: Làm thế nào để xem Ada thanh toán bằng cardano-cli.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Overview
+## Tổng quan
 
 :::note
 Hướng dẫn này giả định rằng bạn có hiểu biết cơ bản về `cardano-cli`, cách sử dụng nó và bạn đã cài đặt nó vào hệ thống của mình. Nếu không, chúng tôi khuyên bạn nên đọc hướng dẫn [Installing cardano-node](/docs/getting-started/installing-cardano-node), [Running cardano-node](/docs/getting-started/running-cardano) và [Exploring Cardano Wallets](/docs/integrate-cardano/creating-wallet-faucet) trước tiên.
@@ -373,7 +373,6 @@ foreach(var row in utxoTableRows.Skip(2)){
 
 ### Quyết định nếu thanh toán thành công
 
-Once we have the total lovelace amount, we will then determine using our code if a specific payment is a success, ultimately sending or shipping the item if it is indeed succesful. In our example, we expect that the payment is equal to `1,000,000 lovelace` that we defined in our `TOTAL_EXPECTED_LOVELACE` constant variable.
 Khi chúng ta có tổng lovelace, chúng ta sẽ quyết định sử dụng mã của chúng ta nếu thanh toán này thành công, cuối cùng thì gửi hoặc chuyển mặt hàng nếu thực sự thành công. Trong ví dụ của chúng ta, chúng ta mong đợi rằng việc thanh toán bằng `1,000,000 lovelace` cái mà đã được định nghĩa trong biến `TOTAL_EXPECTED_LOVELACE` không đổi.
 
 <Tabs

@@ -18,7 +18,7 @@ Testnet faucet là một dịch vụ cung cấp ada thử nghiệm (tAda) cho ng
 
 
 <div id="faucetcontainer">
-<iframe name="iframe" height="300" width="100%" scrolling="no" src="https://testnets.cardano.org/en/testnets/cardano/tools/faucet/" class="faucet"></iframe>
+<iframe name="iframe" height="2000" width="100%" scrolling="no" src="https://testnets.cardano.org/en/testnets/cardano/tools/faucet/" class="faucet"></iframe>
 </div>
 
 

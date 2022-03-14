@@ -188,23 +188,23 @@ $HOME/cardano/
 ```
 --host-addr 192.168.0.1
 ```
-> In this case, we expect nodes in your [LAN (Local Area Network)](https://en.wikipedia.org/wiki/Local_area_network) to connect via `192.168.0.1`, assuming that the `IP Address` of the machine `cardano-node` is running on; replace it with your real `IP Address`. If you don't expect or need external nodes to connect to your node, you can use the loopback address `127.0.0.1`. If you have multiple network interfaces and unsure what to use, you can simply use `0.0.0.0` to accept connections from any network interface.
+> Trong trường hợp này, chúng tôi mong đợi các nút trong mạng [LAN (Local Area Network)](https://en.wikipedia.org/wiki/Local_area_network) của bạn kết nối qua `192.168.0.1`,  giả sử rằng đaicj chỉ `IP Address` của máy `cardano-node` đang chạy; thay thế nó bằng `IP Address` thật của bạn . Nếu bạn không mong đợi hoặc cần các nút bên ngoài kết nối với nút của mình, bạn có thể sử dụng địa chỉ `127.0.0.1`. Nếu bạn có nhiều giao diện mạng và không chắc chắn nên sử dụng cái gì, bạn có thể chỉ cần sử dụng  `0.0.0.0` để chấp nhận các kết nối từ bất kỳ giao diện mạng nào.
 
-**`--port`**: In conjunction with the `IP Address`, we will also set the `port` that your `cardano-node` will use for listening to any incoming connection.
-> Here is an example `--port` argument:
+**`--port`**: cùng với `IP Address`, chúng ta cũng sẽ đặt cái `port` với `cardano-node` sẽ sử dụng để nghe bất kỳ kết nối đến nào.
+> Đây là một thông số `--port`:
 ```
 --port 1337
 ```
-> You can choose whatever `port` number you like, but it is recommended to use `port` numbers `1024` and above. See [Registered Port](https://www.sciencedirect.com/topics/computer-science/registered-port) for more information.
+> Bạn có thể chọn bất kỳ `port` bạn thích, nhưng nên sử dụng `port` từ `1024` trở lên. Xem [Registered Port](https://www.sciencedirect.com/topics/computer-science/registered-port) để biết thêm thông tin.
 
-**`--config`**: This expects the path to the main configuration file that we have downloaded previously.
-> Here is an example `--config` argument:
+**`--config`**: Điều này mong đợi đường dẫn đến tệp cấu hình chính mà chúng tôi đã tải xuống trước đó.
+> Đây là ví dụ đối số `--config`:
 ```
 --config $HOME/cardano/testnet-config.json
 ```
-> Please make sure that the `alonzo-genesis.json`, `byron-genesis.json` and `shelley-genesis.json` are in the same directory as the `config.json`.
+> Hãy đảm bảo rằng `alonzo-genesis.json`, `byron-genesis.json` và `shelley-genesis.json` có trong đường dẫn mà cps trong file `config.json` .
 
-Here is a realistic example for running `cardano-node`:
+Đây là một ví dụ thực tế để chạy `cardano-node`:
 
 ```bash
 cardano-node run \
@@ -216,7 +216,7 @@ cardano-node run \
 --topology $HOME/cardano/testnet-topology.json
 ```
 
-If you have everything set correctly, you should see something like this:
+Nếu bạn đã thiết lập mọi thứ chính xác, bạn sẽ thấy một cái gì đó như sau:
 
 ```
 Listening on http://127.0.0.1:12798
@@ -249,42 +249,42 @@ Listening on http://127.0.0.1:12798
 [cardano.node.ChainDB:Notice:33] [2021-05-20 12:17:10.08 UTC] Chain extended, new tip: 1e64e74bd7ac76d6806480a28017deb0aedd356fb61844ec95c429ae2f30c7c3 at slot 0
 ```
 
-Syncing the blockchain from zero can take a while. Please be patient. If you want to stop syncing, you can do so by pressing `CTRL` + `C` while in the terminal. Rerunning the `cardano-node run` command with the correct parameters will resume syncing the blockchain.
+Đồng bộ hóa chuỗi khối từ 0 có thể mất một thời gian. Xin hãy kiên nhẫn. Nếu bạn muốn dừng đồng bộ hóa, bạn có thể thực hiện việc này bằng cách nhấn `CTRL` + `C` khi đang ở trong terminal. Chạy lại `cardano-node` lệnh với các tham số chính xác sẽ tiếp tục đồng bộ hóa chuỗi khối.
 
-### Querying the Cardano Blockchain
+### Truy vấn Blockchain Cardano
 
-Now that we have `cardano-node` running and syncing, we can test it out by querying the blockchain tip data; which is the current point your local node is synced. To do this, we use the `cardano-cli` command-line application.
+Bây giờ chúng tôi đã chạy `cardano-node` và đồng bộ hóa, chúng tôi có thể kiểm tra nó bằng cách truy vấn dữ liệu blockchain; đó là điểm hiện tại mà nút cục bộ của bạn được đồng bộ hóa. Để làm điều này, chúng tôi sử dụng `cardano-cli`.
+Nhưng trước khi chúng ta có thể làm điều đó, `cardano-cli` và các thành phần phần mềm `Cardano` khác cần biết node socket nằm ở đâu. Chúng tôi đã lưu nó vào đường dẫn `$HOME/cardano/db/node.socket` trong ví dụ trước. Các thành phần đọc biến môi trường shell `CARDANO_NODE_SOCKET_PATH` để tìm ra điều này.
 
-But before we can do that, `cardano-cli` and other **Cardano** software components need to know where the node socket file is located. We saved it to the path `$HOME/cardano/db/node.socket` in the previous example. The components read the shell environment variable `CARDANO_NODE_SOCKET_PATH` to find this.
+Vì vậy, chúng tôi sẽ thiết lập điều đó trong `$HOME/.bashrc` hoặc `$HOME/.zshrc`, tùy thuộc vào ứng dụng shell mà bạn sử dụng. Trong Windows, bạn có thể làm theo hướng dẫn sau: [Cách đặt Biến Môi trường trong Windows](https://phoenixnap.com/kb/windows-set-environment-variable).
 
-So we will set that in `$HOME/.bashrc` or `$HOME/.zshrc`, depending on which shell application that you use. In Windows, you can follow this guide: [How to Set Environment Variable in Windows](https://phoenixnap.com/kb/windows-set-environment-variable).
-
-Add this line to the bottom of your shell profile (**MacOS** and **Linux**):
+Thêm dòng này vào cuối hồ sơ shell của bạn (**MacOS** and **Linux**):
 ```
 export CARDANO_NODE_SOCKET_PATH="$HOME/cardano/db/node.socket"
 ```
 
-Once saved, reload your shell/terminal for changes to take effect.
+Sau khi được lưu, hãy tải lại shell/terminal của bạn để các thay đổi có hiệu lực.
 
-Finally, we can now test querying the blockchain tip of our `cardano-node`:
+Cuối cùng, bây giờ chúng tôi có thể kiểm tra truy vấn blockchain của chúng tôi `cardano-node`:
 
-- First, run `cardano-node` in a separate terminal for it to start syncing (if not already).
-- Open another terminal and run the following command `cardano-cli query tip --testnet-magic 1097911063`.
-> You should see something like this:
+- Trước hết chạy `cardano-node` trong một terminal đriêng biệt để đồng bộ (nếu nó chưa chạy).
+- Mở một terminal khác và chạy dòng lệnh sau`cardano-cli query tip --testnet-magic 1097911063`.
+
+> Bạn sẽ thấy như sau:
 > ```json
 {
     "blockNo": 2598870,
     "headerHash": "e5be38153db4dc639134969e6449f37e105e0c5228f828f76a885968b4423aaf",
     "slotNo": 27149964
-}
+}```
 
-:::note
-We include `--testnet-magic <NetworkMagic>` in the parameter for `cardano-cli query tip` because we are using a `testnet` node. If you intend to query `mainnet` instead, please use the `--mainnet` parameter  and make sure your node is connected to the `mainnet` network.
+:::Ghi chú
+Chúng tôi đưa `--testnet-magic <NetworkMagic>` vào tham số cho `cardano-cli query tip` bởi vì chúng tôi đang sử dụng một nút `testnet`. Nếu bạn định truy vấn `mainnet` =, hãy sử dụng tham số `--mainnet`  và đảm bảo rằng nút của bạn được kết nối với mạng `mainnet`.
 :::
 
-What you see here is the local tip data of your node. This case, means that you are synced up to `blockNo: 2598870` and `slotNo: 27149964`.
+Những gì bạn thấy ở đây là dữ liệu cục bộ của nút của bạn. Trường hợp này, có nghĩa là bạn được đồng bộ hóa với  `blockNo: 2598870` và `slotNo: 27149964`.
 
-To know whether you are fully synced or not, you can check the **Cardano Blockchain Explorer** of the relevant network:
+Để biết liệu bạn đã được đồng bộ hóa hoàn toàn hay chưa, bạn có thể kiểm tra **Cardano Blockchain Explorer** của mạng liên quan:
 
 #### Mainnet Explorer
 [https://explorer.cardano.org](https://explorer.cardano.org)
@@ -292,12 +292,12 @@ To know whether you are fully synced or not, you can check the **Cardano Blockch
 #### Testnet Explorer
 [https://explorer.cardano-testnet.iohkdev.io](https://explorer.cardano-testnet.iohkdev.io)
 
-Scroll down to the **Latest Blocks** section, and you can find the latest network tip.
+Cuộn xuống phần **Khối mới nhất** và bạn có thể tìm thấy  mạng mới nhất.
 
 ![img](../../static/img/integrate-cardano/latest-block.png)
 
 :::important
-Before making any transactions, make sure you are fully synced to the blockchain network.
+Trước khi thực hiện bất kỳ giao dịch nào, hãy đảm bảo rằng bạn đã được đồng bộ hóa hoàn toàn với mạng blockchain.
 :::
 
-Congratulations, you are now ready to explore the world of **Cardano**! 🎉🎉🎉
+Xin chúc mừng, bạn đã sẵn sàng khám phá thế giới **Cardano**! 🎉🎉🎉
