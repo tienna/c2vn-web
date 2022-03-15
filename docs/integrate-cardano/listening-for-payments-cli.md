@@ -43,7 +43,7 @@ Trong khi đó, giao dịch sẽ được xử lý và thanh toán trong mạng 
 
 Bây giờ chúng ta có thể bắt tay vào triển khai mã thực tế.
 
-:::Ghi chú
+:::note
 
 Trong phần này, Chúng tôi sẽ sử dụng đường dẫn `$HOME/receive-ada-sample` để lưu trữ tất cả các tập tin liên quan làm ví dụ, hãy thay thế nó bằng thư mục bạn đã chọn để lưu trữ các tập tin. Tất cả các ví dụ mã trong bài viết này giả định rằng bạn sẽ lưu tất cả các tệp mã nguồn dưới thư mục gốc với đường dẫn trên.
 :::
