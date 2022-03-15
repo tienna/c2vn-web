@@ -849,7 +849,7 @@ Payment Complete: ✅
   </TabItem>
 </Tabs>
 
-:::Ghi chú
+:::note
 
 Có thể mất 20 giây hoặc hơn để giao dịch lan truyền trong mạng tùy thuộc vào tình trạng mạng, vì vậy bạn sẽ phải kiên nhẫn
 
