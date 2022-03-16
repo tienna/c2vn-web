@@ -34,7 +34,7 @@ const sidebars = {
        },
       {
         type: "category",
-        label: "Builder Tools",
+        label: "Các công cụ",
         items: [
           "getting-started/blockfrost",
           "getting-started/cardanocli-js",
@@ -87,7 +87,7 @@ const sidebars = {
       "integrate-cardano/listening-for-payments-wallet",
       "integrate-cardano/testnet-faucet",
     ],
-    "Discover Native Tokens": [
+    "Khám phá Native Tokens": [
       "native-tokens/overview",
       //"native-tokens/minting",
       //"native-tokens/minting-nfts",

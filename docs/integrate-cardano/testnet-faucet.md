@@ -23,8 +23,6 @@ Testnet faucet là một dịch vụ cung cấp ada thử nghiệm (tAda) cho ng
 
 
 
-
-
 :::note
 Trả lại tAda:
 

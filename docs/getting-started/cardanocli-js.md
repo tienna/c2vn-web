@@ -1,19 +1,19 @@
 ---
 id: cardanocli-js
-title: Get Started with cardanocli-js
+title: Bắt đầu với cardanocli-js
 sidebar_label: cardanocli-js
-description: Get Started with cardanocli-js
+description: Bắt đầu với cardanocli-js
 #image: ./img/og-developer-portal.png
 ---
 
 cardanocli-js wraps the cardano-cli in JavaScript and makes it possible to interact with the cli-commands much faster and more efficient.
 
-## Prerequisites
+## Yêu cầu trước
 
 - `cardano-node >= 1.26.1`
 - `node.js >= 12.19.0`
 
-## Install
+## Cài đặt
 
 #### NPM
 
@@ -21,7 +21,7 @@ cardanocli-js wraps the cardano-cli in JavaScript and makes it possible to inter
 npm install cardanocli-js
 ```
 
-#### From source
+#### Lấy mã nguồn và cài đặt
 
 ```bash
 git clone https://github.com/Berry-Pool/cardanocli-js.git
@@ -29,7 +29,7 @@ cd cardanocli-js
 npm install
 ```
 
-## Get started
+## Bắt đầu
 
 ```javascript
 const CardanocliJs = require("cardanocli-js");
@@ -60,7 +60,9 @@ console.log(wallet.paymentAddr);
 console.log(pool.vrf.vkey);
 ```
 
-## For testnet for example this is the working version
+## Đối với testnet 
+
+Đây là phiên bản làm việc
 
 ```
 const CardanocliJs = require("cardanocli-js");
@@ -104,4 +106,4 @@ console.log(pool.vrf.vkey);
 ```
 
 
-Visit [cardanocli-js](https://github.com/Berry-Pool/cardanocli-js/blob/main/API.md) to see the complete API documentation.
+Vào site [cardanocli-js](https://github.com/Berry-Pool/cardanocli-js/blob/main/API.md) để xem tài liệu API đầy đủ.

@@ -1,42 +1,43 @@
 ---
 id: ogmios
-title: Get Started with Ogmios
+title: Bắt đầu với Ogmios
 sidebar_label: Ogmios
-description: Get Started with Ogmios
+description: Bắt đầu với Ogmios
 #image: ./img/og-developer-portal.png
 ---
 
-**Ogmios** is a lightweight bridge interface for [cardano-node](https://github.com/input-output-hk/cardano-node/). It offers a WebSockets API that enables local clients to speak [Ouroboros' mini-protocols](https://hydra.iohk.io/build/1070091/download/1/network.pdf#chapter.3) via JSON/RPC.
 
-Ogmios doesn’t do much more than what the node itself does. It’s pretty much as low-level as things can get with the Cardano network. For many applications, this is too low in the abstraction layer and they would be better off using higher-level services like [cardano-graphql](https://github.com/input-output-hk/cardano-graphql), [Rosetta](https://www.rosetta-api.org), or [Blockfrost](https://blockfrost.io).
+**Ogmios** là một giao diện cầu nối nhẹ cho [cardano-node](https://github.com/input-output-hk/cardano-node/). Nó cung cấp một WebSockets API cho phép các khách hàng cục bộ nói [Ouroboros' mini-protocols](https://hydra.iohk.io/build/1070091/download/1/network.pdf#chapter.3) thông qua JSON/RPC.
 
-## Installation
+Ogmios không làm được nhiều hơn những gì mà chính node đó làm. Nó khá thấp như những thứ có thể có được với mạng Cardano. Đối với nhiều ứng dụng, mức này quá thấp trong lớp trừu tượng và chúng sẽ tốt hơn nếu sử dụng các dịch vụ cấp cao hơn như [cardano-graphql](https://github.com/input-output-hk/cardano-graphql), [Rosetta](https://www.rosetta-api.org), or [Blockfrost](https://blockfrost.io).
 
-The easiest way to get started with Ogmios is to use [docker](https://www.docker.com). Since Ogmios requires the presence of a Cardano node, it makes sense to use docker-compose to orchestrate both services. A compose file is available on the Ogmios repository, get it via:
+
+## Giới thiệu
+
+Cách dễ nhất để bắt đầu với Ogmios là sử dụng [docker](https://www.docker.com). Vì Ogmios yêu cầu sự hiện diện của một node Cardano, nên phải sử dụng docker-compose để sắp đặt cả hai dịch vụ. Tệp soạn thảo có sẵn trên kho lưu trữ Ogmios, hãy tải tệp đó qua:
 
 ```sh
 git clone --depth 1 https://github.com/CardanoSolutions/ogmios.git
 cd ogmios
 ```
 
-
-Then, start the components stack using:
+Sau đó, bắt đầu các thành phần bằng cách sử dụng:
 ```sh
 docker-compose up
 ```
 
-If you prefer to build everything from source or without docker, please head to [the Ogmios website](https://ogmios.dev/getting-started).
- 
+ Nếu bạn muốn xây dựng mọi thứ từ nguồn hoặc không có docker, vui lòng truy cập [Ogmios website](https://ogmios.dev/getting-started).
 
 ## Dashboard
 
-You should now be able to access the dashboard on [http://localhost:1337](http://localhost:1337) with a real-time visualization of some of the server runtime metrics. 
+Bây giờ bạn có thể truy cập bảng điều khiển trên [http://localhost:1337](http://localhost:1337) với hình ảnh trực quan thời gian thực của một số chỉ số thời gian chạy của máy chủ.
 
 ![img](../../static/img/get-started/ogmios/1-dashboard.gif)
 
-## Query metrics
+## Truy vấn số liệu
 
-The dashboard is powered by JSON responses served by [http://localhost:1337/health](http://localhost:1337/health).
+
+Bảng điều khiển cung cấp bởi JSON được dùng [http://localhost:1337/health](http://localhost:1337/health).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -63,7 +64,7 @@ wget --header='Accept: application/json' -qO- http://localhost:1337/health
   </TabItem>
 </Tabs>
 
-JSON response:
+Phản hồi:
 
 ```json
 {
@@ -96,6 +97,6 @@ JSON response:
 }
 ```
 
-## Ogmios documentation
+## Tài liệu về Ogmios
 
-To dive further into Ogmios and how to interact with the Ouroboros mini-protocols, visit [ogmios.dev](https://ogmios.dev/mini-protocols).
+ Để tìm hiểu sâu hơn về Ogmios và cách tương tác với các giao thức mini Ouroboros, hãy truy cập[ogmios.dev](https://ogmios.dev/mini-protocols).

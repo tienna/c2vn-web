@@ -1,28 +1,29 @@
 ---
 id: blockfrost
-title: Get Started with Blockfrost
+title: Bắt đầu với Blockfrost
 sidebar_label: Blockfrost
-description: Get Started with Blockfrost
+description: Bắt đầu với Blockfrost
 #image: ./img/og-developer-portal.png
 ---
 
-Blockfrost provides API to access and process information stored on the Cardano blockchain. The basic tier is free and allows 50,000 requests per day.
 
-## Sign in
+Blockfrost cung cấp API để truy cập và xử lý thông tin được lưu trữ trên blockchain Cardano. Mức cơ bản là miễn phí và cho phép 50.000 yêu cầu mỗi ngày.
 
-[Sign in on Blockfrost](https://blockfrost.io/auth/signin) with your GitHub account. No registration required. Enter a project name and select Cardano mainnet or Cardano testnet, depending on your needs.
+## Đăng nhập
+
+ [Đăng nhập vào Blockfrost](https://blockfrost.io/auth/signin) với tài khoản GitHub của bạn, không cần đăng ký. Nhập tên dự án và chọn Cardano mainnet và Cardano testnet, phụ thuộc vào nhu cầu của bạn.
 
 ![img](../../static/img/get-started/blockfrost/1-add-project.png)
 
-## Get your API key
+## Lấy API của bạn
 
-After clicking on `Save Project` you will immediately get your `API KEY`. Save it. You will need this key for every request.
+Sau khi nhấp vào `Save Project` ngay lập tức bạn sẽ nhận được `API KEY`lưu nó, bạn sẽ cần khóa này cho mọi yêu cầu.
 
 ![img](../../static/img/get-started/blockfrost/2-get-api-key.png)
 
-## Query the latest epoch
+## Yêu cầu epoch gần nhất
 
-Send your first request to get data about the latest epoch. Don't forget to replace `1234567890`with your `API KEY`.
+Gửi yêu cầu đầu tiên của bạn để nhận dữ liệu về epoch mới nhất. Đừng quên thay `1234567890` bằng `API KEY` của bạn.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -64,7 +65,8 @@ $parsedJson = json_decode($json);
   </TabItem>
 </Tabs>
 
-If you have done everything correctly you will get a response in JSON format, similar to this:
+
+Nếu bạn đã làm mọi thứ chính xác, bạn sẽ nhận được phản hồi ở định dạng JSON, tương tự như sau:
 
 ```json
 {
@@ -81,9 +83,9 @@ If you have done everything correctly you will get a response in JSON format, si
 }
 ```
 
-## Query data of a specific stake pool
+## Truy vấn dữ liệu  của một nhóm cổ phần cụ thể
 
-Let's look into another example and query data of a specific stake pool. You need to provide a Bech32 or hexadecimal `pool_id`.
+Hãy xem xét một ví dụ khác và truy vấn dữ liệu của một pool cụ thể. Bạn cần cung cấp Bech32 hoặc id của pool `pool_id`.
 
 <Tabs
 defaultValue="curl"
@@ -124,7 +126,8 @@ $parsedJson = json_decode($json);
   </TabItem>
 </Tabs>
 
-You will get a response in JSON format, similar to this:
+
+Bạn sẽ nhận được phản hồi ở định dạng JSON, tương tự như sau:
 
 ```json
 {
@@ -156,9 +159,9 @@ You will get a response in JSON format, similar to this:
 }
 ```
 
-## Query information of a specific asset
+## Truy vấn thông tin  của một nội dung cụ thể
 
-Let's look at this last example and query information of a specific native token on Cardano. You need to provide the string concatenation of the `policy_id` and hex-encoded `asset_name`.
+Hãy xem ví dụ cuối cùng này và truy vấn thông tin của một token gốc cụ thể trên Cardano. Bạn cần cung cấp cách nối chuỗi của của `policy_id` và hex-encoded `asset_name`.
 
 <Tabs
 defaultValue="curl"
@@ -199,7 +202,8 @@ $parsedJson = json_decode($json);
   </TabItem>
 </Tabs>
 
-You will get this JSON response:
+
+Bạn sẽ nhận được phản hồi JSON:
 
 ```json
 {
@@ -213,6 +217,6 @@ You will get this JSON response:
 }
 ```
 
-## Blockfrost documentation
+## Tài liệu và Blockfrost 
 
-Blockfrost has a powerful API with which you can do a lot of things. Visit [docs.blockfrost.io](https://docs.blockfrost.io) to see the complete API documentation.
+Blockfrost có một API mạnh mẽ mà bạn có thể làm được nhiều việc. Truy cập [docs.blockfrost.io](https://docs.blockfrost.io) để xem tài liệu API hoàn chỉnh.

@@ -12,56 +12,44 @@ import TabItem from '@theme/TabItem';
 
 :::note
 
-This guide assumes that you have basic understanding of `cardano-wallet`, how to use it and that you have installed it into your system. Otherwise we recommend reading [Installing cardano-node](/docs/get-started/installing-cardano-node), [Running cardano-node](/docs/get-started/running-cardano) and [Exploring Cardano Wallets](/docs/integrate-cardano/creating-wallet-faucet) guides first.
-
 Hướng dẫn này giả định rằng bạn có hiểu biết cơ bản về `cardano-wallet`, cách sử dụng nó và bạn đã cài đặt nó vào hệ thống của mình. Nếu không, chúng tôi khuyên bạn nên đọc hướng dẫn[Installing cardano-node](/docs/get-started/installing-cardano-node), [Running cardano-node](/docs/get-started/running-cardano) và [Exploring Cardano Wallets](/docs/integrate-cardano/creating-wallet-faucet) trước tiên.
 
-
-This guide also assumes that you have `cardano-node` and `cardano-wallet` running in the background and connected to the `testnet` network.
 
 Hướng dẫn này cũng giả định rằng bạn có `cardano-node` và `cardano-wallet` đang chạy và được kết nối với mạng `testnet`.
 :::
 
-## Use case
+## Trường hợp sử dụng
 
-There are many possible reasons why you would want to have the functionality of listening for `ada` payments, but a very obvious use case would be for something like an **online shop** or a **payment gateway** that uses `ada` tokens as the currency.
 
 Có nhiều lý do có thể khiến bạn muốn có chức năng kiểm tra các khoản thanh toán `ada`, nhưng một trường hợp điển hình là đối với một **cửa hàng trực tuyến** hoặc **cổng thanh toán** sử dụng tokens `ada` là đồng tiền thanh toán.
 
 ![img](../../static/img/integrate-cardano/ada-online-shop.png)
 
-## Technical flow
+## Quy trình kỹ thuật
 
-To understand how something like this could work in a technical point of view, let's take a look at the following diagram:
 
 Để hiểu hơn về vấn đề này về mặt kỹ thuật, chúng ta hãy xem sơ đồ sau:
 ![img](../../static/img/integrate-cardano/ada-payment-flow-wallet.png)
 
-So let's imagine a very basic scenario where a **customer** is browsing an online shop. Once the user has choosen and added all the items into the **shopping cart**. The next step would then be to checkout and pay for the items, Of course we will be using **Cardano** for that!
 
 Vì vậy, hãy tưởng tượng một tình huống rất cơ bản khi một **khách hàng** đang duyệt qua một cửa hàng trực tuyến. Khi người dùng đã chọn và thêm tất cả các mặt hàng vào **giỏ hàng** . Bước tiếp theo sẽ là kiểm tra và sử dụng cardano để thanh toán các mặt hàng đã chọn!
 
-The **front-end** application would then request for a **wallet address** from the backend service and render a QR code to the **customer** to be scanned via a **Cardano wallet**. The backend service would then know that it has to query the `cardano-wallet` with a certain time interval to confirm and alert the **front-end** application that the payment has completed succesfully.
 
 Sau đó, ứng dụng **front-end** sẽ yêu cầu **địa chỉ ví** từ dịch vụ backend và hiển thị mã QR cho khách hàng quét bằng **ví Cardano**. Sau đó, dịch vụ backend sẽ truy vấn trong `cardano-wallet` một khoảng thời gian nhất định để xác nhận và thông báo cho ứng dụng **front-end** rằng khoản thanh toán đã hoàn thành.
 
-In the meantime the transaction is then being processed and settled within the **Cardano** network. We can see in the diagram above that both parties are ultimately connected to the network via the `cardano-node` software component.
 
 Sau đó giao dịch sẽ được xử lý và thanh toán trong mạng **Cardano**. Chúng ta có thể thấy trong sơ đồ trên là cuối cùng cả hai bên đều được kết nối với mạng thông qua thành phần phần mềm `cardano-node`.
 
-## Time to code
+## Viết code
 
-Now let's get our hands dirty and see how we can implement something like this in actual code.
 
 Bây giờ chúng ta hãy bắt tay vào xem chúng ta có thể thực hiện một công việc như trên trong mã thực tế.
 
-### Generate wallet and request tAda
-
-First, we create our new **wallet** via `cardano-wallet` **REST API**:
+### Tạo ví và yêu cầu tADA
 
 Đầu tiên, chúng ta tạo **ví** mới thông qua `cardano-wallet`**REST API**:
 
-#### Generate seed
+#### Tạo cụm từ
 
 <Tabs
   defaultValue="js"
@@ -117,11 +105,11 @@ const mnemonic: string = cmd.runSync(["cardano-wallet", "recovery-phrase", "gene
   </TabItem>
 </Tabs>
 
-#### Restore wallet from seed
+#### Khôi phục ví từ cụm từ
 
-We will then pass the generated seed to the wallet create / restore endpoint of `cardano-wallet`.
 
 Sau đó, chúng ta sẽ chuyển các từ đã được tạo ở trên để tạo/khôi phục `cardano-wallet`.
+
 <Tabs
   defaultValue="js"
   groupId="language"
@@ -213,9 +201,8 @@ var resp = await http.PostAsJsonAsync("wallets", new {
 
 </Tabs>
 
-#### Get unused wallet address to receive some payments
+#### Lấy địa chỉ ví chư sử dụng để nhận một số khoản thanh toán
 
-We will get a **wallet address** to show to the customers and for them to send payments to the wallet. In this case we can use the address to request some `tAda` from the [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet) and simulate a payment:
 
 Chúng ta sẽ nhận một ** địa chỉ ví**  gửi cho khách hàng để họ thanh toán. Trong trường hợp này, chúng ta có thể sử dụng địa chỉ để yêu cầu một số `tAda` từ [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet) và mô phỏng một khoản thanh toán:
 
@@ -290,9 +277,8 @@ var firstWalletAddress = addressResponse[0].GetProperty("id");
 
 </Tabs>
 
-### Retrieve wallet balance
+### Lấy số dư trong ví
 
-We will then retrieve the wallet details to get stuff like its `sync status`, `native assets` and `balance (lovelace)`. We can then use the `balance` to check if we have received a some payment.
 
 Sau đó, chúng ta sẽ truy xuất các chi tiết ví để nhận `sync status`, `native assets` và `balance (lovelace)`. Sau đó, chúng ta có thể sử dụng `balance` để kiểm tra chúng ta có nhận được khoản thanh toán nào chưa.
 
@@ -375,9 +361,8 @@ var balance = wallet.GetProperty("balance").GetProperty("total").GetProperty("qu
 
 </Tabs>
 
-### Determine if payment is successful
+### Kiểm tra nếu thanh toán thành công
 
-Once we have the total lovelace amount, we will then determine using our code if a specific payment is a success, ultimately sending or shipping the item if it is indeed succesful. In our example, we expect that the payment is equal to `1,000,000 lovelace` that we defined in our `totalExpectedLovelace` constant.
 
 Khi chúng ta có tổng số tiền như mong muốn, chúng ta sẽ quyết định gửi hàng theo đơn hàng. Trong ví dụ của chúng ta, chúng ta hi vọng một khoản thanh toán là `1,000,000 lovelace` thì chúng ta xác định trong hằng số`totalExpectedLovelace` .
 
@@ -443,9 +428,8 @@ Console.WriteLine($"Payment Complete: {(isPaymentComplete ? "✅":"❌")}");
   </TabItem>
 </Tabs>
 
-## Running and testing
+## Chạy và kiểm tra
 
-Our final code should look something like this:
 
 Mã cuối cùng sẽ như sau:
 
@@ -553,7 +537,6 @@ Console.WriteLine($"Payment Complete: {(isPaymentComplete ? "✅":"❌")}");
   </TabItem>
 </Tabs>
 
-Now we are ready to test 🚀, running the code should give us the following result:
 
 Bây giờ, chúng ta sẵn sàng để kiểm tra, việc chạy mã sẽ cho chúng ta kết quả sau:
 
@@ -608,19 +591,16 @@ Payment Complete: ❌
   </TabItem>
 </Tabs>
 
-The code is telling us that our current wallet has received a total of `0 lovelace` and it expected `1,000,000 lovelace`, therefore it concluded that the payment is not complete.
 
 Mã cho chúng ta biết ví hiện tại nhận được tổng `0 lovelace` và dự kiến là `1,000,000 lovelace`, do đó việc thanh toán không hoàn thành.
 
-## Complete the payment
+## Hoàn thành thanh toán
 
-What we can do to simulate a succesful payment is to send atleast `1,000,000 lovelace` into the **wallet address** that we have just generated for this project. We show how you can get the **wallet address** via code in the examples above.
 
 Chúng ta có thể mô phỏng một khoản thanh toán thành công là gửi ít nhất 
 `1,000,000 lovelace` vào ** địa chỉ ví ** mà chúng ta vừa tạo cho dự án này. Chúng ta đã chỉ ra cách có thể lấy ** địa chỉ ví ** thông qua mã trong ví dụ trên.
 
 
-Now simply send atleast `1,000,000 lovelace` to this **wallet address** or request some `test ada` funds from the [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet). Once complete, we can now run the code again and we should see a succesful result this time.
 
 Bây giờ gửi ít nhất `1,000,000 lovelace` tới **địa chỉ ví này** hoặc yêu cầu tiền`test ada` từ [Cardano Testnet Faucet](../integrate-cardano/testnet-faucet). Sau khi hoàn thành, chúng ta có thể chạy lại mã và sẽ thấy kết quả thành công.
 
@@ -676,11 +656,8 @@ Payment Complete: ✅
 </Tabs>
 
 :::note
-It might take 20 seconds or more for the transaction to propagate within the network depending on the network health, so you will have to be patient.
+Có thể mất 20 giây hoặc hơn để giao dịch chuyển lên mạng phụ thuộc vào tình trạng mạng, vì vậy bạn sẽ phải kiên nhẫn.
 :::
 
-Có thể mất 20 giây hoặc hơn để giao dịch chuyển lên mạng phụ thuộc vào tình trạng mạng, vì vậy bạn sẽ phải kiên nhẫn.
-
-Congratulations, you are now able to detect succesful **Cardano** payments programatically. This should help you bring integrations to your existing or new upcoming applications. 🎉🎉🎉
 
 Xin chúc mừng, bây giờ bạn có thể thấy việc thanh toán **Cardano** thành công theo chương trình. Điều này sẽ giúp bạn tích hợp các ứng dụng hiện có hoặc ứng dụng mới sắp ra mắt.

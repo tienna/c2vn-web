@@ -10,9 +10,9 @@ description: Get started with the technical concepts behind Cardano.
 
 
 
-## Unspent Transaction Output (UTxO)
+## UTxO
 
-UTxO hoặc Kết quả giao dịch chưa được dùng là cách ada di chuyển xung quanh mạng Cardano. Tìm hiểu cách chúng hoạt động trong sổ cái Cardano. 
+UTxO hoặc Đầu ra giao dịch chưa được dùng là cách ada di chuyển xung quanh mạng Cardano. Tìm hiểu cách chúng hoạt động trong sổ cái Cardano. 
 
 <iframe width="100%" height="325" src="https://www.youtube.com/embed/e4YZkgi4V3U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 

@@ -1,46 +1,38 @@
 ---
 id: cardano-developer-community
-title: Get Started in the Cardano Developer Community
+title: Bắt đầu với the Cardano Developer Community
 sidebar_label: Developer Community
-description: Get Started in the Cardano Developer Community.
+description: Bắt đầu với Cardano Developer Community.
 #image: ./img/og-developer-portal.png
 --- 
 
 Apart from the two leading platforms [Stack Exchange](https://cardano.stackexchange.com) and [Cardano Forum](https://forum.cardano.org/c/developers/29), Cardano developers and stake pool operators spread across different platforms. Each with its niche.
+Ngoài hai nền tảng hàng đầu là [Stack Exchange](https://cardano.stackexchange.com) và [Cardano Forum](https://forum.cardano.org/c/developers/29), các nhà phát triển Cardano và các nhà vận hành pool phát triển các nền tảng khác nhau. Mỗi cái có thị trường ngách của nó.
 
-## Cardano developers channels
+## Kênh nhà phát triển Cardano
 
-[**cardano.stackexchange.com**](https://cardano.stackexchange.com)  
-Stack Exchange communities are democratically created and maintained. It is a question-and-answer website, not meant for extensive discussion or opinions.
+Cộng đồng Stack Exchange được tạo và duy trì một cách dân chủ. Đó là một trang web question-and-answer, không dành cho các cuộc thảo luận hoặc ý kiến ​​rộng rãi.
 
-[**forum.cardano.org**](https://forum.cardano.org/c/developers/29)  
-The developer categories on the [Cardano Forum](https://forum.cardano.org/c/developers/29) is an excellent place for extensive discussions and opinions, but also to get support. 
+Các danh mục nhà phát triển trên diễn đàn Cardano [Cardano Forum](https://forum.cardano.org/c/developers/29) là một nơi tuyệt vời cho các cuộc thảo luận và ý kiến ​​mở rộng, nhưng cũng để nhận được sự hỗ trợ.
 
-[**Cardano Community Discord**](https://discord.gg/kfATXEENPD)  
-Visit the developer categories on the [Cardano Community Discord](https://discord.gg/kfATXEENPD) if you prefer chat-style conversations.
+Hãy vào danh mục nhà phát triển trên [Cardano Community Discord](https://discord.gg/kfATXEENPD) nếu bạn thích các cuộc đàm luận kiểu chat-style.
 
 [**reddit.com/r/CardanoDevelopers**](https://www.reddit.com/r/CardanoDevelopers/)  
-A subreddit dedicated to everyone building on the Cardano blockchain.        
+Một subreddit dành riêng cho mọi người xây dựng trên blockchain  Cardano.  
 
-[**t.me/CardanoDevelopersOfficial**](https://t.me/CardanoDevelopersOfficial)    
-Chat style conversations on Telegram in one of the oldest Cardano developer groups.
+Các cuộc đàm luận kiểu Chat - style trên Telegram tại một trong các nhóm phát triển Cardano lâu đời nhất.
 
-[**IOG Technical Discord**](https://discord.com/invite/w6TwW9bGA6)  
-Head to the the [IOG Discord](https://discord.com/invite/w6TwW9bGA6) if you want to join the [Plutus Pioneers](../smart-contracts/plutus#get-started-with-the-plutus-pioneer-program).
+Hãy đến với [IOG Discord](https://discord.com/invite/w6TwW9bGA6) nếu bạn muốn tham gia [Plutus Pioneers](../smart-contracts/plutus#get-started-with-the-plutus-pioneer-program).
 
-[**t.me/IOHK_Marlowe**](https://t.me/IOHK_Marlowe)  
-Dedicated channel for Marlowe developers and users. Marlowe is a specialized domain-specific language for financial smart contracts on Cardano. You can ask questions, participate in discussions and meet the team behind Marlowe.
+Kênh dành riêng cho các nhà phát triển và người dùng Marlowe. Marlowe là một ngôn ngữ chuyên biệt dành cho các hợp đồng thông minh tài chính trên Cardano. Bạn có thể đặt câu hỏi, tham gia thảo luận và gặp gỡ nhóm đằng sau Marlowe.
 
-[**Developer Portal Discord**](https://discord.gg/Exe6XmqKDx)  
-If you would like to help develop the Developer Portal further, please join our [Discord](https://discord.gg/Exe6XmqKDx). 
+Nếu bạn muốn giúp phát triển Cổng thông tin nhà phát triển hơn nữa, hãy tham gia[Discord](https://discord.gg/Exe6XmqKDx). 
 
-[**CIPs - biweekly meetings**](https://www.crowdcast.io/cips-biweekly)  
-CIP meetings discuss Cardano Improvement Proposals every other week. Join Editors and community members to keep up with the ongoing technical discussions regarding standards, processes and ongoing Cardano conversations.
+Các buổi họp CIP thảo luận về các đề xuất Cải tiến Cardano cách tuần một lần. Tham gia cùng các Biên tập viên và các thành viên cộng đồng để cập nhật các cuộc thảo luận kỹ thuật liên quan đến các tiêu chuẩn, quy trình và các cuộc trò chuyện Cardano đang diễn ra.
 
-## Stake pool operator channels
+## Các kênh điều hành nhóm cổ phần
 
-[**t.me/CardanoStakePoolWorkgroup**](https://t.me/CardanoStakePoolWorkgroup)  
-Best practice workgroup on Telegram for stake pool operators. This group is hectic. A good resource to search for answers.
-
+Nhóm thực hành tốt nhất trên Telegram dành cho các nhà vận hành pool, nhóm này hết sức sôi nổi, là một kênh tốt để tìm kiếm các câu trả lời.
 [**forum.cardano.org**](https://forum.cardano.org/c/staking-delegation/156)  
-If you care about well structured, long format discussions, visit the stake pool operator categories on [forum.cardano.org](https://forum.cardano.org/c/staking-delegation/156).
+
+Nếu bạn quan tâm đến các cuộc thảo luận dài, được sắp xếp tốt, hãy truy cập danh mục các nhà vận hành pool trên [forum.cardano.org](https://forum.cardano.org/c/staking-delegation/156).

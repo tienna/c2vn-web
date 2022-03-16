@@ -1,33 +1,46 @@
 ---
 id: dandelion-apis
-title: Get Started with Dandelion APIs
+title: Bắt đầu với Dandelion APIs
 sidebar_label: Dandelion APIs
-description: Get Started with Dandelion APIs
+description: Bắt đầu với Dandelion APIs
 #image: ./img/og-developer-portal.png
 --- 
 
-Dandelion currently offer 2 different paths to get started: 
+Dandelion hiện cung cấp 2 con đường khác nhau để bắt đầu:
 
-- **For developers**: [A hosted instance][gimbalabs-dandelion] of almost every available Cardano API offered as a free community service by [Gimbalabs] to start building instantly.
-- **For SPOs/DevOps/sysadmins**: [An OpenSource project][kustomize-dandelion] to deploy the community service using Kubernetes.
+- ** Đối với các nhà phát triển**: [A hosted instance][gimbalabs-dandelion] của hầu hết mọi API Cardano có sẵn được [Gimbalabs]cung cấp dưới dạng dịch vụ cộng đồng miễn phí để bắt đầu xây dựng ngay lập tức.
+
+
+- ** Đối với SPOs/DevOps/sysadmins**: [An OpenSource project][kustomize-dandelion] để triển khai dịch vụ cộng đồng sử dụng 
+Kubernetes.
 [gimbalabs]: https://gimbalabs.com/
 [gimbalabs-dandelion]: https://gimbalabs.com/dandelion/
 [kustomize-dandelion]: https://gitlab.com/gimbalabs/dandelion/kustomize-dandelion
 
-# For developers
+## Cho nhà phát triển
 
-Start prototyping your project instantly by choosing the API that better suits your need.
+Bắt đầu tạo mẫu ngay lập tức dự án của bạn bằng cách chọn API phù hợp hơn với nhu cầu của bạn.
 
-They are all offered in the vanilla flavour of the opensource projects developed by IOG, Emurgo and other developers from the community, so you won't need to change anything in case you decide to host them by yourself.
+Tất cả chúng đều được cung cấp theo các dự án nguồn mở được phát triển bởi IOG, Emurgo và các nhà phát triển khác từ cộng đồng, vì vậy bạn sẽ không cần phải thay đổi bất cứ điều gì trong trường hợp bạn quyết định tự mình lưu trữ chúng.
 
-These are the links to github repositories and a brief description for all of them:
+Đây là các liên kết đến kho lưu trữ github và mô tả ngắn gọn về chúng:
 
-- [hasura/graphql-api][gh-hasura-graphql]: use this GraphQL API to gather composed info from the blockchain and to send signed transactions to the blockchain
-- [cardano-rest/explorer-api][gh-cardano-rest]: use this REST API to gather basic info from the blockchain. *DEPRECATED*
-- [cardano-rest/submit-api][gh-cardano-rest]: use this REST API to send signed transactions to the blockchain *DEPRECATED*
-- [KtorZ/ogmios-api][gh-ogmios]: use this JSON-WSP (websocket) API to gather live blockchain info directly from a cardano-node instance
-- [cardano-db-sync][gh-cardano-db-sync]/[postgrest-api][gh-postgrest]: use this REST API to perform SQL queries to gather info directly from cardano-db-sync's database 
-- [rosetta-api][gh-cardano-rosetta]: use this API to integrate your application with multiple blockchains in a simpler, faster, and more reliable way
+- [hasura/graphql-api][gh-hasura-graphql]: sử dụng API GraphQL này để thu thập thông tin tổng hợp từ blockchain và gửi các giao dịch đã ký đến blockchain
+
+
+- [cardano-rest/explorer-api][gh-cardano-rest]:sử dụng API REST này để thu thập thông tin cơ bản từ blockchain. *DEPRECATED*
+
+- [cardano-rest/submit-api][gh-cardano-rest]: sử dụng API REST này để gửi các giao dịch đã ký đến blockchain *DEPRECATED*
+
+
+- [KtorZ/ogmios-api][gh-ogmios]: sử dụng API JSON-WSP (websocket) này để thu thập thông tin blockchain trực tiếp trực tiếp từ một phiên bản cardano-node
+
+ -[cardano-db-sync][gh-cardano-db-sync]/[postgrest-api][gh-postgrest]: 
+sử dụng API REST này để thực hiện các truy vấn SQL nhằm thu thập thông tin trực tiếp từ cơ sở dữ liệu của cardano-db-sync.
+
+
+- [rosetta-api][gh-cardano-rosetta]: sử dụng API này để tích hợp ứng dụng của bạn với nhiều blockchain theo cách đơn giản hơn, nhanh hơn và đáng tin cậy hơn.
+
 [gh-hasura-graphql]: https://github.com/input-output-hk/cardano-graphql
 [gh-cardano-rest]: https://github.com/input-output-hk/cardano-rest
 [gh-ogmios]: https://github.com/cardanosolutions/ogmios
@@ -42,17 +55,23 @@ import TabItem from '@theme/TabItem';
 
 ![img](../../static/img/get-started/dandelion-apis/showcase-graphql-api.png)
 
-Useful links:
 
-- [Link][gimbalabs-graphql-api] to Gimbalabs's endpoints information
-- [Link][graphql-official-doc] to project's official documentation
-- [Link][graphql-example-queries] to the official collection of example queries. You can play with them directly from the [GraphQL playground][graphql-playground-testnet]
+Các liên kết hữu ích
+
+- [Link][gimbalabs-graphql-api] liên kết đến thông tin điểm cuối của Gimbalabs
+
+- [Link][graphql-official-doc] liên kết đến tài liệu chính thức của dự án
+- [Link][graphql-example-queries] vào bộ sưu tập chính thức của các truy vấn mẫu. Bạn có thể chạy trực tiếp từ [GraphQL playground][graphql-playground-testnet]
+
 [gimbalabs-graphql-api]: https://gimbalabs.com/dandelion/endpoints/graphql-api
+
 [graphql-example-queries]: https://github.com/input-output-hk/cardano-graphql/tree/master/packages/api-cardano-db-hasura/src/example_queries
+
 [graphql-official-doc]: https://input-output-hk.github.io/cardano-graphql/
+
 [graphql-playground-testnet]:  https://graphql-api.testnet.dandelion.link
 
-Usage examples:
+Các ví dụ sử dụng:
 
 <Tabs
 defaultValue="curl"
@@ -72,7 +91,7 @@ curl -H 'Content-Type: application/json' \
   </TabItem>
 </Tabs>
 
-Output example:
+Ví dụ hiện thị ra:
 
 ```json
 {"data":{"cardanoDbMeta":{"initialized":true,"syncPercentage":100}}}
@@ -82,14 +101,18 @@ Output example:
 
 ![img](../../static/img/get-started/dandelion-apis/showcase-explorer-api.png)
 
-Useful links:
 
-- [Link][gimbalabs-explorer-api] to Gimbalabs's endpoints information
-- [Link][explorer-official-doc] to project's official documentation
+Các liên kết hữu ích:
+
+- [Link][gimbalabs-explorer-api] liên kết đến thông tin điểm cuối của Gimbalabs
+- [Link][explorer-official-doc] Tài liệu của chính thức của dự án.
+
 [gimbalabs-explorer-api]: https://gimbalabs.com/dandelion/endpoints/explorer-api
-[explorer-official-doc]: https://input-output-hk.github.io/cardano-rest/explorer-api
 
-Usage examples:
+[explorer-official-doc]: https://input-output-hk.github.io/cardano-rest/explorer-api
+- [Link][explorer-official-doc]  đến tài liệu chính thức của dự án
+
+Ví dụ hữu dụng:
 
 <Tabs
 defaultValue="curl"
@@ -107,7 +130,7 @@ curl -s https://explorer-api.mainnet.dandelion.link/api/txs/last
   </TabItem>
 </Tabs>
 
-Output example (REDACTED):
+Ví dụ đâu ra (REDACTED):
 
 ```json
 {
@@ -135,14 +158,15 @@ Output example (REDACTED):
 
 ![img](../../static/img/get-started/dandelion-apis/showcase-submit-api.png)
 
-Useful links:
+Link sử dụng:
 
-- [Link][gimbalabs-submit-api] to Gimbalabs's endpoints information 
-- [Link][submit-official-doc] to project's official documentation
+ 
+- [Link][gimbalabs-submit-api] liên kết đến thông tin điểm cuối của Gimbalabs
+- [Link][submit-official-doc] đến tài liệu chính thức của dự án
 [gimbalabs-submit-api]: https://gimbalabs.com/dandelion/endpoints/submit-api
 [submit-official-doc]: https://input-output-hk.github.io/cardano-rest/submit-api
 
-Usage examples assuming you have a valid `application/cbor` file containing a signed transaction (in e.g., from `cardano-cli` or any other library) located at `/tmp/cbor-tx`:
+Các ví dụ sử dụng giả sử bạn có một tệp `application/cbor` chứa một giao dịch đã ký ( ví dụ: từ `cardano-cli` hoặc bất kỳ thư viện nào khác) nằm tại `/tmp/cbor-tx`:
 
 <Tabs
 defaultValue="curl"
@@ -160,7 +184,7 @@ curl -X POST \
   </TabItem>
 </Tabs>
 
-Output example (a transaction id):
+Ví dụ thông tin đầu ra (a transaction id):
 
 ```json
 92bcd06b25dfbd89b578d536b4d3b7dd269b7c2aa206ed518012cffe0444d67f
@@ -170,14 +194,14 @@ Output example (a transaction id):
 
 ![img](../../static/img/get-started/dandelion-apis/showcase-rosetta-api.png)
 
-Useful links:
+Các link hữu ích:
 
-- [Link][gimbalabs-rosetta-api] to Gimbalabs's endpoints information and official documentation
-- [Link][rosetta-official-doc] to project's official documentation
+- [Link][gimbalabs-rosetta-api] liên kết đến thông tin điểm cuối của Gimbalabs
+- [Link][rosetta-official-doc] đến tài liệu chính thức của dự án
 [gimbalabs-rosetta-api]: https://gimbalabs.com/dandelion/endpoints/rosetta-api
 [rosetta-official-doc]: https://github.com/input-output-hk/cardano-rosetta#documentation
 
-Usage examples:
+Ví dụ hữu ích:
 
 <Tabs
 defaultValue="curl"
@@ -195,7 +219,7 @@ curl -s -X POST \
   </TabItem>
 </Tabs>
 
-Output example:
+Ví dụ đầu ra:
 
 ```json
 {
@@ -225,14 +249,14 @@ Output example:
 
 ![img](../../static/img/get-started/dandelion-apis/showcase-ogmios-api.png)
 
-Useful links:
+Các link hữu ích:
 
-- [Link][gimbalabs-ogmios-api] to Gimbalabs's endpoints information and official documentation
-- [Link][ogmios-official-doc] to project's official documentation
+- [Link][gimbalabs-ogmios-api] liên kết đến thông tin điểm cuối của Gimbalabs
+- [Link][ogmios-official-doc] đến tài liệu chính thức của dự án
 [gimbalabs-ogmios-api]: https://gimbalabs.com/dandelion/endpoints/ogmios-api
 [ogmios-official-doc]: https://github.com/cardanosolutions/ogmios
 
-Usage examples:
+Ví dụ hữu ích:
 
 <Tabs
 defaultValue="websocat"
@@ -248,7 +272,7 @@ echo '{ "type": "jsonwsp/request", "version": "1.0", "servicename": "ogmios", "m
   </TabItem>
 </Tabs>
 
-Output example:
+Ví dụ đầu ra:
 
 ```json
 {
@@ -276,12 +300,12 @@ Output example:
 
 Useful links:
 
-- [Link][gimbalabs-postgrest-api] to Gimbalabs's endpoints information and official documentation
-- [Link][cardano-db-sync-official-doc] to `cardano-db-sync` official documentation
+- [Link][gimbalabs-postgrest-api] liên kết đến thông tin điểm cuối của Gimbalabs và tài liệu chính thức.
+- [Link][cardano-db-sync-official-doc] tới `cardano-db-sync` tài liệu chinh thức
 [gimbalabs-postgrest-api]: https://gimbalabs.com/dandelion/endpoints/postgrest-api
 [cardano-db-sync-official-doc]: https://github.com/input-output-hk/cardano-db-sync/blob/master/doc/interesting-queries.md
 
-Usage examples:
+Ví dụ hữu ích:
 
 <Tabs
 defaultValue="curl"
@@ -309,8 +333,8 @@ curl -s "https://postgrest-api.mainnet.dandelion.link/tx_metadata?json->>Network
   </TabItem>
 </Tabs>
 
-## Deploy your own Dandelion
+## Triển khai Dandelion của riêng bạn
 
-If you already have Docker installed, you are almost done for using Dandelion in your local development environment. Please refer to [the official documentation][local-dandelion-deploy] to do so and do not hesitate to ask for support in our dedicated [Discord channel][discord-dandelion], we know operating systems, networks and cloud providers might differ a lot and give random problems!
+ Nếu bạn đã cài đặt Docker, bạn gần như đã hoàn tất việc sử dụng Dandelion trong môi trường phát triển cục bộ của mình. Vui lòng tham khảo tài liệu chính thức [the official documentation][local-dandelion-deploy] để làm như vậy và đừng ngần ngại yêu cầu hỗ trợ trong kênh Discord chuyên dụng của chúng tôi[Discord channel][discord-dandelion], chúng tôi biết hệ điều hành, mạng và nhà cung cấp đám mây có thể khác nhau rất nhiều và đưa ra các vấn đề ngẫu nhiên!
 [discord-dandelion]: https://discord.gg/qDc3f9R7Ab
 [local-dandelion-deploy]: https://gitlab.com/gimbalabs/dandelion/kustomize-dandelion#local-deployment

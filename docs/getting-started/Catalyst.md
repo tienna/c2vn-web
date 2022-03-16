@@ -1,6 +1,7 @@
-# Những dự án được Catalyst cấp vốn đã và đang triển khai
+# Dự án Catalyst
 
-Đây là các video nói về các dự án đã được cấp vốn của Cardano2vn.
+
+Đây là các video nói về các dự án đã được cấp vốn của Cardano2vn,đã và đang triển khai.
 
 ## Catalyst Fund 6  
 

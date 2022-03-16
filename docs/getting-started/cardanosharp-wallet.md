@@ -1,27 +1,29 @@
 ---
 id: cardanosharp-wallet
-title: Get Started with CardanoSharp Wallet
+title: Bắt đầu với CardanoSharp Wallet
 sidebar_label: CardanoSharp Wallet
-description: Get Started with CardanoSharp Wallet
+description: Bắt đầu với CardanoSharp Wallet
 #image: ./img/og-developer-portal.png
 --- 
 
 # CardanoSharp.Wallet 
 [![Build status](https://ci.appveyor.com/api/projects/status/knh87k86mf7gbxyo?svg=true)](https://ci.appveyor.com/project/nothingalike/cardanosharp-wallet/branch/main) [![Test status](https://img.shields.io/appveyor/tests/nothingalike/cardanosharp-wallet)](https://ci.appveyor.com/project/nothingalike/cardanosharp-wallet/branch/main) [![NuGet Version](https://img.shields.io/nuget/v/CardanoSharp.Wallet.svg?style=flat)](https://www.nuget.org/packages/CardanoSharp.Wallet/) ![NuGet Downloads](https://img.shields.io/nuget/dt/CardanoSharp.Wallet.svg)
 
-CardanoSharp Wallet is a .NET library for Creating/Managing Wallets and Building/Signing Transactions.
 
-## Getting Started
+CardanoSharp Wallet là một thư viện .NET để tạo/quản lý ví và xây dựng/ký giao dịch.
 
-CardanoSharp.Wallet is installed from NuGet.
+## Bắt đầu
 
+
+CardanoSharp.Wallet được cài đặt từ NuGet.
 ```sh
 Install-Package CardanoSharp.Wallet
 ```
 
-## Create Mnemonics
+## Tạo Mnemonics
 
-The `MnemonicService` has operations tbat help with *generating* and *restoring* Mnemonics. It is built for use in DI containers (ie. the interface `IMnemonicService`).
+`MnemonicService` có hoạt động giúp *tạo* và *khôi phục* thuật nhớ (Mnemonics). Nó 
+được xây dựng để sử dụng trong các vùng chứa DI (tức là giao diện`IMnemonicService`). 
 
 ```cs
 IMnemonicService service = new MnemonicService();
@@ -35,17 +37,17 @@ Mnemonic rememberMe = service.Generate(24, WordLists.English);
 System.Console.WriteLine(rememberMe.Words);
 ```
 
-### Restore Mnemonic
+### Khôi phục Mnemonic
 
 ```cs
 string words = "art forum devote street sure rather head chuckle guard poverty release quote oak craft enemy";
 Mnemonic mnemonic = MnemonicService.Restore(words);
 ```
 
-## Create Private and Public Keys
+## Tạo Private và Public Keys
 
-Use powerful extensions to create and derive keys.
 
+Sử dụng các tiện ích mở rộng mạnh mẽ để tạo và lấy khóa.
 ```cs
 // The rootKey is a PrivateKey made of up of the 
 //  - byte[] Key
@@ -67,17 +69,18 @@ PrivateKey stakePrv = rootKey.Derive(stakePath);
 PublicKey stakePub = stakePrv.GetPublicKey(false);
 ```
 
- > If you want to learn more about key paths, read this article [About Address Derivation](https://github.com/input-output-hk/technical-docs/blob/main/cardano-components/cardano-wallet/doc/About-Address-Derivation.md)
+ > Nếu bạn muốn tìm hiểu thêm về các đường dẫn chính, hãy đọc bài viết này [About Address Derivation](https://github.com/input-output-hk/technical-docs/blob/main/cardano-components/cardano-wallet/doc/About-Address-Derivation.md)
 
-## Create Addresses
+## Tạo điacj chỉ (Addresses)
 
-The `AddressService` lets you Create Addresses from Keys. It is built for use in DI containers (ie. the interface `IAddressService`)
+`AddressService` cho phép bạn tạo các địa chỉ từ khóa. Nó được xây dựng để sử dụng trong các vùng chứa DI (tức là giao diện`IAddressService`)
+
 
 ```cs
 IAddressService addressService = new AddressService();
 ```
 
-From the public keys we generated above, we can now get the public address.
+Từ các khóa công khai mà chúng ta đã tạo ở trên, bây giờ chúng ta có thể lấy địa chỉ công khai.
 
 ```csharp
 // add using
@@ -91,15 +94,15 @@ Address baseAddr = addressService.GetAddress(
     AddressType.Base);
 ```
 
-If you already have an address.
+Nếu bạn đã có một địa chỉ.
 
 ```cs
 Address baseAddr = new Address("addr_test1qz2fxv2umyhttkxyxp8x0dlpdt3k6cwng5pxj3jhsydzer3jcu5d8ps7zex2k2xt3uqxgjqnnj83ws8lhrn648jjxtwq2ytjqp");
 ```
 
-## Fluent Key Derivation
+## Khởi tạo Key
 
-A fluent API helps navigate the derivation paths.
+Một API chính xác giúp điều hướng các đường dẫn xuất.
 
 ```cs
 // Add using
@@ -122,9 +125,10 @@ PrivateKey privateKey = derivation.PrivateKey;
 PublicKey publicKey = derivation.PublicKey;
 ```
 
-## Build and Sign Transactions
+## Build và Sign giao dịch
 
-CardanoSharp.Wallet requires input from the chain in order to build transactions. Lets assume we have gathered the following information.
+
+CardanoSharp.Wallet yêu cầu đầu vào từ chuỗi để tạo giao dịch. Giả sử chúng tôi đã thu thập thông tin sau đây.
 
 ```cs
 uint currentSlot = 40000000;
@@ -133,7 +137,7 @@ ulong minFeeB = 155381;
 string inputTx = "0000000000000000000000000000000000000000000000000000000000000000";
 ```
 
-Lets derive a few keys to use while building transactions.
+Cho phép lấy một vài khóa để sử dụng trong khi xây dựng các giao dịch.
 
 ```cs
 // Derive down to our Account Node
@@ -158,14 +162,15 @@ var paymentNode = accountNode
     .Derive(RoleType.ExternalChain);
 ```
 
-## Simple Transaction
+## Giao dịch đơn
 
-Lets assume the following...
+Giả sử như sau...
 
-- You have 100 ADA on path:        `m/1852'/1815'/0'/0/0`
-- You want to send 25 ADA to path: `m/1852'/1815'/0'/0/1`
 
-### Build Transaction Body
+- Bạn có 100 ADA:  `m/1852'/1815'/0'/0/0`
+- Bạn muốn gửi 25 ADA đến: `m/1852'/1815'/0'/0/1`
+
+### Build giao dịch
 
 ```cs
 // Generate the Recieving Address
@@ -193,8 +198,8 @@ var transactionBody = TransactionBodyBuilder.Create
 
 ### Build Transaction Witnesses
 
-For this simple transaction we really only need to add our keys. This is how we sign our transactions.
 
+Đối với giao dịch đơn giản này, chúng tôi thực sự chỉ cần thêm các khóa của mình. Đây là cách chúng tôi ký kết các giao dịch của mình.
 ```cs
 // Derive Sender Keys
 var senderKeys = paymentNode.Derive(0);
@@ -203,7 +208,7 @@ var witnesses = TransactionWitnessSetBuilder.Create
     .AddVKeyWitness(senderKeys.PublicKey, senderKeys.PrivateKey);
 ```
 
-### Calculate Fee
+### Tính Fee
 
 ```cs
 // Construct Transaction Builder
@@ -220,11 +225,12 @@ Transaction transaction = transactionBuilder.Build();
 transaction.TransactionBody.TransactionOutputs.Last().Value.Coin -= fee;
 ```
 
-## Metadata Transaction
+## Giao dịch siêu dữ liệu (Metadata )
 
-Building the Body and Witnesses are the same as the Simple Transaction.
 
-> If you would like to read more about Metadata, please read this article on [Tx Metadata](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/tx-metadata.md)
+Xây dựng các giao dịch đa nhân chứng cũng giống như giao dịch đơn giản
+> Nếu bạn muốn đọc thêm về Siêu dữ liệu, vui lòng đọc bài viết này về
+[Tx Metadata](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/tx-metadata.md)
 
 ```cs
 // Build Metadata and Add to Transaction
@@ -238,11 +244,11 @@ var transaction = TransactionBuilder.Create
     .Build();
 ```
 
-## Minting Transaction
+## Giao dịch đúc tiền
 
-Before we can mint a token, we need to create a policy. 
+Trước khi chúng ta có thể tạo ra một token, chúng ta cần tạo ra một chính sách.
 
-> If you would like to read more about policy scripts, please read this article on [Simple Scripts](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/simple-scripts.md).
+> Nếu bạn muốn đọc thêm về các tập lệnh chính sách, vui lòng đọc bài viết này về [Simple Scripts](https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/simple-scripts.md).
 
 ```cs
 // Generate a Key Pair for your new Policy
@@ -260,7 +266,8 @@ var policyScript = ScriptAllBuilder.Create
 var policyId = policyScript.GetPolicyId();
 ```
 
-Now lets define our token.
+
+Bây giờ hãy xác định token của chúng ta.
 
 ```cs
 // Create the AWESOME Token
@@ -271,7 +278,8 @@ var tokenAsset = TokenBundleBuilder.Create
     .AddToken(policyId, tokenName.ToBytes(), tokenQuantity);
 ```
 
-When minting, we will need to add our new token to one of the outputs of our Transaction Body.
+
+Khi tạo, chúng ta sẽ cần thêm token mới của mình vào một trong các đầu ra của  giao dịch.
 
 ```cs
 // Generate an Address to send the Token
@@ -291,10 +299,10 @@ var transactionBody = TransactionBodyBuilder.Create
     .Build();
 ```
 
-## Handling Token Bundles
+## Xử lý gói token
 
-When building transaction, we need to ensure we handle tokens properly.
 
+Khi xây dựng giao dịch, chúng ta cần đảm bảo chúng ta xử lý các tokens đúng cách.
 ```cs
 var tokenBundle = TokenBundleBuilder.Create
     .AddToken(policyId, "Token1".ToBytes(), 100)

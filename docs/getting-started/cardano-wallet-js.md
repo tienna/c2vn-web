@@ -17,7 +17,7 @@ description: Bắt đầu với cardano-wallet-js
 - [Cài dặt](#installation)
 - [Sử dụng](#usage)
     + [Kết nối với cardano-wallet](#connecting-to-a-cardano-wallet-service)
-    + [Thông tinBlockchain ](#blockchain-information)
+    + [Thông tin Blockchain ](#blockchain-information)
   * [Sự vận hành có ích](#useful-operations)
     + [Generate Recovery Phrases](#generate-recovery-phrases)
     + [Create or restore a wallet](#create-or-restore-a-wallet)
@@ -34,7 +34,7 @@ description: Bắt đầu với cardano-wallet-js
 - [Hỗ trợ dự án](#support-our-project)
 
 
-## Introduction
+## Giới thiệu
  
  cardano-wallet chính thức của IOHK cho thấy giao diện REST api / CLI cho phép khách hàng thực hiện các công việc phổ biến trên blockchain cardano, chẳng hạn như:
 - tạo hoặc khôi phục một ví
@@ -47,7 +47,8 @@ description: Bắt đầu với cardano-wallet-js
 
 Dự án của chúng tôi nhằm mục đích cung cấp một SDK Javascript dễ sử dụng cho các lập trình viên, thay vì đưa cấu trúc REST thô cho bạn.
 
-## Requirements
+## Yêu cầu
+
 Trước khi bắt đầu sử dụng thư viện, bạn sẽ cần một máy chủ `cardano-wallet` đang chạy. Nếu bạn có sẵn docker, bạn chỉ cần tải `docker-composer.yml` mà họ cung cấp và khởi động nó bằng cách sử dụng `docker-compose`:
 
 ```shell
@@ -60,25 +61,25 @@ NETWORK=testnet docker-compose up
 Bạn có thể tìm thêm thông tin về các tùy chọn khác nhau để khởi động máy chủ cardano-wallet tại đây (https://github.com/input-output-hk/cardano-wallet)
 :::
 
-## Installation
+## Cài đặt
 
 Sử dụng npm:
 
 ```shell
 npm i cardano-wallet-js
 ```
-## Usage
+## Sử dụng
 
 Để bắt đầu, hãy bắt đầu với một `WalletServer`. Nó cho phép bạn kết nối với một số dịch vụ `cardano-wallet` từ xa.
 
-### Connecting to a cardano-wallet service
+### Kết nối với cardano-wallet
 
 ```js
 const { WalletServer } = require('cardano-wallet-js');
 let walletServer = WalletServer.init('http://{your-server-host}:{port}/v2');
 ```   
 
-### Blockchain Information
+### Thông tin Blockchain 
 
 Đầu tiên, bạn có thể thử lấy một số thông tin blockchain như: (thông số mạng, thông tin và đồng hồ) (network parameters, information and clock)
 
