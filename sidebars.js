@@ -101,7 +101,9 @@ const sidebars = {
       "setup-application/Datums_redeemer_tutorial",	   
       "setup-application/Validator_scripts_tutorial",	  
     ],	
-	
+    "Catalyst 4 students": [
+      "Catalyst4students/overview",
+    ],	
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
       // {
