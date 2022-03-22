@@ -105,7 +105,7 @@ const sidebars = {
       "Catalyst4students/overview",
     ],	
     "iohk.io-blog": [
-     "iohk.io.blog/Increasing-the-transaction-throughput-of-Cardano",
+     "iohk-io-blog/Increasing-the-transaction-throughput-of-Cardano",
     ],
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
