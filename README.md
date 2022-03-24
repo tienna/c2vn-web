@@ -75,7 +75,7 @@ $ cd my-website
 $ npm run start
 ```
 
-Theo mặc định, một cửa sổ trình duyệt sẽ mở ra tại địa chỉ http: // localhost: 3000.
+Theo mặc định, một cửa sổ trình duyệt sẽ mở ra tại địa chỉ http://localhost:3000
 
 ### Build
 
