@@ -7,7 +7,7 @@ Tăng thông lượng giao dịch của Cardano
 
 ## Tăng thông lượng giao dịch của Cardano
 
-![](img/inc-transaction.png)
+![](./img/inc-transaction.png)
 
 Việc cho phép các hợp đồng thông minh gần đây trên Cardano đã dẫn đến sự gia tăng đáng kể trong hoạt động của người dùng. Đồng thời, quy mô giao dịch trung bình đã tăng lên do các giao dịch tập lệnh mang mã. Với các ứng dụng tài chính phi tập trung (DeFi) đầu tiên hiện đã được triển khai trên hệ sinh thái Cardano và nhiều hơn thế nữa, chúng tôi hy vọng xu hướng này sẽ tiếp tục. Để bắt kịp với nhu cầu tăng cao này, thông lượng giao dịch hiện tại của hệ thống phải được tăng lên.
 
@@ -21,7 +21,7 @@ Trong các giao thức điển hình, để lập luận về tính nhất quán
 
 Bây giờ, một khối có thể vận chuyển bao nhiêu dữ liệu trong những điều kiện này? Để thấy được điều này, chúng ta cần xem xét chi tiết hơn những gì chính xác phải đạt được trong Δp.
 
-![](img/screen1.png)
+![](./img/screen1.png)
 
 Hình 1. Khối khuếch tán và xác nhận mạng trong khoảng trễ Δp = 5s
 
@@ -37,7 +37,7 @@ Tin tốt là, trong những ràng buộc này, thông lượng giao dịch có 
 
 Xem xét lại Hình 1, chúng ta thấy rằng tất cả các hành động của các nút được thực hiện theo một trình tự nghiêm ngặt, và do đó Δp cần phải phù hợp với thời gian yêu cầu của một nút nhân với số bước nhảy trong đường dẫn ngang hàng. Chúng tôi nhận thấy rằng, mặc dù điều này là cần thiết cho việc truyền mạng, nhưng nó không phải để xác nhận khối.
 
-![](img/screen2.png)
+![](./img/screen2.png)
 
 Xem xét Hình 2. Bằng cách cho phép các khối được truyền trước khi quá trình xác thực đầy đủ diễn ra, chúng ta có thể loại trừ xác nhận phần thân (lặp lại) khỏi đường truyền. Ngay sau khi Peer 1 nhận được phần thân khối (b-box), nó đã có thể bắt đầu truyền tải khối đồng thời để xác thực phần thân khối, v.v.
 
@@ -65,7 +65,7 @@ Tiếp theo, chúng tôi sẽ đưa ra một bản tóm tắt về một kỹ th
 
 Ý tưởng đằng sau quá trình khuếch tán pipelining — xác thực phần thân bị trì hoãn — có thể được đưa đến cực điểm: một khối mới vẫn được yêu cầu đến trong Δp, nhưng chúng tôi không yêu cầu việc xác thực phần thân của nó phải được hoàn thành trong Δp. Chúng tôi gọi đây là xác thực không đồng bộ (AV).
 
-![](img/screen3.png)
+![](./img/screen3.png)
 
 Xem xét Hình 3. Xác thực phần thân được phép sử dụng ngân sách Δb còn lại (dự kiến) còn lại (bên cạnh quá trình truyền khối và xác thực tiêu đề), do đó hầu như đặt CPU của các nút ở tải vĩnh viễn. Tuy nhiên, lưu ý rằng liên kết mạng và CPU cũng được chỉ định cho các tác vụ khác (chẳng hạn như đồng bộ hóa mempool), có nghĩa là chúng tôi không muốn sử dụng toàn bộ phần còn lại của Δb để xác thực nội dung, nhưng hãy để một vài giây được giao cho các tác vụ khác các nhiệm vụ.
 
@@ -88,7 +88,7 @@ Trong Bảng 1, chúng tôi trình bày các ước tính thông lượng này (
 
 Chúng tôi xem xét bốn loại giao dịch khác nhau với kích thước khác nhau và thời gian cần thiết để xác thực. Một giao dịch thanh toán đơn giản nằm ở đâu đó gần loại 0,5 kB / 0,5 ms, trong khi các giao dịch tập lệnh có thể thuộc một trong các loại khác, đòi hỏi cả kích thước lớn hơn và nhiều nỗ lực hơn để xác thực. Cũng lưu ý cột cuối cùng (2 kB / 32 mili giây) trong đó thời gian xác thực trở nên đáng kể so với độ trễ của mạng: Việc tăng kích thước khối (từ Praos lên Praos Max) không giúp cải thiện thông lượng vì xác thực đã sử dụng hết ngân sách thời gian. Do đó, pipelining và AV mang lại lợi nhuận tương đối mạnh chính xác trong những trường hợp này vì chúng làm tăng ngân sách thời gian xác thực.
 
-![](img/screen4.png)
+![](./img/screen4.png)
 
 ## Outlook cho Cardano
 Việc tăng lưu lượng của một chuỗi khối không được phép là rất quan trọng về bảo mật, vì việc chấp nhận nhiều tải hơn vào hệ thống có thể tạo ra các cơ hội tấn công DoS. Do đó, nên thực hiện các thay đổi như vậy theo một trình tự các bước nhỏ trong khi quan sát cẩn thận các tác động lên hệ thống.
