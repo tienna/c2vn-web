@@ -10,7 +10,7 @@ const config = {
     tagline: 'Bứt phá giới hạn',
     url: 'https://cardano2vn.io',
     baseUrl: '/',
-    onBrokenLinks: 'ignore',
+    onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/logo/2.png',
     organizationName: 'cardanovn', // Usually your GitHub org/user name.
