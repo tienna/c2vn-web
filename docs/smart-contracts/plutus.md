@@ -54,13 +54,13 @@ Haskell là ngôn ngữ lập trình cho các hợp đồng Plutus. Nếu bạn 
 
 Học Haskell trở nên dễ dàng với hướng dẫn minh họa này, một trong những cách hấp dẫn nhất để học ngôn ngữ lập trình hấp dẫn này.
 
-Một tài nguyên học tập tuyệt vời khác là khóa học trực tuyến [ Haskell và Crypto Mongolia 2020 {/ a0} do ](https://www.youtube.com/watch?v=ctfZ6DwFiPg&list=PLJ3w5xyG4JWmBVIigNBytJhvSSfZZzfTm&index=4)[ Andres Löh {/ a1}, người đồng sáng lập công ty tư vấn Well-Typed và ](https://kosmikus.org/)[ Tiến sĩ. Lars Brünjes {/ a2}, Giám đốc giáo dục tại IOHK. Khóa học là *&nbsp;điểm khởi đầu {/ em3} được đề xuất cho Plutus Pioneer khi bắt đầu [ Chương trình Plutus Pioneer {/ a4}. Đó là 10 tuần, 40 giờ / tuần đi sâu vào Haskell và Tiền điện tử.](#get-started-with-the-plutus-pioneer-program)*](https://iohk.io/en/team/lars-brunjes)
+Một tài nguyên học tập tuyệt vời khác là khóa học trực tuyến [ Haskell và Crypto Mongolia 2020 {/ a0} do ](https://www.youtube.com/watch?v=ctfZ6DwFiPg&list=PLJ3w5xyG4JWmBVIigNBytJhvSSfZZzfTm&index=4)[ Andres Löh {/ a1}, người đồng sáng lập công ty tư vấn Well-Typed và ](https://kosmikus.org/)[ Tiến sĩ. Lars Brünjes {/ a2}, Giám đốc giáo dục tại IOHK. Khóa học là *&nbsp;điểm khởi đầu {/ em3} được đề xuất cho Plutus Pioneer khi bắt đầu [ Chương trình Plutus Pioneer {/ a4}. Đó là 10 tuần, 40 giờ / tuần đi sâu vào Haskell và Tiền điện tử.](#getting-started-with-the-plutus-pioneer-program)*](https://iohk.io/en/team/lars-brunjes)
 
 ## Đăng ký Chương trình Tiên phong của Plutus
 
 Chương trình tiên phong của Plutus được tạo ra nhằm tuyển dụng và đào tạo các nhà phát triển trong Plutus cho hệ sinh thái Cardano. Bằng cách tham gia chương trình, bạn sẽ trở thành thành viên của một nhóm có quyền truy cập sớm vào một bộ khóa học dạy bạn các nguyên tắc cốt lõi về cách viết mã trong cả Haskell và Plutus. Nó sẽ có tính tương tác cao, với các video, bài tập và phiên Hỏi &amp; Đáp hàng tuần và quyền tiếp cận độc quyền với những người sáng tạo và chuyên gia chính về ngôn ngữ.
 
-**&nbsp;Khóa học này không dành cho người mới bắt đầu viết mã. {/ strong0} Bạn không cần phải là một chuyên gia về các phương pháp chính thống, nhưng bạn nên có kinh nghiệm lập trình và năng khiếu chung về tư duy logic và toán học. Chúng tôi khuyên bạn nên [ bắt đầu với Haskell {/ a1} trước khi tham gia khóa học.](#get-started-with-haskell)**
+**&nbsp;Khóa học này không dành cho người mới bắt đầu viết mã. {/ strong0} Bạn không cần phải là một chuyên gia về các phương pháp chính thống, nhưng bạn nên có kinh nghiệm lập trình và năng khiếu chung về tư duy logic và toán học. Chúng tôi khuyên bạn nên [ bắt đầu với Haskell {/ a1} trước khi tham gia khóa học.](#getting-started-with-haskell)**
 
 Bạn cũng nên biết trước về Haskell hoặc lập trình chức năng, vì Plutus dựa nhiều vào Haskell và bao gồm các tính năng nâng cao như Template Haskell, lập trình cấp kiểu và hệ thống hiệu ứng.
 

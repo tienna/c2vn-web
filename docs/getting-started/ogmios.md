@@ -32,7 +32,7 @@ docker-compose up
 
 Bây giờ bạn có thể truy cập bảng điều khiển trên [http://localhost:1337](http://localhost:1337) với hình ảnh trực quan thời gian thực của một số chỉ số thời gian chạy của máy chủ.
 
-![img](../../static/img/get-started/ogmios/1-dashboard.gif)
+![img](../../static/img/getting-started/ogmios/1-dashboard.gif)
 
 ## Truy vấn số liệu
 

@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 :::note
 
-Hướng dẫn này giả định rằng bạn có hiểu biết cơ bản về `cardano-wallet`, cách sử dụng nó và bạn đã cài đặt nó vào hệ thống của mình. Nếu không, chúng tôi khuyên bạn nên đọc hướng dẫn[Installing cardano-node](/docs/get-started/installing-cardano-node), [Running cardano-node](/docs/get-started/running-cardano) và [Exploring Cardano Wallets](/docs/integrate-cardano/creating-wallet-faucet) trước tiên.
+Hướng dẫn này giả định rằng bạn có hiểu biết cơ bản về `cardano-wallet`, cách sử dụng nó và bạn đã cài đặt nó vào hệ thống của mình. Nếu không, chúng tôi khuyên bạn nên đọc hướng dẫn[Installing cardano-node](/docs/getting-started/installing-cardano-node), [Running cardano-node](/docs/getting-started/running-cardano) và [Exploring Cardano Wallets](/docs/integrate-cardano/creating-wallet-faucet) trước tiên.
 
 
 Hướng dẫn này cũng giả định rằng bạn có `cardano-node` và `cardano-wallet` đang chạy và được kết nối với mạng `testnet`.

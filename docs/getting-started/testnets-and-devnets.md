@@ -29,9 +29,9 @@ To get free test ada, you need to visit the [Cardano testnet faucet](/docs/integ
 Để nhận ada thử nghiệm miễn phí, bạn cần truy cập [Cardano testnet faucet](/docs/integrate-cardano/testnet-faucet/). 
 
 ### Where to get a testnet wallet?
-- [Daedalus Wallet for Cardano Testnet](https://testnets.cardano.org/en/testnets/cardano/get-started/wallet/) is the testnet version of Daedalus wallet.
+- [Daedalus Wallet for Cardano Testnet](https://testnets.cardano.org/en/testnets/cardano/getting-started/wallet/) is the testnet version of Daedalus wallet.
 
-- [Daedalus Wallet for Cardano Testnet](https://testnets.cardano.org/en/testnets/cardano/get-started/wallet/) là phiên bản testnet của Ví Daedalus
+- [Daedalus Wallet for Cardano Testnet](https://testnets.cardano.org/en/testnets/cardano/getting-started/wallet/) là phiên bản testnet của Ví Daedalus
 
 ### Which block explorers can I use for the Cardano testnet?
 - [explorer.cardano-testnet.iohkdev.io](https://explorer.cardano-testnet.iohkdev.io/) is a testnet block explorer by [IOHK](https://iohk.io).

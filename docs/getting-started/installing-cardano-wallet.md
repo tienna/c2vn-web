@@ -20,7 +20,7 @@ Nếu bạn muốn tránh tự biên dịch các tệp nhị phân, Bạn có th
 - [MacOS](https://hydra.iohk.io/job/Cardano/cardano-wallet/cardano-wallet-macos64/latest)
 - [Windows](https://hydra.iohk.io/job/Cardano/cardano-wallet/cardano-wallet-win64/latest)
   
-Hướng dẫn này giả định rằng bạn đã cài đặ `cardano-node` and `cardano-cli` vào hệ thống của mình. Nếu không, bạn có thể tham khảo Hướng dẫn [Installing cardano-node](/docs/get-started/installing-cardano-node) để biết hướng dẫn về cách thực hiện điều đó.
+Hướng dẫn này giả định rằng bạn đã cài đặ `cardano-node` and `cardano-cli` vào hệ thống của mình. Nếu không, bạn có thể tham khảo Hướng dẫn [Installing cardano-node](/docs/getting-started/installing-cardano-node) để biết hướng dẫn về cách thực hiện điều đó.
 
 :::
 
@@ -58,7 +58,7 @@ Bạn sẽ thấy một cái gì đó như thế này:
 Version 2.7.3, Git revision 7927a3aec32e2b2e5e4fb5be76d0d50eddcc197f x86_64 hpack-0.34.4
 ```
 
-Nếu bạn đã làm theo hướng dẫn [Installing cardano-node](/docs/get-started/installing-cardano-node) Bạn sẽ có thư mục `$HOME/cardano-src` Nếu không, hãy tạo một thư mục làm việc để lưu trữ mã nguồn và xây dựng `cardano-wallet`.
+Nếu bạn đã làm theo hướng dẫn [Installing cardano-node](/docs/getting-started/installing-cardano-node) Bạn sẽ có thư mục `$HOME/cardano-src` Nếu không, hãy tạo một thư mục làm việc để lưu trữ mã nguồn và xây dựng `cardano-wallet`.
 
 ```bash
 mkdir -p $HOME/cardano-src

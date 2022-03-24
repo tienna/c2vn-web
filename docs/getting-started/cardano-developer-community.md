@@ -22,7 +22,7 @@ Một subreddit dành riêng cho mọi người xây dựng trên blockchain  Ca
 
 Các cuộc đàm luận kiểu Chat - style trên Telegram tại một trong các nhóm phát triển Cardano lâu đời nhất.
 
-Hãy đến với [IOG Discord](https://discord.com/invite/w6TwW9bGA6) nếu bạn muốn tham gia [Plutus Pioneers](../smart-contracts/plutus#get-started-with-the-plutus-pioneer-program).
+Hãy đến với [IOG Discord](https://discord.com/invite/w6TwW9bGA6) nếu bạn muốn tham gia [Plutus Pioneers](../smart-contracts/plutus#getting-started-with-the-plutus-pioneer-program).
 
 Kênh dành riêng cho các nhà phát triển và người dùng Marlowe. Marlowe là một ngôn ngữ chuyên biệt dành cho các hợp đồng thông minh tài chính trên Cardano. Bạn có thể đặt câu hỏi, tham gia thảo luận và gặp gỡ nhóm đằng sau Marlowe.
 

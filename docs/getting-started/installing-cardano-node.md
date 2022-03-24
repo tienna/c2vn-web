@@ -478,7 +478,7 @@ cardano-node --version
 
 Xin chúc mừng, bạn đã cài đặt thành công các thành phần Cardano vào hệ thống MacOS của mình!🎉🎉🎉
 
-Tiếp theo, chúng ta sẽ nói về cách [run cardano-node](/docs/getting-started//docs/getting-started/running-cardano).
+Tiếp theo, chúng ta sẽ nói về cách [run cardano-node](/docs/getting-started/docs/getting-started/running-cardano).
 
 ## Windows
 

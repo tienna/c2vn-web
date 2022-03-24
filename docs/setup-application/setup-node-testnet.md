@@ -23,7 +23,7 @@ sudo mkdir ~/cardano
 cd ~/cardano
 ```
 
-Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-node/ để tải phiên bản mới nhất.
+Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/getting-started/installing-cardano-node/ để tải phiên bản mới nhất.
 
 ```
 sudo wget https://hydra.iohk.io/build/8674953/download/1/cardano-node-1.31.0-linux.tar.gz
@@ -125,7 +125,7 @@ Cài đặt Ví Cardano
 
 Mở cửa sổ shell thứ hai (sử dụng Alt + F2). Chúng tôi sẽ để nút chạy trong trình bao khác (chuyển trở lại nó bằng cách sử dụng Alt + F1). Ngoài ra, kết nối bằng Putty hoặc ứng dụng SSH yêu thích của bạn.
 
-Tải xuống tệp nhị phân được biên dịch trước cho Ví Cardano và đặt nó ở local/bin. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-wallet/ để tải phiên bản mới nhất.
+Tải xuống tệp nhị phân được biên dịch trước cho Ví Cardano và đặt nó ở local/bin. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/getting-started/installing-cardano-wallet/ để tải phiên bản mới nhất.
 
 ```
 sudo mkdir ~/cardano/wallet

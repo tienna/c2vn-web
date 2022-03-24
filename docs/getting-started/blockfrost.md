@@ -13,13 +13,13 @@ Blockfrost cung cấp API để truy cập và xử lý thông tin được lưu
 
  [Đăng nhập vào Blockfrost](https://blockfrost.io/auth/signin) với tài khoản GitHub của bạn, không cần đăng ký. Nhập tên dự án và chọn Cardano mainnet và Cardano testnet, phụ thuộc vào nhu cầu của bạn.
 
-![img](../../static/img/get-started/blockfrost/1-add-project.png)
+![img](../../static/img/getting-started/blockfrost/1-add-project.png)
 
 ## Lấy API của bạn
 
 Sau khi nhấp vào `Save Project` ngay lập tức bạn sẽ nhận được `API KEY`lưu nó, bạn sẽ cần khóa này cho mọi yêu cầu.
 
-![img](../../static/img/get-started/blockfrost/2-get-api-key.png)
+![img](../../static/img/getting-started/blockfrost/2-get-api-key.png)
 
 ## Yêu cầu epoch gần nhất
 

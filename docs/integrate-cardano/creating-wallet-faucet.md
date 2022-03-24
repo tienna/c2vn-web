@@ -15,12 +15,12 @@ Hướng dẫn này giả định rằng bạn đã cài đặt `cardano-node` v
 
 Bạn cũng phải kết nối mạng của mình `cardano-node` và `testnet` đảm bảo rằng nó đã được đồng bộ hóa hoàn toàn.
 
-Nếu bạn không chắc chắn về cách thực hiện điều đó, bạn nên đọc Hướng dẫn [Running cardano-node](/docs/get-started/running-cardano) trước khi tiếp tục.
+Nếu bạn không chắc chắn về cách thực hiện điều đó, bạn nên đọc Hướng dẫn [Running cardano-node](/docs/getting-started/running-cardano) trước khi tiếp tục.
 :::
 
 ### Ví Cardano
 
-Vì vậy, bạn đã cài đặt `cardano-node` và làm cho nó chạy, thậm chí bạn có thể đã cố gắng truy vấn một số dữ liệu blockchain đơn giản (Nếu bạn đọc Hướng dẫn [Running cardano-node](/docs/get-started/running-cardano)). Nhưng làm thế nào để bạn thực sự tạo một ví **Cardano**, nhận và gửi một số `ada` hoặc `tAda` mã thông báo?
+Vì vậy, bạn đã cài đặt `cardano-node` và làm cho nó chạy, thậm chí bạn có thể đã cố gắng truy vấn một số dữ liệu blockchain đơn giản (Nếu bạn đọc Hướng dẫn [Running cardano-node](/docs/getting-started/running-cardano)). Nhưng làm thế nào để bạn thực sự tạo một ví **Cardano**, nhận và gửi một số `ada` hoặc `tAda` mã thông báo?
 
 Trước tiên, chúng ta phải xem xét các ứng dụng chúng ta có thể sử dụng để tạo ví.
 
@@ -43,7 +43,7 @@ Trước tiên, chúng ta phải xem xét các ứng dụng chúng ta có thể 
 
 - [cardano-cli](https://github.com/input-output-hk/cardano-node) : `cardano-cli` cũng là một ứng dụng [CLI (Command Line Interface)](https://en.wikipedia.org/wiki/Command-line_interface) cung cấp các chức năng của ví `Cardano` . Nhưng `cardano-cli` mục đích là hướng nhiều hơn đến các chức năng chung của Cardano như tạo khóa , xây dựng và gửi giao dịch , quản lý chứng chỉ nhóm cổ phần , các truy vấn blockchain đơn giản như địa chỉ ví `UTXO` và hơn thế nữa.
 
-    Nó là một phần của `cardano-node`, vì vậy nếu bạn [compile and install](/docs/get-started/installing-cardano-node) `cardano-node` bạn cũng nên có `cardano-cli`.Nó là một trong nhiều thành phần phần mềm Cardano dựa trên Haskell được viết bởi[InputOutputGlobal](https://iohk.io/).
+    Nó là một phần của `cardano-node`, vì vậy nếu bạn [compile and install](/docs/getting-started/installing-cardano-node) `cardano-node` bạn cũng nên có `cardano-cli`.Nó là một trong nhiều thành phần phần mềm Cardano dựa trên Haskell được viết bởi[InputOutputGlobal](https://iohk.io/).
 
 :::warning
 cảnh báo Luôn tải xuống ví từ các nguồn chính thức. Có rất nhiều ví giả mạo, phần mềm độc hại giả danh ví Cardano có khả năng ăn tokens / assets của bạn.
@@ -486,7 +486,7 @@ Xin chúc mừng, Bạn đã tạo và gửi giao dịch `Cardano` `cardano-cli`
 #### Tạo ví bằng `cardano-wallet`
 
 :::note
-Hướng dẫn này giả định rằng bạn đã cài đặt cardano-walletvào hệ thống của mình. Nếu không, bạn có thể tham khảo Hướng dẫn [cài đặtcardano-wallet](/docs/get-started/installing-cardano-wallet) để bbiết cách thực hiện.
+Hướng dẫn này giả định rằng bạn đã cài đặt cardano-walletvào hệ thống của mình. Nếu không, bạn có thể tham khảo Hướng dẫn [cài đặtcardano-wallet](/docs/getting-started/installing-cardano-wallet) để bbiết cách thực hiện.
 
 Chúng tôi sẽ sử dụng đường dẫn `$HOME/cardano/wallets` để lưu trữ tất cả các `cardano-wallet` tệp liên quan làm ví dụ, vui lòng thay thế nó bằng thư mục bạn đã chọn để lưu trữ các tệp.
 :::

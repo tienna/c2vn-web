@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 
 ## Cardano GraphQL
 
-![img](../../static/img/get-started/dandelion-apis/showcase-graphql-api.png)
+![img](../../static/img/getting-started/dandelion-apis/showcase-graphql-api.png)
 
 
 Các liên kết hữu ích
@@ -99,7 +99,7 @@ Ví dụ hiện thị ra:
 
 ## Cardano Explorer
 
-![img](../../static/img/get-started/dandelion-apis/showcase-explorer-api.png)
+![img](../../static/img/getting-started/dandelion-apis/showcase-explorer-api.png)
 
 
 Các liên kết hữu ích:
@@ -156,7 +156,7 @@ Ví dụ đâu ra (REDACTED):
 
 ## Cardano Submit 
 
-![img](../../static/img/get-started/dandelion-apis/showcase-submit-api.png)
+![img](../../static/img/getting-started/dandelion-apis/showcase-submit-api.png)
 
 Link sử dụng:
 
@@ -192,7 +192,7 @@ Ví dụ thông tin đầu ra (a transaction id):
 
 ## Cardano Rosetta
 
-![img](../../static/img/get-started/dandelion-apis/showcase-rosetta-api.png)
+![img](../../static/img/getting-started/dandelion-apis/showcase-rosetta-api.png)
 
 Các link hữu ích:
 
@@ -247,7 +247,7 @@ Ví dụ đầu ra:
 
 ## Ogmios
 
-![img](../../static/img/get-started/dandelion-apis/showcase-ogmios-api.png)
+![img](../../static/img/getting-started/dandelion-apis/showcase-ogmios-api.png)
 
 Các link hữu ích:
 
@@ -296,7 +296,7 @@ Ví dụ đầu ra:
 
 ## PostgREST
 
-![img](../../static/img/get-started/dandelion-apis/showcase-postgrest-api.png)
+![img](../../static/img/getting-started/dandelion-apis/showcase-postgrest-api.png)
 
 Useful links:
 
