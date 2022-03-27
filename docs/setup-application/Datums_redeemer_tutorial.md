@@ -5,6 +5,8 @@ Hướng dẫn này giải thích các khái niệm về dữ liệu Plutus và 
 
 **datum** là một phần thông tin có thể được liên kết với UTXO và được sử dụng để mang thông tin trạng thái tập lệnh như chủ sở hữu của nó hoặc chi tiết thời gian (xác định thời điểm UTXO có thể được sử dụng). Nó thường được sử dụng kết hợp với **Redeemer** - thông tin tùy ý được bao gồm trong giao dịch để cung cấp đầu vào cho tập lệnh.
 
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/QGZCt_TenrY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe> 
+
 ## Xác thực giao dịch hai giai đoạn
 
 Đầu vào là đầu ra chưa sử dụng từ các giao dịch trước đó. Băm dữ liệu và một giá trị (bao gồm số lượng ada và số lượng mã thông báo gốc bổ sung, tùy chọn) được lưu trữ trong UTXO tại một địa chỉ (khóa công khai hoặc mã băm khóa công khai). Khi một UTXO tại địa chỉ tập lệnh là đầu vào cho một giao dịch hợp lệ, tập lệnh sẽ xác định xem có 'mở khóa' tiền hay không. Điều này có thể được thực thi trong các điều kiện cụ thể do tập lệnh xác định (sự kết hợp tùy ý của các yếu tố bao gồm dữ liệu, công cụ đổi quà và ngữ cảnh tập lệnh). Trong giai đoạn xác thực đầu tiên, một giao dịch phải được ký bởi chủ sở hữu khóa cá nhân tương ứng với địa chỉ.
