@@ -73,7 +73,7 @@ thành dòng:
 Bây giờ chúng ta đã biên dịch hợp đồng, chúng ta cần tạo địa chỉ tập lệnh. Đối với điều này, hãy sử dụng lệnh cardano-cli sau:
 
 ```
-cardano-cli address build --payment-script-file datum-redeemer.plutus --testnet-magic 8 --out-file datum-redeemer.addr
+cardano-cli address build --payment-script-file datum-redeemer.plutus --testnet-magic ${TESTNET_MAGIC} --out-file datum-redeemer.addr
 ```
 
 ## Truy vấn địa chỉ tập lệnh
@@ -87,7 +87,7 @@ addr_test1wrj2yjcjnpl37fnv74lcwgtc5meefznj490gp2kkuquwt0c84ezsu
 ```
 
 ```
-cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic 8
+cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic ${TESTNET_MAGIC}
                            TxHash                                 TxIx        Amount
 --------------------------------------------------------------------------------------
 ```
@@ -106,7 +106,7 @@ cardano-cli transaction hash-script-data --script-data-value 42
 Đầu tiên, chúng ta cần truy vấn địa chỉ sẽ gửi tiền đến địa chỉ tập lệnh. Trong ví dụ này, chúng tôi có địa chỉ trong tệp `payment.addr`:
 
 ```
-cardano-cli query utxo --address $(cat payment.addr) --testnet-magic 8
+cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 ```
                            TxHash                                 TxIx        Amount
@@ -125,7 +125,7 @@ Chúng tôi sử dụng UTXO chứa 100 ada (d26ccb16e17b7db97b9578c5f787baaeb63
 Trước khi gửi giao dịch đầu tiên, chúng tôi cần tải xuống tệp có chứa các tham số của giao thức, chúng tôi thực hiện điều đó bằng lệnh sau:
 
 ```
-cardano-cli query protocol-parameters --out-file protocol.json --testnet-magic 8
+cardano-cli query protocol-parameters --out-file protocol.json --testnet-magic ${TESTNET_MAGIC}
 ```
 
 ## Khóa ADA
@@ -143,7 +143,7 @@ d26ccb16e17b7db97b9578c5f787baaeb63e36dc78134e926bdaeb58a512018d#1 \
 --change-address $(cat payment.addr) \
 --protocol-params-file protocol.json \
 --out-file tx.raw \
---testnet-magic 8
+--testnet-magic ${TESTNET_MAGIC}
 ```
 
 Vì đây là một giao dịch thời Alonzo, chúng tôi cần chỉ định cờ `--alonzo-era`.
@@ -159,7 +159,7 @@ Bạn có thể tìm thấy các bước về cách tạo giao dịch trên mạ
 UTXO tại địa chỉ tập lệnh này bây giờ phải có 8 ada và mã băm dữ liệu được đính kèm. Để truy vấn nó, hãy chạy:
 
 ```
-cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic 8
+cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
 Kết quả
@@ -187,7 +187,7 @@ Hợp đồng này thành công khi `datum` bằng với `Redeemer`. Chúng tôi
 Để làm điều đó, chúng tôi cần gửi một giao dịch cố gắng mở khóa tiền từ địa chỉ tập lệnh. Chúng tôi cần UTXO từ địa chỉ tập lệnh:
 
 ```
-cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic 8
+cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
 Kết quả:
@@ -199,7 +199,7 @@ Kết quả:
 
 ```
 
-cardano-cli query utxo --address $(cat payment.addr) --testnet-magic 8
+cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
 
@@ -230,7 +230,7 @@ cardano-cli transaction build \
 --change-address $(cat payment.addr) \
 --protocol-params-file protocol.json \
 --out-file tx.raw \
---testnet-magic 8
+--testnet-magic ${TESTNET_MAGIC}
 ```
 Kết quả:
 ```
@@ -258,20 +258,20 @@ cardano-cli transaction build \
 --change-address $(cat payment.addr) \
 --protocol-params-file protocol.json \
 --out-file tx.raw \
---testnet-magic 8
+--testnet-magic ${TESTNET_MAGIC}
 ```
 
 Trong trường hợp này, chúng tôi đã có thể xây dựng giao dịch, vì nó có các giá trị phù hợp. Bây giờ chúng ta có thể ký và gửi giao dịch này.
 
 Sign:
 ```
-cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file payment.skey --testnet-magic 8 --out-file tx.sign
+cardano-cli transaction sign --tx-body-file tx.raw --signing-key-file payment.skey --testnet-magic ${TESTNET_MAGIC} --out-file tx.sign
 ```
 
 Submit:
 
 ```
-cardano-cli transaction submit --testnet-magic 8 --tx-file tx.sign
+cardano-cli transaction submit --testnet-magic ${TESTNET_MAGIC} --tx-file tx.sign
 ```
 Kết quả:
 ```
@@ -284,7 +284,7 @@ Chúng tôi có thể truy vấn các địa chỉ để đảm bảo rằng ch�
 
 Truy vấn địa chỉ tập lệnh:
 ```
-cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic 8
+cardano-cli query utxo --address $(cat datum-redeemer.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
 Kết quả truy vấn đại chỉ tập lệnh:
@@ -295,7 +295,7 @@ Kết quả truy vấn đại chỉ tập lệnh:
 ```
 Truy vấn địa chỉ thanh toán:
 ```
-cardano-cli query utxo --address $(cat payment.addr) --testnet-magic 8
+cardano-cli query utxo --address $(cat payment.addr) --testnet-magic ${TESTNET_MAGIC}
 ```
 
 Kết quả truy vấn địa chỉ thanh toán:
