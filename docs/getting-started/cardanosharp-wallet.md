@@ -71,7 +71,7 @@ PublicKey stakePub = stakePrv.GetPublicKey(false);
 
  > Nếu bạn muốn tìm hiểu thêm về các đường dẫn chính, hãy đọc bài viết này [About Address Derivation](https://github.com/input-output-hk/technical-docs/blob/main/cardano-components/cardano-wallet/doc/About-Address-Derivation.md)
 
-## Tạo điacj chỉ (Addresses)
+## Tạo địa chỉ (Addresses)
 
 `AddressService` cho phép bạn tạo các địa chỉ từ khóa. Nó được xây dựng để sử dụng trong các vùng chứa DI (tức là giao diện`IAddressService`)
 
