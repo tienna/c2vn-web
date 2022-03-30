@@ -17,7 +17,8 @@ Blockchain cơ hội và thách thức
 ## Buổi 2: Chia sẻ về Cardano, hệ sinh thái trên Cardano.
 
 
-  <iframe width="740" height="415" src="https://www.youtube.com/embed/L-g_oiTprs" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="740" height="415" src="https://www.youtube.com/embed/0L-g_oiTprs" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
   
 **Chia sẻ về Cardano, hệ sinh thái trên Cardano tại trường Đại học Giao thông vận tải**
 
