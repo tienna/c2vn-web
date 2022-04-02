@@ -1,8 +1,14 @@
-Tăng thông lượng giao dịch của Cardano
-====================
+---
+slug: increasing-the-transaction-throughput-of-cardano
+title: Increasing the transaction throughput of Cardano
+authors: tantnd
+tags: []
+---
+
+<h3>Tăng thông lượng giao dịch của Cardano</h3>
+
 :::note
 Đường ống khuếch tán - được lên kế hoạch cho mùa hè này - sẽ tăng ngân sách cho thời gian truyền và xác thực khối, cho phép tạo ra các khối lớn hơn và tăng thông lượng giao dịch. Đây là một quan điểm nghiên cứu kỹ thuật. (Cùng với phần giới thiệu về AV, anh chị em thậm chí còn hiệu quả hơn của nó…)
- Ngày 21 tháng 3 năm 2022  Matthias Fitzi đã đọc 10 phút
 :::
 
 ## Tăng thông lượng giao dịch của Cardano
