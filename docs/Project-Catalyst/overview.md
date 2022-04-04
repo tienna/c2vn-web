@@ -1,5 +1,6 @@
-Project Catalyst
+Overview
 ============
+
 ## Project Catalyst là gì?
 
 Catalyst là một loạt các thử nghiệm nhằm tạo ra các cấp độ đổi mới cao nhất của cộng đồng. Catalyst đang mang lại quản trị trên chuỗi cho chuỗi khối Cardano bằng cách cho phép cộng đồng tự xác định các ưu tiên để tăng trưởng. Nó cũng cho phép người tham gia triển khai tài trợ cho các đề xuất giải quyết các thách thức và tận dụng các cơ hội nảy sinh trong vòng đời của Cardano.
