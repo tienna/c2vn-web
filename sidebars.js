@@ -92,7 +92,7 @@ const sidebars = {
       //"native-tokens/minting",
       //"native-tokens/minting-nfts",
     ],
-    "Cài đặt và ứng dụng": [
+    "Cài đặt và Ví dụ Plutus": [
       "setup-application/Installation",
       "setup-application/setup-node-mainnet",
       "setup-application/setup-node-testnet",
@@ -101,6 +101,17 @@ const sidebars = {
       "setup-application/Datums_redeemer_tutorial",	   
       "setup-application/Validator_scripts_tutorial",	  
     ],	
+    "Project-Catalyst": [
+      "Project-Catalyst/overview",
+	  "Project-Catalyst/Funding-Process",
+	  "Project-Catalyst/Proposer",
+	  "Project-Catalyst/Community-advisor",
+	  "Project-Catalyst/Voter",	  
+	  "Project-Catalyst/Catalyst-registration-and-voting-guide",
+	  "Project-Catalyst/Check-rewards",
+	  "Project-Catalyst/Project-Catalyst-Community-Resources",
+    ],	
+	
     "Catalyst 4 students": [
       "Catalyst4students/overview",
     ],	
