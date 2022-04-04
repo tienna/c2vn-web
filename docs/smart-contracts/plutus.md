@@ -35,7 +35,7 @@ Plutus Playground là một trình soạn thảo mã và trình mô phỏng tron
 
 [](https://playground.plutus.iohkdev.io)
 
-Có một hướng dẫn bằng văn bản về [ cách biên dịch và kiểm tra Ứng dụng Plutus {/ a0} hoặc bạn có thể xem hướng dẫn bằng video này:](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/plutus-playground.html)
+Có một hướng dẫn bằng văn bản về [ cách biên dịch và kiểm tra Ứng dụng Plutus {/ a0} hoặc bạn có thể xem hướng dẫn bằng video này:](https://plutusvn.readthedocs.io/en/latest/plutus/tutorials/)
 
 <iframe width="100%" height="325" src="https://www.youtube.com/embed/DhRS-JvoCw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 

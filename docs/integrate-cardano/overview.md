@@ -1,13 +1,10 @@
 ---
 id: overview
 title: Tích hợp Cardano
-sidebar_label: Tổng quat
+sidebar_label: Tổng quan
 description: Cách tích hợp Cardano vào các trang web và dịch vụ hiện có.
 #image: ./img/og-developer-portal.png
---- 
-
-
-
+---
 
 ## Giới thiệu
 Sau đây, chúng tôi hướng dẫn bạn cách tích hợp Cardano vào các trang web và dịch vụ hiện có.
