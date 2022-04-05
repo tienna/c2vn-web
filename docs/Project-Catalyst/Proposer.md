@@ -7,7 +7,6 @@ Người viết dự án
 
 ## 'Quy trình đề xuất' trong Project Catalyst như thế nào?
 
-The Cardano Community has a treasury that is allocated to Project Catalyst to help fund projects that benefit the ecosystem and overall community of Cardano. Proposers with ideas can put forward proposals on Cardano Ideascale to get funding for their projects if the community votes for their proposal.
 Cộng đồng Cardano có một ngân quỹ được phân bổ cho Dự án Catalyst, Quỹ này tài trợ cho các dự án để mang lại lợi ích cho hệ sinh thái và cộng đồng chung của Cardano. Những người đề xuất có thể đưa đề xuất lên Cardano Ideascale để nhận được tài trợ nếu cộng đồng bỏ phiếu cho đề xuất của họ.
 
 ## Tại sao tôi nên đề xuất trong Project Catalyst?
