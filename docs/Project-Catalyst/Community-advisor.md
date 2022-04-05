@@ -22,10 +22,6 @@ CA cũng giúp người đề xuất bằng cách cho họ phản hồi về cá
 
 ## Ai có thể trở thành cố vấn cộng đồng?
 
-Anyone can become a Community Advisor (CA). The role is suitable for people who are open-minded, curious and want to enhance ideas in Project Catalyst. Expertise in a specific field is helpful but not a requirement. If you already have a certain role in project catalyst, there might be a conflict of interest. For more information, take a look at the following document.
-
-## Why should I become a community advisor?
-
 Bất kỳ ai cũng có thể trở thành Cố vấn Cộng đồng (CA). Vai trò này phù hợp với những người cởi mở, tò mò và muốn nâng cao ý tưởng trong Project Catalyst. Kiến thức chuyên môn trong một lĩnh vực cụ thể là hữu ích nhưng không phải là một yêu cầu. 
 
 ## Làm cách nào để tôi có thể trở thành cố vấn cộng đồng?
