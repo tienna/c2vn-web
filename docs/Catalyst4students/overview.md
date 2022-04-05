@@ -1,8 +1,11 @@
-Blockchain cơ hội và thách thức
+Chuỗi sự kiện tại Đại học Giao thông Vận tải
 ==========
 
 **Catalyst Events 4 Vietnam Students** là dự án được cấp vốn ở vòng số 7 của Catalyst-Cardano.
+
 **Chương trình hội thảo tại trường Đại học Giao thông vận tải**
+
+Thông báo về khóa học Catalyst đã được [đăng tại website](http://fit.utc.edu.vn/hoi-thao-khoa-hoc-va-khoa-dao-tao-ve-catalyst-project/a1396.html) nhà trường ngày 10-03-2022
 
 ![](img/GTVT-blockchain.png)
 
@@ -22,7 +25,7 @@ Blockchain cơ hội và thách thức
   
 **Chia sẻ về Cardano, hệ sinh thái trên Cardano tại trường Đại học Giao thông vận tải**
 
-## Hướng dẫn sử dụng ví, và sử dụng API từ blockfrost.
+## Phụ lục 1- Video Hướng dẫn sử dụng ví, và sử dụng API từ blockfrost.
 
 
   <iframe width="740" height="415" src="https://www.youtube.com/embed/No8ybpPnmIg" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

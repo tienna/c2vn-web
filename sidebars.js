@@ -103,7 +103,7 @@ const sidebars = {
     ],	
     "Project-Catalyst": [
       "Project-Catalyst/overview",
-	  "Project-Catalyst/Funding-Process",
+	//  "Project-Catalyst/Funding-Process",
 	  "Project-Catalyst/Proposer",
 	  "Project-Catalyst/Community-advisor",
 	  "Project-Catalyst/Voter",	  
@@ -114,6 +114,7 @@ const sidebars = {
 	
     "Catalyst 4 students": [
       "Catalyst4students/overview",
+      "Catalyst4students/daihocnguyentrai",
     ],
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
