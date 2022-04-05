@@ -1,27 +1,32 @@
-Proposer
+Người viết dự án
 ======
-## What is the 'proposing process' in Project Catalyst?
+## [Viết dự án như thế nào để được cấp vốn](https://youtu.be/rgyQ6512feo).
+
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/rgyQ6512feo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+
+## 'Quy trình đề xuất' trong Project Catalyst như thế nào?
 
 The Cardano Community has a treasury that is allocated to Project Catalyst to help fund projects that benefit the ecosystem and overall community of Cardano. Proposers with ideas can put forward proposals on Cardano Ideascale to get funding for their projects if the community votes for their proposal.
+Cộng đồng Cardano có một ngân quỹ được phân bổ cho Dự án Catalyst, Quỹ này tài trợ cho các dự án để mang lại lợi ích cho hệ sinh thái và cộng đồng chung của Cardano. Những người đề xuất có thể đưa đề xuất lên Cardano Ideascale để nhận được tài trợ nếu cộng đồng bỏ phiếu cho đề xuất của họ.
 
-## Why should I propose in Project Catalyst?
+## Tại sao tôi nên đề xuất trong Project Catalyst?
 
-If you have a great idea that would solve a problem outlined in a funding challenge then you should participate in the worlds largest DAO to get funding for your project. On the way you'll learn a lot about decentralization and the Cardano Community that is looking to support and engage in great projects.
+Nếu bạn có một ý tưởng tuyệt vời và nó có thể giải quyết ít nhất một vấn đề được nêu ra trong một thử thách thì bạn nên tham gia vào DAO lớn nhất thế giới này để nhận được tài trợ cho dự án của mình. Bạn sẽ học được nhiều điều về phi tập trung trên hành trình này.
 
-## Who can propose in Project Catalyst?
+## Ai có thể đề xuất lên Project Catalyst?
 
-Anyone can submit a proposal to get funding. The proposing process is open and transparent. Proposals must be targeted to solve the problems outlined by a given funding challenge.
+Bất kỳ ai cũng có thể gửi đề xuất để được cấp vốn. Quá trình đề xuất là công khai và minh bạch. Các đề xuất phải được nhắm mục tiêu để giải quyết các vấn đề được nêu ra bởi một thách thức tài trợ nhất định.
 
-## How do I propose in Project Catalyst?
+## Làm cách nào để đề xuất trong Project Catalyst?
 
-After registration on Cardano Ideascale, you can submit proposals when a new funding round is opened which is currently every 12 weeks.
+Sau khi đăng ký trên Cardano Ideascale, bạn có thể gửi đề xuất khi một vòng tài trợ mới được mở, hiện đang diễn ra 12 tuần một lần.
 
-## How do I write an effective proposal?
+## Làm cách nào để viết một đề xuất hiệu quả?
 
-Effective proposals will need to address a specific challenge given for that funding round. Proposers need to cover a checklist of requirements to have their proposal be accepted for the voting governance process.
+Các đề xuất hiệu quả sẽ cần phải giải quyết một thách thức cụ thể được đưa ra cho vòng tài trợ đó. Người đề xuất cần đưa ra một danh sách kiểm tra các yêu cầu để đề xuất của họ được chấp nhận cho quy trình quản trị biểu quyết.
 
-You can use the official proposal guide to learn about how to write an effective proposal. Proposals are reviewed by Community Advisors according to these standards.
+Bạn có thể sử dụng hướng dẫn đề xuất chính thức để tìm hiểu về cách viết một đề xuất hiệu quả. Các đề xuất được Cố vấn Cộng đồng xem xét theo các tiêu chuẩn này.
 
-## How can I increase my probability to get funded?
-
-To increase your changes of being successfully funded proposers will want to interact with the community where possible to receive feedback that will help them improve their proposal. You can engage in dialogues about your proposal on the community Cardano Project Catalyst Discord or get involved in community Swarm sessions.
+## Làm cách nào để tăng xác suất được cấp vốn?
+Để tăng cường thay đổi của bạn khi được tài trợ thành công, những người đề xuất sẽ muốn tương tác với cộng đồng nếu có thể để nhận được phản hồi giúp họ cải thiện đề xuất của mình. Bạn có thể tham gia vào các cuộc đối thoại về đề xuất của mình trên cộng đồng Cardano Project Catalyst Discord hoặc tham gia vào các phiên Swarm của cộng đồng.
