@@ -1,71 +1,72 @@
-Funding Process
-=================
-A funding round for Project Catalyst happens around every 12 weeks. In each funding round community members can submit proposals to any of the challenges available. Challenges in a funding round will go through phases and stages which takes ideas through to a governance decision and execution.
+Quy trình cấp vốn
+==================
+Vòng tài trợ cho Project Catalyst diễn ra khoảng 12 tuần một lần. Trong mỗi vòng tài trợ, các thành viên cộng đồng có thể gửi đề xuất cho bất kỳ thách thức nào có sẵn. Các thử thách trong vòng tài trợ sẽ trải qua các giai đoạn và giai đoạn đưa các ý tưởng đến quyết định quản trị và thực hiện.
 
 ## Challenges
-### What is a challenge?
 
-A challenge identifies problems or areas for improvement within the Cardano ecosystem. A challenge is made up of a challenge brief, a problem statement, what success looks like, success metrics, an allocated amount available for funding and then also some guiding questions or potential directions that proposers may look to take when proposing ideas to address that challenge.
+### Challenges là gì?
 
-### What is the maximum amount of funding someone can receive?
+Một thách thức xác định các vấn đề hoặc các lĩnh vực cần cải thiện trong hệ sinh thái Cardano. Một thử thách bao gồm một bản tóm tắt về thử thách, một tuyên bố vấn đề, thành công trông như thế nào, các chỉ số thành công, số tiền được phân bổ sẵn có để tài trợ và sau đó là một số câu hỏi hướng dẫn hoặc định hướng tiềm năng mà người đề xuất có thể xem xét khi đề xuất ý tưởng để giải quyết thách thức đó .
 
-Anyone can submit any number of proposals to address one or all of the challenges available in each funding round. It is up to the community to decide which proposals get funding during the governance phase of the funding process.
+### Số tiền tài trợ tối đa mà một người nào đó có thể nhận được là bao nhiêu?
 
-### What is challenge setting?
+Bất kỳ ai cũng có thể gửi bất kỳ số lượng đề xuất nào để giải quyết một hoặc tất cả các thách thức có sẵn trong mỗi vòng tài trợ. Cộng đồng quyết định đề xuất nào nhận được tài trợ trong giai đoạn quản lý của quá trình tài trợ.
 
-In each funding round you will often find a challenge called challenge setting. The purpose of challenge setting is to let the community decide what challenges should be made available in future funding rounds. Proposals made for challenge setting should identify what the problem is, the amount of available funding suggested for the challenge and what success may look like if that challenge resulted in impactful proposals being executed. The community decides on which of the suggested challenges are the most important to include in the future funding rounds by voting on challenge setting proposals in the governance phase.
+### Challenge setting là gì?
 
-### Phases and Stages
+Trong mỗi vòng tài trợ, bạn thường sẽ tìm thấy một thử thách được gọi là thiết lập thử thách. Mục đích của việc đặt ra thách thức là để cộng đồng quyết định những thách thức nào nên được cung cấp trong các vòng tài trợ trong tương lai. Các đề xuất được đưa ra để thiết lập thách thức phải xác định vấn đề là gì, số tiền tài trợ có sẵn được đề xuất cho thách thức và thành công có thể trông như thế nào nếu thách thức đó dẫn đến việc thực hiện các đề xuất có tác động. Cộng đồng quyết định xem thách thức nào được đề xuất là quan trọng nhất để đưa vào các vòng tài trợ trong tương lai bằng cách bỏ phiếu cho các đề xuất đặt ra thách thức trong giai đoạn quản trị.
 
-Challenges go through three phases - innovation, governance and execution. Within each phase there are a number of stages for the proposers, community advisors and voters. The stages start from insight sharing about the challenges and finishes with the execution of proposals that got selected in the governance process. Below you'll find each of the stages within the three different phases.
+# Gian đoạn và các bước thực hiện
 
-##Innovation Phase
+Các thách thức trải qua ba giai đoạn - Sáng tạo, quản trị và thực thi. Trong mỗi giai đoạn, có một số bước dành cho những người đề xuất, cố vấn cộng đồng và cử tri. Các giai đoạn bắt đầu từ việc chia sẻ cái nhìn sâu sắc về những thách thức và kết thúc bằng việc thực hiện các đề xuất đã được lựa chọn trong quá trình quản trị. Dưới đây, bạn sẽ tìm thấy từng giai đoạn trong ba giai đoạn khác nhau.
 
-### Ideation
+## Giai đoạn sáng tạo
 
-During ideation community members look to share insights and collaborate before drafting proposals to address the fund challenges. For insight sharing the community may share facts, examples, opinions, wild ideas, how to improve the challenges, personal experiences and research to consider at the beginning of a new funding round. Insight sharing could also include identifying gaps where improvements can be made to the Project Catalyst funding process itself or parts of the ecosystem. More information on insight sharing in an official resource.
+### Ý tưởng
 
-### Submit proposals
+Trong quá trình hình thành ý tưởng, các thành viên cộng đồng mong muốn chia sẻ những hiểu biết sâu sắc và hợp tác trước khi soạn thảo các đề xuất để giải quyết các thách thức về quỹ. Để chia sẻ thông tin chi tiết, cộng đồng có thể chia sẻ sự thật, ví dụ, ý kiến, ý tưởng hoang dã, cách cải thiện những thách thức, kinh nghiệm cá nhân và nghiên cứu để xem xét khi bắt đầu vòng tài trợ mới. Chia sẻ thông tin chi tiết cũng có thể bao gồm việc xác định các lỗ hổng nơi có thể thực hiện các cải tiến đối với bản thân quá trình tài trợ của Dự án Catalyst hoặc các bộ phận của hệ sinh thái. Thông tin thêm vềchia sẻ thông tin chi tiếttrong một nguồn chính thức.
 
-Proposers can submit their initial ideas as proposals. Upon submission the community can immediately start to provide feedback and collaborate on the proposals submitted.
+### Gửi đề xuất
 
-### Refine proposals
+Người đề xuất có thể gửi ý tưởng ban đầu của họ dưới dạng đề xuất. Sau khi gửi, cộng đồng có thể ngay lập tức bắt đầu cung cấp phản hồi và cộng tác trên các đề xuất được gửi.
 
-During the refine proposals stage the community are invited to give feedback to the proposals and for the proposers to consider any collaboration or merging of similar proposals. Refining the proposals should increase the impact, feasibility and auditability of the proposals and help increase their chance of success.
+### Tinh chỉnh các đề xuất
 
-### Finalize proposals
+Trong giai đoạn sàng lọc các đề xuất, cộng đồng được mời đưa ra phản hồi cho các đề xuất và để những người đề xuất xem xét bất kỳ sự hợp tác hoặc hợp nhất nào của các đề xuất tương tự. Việc tinh chỉnh các đề xuất sẽ làm tăng tác động, tính khả thi và khả năng kiểm toán của các đề xuất và giúp tăng cơ hội thành công của chúng.
 
-Proposals are able to make any final changes and improvements to their proposals to ensure they are addressing the challenge with a feasible, auditable and high impact proposal.
+### Hoàn thiện các đề xuất
 
-### Assess proposals
+Các đề xuất có thể thực hiện bất kỳ thay đổi và cải tiến cuối cùng nào đối với các đề xuất của họ để đảm bảo rằng chúng đang giải quyết thách thức bằng một đề xuất khả thi, có thể kiểm tra và có tác động cao.
 
-Community advisors are given time to review the proposals submitted to the funding round. The community advisors review proposals against the challenge objectives and the impact, feasibility and auditability of the proposal.
+### CA đánh giá đề xuất
 
-### Review the reviewers
+Các cố vấn cộng đồng có thời gian để xem xét các đề xuất được gửi đến vòng tài trợ. Các cố vấn cộng đồng xem xét các đề xuất dựa trên các mục tiêu thách thức và tác động, tính khả thi và khả năng kiểm toán của đề xuất.
 
-Veteran community advisors review the other community advisors proposal assessments to check that they have followed the rules and guidelines. Reviews that didn't conform to those rules and guidelines will get removed. Community advisors must have at least one funding round worth of experience as a community advisor to perform the role of a veteran community advisor.
+### vCA đánh giá những bản đánh giá của CA
 
-##Governance phase
+Các cố vấn cộng đồng kỳ cựu vCA xem xét các đánh giá đề xuất của các cố vấn cộng đồng khác để kiểm tra xem họ có tuân thủ các quy tắc và hướng dẫn hay không. Các bài đánh giá không tuân thủ các quy tắc và nguyên tắc đó sẽ bị xóa. Cố vấn cộng đồng phải có ít nhất một kinh nghiệm trong vòng tài trợ với tư cách là cố vấn cộng đồng để thực hiện vai trò của một cố vấn cộng đồng kỳ cựu.
 
-### Registration
+## Giai đoạn quản trị
 
-Proposals are added to the voting system so that they will be ready for the voting stage. Voters are also invited to register to become part of the fund voting round. At the end of the registration stage a registration snapshot is taken that records which Cardano address have registered to vote in the current funding round along with the proposals that can be voted on.
+### Đăng ký
 
-### Voting
+Các đề xuất được thêm vào hệ thống bỏ phiếu để chúng sẵn sàng cho giai đoạn bỏ phiếu. Các cử tri cũng được mời đăng ký để trở thành một phần của vòng bỏ phiếu của quỹ. Ở cuối giai đoạn đăng ký, một bản chụp nhanh đăng ký sẽ được thực hiện để ghi lại địa chỉ Cardano đã đăng ký bỏ phiếu trong vòng tài trợ hiện tại cùng với các đề xuất có thể được bỏ phiếu.
 
-Voters are given time to cast their votes for the proposals they want to get funding. Voters can both upvote and downvote proposals. It is optional on how many proposals a voter can decide to vote on. Voters can change their vote anytime before the voting snapshot if they change their mind on any voting decision. At the end of the voting time a snapshot is taken that records all the current votes by the registered voting addresses.
+### Biểu quyết
 
-### Vote tallying
+Các cử tri có thời gian để bỏ phiếu cho các đề xuất mà họ muốn nhận được tài trợ. Người bỏ phiếu có thể tán thành và phản đối các đề xuất. Nó là tùy chọn về số lượng đề xuất mà một cử tri có thể quyết định bỏ phiếu. Người bỏ phiếu có thể thay đổi phiếu bầu của họ bất cứ lúc nào trước ảnh chụp nhanh cuộc bỏ phiếu nếu họ thay đổi ý định về bất kỳ quyết định bỏ phiếu nào. Vào cuối thời gian biểu quyết, một ảnh chụp nhanh sẽ được thực hiện để ghi lại tất cả các phiếu bầu hiện tại của các địa chỉ bỏ phiếu đã đăng ký.
 
-All the votes for each proposal from the voting snapshot are tallied to produce a voting result for which proposals will and won't be funded.
+### Kiểm đếm phiếu bầu
 
-## Execution phase
+Tất cả các phiếu bầu cho mỗi đề xuất từ ​​ảnh chụp nhanh biểu quyết được kiểm tra để tạo ra kết quả biểu quyết cho các đề xuất sẽ và sẽ không được tài trợ.
 
-### Rewarding
+## Giai đoạn thực hiện
 
-Voting committee distribute rewards to voters and to the community approved proposals.
+### Khen thưởng
 
-### Reporting
+Ủy ban bỏ phiếu phân phát phần thưởng cho các cử tri và cho cộng đồng các đề xuất đã được chấp thuận.
 
-Proposers are tasked with reporting progress updates every two weeks after receiving funding to provide progress reports on the execution and delivery of their proposal.
+### Báo cáo
+
+Người đề xuất có nhiệm vụ báo cáo cập nhật tiến độ hai tuần một lần sau khi nhận được tài trợ để cung cấp báo cáo tiến độ về việc thực hiện và phân phối đề xuất của họ.
 
