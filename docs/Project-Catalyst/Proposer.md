@@ -1,4 +1,4 @@
-Người viết dự án
+Viết đề án sao để được cấp vốn?
 ======
 ## [Viết dự án như thế nào để được cấp vốn](https://youtu.be/rgyQ6512feo).
 
@@ -28,4 +28,4 @@ Các đề xuất hiệu quả sẽ cần phải giải quyết một thách th�
 Bạn có thể sử dụng hướng dẫn đề xuất chính thức để tìm hiểu về cách viết một đề xuất hiệu quả. Các đề xuất được Cố vấn Cộng đồng xem xét theo các tiêu chuẩn này.
 
 ## Làm cách nào để tăng xác suất được cấp vốn?
-Để tăng cường thay đổi của bạn khi được tài trợ thành công, những người đề xuất sẽ muốn tương tác với cộng đồng nếu có thể để nhận được phản hồi giúp họ cải thiện đề xuất của mình. Bạn có thể tham gia vào các cuộc đối thoại về đề xuất của mình trên cộng đồng Cardano Project Catalyst Discord hoặc tham gia vào các phiên Swarm của cộng đồng.
+Để tăng xác suất thành công, những người đề xuất cần tương tác với cộng đồng nhiều hơn. Nhận phản hồi từ cộng đồng và cải thiện đề xuất của mình. Bạn có thể tham gia vào các cuộc đối thoại về đề xuất của mình trên cộng đồng Cardano Project Catalyst Discord hoặc tham gia vào các phiên Swarm.
