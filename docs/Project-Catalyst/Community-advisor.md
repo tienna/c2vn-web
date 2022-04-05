@@ -1,61 +1,65 @@
 CA và vCA
 =================
-## What is a community advisor?
+## [Làm thế nào để trở thành một CA, Đây có phải là một nghề?](https://youtu.be/wWUUBhcKygw).
 
-Community Advisors (CA) review other peoples proposals that are trying to get funding in Project Catalyst. A CA will review a proposal against a set of objectives for the campaign that the proposal is asking for funding from. The CA will provide a numerical score along with an explanation that covers the rationale behind the score given.
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/wWUUBhcKygw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
-CAs help voters have more information on whether proposals are impactful, feasible and auditable so that voters can make more informed decisions on which proposals to vote for.
+## Cố vấn cộng đồng là gì?
 
-CAs also help proposers by giving them feedback on how to improve their proposals which helps increase the overall quality of the proposals in each funding round.
+Cố vấn Cộng đồng (CA) là người xem xét các đề xuất của những người khác đang cố gắng nhận tài trợ trong Dự án Catalyst. CA sẽ xem xét một đề xuất dựa trên một tập hợp các mục tiêu cho chiến dịch mà đề xuất đó đang xin tài trợ. CA sẽ cung cấp một số điểm cùng với lời giải thích bao hàm cơ sở lý luận đằng sau số điểm được đưa ra.
 
-For more information about CAs, take a look at the official Community Advisor Guide.
+CA giúp người bỏ phiếu (cử tri) có thêm thông tin về việc liệu các đề xuất có tác động, khả thi và có thể kiểm tra được hay không để cử tri có thể đưa ra quyết định sáng suốt hơn về việc bỏ phiếu cho đề xuất nào.
 
-## Who can become a community advisor?
+CA cũng giúp người đề xuất bằng cách cho họ phản hồi về cách cải thiện đề xuất của họ, giúp tăng chất lượng tổng thể của đề xuất trong mỗi vòng tài trợ.
+
+Để biết thêm thông tin về CA, hãy xem Hướng dẫn chính thức của Cố vấn Cộng đồng.
+
+## Ai có thể trở thành cố vấn cộng đồng?
 
 Anyone can become a Community Advisor (CA). The role is suitable for people who are open-minded, curious and want to enhance ideas in Project Catalyst. Expertise in a specific field is helpful but not a requirement. If you already have a certain role in project catalyst, there might be a conflict of interest. For more information, take a look at the following document.
 
 ## Why should I become a community advisor?
 
-Community Advisors in the world largest DAO are at the forefront of newest innovation and disruption in the DApp / DeFi space. Being a Community Advisor is perfect for intellectually curious people. You can engage in a variety of topics, learn a lot on the way and earn a side income. 4% of every funding round will be allocated as rewards for assessments to CAs. For more information on the rewards, look at the "Community Advisor Incentive" header in the official Community Advisor Guide.
+Bất kỳ ai cũng có thể trở thành Cố vấn Cộng đồng (CA). Vai trò này phù hợp với những người cởi mở, tò mò và muốn nâng cao ý tưởng trong Project Catalyst. Kiến thức chuyên môn trong một lĩnh vực cụ thể là hữu ích nhưng không phải là một yêu cầu. 
 
-## How can I become a community advisor?
+## Làm cách nào để tôi có thể trở thành cố vấn cộng đồng?
 
-Each funding round, you can sign up to become a community advisor. Just go to Cardano Ideascale to register. Before each round, you will be automatically be asked if you are logged in. You won't miss it.
+Mỗi vòng tài trợ, bạn có thể đăng ký để trở thành cố vấn cộng đồng. Chỉ cần vào Cardano Ideascale để đăng ký. Trước mỗi vòng, bạn sẽ tự động được hỏi xem bạn đã đăng nhập hay chưa. Bạn sẽ không bỏ lỡ.
 
-## How can I be an effective community advisor?
+## Làm thế nào tôi có thể trở thành một cố vấn cộng đồng hiệu quả?
 
-To become a better CA, carefully read official CA guide and follow the guiding principles.
+Để trở thành một CA tốt hơn, hãy đọc kỹ hướng dẫn CA chính thức và tuân theo các nguyên tắc hướng dẫn.
 
-1. Treat proposals and proposers with respect.
-2. Separate the idea from the proposal.
-3. Be mindful of your time and knowledge.
-4. Community Advisors offer advice.
+1. Đối xử với các đề xuất và người đề xuất một cách tôn trọng.
+2. Tách ý tưởng khỏi đề xuất.
+3. Hãy lưu tâm đến thời gian và kiến thức của bạn.
+4. Cố vấn Cộng đồng đưa ra lời khuyên.
 
-## How can I stay up to date with the recent information for CAs?
+## Làm cách nào tôi có thể cập nhật thông tin gần đây cho các CA?
 
-For weekly updates, you can watch the weekly townhall update on IOG's Crowdcast or Youtube Channel Channel (every Wednesday). The newest funding rounds will be visible on Cardano Ideascale and important announcements regarding Catalyst will be posted on Telegram. To engage in more conversations about the proposals, join the Cardano Project Catalyst Discord.
+Để biết thông tin cập nhật hàng tuần, bạn có thể xem bản cập nhật hàng tuần của tòa thị chính trên Kênh IOG's Crowdcast hoặc Kênh Youtube (Thứ 4 hàng tuần). Các vòng tài trợ mới nhất sẽ được hiển thị trên Cardano Ideascale và các thông báo quan trọng về Catalyst sẽ được đăng trên Telegram. Để tham gia vào các cuộc trò chuyện nhiều hơn về các đề xuất, hãy tham gia Cardano Project Catalyst Discord.
 
-## How do I connect with other CAs?
+## Làm cách nào để kết nối với các CA khác?
 
-You can join the CA Telegram channel to get to know other CAs and engage in the most recent discussions. You can also find other active CAs in the community Cardano Project Catalyst Discord.
+Bạn có thể tham gia kênh CA Telegram để làm quen với các CA khác và tham gia vào các cuộc thảo luận gần đây nhất. Bạn cũng có thể tìm thấy các CA đang hoạt động khác trong cộng đồng Cardano Project Catalyst Discord.
 
-## What is the timeline for CAs in each funding round?
+## Lịch trình cho các CA trong mỗi vòng tài trợ là gì?
 
-Each funding round (every 12 weeks currently) will provide a 7 day window for CA Reviews called the "Assess Proposals" phase. This will be followed by a 5 day “Review of the Reviewers” phase carried out by Veteran Community Advisors (vCA). To see where we are in the process, take a look at the calendar.
+Mỗi vòng tài trợ (hiện tại là 12 tuần một lần) sẽ cung cấp khoảng thời gian 7 ngày cho các Đánh giá của CA được gọi là giai đoạn "Đánh giá Đề xuất". Tiếp theo là giai đoạn “Đánh giá của Người đánh giá” trong 5 ngày do Cố vấn Cộng đồng Cựu chiến binh (vCA) thực hiện. Để biết chúng tôi đang ở đâu trong quá trình này, hãy xem lịch.
 
-## Veteran Community Advisor
-### What is a veteran community advisor?
+## Cựu cố vấn Cộng đồng
+### Cựu cố vấn Cộng đồng là gì?
 
-Veteran Community Advisors (vCA) ensure that the quality of reviews by CAs are of a high standard and improve over time. vCAs help to filter out poor reviews and malicious actors that try to harm the review process.
+Cựu cố vấn Cộng đồng(vCA) đảm bảo rằng chất lượng đánh giá của các CA đạt tiêu chuẩn cao và được cải thiện theo thời gian. vCA giúp lọc ra các bài đánh giá kém và các tác nhân độc hại cố gắng gây hại cho quá trình đánh giá.
 
-### Why become a veteran community advisor?
+### Làm sao để trở thành Cựu cố vấn Cộng đồng?
 
-Veteran Community Advisors are able to further shape the proposal assessment stage in Project Catalyst and improve the overall decision making process. The role is perfect for CAs that want to further engage at the forefront of the evolution of the Project Catalyst funding process.
+Cựu cố vấn Cộng đồng có thể định hình thêm giai đoạn đánh giá đề xuất trong Project Catalyst và cải thiện quy trình ra quyết định tổng thể. Đây là vai trò hoàn hảo cho những CA muốn tham gia sâu hơn vào việc đi đầu trong sự phát triển của quy trình tài trợ Project Catalyst.
 
-### What does a veteran community advisor do?
+### Cựu cố vấn Cộng đồng sẽ làm gì?
 
-After the CAs submitted their reviews, an anonymized CSV-file containing all assessments will be passed for peer review by veteran CA's who will filter out substandard assessments. Non-constructive Feedback will be flagged according to the following model.
+Sau khi CA gửi đánh giá của họ, một tệp CSV ẩn danh chứa tất cả các đánh giá sẽ được các CA kỳ cựu của CA đánh giá ngang hàng, người sẽ lọc ra các đánh giá không đạt tiêu chuẩn. Phản hồi không mang tính xây dựng sẽ được gắn cờ theo mô hình sau..
 
-### Who can become a veteran community advisor?
+### Ai có thể trở thành Cựu cố vấn Cộng đồng?
 
-If you have already been a Community Advisor for a round of funding you can apply to be a Veteran Community Advisor.
+Nếu bạn đã là Cố vấn Cộng đồng cho một vòng tài trợ, bạn sẽ được mời trở thành Cựu cố vấn Cộng đồng.
