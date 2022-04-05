@@ -20,7 +20,7 @@ const sidebars = {
   mySidebar: {
     "Getting Started": [
       "getting-started/overview",
-      "getting-started/Catalyst",
+      //"getting-started/Catalyst",
 	  
        {
          type: "category",
@@ -103,7 +103,8 @@ const sidebars = {
     ],	
     "Project-Catalyst": [
       "Project-Catalyst/overview",
-	//  "Project-Catalyst/Funding-Process",
+	  "Project-Catalyst/Funding-Process",
+	  "Project-Catalyst/Catalyst-funded",
 	  "Project-Catalyst/Proposer",
 	  "Project-Catalyst/Community-advisor",
 	  "Project-Catalyst/Voter",	  
