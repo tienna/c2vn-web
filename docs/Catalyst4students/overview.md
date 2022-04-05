@@ -3,6 +3,7 @@ Chuỗi sự kiện tại Đại học Giao thông Vận tải
 
 **Catalyst Events 4 Vietnam Students** là dự án được cấp vốn ở vòng số 7 của Catalyst-Cardano.
 **Chương trình hội thảo tại trường Đại học Giao thông vận tải**
+Thông báo về khóa học Catalyst đã được [đăng tại website](http://fit.utc.edu.vn/hoi-thao-khoa-hoc-va-khoa-dao-tao-ve-catalyst-project/a1396.html) nhà trường ngày 10-03-2022
 
 ![](img/GTVT-blockchain.png)
 
