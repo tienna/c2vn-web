@@ -8,11 +8,11 @@ Project Catalyst là gì
 
 Catalyst là một loạt các thử nghiệm nhằm tạo ra các cấp độ đổi mới cao nhất của cộng đồng. Catalyst đang mang lại quản trị trên chuỗi cho chuỗi khối Cardano bằng cách cho phép cộng đồng tự xác định các ưu tiên để tăng trưởng. Nó cũng cho phép người tham gia triển khai tài trợ cho các đề xuất giải quyết các thách thức và tận dụng các cơ hội nảy sinh trong vòng đời của Cardano.
 
-Để thực hiện điều này, Dự án Catalyst được chia thành một loạt quỹ được triển khai sáu tuần một lần. Các quỹ này sẽ hợp pháp ý tưởng dưới hình thức đề xuất từ những người tham gia. Mỗi đề xuất sẽ tập trung vào một thách thức do nhóm Project Catalyst hoặc cộng đồng Project Catalyst đưa ra. Sau đó, các đề xuất sẽ trải qua quá trình sàng lọc cộng đồng, nơi chúng được kiểm tra tính khả thi, khả năng kiểm toán và tác động bởi một nhóm cố vấn cộng đồng được khuyến khích. Sau khi các đề xuất đã được hoàn thiện, chúng sẽ được cộng đồng bỏ phiếu và quỹ sẽ được phân phối dưới hình thức phụ trợ cho các dự án chiến thắng. Mỗi giai đoạn của quá trình này được mô tả chi tiết hơn trong toàn bộ tài liệu này.
+Để thực hiện điều này, Dự án Catalyst được chia thành một loạt quỹ được triển khai 12 tuần một lần. Các quỹ này sẽ hợp pháp ý tưởng dưới hình thức đề xuất từ những người tham gia. Mỗi đề xuất sẽ tập trung vào một thách thức do nhóm Project Catalyst hoặc cộng đồng Project Catalyst đưa ra. Sau đó, các đề xuất sẽ trải qua quá trình sàng lọc cộng đồng, nơi chúng được kiểm tra tính khả thi, khả năng kiểm toán và tác động bởi một nhóm cố vấn cộng đồng được khuyến khích. Sau khi các đề xuất đã được hoàn thiện, chúng sẽ được cộng đồng bỏ phiếu và quỹ sẽ được phân phối dưới hình thức phụ trợ cho các dự án chiến thắng. Mỗi giai đoạn của quá trình này được mô tả chi tiết hơn trong toàn bộ tài liệu này.
 
 ## Tại sao nên tham gia Project Catalyst?
 
-Project Catalyst cho phép tài trợ cho các dự án từ khắp nơi trên thế giới. Bạn sẽ làm quen với một cộng đồng toàn cầu có chung tầm nhìn: ngân hàng không có ngân hàng. Bạn có thể muốn tham gia Project Catalyst vì bạn là:
+Project Catalyst có thể tài trợ cho các dự án từ khắp nơi trên thế giới. Bạn sẽ làm quen với một cộng đồng toàn cầu những người có chung tầm nhìn: Bạn có thể muốn tham gia Project Catalyst vì bạn là:
 
 • Tìm cách mang những ý tưởng mới vào cuộc sống và giúp cho tương lai của các nền tảng phi tập trung
 • Muốn tìm hiểu về tất cả các ý tưởng và dự án mới đang được tài trợ hoặc về tiến trình của quản trị phi tập trung
