@@ -4,6 +4,12 @@ CA và vCA
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/wWUUBhcKygw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
+
+## [Làm thế nào để trở thành một Cựu CA?](https://youtu.be/sUdV8tWoPas).
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/sUdV8tWoPas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+
+
 ## Cố vấn cộng đồng là gì?
 
 Cố vấn Cộng đồng (CA) là người xem xét các đề xuất của những người khác đang cố gắng nhận tài trợ trong Dự án Catalyst. CA sẽ xem xét một đề xuất dựa trên một tập hợp các mục tiêu cho chiến dịch mà đề xuất đó đang xin tài trợ. CA sẽ cung cấp một số điểm cùng với lời giải thích bao hàm cơ sở lý luận đằng sau số điểm được đưa ra.
