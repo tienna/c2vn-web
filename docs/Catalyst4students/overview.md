@@ -1,4 +1,4 @@
-Blockchain cơ hội và thách thức
+Chuỗi sự kiện tại Đại học Giao thông Vận tải
 ==========
 
 **Catalyst Events 4 Vietnam Students** là dự án được cấp vốn ở vòng số 7 của Catalyst-Cardano.
