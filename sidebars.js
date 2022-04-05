@@ -115,7 +115,6 @@ const sidebars = {
     "Project-Catalyst": [
       "Project-Catalyst/overview",
 	  "Project-Catalyst/Funding-Process",
-	  "Project-Catalyst/Catalyst-funded",
 	  "Project-Catalyst/Proposer",
 	  "Project-Catalyst/Community-advisor",
 	  "Project-Catalyst/Voter",	  
