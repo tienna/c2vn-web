@@ -22,7 +22,7 @@ Chuỗi sự kiện tại Đại học Giao thông Vận tải
   
 **Chia sẻ về Cardano, hệ sinh thái trên Cardano tại trường Đại học Giao thông vận tải**
 
-## Hướng dẫn sử dụng ví, và sử dụng API từ blockfrost.
+## Phụ lục 1- Video Hướng dẫn sử dụng ví, và sử dụng API từ blockfrost.
 
 
   <iframe width="740" height="415" src="https://www.youtube.com/embed/No8ybpPnmIg" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
