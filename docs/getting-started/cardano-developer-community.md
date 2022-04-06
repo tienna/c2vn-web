@@ -1,7 +1,7 @@
 ---
 id: cardano-developer-community
 title: Bắt đầu với the Cardano Developer Community
-sidebar_label: Developer Community
+sidebar_label: Cộng đồng lập trình
 description: Bắt đầu với Cardano Developer Community.
 #image: ./img/og-developer-portal.png
 --- 
