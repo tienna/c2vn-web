@@ -58,6 +58,7 @@ const sidebars = {
       "getting-started/technical-concepts",
       "getting-started/testnets-and-devnets",
       "getting-started/cardano-developer-community",
+      "getting-started/videos",
     ],
     "Tạo Hợp đồng thông minh": [
       "smart-contracts/overview",
