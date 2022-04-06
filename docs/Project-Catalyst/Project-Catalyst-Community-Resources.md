@@ -5,7 +5,8 @@ Các link hữu ích Project Catalyst
 - Kết quả đề xuất Fund 7: https://bitly.com.vn/kibl0c
 - Group hỗ trợ viết đề xuất: https://t.me/+7l5lNKr63_M3NjE1
 - Group hỗ trợ làm CA, vCA: https://t.me/+JLL-rIHh0D03YjA1
-- 💡  Browse insights, ideas, and proposals: http://cardano.ideascale.com
+- 💡 Chia sẻ các ý tưởng, đề suất: http://cardano.ideascale.com
+- 💡 Trang để tra đánh giá của CA: https://cardanocataly.st/
 
 **Voting results**
 
@@ -14,18 +15,18 @@ Các link hữu ích Project Catalyst
 
 **Một số đường link hữu dụng khác**
 
-📣  Announcements only: https://t.me/cardanocatalyst 
+📣  Kênh thông báo tin tức chính thức của Catalyst: https://t.me/cardanocatalyst 
 
-🎥  Rewatch past town-halls: https://www.crowdcast.io/iohk  
+🎥  Xem lại các buổi họp của  town-halls: https://www.crowdcast.io/iohk  
 
-💬  Join main Telegram group: https://t.me/ProjectCatalystChat  
+💬  Nhóm Telegram group: https://t.me/ProjectCatalystChat  
 
-🏟  Go deeper with Catalyst Discord: https://discord.gg/2RnUtK8  
+🏟  Nhóm Catalyst trên Discord: https://discord.gg/2RnUtK8  
 
-🤓  Become Community Advisor/Mentor: https://t.me/CatalystCommunityAdvisors 
+🤓  Trở thành Community Advisor/Mentor: https://t.me/CatalystCommunityAdvisors 
 
-👩‍🔬  Join Proposal Owners: https://t.me/catalystproposers 
+👩‍🔬 Tham gia cộng đồng Proposal Owners: https://t.me/catalystproposers 
 
-🐛  Help find bugs & test: https://t.me/catalystdryruns 
+🐛  Tìm lỗi- bugs & test: https://t.me/catalystdryruns 
 
-⚙️  Get lost in data: https://bit.ly/ProjectCatalystDashboard 
+⚙️  Dữ liệu liên quan: https://bit.ly/ProjectCatalystDashboard 
