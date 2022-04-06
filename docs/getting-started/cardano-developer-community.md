@@ -6,7 +6,7 @@ description: Bắt đầu với Cardano Developer Community.
 #image: ./img/og-developer-portal.png
 --- 
 
-Apart from the two leading platforms [Stack Exchange](https://cardano.stackexchange.com) and [Cardano Forum](https://forum.cardano.org/c/developers/29), Cardano developers and stake pool operators spread across different platforms. Each with its niche.
+
 Ngoài hai nền tảng hàng đầu là [Stack Exchange](https://cardano.stackexchange.com) và [Cardano Forum](https://forum.cardano.org/c/developers/29), các nhà phát triển Cardano và các nhà vận hành pool phát triển các nền tảng khác nhau. Mỗi cái có thị trường ngách của nó.
 
 ## Kênh nhà phát triển Cardano
