@@ -1,3 +1,10 @@
+---
+id: videos
+title: Các buổi chia sẻ
+sidebar_label: Chia sẻ về Catalyst
+description: Các buổi chia sẻ về Catalyst tới Cộng đồng
+#image: ./img/og-developer-portal.png
+--- 
 # Danh sách các buổi chia sẻ Catalyst, Cardano2vn.io tới Cộng đồng
 ## Chia sẻ tại phiên họp tháng thường kỳ của viện CNTT-ĐHQGHN
 
