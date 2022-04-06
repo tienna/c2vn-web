@@ -40,7 +40,11 @@ Bất kể ví của bạn là gì, mỗi lần đăng ký sẽ cung cấp cho b
 
 ![img](/img/Catalyst-registration-and-voting-guide/11.47.58.png)
 
-2. Trong phiên bản Daedalus mới nhất, hãy điều hướng đến trang đăng ký bỏ phiếu từ menu ở phía bên tay trái.
+2. Với ví nhẹ Yoroi bạn có thể thực hiện theo video sau đây
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/oAQkf39FCO0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+
+4. Trong phiên bản Daedalus mới nhất, hãy điều hướng đến trang đăng ký bỏ phiếu từ menu ở phía bên tay trái.
 
 Xác nhận rằng bạn đã cài đặt ứng dụng Bầu chọn Catalyst.
 Xác nhận rằng bạn có ít nhất 500 ADA tại thời điểm chụp nhanh.
