@@ -44,7 +44,8 @@ Bất kể ví của bạn là gì, mỗi lần đăng ký sẽ cung cấp cho b
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/oAQkf39FCO0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
-4. Trong phiên bản Daedalus mới nhất, hãy điều hướng đến trang đăng ký bỏ phiếu từ menu ở phía bên tay trái.
+
+3. Trong phiên bản Daedalus mới nhất, hãy điều hướng đến trang đăng ký bỏ phiếu từ menu ở phía bên tay trái.
 
 Xác nhận rằng bạn đã cài đặt ứng dụng Bầu chọn Catalyst.
 Xác nhận rằng bạn có ít nhất 500 ADA tại thời điểm chụp nhanh.
@@ -52,13 +53,13 @@ Bấm vào "Đăng ký để bình chọn"
 
 ![img](/img/Catalyst-registration-and-voting-guide/9.38.47.jpg)
 
-3. Chọn ví bạn muốn bỏ phiếu và nhấp vào "Tiếp tục" (đảm bảo ví chứa số tiền yêu cầu tối thiểu để bỏ phiếu: 500 ADA * không bao gồm phần thưởng *)
+4. Chọn ví bạn muốn bỏ phiếu và nhấp vào "Tiếp tục" (đảm bảo ví chứa số tiền yêu cầu tối thiểu để bỏ phiếu: 500 ADA * không bao gồm phần thưởng *)
 
 Lưu ý: Số tiền này phải còn trong ví này cho đến khi có ảnh chụp nhanh, sẽ thu thập quyền biểu quyết của bạn. Ngày và thời gian chụp ảnh nhanh cho mỗi Quỹ sẽ được công bố thông qua các kênh truyền thông và xã hội chính thức của chúng tôi
 
 ![img](/img/Catalyst-registration-and-voting-guide/9.38.59.jpg)
 
-4. Nhập mật khẩu chi tiêu cho ví của bạn hoặc kết nối ví Phần cứng của bạn và nhấp vào "Gửi giao dịch đăng ký":
+5. Nhập mật khẩu chi tiêu cho ví của bạn hoặc kết nối ví Phần cứng của bạn và nhấp vào "Gửi giao dịch đăng ký":
 
 ![img](/img/Catalyst-registration-and-voting-guide/9.39.04.jpg)
 
@@ -66,33 +67,33 @@ Lưu ý: Số tiền này phải còn trong ví này cho đến khi có ảnh ch
 
 ![img](/img/Catalyst-registration-and-voting-guide/9.39.38.jpg)
 
-5. Chờ khoảng 5 phút cho đến khi giao dịch được xác nhận bởi blockchain và nhấp vào "Tiếp tục". Đừng đóng Daedalus trong thời gian này, nếu không đăng ký của bạn sẽ bị hủy và bạn sẽ phải bắt đầu lại:
+6. Chờ khoảng 5 phút cho đến khi giao dịch được xác nhận bởi blockchain và nhấp vào "Tiếp tục". Đừng đóng Daedalus trong thời gian này, nếu không đăng ký của bạn sẽ bị hủy và bạn sẽ phải bắt đầu lại:
 
  
 
 ![img](/img/Catalyst-registration-and-voting-guide/9.44.03.jpg)
 
-6. Đặt mã PIN gồm 4 chữ số mà bạn chọn, xác nhận mã đó và nhấp vào "Tiếp tục".
+7. Đặt mã PIN gồm 4 chữ số mà bạn chọn, xác nhận mã đó và nhấp vào "Tiếp tục".
 
 Hãy nhớ ghi nhớ nó hoặc viết nó ra vì bạn sẽ cần nó để bỏ phiếu sau này. Lưu ý rằng nếu bạn mất mã PIN, bạn sẽ không thể bỏ phiếu và bạn sẽ cần phải lặp lại quy trình đăng ký để chọn mã PIN mới:
 
 ![img](/img/Catalyst-registration-and-voting-guide/9.44.08.jpg)
 
-7. Daedalus sẽ tạo một mã QR mà bạn sẽ sử dụng trên Ứng dụng Catalyst để hoàn tất đăng ký và bỏ phiếu của bạn.
+8. Daedalus sẽ tạo một mã QR mà bạn sẽ sử dụng trên Ứng dụng Catalyst để hoàn tất đăng ký và bỏ phiếu của bạn.
 
 Nhấp vào "Lưu dưới dạng PDF" 
 Nhấp vào "Lưu" trong hộp thoại
 Lưu ý rằng nếu bạn không lưu mã QR, bạn sẽ không thể hoàn tất đăng ký và bỏ phiếu. 
 ![img](/img/Catalyst-registration-and-voting-guide/9.44.26.jpg)
 
-8. Chờ thông báo xác nhận "Đã tải xuống thành công PDF" và nhấp vào " Đóng ". 
+9. Chờ thông báo xác nhận "Đã tải xuống thành công PDF" và nhấp vào " Đóng ". 
 
 ![img](/img/Catalyst-registration-and-voting-guide/![img](/img/Catalyst-registration-and-voting-guide/9.44.31.jpg)
 
  
 
 TRÊN ĐIỆN THOẠI DI ĐỘNG CỦA BẠN
-9. Mở ứng dụng Bầu chọn Catalyst trên thiết bị di động của bạn và nhấn vào " Hãy bắt đầu " hoặc " Bỏ qua ":
+10. Mở ứng dụng Bầu chọn Catalyst trên thiết bị di động của bạn và nhấn vào " Hãy bắt đầu " hoặc " Bỏ qua ":
 
 ![img](/img/Catalyst-registration-and-voting-guide/1.jpg)
 
@@ -100,15 +101,15 @@ TRÊN ĐIỆN THOẠI DI ĐỘNG CỦA BẠN
 
 ![img](/img/Catalyst-registration-and-voting-guide/3.jpg)
 
-10. Tiếp theo - bấm vào " Đăng ký ngay ":
+11. Tiếp theo - bấm vào " Đăng ký ngay ":
 
 ![img](/img/Catalyst-registration-and-voting-guide/5.jpg)
 
-11. Tiếp theo - chạm vào " Quét mã QR bỏ phiếu " và quét mã QR mà bạn đã nhận được ở Bước 7.
+12. Tiếp theo - chạm vào " Quét mã QR bỏ phiếu " và quét mã QR mà bạn đã nhận được ở Bước 7.
 
 ![img](/img/Catalyst-registration-and-voting-guide/6.jpg)
 
-12. Nhập mã PIN 4 chữ số mà bạn đã đặt ở Bước 6 và nhấn " Xác nhận ".
+13. Nhập mã PIN 4 chữ số mà bạn đã đặt ở Bước 6 và nhấn " Xác nhận ".
 
 ![img](/img/Catalyst-registration-and-voting-guide/7.jpg)
 
@@ -116,31 +117,31 @@ TRÊN ĐIỆN THOẠI DI ĐỘNG CỦA BẠN
 
 ## Bỏ phiếu (Vote)
 
-13. Bây giờ bạn cần đợi cho đến khi cuộc bỏ phiếu bắt đầu. Khi cuộc bỏ phiếu bắt đầu, bạn sẽ thấy quyền biểu quyết của mình, tương ứng với lượng ADA, mà bạn có trong ví của mình tại thời điểm chụp nhanh. Trong trường hợp của chúng tôi, quyền biểu quyết sẽ là 984.
+14. Bây giờ bạn cần đợi cho đến khi cuộc bỏ phiếu bắt đầu. Khi cuộc bỏ phiếu bắt đầu, bạn sẽ thấy quyền biểu quyết của mình, tương ứng với lượng ADA, mà bạn có trong ví của mình tại thời điểm chụp nhanh. Trong trường hợp của chúng tôi, quyền biểu quyết sẽ là 984.
 
 ![img](/img/Catalyst-registration-and-voting-guide/1(1).jpg)
 
-14. Đọc qua các đề xuất khác nhau và bỏ phiếu (Có hoặc Không). Bạn có thể bỏ phiếu cho một đề xuất duy nhất, cho một số đề xuất hoặc cho tất cả các đề xuất - điều đó tùy thuộc vào bạn. Số phiếu bầu sẽ không ảnh hưởng đến số lượng phần thưởng của bạn, tương tự nếu bạn hoàn toàn không bỏ phiếu.
+15. Đọc qua các đề xuất khác nhau và bỏ phiếu (Có hoặc Không). Bạn có thể bỏ phiếu cho một đề xuất duy nhất, cho một số đề xuất hoặc cho tất cả các đề xuất - điều đó tùy thuộc vào bạn. Số phiếu bầu sẽ không ảnh hưởng đến số lượng phần thưởng của bạn, tương tự nếu bạn hoàn toàn không bỏ phiếu.
 
 ![img](/img/Catalyst-registration-and-voting-guide/2(1).jpg)
 
-15. Chọn một đề xuất.
+16. Chọn một đề xuất.
 
 ![img](/img/Catalyst-registration-and-voting-guide/3(1).jpg)
 
-16. Sau mỗi lần bỏ phiếu, ứng dụng Bầu chọn Catalyst sẽ nhắc bạn rằng phiếu bầu của bạn vẫn chưa được gửi.
+17. Sau mỗi lần bỏ phiếu, ứng dụng Bầu chọn Catalyst sẽ nhắc bạn rằng phiếu bầu của bạn vẫn chưa được gửi.
 
 ![img](/img/Catalyst-registration-and-voting-guide/4.jpg)
 
-17. Khi bạn đã sẵn sàng gửi phiếu bầu của mình, hãy chuyển đến phần "Phiếu bầu của tôi" và nhấn vào "Bỏ phiếu bầu của tôi"
+18. Khi bạn đã sẵn sàng gửi phiếu bầu của mình, hãy chuyển đến phần "Phiếu bầu của tôi" và nhấn vào "Bỏ phiếu bầu của tôi"
 
 ![img](/img/Catalyst-registration-and-voting-guide/5(1).jpg)
 
-18. Nhập mã PIN của bạn (bạn đã chọn ở Bước 6) để cho phép phiếu bầu và nhấn "Xác nhận"
+19. Nhập mã PIN của bạn (bạn đã chọn ở Bước 6) để cho phép phiếu bầu và nhấn "Xác nhận"
 
 ![img](/img/Catalyst-registration-and-voting-guide/6(1).jpg)
 
-19. Bạn sẽ thấy một thông báo xác nhận nói rằng các phiếu bầu của bạn hiện đã được gửi đến blockchain. Điều này kết thúc quá trình bỏ phiếu.
+20. Bạn sẽ thấy một thông báo xác nhận nói rằng các phiếu bầu của bạn hiện đã được gửi đến blockchain. Điều này kết thúc quá trình bỏ phiếu.
 
 ![img](/img/Catalyst-registration-and-voting-guide/7(1).jpg)
 
