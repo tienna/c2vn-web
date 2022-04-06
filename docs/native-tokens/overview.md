@@ -7,7 +7,7 @@ description: Discover Cardano's native tokens.
 
 ---
 
-![Cardano Discover Native Tokens](../../static/img/card-native-tokens-title.svg)
+
 
 :::note
 There are currently two ways to make your NFTs:
