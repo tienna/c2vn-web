@@ -1,7 +1,7 @@
 ---
 id: technical-concepts
 title: Get started with the technical concepts
-sidebar_label: Technical Concepts
+sidebar_label: Các khái niệm kỹ thuật
 description: Get started with the technical concepts behind Cardano.
 #image: ./img/og-developer-portal.png
 --- 
