@@ -62,6 +62,7 @@ const config = {
                 label: 'Bắt đầu',
             },
             { to: '/blog', label: 'Blog', position: 'left' },
+            { to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             {
                 href: 'https://github.com/cardano2vn',
                 label: 'GitHub',
@@ -92,28 +93,25 @@ const config = {
                 label: 'Github',
                 href: 'https://github.com/cardano2vn',
             },
-        ],
+            ],
+        },
+        {
+            title: 'More',
+            items: [{
+                label: 'Blog',
+                to: '/blog',
+            },
+            { 
+                label: "About Us",
+                to: "/about-us",
+            },],
+        },],
+        copyright: `The content of this site is referenced and copied from the <a href="https://developers.cardano.org/" target="_blank" rel="noopener noreferrer">Cardano Developer</a>, ${new Date().getFullYear()}`,
     },
-    {
-        title: 'More',
-        items: [{
-            label: 'Blog',
-            to: '/blog',
-        },
-        { 
-            label: "About Us",
-            to: "/about-us",
-        },
-    ],
-},
-],
-    copyright: `The content of this site is referenced and copied from the <a href="https://developers.cardano.org/" target="_blank" rel="noopener noreferrer">Cardano Developer</a>, ${new Date().getFullYear()}`,
-},
-prism: {
-    theme: lightCodeTheme,
-    darkTheme: darkCodeTheme,
-},
-}),
+    prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+    },}),
 };
 
 module.exports = config;

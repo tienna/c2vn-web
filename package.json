@@ -15,22 +15,29 @@
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.ff31de0ff",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.18",
     "@docusaurus/plugin-google-analytics": "^2.0.0-beta.ff31de0ff",
     "@docusaurus/plugin-google-gtag": "^2.0.0-beta.ff31de0ff",
     "@docusaurus/preset-classic": "^2.0.0-beta.ff31de0ff",
+    "@download/blockies": "1.0.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@emurgo/cip4-js": "1.0.6",
     "@mdx-js/react": "^1.6.21",
     "@mui/icons-material": "^5.2.5",
-    "@mui/material": "^5.2.6",
+    "@mui/material": "^5.6.0",
+    "@mui/styled-engine-sc": "^5.5.2",
     "@svgr/webpack": "^5.5.0",
+    "bignumber.js": "^9.0.1",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",
     "npx": "^10.2.2",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "url-loader": "^4.1.1"
+    "styled-components": "^5.3.5",
+    "url-loader": "^4.1.1",
+    "buffer": "^6.0.3"
   },
   "browserslist": {
     "production": [
@@ -43,5 +50,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@minswap/cardano-serialization-lib-browser": "10.0.4-minswap.2",
+    "copy-webpack-plugin": "^5.0.0",
+    "process": "^0.11.10",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^3.1.5"
   }
 }

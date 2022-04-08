@@ -86,6 +86,16 @@ const FeatureList = [
     targetUrl: "docs/be-apart-of-governance/overview"
   },
   {
+    title: 'Tham gia vào Catalyst như thế nào?',
+    Svg: require('../../static/img/features/project-catalyst.svg').default,
+    description: (
+      <>
+        Chúng tôi sẽ hướng dẫn bạn cách viết dự án, làm CA/vCA, bỏ phiếu cùng nhiều vai trò khác. Bạn sẽ tìm thấy một cơ hội nghề nghiệp mới ở đây.
+      </>
+    ),
+    targetUrl: "docs/project-catalyst/overview"
+  },
+  {
     title: 'Mang Project Catalyst Townhall đến Việt Nam',
     Svg: require('../../static/img/features/vn-townhall-channel.svg').default,
     description: (

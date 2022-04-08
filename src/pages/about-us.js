@@ -24,17 +24,16 @@ function HomepageHeader() {
     );
 }
 
-
 export default function Home() {
     const {siteConfig} = useDocusaurusContext();
         return (
             <Layout
-            title={`About Us`}
-            description="Mang Cardano về Việt Nam">
-            <HomepageHeader />
-            <main>
-                <TeamMembers />
-            </main>
+                title={`About Us`}
+                description="Mang Cardano về Việt Nam">
+                <HomepageHeader />
+                <main>
+                    <TeamMembers />
+                </main>
             </Layout>
     );
 }

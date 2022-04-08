@@ -113,21 +113,21 @@ const sidebars = {
       "setup-application/Datums_redeemer_tutorial",	   
       "setup-application/Validator_scripts_tutorial",	  
     ],	
-    "Project-Catalyst": [
-      "Project-Catalyst/overview",
-	  "Project-Catalyst/Funding-Process",
-	  "Project-Catalyst/Catalyst-funded",
-	  "Project-Catalyst/Proposer",
-	  "Project-Catalyst/Community-advisor",
-	  "Project-Catalyst/Voter",	  
-	  "Project-Catalyst/Catalyst-registration-and-voting-guide",
-	  "Project-Catalyst/Check-rewards",
-	  "Project-Catalyst/Project-Catalyst-Community-Resources",
+    "Project Catalyst": [
+      "project-catalyst/overview",
+      "project-catalyst/funding-process",
+      "project-catalyst/catalyst-funded",
+      "project-catalyst/proposer",
+      "project-catalyst/community-advisor",
+      "project-catalyst/voter",	  
+      "project-catalyst/catalyst-registration-and-voting-guide",
+      "project-catalyst/check-rewards",
+      "project-catalyst/project-catalyst-community-resources",
     ],	
 	
     "Catalyst 4 students": [
-      "Catalyst4students/overview",
-      "Catalyst4students/daihocnguyentrai",
+      "catalyst4students/overview",
+      "catalyst4students/daihocnguyentrai",
     ],
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
