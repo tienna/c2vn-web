@@ -21,7 +21,7 @@ Chúng tôi sẽ không đi sâu vào cách tạo một nút Cardano, nhưng đi
 
 :::
 
-## What are native tokens/assets?
+## Native tokens/assets là gì?
 
 The Cardano Blockchain has the unique ability to create, interact with, and delete bespoke tokens (or 'assets') natively. In this example, native means that, in addition to sending and receiving the official currency ada, you may interact with custom assets right out of the box - without the use of smart contracts.
 
