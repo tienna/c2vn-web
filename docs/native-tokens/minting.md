@@ -1,6 +1,6 @@
 
 ---
-id: minting
+id: Minting Native Assets
 title: Minting Native Assets
 sidebar_label: Minting Native Assets
 description: How to mint native tokens on Cardano. 
