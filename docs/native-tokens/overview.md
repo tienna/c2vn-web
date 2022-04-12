@@ -1,23 +1,24 @@
 ---
 id: overview
 slug: /native-tokens/
-title: Discover Native Tokens
-sidebar_label: Overview
-description: Discover Cardano's native tokens. 
+title: Khám phá Native Tokens
+sidebar_label: Tổng quan
+description: Khám phá Cardano's native tokens. 
 
 ---
 
 
 
 :::note
-There are currently two ways to make your NFTs:
+Hiện có 02 cách để tạo ra NFTs:
 
-- For the not-so-tech-savvy through someone else. The [showcase section](../../showcase/?tags=nft) has a few services that offer this.
-- For the more tech-savvy on a Cardano node. If you want to have full control over your tokens, you need to mint them **yourself**. And this is what this section is all about.
+- Dành cho người không rành về công nghệ. The [showcase section](../../showcase/?tags=nft) có một số dịch vụ cung cấp việc tạo này.
+- Đổi với người hiểu biết về công nghệ. Nếu bạn muốn có toàn quyền kiểm soát các mã thông báo của mình, bạn cần **tự đúc**. và đây là nội dung của bài viết này.
 
-Minting requires a certain amount of skill in navigating and working with Linux through the terminal and a running Cardano node.
+Minting đòi hỏi một số kỹ năng nhất định trong việc điều hướng và làm việc với Linux thông qua thiết bị đầu cuối và một node Cardano đang chạy.
+ 
+Chúng tôi sẽ không đi sâu vào cách tạo một nút Cardano, nhưng điều này được đề cập trong [danh mục Cardano tích hợp] (https://cardano2vn.io/docs/integrate-cardano/overview).
 
-We will not go into how to spin up a Cardano node, but this is covered in the [integrate Cardano category](../get-started/installing-cardano-node).
 :::
 
 ## What are native tokens/assets?
