@@ -4,8 +4,8 @@ title: Cảm ơn bạn đã quan tâm
 sidebar_label: "null"
 description: "null"
 --- 
-## Cardano2vn xin cảm ơn Cộng đồng đã ủng hộ các dự án của chúng tôi
-## Sau đây là danh sách các dự án của chúng tôi đã được cấp vốn.
+## Cardano2vn xin cảm ơn Cộng đồng đã tin tưởng
+## và ủng hộ chúng tôi.
 ### Dự án được cấp vốn ở Fund 6
 1. [Bring Smart Contracts to Vietnam.](https://cardano.ideascale.com/c/idea/365570)
 
