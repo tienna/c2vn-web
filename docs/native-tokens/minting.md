@@ -6,33 +6,33 @@ description: How to mint native tokens on Cardano.
 #image: ./img/og-developer-portal.png
 --- 
 
+Trong phần này, chúng tôi sẽ khai thác tài sản gốc --**chứ không phải NFT**
 
-In this section, we will be minting native assets - **not NFTs**. 
+Chúng tôi đặc biệt khuyên bạn nên tham khảo phần này để hiểu cách hoạt động của giao dịch và đúc tiền.
+Minting NFTs sẽ tuân theo quy trình tương tự, chỉ với một vài chỉnh sửa. Nếu bạn quan tâm NFT, vui lòng truy cập 
+[Minting NFTs](minting-nfts.md).
 
-It is strongly advised to work through this section to understand how transactions and minting works.  
-Minting NFTs will follow the same process, with only a few tweaks. If you want to jump to NFTs, please visit [Minting NFTs](minting-nfts.md).
+## Yêu cầu
+1. Một nút Cardano đang chạy và được đồng bộ hóa - có thể truy cập thông qua lệnh `cardano-cli`. Hướng dẫn này được viết bằng `cardano-cli` v 1.27.0. Một số lệnh có thể thay đổi.
+2. Bạn có một số kiến thức về Linux về cách điều hướng giữa các thư mục, tạo và chỉnh sửa tệp cũng như thiết lập và kiểm tra các biến thông qua Linux shell.
 
-## Prerequisites
 
-1. A running and synced Cardano node - accessible through the `cardano-cli` command. This guide is written with `cardano-cli` v 1.27.0. Some commands may be subject to change.
-2. You have some knowledge in Linux as to navigation between directories, creating and editing files, and setting and inspecting variables via Linux shell.
-
-## Overview
-This tutorial will give you a copy & pastable walk through the complete token lifecycle:
+## Tổng quan
+Hướng dẫn này sẽ cung cấp cho bạn một bản sao và hướng dẫn có thể dán qua vòng đời hoàn chỉnh của mã thông báo:
 
 ![image](https://user-images.githubusercontent.com/34856010/162867266-a61dfbe8-f0cb-4c97-9c1a-7ef71d818e23.png)
 
+Đây sẽ là những bước chúng ta cần thực hiện để hoàn thành toàn bộ vòng đời:
 
-These will be the steps we need to take to complete the whole lifecycle:
+1. Thiết lập mọi thứ
+2. Tạo địa chỉ và khóa (keys) mới
+3. Tạo chính sách đúc tiền
+4. Dự thảo một giao dịch đúc tiền
+5. Tính phí
+6. Gửi mã thông báo giao dịch và đúc token (cho chính chúng tôi)
+7. Gửi token đến ví Daedalus
+8. Đốt token
 
-1. Set everything up
-2. Build a new address and keys
-3. Generate a minting policy
-4. Draft a minting transaction
-5. Calculate fees
-6. Send the transaction and mint tokens (to ourselves)
-7. Send the tokens to a Daedalus wallet 
-8. Burn some token 
 
 ### Directory structure
 

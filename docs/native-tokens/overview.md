@@ -17,7 +17,7 @@ Hiện có 02 cách để tạo ra NFTs:
 
 Minting đòi hỏi một số kỹ năng nhất định trong việc điều hướng và làm việc với Linux thông qua thiết bị đầu cuối và một node Cardano đang chạy.
  
-Chúng tôi sẽ không đi sâu vào cách tạo một nút Cardano, nhưng điều này được đề cập trong [danh mục Cardano tích hợp] (https://cardano2vn.io/docs/integrate-cardano/overview).
+Chúng tôi sẽ không đi sâu vào cách tạo một nút Cardano, nhưng điều này được đề cập trong [danh mục Cardano tích hợp](https://cardano2vn.io/docs/integrate-cardano/overview).
 
 :::
 

@@ -1,14 +1,20 @@
 ---
 id: overview
-title: Cảm ơn bạn đã quan tâm
+title: Các dự án được cấp vốn
 sidebar_label: "null"
 description: "null"
 --- 
-### Đây là chuyên mục chúng tôi dự kiến nói về cách tiếp cận với Project Catalyst
-Project Catalyst là một hệ quản trị phi tập trung cho phép mọi người từ cộng đồng có thể đến để đề xuất ý tưởng, viết dự án triển khai và được cấp vốn.
-Chúng tôi có một số đề án đã được cấp vốn từ Catalys -Thông tin chi tiết [tại đây](https://cardano2vn.io/docs/getting-started/catalyst/)
+## Cardano2vn xin cảm ơn Cộng đồng đã tin tưởng và ủng hộ chúng tôi.
+
+### Dự án được cấp vốn ở Fund 6
+1. [Bring Smart Contracts to Vietnam.](https://cardano.ideascale.com/c/idea/365570)
+
+### Dự án được cấp vốn ở Fund 7
+1. [Catalyst Events 4 Vietnam Students.](https://cardano.ideascale.com/a/dtd/Catalyst-Events-4-Vietnam-Students/382615-48088)
+2. [Localize Yoroi for Vietnam market.](https://cardano.ideascale.com/a/dtd/Localize-Yoroi-for-Vietnam-market/382591-48088)
+3. [Cardano Technical hub in Vietnamese.](https://cardano.ideascale.com/a/dtd/Cardano-Technical-hub-in-Vietnamese/382651-48088)
 
 
-Cảm ơn bạn
+![Thank You Card (Landscape)](https://user-images.githubusercontent.com/34856010/163514635-a8fbf5f9-7bf3-4810-81d8-21c66658ea72.png)
 
-Cardano2vn
+**Cardano2vn**
