@@ -53,7 +53,7 @@ const FeatureList = [
         Mã thông báo gốc là gì, cách đúc chúng, cách tạo NFT và tại sao bạn không cần hợp đồng thông minh cho tất cả những điều này.
       </>
     ),
-    targetUrl: "docs/native-tokens/overview"
+    targetUrl: "docs/native-tokens"
   },
   {
     title: 'Khóa đào tạo Plutus của Dr. Lars',

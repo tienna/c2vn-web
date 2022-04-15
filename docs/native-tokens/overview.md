@@ -1,13 +1,11 @@
 ---
 id: overview
-slug: /native-tokens/
+slug: /native-tokens
 title: Khám phá Native Tokens
 sidebar_label: Tổng quan
 description: Khám phá Cardano's native tokens. 
 
 ---
-
-
 
 :::note
 Hiện có 02 cách để tạo ra NFTs:
