@@ -33,7 +33,7 @@ const FeatureList = [
         Khám phá ví Cardano và tìm hiểu cách tích hợp Cardano vào các ứng dụng và trang web
       </>
     ),
-    targetUrl: "docs/integrate-cardano/note",
+    targetUrl: "docs/integrate-cardano/overview",
   },
   {
     title: 'Xây dựng với Siêu dữ liệu giao dịch',
