@@ -32,7 +32,7 @@ Nội dung buổi số 2 bao gồm:
 - Thực hành thao tác với API
 
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/1WG3icL-HJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="420" src="https://www.youtube.com/embed/1WG3icL-HJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Buổi 3: Blockchain Tiềm năng và ứng dụng trong nền kinh tế số ##
 
@@ -43,7 +43,7 @@ Nội dung buổi chia sẻ bao gồm:
 - Công cụ hỗ trợ
 - Thực hành
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/2d4xwIfkpfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="420" src="https://www.youtube.com/embed/2d4xwIfkpfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
   
