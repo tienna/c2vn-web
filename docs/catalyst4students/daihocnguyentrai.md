@@ -56,7 +56,7 @@ Nội dung buổi chia sẻ bao gồm:
 - Công cụ hỗ trợ
 - Thực hành: đăng ký CA, đánh giá mẫu các dự án.
 
-<iframe width="100%" height="420" src="https://www.youtube.com/embed/v=NACwJ3tcJr8&t=926s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="420" src="https://www.youtube.com/embed/NACwJ3tcJr8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 **Làm thế nào để trở thành CA/vCA tốt.**
   
