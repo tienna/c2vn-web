@@ -4,7 +4,7 @@ title: Các dự án được cấp vốn
 sidebar_label: "null"
 description: "null"
 --- 
-** Cardano2vn xin cảm ơn Cộng đồng đã tin tưởng và ủng hộ chúng tôi.**
+**Cardano2vn xin cảm ơn Cộng đồng đã tin tưởng và ủng hộ chúng tôi.**
 
 ## Dự án được cấp vốn ở Fund 6
 1. [Bring Smart Contracts to Vietnam.](https://cardano.ideascale.com/c/idea/365570)
