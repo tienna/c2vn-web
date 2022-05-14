@@ -16,9 +16,9 @@ description: "null"
 
 ## Dự án được cấp vốn ở Fund 8
 1. [Simplify SPO rollups in Vietnam.](https://cardano.ideascale.com/c/idea/399806)
-2.[Open ISPO](https://cardano.ideascale.com/c/idea/403106)
-3.[Cardano Coffee lounge in Vietnam](https://cardano.ideascale.com/c/idea/398359)
-4.[Localize iohk.io for vietnamese](https://cardano.ideascale.com/c/idea/401887)
+2. [Open ISPO](https://cardano.ideascale.com/c/idea/403106)
+3. [Cardano Coffee lounge in Vietnam](https://cardano.ideascale.com/c/idea/398359)
+4. [Localize iohk.io for vietnamese](https://cardano.ideascale.com/c/idea/401887)
 
 ![Thank You Card (Landscape)](https://user-images.githubusercontent.com/34856010/163514635-a8fbf5f9-7bf3-4810-81d8-21c66658ea72.png)
 
