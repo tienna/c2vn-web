@@ -22,7 +22,7 @@ Sự đồng thuận Để tồn tại sự đồng thuận, số lượng vCAs 
 
 ## THẺ ĐỎ
 
->Đánh giá trống
+### Đánh giá trống
 
 Việc xác định các đánh giá trống sẽ được thực hiện tự động, thông qua một kịch bản.
 
@@ -37,7 +37,7 @@ Nếu không có trang tổng quan nào trong IdeaScale nơi CA có thể xem c�
 
 
 
->Các cáo buộc xúc phạm / thù địch / tục tĩu / không có căn cứ
+### Các cáo buộc xúc phạm / thù địch / tục tĩu / không có căn cứ
 
 Nếu 50% trở lên trong số vCA (đã tham gia đánh giá cụ thể) báo cáo một hoặc nhiều tiêu chí dưới đây, CA sẽ nhận thẻ đỏ và sẽ bị loại khỏi quỹ tương ứng. quyền được thưởng.
 
@@ -48,7 +48,7 @@ Nếu 50% trở lên trong số vCA (đã tham gia đánh giá cụ thể) báo 
 
 ## THẺ VÀNG
 
->Phản hồi không mang tính xây dựng
+### Phản hồi không mang tính xây dựng
 
 Mục đích của việc đánh giá trong Catalyst là để thúc đẩy những lời chỉ trích mang tính xây dựng. Thông qua các đánh giá mang tính xây dựng, cử tri có thể có bản tóm tắt và đánh giá đủ điều kiện về các đề xuất để tạo điều kiện thuận lợi cho việc ra quyết định của họ, cho phép họ trả lời các câu hỏi của họ và những người đề xuất có thể có phản hồi mang tính xây dựng về đề xuất, cách cải thiện đề xuất hoặc tại sao nó tốt . 
 
@@ -60,7 +60,7 @@ Hơn nữa, CA không có nhiệm vụ quyết định ý tưởng nào nên đ�
 
 Điều đó có nghĩa là, nếu cơ sở lý luận đánh giá không hỗ trợ người bỏ phiếu hoặc người đề xuất theo bất kỳ cách nào, không chứng minh rõ ràng xếp hạng đã cho và không có lý do hợp lý nào về cơ sở lý luận, cách cải thiện đề xuất hoặc tại sao nó tốt, thì đánh giá đó không mang tính xây dựng.
 
->Theo dõi:
+### Theo dõi:
 
 - Sửa lại đơn giản của văn bản đề xuất.
 - Trả lời câu hỏi đánh giá đơn giản như một lời khẳng định hoặc phủ định: “Đề xuất này giải quyết rõ ràng thách thức và được viết rất tốt với các từ được lựa chọn rất cẩn thận có độ dài thích hợp, được thực hiện tốt!”
@@ -69,13 +69,13 @@ Hơn nữa, CA không có nhiệm vụ quyết định ý tưởng nào nên đ�
 Nếu 50% trở lên trong số các vCA  (những người đã tham gia đánh giá đánh giá cụ thể) cho rằng lý do không mang tính xây dựng, CA sẽ nhận thẻ vàng, đánh giá của anh ta sẽ bị loại trừ, cũng như việc kiếm tiền từ đánh giá.
 
 
->Điểm số không phù hợp với lý do
+### Điểm số không phù hợp với lý do
 
 Nếu 50% trở lên của vCA (những người đã tham gia đánh giá cụ thể) cho rằng điểm số không phù hợp với lý do, CA sẽ nhận một thẻ vàng, bài đánh giá của anh ta sẽ bị loại trừ. cũng như việc kiếm tiền từ đánh giá.
 
 Trong trường hợp này, chúng ta phải chú ý đến những đánh giá khen ngợi một đề xuất nhưng cho điểm thấp hoặc những đánh giá chỉ trích tiêu cực một đề xuất nhưng lại cho điểm cao.
 
->Đánh giá được sao chép một cách có hệ thống mà không có lý do chính đáng
+### Đánh giá được sao chép một cách có hệ thống mà không có lý do chính đáng
 
 Một số CA sử dụng các khuôn mẫu và điều này làm cho một số đánh giá trông giống nhau, điều này không nhất thiết là một vấn đề.
 
@@ -87,7 +87,7 @@ Các trường hợp nên áp dụng thẻ vàng:
 
 Nếu 50% trở lên trong số các vCA  những người đã tham gia đánh giá cụ thể) cho rằng cơ sở lý luận đã được sao chép, CA sẽ nhận thẻ vàng, đánh giá của anh ta sẽ bị loại trừ, cũng như việc kiếm tiền từ đánh giá.
 
->Đọc Đề xuất Không đầy đủ
+### Đọc Đề xuất Không đầy đủ
 
 Nếu 50% trở lên trong số vCA  (những người đã tham gia đánh giá đánh giá cụ thể) cho rằng CA rõ ràng không nhận thấy bất kỳ khía cạnh nào được mô tả trong đề xuất hoặc trong các tệp đính kèm và ví dụ như đánh giá của anh ta đã bị xâm phạm : chi tiết về phân bổ ngân sách, chi tiết về kinh nghiệm thời gian đã bị bỏ qua, CA sẽ nhận thẻ vàng, đánh giá của anh ta sẽ bị loại trừ, cũng như việc kiếm tiền từ đánh giá.
 
@@ -101,7 +101,7 @@ Hoàn toàn không có bối cảnh hoặc
 
 CA sẽ nhận thẻ vàng, đánh giá của anh ta sẽ bị loại trừ, cũng như việc kiếm tiền từ đánh giá.
 
->Vi phạm chung
+### Vi phạm chung
 
 Nếu 50% trở lên trong số vCA  (những người đã tham gia đánh giá đánh giá cụ thể) cho rằng tuyên bố của người đề xuất là có lý và CA đã không hành động theo hướng dẫn của CAs hoặc đưa ra một lỗi đánh giá rõ ràng về lý do của nó, CA sẽ nhận thẻ vàng, đánh giá của anh ta về đề xuất tương ứng sẽ bị loại trừ, cũng như việc kiếm tiền từ đánh giá.
 
@@ -118,22 +118,22 @@ Việc bao gồm các danh mục này sẽ cho phép chúng ta thấy khuôn m�
 
 Vì chúng tôi đã có tùy chọn báo hiệu "Phản hồi mang tính xây dựng", CÔNG BẰNG cuối cùng là dư thừa hoặc phóng đại. Do đó, CÔNG BẰNG sẽ bị xóa và BỀN VỮNG và CHẤP NHẬN danh mụcsẽ được đưa vào. 
 
->Phản hồi mang tính xây dựng
+### Phản hồi mang tính xây dựng
 
 Danh mục này cho phép đánh giá các tiêu chuẩn chất lượng cao được nêu bật và được sử dụng làm ví dụ cho các Cố vấn cộng đồng khác, chúng phù hợp với các nguyên tắc, mang tính xây dựng và được viết tốt. Quyết định của CA sẽ được tính để tính toán sự đồng thuận.
 
->Có thể chấp nhận
+### Có thể chấp nhận
 
 Đánh giá nằm trong mức dự kiến, phù hợp với hướng dẫn của CA, mang tính xây dựng và không cần thẻ (đỏ hoặc vàng). Quyết định của CA sẽ được tính để tính toán sự đồng thuận.
 
->vCA
+### vCA
 
 Loại này cho phép đã phân tích đề xuất, không thấy rõ rằng đánh giá là Chấp nhận được hoặc xứng đáng được nhận thẻ (đỏ hoặc vàng). Vì vậy, nó sẽ là thích hợp để duy trì sự trung lập và tiết chế. Quyết định của CA sẽ không được tính để tính toán sự đồng thuận, nhưng quyết định của anh ta sẽ rất quan trọng đối với việc thu thập dữ liệu và cải thiện quy trình.
 
->Lenient
+### Lenient
 
-T có thể phù hợp với các hướng dẫn nhưng lại quá mềm so với đánh giá. Sẽlà một đánh giá chọn ra một tiêu chí của đề xuất là tính hợp pháp để được xếp hạng cao, không tính đến các vấn đề được trình bày trong đề xuất. Quyết định của CA sẽ không được tính để tính toán sự đồng thuận, nhưng quyết định của anh ta sẽ rất quan trọng đối với việc thu thập dữ liệu và cải thiện quy trình.
+Đánh giá có thể phù hợp với các hướng dẫn nhưng lại quá mềm so với đánh giá. Sẽlà một đánh giá chọn ra một tiêu chí của đề xuất là tính hợp pháp để được xếp hạng cao, không tính đến các vấn đề được trình bày trong đề xuất. Quyết định của CA sẽ không được tính để tính toán sự đồng thuận, nhưng quyết định của anh ta sẽ rất quan trọng đối với việc thu thập dữ liệu và cải thiện quy trình.
 
->Nghiêm ngặt
+### Nghiêm ngặt
 
 Đánh giá của anh ta có thể phù hợp với các nguyên tắc nhưng quá khắc nghiệt với xếp hạng. Sẽ là một đánh giá chọn ra một tiêu chí của đề xuất là tính hợp pháp đối với một đánh giá thấp, bỏ qua các khía cạnh / thông tin tích cực được trình bày trong đề xuất. Quyết định của CA sẽ không được tính để tính toán sự đồng thuận, nhưng quyết định của anh ta sẽ rất quan trọng đối với việc thu thập dữ liệu và cải thiện quy trình.
