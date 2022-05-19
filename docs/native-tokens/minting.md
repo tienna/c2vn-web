@@ -74,13 +74,12 @@ Số 1, 3 và 4 sẽ được xác định trong cái gọi là kịch bản ch�
 4. Ai sẽ có thể đúc chúng?
 --> chỉ có một chữ ký (mà chúng tôi sơ hữu) mới có thể ký giao dịch và do đó có thể đúc mã thông báo
 
-## Setup
-### Cardano node socket path
-To work with the `cardano-cli` we need to export an environment variable called `CARDANO_NODE_SOCKET_PATH`. Please note that the variable name is all uppercase.
-The variable needs to hold the absolute path to the socket file of your running Cardano node installation.
+## Cài đặt- Thiết lập
+### Thiết lập Cardano node socket path
+Để làm việc với `cardano-cli` chúng ta cần thiết lập một biến môi trường được gọi là `CARDANO_NODE_SOCKET_PATH`. Xin lưu ý rằng tên biến đều là chữ hoa. Biến cần giữ đường dẫn tuyệt đối đến tệp socket của cài đặt nút (node) Cardano đang chạy của bạn.
+Nếu bạn không chắc chắn hoặc không biết tìm đường dẫn ổ cắm của mình ở đâu, vui lòng kiểm tra lệnh về cách bạn bắt đầu / chạy nút Cardano của mình.
+Ví dụ - nếu bạn bắt đầu nút của mình bằng lệnh này
 
-If you're unsure or do not know where to find your socket path, please check the command on how you start/run your Cardano node.  
-For example - if you start your node with this command
 ```bash
 $HOME/.local/bin/cardano-node run \
  --topology config/testnet-topology.json \
@@ -89,18 +88,17 @@ $HOME/.local/bin/cardano-node run \
  --port 3001 \
  --config config/testnet-config.json
 ```
-You need to set the variable to the corresponding path of the `--socket-path` parameter:
+Bạn cần đặt biến thành đường dẫn tương ứng thông qua tham số `--socket-path` :
 
 ```bash
 export CARDANO_NODE_SOCKET_PATH="$HOME/TESTNET_NODE/socket/node.socket"
 ```
-You need to adjust the path on your setup and your socket path accordingly.
+Bạn cần điều chỉnh đường dẫn trên thiết lập và đường dẫn ổ cắm của mình cho phù hợp.
 
-### Improve readability
-Since we've already answered all of the questions above, we will set variables on our terminal/bash to make readability a bit easier.
-We also will be using the testnet. The only difference between minting native assets in the mainnet will be that you need to substitute the network variable <i>testnet</i> with mainnet. 
+### Cải thiện cho dễ đọc
+Vì chúng tôi đã trả lời tất cả các câu hỏi ở trên, chúng tôi sẽ đặt các biến trên terminal / bash của mình để làm cho khả năng đọc dễ dàng hơn một chút. Chúng tôi cũng sẽ sử dụng testnet. Sự khác biệt duy nhất giữa việc khai thác nội dung gốc trong mạng chính là bạn cần thay thế <b>testnet</b> bằng <b>mainnet</b>. 
 
-<b>Since cardano-cli version 1.31.0, token names must be base16 encoded </b>.  So here, we use the xxd tool to encode the token names.
+<b>Kể từ phiên bản cardano-cli 1.31.0, tên mã thông báo phải được mã hóa base16 </b>.  Vì vậy, ở đây, chúng tôi sử dụng công cụ xxd để mã hóa tên mã thông báo.
 
 ```bash
 testnet="--testnet-magic 1097911063"
@@ -110,17 +108,17 @@ tokenamount="10000000"
 output="0"
 ```
 
-We will be using this technique of setting variables along the way to make it easier to follow along.
+Chúng tôi sẽ sử dụng kỹ thuật thiết lập các biến này để giúp bạn dễ dàng theo dõi hơn..
 
-### Check your node status
+### Kiểm tra tình trạng node
 
-We also want to check if our Node is up to date. To do that, we check the current epoch/block and compare it to the current value displayed in the [Cardano Explorer for the testnet](https://explorer.cardano-testnet.iohkdev.io/en).
+Chúng tôi cũng muốn kiểm tra xem Node của chúng tôi có được cập nhật hay không. Để làm điều đó, chúng tôi kiểm tra kỷ nguyên / khối hiện tại và so sánh nó với giá trị hiện tại được hiển thị trong [Cardano Explorer for the testnet](https://explorer.cardano-testnet.iohkdev.io/en).
 
 ```bash
 cardano-cli query tip $testnet
 ```
 
-Should give you an output like this
+Sẽ cung cấp cho bạn một đầu ra như thế này
 ```bash
 {
     "epoch": 282,
@@ -131,7 +129,7 @@ Should give you an output like this
 }
 ```
 
-Epoch and slot number should match when being compared to the Cardano [Explorer for testnet](https://explorer.cardano-testnet.iohkdev.io/en)
+Epoch và số vị trí phải khớp khi được so sánh với Cardano [Explorer for testnet](https://explorer.cardano-testnet.iohkdev.io/en)
 
 ![image](https://user-images.githubusercontent.com/34856010/162867330-fa85a6a9-37fa-4cad-94c8-bfe742c7983d.png)
 
