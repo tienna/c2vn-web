@@ -117,10 +117,12 @@ const sidebars = {
       "project-catalyst/catalyst-funded",
       "project-catalyst/proposer",
       "project-catalyst/community-advisor",
+	  "project-catalyst/yellow-and-red-card",
       "project-catalyst/voter",
       "project-catalyst/catalyst-registration-and-voting-guide",
       "project-catalyst/check-rewards",
       "project-catalyst/project-catalyst-community-resources",
+	  
     ],
 
     "Catalyst 4 students": [
