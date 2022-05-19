@@ -45,5 +45,18 @@ Nội dung buổi chia sẻ bao gồm:
 
 <iframe width="100%" height="420" src="https://www.youtube.com/embed/2d4xwIfkpfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+**Làm thế nào để có một bản đề xuất tốt.**
 
+## Buổi 4: Blockchain Tiềm năng và ứng dụng trong nền kinh tế số ##
+
+Nội dung buổi chia sẻ bao gồm:
+- Tiêu chí chấm đề xuất
+- Tại sao phải tìm hiểu thử thách (Challenge setting)
+- Đánh giá một đề xuất
+- Công cụ hỗ trợ
+- Thực hành: đăng ký CA, đánh giá mẫu các dự án.
+
+<iframe width="100%" height="420" src="https://www.youtube.com/embed/NACwJ3tcJr8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**Làm thế nào để trở thành CA/vCA tốt.**
   

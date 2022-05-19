@@ -195,6 +195,7 @@ function DAppsPage() {
     return (
         <div className={clsx("container", styles.container)}>
             <h2 className={clsx("header", styles.header)}>Cardano DApps Connection Example</h2>
+            <a href="docs/integrate-cardano/dapps-connector" >Hướng dẫn xem tại đây</a>
             { connectedTo !== '' && <p style={{textAlign: 'center'}}>
                 Connected to: <strong>{connectedTo}</strong
             ></p> }

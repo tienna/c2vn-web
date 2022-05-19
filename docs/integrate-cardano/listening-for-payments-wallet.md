@@ -1,13 +1,10 @@
 ---
 id: listening-for-payments-wallet
 title: Thanh toán ada bằng cardano-wallet
-sidebar_label: Thánh toán băng cardano-wallet
+sidebar_label: Thánh toán bằng cardano-wallet
 description: Làm thế nào để xem Ada thanh toán bằng cardano-wallet?.
 #image: img/ada-online-shop.png
 --- 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Overview
 
 :::note

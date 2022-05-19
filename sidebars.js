@@ -86,6 +86,7 @@ const sidebars = {
       "integrate-cardano/multi-witness-transactions-cli",
       "integrate-cardano/listening-for-payments-cli",
       "integrate-cardano/listening-for-payments-wallet",
+      "integrate-cardano/dapps-connector",
       "integrate-cardano/testnet-faucet",
     ],
     "Khám phá Native Tokens": [
