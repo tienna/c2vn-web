@@ -30,6 +30,7 @@ Trước khi chúng ta đi xa hơn, đây là tóm tắt nhanh về những gì 
 
 ### Cách chúng tôi tương tác với blockchain
 Hầu hết tất cả các tương tác với mạng / blockchain Cardano đều dựa trên giao dịch. Chúng ta có thể phân chia các tương tác thành hai cấp với điều này.
+![image](https://user-images.githubusercontent.com/34856010/169245681-f3d6bc16-59bd-4f81-866b-190387df7ba2.png)
 
 Lớp trên cùng nhấn mạnh cách tiếp cận trực quan và bao gồm tương tác tiêu chuẩn. Gửi và nhận ada hoặc token, ủy quyền cổ phần của bạn và bỏ phiếu là tất cả các ví dụ về điều này. Các ví như ví Daedalus hoặc ví Yoroi nhẹ hơn có thể được sử dụng để thực hiện các tương tác này.
 
