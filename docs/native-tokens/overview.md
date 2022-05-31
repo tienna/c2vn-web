@@ -10,12 +10,12 @@ description: Khám phá Cardano's native tokens.
 :::note
 Hiện có 02 cách để tạo ra NFTs:
 
-- Dành cho người không rành về công nghệ. The [showcase section](../../showcase/?tags=nft) có một số dịch vụ cung cấp việc tạo này.
+- Dành cho người không rành về công nghệ. The [showcase section](https://developers.cardano.org/showcase/?tags=nft) có một số dịch vụ cung cấp việc tạo này.
 - Đổi với người hiểu biết về công nghệ. Nếu bạn muốn có toàn quyền kiểm soát các mã thông báo của mình, bạn cần **tự đúc**. và đây là nội dung của bài viết này.
 
 Minting đòi hỏi một số kỹ năng nhất định trong việc điều hướng và làm việc với Linux thông qua thiết bị đầu cuối và một node Cardano đang chạy.
  
-Chúng tôi sẽ không đi sâu vào cách tạo một nút Cardano, nhưng điều này được đề cập trong [danh mục Cardano tích hợp](https://cardano2vn.io/docs/integrate-cardano/overview).
+Chúng tôi sẽ không đi sâu vào cách tạo một node Cardano, nhưng điều này được đề cập trong [danh mục Cardano tích hợp](https://cardano2vn.io/docs/integrate-cardano/overview).
 
 :::
 
@@ -30,6 +30,7 @@ Trước khi chúng ta đi xa hơn, đây là tóm tắt nhanh về những gì 
 
 ### Cách chúng tôi tương tác với blockchain
 Hầu hết tất cả các tương tác với mạng / blockchain Cardano đều dựa trên giao dịch. Chúng ta có thể phân chia các tương tác thành hai cấp với điều này.
+![image](https://user-images.githubusercontent.com/34856010/169245681-f3d6bc16-59bd-4f81-866b-190387df7ba2.png)
 
 Lớp trên cùng nhấn mạnh cách tiếp cận trực quan và bao gồm tương tác tiêu chuẩn. Gửi và nhận ada hoặc token, ủy quyền cổ phần của bạn và bỏ phiếu là tất cả các ví dụ về điều này. Các ví như ví Daedalus hoặc ví Yoroi nhẹ hơn có thể được sử dụng để thực hiện các tương tác này.
 

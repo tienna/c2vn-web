@@ -24,66 +24,62 @@ Hướng dẫn này sẽ cung cấp cho bạn một bản sao và hướng dẫn
 
 Đây sẽ là những bước chúng ta cần thực hiện để hoàn thành toàn bộ vòng đời:
 
-1. Thiết lập mọi thứ
+1. Thiết lập mọi thứ sẵn sàng
 2. Tạo địa chỉ và khóa (keys) mới
 3. Tạo chính sách đúc tiền
-4. Dự thảo một giao dịch đúc tiền
+4. Soạn thảo một giao dịch đúc tiền
 5. Tính phí
 6. Gửi mã thông báo giao dịch và đúc token (cho chính chúng tôi)
 7. Gửi token đến ví Daedalus
 8. Đốt token
 
 
-### Directory structure
-
-We'll be working in a new directory. Here is an overview of every file we will be generating:
+### Cấu trúc thư mục
+Chúng ta sẽ làm việc trong một thư mục mới, Đây là tổng quan về các file sẽ được tạo ra:
 
 ```
-├── burning.raw                    # Raw transaction to burn token
-├── burning.signed                 # Signed transaction to burn token
-├── matx.raw                       # Raw transaction to mint token
-├── matx.signed                    # Signed transaction to mint token
-├── metadata.json                  # Metadata to specify NFT attributes
-├── payment.addr                   # Address to send / receive 
-├── payment.skey                   # Payment signing key
-├── payment.vkey                   # Payment verification key
-├── policy                         # Folder which holds everything policy-wise
-│   ├── policy.script              # Script to genereate the policyID
-│   ├── policy.skey                # Policy signing key
-│   ├── policy.vkey                # Policy verification key
-│   └── policyID                   # File which holds the policy ID
-└── protocol.json                  # Protocol parameters
+├── burning.raw                    # Giao dich để đốt token
+├── burning.signed                 # File ký giao dịch đã được ký để đốt token
+├── matx.raw                       # Giao dịch tạo token
+├── matx.signed                    # File ký giao dịch tạo token
+├── metadata.json                  # Metadata mô tả đặc tính NFT
+├── payment.addr                   # Địa chỉ để gửi và nhận
+├── payment.skey                   # Khóa ký giao dịch
+├── payment.vkey                   # Khóa xác nhận giao dịch
+├── policy                         # Thư mục chứa chính sách
+│   ├── policy.script              # Script tạo  policyID
+│   ├── policy.skey                # Khóa ký Policy
+│   ├── policy.vkey                # Khóa xác nhận Policy 
+│   └── policyID                   # File chứa policy ID
+└── protocol.json                  # File thông số hệ thống
 ```
 
-### Token architecture
+### Kiến trúc mã thông báo
+Trước khi khai thác nội dung gốc, bạn cần tự hỏi bản thân ít nhất bốn câu hỏi sau:
+1. Tên của (các) mã thông báo tùy chỉnh của tôi sẽ là gì?
+2. Tôi muốn đúc bao nhiêu?
+3. Sẽ có giới hạn thời gian cho việc tương tác (đúc hoặc ghi mã thông báo?)
+4. Ai sẽ có thể đúc chúng?
 
-Before minting native assets, you need to ask yourself at least those four questions:
+Số 1, 3 và 4 sẽ được xác định trong cái gọi là kịch bản chính sách tiền tệ, trong khi số tiền thực tế sẽ chỉ được xác định trên giao dịch đúc tiền.
 
-1. What will be the name of my custom token(s)?
-2. How many do I want to mint?
-3. Will there be a time constraint for interaction (minting or burning token?)
-4. Who should be able to mint them?
+Đối với hướng dẫn này, chúng tôi sẽ sử dụng:
 
-Number 1, 3, and 4 will be defined in a so-called monetary policy script, whereas the actual amount will only be defined on the minting transaction.
-
-For this guide, we will use:
-
-1. What will be the name of my custom token(s)?  
---> We are going to call `Testtoken` and `SecondTesttoken`
-2. How many do I want to mint?  
+1. Tên của (các) mã thông báo tùy chỉnh của tôi sẽ là gì?
+--> Chúng tôi sẽ đặt tên là `Testtoken` và `SecondTesttoken`
+2. Tôi muốn đúc bao nhiêu?
 --> 10000000 each (10M `Testtoken` and 10M `SecondTesttoken`)
-3. Will there be a time constraint for interaction (minting or burning token?)  
----> No (we will, however, when making NFTs), we want to mint and burn them however we like.
-4. Who should be able to mint them?  
---> only one signature (which we possess) should be able to sign the transaction and therefore be able to mint the token
+3. Sẽ có giới hạn thời gian cho việc tương tác (đúc hoặc đốt mã thông báo?)
+---> Không (tuy nhiên, chúng tôi sẽ làm khi tạo NFT), chúng tôi muốn đúc và đốt chúng theo cách chúng tôi muốn.
+4. Ai sẽ có thể đúc chúng?
+--> chỉ có một chữ ký (mà chúng tôi sơ hữu) mới có thể ký giao dịch và do đó có thể đúc mã thông báo
 
-## Setup
-### Cardano node socket path
-To work with the `cardano-cli` we need to export an environment variable called `CARDANO_NODE_SOCKET_PATH`. Please note that the variable name is all uppercase.
-The variable needs to hold the absolute path to the socket file of your running Cardano node installation.
+## Cài đặt- Thiết lập
+### Thiết lập Cardano node socket path
+Để làm việc với `cardano-cli` chúng ta cần thiết lập một biến môi trường được gọi là `CARDANO_NODE_SOCKET_PATH`. Xin lưu ý rằng tên biến đều là chữ hoa. Biến cần giữ đường dẫn tuyệt đối đến tệp socket của cài đặt nút (node) Cardano đang chạy của bạn.
+Nếu bạn không chắc chắn hoặc không biết tìm đường dẫn ổ cắm của mình ở đâu, vui lòng kiểm tra lệnh về cách bạn bắt đầu / chạy nút Cardano của mình.
+Ví dụ - nếu bạn bắt đầu nút của mình bằng lệnh này
 
-If you're unsure or do not know where to find your socket path, please check the command on how you start/run your Cardano node.  
-For example - if you start your node with this command
 ```bash
 $HOME/.local/bin/cardano-node run \
  --topology config/testnet-topology.json \
@@ -92,18 +88,17 @@ $HOME/.local/bin/cardano-node run \
  --port 3001 \
  --config config/testnet-config.json
 ```
-You need to set the variable to the corresponding path of the `--socket-path` parameter:
+Bạn cần đặt biến thành đường dẫn tương ứng thông qua tham số `--socket-path` :
 
 ```bash
 export CARDANO_NODE_SOCKET_PATH="$HOME/TESTNET_NODE/socket/node.socket"
 ```
-You need to adjust the path on your setup and your socket path accordingly.
+Bạn cần điều chỉnh đường dẫn trên thiết lập và đường dẫn ổ cắm của mình cho phù hợp.
 
-### Improve readability
-Since we've already answered all of the questions above, we will set variables on our terminal/bash to make readability a bit easier.
-We also will be using the testnet. The only difference between minting native assets in the mainnet will be that you need to substitute the network variable <i>testnet</i> with mainnet. 
+### Cải thiện cho dễ đọc
+Vì chúng tôi đã trả lời tất cả các câu hỏi ở trên, chúng tôi sẽ đặt các biến trên terminal / bash của mình để làm cho khả năng đọc dễ dàng hơn một chút. Chúng tôi cũng sẽ sử dụng testnet. Sự khác biệt duy nhất giữa việc khai thác nội dung gốc trong mạng chính là bạn cần thay thế <b>testnet</b> bằng <b>mainnet</b>. 
 
-<b>Since cardano-cli version 1.31.0, token names must be base16 encoded </b>.  So here, we use the xxd tool to encode the token names.
+<b>Kể từ phiên bản cardano-cli 1.31.0, tên mã thông báo phải được mã hóa base16 </b>.  Vì vậy, ở đây, chúng tôi sử dụng công cụ xxd để mã hóa tên mã thông báo.
 
 ```bash
 testnet="--testnet-magic 1097911063"
@@ -113,17 +108,17 @@ tokenamount="10000000"
 output="0"
 ```
 
-We will be using this technique of setting variables along the way to make it easier to follow along.
+Chúng tôi sẽ sử dụng kỹ thuật thiết lập các biến này để giúp bạn dễ dàng theo dõi hơn..
 
-### Check your node status
+### Kiểm tra tình trạng node
 
-We also want to check if our Node is up to date. To do that, we check the current epoch/block and compare it to the current value displayed in the [Cardano Explorer for the testnet](https://explorer.cardano-testnet.iohkdev.io/en).
+Chúng tôi cũng muốn kiểm tra xem Node của chúng tôi có được cập nhật hay không. Để làm điều đó, chúng tôi kiểm tra kỷ nguyên / khối hiện tại và so sánh nó với giá trị hiện tại được hiển thị trong [Cardano Explorer for the testnet](https://explorer.cardano-testnet.iohkdev.io/en).
 
 ```bash
 cardano-cli query tip $testnet
 ```
 
-Should give you an output like this
+Sẽ cung cấp cho bạn một đầu ra như thế này
 ```bash
 {
     "epoch": 282,
@@ -134,7 +129,7 @@ Should give you an output like this
 }
 ```
 
-Epoch and slot number should match when being compared to the Cardano [Explorer for testnet](https://explorer.cardano-testnet.iohkdev.io/en)
+Epoch và số vị trí phải khớp khi được so sánh với Cardano [Explorer for testnet](https://explorer.cardano-testnet.iohkdev.io/en)
 
 ![image](https://user-images.githubusercontent.com/34856010/162867330-fa85a6a9-37fa-4cad-94c8-bfe742c7983d.png)
 
