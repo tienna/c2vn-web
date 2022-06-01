@@ -10,8 +10,6 @@ Chuỗi sự kiện Hội thảo chia sẻ về Blockchain Cardano và Catalyst
 
 <iframe width="740" height="415" src="https://www.youtube.com/embed/Uue7joNZJpg" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-
 ## Hội thảo về Blockchain Cardano và Catalyst.
 
 **Chia sẻ về cách viết một đề xuất tốt trên catalyst để được cấp vốn**

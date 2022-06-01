@@ -32,5 +32,19 @@ Thông báo về khóa học Catalyst đã được [đăng tại website](http:
   
 **Những lưu ý quan trong khi tạo ví, cách thức sử sụng API từ đơn vị cung cấp Blockfrost**
 
+## Trích đoạn Video Tọa đàm định hướng nghề nghiệp cho sinh viên K60 trường đại học Giao thông Vận Tải .
+
+
+  <iframe width="740" height="415" src="https://www.youtube.com/embed/Cc0f7nxYgBc" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+**Mr Minh chia sẻ cơ hội nghề nghiệp mới trên nền tảng Blockchain và cơ hội tham gia Cardano-Catalyst**
+
+![](img/2.jpg)
+
+![](img/1.jpg)
+
+**Thao luận sôi nổi về nghề nghiệp trong tương lai của các sinh viên năm thư 3 khoa Công Nghệ thông tin Đại học Giao Thông Vận Tải**
+
+
 Cảm ơn sự ủng hộ của bạn
 
