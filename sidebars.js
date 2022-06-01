@@ -130,6 +130,10 @@ const sidebars = {
       "catalyst4students/overview",
       "catalyst4students/daihocnguyentrai",
     ],
+    "Các sự kiện": [
+      "events/overview",
+      //"events/daihocnguyentrai",
+    ],
     "Vận hành một Stake Pool": [
       "operate-a-stake-pool/note",
       // {
