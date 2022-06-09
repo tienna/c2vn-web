@@ -1,7 +1,7 @@
 ---
 id: lesson-2
 title: Lesson 2
-sidebar_label: Lesson 2
+sidebar_label: Bài 2
 description: "Stake pool course: Bài 2."
 #image: ../img/og-developer-portal.png
 ---
