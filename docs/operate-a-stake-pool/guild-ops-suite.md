@@ -15,16 +15,16 @@ Bộ Guild-Operators là một bộ công cụ và tập lệnh để thiết l�
 #### CNTools
 
 CNTools là một con dao quân đội Thụy Sĩ dành cho những người điều hành hồ bơi, những người muốn thực hiện các nhiệm vụ thông thường dễ dàng hơn. Đó là một ứng dụng GUI bash theo hướng menu để tạo và quản lý ví, gửi ada và mã thông báo, cũng như về bất kỳ chức năng chung nào. Ngoài ra, công cụ đã được tăng cường với các tính năng và cải tiến mới kể từ khi phát hành lần đầu tiên vào tháng 7 năm 2020, trùng với sự ra đời của Cardano Shelley MainNet. Thông tin thêm về CNTools có thể được tìm thấy [here](https://cardano-community.github.io/guild-operators/Scripts/cntools/).  
-![img](../../static/img/get-started/guild-ops-suite/guild_cntools.png)  
+![img](../../static/img/getting-started/guild-ops-suite/guild_cntools.png)  
 
 #### gLiveView
 
 Guild LiveView, thường được gọi là gLiveView, là một tiện ích giám sát CLI bash cục bộ với giao diện dễ sử dụng để theo dõi trạng thái nút. Nó kết nối với nút đang chạy cục bộ thông qua các điểm cuối nút EKG / Prometheus được chỉ định để thu thập và hiển thị số liệu nút, thông tin mạng và thông tin khác trong thời gian thực. Chương trình nhận biết liệu nút đang được sử dụng như một rơle hay một nhà sản xuất khối và điều chỉnh đầu ra cho phù hợp. Bạn có thể tìm thêm thông tin về gLiveView [here](https://cardano-community.github.io/guild-operators/Scripts/gliveview/).  
-![img](../../static/img/get-started/guild-ops-suite/guild_gliveview.png)  
+![img](../../static/img/getting-started/guild-ops-suite/guild_gliveview.png)  
 
 #### Topology Updater
 Trình cập nhật cấu trúc liên kết được xây dựng như một giải pháp thay thế để cho phép các rơle nhóm cổ phần tự động phát hiện và ghép nối với các đồng nghiệp trên mạng. Trong khi việc triển khai P2P bị tạm dừng do các ưu tiên khác, tập lệnh này đã trở thành một trong những công cụ quan trọng nhất để tránh phải liên hệ với bạn bè theo cách thủ công và yêu cầu đưa các nút riêng lẻ vào tệp cấu trúc liên kết. Thông tin thêm về công cụ có thể được tìm thấy [here](https://cardano-community.github.io/guild-operators/Scripts/topologyupdater/).  
-![img](../../static/img/get-started/guild-ops-suite/guild_topologyupdater.png)  
+![img](../../static/img/getting-started/guild-ops-suite/guild_topologyupdater.png)  
 
 #### Guild Network and Support for other networks
 
@@ -51,7 +51,7 @@ chmod 755 prereqs.sh
 ```
 
 ### Xây dựng các thành phần Node/DBSync 
-Chúng tôi cho rằng bạn đã xem hướng dẫne [here](../../docs/get-started/installing-cardano-node.md). Có sẵn các tập lệnh / hướng dẫn xây dựng tương tự để xây dựng các công cụ cardano-node, cardano-db-sync, offline-metadata-offline và thiết lập postgres + postgREST với dbsync) khác nhau trên tài liệu guild. Bạn có thể điều hướng hướng dẫn cho từng người trong số họ [here](https://cardano-community.github.io/guild-operators/build/). Các hướng dẫn cũng sẽ triển khai các dịch vụ này như một dịch vụ systemd, được khuyến nghị để tránh quản lý các dịch vụ theo cách thủ công.
+Chúng tôi cho rằng bạn đã xem hướng dẫne [here](../../docs/getting-started/installing-cardano-node.md). Có sẵn các tập lệnh / hướng dẫn xây dựng tương tự để xây dựng các công cụ cardano-node, cardano-db-sync, offline-metadata-offline và thiết lập postgres + postgREST với dbsync) khác nhau trên tài liệu guild. Bạn có thể điều hướng hướng dẫn cho từng người trong số họ [here](https://cardano-community.github.io/guild-operators/build/). Các hướng dẫn cũng sẽ triển khai các dịch vụ này như một dịch vụ systemd, được khuyến nghị để tránh quản lý các dịch vụ theo cách thủ công.
 
 ### Cấu hình tùy chỉnh
 
