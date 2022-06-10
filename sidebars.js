@@ -103,37 +103,6 @@ const sidebars = {
         }, ],
       },
     ],
-    "Cài đặt và Ví dụ Plutus": [
-      "setup-application/Installation",
-      "setup-application/setup-node-mainnet",
-      "setup-application/setup-node-testnet",
-      "setup-application/step-by-step",
-      "setup-application/Plutus_transactions_tutorial",
-      "setup-application/Datums_redeemer_tutorial",
-      "setup-application/Validator_scripts_tutorial",
-    ],
-    "Project Catalyst": [
-      "project-catalyst/overview",
-      "project-catalyst/funding-process",
-      "project-catalyst/catalyst-funded",
-      "project-catalyst/proposer",
-      "project-catalyst/community-advisor",
-	  "project-catalyst/yellow-and-red-card",
-      "project-catalyst/voter",
-      "project-catalyst/catalyst-registration-and-voting-guide",
-      "project-catalyst/check-rewards",
-      "project-catalyst/project-catalyst-community-resources",
-	  
-    ],
-
-    "Catalyst 4 students": [
-      "catalyst4students/overview",
-      "catalyst4students/daihocnguyentrai",
-    ],
-    "Các sự kiện": [
-      "events/overview",
-      //"events/daihocnguyentrai",
-    ],
     "Vận hành một Stake Pool": [
       //"operate-a-stake-pool/note",
        {
@@ -189,6 +158,39 @@ const sidebars = {
        },
        "operate-a-stake-pool/marketing-stake-pool",
     ],
+    "Cài đặt và Ví dụ Plutus": [
+      "setup-application/Installation",
+      "setup-application/setup-node-mainnet",
+      "setup-application/setup-node-testnet",
+      "setup-application/step-by-step",
+      "setup-application/Plutus_transactions_tutorial",
+      "setup-application/Datums_redeemer_tutorial",
+      "setup-application/Validator_scripts_tutorial",
+    ],
+    "Project Catalyst": [
+      "project-catalyst/overview",
+      "project-catalyst/funding-process",
+      "project-catalyst/catalyst-funded",
+      "project-catalyst/proposer",
+      "project-catalyst/community-advisor",
+	  "project-catalyst/yellow-and-red-card",
+      "project-catalyst/voter",
+      "project-catalyst/catalyst-registration-and-voting-guide",
+      "project-catalyst/check-rewards",
+      "project-catalyst/project-catalyst-community-resources",
+	  
+    ],
+
+    "Catalyst 4 students": [
+      "catalyst4students/overview",
+      "catalyst4students/daihocnguyentrai",
+    ],
+    "Các sự kiện": [
+      "events/overview",
+      //"events/daihocnguyentrai",
+	  "events/Cardano-coffee-lounge",
+    ],
+
     // "Mang Project Catalyst Townhall đến Việt Nam": [
     //   "vn-townhall-channel/note",
     // ],
