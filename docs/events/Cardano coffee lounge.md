@@ -2,15 +2,15 @@ Cardano Coffee Lounge
 ==========
 🏆🏆 Với kết quả tại Catalyst Fund8, dự án **Cardano Coffee Lounge** đã được giải ngân và đi vào hoạt động. Đây là nơi gặp gỡ, trao đổi dành cho những thành viên yêu thích Blockchain, yêu thích Cardano đến từ Cộng đồng.
 
-![](img/Coffee1.png)
+![](img/Coffee1.jpg)
 
 **Nơi chia sẻ kiến thức về Blockchain, Cardano và Catalyst**
 
-![](img/Coffee2.png)
+![](img/Coffee2.jpg)
 
 ## Buổi 1: Lễ ra mắt Carda Coffee Lounge in Việt Nam
  
-![](img/Cardano-Coffee1.png)
+![](img/Cardano-Coffee1.jpg)
 
 📣 Và chúng tôi vui mừng thông báo buổi ra mắt tại Hà nội  sẽ được tổ chức vào 14:00 ngày 11/6/2022 tại  [BT2-10 Nguyễn Xuân Khoát, Khu ngoại giao đoàn, Tây Hồ, Hà nội](https://maps.app.goo.gl/6QRmmYxo4XzCQ3aZ7). Đội ngũ thực hiện dự án trân trọng kính mời các Anh Chị Em trong cộng đồng đến tham dự, chia sẻ và kết nối.
 
