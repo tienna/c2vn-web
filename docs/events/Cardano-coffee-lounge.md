@@ -10,7 +10,7 @@ Cardano Coffee Lounge
 
 ## Buổi 1: Lễ ra mắt Carda Coffee Lounge in Việt Nam
  
-![](img/Cardano-Coffee1.jpg)
+![](img/Cardano-coffee1.jpg)
 
 📣 Và chúng tôi vui mừng thông báo buổi ra mắt tại Hà nội  sẽ được tổ chức vào 14:00 ngày 11/6/2022 tại  [BT2-10 Nguyễn Xuân Khoát, Khu ngoại giao đoàn, Tây Hồ, Hà nội](https://maps.app.goo.gl/6QRmmYxo4XzCQ3aZ7). Đội ngũ thực hiện dự án trân trọng kính mời các Anh Chị Em trong cộng đồng đến tham dự, chia sẻ và kết nối.
 
