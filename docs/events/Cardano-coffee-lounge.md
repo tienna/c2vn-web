@@ -35,15 +35,27 @@ Cardano Coffee Lounge
 
 ![**Thầy Đỗ Mạnh Hùng và Mr Nguyễn Anh Tiến**](img/_MG_7703.JPG)
 
+**Thầy Đỗ Mạnh Hùng và Mr Nguyễn Anh Tiến**
+
 ![Mr. Đỗ Ngọc Minh khai mạc, tuyên bố lý công bố dự án Cardano Coffee Lounge](img/_MG_7672.JPG)
+
+Mr. Đỗ Ngọc Minh khai mạc, tuyên bố lý công bố dự án Cardano Coffee Lounge
 
 ![TS. Hoàng Văn Thông, Trưởng khoa CNTN, Trường đại học GTVT phát biểu](img/_MG_7767.JPG)
 
+TS. Hoàng Văn Thông, Trưởng khoa CNTN, Trường đại học GTVT phát biểu
+
 ![Mr. Nguyễn Văn Hiệu- Cardano2vn.io chia sẻ về dự án Cardano Coffee Longe](img/_MG_7693.JPG)
+
+Mr. Nguyễn Văn Hiệu- Cardano2vn.io chia sẻ về dự án Cardano Coffee Longe
 
 ![Mr Nguyễn Anh Tiến-Cardano2vn.io chia sẻ về Cardano, Catalyst](img/_MG_7722.JPG)
 
+Mr Nguyễn Anh Tiến-Cardano2vn.io chia sẻ về Cardano, Catalyst
+
 ![Thành viên tham gia đặc các câu hỏi](img/_MG_7762.JPG)
+
+Thành viên tham gia đặc các câu hỏi
 
 ![](img/_MG_7677.JPG)
 
