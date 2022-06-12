@@ -17,3 +17,21 @@ Cardano Coffee Lounge
 ![](img/map1.bmp)
 
 👉P/S: Vị trí được chọn được cân nhắc để đảm bảo hoạt động định kỳ 1 buổi/tuần với số người tham dự <30 người. Để phục vụ bạn được tốt nhất, vui lòng đăng ký theo [biểu mẫu này](https://forms.gle/ZeNcAHhSKs3CMjLq6)  trước 8:00 ngày 11/6/2022
+
+
+### Phần 1: Buổi ra mắt Cardano Coffee Lounge
+
+<iframe width="740" height="415" src="https://www.youtube.com/embed/lL9QcarPOfU" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Mr.Đỗ Mạnh Hùng chia sẻ cảm tưởng về dự án Cardano Coffee Lounge
+
+<iframe width="740" height="415" src="https://www.youtube.com/embed/5CRCgtdBE0c" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Mr.Nguyễn Anh Tiến chia sẻ về Cardano, Catalyst tại Cardano Coffee Lounge
+
+<iframe width="740" height="415" src="https://www.youtube.com/embed/Bji-k726XT0" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Một số hình ảnh tại Cardano Coffee Lounge
+
+![Thầy Đỗ Mạnh Hùng và Mr Nguyễn Anh Tiến](https://drive.google.com/drive/u/0/folders/1gnG5zxsjke1Uq7Pi6wOagXLOEFbi2Eck)
+
