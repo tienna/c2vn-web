@@ -9,12 +9,21 @@ Whether you use a hardware, paper or mobile wallet, we’ve got you covered.
 Check below our step-by-step guide to get started.
 
 HOW TO {STAKE}
-Best Pracice : Create New ADA Wallet
-Stake Guide
-How to stake from Daedalus wallet?
-How to stake from Yoroi wallet?
-How to stake from mobile?
-Best Pracice : Create New ADA Wallet
+
+[Best Pracice : Create New ADA Wallet](#Best-Pracice:)
+
+[**Stake Guide**(#Stake-Guide)
+
+- [How to stake from Daedalus wallet?](#How-to-stake-from-Daedalus-wallet?)
+
+- [How to stake from Yoroi wallet?](#How-to-stake-from-Yoroi-wallet?)
+
+- [How to stake from mobile?](#How-to-stake-from-mobile?)
+
+**=========================================**
+
+## Best Pracice:
+
 Create a New_ADA_Wallet.
 
 Backup "security phrase" and set up "spending password".
@@ -48,6 +57,7 @@ And then you can send all ADA to New_ADA_Wallet.
 * 
 
 ## How to stake from Yoroi wallet?
+
 1. Download the Yoroi Light Wallet at yoroi-wallet.com
 
 2. Choose your preferred browser option after clicking the download button.
@@ -66,6 +76,7 @@ And then you can send all ADA to New_ADA_Wallet.
 
 
 ## How to stake from mobile?
+
 1. Go and download the Yoroi mobile app for your device: Android | iOS
 
 2. Launch the app and follow the instructions to connect / create / restore your Cardano wallet.
