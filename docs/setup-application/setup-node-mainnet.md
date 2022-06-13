@@ -15,9 +15,10 @@ Tài liệu : https://cardano-community.github.io/guild-operators/#/basics
 
 ```
 sudo adduser nvhieu
-sudo usermod -aG sudo nvhieu_gcp
-sudo su - nvhieu_gcp
+sudo usermod -aG sudo nvhieu
+sudo su - nvhieu
 sudo whoami
+......
 ```
 
 ## B1. Cài đặt và update các packages liên quan. 
@@ -156,8 +157,8 @@ $CNODE_HOME/scripts/cabal-build-all.sh -o
 ```
 
 ```
-cardano-cli version
-cardano-node version
+cardano-cli --version
+cardano-node --version
 ```
 
 
