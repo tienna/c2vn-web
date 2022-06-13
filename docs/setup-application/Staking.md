@@ -14,11 +14,11 @@ HOW TO {STAKE}
 
 2. [**Stake Guide**](#Stake-Guide)
 
-- [How to stake from Daedalus wallet?](#How-to-stake-from-Daedalus-wallet?)
+- [How to stake from Daedalus wallet?](##How-to-stake-from-Daedalus-wallet?)
 
-- [How to stake from Yoroi wallet?](#How-to-stake-from-Yoroi-wallet?)
+- [How to stake from Yoroi wallet?](##How-to-stake-from-Yoroi-wallet?)
 
-- [How to stake from mobile?](#How-to-stake-from-mobile?)
+- [How to stake from mobile?](##How-to-stake-from-mobile?)
 
 **=========================================**
 
