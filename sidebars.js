@@ -157,7 +157,7 @@ const sidebars = {
          ],
        },
        "operate-a-stake-pool/marketing-stake-pool",
-       "operate-a-stake-pool/Stak",
+       "setup-application/Staking",
     ],
     "Cài đặt và Ví dụ Plutus": [
       "setup-application/Installation",
