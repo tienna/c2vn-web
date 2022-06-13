@@ -10,9 +10,9 @@ Check below our step-by-step guide to get started.
 
 HOW TO {STAKE}
 
-[Best Pracice : Create New ADA Wallet](#Best-Pracice:)
+ [Best Pracice : Create New ADA Wallet](#Best-Pracice:)
 
-[**Stake Guide**(#Stake-Guide)
+ [**Stake Guide**(#Stake-Guide)
 
 - [How to stake from Daedalus wallet?](#How-to-stake-from-Daedalus-wallet?)
 
