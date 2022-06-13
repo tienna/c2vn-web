@@ -1,4 +1,4 @@
-STAKE NHƯ THẾ NÀO
+Ủy thác như thế nào
 =================
 STEP BY STEP GUIDE FOR DELEGATOR
 
@@ -10,9 +10,9 @@ Check below our step-by-step guide to get started.
 
 HOW TO {STAKE}
 
- [Best Pracice : Create New ADA Wallet](#Best-Pracice:)
+1. [Best Pracice : Create New ADA Wallet](#Best-Pracice:)
 
- [**Stake Guide**(#Stake-Guide)
+2. [**Stake Guide**](#Stake-Guide)
 
 - [How to stake from Daedalus wallet?](#How-to-stake-from-Daedalus-wallet?)
 
