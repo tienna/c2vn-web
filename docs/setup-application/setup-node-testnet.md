@@ -23,7 +23,7 @@ sudo mkdir ~/cardano
 cd ~/cardano
 ```
 
-Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-node/ để tải phiên bản mới nhất.
+Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 12 năm 2021. [Truy cập ](https://hydra.iohk.io/build/13065941#tabs-constituents) để tải phiên bản mới nhất.
 
 ```
 sudo wget https://hydra.iohk.io/build/8674953/download/1/cardano-node-1.31.0-linux.tar.gz
