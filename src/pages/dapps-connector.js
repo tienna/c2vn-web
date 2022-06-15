@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -13,14 +13,16 @@ import Alert from '@mui/material/Alert';
 import Grid from '@mui/material/Grid';
 import { createIcon } from "@download/blockies"
 import { textPartFromWalletChecksumImagePart } from "@emurgo/cip4-js"
-// import * as CardanoWasm from "@minswap/cardano-serialization-lib-browser"
+// import * as CardanoWasm from "@emurgo/cardano-serialization-lib-browser";
 
-// import { bytesToHex, hexToBytes } from './coreUtils';
 const Buffer = require('buffer/').Buffer;
 
 let accessGranted = false
 let cardanoApi
 let returnType = 'cbor'
+let unUsedAddresses
+let usedAddresses
+let changeAddress
 
 function DAppsPage() {
     const [isLoading, setLoading] = useState(false);
@@ -31,7 +33,7 @@ function DAppsPage() {
 
     useEffect(() => {
         if (typeof window.cardano === "undefined") {
-            console.log('Cardano error')
+            console.log('Cardano API not found');
         } else {
             console.log("Cardano API detected, checking connection status");
             cardano.yoroi.enable({ requestIdentification: true, onlySilent: true }).then(
@@ -59,41 +61,32 @@ function DAppsPage() {
     }
 
     const handleRequestClick = () => {
-        setLoading(true);
-        cardano.yoroi.enable({
-            requestIdentification: isChecked
-        }).then(
-            function (api) {
-                console.log('GGG', api)
-                onApiConnected(api);
-                setLoading(false);
-            },
-            function (err) {
-                setLoading(false)
-                setAlertStatus("error")
-                setAlert(`Error: ${err}`)
-            },
-        );
-    }
+        try {
+            setLoading(true);
 
-    // function createBlockiesIcon(seed) {
-    //     const colorIdx = hexToBytes(seed)[0] % COLORS.length;
-    //     const color = COLORS[colorIdx];
-    //     return createIcon({
-    //         seed,
-    //         size: 7,
-    //         scale: 5,
-    //         bgcolor: color.primary,
-    //         color: color.secondary,
-    //         spotcolor: color.spots,
-    //     })
-    // }
+            cardano.yoroi.enable({
+                requestIdentification: isChecked
+            }).then(
+                function (api) {
+                    onApiConnected(api);
+                    setLoading(false);
+                },
+                function (err) {
+                    setLoading(false)
+                    setAlertStatus("error")
+                    setAlert(`Error: ${err}`)
+                },
+            );
+        } catch(error) {
+            console.error(error);
+            setLoading(false);
+            setAlertStatus("error");
+            setAlert('Cardano API not found. Please install yoroi wallet extension before take this action.');
+        }
+    }
 
     function bytesToHex(bytes) {
         return Buffer.from(bytes).toString('hex');
-    }
-    function hexToBytes(hex) {
-      return Buffer.from(hex, 'hex');
     }
 
     function onApiConnected(api) {
@@ -158,87 +151,231 @@ function DAppsPage() {
     }
 
     const handleCheckConnection = async () => {
+        if(!window.cardano) {
+            setAlertStatus("error");
+            return setAlert('Please install yoroi wallet extension before take this action.');
+        }
         const isEnabled = await window.cardano.yoroi.isEnabled();
         return setAlert(`Is Yoroi connection enabled: ${isEnabled}`);
     }
 
-    // const handleGetAccountBalance = async () => {
-    //     if(!accessGranted) {
-    //         setAlertStatus("error");
-    //         setAlert('Should request access first');
-    //     } else {
-    //         setLoading(true)  
-    //         const tokenId = '*';
-    //         cardanoApi.getBalance(tokenId).then(function(balance) {
-    //         console.log('[getBalance]', balance);
-    //         setLoading(false)
-    //         let balanceJson = balance;
-    //         if (isCBOR()) {
-    //             if (tokenId !== '*') {
-    //             alertSuccess(`Asset Balance: ${balance} (asset: ${tokenId})`)
-    //             return;
-    //             }
-    //             const value = CardanoWasm.Value.from_bytes(hexToBytes(balance));
-    //             console.log(value);
-    //             balanceJson = { default: value.coin().to_str() };
-    //             balanceJson.assets = reduceWasmMultiasset(value.multiasset(), (res, asset) => {
-    //             res[asset.assetId] = asset.amount;
-    //             return res;
-    //             }, {});
-    //         }
-    //         setAlert(`Account Balance: ${JSON.stringify(balanceJson, null, 2)}`)
-    //       });
-    //     }
-    // }
+    const handleGetAccountBalance = async () => {
+        if(!accessGranted) {
+            setAlertStatus("error");
+            setAlert('Should request access first');
+        } else {
+            setLoading(true)
+            const tokenId = '*';
+            cardanoApi.getBalance(tokenId).then(function(balance) {
+                setLoading(false)
+                setAlertStatus("success");
+                return setAlert(`Your Account Balance has: ${balance} ADA`);
+            // let balanceJson = balance;
+            // if (isCBOR()) {
+            //     if (tokenId !== '*') {
+            //         alertSuccess(`Asset Balance: ${balance} (asset: ${tokenId})`)
+            //         return;
+            //     }
+            //     const value = CardanoWasm.Value.from_bytes(hexToBytes(balance));
+            //     console.log(value);
+            //     balanceJson = { default: value.coin().to_str() };
+            //     balanceJson.assets = reduceWasmMultiasset(value.multiasset(), (res, asset) => {
+            //     res[asset.assetId] = asset.amount;
+            //     return res;
+            //     }, {});
+            // }
+            // setAlert(`Account Balance: ${JSON.stringify(balanceJson, null, 2)}`)
+            }).catch(error => {
+                console.error('Get account balance error:', error);
+                setLoading(false);
+                setAlertStatus("error");
+                return setAlert('Error, Get account balance failed. Please try again later !');
+            })
+        }
+    }
+
+    const getUnUsedAddresses = () => {
+        if(!accessGranted) {
+            setAlertStatus("error");
+            setAlert('Should request access first');
+        } else {
+            setLoading(true)
+            cardanoApi.getUnusedAddresses().then(function(addresses) {
+                setLoading(false)
+
+                if (addresses.length === 0) {
+                    setAlertStatus("warning");
+                    return setAlert('Empty unused addresses.');
+                }
+                // addresses = addressesFromCborIfNeeded(addresses)
+                unUsedAddresses = addresses
+                // alertSuccess(`Address: `)
+                // alertEl.innerHTML = '<h2>Unused addresses:</h2><pre>' + JSON.stringify(addresses, undefined, 2) + '</pre>'
+                setAlertStatus("success");
+                return setAlert(`Unused addresses: ${addresses.join('\n')}`);
+            }).catch(error => {
+                console.error('Get unused address error: ', error);
+                setLoading(false);
+                setAlertStatus("error");
+                return setAlert('Error, Get unused address failed. Please try again later !');
+            })
+        }
+    }
+
+    const getUsedAddresses = () => {
+        if(!accessGranted) {
+            setAlertStatus("error");
+            setAlert('Should request access first');
+        } else {
+            setLoading(true)
+            cardanoApi.getUsedAddresses().then(function(addresses) {
+                setLoading(false)
+                if (addresses.length === 0) {
+                    setAlertStatus("warning");
+                    return setAlert('Empty used addresses.');
+                }
+                usedAddresses = addresses
+                // alertSuccess(`Address: ${usedAddresses.concat(',')}`)
+                // alertEl.innerHTML = '<h2>Used addresses:</h2><pre>' + JSON.stringify(usedAddresses, undefined, 2) + '</pre>'
+                setAlertStatus("success");
+                return setAlert(`Unused addresses: ${addresses.join('\n')}`);
+            }).catch(error => {
+                console.error('Get used address error:', error);
+                setLoading(false);
+                setAlertStatus("error");
+                return setAlert('Error, Get used address failed. Please try again later !');
+            })
+        }
+    }
+
+    const getChangeAddress = () => {
+        if(!accessGranted) {
+            setAlertStatus("error");
+            setAlert('Should request access first');
+        } else {
+            setLoading(true)
+            cardanoApi.getChangeAddress().then(function(address) {
+                setLoading(false)
+                if (address.length === 0) {
+                    setAlertStatus("warning");
+                    return setAlert('Empty change addresses.');
+                }
+                changeAddress = Array.isArray(address) ? address[0] : address;
+
+                setAlertStatus("success");
+                return setAlert(`Change addresses: ${Array.isArray(address) ? addresses.join('\n') : address}`);
+                // alertEl.innerHTML = '<h2>Change address:</h2><pre>' + JSON.stringify(address, undefined, 2) + '</pre>'
+            }).catch(error => {
+                console.error('Get change address error:', error);
+                setLoading(false);
+                setAlertStatus("error");
+                return setAlert('Error, Get change address failed. Please try again later !');
+            })
+        }
+    }
+
+    const getRewardAddresses = () => {
+        if(!accessGranted) {
+            setAlertStatus("error");
+            setAlert('Should request access first');
+        } else {
+            setLoading(true)
+            cardanoApi.getRewardAddresses().then(function(addresses) {
+                setLoading(false)
+                if (addresses.length === 0) {
+                    setAlertStatus("warning");
+                    return setAlert('Empty reward addresses.');
+                }
+                setAlertStatus("success");
+                return setAlert(`Reward addresses: ${addresses.join('\n')}`);
+            }).catch(error => {
+                console.error('Get reward address error:', error);
+                setLoading(false);
+                setAlertStatus("error");
+                return setAlert('Error, Get reward address failed. Please try again later !');
+            })
+        }
+    }
     
     const {siteConfig} = useDocusaurusContext();
     return (
         <div className={clsx("container", styles.container)}>
             <h2 className={clsx("header", styles.header)}>Cardano DApps Connection Example</h2>
             <a href="docs/integrate-cardano/dapps-connector" >Hướng dẫn xem tại đây</a>
-            { connectedTo !== '' && <p style={{textAlign: 'center'}}>
-                Connected to: <strong>{connectedTo}</strong
-            ></p> }
-            { ['', 'error'].includes(alertStatus) && <div className={clsx("action-row", styles.action)}>
-                <FormGroup>
-                    <FormControlLabel control={<Checkbox onChange={handleCheckBoxChange} />} label="Request identification" />    
-                </FormGroup>
-                <Button variant="contained" color="primary" onClick={handleRequestClick}>Request access to Yoroi</Button>
-                { isLoading && <Box sx={{ display: 'flex' }}>
+            {
+                connectedTo !== '' && <p style={{textAlign: 'center'}}>
+                    Connected to: <strong>{connectedTo}</strong>
+                </p>
+            }
+            {
+                ['', 'error'].includes(alertStatus) && 
+                <div className={clsx("action-row", styles.action)}>
+                    <FormGroup>
+                        <FormControlLabel control={<Checkbox onChange={handleCheckBoxChange} />} label="Request identification" />    
+                    </FormGroup>
+                    <Button variant="contained" color="primary" onClick={handleRequestClick}>Request access to Yoroi</Button>
+                </div>
+            }
+            {
+                isLoading && <Box sx={{ display: 'flex', marginTop: '15px', alignItems: 'center', justifyContent: 'center' }}>
                     <CircularProgress />
-                </Box> }
-            </div> }
-
+                </Box>
+            }
             <Grid container spacing={2} style={{ marginTop: '15px', marginBottom: '15px'}}>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} onClick={handleCheckConnection}>is Enabled</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} onClick={handleCheckConnection}>
+                        is Enabled
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>get Account Balance</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} onClick={handleGetAccountBalance}
+                        disabled={isLoading}>
+                        get Account Balance
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>get Unused Addresses</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={isLoading}
+                        onClick={getUnUsedAddresses} >
+                        get Unused Addresses
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>get Used Addresses</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={isLoading}
+                        onClick={getUsedAddresses}>
+                        get Used Addresses
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>get Change Addresses</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={isLoading}
+                        onClick={getChangeAddress}>
+                        get Change Addresses
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>get Reward Addresses</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={isLoading}
+                        onClick={getRewardAddresses}>
+                        get Reward Addresses
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>get Utxos</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>
+                        get Utxos
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>[Experimental] create Tx</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>
+                        [Experimental] create Tx
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>sign Tx</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>
+                        sign Tx
+                    </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>submit Tx</Button>
+                    <Button style={{ textTransform: 'none' }} variant="outlined" fullWidth={true} disabled={true}>
+                        submit Tx
+                    </Button>
                 </Grid>
             </Grid>    
 
