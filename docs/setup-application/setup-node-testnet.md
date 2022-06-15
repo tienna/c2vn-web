@@ -23,14 +23,15 @@ sudo mkdir ~/cardano
 cd ~/cardano
 ```
 
-Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/getting-started/installing-cardano-node/ để tải phiên bản mới nhất.
+Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 3 năm 2022. [Truy cập ](https://hydra.iohk.io/build/13065941#tabs-constituents) để tải phiên bản mới nhất.
 
 ```
-sudo wget https://hydra.iohk.io/build/8674953/download/1/cardano-node-1.31.0-linux.tar.gz
-sudo tar zxvf cardano-node-1.31.0-linux.tar.gz
+
+sudo wget https://hydra.iohk.io/build/13065769/download/1/cardano-node-1.34.1-linux.tar.gz
+sudo tar zxvf cardano-node-1.34.1-linux.tar.gz
 ```
 
-Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng. Đây là hướng dẫn bạn tự xây dựng các file nhị phân https://cardano2vn.io/docs/dr-lars-lession/setup-node-mainnet
+Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng. [Đây là hướng dẫn bạn tự xây dựng các file nhị phân](https://cardano2vn.io/docs/setup-application/setup-node-mainnet) 
 
 Sao chép hai mã nhị phân chính vào local/bin.
 
@@ -125,7 +126,7 @@ Cài đặt Ví Cardano
 
 Mở cửa sổ shell thứ hai (sử dụng Alt + F2). Chúng tôi sẽ để nút chạy trong trình bao khác (chuyển trở lại nó bằng cách sử dụng Alt + F1). Ngoài ra, kết nối bằng Putty hoặc ứng dụng SSH yêu thích của bạn.
 
-Tải xuống tệp nhị phân được biên dịch trước cho Ví Cardano và đặt nó ở local/bin. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/getting-started/installing-cardano-wallet/ để tải phiên bản mới nhất.
+Tải xuống tệp nhị phân được biên dịch trước cho Ví Cardano và đặt nó ở local/bin. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-wallet/ để tải phiên bản mới nhất.
 
 ```
 sudo mkdir ~/cardano/wallet

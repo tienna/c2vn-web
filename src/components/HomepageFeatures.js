@@ -73,7 +73,7 @@ const FeatureList = [
         Tìm hiểu những gì cần thiết để trở thành nhà điều hành nhóm cổ phần Cardano (Stake Pool) từ góc độ kỹ thuật và tiếp thị.
       </>
     ),
-    targetUrl: "docs/operate-a-stake-pool/note"
+    targetUrl: "docs/operate-a-stake-pool/"
   },
   {
     title: 'Các dự án đã được cấp vốn',
