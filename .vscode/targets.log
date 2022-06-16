@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `sync', needed by `all'.  Stop.
 
-# Make data base, printed on Thu Jun 16 10:06:57 2022
+
+# Make data base, printed on Thu Jun 16 10:53:12 2022
 
 # Variables
 
@@ -15,6 +18,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+ 
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
@@ -28,11 +32,9 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/tantnd/Desktop/workspace/cardano/cardanovn-portal
+CURDIR := /Users/xtan/Desktop/tmp/cardanovn-portal
 # makefile
 SHELL = /bin/sh
-# environment
-FZF_DEFAULT_COMMAND = fd --type f --hidden --exclude .git
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -44,11 +46,13 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/9k/3cj85jpx497dpqjf8grn0t5r0000gn/T/vscode-ipc-a7a04b8b-3e01-4650-9332-ea7f8312a472.sock
+INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_CWD = /Users/tantnd/Desktop/workspace/cardano/cardanovn-portal
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/8q/4hy8dnkd06q4pl_rtnnnm_k80000gp/T/vscode-ipc-97e3243d-87af-4a61-8079-33876b53b8aa.sock
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Users/tantnd/.ebcli-virtual-env/executables:/Users/tantnd/bin:/Users/tantnd/go/bin
+VSCODE_CWD = /Users/xtan/Desktop/tmp/cardanovn-portal
+# environment
+PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -58,31 +62,35 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Kl9PJdAstX/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.khwxq3Dw1O/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /Users/tantnd/Desktop/workspace/cardano/cardanovn-portal
+PWD = /Users/xtan/Desktop/tmp/cardanovn-portal
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
+MANPATH = /opt/homebrew/share/man::
+# environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /Users/tantnd
+HOME = /Users/xtan
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/tantnd/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /Users/xtan/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
-LOGNAME = tantnd
+LOGNAME = xtan
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
-ZSH = /Users/tantnd/.oh-my-zsh
+ZSH = /Users/xtan/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -100,13 +108,13 @@ SHLVL = 3
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = tantnd
+USER = xtan
 # makefile
 .DEFAULT_GOAL := all
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t1p0:B175A3F1-0DC6-4A96-A737-9B66140CBCD3
+TERM_SESSION_ID = w0t0p0:C2AE1CD6-A79F-4D1D-AECF-26FB75DC1A90
 # environment
 LESS = -R
 # automatic
@@ -118,11 +126,11 @@ TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/9k/3cj85jpx497dpqjf8grn0t5r0000gn/T/
+TMPDIR = /var/folders/8q/4hy8dnkd06q4pl_rtnnnm_k80000gp/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/tantnd/Library/Application Support/Code/1.68.0-main.sock
+VSCODE_IPC_HOOK = /Users/xtan/Library/Application Support/Code/1.67.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -132,19 +140,23 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.15
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.48836309.48836315.BC277DD3-6160-46E6-B8A9-C531B41DB682
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.338662.338668.06B32C6B-1FD9-45C2-9B3F-DD8AE17E4E07
 # environment
 LC_TERMINAL_VERSION = 3.4.15
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t1p0:B175A3F1-0DC6-4A96-A737-9B66140CBCD3
+ITERM_SESSION_ID = w0t0p0:C2AE1CD6-A79F-4D1D-AECF-26FB75DC1A90
 # environment
-COLORFGBG = 15;0
+HOMEBREW_REPOSITORY = /opt/homebrew
 # environment
-__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+COLORFGBG = 7;0
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F6:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
 # default
@@ -170,9 +182,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 25699
+VSCODE_PID = 33664
 # variable set hash-table stats:
-# Load=80/1024=8%, Rehash=0, Collisions=4/104=4%
+# Load=84/1024=8%, Rehash=0, Collisions=4/108=4%
 
 # Pattern-specific Variable Values
 
@@ -180,7 +192,7 @@ VSCODE_PID = 25699
 
 # Directories
 
-# . (device 16777221, inode 39819237): 22 files, no impossibilities.
+# . (device 16777229, inode 2463581): 22 files, no impossibilities.
 
 # 22 files, no impossibilities in 1 directories.
 
@@ -207,7 +219,7 @@ all: sync deploy
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-12 14:09:26
+#  Last modified 2022-06-15 22:40:52
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -245,9 +257,8 @@ deploy:
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+ 
 
-# Finished Make data base on Thu Jun 16 10:06:57 2022
+# Finished Make data base on Thu Jun 16 10:53:12 2022
 
  
-make: *** No rule to make target `sync', needed by `all'.  Stop.
-
