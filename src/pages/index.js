@@ -115,7 +115,7 @@ function HomepageHeader() {
     }
 
     tick();
-  }, [window.innerWidth])
+  }, [])
 
   return (
     <header style={{position: 'relative', width: '100%', overflow: 'hidden'}}>
