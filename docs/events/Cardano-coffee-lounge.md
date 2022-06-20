@@ -67,8 +67,8 @@ Thành viên tham gia đặc các câu hỏi
 
 ## Buổi 2: Carda Coffee Lounge - Làm thế nào để viết được một đề xuất tốt được cấp vốn trên Catalysst
 
-![](img/DSC05950.JPG
+![](img/DSC05950.JPG)
 
-![](img/DSC05946.JPG
+![](img/DSC05946.JPG)
 
-![](img/DSC05944.JPG
+![](img/DSC05944.JPG)
