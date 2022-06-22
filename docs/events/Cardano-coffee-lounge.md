@@ -16,7 +16,6 @@ Cardano Coffee Lounge
 
 ![](img/map1.bmp)
 
-<<<<<<< Updated upstream
 👉P/S: Vị trí được chọn được cân nhắc để đảm bảo hoạt động định kỳ 1 buổi/tuần với số người tham dự <30 người. Để phục vụ bạn được tốt nhất, vui lòng đăng ký theo [biểu mẫu này](https://forms.gle/ZeNcAHhSKs3CMjLq6)  trước 8:00 ngày 11/6/2022
 
 
@@ -73,6 +72,5 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/DSC05946.JPG)
 
 ![](img/DSC05944.JPG)
-=======
-👉P/S: Vị trí được chọn được cân nhắc để đảm bảo hoạt động định kỳ 1 buổi/tuần với số người tham dự <30 người. Để phục vụ bạn được tốt nhất, vui lòng đăng ký theo [biểu mẫu này](https://forms.gle/ZeNcAHhSKs3CMjLq6)  trước 8:00 ngày 11/6/2022
->>>>>>> Stashed changes
+
+
