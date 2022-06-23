@@ -36,7 +36,18 @@ const config = {
             },
         ],
     ],
-    
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'G-NYJGVMHGCD',
+        path: './docs1',
+        routeBasePath: 'docs1',
+        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      },
+    ],
+  ],    
     themeConfig:
     
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -61,6 +72,7 @@ const config = {
                 position: 'left',
                 label: 'Bắt đầu',
             },
+		    {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
             { to: '/blog', label: 'Blog', position: 'left' },
             { to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             {
