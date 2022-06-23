@@ -1,5 +1,6 @@
-# Fund9 Catalyst Natives Cardashift challenge: demonstrating and monetizing impact
-### **Project Catalyst announces Fund9’s Catalyst Natives challenge ‘Demonstrating and monetizing impact’ in conjunction with Cardashift, and a chance to fund up to $200k worth of projects using $CLAP tokens**
+Fund9 Catalyst Natives Cardashift challenge: demonstrating and monetizing impact
+=================
+### Project Catalyst announces Fund9’s Catalyst Natives challenge ‘Demonstrating and monetizing impact’ in conjunction with Cardashift, and a chance to fund up to $200k worth of projects using $CLAP tokens
 ![](img/2022-06-01-fund9-catalyst-natives-cardashift-challenge-demonstrating-and-monetizing-impact.002.png) 1 June 2022![](img/2022-06-01-fund9-catalyst-natives-cardashift-challenge-demonstrating-and-monetizing-impact.002.png)[ Tim Richmond](tmp//en/blog/authors/tim-richmond/page-1/)![](img/2022-06-01-fund9-catalyst-natives-cardashift-challenge-demonstrating-and-monetizing-impact.003.png) 5 mins read
 
 ![Tim Richmond](img/2022-06-01-fund9-catalyst-natives-cardashift-challenge-demonstrating-and-monetizing-impact.004.png)[](tmp//en/blog/authors/tim-richmond/page-1/)
