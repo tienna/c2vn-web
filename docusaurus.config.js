@@ -25,11 +25,11 @@ const config = {
                     // Please change this to your repo.
                     editUrl: 'https://github.com/cardano2vn/cardanovn-portal/edit/main/',
                 },
-                blog: {
+               /* blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     editUrl: 'https://github.com/cardano2vn/cardanovn-portal/edit/main/blog/',
-                },
+                },*/
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
@@ -73,7 +73,7 @@ const config = {
                 label: 'Bắt đầu',
             },
 		    {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
-            { to: '/blog', label: 'Blog', position: 'left' },
+            //{ to: '/blog', label: 'Blog', position: 'left' },
             { to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             {
                 href: 'https://github.com/cardano2vn',
