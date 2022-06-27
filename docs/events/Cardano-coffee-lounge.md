@@ -73,4 +73,11 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/DSC05944.JPG)
 
+## Buổi 3: Carda Coffee Lounge - Cách Tiếp cận và phát triển ứng dụng trên nền tảng Blockchain Cardano
+
+
+<iframe width="740" height="415" src="https://www.youtube.com/embed/-uvXCxtCU7U" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 
