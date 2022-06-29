@@ -7,7 +7,7 @@ description: "null"
 **Cardano2vn xin cảm ơn Cộng đồng đã tin tưởng và ủng hộ chúng tôi.**
 
 ## Dự án được cấp vốn ở Fund 6
-1. [Bring Smart Contracts to Vietnam.](https://cardano.ideascale.com/c/idea/365570)
+1. [Bring Smart Contracts to Vietnam.](https://cardano.ideascale.com/c/idea/367834)
 
 ## Dự án được cấp vốn ở Fund 7
 1. [Catalyst Events 4 Vietnam Students.](https://cardano.ideascale.com/a/dtd/Catalyst-Events-4-Vietnam-Students/382615-48088)
