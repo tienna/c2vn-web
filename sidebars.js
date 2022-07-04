@@ -185,6 +185,7 @@ const sidebars = {
     "Catalyst 4 students": [
       "catalyst4students/overview",
       "catalyst4students/daihocnguyentrai",
+      "catalyst4students/report",
     ],
     "Các sự kiện": [
       "events/overview",
