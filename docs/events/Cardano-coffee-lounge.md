@@ -79,5 +79,8 @@ Thành viên tham gia đặc các câu hỏi
 <iframe width="740" height="415" src="https://www.youtube.com/embed/-uvXCxtCU7U" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+## Buổi 3: Carda Coffee Lounge - Cách Tiếp cận và phát triển ứng dụng trên nền tảng Blockchain Cardano
 
+![](img/B4 cardano coffee lounge1.jpg)
 
+![](img/B4 cardano coffee lounge.png)
