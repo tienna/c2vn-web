@@ -21,15 +21,15 @@ Cardano Coffee Lounge
 
 ### Phần 1: Buổi ra mắt Cardano Coffee Lounge
 
-<iframe width="740" height="415" src="https://www.youtube.com/embed/lL9QcarPOfU" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/lL9QcarPOfU" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Mr.Đỗ Mạnh Hùng chia sẻ cảm tưởng về dự án Cardano Coffee Lounge
 
-<iframe width="740" height="415" src="https://www.youtube.com/embed/5CRCgtdBE0c" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/5CRCgtdBE0c" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Mr.Nguyễn Anh Tiến chia sẻ về Cardano, Catalyst tại Cardano Coffee Lounge
 
-<iframe width="740" height="415" src="https://www.youtube.com/embed/Bji-k726XT0" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/Bji-k726XT0" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Một số hình ảnh tại Cardano Coffee Lounge
 
@@ -76,7 +76,7 @@ Thành viên tham gia đặc các câu hỏi
 ## Buổi 3: Carda Coffee Lounge - Cách Tiếp cận và phát triển ứng dụng trên nền tảng Blockchain Cardano
 
 
-<iframe width="740" height="415" src="https://www.youtube.com/embed/-uvXCxtCU7U" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/-uvXCxtCU7U" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Buổi 4: Carda Coffee Lounge - Lsetup node trên nền tảng Blockchain Cardano
