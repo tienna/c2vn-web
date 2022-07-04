@@ -81,6 +81,6 @@ Thành viên tham gia đặc các câu hỏi
 
 ## Buổi 3: Carda Coffee Lounge - Cách Tiếp cận và phát triển ứng dụng trên nền tảng Blockchain Cardano
 
-![](img/B4 cardano coffee lounge1.jpg)
+![](img/B4cardanocoffeelounge1.jpg)
 
-![](img/B4 cardano coffee lounge.png)
+![](img/B4cardanocoffeelounge.png)
