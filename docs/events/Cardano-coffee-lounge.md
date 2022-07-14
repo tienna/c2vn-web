@@ -92,4 +92,4 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/B5-2.jpeg)
 
 
-![](img/B5-3.jpg)
+![](img/B5-3.jpeg)
