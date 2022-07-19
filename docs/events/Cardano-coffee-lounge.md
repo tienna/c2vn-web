@@ -65,7 +65,7 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/_MG_7660.JPG)
 
-## Buổi 2: Carda Coffee Lounge - Làm thế nào để viết được một đề xuất tốt được cấp vốn trên Catalysst
+## Buổi 2: Cardano Coffee Lounge - Làm thế nào để viết được một đề xuất tốt được cấp vốn trên Catalysst
 
 ![](img/DSC05950.JPG)
 
@@ -73,19 +73,19 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/DSC05944.JPG)
 
-## Buổi 3: Carda Coffee Lounge - Cách Tiếp cận và phát triển ứng dụng trên nền tảng Blockchain Cardano
+## Buổi 3: Cardano Coffee Lounge - Cách Tiếp cận và phát triển ứng dụng trên nền tảng Blockchain Cardano
 
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/-uvXCxtCU7U" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-## Buổi 4: Carda Coffee Lounge - Setup node trên nền tảng Blockchain Cardano
+## Buổi 4: Cardano Coffee Lounge - Setup node trên nền tảng Blockchain Cardano
 
 ![](img/B4cardanocoffeelounge1.jpg)
 
 ![](img/B4cardanocoffeelounge.png)
 
-## Buổi 5: Carda Coffee Lounge - Cách đánh giá đề xuât(PA) và làm thế nào hiệu quả
+## Buổi 5: Cardano Coffee Lounge - Cách đánh giá đề xuât(PA) và làm thế nào hiệu quả
 
 ![](img/B5-1.jpeg)
 
@@ -93,3 +93,27 @@ Thành viên tham gia đặc các câu hỏi
 
 
 ![](img/B5-3.jpeg)
+
+## Buổi 1-HCM: Khai chương Cardano Coffee Lounge
+![](img/HCM-B1-1.jpg)
+
+![](img/HCM-B1-2.jpg)
+
+![](img/HCM-B1-3.jpg)
+
+![](img/HCM-B1-4.jpg)
+
+![](img/HCM-B1-5.jpg)
+
+![](img/HCM-B1-6.jpg)
+
+![](img/HCM-B1-7.jpg)
+
+![](img/HCM-B1-8.jpg)
+
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/kNkycOsAR2E" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Buổi 6-HN: Cardano Coffee Lounge - Native Token
+
+
