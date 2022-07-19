@@ -1,7 +1,7 @@
 Hà Nội - Cardano Coffee Lounge “Cardano Native Token những điều cơ bản cần biết”
 ==================================
 
-**Cardano là một trong những Blockchain luôn giữ vị trí top 10 về Market Cap (vốn hóa thị trường) mặc dù trải qua rất nhiều mùa downtrend. Có rất nhiều yếu tố làm nên sự thành công đó và một trong số đó chính là “Cardano Native Token”.
+**Cardano là một trong những Blockchain luôn giữ vị trí top 10 về Market Cap (vốn hóa thị trường) mặc dù trải qua rất nhiều mùa downtrend. Có rất nhiều yếu tố làm nên sự thành công đó và một trong số đó chính là “Cardano Native Token”.**
 
 ![](img/B6.jpeg)
 
