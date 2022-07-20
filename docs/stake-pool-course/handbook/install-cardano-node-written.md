@@ -1,24 +1,24 @@
 ---
 id: install-cardano-node-written
 title: Install cardano-node
-sidebar_label: Install cardano-node
+sidebar_label: Cài đặt cardano-node
 description: "Stake pool course: Learn how to install cardano-node and all its dependencies."
 #image: ../img/og-developer-portal.png
 ---
 
-## Prerequisites
+## Điều kiện tiên quyết
 
-Check the [cardano-node latest release](https://github.com/input-output-hk/cardano-node/releases) and set up your platform:
+Kiểm tra [Bản phát hành cardano-node mới nhất](https://github.com/input-output-hk/cardano-node/releases) và thiết lập nền tảng của bạn:
 
-You will need:
+Bạn sẽ cần:
 
-* An x86 host \(AMD or Intel\), Virtual Machine or AWS instance with at least 2 cores, 4GB of RAM and at least 10GB of free disk space;
-* A recent version of Linux, not Windows or MacOS – this will help us isolate any issues that arise.
-* Make sure you are on a network that is not firewalled. In particular, we will be using TCP/IP port 3000 and 3001 by default to establish connections with other nodes, so this will need to be open.
+* Máy chủ x86 ( AMD hoặc Intel ) , Phiên bản Máy ảo hoặc AWS có ít nhất 2 core, 12GB RAM và ít nhất 100 GB dung lượng đĩa trống;
+* Phiên bản gần đây của Linux, không phải Windows hoặc MacOS - điều này sẽ giúp chúng tôi cô lập mọi vấn đề phát sinh.
+* Đảm bảo rằng bạn đang sử dụng mạng không có tường lửa. Đặc biệt, chúng tôi sẽ sử dụng cổng TCP/IP 3000 và 3001 theo mặc định để thiết lập kết nối với các nút khác, vì vậy điều này sẽ cần phải mở.
 
-## Install dependencies
+## Cài đặt phần phụ thuộc
 
-We need the following packages and tools on our Linux system to download the source code and build it:
+Chúng tôi cần các gói và công cụ sau trên hệ thống Linux của mình để tải xuống mã nguồn và xây dựng nó:
 
 * the version control system `git`,
 * the `gcc` C-compiler,
@@ -31,7 +31,7 @@ We need the following packages and tools on our Linux system to download the sou
 * the Haskell build tool `cabal`,
 * the GHC Haskell compiler.
 
-If we are using an AWS instance running Amazon Linux AMI 2 \(see the [AWS walk-through](../lesson-1#setup-a-linux-server-on-aws) for how to get such an instance up and running\) or another CentOS/RHEL based system, we can install these dependencies as follows:
+Nếu chúng tôi đang sử dụng phiên bản AWS chạy Amazon Linux AMI 2 ( [xem hướng dẫn AWS](../lesson-1#setup-a-linux-server-on-aws) để biết cách khởi động và chạy phiên bản đó ) hoặc một hệ thống dựa trên CentOS / RHEL khác, chúng tôi có thể cài đặt các phần phụ thuộc này như sau:
 
 ```sh
 sudo yum update -y
@@ -40,7 +40,7 @@ sudo yum install zlib-devel libtool autoconf -y
 sudo yum install systemd-devel ncurses-devel ncurses-compat-libs -y
 ```
 
-For Debian/Ubuntu use the following instead:
+Đối với Debian / Ubuntu, hãy sử dụng cách sau để thay thế:
 
 ```sh
 sudo apt-get update -y
@@ -49,7 +49,7 @@ sudo apt-get install libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev -y
 sudo apt-get install make g++ tmux git jq wget libncursesw5 libtool autoconf -y
 ```
 
-If you are using a different flavor of Linux, you will need to use the package manager suitable for your platform instead of `yum` or `apt-get`, and the names of the packages you need to install might differ.
+Nếu bạn đang sử dụng phiên bản Linux khác, bạn sẽ cần sử dụng trình quản lý gói phù hợp với nền tảng của mình thay vì `yum` hoặc `apt-get` và tên của các gói bạn cần cài đặt có thể khác nhau.
 
 ## Download, unpack, install and update Cabal:
 
@@ -61,33 +61,33 @@ mkdir -p $HOME/.local/bin
 mv cabal $HOME/.local/bin/
 ```
 
-Verify that .local/bin is in your PATH
+xác thực .local/bin là đường dẫn trong PATH
 
 ```sh
 echo $PATH
 ```
 
-If .local/bin is not in the PATH, you need to add the following line to your `.bashrc`file
+nếu .local/bin không có trong PATH, Bạn cần làm theo trong file `.bashrc`
 
-Navigate to your home folder:
+Điều hướng đến thư mục chính của bạn:
 
 ```sh
 cd
 ```
 
-Open your .bashrc file with nano   editor
+Bạn mở file .bashrc với lệnh nano  để  editor
 
 ```sh
 nano .bashrc
 ```
 
-Go to the bottom of the file and add the following lines
+đi xuống dòng cuối cùng
 
 ```sh
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-You need to restart your server or source your .bashrc file
+Chạy lại file .bashrc
 
 ```sh
 source .bashrc
@@ -99,7 +99,7 @@ Update cabal
 cabal update
 ```
 
-Above instructions install Cabal version `3.2.0.0`. You can check the version by typing
+Trên đây hướng dẫn cài đặt phiên bản `Cabal 3.2.0.0`. Bạn có thể kiểm tra phiên bản bằng cách gõ
 
 ```sh
 cabal --version
@@ -107,7 +107,7 @@ cabal --version
 
 ## Download and install GHC:
 
-For Debian/Ubuntu systems:
+Cho hệ thống Debian/Ubuntu:
 
 ```sh
 wget https://downloads.haskell.org/~ghc/8.10.2/ghc-8.10.2-x86_64-deb9-linux.tar.xz
@@ -119,7 +119,7 @@ sudo make install
 cd ..
 ```
 
-For CentOS/RHEL systems:
+Cho hệ thống CentOS/RHEL:
 
 ```sh
 wget https://downloads.haskell.org/~ghc/8.10.2/ghc-8.10.2-x86_64-centos7-linux.tar.xz
