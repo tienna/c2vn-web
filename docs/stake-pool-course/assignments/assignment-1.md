@@ -6,6 +6,6 @@ description: "Stake pool course: Assignment 1."
 #image: ../img/og-developer-portal.png
 ---
 
-Try to complete this task from what you have learned so far:
+Hãy cố gắng hoàn thành nhiệm vụ này từ những gì bạn đã học được cho đến nay:
 
-- Create a transaction with only **one** input and **one** output sending all the funds to paymentwithstake.addr
+- Tạo một giao dịch chỉ với một đầu vào và một đầu ra gửi tất cả tiền đến paywithstake.addr
