@@ -7,26 +7,23 @@ description: "Stake pool course: Assignment 2."
 ---
 
 :::note
-As explained before, core and relay nodes must run in separate machines. In
-this assignment you will create a second server or Virtual Machine to host
-your core node.
+Như đã giải thích trước đây, các nút core và nút relay phải chạy trong các máy riêng biệt. Trong nhiệm vụ này, bạn sẽ tạo một máy chủ thứ hai hoặc Máy ảo để lưu trữ nút core của bạn.
 :::note
 
-Complete the following tasks in a second server:
+Hoàn thành các tác vụ sau trong máy chủ thứ hai:
 
-1. Create a second server on AWS or Virtual Machine in Virtual Box. This one will host your core node and hold your stake pool keys.
-2. Install dependencies
-3. Install cabal
-4. Install GHC
-5. Install libsodium
-6. Create the directory .local/bin and add it to the PATH
-7. Build the node from source in your new server or Virtual Machine.
-8. Get Configuration files
+1. Tạo máy chủ thứ hai trên AWS hoặc Máy ảo trong Hộp ảo. Cái này sẽ lưu trữ nút cốt lõi của bạn và giữ các khóa nhóm cổ phần của bạn.
+2. Cài đặt phần phụ thuộc
+3. Cài đặt cabal
+4. Cài đặt GHC
+5. Cài đặt libsodium
+6. Tạo thư mục .local / bin và thêm nó vào PATH
+7. Xây dựng nút từ nguồn trong máy chủ mới hoặc Máy ảo của bạn.
+8. Nhận tệp cấu hình
 
-Repeat what you learned on [Lesson 1](../lesson-1#install-cardano-node)
-
+Nhắc lại những gì bạn đã học trong [Bài 1](../lesson-1#install-cardano-node)
 
 :::note
-DO NOT START YOUR CORE NODE YET.
-When you have completed tasks 1-8, continue to [KES-Periods](../assignments/kes_period)
+ĐỪNG BẮT ĐẦU CORE CỦA BẠN. 
+Khi bạn đã hoàn thành nhiệm vụ 1-8, hãy tiếp tục đến [KES-Periods](../assignments/kes_period)
 :::
