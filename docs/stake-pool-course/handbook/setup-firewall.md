@@ -1,19 +1,19 @@
 ---
 id: setup-firewall
 title: Setup Firewall
-sidebar_label: Setup Firewall
+sidebar_label: Thiết lập tường lửa
 description: "Stake pool course: Learn how to setup a basic firewall."
 #image: ../img/og-developer-portal.png
 --- 
 
-Resources to help you setting up a basic firewall:
+Các tài nguyên giúp bạn thiết lập tường lửa cơ bản:
 
-[Amazon EC2 security groups for Linux instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
+[Nhóm bảo mật Amazon EC2 cho các phiên bản Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
 
-[Uncomplicated Firewall Manpage](http://manpages.ubuntu.com/manpages/focal/man8/ufw.8.html)
+[Quản lý tường lửa không phức tạp](http://manpages.ubuntu.com/manpages/focal/man8/ufw.8.html)
 
 :::danger Stake Pool Security
 
-Before you run your pool on mainnet you should have a good understanding of stake pool security. Make sure to read a lot in the [Stake Pool Security Forum](https://forum.cardano.org/c/staking-delegation/stake-pool-security/157) and learn about best practises. 
+rước khi chạy pool của mình trên mainnet, bạn nên hiểu rõ về tính bảo mật của hệ thống cổ phần. Hãy nhớ đọc nhiều trong Diễn đàn [Stake Pool Security Forum](https://forum.cardano.org/c/staking-delegation/stake-pool-security/157)  và tìm hiểu về các phương pháp hay nhất.
 
 :::
