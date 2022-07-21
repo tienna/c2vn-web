@@ -1,4 +1,4 @@
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 2: Làm thế nào để có ý tưởng kinh doanh và biến ý tưởng đó thành hiện thực với quỹ Catalyst của Cardano
+[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 2
 ==============================================
 
 
