@@ -190,7 +190,10 @@ const sidebars = {
     "Các sự kiện": [
       "events/overview",
       //"events/daihocnguyentrai",
-	  "events/Cardano-coffee-lounge",
+	"events/Cardano-coffee-lounge",
+	"events/evnen-HN",
+	"events/evnen-HCM",
+	    
     ],
 
     // "Mang Project Catalyst Townhall đến Việt Nam": [
