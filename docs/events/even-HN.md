@@ -1,4 +1,4 @@
-Cardano Coffee Lounge - Hà Nội: Làm thế nào để có ý tưởng kinh doanh và biến ý tưởng đó thành hiện thực với quỹ Catalyst của Cardano
+[Cardano Coffee Lounge - Hà Nội] B 7
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
