@@ -5,7 +5,7 @@
 
 ![](img/B7-HN.jpeg)
 
-📣Chủ đề thảo luận buổi 7 ở HN: “Làm thế nào để có ý tưởng kinh doanh và biến ý tưởng đó thành hiện thực với quỹ Catalyst của Cardano”
+📣Chủ đề thảo luận buổi 7 ở HN: “**Làm thế nào để có ý tưởng kinh doanh và biến ý tưởng đó thành hiện thực với quỹ Catalyst của Cardano**”
 
 📣Diễn giả: Mr Tiến, chủ dự án Cardano2vn, admin Cộng đồng Cardano Catalyst Việt Nam
 
