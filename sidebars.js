@@ -189,10 +189,9 @@ const sidebars = {
     ],
     "Các sự kiện": [
       "events/overview",
-      //"events/daihocnguyentrai",
-	"events/Cardano-coffee-lounge",
-	"events/evnen-HN",
-	"events/evnen-HCM",
+      "events/Cardano-coffee-lounge",
+      "events/even-HN",
+      "events/even-HCM",
 	    
     ],
 
