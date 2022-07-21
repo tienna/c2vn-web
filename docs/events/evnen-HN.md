@@ -16,7 +16,7 @@ Cardano Coffee Lounge - Hà Nội: Làm thế nào để có ý tưởng kinh do
 📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  theo biểu mẫu sau đây (https://forms.gle/GooGW2cGpVEdhXHX9) trước 8:00 ngày 23/7/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order nước miễn phí.
-—-------------------
+
 👉Cardano2vn - Mang Cardano về Việt Nam
 Website: https://cardano2vn.io/ 
 👉Trao đổi về ngôn ngữ lập trình Smartcontract - Plutus, Marlove trên Cardano
