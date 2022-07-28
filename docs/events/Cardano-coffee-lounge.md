@@ -116,4 +116,16 @@ Thành viên tham gia đặc các câu hỏi
 
 ## Buổi 6-HN: Cardano Coffee Lounge - Native Token
 
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/3VYJA6kpwGk" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Buổi 2-HCM: Cardano Coffee Lounge 
+
+![](img/B2-HCM.jpeg)
+
+## Buổi 7-HN: Cardano Coffee Lounge 
+
+![](img/B7-HN.jpeg)
+
+![](img/HN-B7-2.jpg)
+
+![](img/HN-B7-1.jpg)
