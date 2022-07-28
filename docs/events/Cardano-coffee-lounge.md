@@ -126,6 +126,6 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/B7-HN.jpeg)
 
-![](img/HN-B7-2.jpg)
+![](img/HN-B7-2.jpeg)
 
-![](img/HN-B7-1.jpg)
+![](img/HN-B7-1.jpeg)
