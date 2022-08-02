@@ -134,7 +134,7 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/B3-HCM.jpeg)
 
-## Buổi 7-HN: Cardano Coffee Lounge “4 bước Marketing để proposal được nhiều người vote”
+## Buổi 8-HN: Cardano Coffee Lounge “4 bước Marketing để proposal được nhiều người vote”
 
 ![](img/B8-HN.jpeg)
 
