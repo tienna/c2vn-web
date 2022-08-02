@@ -129,3 +129,17 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/HN-B7-2.jpeg)
 
 ![](img/HN-B7-1.jpeg)
+
+## Buổi 3-HCM: Cardano Coffee Lounge “Hướng dẫn chi tiết thực hiện quyền voting của chủ sở hữu ADA cho Catalyst”
+
+![](img/B3-HCM.jpeg)
+
+## Buổi 7-HN: Cardano Coffee Lounge “4 bước Marketing để proposal được nhiều người vote”
+
+![](img/B8-HN.jpeg)
+
+![](img/HN-B8-2.jpeg)
+
+![](img/HN-B8-4.jpeg)
+
+![](img/HN-B8-6.jpeg)
