@@ -75,11 +75,13 @@ const config = {
 		    {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
             //{ to: '/blog', label: 'Blog', position: 'left' },
             { to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
+            { to: '/docs/nami', label: 'Nami Connector', position: 'left' },
             {
                 href: 'https://github.com/cardano2vn',
                 label: 'GitHub',
                 position: 'right',
             },
+
         ],
     },
     footer: {
