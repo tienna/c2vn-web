@@ -1,19 +1,19 @@
-[Cardano Coffee Lounge - Hà Nội]-Buổi 8
+[Cardano Coffee Lounge - Hà Nội]-Buổi 9
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
 
-![](img/B8-HN.jpeg)
+![](img/B9-HN.png)
 
-📣Chủ đề thảo luận buổi 8 ở HN: “4 bước Marketing để proposal được nhiều người vote”
+📣Chủ đề thảo luận buổi 9 ở HN: “Cài đặt và vận hành Pool trên Blockchain Cardano”
 
-📣Diễn giả: Mr Alfred Phạm, CEO of Miverse Multiverse
+📣Diễn giả: Nguyễn Văn Hiệu, chủ dự án cardano2vn.io
 
-📣Thời gian: 14h, Chủ Nhật, 31/7/2022
+📣Thời gian: 14h, Chủ Nhật, 07/08/2022
 
 📣 Địa điểm:  BT2-10 Nguyễn Xuân Khoát, Khu ngoại giao đoàn, Tây Hồ, Hà Nội [map tại đây](https://maps.app.goo.gl/6QRmmYxo4XzCQ3aZ7).
 
-📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 31/7/2022.
+📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 07/08/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order nước miễn phí.
 —-------------------
