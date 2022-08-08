@@ -143,3 +143,20 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/HN-B8-4.jpeg)
 
 ![](img/HN-B8-6.jpeg)
+
+
+## Buổi 9-HN: Cardano Coffee Lounge “Cài đặt và vận hành Pool trên Blockchain Cardano”
+
+![](img/B9-HN.png)
+
+![](img/HN9_1.png)
+
+![](img/HN9_2.png)
+
+![](img/HN9_3.png)
+
+![](img/HN9_4.png)
+
+## Buổi 4-HCM: Cardano Coffee Lounge “Kinh nghiệm đánh giá dự án với vai trò PA”
+
+![](img/B4-HCM.jpeg)
