@@ -149,13 +149,11 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/B9-HN.png)
 
-![](img/HN9_1.png)
+![](img/HN-B9-1.jpeg)
 
-![](img/HN9_2.png)
+![](img/HN-B9-2.jpeg)
 
-![](img/HN9_3.png)
-
-![](img/HN9_4.png)
+![](img/HN-B9-3.jpeg)
 
 ## Buổi 4-HCM: Cardano Coffee Lounge “Kinh nghiệm đánh giá dự án với vai trò PA”
 
