@@ -156,8 +156,17 @@ const sidebars = {
            "operate-a-stake-pool/ansible-cardano-node",
          ],
        },
+       {
+         type: "category",
+         label: "Raspberry Pi Pool Kit",
+         items: [
+            "operate-a-stake-pool/Raspberry-Pi-pool-kit/README",
+            "operate-a-stake-pool/Raspberry-Pi-pool-kit/note",
+         ],
+       },
        "operate-a-stake-pool/marketing-stake-pool",
        "setup-application/Staking",
+       
     ],
     "Cài đặt và Ví dụ Plutus": [
       "setup-application/Installation",
@@ -189,6 +198,7 @@ const sidebars = {
     ],
     "Các sự kiện": [
       "events/overview",
+      "events/iohk-blog",
       "events/Cardano-coffee-lounge",
       "events/even-HN",
       "events/even-HCM",
