@@ -8,8 +8,10 @@ Chào mừng các bạn đến với nhóm dịch thuật blog iohk.io của Car
 Với định hướng dự án việt hóa các bài đăng trên trang iohk.io là dự án của cộng đồng NÊN CHÚNG TÔI CẦN SỰ HỖ TRỢ TỪ CÁC BẠN. Cụ thể:
 
 👉 Dự án cần tuyển 15 người đảm nhận việc dịch thuật.
+
 👉 Yêu cầu với thành viên:
--ưu tiên các thành viên coretem.
+
+- Ưu tiên các thành viên coretem.
 - Biết đọc tiếng Anh thành thạo
 - Có kỹ năng sử dụng tốt máy tính và các phần mềm dịch thuật, có tài khoản github ( sẽ có hướng dẫn chi tiết)
 - Hiểu biết về ngành Blockchain và dự án Cardano
