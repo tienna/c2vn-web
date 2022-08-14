@@ -7,9 +7,9 @@
 Chào mừng các bạn đến với nhóm dịch thuật blog iohk.io của Cardano2vn.io. 
 Với định hướng dự án việt hóa các bài đăng trên trang iohk.io là dự án của cộng đồng NÊN CHÚNG TÔI CẦN SỰ HỖ TRỢ TỪ CÁC BẠN. Cụ thể:
 
-👉 Dự án cần tuyển 15 người đảm nhận việc dịch thuật.
+**👉 Dự án cần tuyển 15 người đảm nhận việc dịch thuật.
 
-👉 Yêu cầu với thành viên:
+👉 Yêu cầu với thành viên:**
 
 - Ưu tiên các thành viên coretem.
 - Biết đọc tiếng Anh thành thạo
@@ -18,8 +18,11 @@ Với định hướng dự án việt hóa các bài đăng trên trang iohk.io
 - Hoàn thành bài ktra đạt tối thiểu 150 điểm [tại đây](https://fimi.vn/kiem-tra-blockchain-pro/)
 
 Sau khi hoàn thành bài kiểm tra vui lòng gửi kết quả tới https://web.telegram.org/k/#@Tiennguyenanh 
+
+**👉 Thời gian**
+-  Đăng ký trước 23:00 ngày 16/8/2022 hoặc khi có đủ 15 người.
  
-👉 Quyền lợi thành viên tham gia:
+**👉 Quyền lợi thành viên tham gia:**
 - Tham gia nhóm dịch thuật, cùng nhau trao đổi chuyên sâu hàng tuần.
 - Chia sẻ các bài dịch mà bạn tâm huyết tại các buổi offline của dự án Cardano Coffee Lounge
 - Dịch bài Blog từ  https://iohk.io/blog về Blockchain & Cardano.
