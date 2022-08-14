@@ -158,3 +158,19 @@ Thành viên tham gia đặc các câu hỏi
 ## Buổi 4-HCM: Cardano Coffee Lounge “Kinh nghiệm đánh giá dự án với vai trò PA”
 
 ![](img/B4-HCM.jpeg)
+
+## Buổi 10-HN: Cardano Coffee Lounge “Smartcontract Marlowe trên Blockchain Cardano cho người mới”
+
+![](img/B10-HN.png)
+
+![](img/HN-B10-1.jpeg)
+
+![](img/HN-B10-2.jpeg)
+
+![](img/HN-B10-3.jpeg)
+
+## Buổi 5-HCM: Cardano Coffee Lounge “dApp connnect”
+
+![](img/B5-HCM.jpeg)
+
+![](img/HCM-B5-1.jpeg)
