@@ -94,3 +94,14 @@ sudo ldconfig
 ```
 
 Điều này đảm bảo hệ thống nhận thức được libsodium và secp256k1 (không chỉ ở cấp độ người dùng).
+
+-------------------------
+
+
+PS: nếu chạy cardano-node báo lỗi copy thêm 2 thư viện này
+
+```
+sudo cp /snap/core20/1597/usr/lib/aarch64-linux-gnu/libssl.so.1.1 /usr/local/lib
+
+sudo cp /snap/core20/1597/usr/lib/aarch64-linux-gnu/libcrypto.so.1.1 /usr/local/lib
+```
