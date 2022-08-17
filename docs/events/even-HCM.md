@@ -1,4 +1,4 @@
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 5
+[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 6
 ==============================================
 
 
@@ -6,14 +6,14 @@
 
 ![](img/B5-HCM.jpeg)
 
-📣Chủ đề thảo luận buổi 5 ở HCM: “AMA DApp Connector”
+📣Chủ đề thảo luận buổi 6 ở HCM: “”
 
 
-📣Thời gian: 9h30, Chủ Nhật, 14/8/2022
+📣Thời gian: 9h30, Chủ Nhật, 21/8/2022
        
 📣 Địa điểm: Book Coffee – Nhà Thiếu Nhi Quận 3 - 36 Lê Quý Đôn, Quận 3, Thành phố Hồ Chí Minh [map tại đây](https://goo.gl/maps/TJf8ESJQH4KwRaaq9).
 
-📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 13/7/2022.
+📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 21/7/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order nước miễn phí.
 
