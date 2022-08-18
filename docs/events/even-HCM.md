@@ -4,7 +4,7 @@
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
 
-![](img/B6-HCM.jpeg)
+![](img/B6-HCM.png)
 
 📣Chủ đề thảo luận buổi 6 ở HCM: “SỰ THẬT VỀ NFT”
 
