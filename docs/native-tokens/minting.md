@@ -134,56 +134,58 @@ Epoch và số vị trí phải khớp khi được so sánh với Cardano [Expl
 ![image](https://user-images.githubusercontent.com/34856010/162867330-fa85a6a9-37fa-4cad-94c8-bfe742c7983d.png)
 
 
-### Set up your workspace
+### Thiết lập không gian làm việc
 
-We will start with a clean slate. So let's make a new directory and navigate into it.
+Chúng ta sẽ bắt đầu với một nơi làm việc sạch sẽ. Vì vậy, hãy tạo một thư mục mới và làm việc trong thư mục đó.
+
 ```bash
 mkdir tokens
 cd tokens/
 ```
 
-### Generate keys and address
+###Tạo khóa và địa chỉ
 
-If you already have a payment address and keys and you want to use those, you can skip this step.  
-If not - we need to generate those to submit transactions and to send and receive ada or native assets.
+Nếu bạn đã có địa chỉ thanh toán và khóa và bạn muốn sử dụng chúng, bạn có thể bỏ qua bước này.
+Nếu không - chúng ta cần tạo khóa và địa chỉ để gửi giao dịch và gửi và nhận ada hoặc tài sản gốc.
 
-Payment verification and signing keys are the first keys we need to create.
+Khóa xác minh và khóa ký là những khóa đầu tiên chúng tôi cần tạo.
 
 ```bash
 cardano-cli address key-gen --verification-key-file payment.vkey --signing-key-file payment.skey
 ```
 
-Those two keys can now be used to generate an address.
+Hai khóa này bây giờ có thể được sử dụng để tạo một địa chỉ.
 
 ```bash
 cardano-cli address build --payment-verification-key-file payment.vkey --out-file payment.addr $testnet
 ```
 
-We will save our address hash in a variable called `address`.
+Chúng ta sẽ lưu giá trị băm địa chỉ trong một biến được gọi là `address`.
 
 ```bash
 address=$(cat payment.addr)
 ```
-### Fund the address
+### Cấp tiền cho địa chỉ
 
-Submitting transactions always require you to pay a fee. Sending native assets requires also requires sending at least 1 ada.  
-So make sure the address you are going to use as the input for the minting transaction has sufficient funds. 
+Thực hiện một giao dịch luôn yêu cầu bạn trả phí. Việc gửi nội dung gốc cũng yêu cầu gửi ít nhất 1 ada.
+Vì vậy, hãy đảm bảo rằng địa chỉ bạn sẽ sử dụng làm đầu vào cho giao dịch đúc tiền luôn có đủ tiền.
 
-For the **testnet**, you can request funds through the [testnet faucet](../integrate-cardano/testnet-faucet).
+
+Trên mạng **thử nghiệm - testnet**, bạn có thể yêu cầu cấp tiền từ [testnet faucet](../integrate-cardano/testnet-faucet).
 
 ### Export protocol parameters
 
-For our transaction calculations, we need some of the current protocol parameters. The parameters can be saved in a file called <i>protocol.json</i> with this command:
+Để tính toán các giao dich, chúng tôi cần một số tham số giao thức hiện tại. Các tham số có thể được lưu trong một tệp có tên là <i>protocol.json</i> bằng câu lệnh:
 
 ```bash
 cardano-cli query protocol-parameters $testnet --out-file protocol.json
 ```
 
-## Minting native assets
+## Minting tài sản gốc
 
-### Generate the policy
+### Tạo policy
 
-Policies are the defining factor under which tokens can be minted. Only those in possession of the policy keys can mint or burn tokens minted under this specific policy.
+Chính sách (Policies) là yếu tố quyết định việc đúc tài sản gốc. Chỉ những người sở hữu khóa chính sách mới có thể đúc tài sản gốc theo chính sách này.
 We'll make a separate sub-directory in our work directory to keep everything policy-wise separated and more organized.
 For further reading, please check [the official docs](https://docs.cardano.org/native-tokens/getting-started/#tokenmintingpolicies) or the [github page about multi-signature scripts](https://github.com/input-output-hk/cardano-node/blob/c6b574229f76627a058a7e559599d2fc3f40575d/doc/reference/simple-scripts.md).
 
