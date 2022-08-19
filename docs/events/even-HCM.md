@@ -8,6 +8,7 @@
 
 📣Chủ đề thảo luận buổi 6 ở HCM: “SỰ THẬT VỀ NFT”
 
+📣Diễn giả: Tống Quốc Kỳ - CEO BlockTree.asia
 
 📣Thời gian: 9h30, Chủ Nhật, 21/8/2022
        
