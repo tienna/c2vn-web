@@ -77,8 +77,8 @@ const config = {
             { to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             //{ to: '/docs/nami', label: 'Nami Connector', position: 'left' },
             {
-                href: 'http://194.233.73.17:3000/buy.html',
-                label: 'Nami Connector',
+                href: 'http://194.233.73.17:3030/index.html',
+                label: 'Shop Pay tADA',
                 position: 'left',
             },
             {
