@@ -87,6 +87,7 @@ const sidebars = {
       "integrate-cardano/listening-for-payments-cli",
       "integrate-cardano/listening-for-payments-wallet",
       "integrate-cardano/dapps-connector",
+      "integrate-cardano/Shop-pay-ada-Blockfrost",
       "integrate-cardano/testnet-faucet",
     ],
     "Khám phá Native Tokens": [
