@@ -15,7 +15,7 @@ Marketing &amp; Communications
 - ![](img/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.005.png)[](https://www.linkedin.com/in/olga-hryniuk-1094a3160/ "LinkedIn")
 - ![](img/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.006.png)[](https://github.com/olgahryniuk "GitHub")
 
-![Introducing Ofelimos: a proof-of-useful-work consensus protocol](img/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.007.png)
+![Introducing Ofelimos: a proof-of-useful-work consensus protocol](https://github.com/cardano2vn/iohk-blog/blob/main/vi/docs1/2022/08/img/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.007.png?raw=true)
 
 Việc giảm thiểu chi phí năng lượng và lượng khí thải carbon của bằng chứng công việc (PoW) là một trong những chủ đề được thảo luận sôi nổi nhất trong không gian tiền điện tử. Việc thay thế nguyên thủy PoW trong giao thức chuỗi dài nhất của Nakamoto bằng một bằng chứng về công việc hữu ích (PoUW) từ lâu đã được lý thuyết là một giải pháp lý tưởng ở nhiều khía cạnh, nhưng cho đến ngày nay, khái niệm này vẫn chưa được xác thực một cách thuyết phục.
 
