@@ -3,6 +3,13 @@
 
 Trong kho này, chúng tôi muốn chia sẻ cách triển khai các chức năng cơ bản của Ví Nami trên trang web của bạn.
 
+## Cách sử dụng
+
+Có nhiều lý do có thể khiến bạn muốn có chức năng lắng nghe các khoản thanh toán `ada`, nhưng một trường hợp sử dụng rất rõ ràng sẽ là đối với một thứ gì đó như **cửa hàng trực tuyến** hoặc **cổng thanh toán** có thể sử dụng token`ada` như một tiền tệ.
+
+![](img/ada-online-shop.png)
+
+
 ## Giới thiệu về Ví Nami
 
 Ví Nami là một tiện ích mở rộng ví dựa trên trình duyệt để tương tác với chuỗi khối Cardano. Đó là một dự án mã nguồn mở và được xây dựng bởi Berry Pool.
@@ -164,20 +171,6 @@ Khi đó bạn Sign thì cửa sổ thành công sẽ hiện ra như sau và k�
 
 
 -------------------------------------------
-Chạy ứng dụng mẫu của chúng tôi để thử các chức năng của gói của chúng tôi.
-
-
-
-Trong file ```./config.js``` và thêm thông tin khóa API của bạn.
-
-```js
-const blockfrostApiKey = {
-    0: "rbkrp5hOr3khPAWNo3x47t6CP7qKFyA5", // testnet
-    1: "mainnetfqH0CVlBesnsj5IKhgIYCn231KzqUOyk" // mainnet
-}
-
-export default blockfrostApiKey;
-```
 
 ## Bắt đầu với code
 
