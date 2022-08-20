@@ -63,4 +63,6 @@ Kế hoạch chia sẻ phần thưởng mô tả một phương tiện để [kh
 
 Mô hình khuyến khích của Cardano đã thiết lập một hệ sinh thái nơi những người tham gia hợp pháp được hưởng lợi từ việc tuân theo giao thức, từ đó cho phép blockchain Cardano hoạt động an toàn và hiệu quả. Kết quả là một sổ cái phi tập trung được điều hành một cách đáng tin cậy sẽ được bảo mật bằng các kỹ thuật mã hóa và cơ chế phần thưởng theo lý thuyết trò chơi.
 
-*Chờ nhé! Trong các bài viết tiếp theo chúng tôi sẽ xem xét kỹ lưỡng hơn một số tài liệu nghiên cứu đã thiết lập nền móng cho một nền tảng hợp đồng thông minh. Cụ thể, chúng tôi sẽ bắt đầu với nghiên cứu kích hoạt mô hình UTxO mở rộng, giải thích điều đó thực sự có nghĩa là gì và cách nó cho phép sổ cái xử lý hàng loạt tài sản và các mức phí với nhiều lợi ích khác nhau cho người dùng.<br><br>Bài này được dịch bởi Le Nguyen. [với bài gốc](https://iohk.io/en/blog/posts/2022/06/10/cardanos-foundational-research-overview/)<br>*Dự án này được tài trợ bới Catalyst**
+*Chờ nhé! Trong các bài viết tiếp theo chúng tôi sẽ xem xét kỹ lưỡng hơn một số tài liệu nghiên cứu đã thiết lập nền móng cho một nền tảng hợp đồng thông minh. Cụ thể, chúng tôi sẽ bắt đầu với nghiên cứu kích hoạt mô hình UTxO mở rộng, giải thích điều đó thực sự có nghĩa là gì và cách nó cho phép sổ cái xử lý hàng loạt tài sản và các mức phí với nhiều lợi ích khác nhau cho người dùng.
+Bài này được dịch bởi Le Nguyen [với bài gốc](https://iohk.io/en/blog/posts/2022/06/10/cardanos-foundational-research-overview/)
+*Dự án được tài trợ bởi Catalyst*
