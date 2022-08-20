@@ -1,4 +1,6 @@
-# Lace: tốc độ, đơn giản và thông suốt
+# Ví nhẹ Lace phi tập trung
+
+Tốc độ, đơn giản và thông suốt
 
 ### **Ví nhẹ mới của IOG - hiện đang trong quá trình phát triển - sẽ giúp thúc đẩy việc áp dụng bằng cách cung cấp khả năng nâng cao và dễ sử dụng cho người dùng tiền mã hóa**
 
