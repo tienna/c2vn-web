@@ -1,4 +1,6 @@
-##
+# Mã nhị phân cho các CPU ARM
+
+
 ***các phiên bản khác nhau của nút cardano và các mã nhị phân cli được xây dựng cho các CPU ARM*** 🏴‍☠️🦾
 
 BIG Thanks to SPO's [ZW3RK](https://twitter.com/zw3rkpool/) who provides the amazing Static Binaries, [SRN](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0) who provides dynamic builds and maintains repo with [PIADA](https://armada-alliance.com/stake-pools/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) and our friend [Daniel](https://github.com/rekuenkdr) ₳🏴‍☠️🙏
