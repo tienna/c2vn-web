@@ -5,7 +5,7 @@
 
 ![](img/B11-HN.png)
 
-📣Chủ đề thảo luận buổi 11111 ở HN: “Mithril: một blockchain mạnh và nhẹ hơn để đạt hiệu quả tốt hơn”
+📣Chủ đề thảo luận buổi 11 ở HN: “Mithril: một blockchain mạnh và nhẹ hơn để đạt hiệu quả tốt hơn”
 
 📣Diễn giả: Jimme Lê, Vietccoreteam
 

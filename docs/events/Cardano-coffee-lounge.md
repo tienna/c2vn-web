@@ -2,6 +2,10 @@ Cardano Coffee Lounge
 ==========
 🏆🏆 Với kết quả tại Catalyst Fund8, dự án **Cardano Coffee Lounge** đã được giải ngân và đi vào hoạt động. Đây là nơi gặp gỡ, trao đổi dành cho những thành viên yêu thích Blockchain, yêu thích Cardano đến từ Cộng đồng.
 
+![](img/HCM-B1-1.jpg)
+
+Khai trương Cardano Coffee Lounge cầu tp. Hồ Chí Minh
+
 ![](img/Coffee1.jpg)
 
 **Nơi chia sẻ kiến thức về Blockchain, Cardano và Catalyst**
@@ -174,3 +178,21 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/B5-HCM.jpeg)
 
 ![](img/HCM-B5-1.jpeg)
+
+## Buổi 11-HN: Cardano Coffee Lounge “Mithril: một blockchain mạnh và nhẹ hơn để đạt hiệu quả tốt hơn”
+
+![](img/B11-HN.png)
+
+![](img/HN-B11-1.jpg)
+
+![](img/HN-B11-2.jpg)
+
+![](img/HN-B11-3.jpg)
+
+## Buổi 5-HCM: Cardano Coffee Lounge “SỰ THẬT VỀ NFT”
+
+![](img/B6-HCM.png)
+
+![](img/HCM-B6-1.jpg)
+
+![](img/HCM-B6-2.jpg)
