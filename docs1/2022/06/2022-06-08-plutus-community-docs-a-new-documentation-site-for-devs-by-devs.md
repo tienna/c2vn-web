@@ -17,7 +17,7 @@ Truyền thông và tiếp thị
 - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.007.png)[](https://twitter.com/igodlab "Twitter")
 - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.008.png)[](https://github.com/Igodlab "GitHub")
 
-![Trang Tài liệu Cộng đồng về Plutus: một trang tài liệu mới được xây dựng bởi cộng đồng các nhà phát triển, dành cho các nhà phát triển](https://github.com/cardano2vn/iohk-blog/blob/main/vi/docs1/2022/06/img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.009.png?raw=true)
+![Trang Tài liệu Cộng đồng về Plutus: một trang tài liệu mới được xây dựng bởi cộng đồng các nhà phát triển, dành cho các nhà phát triển](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.009.png)
 
 Input Output Global (IOG) tìm cách thúc đẩy sự phát triển của mã nguồn mở và do cộng đồng vận hành. Cộng đồng làm phong phú thêm mã nguồn mở này sẽ là nền tảng cho việc ứng dụng công nghệ thành công.
 
