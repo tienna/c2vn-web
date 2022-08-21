@@ -12,10 +12,7 @@ Quản lý cộng đồng kỹ thuật - Plutus
 
 Truyền thông và tiếp thị
 
-- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.005.png)[](mailto:ignacio.calderondelab@iohk.io "Email")
-- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.006.png)[](https://www.linkedin.com/in/ignacio-calderon-de-la-bar%C3%A7a-7a9199130/ "LinkedIn")
-- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.007.png)[](https://twitter.com/igodlab "Twitter")
-- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.008.png)[](https://github.com/Igodlab "GitHub")
+- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.005.png)[](mailto:ignacio.calderondelab@iohk.io "Email") - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.006.png)[](https://www.linkedin.com/in/ignacio-calderon-de-la-bar%C3%A7a-7a9199130/ "LinkedIn") - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.007.png)[](https://twitter.com/igodlab "Twitter") - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.008.png)[](https://github.com/Igodlab "GitHub")
 
 ![Trang Tài liệu Cộng đồng về Plutus: một trang tài liệu mới được xây dựng bởi cộng đồng các nhà phát triển, dành cho các nhà phát triển](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.009.png)
 
