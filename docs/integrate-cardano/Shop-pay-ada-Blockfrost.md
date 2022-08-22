@@ -1,7 +1,8 @@
 # Ví dụ về tạo một shop trả bằng tADA
 
+Trong kho này, chúng tôi muốn chia sẻ cách triển khai các chức năng cơ bản của Ví Nami trên trang web của bạn. Bạn có thể thử nó [tại đây](http://194.233.73.17:3030/index.html)
+Mã nguồn của nó [tại đây](https://github.com/cardano2vn/Shop-pay-ada)
 
-Trong kho này, chúng tôi muốn chia sẻ cách triển khai các chức năng cơ bản của Ví Nami trên trang web của bạn.
 
 ## Cách sử dụng
 

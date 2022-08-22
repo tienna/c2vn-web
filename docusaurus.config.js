@@ -76,11 +76,13 @@ const config = {
             //{ to: '/blog', label: 'Blog', position: 'left' },
             { to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             //{ to: '/docs/nami', label: 'Nami Connector', position: 'left' },
-            {
-                href: 'http://194.233.73.17:3030/index.html',
-                label: 'Shop Pay tADA',
-                position: 'left',
-            },
+            
+            {to: '/docs/integrate-cardano/Shop-pay-ada-Blockfrost', label: 'Shop Pay tADA', position: 'left'},
+            //{
+            //    href: 'http://194.233.73.17:3030/index.html',
+            //    label: 'Shop Pay tADA',
+            //    position: 'left',
+            //},
             {
                 href: 'https://github.com/cardano2vn',
                 label: 'GitHub',
