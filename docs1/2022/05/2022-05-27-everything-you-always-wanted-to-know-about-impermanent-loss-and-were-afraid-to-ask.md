@@ -100,4 +100,7 @@ Nền tảng Plutus cung cấp ngôn ngữ hợp đồng thông minh gốc cho c
 - Tổn thất tạm thời được tính bằng cách so sánh giá trị của các token khi rút tiền với giá trị của chúng khi được lưu giữ.
 - Stablecoin có sự ổn định về giá, vì vậy các nhóm thanh khoản sử dụng stablecoin có thể ít bị Tổn thất tạm thời.
 - Chuỗi dựa trên UTXO sử dụng thiết kế sàn DEX trong mô hình Sổ lệnh có khả năng ít bị Tổn thất tạm thời hơn mô hình AMM sử dụng thiết kế sàn DEX trên Chuỗi dựa trên Tài khoản.
-- Không thể xảy ra lãng phí tiền trong mô hình EUTxO, vì các giao dịch được xử lý và xác thực ở trạng thái cục bộ. Bài này được dịch bởi Max Long [với bài gốc tại đây](https://iohk.io/en/blog/posts/2022/05/27/everything-you-always-wanted-to-know-about-impermanent-loss-and-were-afraid-to-ask/) *Dự án này được tài trợ bới Catalyst*
+- Không thể xảy ra lãng phí tiền trong mô hình EUTxO, vì các giao dịch được xử lý và xác thực ở trạng thái cục bộ. 
+
+Bài này được dịch bởi Max Long [với bài gốc tại đây](https://iohk.io/en/blog/posts/2022/05/27/everything-you-always-wanted-to-know-about-impermanent-loss-and-were-afraid-to-ask/) 
+*Dự án này được tài trợ bới Catalyst*
