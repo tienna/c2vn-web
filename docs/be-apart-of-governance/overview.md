@@ -22,7 +22,7 @@ description: "null"
 2. [Localize Yoroi for Vietnam market.](https://cardano.ideascale.com/a/dtd/Localize-Yoroi-for-Vietnam-market/382591-48088)
 
 ### Report Cardano Technical hub in Vietnamese
-4. [Cardano Technical hub in Vietnamese.](https://cardano.ideascale.com/a/dtd/Cardano-Technical-hub-in-Vietnamese/382651-48088)
+3. [Cardano Technical hub in Vietnamese.](https://cardano.ideascale.com/a/dtd/Cardano-Technical-hub-in-Vietnamese/382651-48088)
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/rLYlY28dzXA" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
