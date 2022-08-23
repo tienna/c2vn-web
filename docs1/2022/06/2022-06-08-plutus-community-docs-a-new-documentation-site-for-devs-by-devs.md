@@ -12,9 +12,12 @@ Quản lý cộng đồng kỹ thuật - Plutus
 
 Truyền thông và tiếp thị
 
-- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.005.png)[](mailto:ignacio.calderondelab@iohk.io "Email") - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.006.png)[](https://www.linkedin.com/in/ignacio-calderon-de-la-bar%C3%A7a-7a9199130/ "LinkedIn") - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.007.png)[](https://twitter.com/igodlab "Twitter") - ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.008.png)[](https://github.com/Igodlab "GitHub")
+- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.005.png)[](mailto:ignacio.calderondelab@iohk.io "Email")
+- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.006.png)[](https://www.linkedin.com/in/ignacio-calderon-de-la-bar%C3%A7a-7a9199130/ "LinkedIn")
+- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.007.png)[](https://twitter.com/igodlab "Twitter")
+- ![](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.008.png)[](https://github.com/Igodlab "GitHub")
 
-![Trang Tài liệu Cộng đồng về Plutus: một trang tài liệu mới được xây dựng bởi cộng đồng các nhà phát triển, dành cho các nhà phát triển](img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.009.png)
+![Trang Tài liệu Cộng đồng về Plutus: một trang tài liệu mới được xây dựng bởi cộng đồng các nhà phát triển, dành cho các nhà phát triển](https://github.com/cardano2vn/iohk-blog/blob/main/vi/docs1/2022/06/img/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs.009.png?raw=true)
 
 Input Output Global (IOG) tìm cách thúc đẩy sự phát triển của mã nguồn mở và do cộng đồng vận hành. Cộng đồng làm phong phú thêm mã nguồn mở này sẽ là nền tảng cho việc ứng dụng công nghệ thành công.
 
@@ -66,6 +69,4 @@ Tất cả các nhà phát triển có thể mong đợi nhiều nội dung hơn
 
 - Nhóm học Plutus Pioneer đầu tiên và thứ hai: [NStankov # 3321](https://github.com/nstankov-bg) , [Rik G # 8569](https://github.com/rikgirbes) , [zarej # 3886](https://github.com/zarej) và [matthias BNR # 0450](https://github.com/mputz86)
 - IOG: [dino # 0980](https://github.com/dino-) , [Igodlab # 3499](https://github.com/Igodlab) và [Larry Adames](https://github.com/ladamesny)
-- Cộng tác viên của Tài liệu cộng đồng: [Strange3s # 2671](https://github.com/grzegorznowak) , [SIDAN] # 3725, [Deceptikon # 9964](https://github.com/FELIS-CORP) , [ingelran # 8323](https://github.com/bbauer02) , jhampac # 0690, [blackFlyingShark # 4644](http://github.com/thishermit/) , [carleryd # 0762](https://github.com/carleryd) , [R2 # 3029](https://github.com/Roslon) , [selipso # 3964](https://github.com/selipso) , [pgwada # 0227](https://github.com/armada-alliance/armada-alliance) , [stake_pool # 2988](https://github.com/stake-pool) , [WoofPool # 8486](https://github.com/extramileit) , và cảm ơn đặc biệt vì đã nỗ lực nhiều hơn tới [Totes # 5706](https://github.com/Totes5706) và [jmhoms # 7394](https://github.com/jmhoms)
-- Bài này được dịch bởi LinhPool [với nguồn tại đây](https://iohk.io/en/blog/posts/2022/06/08/plutus-community-docs-a-new-documentation-site-for-devs-by-devs/)
-- *Dự án này được tài trợ bởi Catalyst*
+- Cộng tác viên của Tài liệu cộng đồng: [Strange3s # 2671](https://github.com/grzegorznowak) , [SIDAN] # 3725, [Deceptikon # 9964](https://github.com/FELIS-CORP) , [ingelran # 8323](https://github.com/bbauer02) , jhampac # 0690, [blackFlyingShark # 4644](http://github.com/thishermit/) , [carleryd # 0762](https://github.com/carleryd) , [R2 # 3029](https://github.com/Roslon) , [selipso # 3964](https://github.com/selipso) , [pgwada # 0227](https://github.com/armada-alliance/armada-alliance) , [stake_pool # 2988](https://github.com/stake-pool) , [WoofPool # 8486](https://github.com/extramileit) , và cảm ơn đặc biệt vì đã nỗ lực nhiều hơn tới [Totes # 5706](https://github.com/Totes5706) và [jmhoms # 7394](https://github.com/jmhoms) .<br><br><br><br>Bài này được dịch bởi LinhPool [với bài gốc]<br>(https://iohk.io/en/blog/posts/2022/06/08/plutus-community-docs-a-new-documentation-site-for-devs-by-devs/)<br> Dự án này được tài trợ bởi Catalyst
