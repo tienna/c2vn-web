@@ -45,4 +45,7 @@ Ban đầu, ví nhẹ được xây dựng cho Blockchain Cardano, mục tiêu d
 
 Chúng tôi vui mừng thông báo rằng Lace sẽ sớm ra mắt phiên bản beta giới hạn cho một số người dùng để kiểm tra sản phẩm. Như mọi khi, sự tham gia của cộng đồng là chìa khóa để đánh giá chức năng của ví.
 
-Bạn muốn tìm hiểu thêm? Hãy thể hiện quan tâm của bạn tại [www.lace.io](https://hubs.li/Q01d2q6h0) và tìm hiểu khi nào Lace 1.0 ra mắt.<br><br>Bài này được dịch bởi Lê Nguyên. <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2022/06/10/lace-speed-simplicity-and-seamless-flow/">với bài gốc</a><br><em>Dự án này được tài trợ bới Catalyst</em>
+Bạn muốn tìm hiểu thêm? Hãy thể hiện quan tâm của bạn tại [www.lace.io](https://hubs.li/Q01d2q6h0) và tìm hiểu khi nào Lace 1.0 ra mắt.
+
+Bài này được dịch bởi Lê Nguyên.Bài nguồn tại đây](https://iohk.io/en/blog/posts/2022/06/10/lace-speed-simplicity-and-seamless-flow/)
+*Dự án này được tài trợ bới Catalyst*
