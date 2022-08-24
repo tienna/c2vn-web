@@ -5,34 +5,34 @@ description: Các bước đơn giản để tăng cường bảo mật cho Ubun
 # Tăng cường bảo mật cho Ubuntu Server
 
 {% hint style="success" %}
-Thank you for your support and kind messages! It really energizes us to keep creating the best crypto guides. Use [cointr.ee to find our donation ](https://cointr.ee/coincashew)addresses and share your message. :pray:
+Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan tâm tới bài viết này thực sự tiếp thêm năng lượng cho chúng tôi để tiếp tục tạo ra các hướng dẫn tốt nhất cho cộng đồng.dfn-h
 {% endhint %}
 
-## :robot: Prerequisites
+## :lock\_with\_ink\_pen: Yêu cầu căn bản
 
-* Ubuntu Server or Ubuntu Desktop installed
-* SSH server installed
-* a SSH client or terminal window access
+* Ubuntu Server hoặc bản Ubuntu Desktop đã được cài đặt.
+* Dịch vụ SSH đã được cấu hình và đang hoạt động.
+* Bạn có  SSH client hoặc terminal window để đăng nhập.
 
-In case you need to install SSH server, refer to:
+Nếu bạn cần tìm hiểu cách cài đặt SSH server, tham khảo ở đây:
 
 {% embed url="https://www.simplified.guide/ubuntu/install-ssh-server" %}
 
-In case you need a SSH client for your operating system, refer to:
+Nếu bạn cần tìm hiểu về cách dùng SSH client, tham khảo ở đây:
 
 {% embed url="https://www.howtogeek.com/311287/how-to-connect-to-an-ssh-server-from-windows-macos-or-linux/" %}
 
-## :man\_mage: Creating a Non-root User with sudo Privileges
+## :man\_mage: Tạo tài khoản không phải root với quyền sudo
 
 {% hint style="info" %}
-Make a habit of logging to your server using a non-root account. This will prevent the accidental deletion of files if you make a mistake. For instance, the command rm can wipe your entire server if run incorrectly using by a root user.
+Hay tạo thói quen đăng nhập vào máy chủ của bạn bằng tài khoản không phải root. Điều này sẽ ngăn chặn việc vô tình xóa tệp nếu bạn làm sai. Ví dụ: lệnh rm có thể xóa toàn bộ file trên máy chủ của bạn nếu người dùng root sử dụng sai cách.
 {% endhint %}
 
 {% hint style="warning" %}
-:fire: **Tip**: Do NOT routinely use the root account. Use `su` or `sudo`, always.
+:fire: **Khuyến nghị**: Đừng sử dụng tài khoản root. Nên dùng `su` hoặc `sudo`.
 {% endhint %}
 
-SSH to your server
+SSH tới server của bạn
 
 ```bash
 ssh username@server.public.ip.address
@@ -40,19 +40,19 @@ ssh username@server.public.ip.address
 # ssh myUsername@77.22.161.10
 ```
 
-Create a new user called cardano
+Tạo một tài khoản với tên cardano
 
 ```
 useradd -m -s /bin/bash cardano
 ```
 
-Set the password for cardano user
+Đặt mật khẩu cho cardano user
 
 ```
 passwd cardano
 ```
 
-Add cardano to the sudo group
+Đưa tài khoản cardano vào nhóm sudo 
 
 ```
 usermod -aG sudo cardano
