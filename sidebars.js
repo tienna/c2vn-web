@@ -123,7 +123,8 @@ const sidebars = {
              items: [
                "stake-pool-course/handbook/setup-virtual-box-written",
                "stake-pool-course/handbook/setup-a-server-on-aws-written",
-               "stake-pool-course/handbook/setup-firewall",
+               //"stake-pool-course/handbook/setup-firewall",
+               "stake-pool-course/handbook/hardening-ubuntu",
                "stake-pool-course/handbook/install-cardano-node-written",
                "stake-pool-course/handbook/run-cardano-node-handbook",
                "stake-pool-course/handbook/use-cli",

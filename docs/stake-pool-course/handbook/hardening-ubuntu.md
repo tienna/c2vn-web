@@ -4,11 +4,11 @@ description: Các bước đơn giản để tăng cường bảo mật cho Ubun
 
 # Tăng cường bảo mật cho Ubuntu Server
 
-{% hint style="success" %}
-Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan tâm tới bài viết này thực sự tiếp thêm năng lượng cho chúng tôi để tiếp tục tạo ra các hướng dẫn tốt nhất cho cộng đồng.dfn-h
-{% endhint %}
 
-## :lock\_with\_ink\_pen: Yêu cầu căn bản
+Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan tâm tới bài viết này thực sự tiếp thêm năng lượng cho chúng tôi để tiếp tục tạo ra các hướng dẫn tốt nhất cho cộng đồng.
+
+
+## Yêu cầu căn bản
 
 * Ubuntu Server hoặc bản Ubuntu Desktop đã được cài đặt.
 * Dịch vụ SSH đã được cấu hình và đang hoạt động.
@@ -16,21 +16,20 @@ Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan t�
 
 Nếu bạn cần tìm hiểu cách cài đặt SSH server, tham khảo ở đây:
 
-{% embed url="https://www.simplified.guide/ubuntu/install-ssh-server" %}
+https://www.simplified.guide/ubuntu/install-ssh-server
 
 Nếu bạn cần tìm hiểu về cách dùng SSH client, tham khảo ở đây:
 
-{% embed url="https://www.howtogeek.com/311287/how-to-connect-to-an-ssh-server-from-windows-macos-or-linux/" %}
+https://www.howtogeek.com/311287/how-to-connect-to-an-ssh-server-from-windows-macos-or-linux/
 
-## :man\_mage: Tạo tài khoản không phải root với quyền sudo
+## Tạo tài khoản không phải root với quyền sudo
 
-{% hint style="info" %}
+
 Hay tạo thói quen đăng nhập vào máy chủ của bạn bằng tài khoản không phải root. Điều này sẽ ngăn chặn việc vô tình xóa tệp nếu bạn làm sai. Ví dụ: lệnh rm có thể xóa toàn bộ file trên máy chủ của bạn nếu người dùng root sử dụng sai cách.
-{% endhint %}
 
-{% hint style="warning" %}
-:fire: **Khuyến nghị**: Đừng sử dụng tài khoản root. Nên dùng `su` hoặc `sudo`.
-{% endhint %}
+
+**Khuyến nghị**: Đừng sử dụng tài khoản root. Nên dùng `su` hoặc `sudo`.
+
 
 SSH tới server của bạn
 
@@ -58,9 +57,9 @@ passwd cardano
 usermod -aG sudo cardano
 ```
 
-## :lock\_with\_ink\_pen: **Disabling SSH Password Authentication and Using SSH Keys Only**
+##  **Disabling SSH Password Authentication and Using SSH Keys Only**
 
-{% hint style="info" %}
+
 The basic rules of hardening SSH are:
 
 * No password for SSH access (use private key)
@@ -68,25 +67,20 @@ The basic rules of hardening SSH are:
 * Use `sudo` for users so commands are logged
 * Log unauthorized login attempts (and consider software to block/ban users who try to access your server too many times, like fail2ban)
 * Lock down SSH to only the ip range your require (if you feel like it)
-{% endhint %}
+
 
 Create a new SSH key pair on your local machine. Run this on your local machine. You will be asked to type a file name in which to save the key. This will be your **keyname**.
 
 Your choice of [ED25519 or RSA](https://goteleport.com/blog/comparing-ssh-keys/) public key algorithm.
 
-{% tabs %}
-{% tab title="ED25519" %}
+ED25519
 ```
 ssh-keygen -t ed25519
 ```
-{% endtab %}
-
-{% tab title="RSA" %}
+RSA
 ```bash
 ssh-keygen -t rsa -b 4096
 ```
-{% endtab %}
-{% endtabs %}
 
 Transfer the public key to your remote node. Update the **keyname**.
 
@@ -132,9 +126,9 @@ PermitEmptyPasswords no
 
 **Optional**: Locate Port **and customize it to your random port number**.
 
-{% hint style="info" %}
+
 Use a **random** port # from 1024 thru 49141. [Check for possible conflicts.](https://en.wikipedia.org/wiki/List\_of\_TCP\_and\_UDP\_port\_numbers)
-{% endhint %}
+
 
 ```bash
 Port <port number>
@@ -155,26 +149,26 @@ sudo systemctl restart sshd
 Verify the login still works
 
 {% tabs %}
-{% tab title="Standard SSH Port 22" %}
+{% tab title="Standard SSH Port 22
 ```
 ssh cardano@server.public.ip.address
 ```
 {% endtab %}
 
-{% tab title="Custom SSH Port" %}
+{% tab title="Custom SSH Port
 ```bash
 ssh cardano@server.public.ip.address -p <custom port number>
 ```
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+
 Alternatively, add the `-p <port#>` flag if you used a custom SSH port.
 
 ```bash
 ssh -i <path to your SSH_key_name.pub> cardano@server.public.ip.address
 ```
-{% endhint %}
+
 
 **Optional**: Make logging in easier by updating your local ssh config.
 
@@ -191,9 +185,9 @@ This will allow you to log in with `ssh cardano-server` rather than needing to p
 
 ## :robot: **Updating Your System**
 
-{% hint style="warning" %}
+
 It's critically important to keep your system up-to-date with the latest patches to prevent intruders from accessing your system.
-{% endhint %}
+
 
 ```bash
 sudo apt-get update -y && sudo apt-get upgrade -y
@@ -208,9 +202,9 @@ sudo apt-get install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
-{% hint style="info" %}
+
 By default when enabled, the `unattended-upgrades` service only installs security updates automatically. For details on configuring unattended upgrades, see [How to Setup & Configure Unattended Upgrades on Ubuntu 20.04](https://www.linuxcapable.com/how-to-setup-configure-unattended-upgrades-on-ubuntu-20-04/), for example.
-{% endhint %}
+
 
 ## :teddy\_bear: Disabling the root Account
 
@@ -228,9 +222,9 @@ sudo passwd -u root
 
 ## :tools: Configuring Two Factor Authentication for SSH
 
-{% hint style="info" %}
+
 SSH, the secure shell, is often used to access remote Linux systems. Because we often use it to connect with computers containing important data, it’s recommended to add another security layer. Here comes the two factor authentication (_2FA_).
-{% endhint %}
+
 
 ```
 sudo apt install libpam-google-authenticator -y
@@ -292,19 +286,19 @@ You may have noticed the giant QR code that appeared during the process, underne
 
 Now, open Google Authenticator on your phone and add your secret key to make two factor authentication work.
 
-{% hint style="danger" %}
+
 **Note**: If you are enabling 2FA on a remote machine that you access over SSH you need to follow **steps 2 and 3** of [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-18-04) to make 2FA work.
-{% endhint %}
+
 
 ## :jigsaw: Securing Shared Memory
 
-{% hint style="info" %}
+
 One of the first things you should do is secure the shared [memory](https://www.lifewire.com/what-is-random-access-memory-ram-2618159) used on the system. If you're unaware, shared memory can be used in an attack against a running service. Because of this, secure that portion of system memory.
 
 To learn more about secure shared memory, read this [techrepublic.com article](https://www.techrepublic.com/article/how-to-enable-secure-shared-memory-on-ubuntu-server/).
-{% endhint %}
 
-{% hint style="warning" %}
+
+
 #### One exceptional case
 
 There may be a reason for you needing to have that memory space mounted in read/write mode (such as a specific server application like \*\*Chrome \*\*that requires such access to the shared memory or standard applications like Google Chrome). In this case, use the following line for the fstab file with instructions below.
@@ -320,7 +314,7 @@ The above line will mount the shared memory with read/write access but without p
 With some trial and error, you may discover some applications(**like Chrome**) do not work with shared memory in read-only mode. For the highest security and if compatible with your applications, it is a worthwhile endeavor to implement this secure shared memory setting.
 
 Source: [techrepublic.com](https://www.techrepublic.com/article/how-to-enable-secure-shared-memory-on-ubuntu-server/)
-{% endhint %}
+
 
 Edit `/etc/fstab`
 
@@ -342,9 +336,9 @@ sudo reboot
 
 ## :chains: **Installing fail2ban**
 
-{% hint style="info" %}
+
 Fail2ban is an intrusion-prevention system that monitors log files and searches for particular patterns that correspond to a failed login attempt. If a certain number of failed logins are detected from a specific IP address (within a specified amount of time), fail2ban blocks access from that IP address.
-{% endhint %}
+
 
 ```
 sudo apt-get install fail2ban -y
@@ -358,13 +352,13 @@ sudo nano /etc/fail2ban/jail.local
 
 Add the following lines to the bottom of the file.
 
-{% hint style="info" %}
+
 :fire: **Whitelisting IP address tip**: The `ignoreip` parameter accepts IP addresses, IP ranges or DNS hosts that you can specify to be allowed to connect. This is where you want to specify your local machine, local IP range or local domain, separated by spaces.
 
 ```
 # Exampleignoreip = 192.168.1.0/24 127.0.0.1/8 
 ```
-{% endhint %}
+
 
 ```bash
 [sshd]
@@ -415,9 +409,9 @@ sudo ufw enable
 sudo ufw status numbered
 ```
 
-{% hint style="danger" %}
+
 Do not expose Grafana (port 3000) and Prometheus endpoint (port 9100 and 12798) to the public internet as this invites a new attack surface!
-{% endhint %}
+
 
 **Better idea - SSH tunnel to Grafana server**
 
@@ -429,11 +423,11 @@ ssh -L 3000:localhost:3000 <user>@<your-server-ip-or-dns>
 
 Alternatively, If using Putty for SSHing, you can configure the tunnel as follows. Make sure to click "Add" and save your new profile settings.
 
-![](../../../../.gitbook/assets/putty-tunnel.png)
+![](img/putty-tunnel.png)
 
-{% hint style="success" %}
+
 Now you can access the Grafana server from your local machine's browser by visiting http://localhost:3000
-{% endhint %}
+
 
 Only open the following ports on nodes behind a network firewall. This is not required if using the above SSH tunnel method.
 
@@ -469,9 +463,9 @@ sudo ufw allow from <your local daily laptop/pc>
 # sudo ufw allow from 192.168.50.22
 ```
 
-{% hint style="info" %}
+
 :confetti\_ball: **Port Forwarding Tip:** You'll need to forward and open ports to your validator. Verify it's working with [https://www.yougetsignal.com/tools/open-ports/](https://www.yougetsignal.com/tools/open-ports/) or [https://canyouseeme.org/](https://canyouseeme.org) .
-{% endhint %}
+
 
 ### :bricks: Additional Hardening Rules for a Block-producing Node
 
@@ -493,9 +487,9 @@ Replace `<RELAY NODE PORT>` with your public relay port, replace the 5 with your
 sudo iptables -I INPUT -p tcp -m tcp --dport <RELAY NODE PORT> --tcp-flags FIN,SYN,RST,ACK SYN -m connlimit --connlimit-above 5 --connlimit-mask 32 --connlimit-saddr -j REJECT --reject-with tcp-reset
 ```
 
-{% hint style="warning" %}
+
 Set the connection limit high enough so that your internal relay/block producer node topology remains functional.
-{% endhint %}
+
 
 You can check you current connections with a sorted list. Change the relay node port number, if needed.
 
@@ -515,7 +509,7 @@ netstat -tulpn
 ss -tulpn
 ```
 
-{% hint style="success" %}
+
 Congrats on completing the guide. :sparkles:
 
 Did you find our guide useful? Send us a signal with a tip and we'll keep updating it.
@@ -527,20 +521,20 @@ Use [cointr.ee to find our donation ](https://cointr.ee/coincashew)addresses. :p
 Any feedback and all pull requests much appreciated. :first\_quarter\_moon\_with\_face:
 
 Hang out and chat with our stake pool community on Telegram @ [https://t.me/coincashew](https://t.me/coincashew)
-{% endhint %}
+
 
 ## :rocket: References
 Credit to https://github.com/cardano2vn/cardanovn-portal/new/main/docs/stake-pool-course/handbook 
-{% embed url="https://medium.com/@BaneBiddix/how-to-harden-your-ubuntu-18-04-server-ffc4b6658fe7" %}
+https://medium.com/@BaneBiddix/how-to-harden-your-ubuntu-18-04-server-ffc4b6658fe7
 
-{% embed url="https://linux-audit.com/ubuntu-server-hardening-guide-quick-and-secure/" %}
+https://linux-audit.com/ubuntu-server-hardening-guide-quick-and-secure/
 
-{% embed url="https://www.digitalocean.com/community/tutorials/how-to-harden-openssh-on-ubuntu-18-04" %}
+https://www.digitalocean.com/community/tutorials/how-to-harden-openssh-on-ubuntu-18-04
 
-{% embed url="https://ubuntu.com/tutorials/configure-ssh-2fa#1-overview" %}
+https://ubuntu.com/tutorials/configure-ssh-2fa#1-overview
 
 [https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3#file-ubuntu-hardening-md](https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3#file-ubuntu-hardening-md)
 
-{% embed url="https://www.lifewire.com/harden-ubuntu-server-security-4178243" %}
+https://www.lifewire.com/harden-ubuntu-server-security-4178243
 
-{% embed url="https://www.ubuntupit.com/best-linux-hardening-security-tips-a-comprehensive-checklist/" %}
+https://www.ubuntupit.com/best-linux-hardening-security-tips-a-comprehensive-checklist/
