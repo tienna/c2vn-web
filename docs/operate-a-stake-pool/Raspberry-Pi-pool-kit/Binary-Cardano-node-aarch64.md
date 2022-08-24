@@ -5,6 +5,9 @@
 
 BIG Thanks to SPO's [ZW3RK](https://twitter.com/zw3rkpool/) who provides the amazing Static Binaries, [SRN](https://armada-alliance.com/stake-pools/cc1b1c03798884c636703443a23b8d9e827d6c0417921600394198a0) who provides dynamic builds and maintains repo with [PIADA](https://armada-alliance.com/stake-pools/b8d8742c7b7b512468448429c776b3b0f824cef460db61aa1d24bc65) and our friend [Daniel](https://github.com/rekuenkdr) ₳🏴‍☠️🙏
 
+
+![](img/PoolKit01.png)
+
 ## Cardano Node RTS Parameter Notebook
 
 **Điều này chứa thông tin về các tối ưu hóa thời gian chạy khác nhau mà các SPO của Armada Alliance đang sử dụng để cải thiện hiệu suất của cardano-node của họ. Để biết thêm thông tin về các tham số GHC RTS và chạy các chương trình đã biên dịch, hãy đọc tài liệu Haskel ["Using GHC"](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/runtime_control.html)**
