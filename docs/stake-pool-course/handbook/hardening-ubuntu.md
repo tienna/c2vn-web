@@ -52,76 +52,73 @@ passwd cardano
 usermod -aG sudo cardano
 ```
 
-##  **Không cho xác thực bằng mật khẩu khi dùng SSH, chỉ sử dụng SSH Keys**
+## <a name="ufw"></a>:bricks:  **Không xác thực bằng mật khẩu khi dùng SSH, chỉ sử dụng SSH Keys**
 
 Chúng tôi có các lời khuyên sau khi bạn sử dụng dịch vụ SSH:
 
 * Không dùng mật khẩu để đăng nhập SSH (Sử dụng private key)
 * Không cho phép tài khoản root sử dụng SSH (dùng các tài khoản khác sau đó `su` hoặc `sudo` sang tài khoản root)
-* Use `sudo` for users so commands are logged
-* Log unauthorized login attempts (and consider software to block/ban users who try to access your server too many times, like fail2ban)
-* Lock down SSH to only the ip range your require (if you feel like it)
+* Khi bạn dùng lệnh `sudo` cho các tài khoản đăng nhập, hệ thống sẽ ghi nhận các lệnh của tài khoản này.
+* Khi nhận các lần đăng nhập lỗi ( cân nhắc việc sử dụng phần mềm chặn hoặc cấm người dùng cố tình đăng nhập nhiều lần, như phần mềm fail2ban)
+* Cấm SSH đến từ một địa chỉ IP, dải IP nếu bạn thấy nghi ngờ
 
+Bạn nên chọn kiểu mã hóa [ED25519 or RSA](https://goteleport.com/blog/comparing-ssh-keys/) cho  **cặp file**. quan trọng
 
-Create a new SSH key pair on your local machine. Run this on your local machine. You will be asked to type a file name in which to save the key. This will be your **keyname**.
-
-Your choice of [ED25519 or RSA](https://goteleport.com/blog/comparing-ssh-keys/) public key algorithm.
-
-ED25519
+Với kiểu mã hóa ED25519 câu lệnh trên linux là
 ```
 ssh-keygen -t ed25519
 ```
-RSA
-```bash
+với kiểu mã hóa RSA câu lệnh trên linux là
+``` bash
 ssh-keygen -t rsa -b 4096
 ```
 
-Transfer the public key to your remote node. Update the **keyname**.
+chuyển ** khóa công khai -public key** tới server. Cập nhật lại  **tên khóa** bằng lệnh
 
-```bash
+``` bash
 ssh-copy-id -i $HOME/.ssh/<keyname>.pub cardano@server.public.ip.address
 ```
 
-Login with your new cardano user
+Đăng nhập vào máy chủ với tài khoản cardano
 
 ```
 ssh cardano@server.public.ip.address
 ```
 
-Disable root login and password based login. Edit the `/etc/ssh/sshd_config file`
+Cấm tài khoản root đăng nhập và cấm dùng mật khẩu bằng cách soạn lại file `/etc/ssh/sshd_config`
 
 ```
 sudo nano /etc/ssh/sshd_config
 ```
 
-Locate **ChallengeResponseAuthentication** and update to no
+Tìm đến dòng **ChallengeResponseAuthentication** và sửa thành `no`
 
 ```
 ChallengeResponseAuthentication no
 ```
 
-Locate **PasswordAuthentication** update to no
+Tìm đến dòng  **PasswordAuthentication** và sửa thành `no`
 
 ```
 PasswordAuthentication no 
 ```
 
-Locate **PermitRootLogin** and update to prohibit-password
+Tìm đến dòn  **PermitRootLogin** và sửa thành  `prohibit-password`
 
 ```
 PermitRootLogin prohibit-password
 ```
 
-Locate **PermitEmptyPasswords** and update to no
+Tìm đến dòn  **PermitEmptyPasswords** và sửa thành `no`
 
 ```
 PermitEmptyPasswords no
 ```
 
-**Optional**: Locate Port **and customize it to your random port number**.
+**Tăng cường bảo mật**: Tìm đến từ khóa **Port ** và sửa thành một cổng chưa được sử dụng
 
 
-Use a **random** port # from 1024 thru 49141. [Check for possible conflicts.](https://en.wikipedia.org/wiki/List\_of\_TCP\_and\_UDP\_port\_numbers)
+Sử dụng một cổng **ngẫu nhiên** từ 1024 tới 49141. [tham khảo cách kiểm tra ở đây.](https://en.wikipedia.org/wiki/List\_of\_TCP\_and\_UDP\_port\_numbers)
 
 
 ```bash
