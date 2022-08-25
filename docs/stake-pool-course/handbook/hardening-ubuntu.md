@@ -52,13 +52,12 @@ passwd cardano
 usermod -aG sudo cardano
 ```
 
-##  **Disabling SSH Password Authentication and Using SSH Keys Only**
+##  **Không cho xác thực bằng mật khẩu khi dùng SSH, chỉ sử dụng SSH Keys**
 
+Chúng tôi có các lời khuyên sau khi bạn sử dụng dịch vụ SSH:
 
-The basic rules of hardening SSH are:
-
-* No password for SSH access (use private key)
-* Don't allow root to SSH (the appropriate users should SSH in, then `su` or `sudo`)
+* Không dùng mật khẩu để đăng nhập SSH (Sử dụng private key)
+* Không cho phép tài khoản root sử dụng SSH (dùng các tài khoản khác sau đó `su` hoặc `sudo` sang tài khoản root)
 * Use `sudo` for users so commands are logged
 * Log unauthorized login attempts (and consider software to block/ban users who try to access your server too many times, like fail2ban)
 * Lock down SSH to only the ip range your require (if you feel like it)
