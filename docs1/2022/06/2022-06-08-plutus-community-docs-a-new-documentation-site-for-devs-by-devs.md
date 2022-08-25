@@ -1,4 +1,5 @@
-# Trang Tài liệu Cộng đồng về Plutus: một trang tài liệu mới được xây dựng bởi cộng đồng các nhà phát triển, dành cho các nhà phát triển
+# Trang Tài liệu Cộng đồng về Plutus
+*Một trang tài liệu mới được xây dựng bởi cộng đồng các nhà phát triển, dành cho các nhà phát triển*
 
 ### **Khi Plutus ngày càng phát triển, một trang web tài liệu vận hành bởi cộng đồng mới sẽ cung cấp nguồn tài liệu có quý giá từ các nhà phát triển dự án trên Cardano**
 
