@@ -37,7 +37,7 @@ Nhưng làm thế nào để chúng ta sử dụng blockchain trong cuộc sốn
 
 ![Tài chính phi tập trung với tài chính truyền thống](img/2022-01-10-defi-demystified.008.png)
 
-Hình 1. Tài chính phi tập trung với tài chính truyền thống
+Hình 1. So sánh tài chính phi tập trung với tài chính truyền thống
 
 ## **Tài chính phi tập trung là gì?**
 
@@ -110,4 +110,7 @@ Và trong khi chúng ta đang thảo luận về một số thuật ngữ 'kiế
 
 - [**Đặt cược (Staking) và ủy quyền (Delegating) vào Cardano**](https://docs.cardano.org/new-to-cardano/how-to-delegate) : mọi người nắm giữ ada đều sở hữu một khoản tiền cược dựa trên số lượng ada mà họ có. Một nhà phát triển hoặc một người hiểu biết về công nghệ có thể thiết lập một nhóm cổ phần và điều hành nó để giúp xác minh các giao dịch Cardano, nhận phần thưởng cho việc này. Mọi người đều có thể ủy thác tiền của mình cho một nhóm cổ phần để kiếm được một phần của những phần thưởng này. Không có rủi ro cho điều này và không có ada nào rời khỏi ví của bạn. Ada có thể được ủy quyền từ ví của bạn hoặc chi tiêu bất kỳ lúc nào.
 
-*Trong khi đây là những thời điểm thú vị, chúng tôi tiếp tục nhấn mạnh tầm quan trọng của [việc nghiên cứu của riêng bạn](https://iohk.io/en/blog/posts/2021/12/09/when-it-comes-to-defi-do-your-own-research/) và tiếp cận các sản phẩm mới một cách thận trọng. Theo dõi blog và [Twitter](https://twitter.com/InputOutputHK/status/1475107377775099910?s=20) của chúng tôi để biết các thông báo mới không bỏ lỡ điều gì. Và trong suốt năm nay, chúng tôi sẽ có nhiều nội dung hơn theo cách của bạn để giúp bạn điều hướng hệ sinh thái đang phát triển này.<br><br><br><br><br><br>Bài này được dịch bởi Quang Pham. <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2022/01/10/defi-demystified/">với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em>*
+*Trong khi đây là những thời điểm thú vị, chúng tôi tiếp tục nhấn mạnh tầm quan trọng của [việc nghiên cứu của riêng bạn](https://iohk.io/en/blog/posts/2021/12/09/when-it-comes-to-defi-do-your-own-research/) và tiếp cận các sản phẩm mới một cách thận trọng. Theo dõi blog và [Twitter](https://twitter.com/InputOutputHK/status/1475107377775099910?s=20) của chúng tôi để biết các thông báo mới không bỏ lỡ điều gì. Và trong suốt năm nay, chúng tôi sẽ có nhiều nội dung hơn theo cách của bạn để giúp bạn điều hướng hệ sinh thái đang phát triển này.
+
+Bài này được dịch bởi Quang Pham. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/01/10/defi-demystified/)
+*Dự án này được tài trợ bởi Catalyst*
