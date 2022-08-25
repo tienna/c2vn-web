@@ -1,4 +1,4 @@
-# DISH ra mắt hệ thống nhận dạng phi tập trung và đồng coin cho khách hàng thân thiết được xây dựng trên công nghệ của IOG
+# DISH ra mắt hệ thống nhận dạng phi tập trung và đồng coin cho khách hàng thân thiết
 
 ### **Sáng kiến này là một phần của sự hợp tác lâu dài giữa DISH và IOG để tạo ra các giải pháp blockchain sáng tạo nhằm thúc đẩy việc áp dụng các công nghệ phi tập trung vào hệ sinh thái DISH**
 
