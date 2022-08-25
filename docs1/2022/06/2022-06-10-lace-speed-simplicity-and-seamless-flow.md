@@ -47,5 +47,6 @@ Chúng tôi vui mừng thông báo rằng Lace sẽ sớm ra mắt phiên bản 
 
 Bạn muốn tìm hiểu thêm? Hãy thể hiện quan tâm của bạn tại [www.lace.io](https://hubs.li/Q01d2q6h0) và tìm hiểu khi nào Lace 1.0 ra mắt.
 
-Bài này được dịch bởi Lê Nguyên.Bài nguồn tại đây](https://iohk.io/en/blog/posts/2022/06/10/lace-speed-simplicity-and-seamless-flow/)
+Bài này được dịch bởi Lê Nguyên.Bài vnguồn [tại đây](https://iohk.io/en/blog/posts/2022/06/10/lace-speed-simplicity-and-seamless-flow/)
+
 *Dự án này được tài trợ bới Catalyst*
