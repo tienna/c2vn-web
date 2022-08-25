@@ -4,7 +4,6 @@ description: Các bước đơn giản để tăng cường bảo mật cho Ubun
 
 # Tăng cường bảo mật cho Ubuntu Server
 
-
 Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan tâm tới bài viết này thực sự tiếp thêm năng lượng cho chúng tôi để tiếp tục tạo ra các hướng dẫn tốt nhất cho cộng đồng.
 
 
@@ -14,13 +13,9 @@ Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan t�
 * Dịch vụ SSH đã được cấu hình và đang hoạt động.
 * Bạn có  SSH client hoặc terminal window để đăng nhập.
 
-Nếu bạn cần tìm hiểu cách cài đặt SSH server, tham khảo ở đây:
+Nếu bạn cần tìm hiểu cách cài đặt SSH server, tham khảo [ở đây](https://www.simplified.guide/ubuntu/install-ssh-server):
 
-https://www.simplified.guide/ubuntu/install-ssh-server
-
-Nếu bạn cần tìm hiểu về cách dùng SSH client, tham khảo ở đây:
-
-https://www.howtogeek.com/311287/how-to-connect-to-an-ssh-server-from-windows-macos-or-linux/
+Nếu bạn cần tìm hiểu về cách dùng SSH client, tham khảo [ở đây](https://www.howtogeek.com/311287/how-to-connect-to-an-ssh-server-from-windows-macos-or-linux/):
 
 ## Tạo tài khoản không phải root với quyền sudo
 
