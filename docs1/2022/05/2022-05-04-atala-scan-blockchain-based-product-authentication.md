@@ -59,4 +59,8 @@ Juan Sierra cho biết: “Atala SCAN đã ra đời được một thời gian 
 
 *Nếu bạn quan tâm đến việc xác thực sản phẩm với bất kỳ lý do gì, vui lòng liên hệ với IOG thông qua trang [web Atala SCAN](https://atalascan.io/), và chúng tôi sẽ rất vui được giải đáp các thắc mắc của bạn.*
 
-*Cảm ơn Anthony Quinn và Rachel Epstein vì những đóng góp không thể thiếu của họ cho bài đăng này.<br><br><br><br>Bài này được dịch bởi Lê Nguyên. <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2022/05/04/atala-scan-blockchain-based-product-authentication/">với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em>*
+Cảm ơn Anthony Quinn và Rachel Epstein vì những đóng góp không thể thiếu của họ cho bài đăng này.
+
+Bài này được dịch bởi Lê Nguyên. Với bài viết gốc [tại đây](https://iohk.io/en/blog/posts/2022/05/04/atala-scan-blockchain-based-product-authentication/)
+
+*Dự án này được tài trợ bởi Catalyst*

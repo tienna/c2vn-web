@@ -28,4 +28,8 @@ Cách tiếp cận sidechain này báo trước một kỷ nguyên mới cho Car
 
 Hy vọng rằng đây chỉ là bước khởi đầu cho sự hợp tác lâu dài hơn giữa Wanchain và Input Output, và chúng tôi mong sớm được chia sẻ thêm các bản cập nhật sắp tới.
 
-*Hãy tìm hiểu thêm về Wanchain và dự án trong [chương trình Cardano360 vào tháng 4](https://www.youtube.com/watch?v=b4x5OIy4shU), nơi Phó Giám đốc Kỹ thuật của Wanchain, Tiến sĩ Weijia Zhang sẽ xuất hiện với tư cách khách mời đặc biệt. <br><br><br>Bài này được dịch bởi Lê Nguyên. <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2022/04/27/guest-blog-collaborating-on-cardano-interoperability/">với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em>*
+Hãy tìm hiểu thêm về Wanchain và dự án trong [chương trình Cardano360 vào tháng 4](https://www.youtube.com/watch?v=b4x5OIy4shU), nơi Phó Giám đốc Kỹ thuật của Wanchain, Tiến sĩ Weijia Zhang sẽ xuất hiện với tư cách khách mời đặc biệt. 
+
+Bài này được dịch bởi Lê Nguyên. Với vài viết gốc [tại đây](https://iohk.io/en/blog/posts/2022/04/27/guest-blog-collaborating-on-cardano-interoperability/)
+
+*Dự án này được tài trợ bởi Catalyst*
