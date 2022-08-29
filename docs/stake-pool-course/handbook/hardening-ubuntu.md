@@ -469,7 +469,7 @@ ss -tulpn
 ```
 
 
-Trên đây là các kỹ thuật chúng tôi khuyến cáo bạn sử dụng để đảm bảo an toàn cho BP/Relay nodes
+Trên đây là các kỹ thuật chúng tôi khuyến cáo bạn sử dụng để đảm bảo an toàn cho BP/Relay nodes trên mạng lưới Cardano.
 
 ## :rocket: **Tham khảo**
 
