@@ -4,10 +4,10 @@ description: Các bước đơn giản để tăng cường bảo mật cho Ubun
 
 # Tăng cường bảo mật cho Ubuntu Server
 
-Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan tâm tới bài viết này thực sự tiếp thêm năng lượng cho chúng tôi để tiếp tục tạo ra các hướng dẫn tốt nhất cho cộng đồng.
+> *Cảm ơn bạn đã hỗ trợ và ủng hộ chúng tôi! việc bạn quan tâm tới bài viết này thực sự tiếp thêm năng lượng cho chúng tôi để tiếp tục tạo ra các hướng dẫn tốt nhất cho cộng đồng.*
 
 
-## Yêu cầu căn bản
+## :key:**Yêu cầu căn bản**
 
 * Ubuntu Server hoặc bản Ubuntu Desktop đã được cài đặt.
 * Dịch vụ SSH đã được cấu hình và đang hoạt động.
@@ -17,7 +17,7 @@ Nếu bạn cần tìm hiểu cách cài đặt SSH server, tham khảo [ở đ�
 
 Nếu bạn cần tìm hiểu về cách dùng SSH client, tham khảo [ở đây](https://www.howtogeek.com/311287/how-to-connect-to-an-ssh-server-from-windows-macos-or-linux/):
 
-## Tạo tài khoản không phải root với quyền sudo
+## :key:**Sử dụng tài khoản non-root**
 
 
 Hay tạo thói quen đăng nhập vào máy chủ của bạn bằng tài khoản không phải root. Điều này sẽ ngăn chặn việc vô tình xóa tệp nếu bạn làm sai. Ví dụ: lệnh rm có thể xóa toàn bộ file trên máy chủ của bạn nếu người dùng root sử dụng sai cách.
@@ -52,7 +52,7 @@ passwd cardano
 usermod -aG sudo cardano
 ```
 
-## <a name="ufw"></a>:bricks:  **Không xác thực bằng mật khẩu khi dùng SSH, chỉ sử dụng SSH Keys**
+## <a name="ufw"></a>:bricks:  **Chỉ sử dụng SSH Keys**
 
 Chúng tôi có các lời khuyên sau khi bạn sử dụng dịch vụ SSH:
 
@@ -109,7 +109,7 @@ Tìm đến dòn  **PermitRootLogin** và sửa thành  `prohibit-password`
 PermitRootLogin prohibit-password
 ```
 
-Tìm đến dòn  **PermitEmptyPasswords** và sửa thành `no`
+Tìm đến dòng  **PermitEmptyPasswords** và sửa thành `no`
 
 ```
 PermitEmptyPasswords no
@@ -121,151 +121,127 @@ PermitEmptyPasswords no
 Sử dụng một cổng **ngẫu nhiên** từ 1024 tới 49141. [tham khảo cách kiểm tra ở đây.](https://en.wikipedia.org/wiki/List\_of\_TCP\_and\_UDP\_port\_numbers)
 
 
-```bash
+```php
 Port <port number>
 ```
 
-Validate the syntax of your new SSH configuration.
+Sau khi đổi port cho dịch vụ SSH bạn có thể kiểm tra cấu hình SSH bằng lệnh
 
 ```
 sudo sshd -t
 ```
+Nếu không thấy báo lỗi, bạn khởi động lại dịch vụ SSH bằng lệnh
 
-If no errors with the syntax validation, restart the SSH process.
 
 ```
 sudo systemctl restart sshd
 ```
 
-Verify the login still works
+Đảm bảo rằng SSH vẫn hoạt động bằng cách ssh với port mới đổi
 
-{% tabs %}
-{% tab title="Standard SSH Port 22
-```
-ssh cardano@server.public.ip.address
-```
-{% endtab %}
-
-{% tab title="Custom SSH Port
 ```bash
 ssh cardano@server.public.ip.address -p <custom port number>
 ```
-{% endtab %}
-{% endtabs %}
-
-
-Alternatively, add the `-p <port#>` flag if you used a custom SSH port.
+Bạn có thể sử dụng tùy chọn -i để chỉ ra file key mình sử dụng
 
 ```bash
-ssh -i <path to your SSH_key_name.pub> cardano@server.public.ip.address
+ssh -i <path to your SSH_key_name.pub> cardano@server.public.ip.address -p <custom port number>
 ```
 
 
-**Optional**: Make logging in easier by updating your local ssh config.
-
-To simplify the ssh command needed to log in to your server, consider updating your local `$HOME/.ssh/config` file:
+**Mẹo hay**: để đơn giản việc đăng nhập bạn có thể khai báo các tham số về IP, Port, User  trong file `$HOME/.ssh/config`:
 
 ```bash
-Host cardano-server
+  Host cardano-server
   User cardano
   HostName <server.public.ip.address>
   Port <custom port number>
 ```
 
-This will allow you to log in with `ssh cardano-server` rather than needing to pass through all ssh parameters explicitly.
+và sau đó chỉ cần gõ lênh `ssh cardano-server` thay vì gõ đầy đủ các tham số như trước đây.
 
-## :robot: **Updating Your System**
+## :bricks:**Cập nhật bản vá hệ điều hành**
 
-
-It's critically important to keep your system up-to-date with the latest patches to prevent intruders from accessing your system.
-
+Cập nhật bản vá các phần mềm trên máy chủ và hệ điều hành sẽ giúp ngăn trặn kẻ tấn công đăng nhập vào máy chủ. Với Ubuntu câu lệnh bạn cần chạy làm
 
 ```bash
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get autoremove
 sudo apt-get autoclean
 ```
-
-Enable automatic updates so you don't have to manually install them.
+Kích hoạt chế độ tự động cài đặt bản vá bằng lệnh: 
 
 ```
 sudo apt-get install unattended-upgrades
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
+Bạn có thể tham khảo thêm hướng dẫn [Thiết lập cài đặt và nâng cấp tự động cho Ubuntu 20.04](https://www.linuxcapable.com/how-to-setup-configure-unattended-upgrades-on-ubuntu-20-04/), for example.
 
 
-By default when enabled, the `unattended-upgrades` service only installs security updates automatically. For details on configuring unattended upgrades, see [How to Setup & Configure Unattended Upgrades on Ubuntu 20.04](https://www.linuxcapable.com/how-to-setup-configure-unattended-upgrades-on-ubuntu-20-04/), for example.
-
-
-## :teddy\_bear: Disabling the root Account
-
-System admins should not frequently log in as root in order to maintain server security. Instead, you can use sudo execute that require low-level privileges.
+## :no_entry_sign:** Vô hiệu hóa tài khoản root**
+Để đảm bảo an ninh cho máy chủ, tài khoản root KHÔNG nên sử dụng thường xuyên. Khi cần bạn có thể sử dụng `sudo` để có quyền root. Cách vô hiệu hóa đăng nhập cho tài 
+khoản root như sau: 
 
 ```bash
-# To disable the root account, simply use the -l option.
+# để vô hiệu hóa tài khoản root đặng nhập, bạn sử dụng tùy chọn -l như sau:
 sudo passwd -l root
 ```
 
 ```bash
-# If for some valid reason you need to re-enable the account, simply use the -u option.
+# Khi cần cho phép đăng nhập trở lại, hãy sử dụng tùy chọn -u như sau:
 sudo passwd -u root
 ```
 
-## :tools: Configuring Two Factor Authentication for SSH
+## :hammer: **Xác thực 2 yêu tố cho SSH**
 
-
-SSH, the secure shell, is often used to access remote Linux systems. Because we often use it to connect with computers containing important data, it’s recommended to add another security layer. Here comes the two factor authentication (_2FA_).
-
-
+Bởi SSH thường được sử dụng để đăng nhập vào máy chủ, nên việc sử dụng xác thực 2 yếu tố luôn được khuyến nghị nhằm đảm bảo an ninh cho hệ thống và dữ liệu.
+Các cấu hình như sau 
+Cài đặt module google authen 
 ```
 sudo apt install libpam-google-authenticator -y
 ```
 
-To make SSH use the Google Authenticator PAM module, edit the `/etc/pam.d/sshd` file:
+Sửa file `/etc/pam.d/sshd`:
 
 ```
 sudo nano /etc/pam.d/sshd 
 ```
 
-Add the follow line:
+và thêm vào dòng:
 
 ```
 auth required pam_google_authenticator.so
 ```
-
-Now you need to restart the `sshd` daemon using:
+Và khởi động lại dịch vụ ssh bằng lệnh: 
 
 ```
 sudo systemctl restart sshd.service
 ```
 
-Modify `/etc/ssh/sshd_config`
+Sử file   `/etc/ssh/sshd_config`
 
 ```
 sudo nano /etc/ssh/sshd_config
 ```
 
-Locate **ChallengeResponseAuthentication** and update to yes
+Tìm đến đoạn **ChallengeResponseAuthentication** và sửa thành `yes`
 
 ```
 ChallengeResponseAuthentication yes
 ```
 
-Locate **UsePAM** and update to yes
+Tìm đến đoạn**UsePAM** và sửa thành `yes`
 
 ```
 UsePAM yes
 ```
-
-Save the file and exit.
-
-Run the **google-authenticator** command.
+Lưu lại file cấu hình và chạy lệnh **google-authenticator** .
 
 ```
 google-authenticator
 ```
 
-It will ask you a series of questions, here is a recommended configuration:
+Chương trình sẽ hỏi bạn nhiều câu hỏi, đây là nhưng câu trả lời bạn phải chọn:
 
 * Make tokens “time-base”": yes
 * Update the `.google_authenticator` file: yes
@@ -273,78 +249,78 @@ It will ask you a series of questions, here is a recommended configuration:
 * Increase the original generation time limit: no
 * Enable rate-limiting: yes
 
-You may have noticed the giant QR code that appeared during the process, underneath are your emergency scratch codes to be used if you don’t have access to your phone: write them down on paper and keep them in a safe place.
-
-Now, open Google Authenticator on your phone and add your secret key to make two factor authentication work.
-
-
-**Note**: If you are enabling 2FA on a remote machine that you access over SSH you need to follow **steps 2 and 3** of [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-18-04) to make 2FA work.
+Bạn sẽ nhận được thông báo mã QR trong quá trình cài đặt và mã cào khẩn cấp(emergency scratch codes). Hãy lưu lại nó một cách an toàn 
+Bây giờ, hãy mở Google Authenticator trên điện thoại của bạn và thêm khóa bí mật của bạn để xác thực hai yếu tố hoạt động.
 
 
-## :jigsaw: Securing Shared Memory
+**Lưu ý**: Nếu bạn thiết lập 2FA trên máy từ xa mà bạn muốn sử dụng  SSH bạn phải thực hiện thêm bước **s2 và 3** của [hướng dẫn này](https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-18-04).
+
+## :jigsaw: **Bảo vệ bộ nhớ chia sẻ**
 
 
-One of the first things you should do is secure the shared [memory](https://www.lifewire.com/what-is-random-access-memory-ram-2618159) used on the system. If you're unaware, shared memory can be used in an attack against a running service. Because of this, secure that portion of system memory.
+Các thiết lập [bảo vệ bộ nhớ chia sẻ](https://www.lifewire.com/what-is-random-access-memory-ram-2618159) used on the system. If you're unaware, shared memory can be used in an attack against a running service. Because of this, secure that portion of system memory.
 
-To learn more about secure shared memory, read this [techrepublic.com article](https://www.techrepublic.com/article/how-to-enable-secure-shared-memory-on-ubuntu-server/).
+Tìm hiểu thêm về [secure shared memory tại đây](https://www.techrepublic.com/article/how-to-enable-secure-shared-memory-on-ubuntu-server/).
 
 
 
-#### One exceptional case
+#### Ngoại lệ
 
-There may be a reason for you needing to have that memory space mounted in read/write mode (such as a specific server application like \*\*Chrome \*\*that requires such access to the shared memory or standard applications like Google Chrome). In this case, use the following line for the fstab file with instructions below.
+Có một số trường hợp bạn phải thiết lập bộ nhớ ở chế độ đọc/ghi. khi đó bạn cần mở file `/etc/fstab` và chỉnh nội dung thành:
 
 ```
 none /run/shm tmpfs rw,noexec,nosuid,nodev 0 0
 ```
 
-The above line will mount the shared memory with read/write access but without permission to execute programs, change the UID of running programs, or to create block or character devices in the namespace. This a net security improvement over default settings.
 
-#### Use with caution
+#### Sử dụng với lưu ý
 
-With some trial and error, you may discover some applications(**like Chrome**) do not work with shared memory in read-only mode. For the highest security and if compatible with your applications, it is a worthwhile endeavor to implement this secure shared memory setting.
+Với một số thử nghiệm và lỗi, bạn có thể phát hiện ra một số ứng dụng (** như Chrome **) không hoạt động với bộ nhớ dùng chung ở chế độ chỉ đọc
 
-Source: [techrepublic.com](https://www.techrepublic.com/article/how-to-enable-secure-shared-memory-on-ubuntu-server/)
+Nguồn tham khảo: [techrepublic.com](https://www.techrepublic.com/article/how-to-enable-secure-shared-memory-on-ubuntu-server/)
 
 
-Edit `/etc/fstab`
+Khi đó bạn cần chỉnh sửa lại file `/etc/fstab`
 
 ```
 sudo nano /etc/fstab
 ```
 
-Insert the following line to the bottom of the file and save/close.
+và thêm vào dòng sau đây.
 
 ```
 tmpfs	/run/shm	tmpfs	ro,noexec,nosuid	0 0
 ```
 
-Reboot the node in order for changes to take effect.
+Bạn cần khởi động lại máy chủ để thay đổi trên có hiệu lực.
 
 ```
 sudo reboot
 ```
 
-## :chains: **Installing fail2ban**
+## :chains: **Cài đặt fail2ban**
 
 
-Fail2ban is an intrusion-prevention system that monitors log files and searches for particular patterns that correspond to a failed login attempt. If a certain number of failed logins are detected from a specific IP address (within a specified amount of time), fail2ban blocks access from that IP address.
+Fail2ban là một hệ thống phòng chống xâm nhập giám sát các file log và tìm kiếm các mẫu cụ thể tương ứng với một lần đăng nhập không thành công. Nếu một số lần đăng nhập không thành công nhất định được phát hiện từ một địa chỉ IP cụ thể (trong một khoảng thời gian cụ thể), fail2ban sẽ chặn quyền truy cập từ địa chỉ IP đó.
 
+Cách thức cài đặt gồm có:
 
 ```
 sudo apt-get install fail2ban -y
 ```
 
-Edit a config file that monitors SSH logins.
+Mở file và đưa vào theo rõi dịch vụ SSH.
 
 ```
 sudo nano /etc/fail2ban/jail.local
 ```
 
-Add the following lines to the bottom of the file.
+Thêm dòng sau vào cuối file
 
 
-:fire: **Whitelisting IP address tip**: The `ignoreip` parameter accepts IP addresses, IP ranges or DNS hosts that you can specify to be allowed to connect. This is where you want to specify your local machine, local IP range or local domain, separated by spaces.
+:fire: **Liệt kê các IP, dải IP không sử dụng fail2ban**: 
+Tham số `ignoreip` cho phép các địa chỉ IP, dải IP hoặc tên miền DNS mà bạn chỉ định được phép kết nối SSH. Đây là nơi bạn chỉ định IP, dải IP cục bộ hoặc tên miền, các têm được phân tách bằng dấu cách.
+
 
 ```
 # Exampleignoreip = 192.168.1.0/24 127.0.0.1/8 
@@ -361,68 +337,64 @@ maxretry = 3
 # whitelisted IP addresses
 ignoreip = <list of whitelisted IP address, your local daily laptop/pc>
 ```
-
-Save/close file.
-
-Restart fail2ban for settings to take effect.
+Lưu lại file và khởi động lại dịch vụ fail2ban để có hiệu lực.
 
 ```
 sudo systemctl restart fail2ban
 ```
 
-## <a name="ufw"></a>:bricks: **Configuring Your Firewall**
+## :bricks: **Cấu hình tường lửa**
 
-The standard UFW firewall can be used to control network access to your node.
+Mặc định tường lửa (UFW) không chạy, nó có thể sử dụng để quản lý các kết nối đến máy chủ.
+Đây là các port cẳn bản mà một Cardano node thường dùng ** lưu ý nếu bạn đổi port mặc định**
 
-With any new installation, ufw is disabled by default. Enable it with the following settings.
-
-* Port 22 (or your random port #) TCP for SSH connection
-* Port 123 UDP for chrony ntp
-* Port 6000 TCP for p2p traffic
-* Port 3000 TCP for Grafana web server (if applicable)
-* Port 9100 tcp for Prometheus node data
-* Port 12798 tcp for Prometheus cardano-node metrics data
+* Port 22 (or your random port #) TCP cho kết nối tới dịch vụ SSH
+* Port 123 UDP chọ kết nối đến dịch vụ ntp
+* Port 6000 cho kết nối p2p traffic
+* Port 3000 TCP cho kết nối Grafana web server (if applicable)
+* Port 9100 tcp cho kết nối Prometheus node data
+* Port 12798 tcp cho kết nối Prometheus cardano-node metrics data
 
 ```bash
-# By default, deny all incoming and outgoing traffic
+# Mặc định sẽ cấm mọi dữ liệu đi và đến 
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-# Allow ssh access
+# Cho phép các kết nối đến cổng dịch vụ 22
 sudo ufw allow ssh #<port 22 or your random ssh port number>/tcp
-# Allow cardano-node p2p port
+# Cho phép các kết nối đến cổng dịch vụ p2p port
 sudo ufw allow 6000/tcp
-# Enable firewall
+# kích hoạt tường lửa
 sudo ufw enable
 ```
 
 ```bash
-# Verify status
+# Kiểm tra trạng thái tường lửa bằng lệnh
 sudo ufw status numbered
 ```
 
 
-Do not expose Grafana (port 3000) and Prometheus endpoint (port 9100 and 12798) to the public internet as this invites a new attack surface!
+>**Đừng để dịch vụ Grafana (port 3000) và Prometheus (port 9100 and 12798) ra internet. Các hacker có thể tấn công qua các cổng này!**
 
 
-**Better idea - SSH tunnel to Grafana server**
+**Mẹo hay - Cấu hình SSH tunnel tới Grafana server**
 
-Setup a SSH tunnel with the following command:
+Thiết lập SSH tunnel tới Granfana bằng lệnh :
 
 ```
 ssh -L 3000:localhost:3000 <user>@<your-server-ip-or-dns>
 ```
 
-Alternatively, If using Putty for SSHing, you can configure the tunnel as follows. Make sure to click "Add" and save your new profile settings.
+Hoặc, nếu bạn dùng putty để đăng nhập SSH bạn có thể cấu hình Tunel ssh như sau. Đảm bảo rằng bạn chọn nút "Add" và lưu vào thành profile của Putty.
 
 ![](img/putty-tunnel.png)
 
 
-Now you can access the Grafana server from your local machine's browser by visiting http://localhost:3000
+Giờ thì bạn có thể đăng nhập vào Granfana thông qua địa chỉ http://localhost:3000
+
+Chỉ mở các cổng sau trên các server cho các thiết bị phía sau tường lửa. Điều này không bắt buộc nếu sử dụng phương pháp đường hầm SSH ở trên.
 
 
-Only open the following ports on nodes behind a network firewall. This is not required if using the above SSH tunnel method.
-
-:fire: **It is dangerous to open these ports on a VPS/cloud node.**
+:fire: **Rất nguy hiểm nếu mở các port này trên VPS/cloud node.**
 
 ```bash
 # Allow grafana web server port
@@ -433,7 +405,7 @@ sudo ufw allow 9100/tcp
 sudo ufw allow 12798/tcp
 ```
 
-Confirm the settings are in effect.
+Đảm bảo rằng chỉ có các thiết lập sau hoạt động.
 
 > ```csharp
 >      To                         Action      From
@@ -446,21 +418,18 @@ Confirm the settings are in effect.
 > [ 6] 6000/tcp (v6)              ALLOW IN    Anywhere (v6)
 > ```
 
-**\[ Optional but recommended ]** Whitelisting (or permitting connections from a specific IP) can be setup via the following command.
+**\[ Khuyến cáo ]** Cho phép đăng nhập từ một máy có IP cố định để phục vụ việc cầu hình, quản lý bằng câu lệnh:
 
 ```bash
-sudo ufw allow from <your local daily laptop/pc>
-# Example
+sudo ufw allow from <địa chỉ IP laptop/pc của bạn>
+# Ví dụ
 # sudo ufw allow from 192.168.50.22
 ```
 
 
-:confetti\_ball: **Port Forwarding Tip:** You'll need to forward and open ports to your validator. Verify it's working with [https://www.yougetsignal.com/tools/open-ports/](https://www.yougetsignal.com/tools/open-ports/) or [https://canyouseeme.org/](https://canyouseeme.org) .
+### :bricks: Tăng cường cho Block Producer 
 
-
-### :bricks: Additional Hardening Rules for a Block-producing Node
-
-Only your Relay Node(s) should be permitted access to your Block Producer Node.
+Chỉ cho phép Relay Node(s) có quyền kết nối đến Block Producer (BP) Node. Câu lệnh sau sẽ giúp bạn làm điều đó
 
 ```bash
 sudo ufw allow proto tcp from <RELAY NODE IP> to any port <BLOCK PRODUCER PORT>
@@ -468,29 +437,28 @@ sudo ufw allow proto tcp from <RELAY NODE IP> to any port <BLOCK PRODUCER PORT>
 # sudo ufw allow proto tcp from 18.58.3.31 to any port 6000
 ```
 
-### :bricks: Additional Hardening Rules for Relay Nodes
+### :bricks: Tăng cường cho Relay Nodes
 
-In order to protect your Relay Node(s) from a novel "DoS/Syn" attack, [**Michael Fazio**](https://github.com/michaeljfazio) created iptables entry which restricts connections to a given destination port to 5 connections from the same IP.
+Để bảo vệ Relay Node(s) từ các cuộc  tấn công "DoS/Syn" [**Michael Fazio**](https://github.com/michaeljfazio)
+Tạo ra các bản ghi cấm các kết nối tới một port nhất định có từ năm kết nối trở lên từ một IP
 
-Replace `<RELAY NODE PORT>` with your public relay port, replace the 5 with your preferred connection limit.
+Thay `<RELAY NODE PORT>` bằng port mà Relay chạy, thay số 5 bằng giới hạn bạn đặt ra.
 
 ```bash
 sudo iptables -I INPUT -p tcp -m tcp --dport <RELAY NODE PORT> --tcp-flags FIN,SYN,RST,ACK SYN -m connlimit --connlimit-above 5 --connlimit-mask 32 --connlimit-saddr -j REJECT --reject-with tcp-reset
 ```
 
+Đặt giới hạn kết nối đủ cao để kế nối giữa Relay/BP của bạn vẫn hoạt động bình thường
 
-Set the connection limit high enough so that your internal relay/block producer node topology remains functional.
-
-
-You can check you current connections with a sorted list. Change the relay node port number, if needed.
+Bạn có thể kiểm tra các kết nối hiện tại của mình với một danh sách được sắp xếp. Thay đổi số cổng của nút chuyển tiếp, nếu cần.
 
 ```bash
 sudo netstat -enp | grep ":6000" | awk {'print $5'} | cut -d ':' -f 1 | sort | uniq -c | sort
 ```
 
-## :telescope: Verifying Listening Ports
+## :telescope: **Kiểm tra lại các Ports đang mở**
 
-If you want to maintain a secure server, you should validate the listening network ports every once in a while. This will provide you essential information about your network.
+Nếu bạn muốn duy trì một máy chủ an toàn, bạn cần kiểm soát các cổng đang mở
 
 ```
 netstat -tulpn
@@ -501,21 +469,14 @@ ss -tulpn
 ```
 
 
-Congrats on completing the guide. :sparkles:
+Trên đây là các kỹ thuật chúng tôi khuyến cáo bạn sử dụng để đảm bảo an toàn cho BP/Relay nodes trên mạng lưới Cardano.
 
-Did you find our guide useful? Send us a signal with a tip and we'll keep updating it.
+## :rocket: **Tham khảo**
 
-It really energizes us to keep creating the best crypto guides.
+:::tip
+**Bài viết gốc lấy từ** https://github.com/cardano2vn/cardanovn-portal/new/main/docs/stake-pool-course/handbook 
+:::
 
-Use [cointr.ee to find our donation ](https://cointr.ee/coincashew)addresses. :pray:
-
-Any feedback and all pull requests much appreciated. :first\_quarter\_moon\_with\_face:
-
-Hang out and chat with our stake pool community on Telegram @ [https://t.me/coincashew](https://t.me/coincashew)
-
-
-## :rocket: References
-Credit to https://github.com/cardano2vn/cardanovn-portal/new/main/docs/stake-pool-course/handbook 
 https://medium.com/@BaneBiddix/how-to-harden-your-ubuntu-18-04-server-ffc4b6658fe7
 
 https://linux-audit.com/ubuntu-server-hardening-guide-quick-and-secure/
