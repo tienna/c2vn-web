@@ -25,15 +25,15 @@ sidebar_position: 1
 
 ## Danh sách các bài đã dịch mới nhất
 
-[Cardano's foundational research overview](https://cardano2vn.io/docs1/2022/06/2022-06-10-cardanos-foundational-research-overview/)
+>[Tổng quan nghiên cứu mang tính nền tảng của Cardano](https://cardano2vn.io/docs1/2022/06/2022-06-10-cardanos-foundational-research-overview/)
 
-[Lace: speed, simplicity, and seamless flow](https://cardano2vn.io/docs1/2022/06/2022-06-10-lace-speed-simplicity-and-seamless-flow/)
+>[Ví nhẹ Lace: tốc độ, đơn giản và thông suốt](https://cardano2vn.io/docs1/2022/06/2022-06-10-lace-speed-simplicity-and-seamless-flow/)
 
-[Plutus Community Docs: a new documentation site for devs, by devs](https://cardano2vn.io/docs1/2022/06/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs/)
+>[Trang Tài liệu Cộng đồng về Plutus](https://cardano2vn.io/docs1/2022/06/2022-06-08-plutus-community-docs-a-new-documentation-site-for-devs-by-devs/)
 
-[DISH launches decentralized identification and loyalty coin system built on Input Output Global (IOG) technology](https://cardano2vn.io/docs1/2022/06/2022-06-07-dish-launches-decentralized-identification-and-loyalty-coin-system-built-on-input-output-global-iog-technology/)
+>[DISH ra mắt hệ thống nhận dạng phi tập trung](https://cardano2vn.io/docs1/2022/06/2022-06-07-dish-launches-decentralized-identification-and-loyalty-coin-system-built-on-input-output-global-iog-technology/)
 
-[Cardano at Consensus: a look ahead](https://cardano2vn.io/docs1/2022/06/2022-06-06-cardano-at-consensus-a-look-ahead/)
+>[Cardano tại hội nghị đồng thuận: nhìn về tương lai](https://cardano2vn.io/docs1/2022/06/2022-06-06-cardano-at-consensus-a-look-ahead/)
 
 [Fund9 Catalyst Natives Cardashift challenge: demonstrating and monetizing impact](https://cardano2vn.io/docs1/2022/06/2022-06-01-fund9-catalyst-natives-cardashift-challenge-demonstrating-and-monetizing-impact/)
 
