@@ -6,39 +6,7 @@ Giới thiệu Blog-iohk
 
 ![](img/Dich-thuat.png)
 
-<details>
 
-<summary>
-Danh sách dịch thuật cho dự án IOHK-BLOG
-</summary>
-
-1. Nguyễn Văn Hiệu. 
-2. Nguyễn Anh Tiến.
-3. Phan Quốc.
-4. Phạm Quang.
-5. Kim Chi.
-6. LinhPool.
-7. Max Long.
-8. Lenguyen.
-9. Ngoluuduythai.
-10. Hoangtrandesigner.
-11. Tulibra1510.
-12. Minh Hieu.
-
-</details>
-
-<details>
-
-<summary>
-Danh sách Review
-</summary>
-
-1. Nguyễn Văn Hiệu. 
-2. Nguyễn Anh Tiến.
-3. Phan Quốc.
-4. Phạm Quang.
-
-</details>
 
 ## Bài dịch mới nhất
 
@@ -46,6 +14,7 @@ Danh sách Review
 
 [**Khi thảo luận về kiến trúc blockchain, các thuật ngữ như 'Layer 1' và 'Layer 2' thường được đề cập. Đây là những khái niệm quan trọng phục vụ hai mục đích: giải thích cách mạng lưới blockchain được xây dựng và cung cấp hình ảnh trực quan dễ hiểu về mạng lưới blockchain trông như thế nào. Hãy cùng khám phá chúng nhé.**](https://cardano2vn.io/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know/)
 
+-------------------------------------------
 
 ## Danh sách các bài đã dịch 
 
@@ -138,6 +107,44 @@ Các bài đã dịch năm 2022
 <summary>
 Các bài đã dịch năm 2021
 </summary>
+
+</details>
+
+
+
+-------------------------------------------
+
+<details>
+
+<summary>
+Danh sách dịch thuật cho dự án IOHK-BLOG
+</summary>
+
+1. Nguyễn Văn Hiệu. 
+2. Nguyễn Anh Tiến.
+3. Phan Quốc.
+4. Phạm Quang.
+5. Kim Chi.
+6. LinhPool.
+7. Max Long.
+8. Lenguyen.
+9. Ngoluuduythai.
+10. Hoangtrandesigner.
+11. Tulibra1510.
+12. Minh Hieu.
+
+</details>
+
+<details>
+
+<summary>
+Danh sách Review
+</summary>
+
+1. Nguyễn Văn Hiệu. 
+2. Nguyễn Anh Tiến.
+3. Phan Quốc.
+4. Phạm Quang.
 
 </details>
 
