@@ -189,10 +189,20 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/HN-B11-3.jpg)
 
-## Buổi 5-HCM: Cardano Coffee Lounge “SỰ THẬT VỀ NFT”
+## Buổi 6-HCM: Cardano Coffee Lounge “SỰ THẬT VỀ NFT”
 
 ![](img/B6-HCM.png)
 
 ![](img/HCM-B6-1.jpg)
 
 ![](img/HCM-B6-2.jpg)
+
+## Buổi 7-HCM: Cardano Coffee Lounge “Pháp lý cho các dự án blockchain”
+
+![](img/B7-HCM.png)
+
+![](img/HCM-B7-1.jpg)
+
+![](img/HCM-B7-2.jpg)
+
+![](img/HCM-B7-3.jpg)

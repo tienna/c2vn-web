@@ -1,42 +1,55 @@
----
-sidebar_position: 1
----
+Giới thiệu Blog-iohk
+============
 
 Đây là cổng thông tin chiến lược và kỹ thuật từ trang web IOHK (iohk.io) cần được truyền tải đến cộng đồng Việt Nam một cách thân thiện.
 
 
 ![](img/Dich-thuat.png)
 
+<details>
 
-**Danh sách nhóm dịch thuật cho dự án IOHK-BLOG**
+<summary>
+Danh sách nhóm dịch thuật cho dự án IOHK-BLOG
+</summary>
 
-1. Nguyễn Văn Hiệu 
-2. Nguyễn Anh Tiến
-3. Phan Quốc
-4. Phạm Quang
-5. Kim Chi
-6. LinhPool
-7. Max Long
-8. Lenguyen
-9. Ngoluuduythai
-10. Hoangtrandesigner
-11. Tulibra1510
-12. Minh Hieu
+1. Nguyễn Văn Hiệu. 
+2. Nguyễn Anh Tiến.
+3. Phan Quốc.
+4. Phạm Quang.
+5. Kim Chi.
+6. LinhPool.
+7. Max Long.
+8. Lenguyen.
+9. Ngoluuduythai.
+10. Hoangtrandesigner.
+11. Tulibra1510.
+12. Minh Hieu.
 
-## Danh sách các bài đã dịch mới nhất
+</details>
+
+## Bài dịch mới nhất
+
+![Lớp 1 & Lớp 2: tất cả những gì bạn cần biết](../docs1/2022/08/img/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg)
+
+[**Khi thảo luận về kiến trúc blockchain, các thuật ngữ như 'Layer 1' và 'Layer 2' thường được đề cập. Đây là những khái niệm quan trọng phục vụ hai mục đích: giải thích cách mạng lưới blockchain được xây dựng và cung cấp hình ảnh trực quan dễ hiểu về mạng lưới blockchain trông như thế nào. Hãy cùng khám phá chúng nhé.**](https://cardano2vn.io/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know/)
+
+
+## Danh sách các bài đã dịch 
 
 >## Bài viết trong tháng 08 năm 2022
->[Kachina: privacy-preserving smart contracts](https://cardano2vn.io/docs1/2022/08/2022-08-05-kachina-privacy-preserving-smart-contracts/)
+>[Kachina: hợp đồng thông minh bảo vệ quyền riêng tư](https://cardano2vn.io/docs1/2022/08/2022-08-05-kachina-privacy-preserving-smart-contracts/)
 >
->[Layer 1 & Layer 2: all you need to know](https://cardano2vn.io/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know/)
+>[Những điều cần biết về Layer 1 & Layer 2](https://cardano2vn.io/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know/)
+>
+>[Giới thiệu Ofelimos - giao thức đồng thuận bằng chứng công việc hữu ích - PoUW](https://cardano2vn.io/docs1/2022/08/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol)
  
  >## Bài viết trong tháng 07 năm 2022
  >
  >[Staking is the bedrock of Cardano](https://cardano2vn.io/docs1/2022/07/2022-07-28-staking-is-the-bedrock-of-cardano/)
  >
- >[Bridges and sidechains: Wanchain making Cardano interoperable](https://cardano2vn.io/docs1/2022/07/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable/)
+ >[Những cầu nối và sidechains](https://cardano2vn.io/docs1/2022/07/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable/)
  >
- >[Cardano data on BigQuery](https://cardano2vn.io/docs1/2022/07/2022-07-01-cardano-data-on-bigquery/)
+ >[Dữ liệu Cardano trên BigQuery](https://cardano2vn.io/docs1/2022/07/2022-07-01-cardano-data-on-bigquery/)
  
 >## Bài viết trong tháng 06 năm 2022
 >
@@ -50,54 +63,54 @@ sidebar_position: 1
 > 
 > [Cardano tại hội nghị đồng thuận: nhìn về tương lai](https://cardano2vn.io/docs1/2022/06/2022-06-06-cardano-at-consensus-a-look-ahead/)
 > 
-> [Fund9 Catalyst Natives Cardashift challenge: demonstrating and monetizing impact](https://cardano2vn.io/docs1/2022/06/2022-06-01-fund9-catalyst-natives-cardashift-challenge-demonstrating-and-monetizing-impact/)
+> [Fund9 thử thách Catalyst Natives Cardashift: demonstrating and monetizing impact](https://cardano2vn.io/docs1/2022/06/2022-06-01-fund9-catalyst-natives-cardashift-challenge-demonstrating-and-monetizing-impact/)
 
 >## Bài viết trong tháng 05 năm 2022
 > 
->[Everything you always wanted to know about impermanent loss and were afraid to ask](https://cardano2vn.io/docs1/2022/05/2022-05-27-everything-you-always-wanted-to-know-about-impermanent-loss-and-were-afraid-to-ask/)
+>[Những điều bạn luôn muốn biết mà ngại đặt câu hỏi về Tổn thất tạm thời (Impermanent Loss)](https://cardano2vn.io/docs1/2022/05/2022-05-27-everything-you-always-wanted-to-know-about-impermanent-loss-and-were-afraid-to-ask/)
 >
->[Learn how to create low-code, low-cost financial smart contracts in the Marlowe Pioneers Program](https://cardano2vn.io/docs1/2022/05/2022-05-11-learn-how-to-create-low-code-low-cost-financial-smart-contracts-in-the-marlowe-pioneers-program/)
+>[Học cách tạo hợp đồng thông minh cho lĩnh vực tài chính với chi phí thấp và giảm thiểu viết code trong Chương trình tiên phong của Marlowe](https://cardano2vn.io/docs1/2022/05/2022-05-11-learn-how-to-create-low-code-low-cost-financial-smart-contracts-in-the-marlowe-pioneers-program/)
 >
->[Project Catalyst - A virtuous cycle of Cardano ecosystem development](https://cardano2vn.io/docs1/2022/05/2022-05-10-project-catalyst-a-virtuous-cycle-of-cardano-ecosystem-development-investing-in-great-ideas-to-make-positive-real-world-changes/)
+>[Project Catalyst - Một chu trình phát triển hệ sinh thái Cardano](https://cardano2vn.io/docs1/2022/05/2022-05-10-project-catalyst-a-virtuous-cycle-of-cardano-ecosystem-development-investing-in-great-ideas-to-make-positive-real-world-changes/)
 >
->[Atala SCAN: Blockchain-based product authentication](https://cardano2vn.io/docs1/2022/05/2022-05-04-atala-scan-blockchain-based-product-authentication/)
+>[Atala SCAN: xác thực sản phẩm dựa trên blockchain](https://cardano2vn.io/docs1/2022/05/2022-05-04-atala-scan-blockchain-based-product-authentication/)
 
 >## Bài viết trong tháng 04 năm 2022
 >
->[Interoperability is key to blockchain growth](https://cardano2vn.io/docs1/2022/04/2022-04-28-interoperability-is-key-to-blockchain-growth/)
+>[Khả năng tương tác là chìa khóa để phát triển blockchain](https://cardano2vn.io/docs1/2022/04/2022-04-28-interoperability-is-key-to-blockchain-growth/)
 >
->[Guest blog: collaborating on Cardano interoperability](https://cardano2vn.io/docs1/2022/04/2022-04-27-guest-blog-collaborating-on-cardano-interoperability/) 
+>[Guest Blog: hợp tác dựa trên khả năng tương tác của Cardano](https://cardano2vn.io/docs1/2022/04/2022-04-27-guest-blog-collaborating-on-cardano-interoperability/) 
 >
->[Introducing the new command line interface tool for Marlowe](https://cardano2vn.io/docs1/2022/04/2022-04-19-introducing-the-new-command-line-interface-tool-for-marlowe/)
+>[Giới thiệu công cụ giao diện dòng lệnh (cli) mới cho Marlowe](https://cardano2vn.io/docs1/2022/04/2022-04-19-introducing-the-new-command-line-interface-tool-for-marlowe/)
 >
->[Boosting Cardano’s throughput with script referencing](https://cardano2vn.io/docs1/2022/04/2022-04-13-boosting-cardano-s-throughput-with-script-referencing/)
+>[Tăng cường thông lượng của Cardano với Tập lệnh tham chiếu](https://cardano2vn.io/docs1/2022/04/2022-04-13-boosting-cardano-s-throughput-with-script-referencing/)
 
 >## Bài viết trong tháng 03 năm 2022
->[The critical role of AI / blockchain synergy in humanity’s future](https://cardano2vn.io/docs1/2022/03/2022-03-30-the-critical-role-of-ai-blockchain-synergy-in-humanity-s-future/)
+>[Vai trò quan trọng của AI/blockchain trong tương lai](https://cardano2vn.io/docs1/2022/03/2022-03-30-the-critical-role-of-ai-blockchain-synergy-in-humanity-s-future/)
 >
->[Increasing the transaction throughput of Cardano](https://cardano2vn.io/docs1/2022/03/2022-03-21-increasing-the-transaction-throughput-of-cardano/)
+>[Tăng thông lượng giao dịch của Cardano](https://cardano2vn.io/docs1/2022/03/2022-03-21-increasing-the-transaction-throughput-of-cardano/)
 >
->[Diving deeper into the Marlowe Playground](https://cardano2vn.io/docs1/2022/03/2022-03-04-diving-deeper-into-the-marlowe-playground/)
+>[Tìm hiểu sâu hơn về Sân chơi Marlowe](https://cardano2vn.io/docs1/2022/03/2022-03-04-diving-deeper-into-the-marlowe-playground/)
 
 
 >## Bài viết trong tháng 02 năm 2022
->[The knowledge base for Cardano is growing: Cardano Stack Exchange graduates from Beta version](https://cardano2vn.io/docs1/2022/02/2022-02-07-the-knowledge-base-for-cardano-is-growing-cardano-stack-exchange-graduates-from-beta-version/)
+>[Cơ sở kiến thức về Cardano đang ngày càng phát triển](https://cardano2vn.io/docs1/2022/02/2022-02-07-the-knowledge-base-for-cardano-is-growing-cardano-stack-exchange-graduates-from-beta-version/)
 >
->[Implementing Hydra Heads: the first step towards the full Hydra vision](https://cardano2vn.io/docs1/2022/02/2022-02-03-implementing-hydra-heads-the-first-step-towards-the-full-hydra-vision/)
+>[Triển khai Hydra Heads](https://cardano2vn.io/docs1/2022/02/2022-02-03-implementing-hydra-heads-the-first-step-towards-the-full-hydra-vision/)
 >
->[Introducing pipelining: Cardano's consensus layer scaling solution](https://cardano2vn.io/docs1/2022/02/2022-02-01-introducing-pipelining-cardanos-consensus-layer-scaling-solution/)
+>[Giới thiệu pipelining (phát tán đồng thời)](https://cardano2vn.io/docs1/2022/02/2022-02-01-introducing-pipelining-cardanos-consensus-layer-scaling-solution/)
 
 >## Bài viết trong tháng 01 năm 2022
 
->[Plutus fee estimator: find out the cost of transacting on Cardano](https://cardano2vn.io/docs1/2022/01/2022-01-21-plutus-fee-estimator-find-out-the-cost-of-transacting-on-cardano/)
+>[Công cụ ước tính phí Plutus trên Cardano](https://cardano2vn.io/docs1/2022/01/2022-01-21-plutus-fee-estimator-find-out-the-cost-of-transacting-on-cardano/)
 >
->[The beating heart of a fast-growing network](https://cardano2vn.io/docs1/2022/01/2022-01-19-the-beating-heart-of-a-fast-growing-network/)
+>[Cốt lõi của mạng lưới Cardano đang phát triển nhanh chóng](https://cardano2vn.io/docs1/2022/01/2022-01-19-the-beating-heart-of-a-fast-growing-network/)
 >
->[How we’re scaling Cardano in 2022](https://cardano2vn.io/docs1/2022/01/2022-01-14-how-we-re-scaling-cardano-in-2022/)
+>[Cách chúng tôi mở rộng quy mô Cardano trong năm 2022](https://cardano2vn.io/docs1/2022/01/2022-01-14-how-we-re-scaling-cardano-in-2022/)
 >
->[A new internal IOG Developer Experience department will improve development agility](https://cardano2vn.io/docs1/2022/01/2022-01-13-a-new-internal-iog-developer-experience-department/)
+>[Bộ phận Developer Experience (DevX) của IOG sẽ cải thiện nhanh hơn khả năng phát triển](https://cardano2vn.io/docs1/2022/01/2022-01-13-a-new-internal-iog-developer-experience-department/)
 >
->[DeFi demystified](https://cardano2vn.io/docs1/2022/01/2022-01-10-defi-demystified/)
+>[Giải mã tài chính phi tập trung (DeFi)](https://cardano2vn.io/docs1/2022/01/2022-01-10-defi-demystified/)
 
 
  

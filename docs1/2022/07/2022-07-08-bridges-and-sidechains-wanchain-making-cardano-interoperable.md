@@ -16,7 +16,7 @@ Guest author
 
 - ![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.005.png)[](mailto:weijia@wanchain.org "Email")
 
-![Cầu nối và những sidechain: Wanchain làm cho Cardano có khả năng tương tác](https://github.com/cardano2vn/iohk-blog/blob/main/vi/docs1/2022/07/img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.006.jpeg?raw=true)
+![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.006.jpeg)
 
 Vài tháng trước, một đội ngũ từ [Wanchain](https://www.wanchain.org/) đã liên hệ với công ty Input Output Global (“IOG”) để thảo luận về cách kích hoạt khả năng tương tác giữa Cardano mainnet, các Cardano sidechain và các mạng blockchain không đồng nhất khác.
 
@@ -50,7 +50,7 @@ Cầu nối crosschain chuyển tài sản và/hoặc dữ liệu từ chuỗi n
 
 Đối với những người chưa quen, hình 1 bên dưới minh họa một chuỗi nguồn đến giao dịch chuỗi mục tiêu. Mô tả ngắn gọn: khi giao dịch crosschain do người dùng bắt đầu, chuỗi mục tiêu và địa chỉ mục tiêu được chỉ định. Hợp đồng thông minh của chuỗi nguồn sẽ khóa tài sản nguồn và phát ra sự kiện Lock. Các node cầu nối phát hiện sự kiện Lock và hướng dẫn hợp đồng thông minh của chuỗi mục tiêu tạo ra một token có cùng giá trị trên chuỗi mục tiêu.
 
-Â ![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.006.jpeg)
+![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.001.jpeg)
 
 *Hình 1. Một giao dịch crosschain cơ bản*
 
@@ -84,7 +84,7 @@ Việc cố định Cardano-Wanchain dựa trên xác minh hai giai đoạn giao
 
 Bằng chứng cây Merkle hai giai đoạn được sử dụng để chứng minh tính đúng đắn của giao dịch Wanchain bằng cách sử dụng dữ liệu nén được lưu trữ trong Cardano. Bằng chứng hai giai đoạn này có hai thành phần, đó là Bằng chứng giai đoạn đầu (FSP) và Bằng chứng giai đoạn thứ hai (SSP). FSP được sử dụng để chứng minh thực tế rằng tx được lưu trữ trong một số khối Wanchain với bh là root Merkle giao dịch của nó. SSP được sử dụng để chứng minh thực tế rằng bh là một giao dịch root Merkle hợp lệ của một số khối trong Wanchain. Với sự kết hợp của FSP và SSP, chúng ta có thể biết rằng thực tế tx là một giao dịch hợp lệ trong Wanchain. Quy trình này được trình bày dưới đây trong hình 2.
 
-![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.006.jpeg)
+![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.002.jpeg)
 
 Hình 2. Đường dẫn xác minh của bằng chứng 2 giai đoạn
 
@@ -115,7 +115,7 @@ Việc kích hoạt khả năng tương tác đầy đủ giữa Cardano mainnet
 
 Cầu nối Cardano-Wanchain cơ bản đầu tiên đã tồn tại trong môi trường thử nghiệm trong vài tháng, cho phép đúc ada đóng gói trên Wanchain. Sau hard fork Vasil của Cardano, các cầu nối này sẽ được triển khai tới mainnet.
 
-![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.007.png)
+![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable003.png)
 
 Hình 3. Ada đóng gói trong môi trường thử nghiệm
 
@@ -123,7 +123,7 @@ Trong khi đó, công việc sẽ tiếp tục  thực hiện để biến Wanch
 
 Theo thời gian, cấu trúc liên kết khả năng tương tác đầy đủ của Cardano-Wanchain sẽ hình thành, như trong hình 4 bên dưới.
 
-![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable.006.jpeg)
+![](img/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable004.jpeg)
 
 Hình 4. Cấu trúc liên kết khả năng tương tác Cardano-Wanchain
 
@@ -131,13 +131,13 @@ Lớp dưới cùng của cấu trúc liên kết được hình thành bởi c�
 
 Khi chiến lược sidechain của riêng Cardano tiếp tục phát triển, giải pháp khả năng tương tác mà chúng tôi đang xây dựng ngày hôm nay sẽ có thể phục vụ nhu cầu crosschain và sidechain của Cardano.
 
-## **Về Wanchain:**
+## **Về Wanchain**
 
 Wanchain, chuỗi mạng lưới diện rộng, là một giải pháp tương tác blockchain phi tập trung với sứ mệnh thúc đẩy việc áp dụng blockchain thông qua khả năng tương tác bằng cách xây dựng các cầunối hoàn toàn phi tập trung, không giám sát, kết nối nhiều mạng blockchain trên toàn thế giới. Wanchain trao quyền cho các nhà phát triển xây dựng các ứng dụng crosschain phi tập trung để tạo sức mạnh cho tương lai của Web3.
 
 [Website](https://www.wanchain.org/) ***|*** [Bridge](https://bridge.wanchain.org/#/) ***|*** [Documentation](https://www.explorewanchain.org/) ***|*** [Telegram](https://t.me/WanchainCHAT?source=post_page---------------------------)***|*** [Twitter](https://twitter.com/wanchain_org?source=post_page---------------------------) ***|*** [Newsletter](https://wanchain.us17.list-manage.com/subscribe?u=474affe3661620cb14a108d52&id=f76852edbb&source=post_page---------------------------) ***|*** [Blockchain Explorer](http://wanscan.org/) ***|*** [Developer Portal](https://wandevs.org/)
 
-*Tuyên bố từ chối trách nhiệm: Thông tin trong bài viết này chỉ dành cho những hướng dẫn chung về các vấn đề quan tâm. Tài liệu ở đây chỉ được cung cấp với mục đích thông tin và không nên được hiểu là lời khuyên đầu tư.
+*Tuyên bố từ chối trách nhiệm: Thông tin trong bài viết này chỉ dành cho những hướng dẫn chung về các vấn đề quan tâm. Tài liệu ở đây chỉ được cung cấp với mục đích thông tin và không nên được hiểu là lời khuyên đầu tư.*
 
 Bài này được dịch bởi Le Nguyen [với bài gốc](https://iohk.io/en/blog/posts/2022/07/08/bridges-and-sidechains-wanchain-making-cardano-interoperable)
 

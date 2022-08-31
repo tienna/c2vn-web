@@ -15,7 +15,10 @@ Marketing &amp; Communications
 - ![](img/2022-04-13-boosting-cardano-s-throughput-with-script-referencing.005.png)[](https://www.linkedin.com/in/olga-hryniuk-1094a3160/ "LinkedIn")
 - ![](img/2022-04-13-boosting-cardano-s-throughput-with-script-referencing.006.png)[](https://github.com/olgahryniuk "GitHub")
 
-![Tăng cường thông lượng của Cardano với Tập lệnh tham chiếu](https://github.com/cardano2vn/iohk-blog/blob/main/vi/docs1/2022/04/img/2022-04-13-boosting-cardano-s-throughput-with-script-referencing.007.jpeg?raw=true)
+
+![](img/2022-04-13-boosting-cardano-s-throughput-with-script-referencing.webp)
+
+
 
 Trong giai đoạn phát triển của kỉ nguyên Basho, sổ cái tiếp tục tối ưu hóa và mở rộng quy mô do nhu cầu ngày càng tăng. Cùng với việc điều chỉnh thông số và nâng cấp node, khả năng của Plutus tiếp tục phát triển với tốc độ ổn định.
 
