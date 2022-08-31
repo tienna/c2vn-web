@@ -9,7 +9,7 @@ Giới thiệu Blog-iohk
 <details>
 
 <summary>
-Danh sách nhóm dịch thuật cho dự án IOHK-BLOG
+Danh sách dịch thuật cho dự án IOHK-BLOG
 </summary>
 
 1. Nguyễn Văn Hiệu. 
@@ -27,6 +27,19 @@ Danh sách nhóm dịch thuật cho dự án IOHK-BLOG
 
 </details>
 
+<details>
+
+<summary>
+Danh sách Review
+</summary>
+
+1. Nguyễn Văn Hiệu. 
+2. Nguyễn Anh Tiến.
+3. Phan Quốc.
+4. Phạm Quang.
+
+</details>
+
 ## Bài dịch mới nhất
 
 ![Lớp 1 & Lớp 2: tất cả những gì bạn cần biết](../docs1/2022/08/img/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg)
@@ -35,6 +48,12 @@ Danh sách nhóm dịch thuật cho dự án IOHK-BLOG
 
 
 ## Danh sách các bài đã dịch 
+
+<details>
+
+<summary>
+Các bài đã dịch năm 2022
+</summary>
 
 >## Bài viết trong tháng 08 năm 2022
 >[Kachina: hợp đồng thông minh bảo vệ quyền riêng tư](https://cardano2vn.io/docs1/2022/08/2022-08-05-kachina-privacy-preserving-smart-contracts/)
@@ -112,7 +131,15 @@ Danh sách nhóm dịch thuật cho dự án IOHK-BLOG
 >
 >[Giải mã tài chính phi tập trung (DeFi)](https://cardano2vn.io/docs1/2022/01/2022-01-10-defi-demystified/)
 
-
+</details>
  
+<details>
 
-**Đây là Blog dịch từ [iohk-Blog](https://iohk.io/en/blog/posts/page-1/)**
+<summary>
+Các bài đã dịch năm 2021
+</summary>
+
+</details>
+
+-------------------------------------------
+*Đây là Blog dịch từ [iohk-Blog](https://iohk.io/en/blog/posts/page-1/)*
