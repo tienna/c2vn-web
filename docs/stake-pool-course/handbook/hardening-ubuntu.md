@@ -103,10 +103,10 @@ Tìm đến dòng  **PasswordAuthentication** và sửa thành `no`
 PasswordAuthentication no 
 ```
 
-Tìm đến dòn  **PermitRootLogin** và sửa thành  `prohibit-password`
+Tìm đến dòng  **PermitRootLogin** và sửa thành  `no`
 
 ```
-PermitRootLogin prohibit-password
+PermitRootLogin no
 ```
 
 Tìm đến dòng  **PermitEmptyPasswords** và sửa thành `no`
@@ -218,7 +218,7 @@ Và khởi động lại dịch vụ ssh bằng lệnh:
 sudo systemctl restart sshd.service
 ```
 
-Sử file   `/etc/ssh/sshd_config`
+Sửa file   `/etc/ssh/sshd_config`
 
 ```
 sudo nano /etc/ssh/sshd_config
