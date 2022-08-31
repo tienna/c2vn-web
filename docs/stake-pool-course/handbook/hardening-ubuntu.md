@@ -342,6 +342,17 @@ Lưu lại file và khởi động lại dịch vụ fail2ban để có hiệu l
 ```
 sudo systemctl restart fail2ban
 ```
+:::tip
+Theo dõi các client đang bị cấm đăng nhập bằng lệnh 
+
+```
+sudo fail2ban-client status sshd
+```
+Và gỡ client khỏi danh sách đang cấm bằng lệnh
+```
+sudo fail2ban-client set sshd unbanip IP-client
+```
+:::
 
 ## :bricks: **Cấu hình tường lửa**
 
