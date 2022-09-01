@@ -95,16 +95,16 @@ const FeatureList = [
     ),
     targetUrl: "docs/project-catalyst/overview"
   },
-  {
-    title: 'Mang Project Catalyst Townhall đến Việt Nam',
-    Svg: require('../../static/img/features/vn-townhall-channel.svg').default,
-    description: (
-      <>
-        Chúng tôi sẽ đăng nội dung tóm tắt của các buổi họp  Project Catalyst Townhall hàng tuần tại đây. Các bạn có thể đọc hoặc nghe Audio tóm tắt.
-      </>
-    ),
-    targetUrl: "docs/vn-townhall-channel/overview"
-  },
+//  {
+//    title: 'Mang Project Catalyst Townhall đến Việt Nam',
+//    Svg: require('../../static/img/features/vn-townhall-channel.svg').default,
+//    description: (
+//      <>
+//        Chúng tôi sẽ đăng nội dung tóm tắt của các buổi họp  Project Catalyst Townhall hàng tuần tại //đây. Các bạn có thể đọc hoặc nghe Audio tóm tắt.
+ //     </>
+ //   ),
+ //   targetUrl: "docs/vn-townhall-channel/overview"
+ // },
 ];
 
 // function Feature({Svg, title, description}) {

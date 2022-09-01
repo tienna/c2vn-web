@@ -10,11 +10,12 @@
     padding: 2rem 0;
     width: 100%;
 }
-.featureSvg {
+.featurePort {
   height: 200px;
-  width: 200px;
+  width: 450px;
 }
 
 .featurePadding {
   padding-bottom: 1rem !important;
 }
+
