@@ -8,6 +8,7 @@ const MemberList = [
     name: 'To Nguyen Duy Tan',
     title: 'Lead Engineer',
     imageUrl: '../img/team/tantnd.jpg',
+	//imageUrl: '../img/team/2022-08-05-kachina-privacy-preserving-smart-contracts.007.jpeg',
     description: (
       <>
         An experienced engineer in Devevelop and Operation
