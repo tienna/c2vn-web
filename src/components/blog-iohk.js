@@ -8,7 +8,7 @@ import Link from "@docusaurus/Link";
 const PortList = [
   {
     title: 'Những gì bạn cần biết Layer 1 và Layer 2 ',
-	imageUrl:'docs1/2022/08/img/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg',
+	imageUrl: "docs1/2022/08/img/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg",
     description: (
       <>
         Khi thảo luận về kiến trúc blockchain, các thuật ngữ 'Layer 1' và 'Layer 2' thường được đề cập. Đây là những khái niệm quan trọng phục vụ hai mục đích: giải thích cách mạng lưới blockchain được xây dựng và cung cấp hình ảnh trực quan dễ hiểu về mạng lưới blockchain trông như thế nào. 
@@ -20,7 +20,7 @@ const PortList = [
 
   {
     title: 'Kachina: hợp đồng thông minh bảo vệ quyền riêng tư',
-	imageUrl:'docs1/2022/08/img/2022-08-05-kachina-privacy-preserving-smart-contracts.007.jpeg',
+	imageUrl: "docs1/2022/08/img/2022-08-05-kachina-privacy-preserving-smart-contracts.007.jpeg",
     description: (
 		<>
 			Tận dụng ZK Snarks để kích hoạt chức năng hợp đồng thông minh bảo vệ quyền riêng tư mà không hy sinh các đặc điểm phi tập trung
@@ -32,7 +32,7 @@ const PortList = [
 
   {
     title: 'Giới thiệu Ofelimos : giao thức đồng thuận bằng chứng công việc hữu ích',
-	imageUrl:'docs1/2022/08/img/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.007.png',
+	imageUrl: "docs1/2022/08/img/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.007.png",
     description: (
 		<>
 			Nghiên cứu của IOG giới thiệu một giao thức đồng thuận mới, an toàn có thể chứng minh được để giảm thiểu sự lãng phí năng lượng của các blockchains bằng chứng công việc
