@@ -70,14 +70,14 @@ const config = {
                 type: 'doc',
                 docId: 'getting-started/overview',
                 position: 'left',
-                label: 'Developers',
+                label: 'Bắt đầu',
             },
 		    {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
             //{ to: '/blog', label: 'Blog', position: 'left' },
-			{ to: '/blog-iohk', label: 'News', position: 'left' },
-            //{ to: '/dapps-connector', label: 'DApps Connector', position: 'left' },          
+            { to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
+            //{ to: '/docs/nami', label: 'Nami Connector', position: 'left' },
+            
             {to: '/docs/integrate-cardano/Shop-pay-ada-Blockfrost', label: 'Shop Pay tADA', position: 'left'},
-
             //{
             //    href: 'http://194.233.73.17:3030/index.html',
             //    label: 'Shop Pay tADA',
@@ -96,7 +96,7 @@ const config = {
         links: [{
             title: 'Tài liệu',
             items: [{
-                label: 'Developers',
+                label: 'Bắt đầu',
                 to: '/docs/getting-started/overview',
             },],
         },

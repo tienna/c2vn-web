@@ -8,7 +8,6 @@ const MemberList = [
     name: 'To Nguyen Duy Tan',
     title: 'Lead Engineer',
     imageUrl: '../img/team/tantnd.jpg',
-	//imageUrl: '../img/team/2022-08-05-kachina-privacy-preserving-smart-contracts.007.jpeg',
     description: (
       <>
         An experienced engineer in Devevelop and Operation
@@ -56,7 +55,7 @@ function Member({imageUrl, name, title, description, socialLink}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <img src={imageUrl} className={styles.featureSvg} alt={name} />
+        <img src={imageUrl} className={styles.profilePic} alt={name} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{name}</h3>
