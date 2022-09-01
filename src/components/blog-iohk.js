@@ -96,7 +96,7 @@ function Port({ imageUrl, title, description, targetUrl }) {
   );
 }
 
-export default function TeamMembers() {
+export default function Portblog() {
   return (
     <section className={styles.features}>
       <div className="container">
