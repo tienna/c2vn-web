@@ -11,7 +11,7 @@ Các link hữu ích Project Catalyst
 **Voting results**
 
 - [Voting results (official)](https://cardano.ideascale.com/a/pages/results)
-- [Funded cohort reporting](https://docs.google.com/spreadsheets/d/1e-HBO-UTFyT9aoTWhHQwqaRkjfJN7MXHwxnN9KsNuyc/edit#gid=495459176)
+- [Funded cohort reporting](https://docs.google.com/spreadsheets/d/1bfnWFa94Y7Zj0G7dtpo9W1nAYGovJbswipxiHT4UE3g/edit#gid=661694288)
 
 **Một số đường link hữu dụng khác**
 
