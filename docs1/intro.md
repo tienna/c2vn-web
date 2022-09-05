@@ -12,7 +12,7 @@ Giới thiệu Blog-iohk
 
 ![](../docs1/2022/06/img/2022-06-10-lace-speed-simplicity-and-seamless-flow.007.jpeg)
 
-[**Ví nhẹ mới của IOG - hiện đang trong quá trình phát triển - sẽ giúp thúc đẩy việc áp dụng bằng cách cung cấp khả năng nâng cao và dễ sử dụng cho người dùng tiền mã hóa***](https://cardano2vn.io/docs1/2022/06/2022-06-10-lace-speed-simplicity-and-seamless-flow)
+[**Ví nhẹ mới của IOG - hiện đang trong quá trình phát triển - sẽ giúp thúc đẩy việc áp dụng bằng cách cung cấp khả năng nâng cao và dễ sử dụng cho người dùng tiền mã hóa**](https://cardano2vn.io/docs1/2022/06/2022-06-10-lace-speed-simplicity-and-seamless-flow)
 
 -------------------------------------------
 
