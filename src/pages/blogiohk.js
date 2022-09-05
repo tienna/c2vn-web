@@ -11,7 +11,7 @@ import PortalHero from "./portalhero";
 const features = [
   {
     title: "Những gì bạn cần biết Layer 1 và Layer 2",
-    imageUrl: "docs1/2022/08/img/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg",
+    imageUrl: "img/iohk-io-blog/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg",
     targetUrl: "/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know",
     description: (
       <>
@@ -21,7 +21,7 @@ const features = [
   },
   {
     title: "Kachina: hợp đồng thông minh bảo vệ quyền riêng tư",
-    imageUrl: "docs1/2022/08/img/2022-08-05-kachina-privacy-preserving-smart-contracts.007.jpeg",
+    imageUrl: "img/iohk-io-blog/2022-08-05-kachina-privacy-preserving-smart-contracts.007.jpeg",
     targetUrl: "/docs1/2022/08/2022-08-05-kachina-privacy-preserving-smart-contracts",
     description: (
       <>
@@ -31,7 +31,7 @@ const features = [
   },
   {
     title: "Giới thiệu Ofelimos : giao thức đồng thuận bằng chứng công việc hữu ích",
-    imageUrl: "docs1/2022/08/img/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.007.png",
+    imageUrl: "img/iohk-io-blog/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.007.png",
     targetUrl: "/docs1/2022/08/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol",
     description: (
       <>
