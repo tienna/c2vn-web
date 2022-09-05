@@ -10,9 +10,9 @@ Giới thiệu Blog-iohk
 
 ## Bài dịch mới nhất
 
-![Lớp 1 & Lớp 2: tất cả những gì bạn cần biết](../docs1/2022/08/img/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg)
+![](../docs1/2022/06/img/2022-06-10-lace-speed-simplicity-and-seamless-flow.007.jpeg)
 
-[**Khi thảo luận về kiến trúc blockchain, các thuật ngữ như 'Layer 1' và 'Layer 2' thường được đề cập. Đây là những khái niệm quan trọng phục vụ hai mục đích: giải thích cách mạng lưới blockchain được xây dựng và cung cấp hình ảnh trực quan dễ hiểu về mạng lưới blockchain trông như thế nào. Hãy cùng khám phá chúng nhé.**](https://cardano2vn.io/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know/)
+[**Ví nhẹ mới của IOG - hiện đang trong quá trình phát triển - sẽ giúp thúc đẩy việc áp dụng bằng cách cung cấp khả năng nâng cao và dễ sử dụng cho người dùng tiền mã hóa***](https://cardano2vn.io/docs1/2022/06/2022-06-10-lace-speed-simplicity-and-seamless-flow)
 
 -------------------------------------------
 
