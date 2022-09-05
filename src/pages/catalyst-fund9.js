@@ -107,7 +107,7 @@ function Home() {
         )}
       </main>
       <PortalHero
-        title={'Hãy vote chúng tôi'}
+        title={'Hãy vote cho chúng tôi'}
         description={'Cardano2vn luôn đồng hành cùng bạn'}
         cta={'Get Started'}
         url={useBaseUrl("docs/getting-started/overview")}
