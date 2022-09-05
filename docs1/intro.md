@@ -33,9 +33,11 @@ Các bài đã dịch năm 2022
  
  >## Bài viết trong tháng 07 năm 2022
  >
- >[Staking is the bedrock of Cardano](https://cardano2vn.io/docs1/2022/07/2022-07-28-staking-is-the-bedrock-of-cardano/)
+ >[U](https://cardano2vn.io/docs1/2022/07/2022-07-28-staking-is-the-bedrock-of-cardano)
  >
  >[Những cầu nối và sidechains](https://cardano2vn.io/docs1/2022/07/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable/)
+ >
+ >[Tổng quan nghiên cứu phần 3: Token-Stablecoin-Phí](https://cardano2vn.io/docs1/2022/07/2022-07-07-research-overview-part-3-tokens-stablecoins-and-fees)
  >
  >[Dữ liệu Cardano trên BigQuery](https://cardano2vn.io/docs1/2022/07/2022-07-01-cardano-data-on-bigquery/)
  
@@ -74,6 +76,7 @@ Các bài đã dịch năm 2022
 >[Tăng cường thông lượng của Cardano với Tập lệnh tham chiếu](https://cardano2vn.io/docs1/2022/04/2022-04-13-boosting-cardano-s-throughput-with-script-referencing/)
 
 >## Bài viết trong tháng 03 năm 2022
+>[Tăng thông lươngj giao gicj của Cardano](https://cardano2vn.io/docs1/2022/03/2022-03-21-increasing-the-transaction-throughput-of-cardano)
 >[Vai trò quan trọng của AI/blockchain trong tương lai](https://cardano2vn.io/docs1/2022/03/2022-03-30-the-critical-role-of-ai-blockchain-synergy-in-humanity-s-future/)
 >
 >[Tăng thông lượng giao dịch của Cardano](https://cardano2vn.io/docs1/2022/03/2022-03-21-increasing-the-transaction-throughput-of-cardano/)
