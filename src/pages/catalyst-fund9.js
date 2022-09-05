@@ -11,6 +11,8 @@ import PortalHero from "./portalhero";
 const features = [
   {
     title: "Cardano developer courseware in Uni",
+    name: "Challenge F9: Developer Ecosystem",
+    score:"4.75",
     imageUrl: "img/Catalyst-funds/cardano-developer-courseware-in-university.jpg",
     targetUrl: "https://cardano.ideascale.com/c/idea/418098",
     description: (
@@ -21,6 +23,8 @@ const features = [
   },
   {
     title: "Cardano developer club in Uni",
+    name: "Challenge F9: Developer Ecosystem",
+    score:"4.73",
     imageUrl: "img/Catalyst-funds/Cardano-developer-club-in-Uni.jpg",
     targetUrl: "https://cardano.ideascale.com/c/idea/415632",
     description: (
@@ -31,6 +35,8 @@ const features = [
   },
   {
     title: "Catalyst Events 4 Vietnam Students",
+    name: "Challenge F9: Grow East Asia, Grow Cardano",
+    score:"4.68",
     imageUrl: "img/Catalyst-funds/catalyst-Evens-4-Vietnam-Students.png",
     targetUrl: "https://cardano.ideascale.com/c/idea/418484",
     description: (
@@ -38,14 +44,15 @@ const features = [
         Many Vietnam University students are unaware of Project Catalyst's funding campaigns and the opportunities which are existing..
       </>
     ),
-  },
-  
-    
+  },  
 ];
 
-function Feature({ imageUrl, title, description, targetUrl }) {
-  const imgUrl = useBaseUrl(imageUrl); // not used right now
+  
+function Feature({ imageUrl, title, description, targetUrl, name , score}) {
+
+  const imgUrl = useBaseUrl(imageUrl); // not used right now 
   const trgUrl = useBaseUrl(targetUrl);
+  //const href=useBaseUrl("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
   return (
     <div className={clsx("col col--4", styles.featurePadding)}>
       {targetUrl && (
@@ -61,12 +68,17 @@ function Feature({ imageUrl, title, description, targetUrl }) {
                   />
                 </div>
               )}
+              <h4>{name}</h4>
               <h3>{title}</h3>
-            </div>
+              <div> 
+            	<h4 > ADVISOR SCORE :  {score}/5  </h4>
+              </div>
+          </div>
+	 </div>
             <div className="card__body">
               <p>{description}</p>
             </div>
-          </div>
+            
         </Link>
       )}
     </div>
@@ -79,7 +91,7 @@ function Home() {
   return (
     <Layout description="Cardano2vn">
       <HomepageHeader 
-      	title={'BLOG IOHK'}
+      	title={'CATALYST FUND9'}
       />
       <main>
         {features && features.length > 0 && (
