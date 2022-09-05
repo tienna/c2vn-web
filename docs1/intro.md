@@ -33,7 +33,7 @@ Các bài đã dịch năm 2022
  
  >## Bài viết trong tháng 07 năm 2022
  >
- >[U](https://cardano2vn.io/docs1/2022/07/2022-07-28-staking-is-the-bedrock-of-cardano)
+ >[Ủy quyền của n](https://cardano2vn.io/docs1/2022/07/2022-07-28-staking-is-the-bedrock-of-cardano)
  >
  >[Những cầu nối và sidechains](https://cardano2vn.io/docs1/2022/07/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable/)
  >
