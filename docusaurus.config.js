@@ -76,8 +76,9 @@ const config = {
             //{ to: '/blog', label: 'Blog', position: 'left' },
             //{ to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             { to: '/blogiohk', label: 'News', position: 'left' },
-            
-            {to: '/docs/integrate-cardano/Shop-pay-ada-Blockfrost', label: 'Shop Pay tADA', position: 'left'},
+            { to: '/Catalyst-fund9', label: 'Catalyst-Fund9', position: 'left' },
+                       
+            {to: '/docs/integrate-cardano/Shop-pay-ada-Blockfrost', label: 'Shop Pay tADA', position: 'right'},
             //{
             //    href: 'http://194.233.73.17:3030/index.html',
             //    label: 'Shop Pay tADA',
