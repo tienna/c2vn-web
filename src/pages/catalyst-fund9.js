@@ -89,7 +89,7 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
-    <Layout description="Cardano2vn">
+    <Layout description="Catalyst">
       <HomepageHeader 
       	title={'CATALYST FUND9'}
       />
@@ -108,7 +108,7 @@ function Home() {
       </main>
       <PortalHero
         title={'Hãy vote chúng tôi'}
-        description={'Cardano2vn luôn luôn đồng hành cùng bạn'}
+        description={'Cardano2vn luôn đồng hành cùng bạn'}
         cta={'Get Started'}
         url={useBaseUrl("docs/getting-started/overview")}
       />
