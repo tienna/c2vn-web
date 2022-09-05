@@ -1,0 +1,21 @@
+.profilePic {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+.features {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    width: 100%;
+}
+.featurePort {
+  height: 200px;
+  width: 450px;
+}
+
+.featurePadding {
+  padding-bottom: 1rem !important;
+}
+
