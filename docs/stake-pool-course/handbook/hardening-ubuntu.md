@@ -212,11 +212,6 @@ và thêm vào dòng:
 ```
 auth required pam_google_authenticator.so
 ```
-Và khởi động lại dịch vụ ssh bằng lệnh: 
-
-```
-sudo systemctl restart sshd.service
-```
 
 Sửa file   `/etc/ssh/sshd_config`
 
@@ -235,7 +230,19 @@ Tìm đến đoạn**UsePAM** và sửa thành `yes`
 ```
 UsePAM yes
 ```
-Lưu lại file cấu hình và chạy lệnh **google-authenticator** .
+Thêm vào cuối file /etc/ssh/sshd_config thông tin sử dụng Pam như sau
+
+```
+AuthenticationMethods keyboard-interactive:pam password,keyboard-interactive:pam
+
+```
+Lưu lại file cấu hình và khởi động lại dịch vụ sshd
+
+```
+sudo systemctl restart sshd.service
+```
+
+Khởi chạy lệnh **google-authenticator**  để lấy code
 
 ```
 google-authenticator
