@@ -10,42 +10,49 @@ import PortalHero from "./portalhero";
 
 const features = [
   {
-    title: "Những gì bạn cần biết Layer 1 và Layer 2",
-    imageUrl: "img/iohk-io-blog/2022-08-05-layer-1-layer-2-all-you-need-to-know.007.jpeg",
-    targetUrl: "/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know",
+    title: "Cardano developer courseware in Uni",
+    name: "Challenge F9: Developer Ecosystem",
+    score:"4.75",
+    imageUrl: "img/Catalyst-funds/cardano-developer-courseware-in-university.jpg",
+    targetUrl: "https://cardano.ideascale.com/c/idea/418098",
     description: (
       <>
-        Khi thảo luận về kiến trúc blockchain, các thuật ngữ 'Layer 1' và 'Layer 2' thường được đề cập. Đây là những khái niệm quan trọng phục vụ hai mục đích: giải thích cách mạng lưới blockchain được xây dựng và cung cấp hình ảnh trực quan dễ hiểu về mạng lưới blockchain trông như thế nào.
+        University students are the future developer of blockchain but these developers can't afford formal basic and blockchain programming courses.
       </>
     ),
   },
   {
-    title: "Kachina: hợp đồng thông minh bảo vệ quyền riêng tư",
-    imageUrl: "img/iohk-io-blog/2022-08-05-kachina-privacy-preserving-smart-contracts.007.jpeg",
-    targetUrl: "/docs1/2022/08/2022-08-05-kachina-privacy-preserving-smart-contracts",
+    title: "Cardano developer club in Uni",
+    name: "Challenge F9: Developer Ecosystem",
+    score:"4.73",
+    imageUrl: "img/Catalyst-funds/Cardano-developer-club-in-Uni.jpg",
+    targetUrl: "https://cardano.ideascale.com/c/idea/415632",
     description: (
       <>
-        Tận dụng ZK Snarks để kích hoạt chức năng hợp đồng thông minh bảo vệ quyền riêng tư mà không hy sinh các đặc điểm phi tập trung.
+        IT students - developer resources are currently lacking an environment (Lab, exercise, reference document, hackathon..) to practice and experience building dApps on the blockchain platform.
       </>
     ),
   },
   {
-    title: "Giới thiệu Ofelimos : giao thức đồng thuận bằng chứng công việc hữu ích",
-    imageUrl: "img/iohk-io-blog/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol.007.png",
-    targetUrl: "/docs1/2022/08/2022-08-16-introducing-ofelimos-a-proof-of-useful-work-consensus-protocol",
+    title: "Catalyst Events 4 Vietnam Students",
+    name: "Challenge F9: Grow East Asia, Grow Cardano",
+    score:"4.68",
+    imageUrl: "img/Catalyst-funds/catalyst-Evens-4-Vietnam-Students.png",
+    targetUrl: "https://cardano.ideascale.com/c/idea/418484",
     description: (
       <>
-        Nghiên cứu của IOG giới thiệu một giao thức đồng thuận mới, an toàn có thể chứng minh được để giảm thiểu sự lãng phí năng lượng của các blockchains bằng chứng công việc.
+        Many Vietnam University students are unaware of Project Catalyst's funding campaigns and the opportunities which are existing..
       </>
     ),
-  },
-  
-    
+  },  
 ];
 
-function Feature({ imageUrl, title, description, targetUrl }) {
-  const imgUrl = useBaseUrl(imageUrl); // not used right now
+  
+function Feature({ imageUrl, title, description, targetUrl, name , score}) {
+
+  const imgUrl = useBaseUrl(imageUrl); // not used right now 
   const trgUrl = useBaseUrl(targetUrl);
+  //const href=useBaseUrl("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
   return (
     <div className={clsx("col col--4", styles.featurePadding)}>
       {targetUrl && (
@@ -61,27 +68,30 @@ function Feature({ imageUrl, title, description, targetUrl }) {
                   />
                 </div>
               )}
+              <h4>{name}</h4>
               <h3>{title}</h3>
-            </div>
+              <div> 
+            	<h4 > ADVISOR SCORE :  {score}/5  </h4>
+              </div>
+          </div>
+	 </div>
             <div className="card__body">
               <p>{description}</p>
             </div>
-          </div>
+            
         </Link>
       )}
     </div>
   );
 }
 
-
-
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
-    <Layout description="Cardano2vn">
+    <Layout description="Catalyst">
       <HomepageHeader 
-      title={'BLOG IOHK'}
+      	title={'CATALYST FUND9'}
       />
       <main>
         {features && features.length > 0 && (
@@ -97,8 +107,8 @@ function Home() {
         )}
       </main>
       <PortalHero
-        title={siteConfig.title}
-        description={siteConfig.tagline}
+        title={'Hãy vote cho chúng tôi'}
+        description={'Cardano2vn luôn đồng hành cùng bạn'}
         cta={'Get Started'}
         url={useBaseUrl("docs/getting-started/overview")}
       />
