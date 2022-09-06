@@ -1,4 +1,4 @@
-# Trái tim đang đập của một mạng lưới đang phát triển nhanh chóng
+# Cốt lõi của mạng lưới Cardano đang phát triển nhanh chóng
 
 ### **Cốt lõi của mạng lưới Cardano là dựa vào node. Khi chúng ta mở rộng quy mô Cardano trong năm 2022, công nghệ tích hợp này sẽ phát huy vai trò của nó.**
 
@@ -87,6 +87,6 @@ Với sự ra mắt của nhiều dự án mới thú vị trên Cardano, hệ s
 
 ##### **Fernando Sanchez đã đóng góp cho bài viết này**.
 
-Bài này được dịch bởi Hoang Tran. Xem bài viết gốc [tại đây]( https://iohk.io/en/blog/posts/2022/01/19/the-bating-heart-of-a-fast-growing-network)
+Bài này được dịch bởi Hoang Tran. Xem bài viết gốc [tại đây]( https://iohk.io/en/blog/posts/2022/01/19/the-beating-heart-of-a-fast-growing-network)
 
 *Dự án này được tài trợ bới Catalyst*
