@@ -42,6 +42,6 @@ Wave được đăng ký với Ủy ban chứng khoán và giao dịch Hoa Kỳ 
 
 ##### **Tổng quan hệ sinh thái có trong bài đăng này nhằm cung cấp hướng dẫn tổng quát; không có gì trong phân tích này nhằm mục đích tư vấn thuế, tư vấn đầu tư, khuyến nghị mua chứng khoán hoặc giới thiệu về việc tài trợ hoặc nguồn vốn cụ thể.
 
-Bài này được dịch bởi Lê Nguyên [với bài gốc](https://iohk.io/en/blog/posts/2022/03/31/wave-financial-launches-ada-yield-fund-to-support-cardanos-defi-ecosystem-growth)
+Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/03/31/wave-financial-launches-ada-yield-fund-to-support-cardanos-defi-ecosystem-growth)
 
 *Dự án này được tài trợ bới Catalyst*

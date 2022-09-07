@@ -126,6 +126,6 @@ Với mẫu mới và tiện ích mở rộng siêu dữ liệu cho Marlowe, cá
 
 *Để tìm hiểu thêm về các bản phát hành Marlowe sắp tới và các tính năng mới, hãy theo dõi các kênh truyền thông xã hội của chúng tôi hoặc kênh [Marlowe Discord mới](https://discord.com/channels/826816523368005654/936295815926927390/936316494042779698) để biết thêm thông tin. Ngoài ra, hãy theo dõi để biết thông tin chi tiết về chương trình Người tiên phong Marlowe đầu tiên của chúng tôi sẽ sớm ra mắt!*
 
-Bài này được dịch bởi LinhPool [với bài gốc](https://iohk.io/en/blog/posts/2022/03/04/diving-deeper-into-the-marlowe-playground/)
+Bài này được dịch bởi LinhPool, Review bởi Brit Nguyen, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/03/04/diving-deeper-into-the-marlowe-playground/)
 
 *Dự án này được tài trợ bởi Catalyst*

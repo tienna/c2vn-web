@@ -55,6 +55,6 @@ Khi Cardano tiếp tục phát triển như một mô hình cơ sở hạ tầng
 
 *Các đóng góp của DevX được bao gồm trên [nhiều kho dữ liệu của Input Output](https://github.com/input-output-hk) và bạn có thể xem tiến trình phát triển Haskell Nix trong [kho này](https://github.com/input-output-hk/haskell.nix) hoặc tìm hiểu thêm về quá trình phát triển của trình biên dịch Glasgow Haskell bằng cách truy cập [gitlab.haskell.org](https://gitlab.haskell.org/users/sign_in).
 
-Bài này được dịch bởi Lê Nguyên.Nguồn bài dịch t[ại đây](https://iohk.io/en/blog/posts/2022/01/13/a-new-internal-iog-developer-experience-department/)
+Bài này được dịch bởi Lê Nguyên, Review và biên tập bởi Nguyễn Hiệu. Bài viết Nguồn [tại đây](https://iohk.io/en/blog/posts/2022/01/13/a-new-internal-iog-developer-experience-department/)
 
 *Dự án này được tài trợ bởi Catalyst*

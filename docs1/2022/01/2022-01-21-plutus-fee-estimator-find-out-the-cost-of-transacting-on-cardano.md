@@ -76,6 +76,6 @@ Tối ưu hóa mã/tập lệnh trong tương lai và cải tiến hiệu suất
 
 Hãy xem công cụ ước tính phí Plutus trên [testnets.cardano.org](https://testnets.cardano.org/en/testnets/cardano/tools/2021-09-06__12-00-00_plutus-fee-estimator.md/) và hãy chắc chắn rằng - bạn có thể dễ dàng ước tính phí xử lý mà không bị mất tiền trong trường hợp giao dịch thất bại.
 
-Bài này được dịch bởi Lê Nguyên [với bài gốc](https://iohk.io/en/blog/posts/2022/01/21/plutus-fee-estimator-find-out-the-cost-of-transacting-on-cardano/) 
+Bài này được dịch bởi Lê Nguyên, Review bởi Tienna, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/01/21/plutus-fee-estimator-find-out-the-cost-of-transacting-on-cardano/) 
 
 *Dự án này được tài trợ bởi Catalyst*

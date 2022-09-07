@@ -50,6 +50,6 @@ Có nhiều cách để tham gia Project Catalyst. Là một nhà đổi mới, 
 
 Để tìm hiểu thêm về [Project Catalyst](https://iohk.io/en/blog/posts/2021/02/12/our-million-dollar-baby-project-catalyst) hoặc tham gia và trả lời các thử thách do những người khác đăng thông qua Project Catalyst, vui lòng đăng ký vào [danh sách gửi thư Catalyst](https://bit.ly/3dSZJvx) và tham gia [cộng đồng Telegram](https://t.me/cardanocatalyst) của chúng tôi, nơi chúng tôi rất vui được chào đón bạn.
 
-Bài này được dịch bởi LinhPool [với bài gốc](https://iohk.io/en/blog/posts/2022/03/02/project-catalyst-cardano-s-innovation-engine-launches-fund8
+Bài này được dịch bởi LinhPool, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/03/02/project-catalyst-cardano-s-innovation-engine-launches-fund8)
 
 *Dự án này được tài trợ bới Catalyst*

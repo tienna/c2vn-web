@@ -103,6 +103,6 @@ Chúng tôi sẽ nói chi tiết hơn về Hydra Heads trong bản cập nhật 
 
 Tôi muốn cảm ơn Sebastian Nagel, Olga Hryniuk, Mark Irwin và Tim Harrison vì những ý kiến đóng góp và hỗ trợ của họ trong việc chuẩn bị bài đăng trên blog này.
 
-Bài này được dịch bởi minh-hieu-102 [với bài gốc](https://iohk.io/en/blog/posts/2022/02/03/implementing-hydra-heads-the-first-step-towards-the-full-hydra-vision/)
+Bài này được dịch bởi minh-hieu-102, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/02/03/implementing-hydra-heads-the-first-step-towards-the-full-hydra-vision/)
 
 *Dự án này được tài trợ bới Catalyst*
