@@ -8,7 +8,7 @@
 
 📣Chủ đề thảo luận buổi 8 ở HCM: “Quyền Công Dân trên Blockchain Cardano”
 
-📣Diễn giả: Julie Võ
+📣Diễn giả: Minh Hiếu
 
 📣Thời gian: 9h30, Chủ Nhật, 11/9/2022
        
