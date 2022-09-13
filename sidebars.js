@@ -201,6 +201,7 @@ const sidebars = {
     "Các sự kiện": [
       "events/overview",
       "events/iohk-blog",
+      "events/hotro-spo",
       "events/Cardano-coffee-lounge",
       "events/even-HN",
       "events/even-HCM",
