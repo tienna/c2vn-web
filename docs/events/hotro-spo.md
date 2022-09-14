@@ -36,8 +36,11 @@ If you need a companion, technical support person, please leave information to u
 
 
 —---------------------------------------------------------
+
 **P/S: Hãy vote cho các đề xuất sau của chúng tôi trong F9 nếu bạn thấy hữu ích:**
+
 1️⃣ Cardano developer courseware in Uni 
 2️⃣ Cardano developer club in Uni   
 3️⃣ Catalyst Events 4 Vietnam Students
+
 Xin cảm ơn
