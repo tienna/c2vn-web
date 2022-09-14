@@ -1,19 +1,19 @@
-[Cardano Coffee Lounge - Hà Nội]-Buổi 12b
+[Cardano Coffee Lounge - Hà Nội]-Buổi 13
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
 
-![](img/B12-HN.png)
+![](img/B13-HN.png)
 
-📣Chủ đề thảo luận buổi 12 ở HN: “Thể hiện quyền "Công dân" trên Blockchain Cardano!”
+📣Chủ đề thảo luận buổi 13 ở HN: “dNFT và Ứng dụng trong tương lai!”
 
-📣Diễn giả: Nguyễn Anh Tiến, Cardano2vn.io
+📣Diễn giả: Tuân Anh, BaoDom
 
-📣Thời gian: 9h30, Chủ Nhật, 11/09/2022
+📣Thời gian: 9h30, Chủ Nhật, 18/09/2022
 
 📣 Địa điểm:  BT2-10 Nguyễn Xuân Khoát, Khu ngoại giao đoàn, Tây Hồ, Hà Nội [map tại đây](https://maps.app.goo.gl/6QRmmYxo4XzCQ3aZ7).
 
-📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 11/09/2022.
+📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 18/09/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order nước miễn phí.
 —-------------------
