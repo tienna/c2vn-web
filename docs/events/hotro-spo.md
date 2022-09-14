@@ -36,12 +36,8 @@ If you need a companion, technical support person, please leave information to u
 
 
 —---------------------------------------------------------
-
-👉Cardano2vn - Mang Cardano về Việt 
-Nam Website: https://cardano2vn.io/ 
-
-👉Trao đổi về ngôn ngữ lập trình Smartcontract - Plutus, Marlove trên Cardano
-Telegram: https://t.me/cardano2vn 
-
-👉Video bài giảng về lập trình trên Cardano
-Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
+**P/S: Hãy vote cho các đề xuất sau của chúng tôi trong F9 nếu bạn thấy hữu ích:**
+1️⃣ Cardano developer courseware in Uni 
+2️⃣ Cardano developer club in Uni   
+3️⃣ Catalyst Events 4 Vietnam Students
+Xin cảm ơn
