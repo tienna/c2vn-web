@@ -32,7 +32,7 @@ If you need a companion, technical support person, please leave information to u
 **👉 Thời gian**
 -  Đăng ký trước 23:00 ngày 20/9/2022 hoặc khi có đủ 5 cá nhân/nhóm.
  
-Sự tham gia của bạn sẽ làm đa dạng hóa, giúp cho cộng đồng Việt nam ngày một vững mạnh và Chúng tôi cần bạn.
+»»» Sự tham gia của bạn làm tăng tính phi tập trung cho mạng lưới cardao và  giúp cho cộng đồng Việt nam ngày một vững mạnh.
 
 
 —---------------------------------------------------------
