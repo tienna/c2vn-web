@@ -55,6 +55,11 @@ function Feature({ imageUrl, title, description, targetUrl, name , score}) {
   //const href=useBaseUrl("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
   return (
     <div className={clsx("col col--4", styles.featurePadding)}>
+      <div> 
+         <h4>{name}</h4>
+         <h3>  {title}</h3>
+         <h4 >    ADVISOR SCORE :  {score}/5  </h4>
+      </div>
       {targetUrl && (
         <Link className="navbar__link" to={trgUrl}>
           <div className="card">
@@ -68,11 +73,8 @@ function Feature({ imageUrl, title, description, targetUrl, name , score}) {
                   />
                 </div>
               )}
-              <h4>{name}</h4>
-              <h3>{title}</h3>
-              <div> 
-            	<h4 > ADVISOR SCORE :  {score}/5  </h4>
-              </div>
+ 
+                            
           </div>
 	 </div>
             <div className="card__body">
@@ -111,6 +113,8 @@ function Home() {
         description={'Cardano2vn luôn đồng hành cùng bạn'}
         cta={'Get Started'}
         url={useBaseUrl("docs/getting-started/overview")}
+        //url={useBaseUrl("https://app.ideascale.com/t/UM5UZB0du")}
+        
       />
     </Layout>
   );

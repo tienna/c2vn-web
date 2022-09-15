@@ -206,3 +206,22 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/HCM-B7-2.jpg)
 
 ![](img/HCM-B7-3.jpg)
+
+## Buổi 12-HN: Cardano Coffee Lounge “Quyền Công dân trên Block Cardano”
+
+![](img/B12-HN.png)
+
+![](img/HN-B12-1.jpg)
+
+![](img/HN-B12-2.jpg)
+
+![](img/HN-B12-3.jpg)
+
+## Buổi 8-HCM: Cardano Coffee Lounge “Quyền Công dân trên Block Cardano”
+
+![](img/B8-HCM.png)
+
+![](img/HCM-B8-1.jpg)
+
+![](img/HCM-B8-2.jpg)
+

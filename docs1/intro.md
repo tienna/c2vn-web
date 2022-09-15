@@ -74,14 +74,23 @@ Các bài đã dịch năm 2022
 >[Giới thiệu công cụ giao diện dòng lệnh (cli) mới cho Marlowe](https://cardano2vn.io/docs1/2022/04/2022-04-19-introducing-the-new-command-line-interface-tool-for-marlowe/)
 >
 >[Tăng cường thông lượng của Cardano với Tập lệnh tham chiếu](https://cardano2vn.io/docs1/2022/04/2022-04-13-boosting-cardano-s-throughput-with-script-referencing/)
+>
+>[Giới thiệu ủy quyền vote(dRep)](https://cardano2vn.io/docs1/2022/04/2022-04-11-introducing-the-concept-of-delegate-representatives-dreps)
 
 >## Bài viết trong tháng 03 năm 2022
+>
+>[Wave Financial ra mắt quỹ ADA yield](https://cardano2vn.io/docs1/2022/03/2022-03-31-wave-financial-launches-ada-yield-fund-to-support-cardanos-defi-ecosystem-growth)
+>
 >[Tăng thông lươngj giao gicj của Cardano](https://cardano2vn.io/docs1/2022/03/2022-03-21-increasing-the-transaction-throughput-of-cardano)
+>
 >[Vai trò quan trọng của AI/blockchain trong tương lai](https://cardano2vn.io/docs1/2022/03/2022-03-30-the-critical-role-of-ai-blockchain-synergy-in-humanity-s-future/)
 >
 >[Tăng thông lượng giao dịch của Cardano](https://cardano2vn.io/docs1/2022/03/2022-03-21-increasing-the-transaction-throughput-of-cardano/)
 >
 >[Tìm hiểu sâu hơn về Sân chơi Marlowe](https://cardano2vn.io/docs1/2022/03/2022-03-04-diving-deeper-into-the-marlowe-playground/)
+>
+>[Giới thiệu dự án Catalyst Fund8](https://cardano2vn.io/docs1/2022/03/2022-03-02-project-catalyst-cardano-s-innovation-engine-launches-fund8)
+
 
 
 >## Bài viết trong tháng 02 năm 2022

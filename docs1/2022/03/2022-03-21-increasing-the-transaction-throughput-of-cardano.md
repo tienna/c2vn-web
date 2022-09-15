@@ -113,6 +113,6 @@ Lưu ý rằng nỗ lực tối ưu hóa của  kỷ nguyên Cardano Basho vư�
 
 >Tôi xin cảm ơn Duncan Coutts, Sandro Coretti-Drayton, Neil Davies, Alexander Esgen, Nicolas Frisby, Peter Gaži, Philipp Kant, Aggelos Kiayias, Karl Knutsson, Tim Harrison, Giorgos Panagiotakos, Alexander Russell, Fernando Sanchez, Marcin Szamotulski, Peter Thompson, Spyros Voulgaris và John Woods.
 
-Bài này được dịch bởi Duy Thái [với bài gốc](https://iohk.io/en/blog/posts/2022/03/21/increasing-the-transaction-throughput-of-cardano)
+Bài này được dịch bởi Duy Thái, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/03/21/increasing-the-transaction-throughput-of-cardano)
 
 *Dự án này được tài trợ bởi Catalyst*

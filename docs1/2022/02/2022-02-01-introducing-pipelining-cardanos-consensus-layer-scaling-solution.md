@@ -68,6 +68,6 @@ Pipelining chỉ là một trong những trụ cột hỗ trợ Cardano mở r�
 
 **Fernando Sanchez đã đóng góp cho bài viết này**
 
-Bài này được dịch bởi Lê Nguyên [với bài gốc](https://iohk.io/en/blog/posts/2022/02/01/introducing-pipelining-cardanos-consensus-layer-scaling-solution/)
+Bài này được dịch bởi Lê Nguyên, Review bởi Tienna, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/02/01/introducing-pipelining-cardanos-consensus-layer-scaling-solution/)
 
 *Dự án này được tài trợ bởi Catalyst*
