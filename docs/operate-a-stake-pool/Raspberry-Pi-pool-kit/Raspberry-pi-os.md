@@ -2,53 +2,53 @@
 description: Raspberry Pi OS Cardano Stakepool
 ---
 
-# Raspi-Node Guide
+# Hướng dẫn Raspi-Node
 
 
 <iframe width="100%" height="425" src="https://www.youtube.com/embed/c__EqkGQ5sU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
-## Why this guide?
+## Tại sao lại có hướng dẫn này?
 
-This guide is intended for people who wants to get a Raspberry-pi 4 with full desktop Raspberry Pi OS installed along with all the required software to get a Cardano Node up and running on the blockchain. This can be a nice setup for those seeking to just do some lightweight develerpment on the blockchain like making NFTs for example.
-
-
-:::caution
-
-**You'll need a monitor (at least for initial setup as SSH is disabled and ufw is up) and you must use the Raspberry Pi 4 with 8GB of RAM!**
-
-:::
-
-## Download & Flash
-
-### Install Raspi-Imager
-
-Download, install & open [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases/latest). Plug in your target USB drive.
-
-**64 bit Raspberry Pi OS desktop**
-
-There is now a 64bit image you can install, it is not available in raspi-imager selection, IDK why. Check out the images in the link below grab the latest version. It is a zip file so we have to unzip it before flashing.
-
-[Download Raspberry Pi OS arm64](https://downloads.raspberrypi.org/raspios_arm64)
-
-Unzip the img file and flash it with Raspi-imager. Plug it into your Raspberry Pi 4 and go through the initial setup. Default username=`pi` and the password=`raspberrypi`
-
-You can find documentation here [https://www.raspberrypi.com/documentation/](https://www.raspberrypi.com/documentation/)
-
-Insert the SSD into one of the blue usb3 ports. Then insert the HDMI, Keyboard, Mouse, Ethernet, and power supply.
+Hướng dẫn này dành cho những người muốn cài đặt Raspberry-pi 4 với hệ điều hành Raspberry Pi dành cho máy tính mini Rasp-PI đầy đủ được cài đặt cùng với tất cả các phần mềm cần thiết để thiết lập và chạy Cardano Node trên blockchain. Đây có thể là một thiết lập tốt cho những ai đang tìm cách thực hiện một số thiết bị phát triển nhẹ trên blockchain như tạo NFT chẳng hạn.
 
 
 :::caution
 
-The first Pi4's to ship did not boot from USB3 by default, nowadays they do. If your image does not boot the two most common issues are older firmware on your Pi or an incompatible USB3 adaptor.
+**Bạn sẽ cần một màn hình (ít nhất là để thiết lập ban đầu vì SSH bị vô hiệu hóa và ufw đang hoạt động) và bạn phải sử dụng Raspberry Pi 4 với 8GB RAM!**
 
 :::
 
-//![](img/pi4-usb.jpeg)
+## Tải xuông & Flash
+
+### Cài đặt Raspi-Imager
+
+Tải xuống, cài đặt và chạy [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager/releases/latest). Cắm ổ USB của bạn vào máy tính.
+
+**Hệ điều hành 64 bit Raspberry Pi**
+
+Hiện có một hình ảnh 64 bit mà bạn có thể cài đặt, nó không có sẵn trong lựa chọn raspi-imageer. Kiểm tra các hình ảnh trong liên kết dưới đây để lấy phiên bản mới nhất. Nó là một tập tin zip nên chúng ta phải giải nén nó trước khi đưa vào flash.
+
+[Tải xuống hệ điều hành Raspberry Pi arm64](https://downloads.raspberrypi.org/raspios_arm64)
+
+Giải nén tệp img và flash nó bằng Raspi-imageer. Cắm nó vào Raspberry Pi 4 của bạn và thực hiện thiết lập ban đầu username=`pi` và password=`raspberrypi`
+
+Bạn có thể tìm tài liệu tại đây [https://www.raspberrypi.com/documentation/](https://www.raspberrypi.com/documentation/)
+
+Cắm SSD vào một trong các cổng usb3 màu xanh lam. Sau đó lắp HDMI, Bàn phím, Chuột, Ethernet và nguồn điện.
+
+
+:::caution
+
+Những chiếc Pi4 đầu tiên được xuất xưởng không khởi động từ USB3.0 theo mặc định, ngày nay Rasp Pi4 mới đã mặc định. Nếu hình ảnh của bạn không khởi động được một trong hai vấn đề phổ biến nhất là phần sụn cũ trên Pi của bạn hoặc bộ điều hợp USB3.0 không tương thích..
+
+:::
+
+![](img/pi4-usb.jpeg)
 
 
 :::info
 
-All we really need to do here is disable auto-login & create the ada user with sudo privileges. After we log back in we will delete the default Pi user and configure the server & environment for cardano-node & cardano-cli.
+Tất cả những gì chúng ta thực sự cần làm ở đây là tắt tự động đăng nhập và tạo người dùng ada với các đặc quyền sudo. Sau khi đăng nhập lại, chúng tôi sẽ xóa người dùng Pi mặc định và định cấu hình máy chủ & môi trường cho cardano-node & cardano-cli.
 
 :::
 
@@ -56,25 +56,25 @@ All we really need to do here is disable auto-login & create the ada user with s
 
 ![Set Auto Login to Disabled](img/disable-auto-login.png)
 
-### Create the ada user
+### Tạo user mới `ada`
 
-This guide strives to be user agnostic so you can choose a different username and you should be ok. When creating the systemd services however you will have to edit the user. **Pay attention!**
+ướng dẫn này cố gắng trở thành người dùng bất khả tri để bạn có thể chọn một tên người dùng khác và bạn sẽ ổn. Tuy nhiên, khi tạo các dịch vụ systemd, bạn sẽ phải chỉnh sửa người dùng. **Chú ý!**
 
-Open a terminal then create a new user and add it to the sudo group.
+Mở một terminal sau đó tạo một người dùng mới và thêm nó vào nhóm sudo.
 
 ```bash title=">_ Terminal"
 sudo adduser ada; sudo adduser ada sudo
 ```
 
-Update Raspbery Pi OS and reboot the server to make sure you are on the latest kernel. Reboot and log in as your new user.
+Cập nhật hệ điều hành Raspbery Pi và khởi động lại máy chủ để đảm bảo bạn đang sử dụng nhân mới nhất. Khởi động lại và đăng nhập với tư cách người dùng mới của bạn.
 
 ```bash title=">_ Terminal"
 sudo apt update; sudo apt upgrade
 ```
 
-#### Change password
+#### Thay đổi mật khẩu
 
-You can change the users password at anytime with the following command.
+Bạn có thể thay đổi mật khẩu người dùng bất cứ lúc nào bằng lệnh sau.
 
 ```bash title=">_ Terminal"
 passwd
@@ -83,11 +83,11 @@ passwd
 
 :::caution
 
-Careful where you use sudo. For example issuing 'sudo passwd' would change the root password. This seems to be a place where new users get confused.
+Cẩn thận nơi bạn sử dụng sudo. Ví dụ: phát hành 'sudo passwd' sẽ thay đổi mật khẩu gốc. Đây dường như là một nơi mà những người mới sử dụng cảm thấy bối rối.
 
 :::
 
-#### Delete the pi user
+#### Xóa user pi
 
 The pi user is set to auto login and does not require a password for sudo commands. Best to just trash it to avoid any potential security issues.
 
@@ -95,13 +95,13 @@ The pi user is set to auto login and does not require a password for sudo comman
 sudo deluser --remove-home pi
 ```
 
-### Server setup
+### Cài đặt server
 
-### Configure Hardware
+### Định cấu hình phần cứng
 
-Let's save some power, raise the governor on the CPU a bit, and set GPU ram as low as we can.
+Hãy tiết kiệm một chút điện năng, nâng cao bộ điều khiển trên CPU lên một chút và đặt ram GPU thấp nhất có thể.
 
-Here are some links for overclocking and testing your drive speeds. If you have heat sinks you can safely go to 2000. Just pay attention to over volt recommendations to go with your chosen clock speed.
+Dưới đây là một số liên kết để ép xung và kiểm tra tốc độ ổ đĩa của bạn. Nếu bạn có tản nhiệt, bạn có thể an toàn đến 2000. Chỉ cần chú ý đến các khuyến nghị để  phù hợp với tốc bạn đã chọn.
 
 * [https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md)
 * [https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/](https://www.seeedstudio.com/blog/2020/02/12/how-to-safely-overclock-your-raspberry-pi-4-to-2-147ghz/)
@@ -109,15 +109,15 @@ Here are some links for overclocking and testing your drive speeds. If you have 
 * [https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/](https://dopedesi.com/2020/11/24/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-by-alex-ellis-nov-2020/)
 * [Legendary Technology: New Raspberry Pi 4 Bootloader USB](https://jamesachambers.com/new-raspberry-pi-4-bootloader-usb-network-boot-guide/)
 
-**Overclock, memory & radios**
+**Ép xung, Bộ nhớ & radios**
 
-Edit /boot/config.txt.
+Chỉnh sửa /boot/config.txt.
 
 ```bash title=">_ Terminal"
 sudo nano /boot/config.txt
 ```
 
-Just paste the Pi Pool additions in at the bottom.
+Chỉ cần dán các bổ sung Pi Pool ở dưới cùng.
 
 ```bash title="/boot/config.txt"
 ## Pi Pool ##
@@ -125,51 +125,52 @@ over_voltage=6
 arm_freq=2000
 ```
 
-use `CTRL + x` to save and `y` to confirm and exit.
+sử dụng `CTRL + x` để save và `y` đồng ý và thoát.
 
-Save and reboot.
+Save và reboot.
 
 ```
 sudo reboot
 ```
 
-### Configure Raspbian
+### Định cấu hình Raspbia
 
-#### Disable the root user
+#### Vô hiệu hóa user root
 
 ```
 sudo passwd -l root
 ```
 
-#### Secure shared memory
+#### Bộ nhớ chia sẻ an toàn #
 
-Mount shared memory as read only. Open /etc/fstab.
+
+Gắn bộ nhớ được chia sẻ dưới dạng chỉ đọc. Open /etc/fstab.
 
 ```
 sudo nano /etc/fstab
 ```
 
-Add this line at the bottom, save & exit.
+Thêm dòng này ở dưới cùng, lưu và thoát.
 
 ```bash title="/etc/fstab"
 tmpfs    /run/shm    tmpfs    ro,noexec,nosuid    0 0
 ```
 
-#### Increase open file limit for $USER
+#### Tăng giới hạn tệp đang mở cho $ USER
 
-Add a couple lines to the bottom of /etc/security/limits.conf
+Thêm một vài dòng vào cuối /etc/security/limits.conf
 
 ```bash title=">_ Terminal"
 sudo bash -c "echo -e '${USER} soft nofile 800000\n${USER} hard nofile 1048576\n' >> /etc/security/limits.conf"
 ```
 
-Confirm it was added to the bottom.
+Xác nhận nó đã được thêm vào dưới cùng.
 
 ```bash title=">_ Terminal"
 cat /etc/security/limits.conf
 ```
 
-#### Optimize performance & security
+#### Tối ưu hóa hiệu suất và bảo mật
 
 
 :::info
@@ -181,11 +182,11 @@ cat /etc/security/limits.conf
 
 :::caution
 
-If you would like to disable ipv6 or turn on forwarding you can below.
+Nếu bạn muốn tắt ipv6 hoặc bật chuyển tiếp, bạn có thể làm dưới đây.
 
 :::
 
-Add the following to the bottom of /etc/sysctl.conf. Save and exit.
+Thêm phần sau vào cuối /etc/sysctl.conf. Save và exit.
 
 ```bash title=">_ Terminal"
 sudo nano /etc/sysctl.conf
@@ -232,10 +233,9 @@ net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control = bbr
 ```
 
-**Load our changes after boot**
+**Tải các thay đổi của chúng tôi sau khi khởi động**
 
-Create a new file. Paste, save & close.
-
+Tạo một tệp mới. Dán, lưu và đóng.
 ```
 sudo nano /etc/rc.local
 ```
@@ -268,7 +268,7 @@ exit 0
 
 #### Chrony
 
-We need to get our time synchronization as accurate as possible. Open /etc/chrony/chrony.conf
+Chúng tôi cần đồng bộ hóa thời gian của chúng tôi chính xác nhất có thể. Mở /etc/chrony/chrony.conf
 
 ```
 sudo apt install chrony
@@ -278,7 +278,7 @@ sudo apt install chrony
 sudo nano /etc/chrony/chrony.conf
 ```
 
-Replace the contents of the file with below, Save and exit.
+Thay thế nội dung của tệp bằng nội dung bên dưới, Lưu và thoát.
 
 ```bash title="/etc/chrony/chrony.conf"
 pool time.google.com       iburst minpoll 2 maxpoll 2 maxsources 3 maxdelay 0.3
@@ -318,7 +318,7 @@ leapsectz right/UTC
 local stratum 10
 ```
 
-Save & exit.
+Lưu và thoát
 
 ```bash title=">_ Terminal"
 sudo service chrony restart
@@ -329,17 +329,18 @@ sudo service chrony restart
 
 :::info
 
-We have found that cardano-node can safely use this compressed swap in ram essentially giving us around 20gb of ram. We already set kernel parameters for zram in /etc/sysctl.conf
+Chúng tôi đã phát hiện ra rằng cardano-node có thể sử dụng hoán đổi nén này một cách an toàn trong ram về cơ bản cung cấp cho chúng tôi khoảng 20gb ram. Chúng tôi đã thiết lập các tham số hạt nhân cho zram trongn /etc/sysctl.conf
 
 :::
 
-Swapping to disk is slow, swapping to compressed ram space is faster and gives us some overhead before out of memory (oom).
+Swapping trên ổ cúng là chậm, swapping dùng nén RAM nhanh hơn và cung cấp cho chúng tôi một số chi phí trước khi hết bộ nhớ (oom).
 
-[RPi OS ZRAM Guide](https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/)
+[Hướng dẫn RPi OS ZRAM](https://haydenjames.io/raspberry-pi-performance-add-zram-kernel-parameters/)
 
-[Ubunutu Article on ZRAM](https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html)
+[Bài viết ZRAM trên Ubuntu](https://lists.ubuntu.com/archives/lubuntu-users/2013-October/005831.html)
 
-Disable Raspbian swapfile.
+
+*Disable Raspbian swapfile.*
 
 ```
 sudo systemctl disable dphys-swapfile.service
@@ -378,15 +379,15 @@ PERCENT=150
 #PRIORITY=100
 ```
 
-Save and reboot.
+Lưu và khởi động lại.
 
 ```bash title=">_ Terminal"
 sudo reboot
 ```
 
-### Install packages
+### Cài đặt gói
 
-Install the packages we will need.
+Cài đặt các gói cần thiết
 
 ```bash title=">_ Terminal"
 sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
@@ -399,30 +400,30 @@ sudo apt install build-essential libssl-dev tcptraceroute python3-pip \
 sudo reboot
 ```
 
-### Automatic security updates
+### Cập nhật bảo mật tự động
 
-Enable automatic security updates.
+Bật cập nhật bảo mật tự động.
 
 ```bash title=">_ Terminal"
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
-## Environment Setup
+## Thiết lập Môi trường
 
 ***
 
-### description: Configure the environment for Cardano Node
+### Mô tả: Định cấu hình môi trường cho Cardano Node 
 
-### Choose testnet or mainnet.
+### Chọn testnet hoặc mainne.
 
 
 :::danger
 
-There is a 500 ₳ Registration deposit and another 5 ₳ in registration costs to start a pool on mainnet. First time users are strongly reccomended to use testnet. You can get tada (test ada) from the testnet faucet. [tada faucet link](https://testnets.cardano.org/en/testnets/cardano/tools/faucet/)
+Có một khoản tiền gửi đăng ký 500 ₳ và chi phí đăng ký 5 ₳ khác để bắt đầu một nhóm trên mạng chính. Người dùng lần đầu tiên được khuyến khích sử dụng testnet. Bạn có thể lấy tada với [tada faucet link](https://testnets.cardano.org/en/testnets/cardano/tools/faucet/)
 
 :::
 
-Create the directories for our project.
+Tạo các thư mục cho dự án.
 
 ```bash title=">_ Terminal"
 mkdir -p ${HOME}/.local/bin
@@ -433,25 +434,25 @@ mkdir ${HOME}/git
 mkdir ${HOME}/tmp
 ```
 
-Create an .adaenv file, choose which network you want to be on and source the file. This file will hold the variables/settings for operating a Pi-Node. /home/ada/.adaenv
+Tạo tệp .adaenv, chọn mạng bạn muốn sử dụng và nguồn tệp. Tệp này sẽ chứa các biến/cài đặt để vận hành Pi-Node.. /home/ada/.adaenv
 
 ```bash title=">_ Terminal"
 echo -e NODE_CONFIG=testnet >> ${HOME}/.adaenv; source ${HOME}/.adaenv
 ```
 
-#### Create bash variables & add \~/.local/bin to our $PATH 🏃
+#### Tạo các biến cơ sở và thêm \~/.local/bin to our $PATH 🏃
 
 
 :::info
 
-[Environment Variables in Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
+[Biến môi trường trong Linux/Unix](https://askubuntu.com/questions/247738/why-is-etc-profile-not-invoked-for-non-login-shells/247769#247769).
 
 :::
 
 
 :::caution
 
-You must reload environment files after updating them. Same goes for cardano-node, changes to the topology or config files require a cardano-service restart.
+Bạn phải tải lại các tệp môi trường sau khi cập nhật chúng. Tương tự đối với nút cardano, các thay đổi đối với cấu trúc liên kết hoặc tệp cấu hình yêu cầu khởi động lại dịch vụ cardano.
 
 :::
 
@@ -469,9 +470,9 @@ echo export CARDANO_NODE_SOCKET_PATH="${HOME}/pi-pool/db/socket" >> ${HOME}/.ada
 source ${HOME}/.bashrc; source ${HOME}/.adaenv
 ```
 
-### Build Libsodium
+### Xây dựng Libsodium
 
-This is IOHK's fork of Libsodium. It is needed for the dynamic build binary of cardano-node.
+Đây là ngã ba Libsodium của IOHK. Nó cần thiết cho bản nhị phân xây dựng động của nút cardano.
 
 ```bash title=">_ Terminal"
 cd; cd git/
@@ -484,7 +485,7 @@ make
 sudo make install
 ```
 
-Echo library paths .bashrc file and source it.
+Echo thư viện đường dẫn tệp .bashrc và nguồn nó.
 
 ```bash title=">_ Terminal"
 echo "export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"" >> ~/.bashrc
@@ -492,13 +493,13 @@ echo "export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"" >> ~/.
 . ~/.bashrc
 ```
 
-Update link cache for shared libraries and confirm.
+Cập nhật bộ đệm liên kết cho các thư viện được chia sẻ và xác nhận.
 
 ```bash title=">_ Terminal"
 sudo ldconfig; ldconfig -p | grep libsodium
 ```
 
-#### Retrieve node files
+#### Truy xuất tệp node
 
 ```bash title=">_ Terminal"
 cd $NODE_FILES
@@ -510,7 +511,7 @@ wget -N https://hydra.iohk.io/build/${NODE_BUILD_NUM}/download/1/${NODE_CONFIG}-
 wget -N https://raw.githubusercontent.com/input-output-hk/cardano-node/master/cardano-submit-api/config/tx-submit-mainnet-config.yaml
 ```
 
-Run the following to modify ${NODE\_CONFIG}-config.json and update TraceBlockFetchDecisions to "true" & listen on all interfaces with Prometheus Node Exporter.
+Chạy phần sau để sửa đổi $ {NODE _ CONFIG} -config.json và cập nhật TraceBlockFetchDecisions thành "true" và lắng nghe trên tất cả các giao diện với Prometheus Node Exporter.
 
 ```bash title=">_ Terminal"
 sed -i ${NODE_CONFIG}-config.json \
@@ -521,17 +522,17 @@ sed -i ${NODE_CONFIG}-config.json \
 
 :::info
 
-**Tip for relay nodes**: It's possible to reduce memory and cpu usage by setting "TraceMemPool" to "false" in **{NODE\_CONFIG}-config.json.** This will turn off mempool data in Grafana and gLiveView.sh.
+
+**Tip for relay nodes**: Có thể giảm mức sử dụng bộ nhớ và cpu bằng cách đặt "TraceMemPool" thành "false" trong **{NODE\_CONFIG}-config.json.**  Thao tác này sẽ tắt dữ liệu mempool trong Grafana và gLiveView.sh
 
 :::
 
-#### Retrieve aarch64 1.33.1 and cardano-submit-api binaries
+#### Truy xuất mã nhị phân aarch64 1.33.1 và cardano-submit-api
 
 
 :::info
 
-The **unofficial** cardano-node, cardano-cli and cardano-submit-api binaries available to us are being built by an IOHK engineer in his **spare time**. Consider delegating to zw3rk pool to support mobile Haskel development.
-
+Các mã nhị phân cardano-node, cardano-cli và cardano-submit-api không chính thức có sẵn cho chúng tôi đang được một kỹ sư IOHK xây dựng trong thời gian rảnh rỗi. Cân nhắc việc ủy ​​quyền cho nhóm zw3rk để hỗ trợ phát triển Haskel.
 :::
 
 ```bash title=">_ Terminal"
@@ -546,11 +547,11 @@ cd ${HOME}
 
 :::caution
 
-If binaries already exist (if updating) you will have to confirm overwriting the old ones.
+Nếu các tệp nhị phân đã tồn tại (nếu đang cập nhật), bạn sẽ phải xác nhận việc ghi đè các tệp cũ.
 
 :::
 
-Confirm binaries are in $USER's $PATH.
+Xác nhận các tệp nhị phân nằm trong $PATH của $USER.
 
 ```bash title=">_ Terminal"
 cardano-node version
@@ -558,15 +559,16 @@ cardano-cli version
 which cardano-submit-api
 ```
 
-#### Systemd unit startup scripts
+#### file khởi động Systemd
 
-Create the systemd unit file and startup script so systemd can manage cardano-node.
+Tạo tệp systemd và tập lệnh khởi động để systemd có thể quản lý nút cardano.
+
 
 ```bash title=">_ Terminal"
 nano ${HOME}/.local/bin/cardano-service
 ```
 
-Paste the following, save & exit.
+Dán phần sau, lưu và thoát.
 
 ```bash title="${HOME}/.local/bin/cardano-service"
 #!/bin/bash
@@ -581,19 +583,19 @@ cardano-node run +RTS -N4 -RTS \
   --config ${CONFIG}
 ```
 
-Allow execution of our new cardano-node service file.
+Cho phép thực thi tệp dịch vụ nút cardano mới.
 
 ```bash title=">_ Terminal"
 chmod +x ${HOME}/.local/bin/cardano-service
 ```
 
-Open /etc/systemd/system/cardano-node.service.
+Mở /etc/systemd/system/cardano-node.service.
 
 ```bash title=">_ Terminal"
 sudo nano /etc/systemd/system/cardano-node.service
 ```
 
-Paste the following, You will need to edit the username here if you chose to not use ada. Save & exit.
+Dán phần sau, Bạn sẽ cần phải chỉnh sửa tên người dùng tại đây nếu bạn chọn không sử dụng ada. Cứu thoát.
 
 ```bash title="/etc/systemd/system/cardano-node.service"
 # The Cardano Node Service (part of systemd)
@@ -621,7 +623,7 @@ EnvironmentFile=-/home/ada/.adaenv
 WantedBy= multi-user.target
 ```
 
-Create the systemd unit file and startup script so systemd can manage cardano-submit-api.
+Tạo tệp systemd và tập lệnh khởi động để systemd có thể quản lý cardano-submit-api.
 
 ```bash title=">_ Terminal"
 nano ${HOME}/.local/bin/cardano-submit-service
@@ -639,19 +641,19 @@ cardano-submit-api \
   --mainnet
 ```
 
-Allow execution of our new cardano-submit-api service script.
+Cho phép thực thi tập lệnh dịch vụ cardano-submit-api mới 
 
 ```bash title=">_ Terminal"
 chmod +x ${HOME}/.local/bin/cardano-submit-service
 ```
 
-Create /etc/systemd/system/cardano-submit.service.
+Tạo /etc/systemd/system/cardano-submit.service.
 
 ```bash title=">_ Terminal"
 sudo nano /etc/systemd/system/cardano-submit.service
 ```
 
-Paste the following, You will need to edit the username here if you chose to not use ada. save & exit.
+Dán phần sau, Bạn sẽ cần phải chỉnh sửa tên người dùng tại đây nếu bạn chọn không sử dụng ada. cứu thoát.
 
 ```bash title=">_ Terminal"
 # The Cardano Submit Service (part of systemd)
@@ -679,13 +681,13 @@ EnvironmentFile=-/home/ada/.adaenv
 WantedBy= multi-user.target
 ```
 
-Reload systemd so it picks up our new service files.
+Tải lại systemd để nó chọn các tệp dịch vụ mới của chúng tôi.
 
 ```bash title=">_ Terminal"
 sudo systemctl daemon-reload
 ```
 
-Let's add a couple functions to the bottom of our .adaenv file to make life a little easier.
+Hãy thêm một vài hàm vào cuối tệp .adaenv của chúng tôi để làm cho công việc dễ dàng hơn một chút.
 
 ```bash title=">_ Terminal"
 nano ${HOME}/.adaenv
@@ -703,13 +705,13 @@ cardano-submit() {
 }
 ```
 
-Save & exit.
+Lưu và thoát
 
 ```bash title=">_ Terminal"
 source ${HOME}/.adaenv
 ```
 
-What we just did there was add a couple functions to control our cardano-service and cardano-submit without having to type out
+Những gì chúng tôi vừa làm là thêm một số chức năng để kiểm soát dịch vụ cardano của chúng tôi và gửi cardano mà không cần phải gõ ra
 
 > sudo systemctl enable cardano-node.service
 
@@ -719,33 +721,33 @@ What we just did there was add a couple functions to control our cardano-service
 
 > sudo systemctl status cardano-node.service
 
-Now we just have to:
+Bây giờ chúng ta chỉ cần:
 
 * cardano-service enable (enables cardano-node.service auto start at boot)
 * cardano-service start (starts cardano-node.service)
 * cardano-service stop (stops cardano-node.service)
 * cardano-service status (shows the status of cardano-node.service)
 
-Or
+Hoặc
 
 * cardano-submit enable (enables cardano-submit.service auto start at boot)
 * cardano-submit start (starts cardano-submit.service)
 * cardano-submit stop (stops cardano-submit.service)
 * cardano-submit status (shows the status of cardano-submit.service)
 
-The submit service listens on port 8090. You can connect your Nami wallet like below to submit tx's yourself in Nami's settings.
+Dịch vụ gửi sẽ lắng nghe trên cổng 8090. Bạn có thể kết nối ví Nami của mình như bên dưới để tự gửi tx trong cài đặt của Nami.
 
 ```bash title=">_ Terminal"
 http://<node lan ip>:8090/api/submit/tx
 ```
 
-### ⛓ Syncing the chain ⛓
+### ⛓ Đồng bộ chuỗi ⛓
 
-You are now ready to start cardano-node. Doing so will start the process of 'syncing the chain'. This is going to take about 48 hours and the db folder is about 13GB in size right now. We used to have to sync it to one node and copy it from that node to our new ones to save time. However...
+Bây giờ bạn đã sẵn sàng để bắt đầu cardano-node. Làm như vậy sẽ bắt đầu quá trình 'đồng bộ hóa chuỗi'. Quá trình này sẽ mất khoảng 48 giờ và thư mục db hiện có kích thước khoảng 13GB. Chúng tôi đã từng phải đồng bộ hóa nó với một nút và sao chép nó từ nút đó sang những nút mới để tiết kiệm thời gian. Tuy nhiên...
 
-#### Download snapshot
+#### Tải xuông snapshot
 
-I have started taking snapshots of my backup nodes db folder and hosting it in a web directory. With this service it takes around 20 minutes to pull the latest snapshot and maybe another hour to sync up to the tip of the chain. This service is provided as is. It is up to you. If you want to sync the chain on your own simply:
+Tôi đã bắt đầu chụp nhanh thư mục db các nút sao lưu của mình và lưu trữ nó trong một thư mục web. Với dịch vụ này, mất khoảng 20 phút để lấy ảnh chụp nhanh mới nhất và có thể mất một giờ nữa để đồng bộ hóa với đầu chuỗi. Dịch vụ này được cung cấp nguyên trạng. Điều đó phụ thuộc vào bạn. Nếu bạn muốn đồng bộ chuỗi của riêng mình, chỉ cần:
 
 ```bash title=">_ Terminal"
 cardano-service enable
@@ -753,7 +755,7 @@ cardano-service start
 cardano-service status
 ```
 
-Otherwise, be sure your node is **not** running & delete the db folder if it exists and download db/.
+Nếu không, hãy đảm bảo rằng nút của bạn không chạy và xóa thư mục db nếu nó tồn tại và tải xuống db /.
 
 ```bash title=">_ Terminal"
 cardano-service stop
@@ -761,13 +763,13 @@ cd $NODE_HOME
 rm -r db/
 ```
 
-**Download Database**
+**Tải xuống cơ sở dữ liệu**
 
 ```bash title=">_ Terminal"
 wget -r -np -nH -R "index.html*" -e robots=off https://$NODE_CONFIG.adamantium.online/db/
 ```
 
-Once wget completes enable & start cardano-node.
+Sau khi wget hoàn tất, hãy bật và khởi động cardano-node
 
 ```bash title=">_ Terminal"
 cardano-service enable
@@ -777,9 +779,9 @@ cardano-service status
 
 ### gLiveView.sh
 
-Guild operators scripts has a couple useful tools for operating a pool. We do not want the project as a whole, though there are a couple scripts we are going to use.
+Các tập lệnh của nhà điều hành hiệp hội có một vài công cụ hữu ích để vận hành một nhóm. Chúng tôi không muốn dự án nói chung, mặc dù có một vài kịch bản mà chúng tôi sẽ sử dụng.
 
-[Guild Operators Helper Scripts](https://github.com/cardano-community/guild-operators/tree/master/scripts/cnode-helper-scripts)
+[Tập lệnh trợ giúp người đieuù hành pool (SPO)](https://github.com/cardano-community/guild-operators/tree/master/scripts/cnode-helper-scripts)
 
 ```bash title=">_ Terminal"
 cd $NODE_HOME/scripts
@@ -790,7 +792,7 @@ wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/
 
 :::info
 
-You can change the port cardano-node runs on in the .adaenv file in your home directory. Open the file edit the port number. Load the change into your shell & restart the cardano-node service.
+Bạn có thể thay đổi cổng cardano-node đang chạy trong tệp .adaenv trong thư mục chính của bạn. Mở tệp chỉnh sửa số cổng. Nạp thay đổi vào shell của bạn và khởi động lại dịch vụ cardano-node.
 
 ```bash title=">_ Terminal"
 nano /home/ada/.adaenv
@@ -800,7 +802,7 @@ cardano-service restart
 
 :::
 
-Add a line sourcing our .adaenv file to the top of the env file and adjust some paths.
+Thêm một dòng tìm nguồn cung cấp tệp .adaenv của chúng tôi vào đầu tệp env và điều chỉnh một số đường dẫn.
 
 ```bash title=">_ Terminal"
 sed -i env \
@@ -812,7 +814,7 @@ sed -i env \
     -e "s/\#LOG_DIR=\"\${CNODE_HOME}\/logs\"/LOG_DIR=\"\${CNODE_HOME}\/logs\"/g"
 ```
 
-Allow execution of gLiveView.sh.
+Cho phép thực thi gLiveView.sh.
 
 ```bash title=">_ Terminal"
 chmod +x gLiveView.sh
@@ -820,28 +822,28 @@ chmod +x gLiveView.sh
 
 ### topologyUpdater.sh
 
-Until peer to peer is enabled on the network operators need a way to get a list of relays/peers to connect to. The topology updater service runs in the background with cron. Every hour the script will run and tell the service you are a relay and want to be a part of the network. It will add your relay to it's directory after four hours you should see in connections in gLiveView.
+Cho đến khi peer to peer được kích hoạt trên mạng, các nhà khai thác mạng cần một cách để có được danh sách các rơle / peer để kết nối. Dịch vụ cập nhật cấu trúc liên kết chạy trong nền với cron. Mỗi giờ kịch bản sẽ chạy và cho dịch vụ biết bạn là người chuyển tiếp và muốn trở thành một phần của mạng. Nó sẽ thêm relay của bạn vào thư mục của nó sau bốn giờ mà bạn sẽ thấy trong các kết nối trong gLiveView.
 
 
 :::info
 
-The list generated will show you the distance & a clue as to where the relay is located.
+Danh sách được tạo sẽ hiển thị cho bạn khoảng cách & manh mối về vị trí đặt rơ le.
 
 :::
 
-Download the topologyUpdater script and have a look at it. Lower the number of peers to 10 and add any custom peers you wish. These are outgoing connections. You will not see any incoming transactions untill other nodes start connecting to you.
+Tải xuống tập lệnh topoUpdater và xem qua nó. Giảm số lượng đồng nghiệp xuống 10 và thêm bất kỳ đồng nghiệp tùy chỉnh nào bạn muốn. Đây là những kết nối gửi đi. Bạn sẽ không thấy bất kỳ giao dịch nào cho đến khi các nút khác bắt đầu kết nối với bạn.
 
 ```bash title=">_ Terminal"
 wget https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/topologyUpdater.sh
 ```
 
-Lower the number of MX\_PEERS to 10.
+Giảm số MX _ PEERS xuống 10.
 
 ```bash title=">_ Terminal"
 nano topologyUpdater.sh
 ```
 
-Save, exit and make it executable.
+Lưu, thoát và làm cho nó có thể thực thi được.
 
 ```bash title=">_ Terminal"
 chmod +x topologyUpdater.sh
@@ -850,11 +852,11 @@ chmod +x topologyUpdater.sh
 
 :::caution
 
-You will not be able to successfully execute ./topologyUpdater.sh until you are fully synced up to the tip of the chain.
+Bạn sẽ không thể thực thi thành công ./topologyUpdater.sh cho đến khi bạn được đồng bộ hóa hoàn toàn đến đầu chuỗi
 
 :::
 
-Create a cron job that will run the script every hour.
+Tạo một công việc cron sẽ chạy tập lệnh mỗi giờ.
 
 ```bash title=">_ Terminal"
 crontab -e
@@ -863,16 +865,16 @@ crontab -e
 
 :::info
 
-Choose nano when prompted for editor.
+Chọn nano khi được nhắc cho trình chỉnh sửa.
 
 :::
 
-Add the following to the bottom, save & exit.
+Thêm phần sau vào dưới cùng, lưu và thoát.
 
 
 :::info
 
-The Pi-Node image has this cron entry disabled by default. You can enable it by removing the #.
+Hình ảnh Pi-Node có mục cron này bị tắt theo mặc định. Bạn có thể kích hoạt nó bằng cách xóa dấu #
 
 :::
 
@@ -882,7 +884,7 @@ PATH=/home/ada/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 33 * * * * . $HOME/.adaenv; $HOME/pi-pool/scripts/topologyUpdater.sh
 ```
 
-After four hours you can open ${NODE\_CONFIG}-topology.json and inspect the list of out peers the service suggested for you. Remove anything more than 7k distance(or less). IOHK recently suggested 8 out peers. The more out peers the more system resources it uses. You can also add any peers you wish to connect to manualy inside the script. This is where you would add your block producer or any friends nodes.
+Sau bốn giờ, bạn có thể mở $ {NODE _ CONFIG} -topology.json và kiểm tra danh sách các dịch vụ ngang hàng mà dịch vụ đề xuất cho bạn. Loại bỏ bất kỳ thứ gì hơn 7k khoảng cách (hoặc ít hơn). IOHK gần đây đã đề xuất 8 đồng nghiệp. Càng nhiều đồng nghiệp bên ngoài, nó càng sử dụng nhiều tài nguyên hệ thống. Bạn cũng có thể thêm bất kỳ đồng nghiệp nào mà bạn muốn kết nối với thủ công bên trong tập lệnh. Đây là nơi bạn sẽ thêm nhà sản xuất khối của mình hoặc bất kỳ nút nào của bạn bè.
 
 ```bash title=">_ Terminal"
 nano $NODE_FILES/${NODE_CONFIG}-topology.json
@@ -891,27 +893,27 @@ nano $NODE_FILES/${NODE_CONFIG}-topology.json
 
 :::info
 
-You can use gLiveView.sh to view ping times in relation to the peers in your {NODE\_CONFIG}-topology file. Use Ping to resolve hostnames to IP's.
+Bạn có thể sử dụng gLiveView.sh để xem thời gian ping liên quan đến các ứng dụng ngang hàng trong tệp -topology {NODE _ CONFIG} của mình. Sử dụng Ping để phân giải tên máy chủ thành IP.
 
 :::
 
-Changes to this file will take affect upon restarting the cardano-service.
+Các thay đổi đối với tệp này sẽ có ảnh hưởng khi khởi động lại dịch vụ cardano.
 
 
 :::caution
 
-Don't forget to remove the last comma in your topology file!
+Đừng quên xóa dấu phẩy cuối cùng trong tệp cấu trúc liên kết của bạn!
 
 :::
 
-Status should show as enabled & running.
+Trạng thái sẽ hiển thị là đã bật và đang chạy
 
-Once your node syncs past epoch 208(shelley era) you can use gLiveView.sh to monitor your sync progress.
+Sau khi nút của bạn đồng bộ hóa trước kỷ nguyên 208 (kỷ nguyên shelley), bạn có thể sử dụng gLiveView.sh để theo dõi tiến trình đồng bộ hóa của mình.
 
 
 :::danger
 
-It can take over an hour for cardano-node to sync to the tip of the chain. Use ./gliveView.sh, htop and log outputs to view process. Be patient it will come up.
+Có thể mất hơn một giờ để cardano-node đồng bộ hóa với đầu chuỗi. Sử dụng đầu ra ./gliveView.sh, htop và log để xem quá trình. Hãy kiên nhẫn nó sẽ xuất hiện.
 
 :::
 
@@ -924,12 +926,12 @@ cd $NODE_HOME/scripts
 
 ### Prometheus, Node Exporter & Grafana
 
-Prometheus connects to cardano-nodes backend and serves metrics over http. Grafana in turn can use that data to display graphs and create alerts. Our Grafana dashboard will be made up of data from our Ubuntu system & cardano-node. Grafana can display data from other sources as well, like [adapools.org](https://adapools.org).
+Prometheus kết nối với phần phụ trợ của các nút cardano và cung cấp các chỉ số qua http. Đến lượt nó, Grafana có thể sử dụng dữ liệu đó để hiển thị đồ thị và tạo cảnh báo. Bảng điều khiển Grafana của chúng tôi sẽ được tạo thành từ dữ liệu từ hệ thống Ubuntu & nút cardano của chúng tôi. Grafana cũng có thể hiển thị dữ liệu từ các nguồn khác, như [adapools.org](https://adapools.org).
 
 
 :::info
 
-You can connect a [Telegram bot](https://docs.armada-alliance.com/learn/intermediate-guide/grafana-alerts-with-telegram) to Grafana which can alert you of problems with the server. Much easier than trying to configure email alerts.
+Bạn có thể kết nối[Telegram bot](https://docs.armada-alliance.com/learn/intermediate-guide/grafana-alerts-with-telegram)  với Grafana, bot này có thể cảnh báo bạn về sự cố với máy chủ. Dễ dàng hơn nhiều so với việc cố gắng cấu hình cảnh báo qua emai
 
 :::
 
@@ -937,12 +939,12 @@ You can connect a [Telegram bot](https://docs.armada-alliance.com/learn/intermed
 
 ![](<img/pi-pool-grafana.png>)
 
-#### Install Prometheus & Node Exporter.
+#### Cài đặt Prometheus & Node Exporter.
 
 
 :::info
 
-Prometheus can scrape the http endpoints of other servers running node exporter. Meaning Grafana and Prometheus does not have to be installed on your core and relays. Only the package prometheus-node-exporter is required if you would like to build a central Grafana dashboard for the pool, freeing up resources and having a single dashboard to monitor everything.
+Prometheus có thể quét các điểm cuối http của các máy chủ khác đang chạy trình xuất nút. Có nghĩa là Grafana và Prometheus không cần phải được cài đặt trên lõi và rơle của bạn. Chỉ yêu cầu gói prometheus-node-exportorter nếu bạn muốn xây dựng bảng điều khiển Grafana trung tâm cho nhóm, giải phóng tài nguyên và có một bảng điều khiển duy nhất để giám sát mọi thứ.
 
 :::
 
@@ -950,27 +952,27 @@ Prometheus can scrape the http endpoints of other servers running node exporter.
 sudo apt install prometheus prometheus-node-exporter -y
 ```
 
-Disable them in systemd for now.
+Tắt chúng trong systemd ngay bây giờ.
 
 ```bash title=">_ Terminal"
 sudo systemctl disable prometheus.service
 sudo systemctl disable prometheus-node-exporter.service
 ```
 
-#### Configure Prometheus
+#### Định cấu hình Prometheus
 
-Open prometheus.yml.
+Mở prometheus.yml.
 
 ```bash title=">_ Terminal"
 sudo nano /etc/prometheus/prometheus.yml
 ```
 
-Replace the contents of the file with.
+Thay thế nội dung của tệp bằng.
 
 
 :::caution
 
-Indentation must be correct YAML format or Prometheus will fail to start.
+Thụt lề phải đúng định dạng YAML nếu không Prometheus sẽ không khởi động được.
 
 :::
 
@@ -1017,37 +1019,38 @@ scrape_configs:
           type: "node"
 ```
 
-Save & exit.
+Lưu và thoát
 
-Start Prometheus.
+**Khởi động Prometheus.**
 
 ```bash title=">_ Terminal"
 sudo systemctl start prometheus.service
 ```
 
-#### Install Grafana
+#### Cài đặt Grafana #
+
 
 [Grafana GitHub](https://github.com/grafana/grafana)
 
-Add Grafana's gpg key to Ubuntu.
+Thêm khóa gpg của Grafana vào Ubuntu.
 
 ```bash title=">_ Terminal"
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 ```
 
-Add latest stable repo to apt sources.
+Thêm repo ổn định mới nhất vào các nguồn apt.
 
 ```bash title=">_ Terminal"
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
 ```
 
-Update your package lists & install Grafana.
+Cập nhật danh sách gói của bạn và cài đặt Grafana.
 
 ```bash title=">_ Terminal"
 sudo apt update; sudo apt install grafana
 ```
 
-Change the port Grafana listens on so it does not clash with cardano-node.
+Thay đổi cổng Grafana nghe để nó không xung đột với nút cardano.
 
 ```bash title=">_ Terminal"
 sudo sed -i /etc/grafana/grafana.ini \
@@ -1055,21 +1058,21 @@ sudo sed -i /etc/grafana/grafana.ini \
          -e "s#3000#5000#"
 ```
 
-Start Grafana
+Khởi động Grafana
 
 ```bash title=">_ Terminal"
 sudo systemctl start grafana-server.service
 ```
 
-#### cardano-monitor bash function
+#### chức năng bash cardano-monitor #
 
-Open .adaenv.
+Mở .adaenv.
 
 ```bash title=">_ Terminal"
 cd ${HOME}; nano .adaenv
 ```
 
-Down at the bottom add.
+Xuống dưới cùng thêm.
 
 ```bash title="${HOME}/.adaenv"
 cardano-monitor() {
@@ -1080,13 +1083,13 @@ cardano-monitor() {
 }
 ```
 
-Save, exit & source.
+Lưu, thoát và source.
 
 ```bash title=">_ Terminal"
 source .adaenv
 ```
 
-Here we tied all three services under one function. Enable Prometheus.service, prometheus-node-exporter.service & grafana-server.service to run on boot and start the services.
+Ở đây chúng tôi gắn cả ba dịch vụ dưới một chức năng. Bật Prometheus.service, prometheus-node-exporter.service & grafana-server.service để chạy khi khởi động và khởi động dịch vụ.
 
 ```bash title=">_ Terminal"
 cardano-monitor enable
@@ -1096,21 +1099,21 @@ cardano-monitor start
 
 :::caution
 
-At this point you may want to start cardano-service and get synced up before we continue to configure Grafana. Go to the syncing the chain section. Choose whether you want to wait 30 hours or download the latest chain snapshot. Return here once gLiveView.sh shows you are at the tip of the chain.
+Tại thời điểm này, bạn có thể muốn bắt đầu dịch vụ cardano và được đồng bộ hóa trước khi chúng tôi tiếp tục định cấu hình Grafana. Chuyển đến phần đồng bộ chuỗi. Chọn xem bạn muốn đợi 30 giờ hoặc tải xuống ảnh chụp nhanh chuỗi mới nhất. Quay lại đây khi gLiveView.sh cho thấy bạn đang ở đầu chuỗi..
 
 :::
 
 ### Grafana, Nginx proxy\_pass & snakeoil
 
-Let's put Grafana behind Nginx with self signed(snakeoil) certificate. The certificate was generated when we installed the ssl-cert package.
+Hãy đặt Grafana sau Nginx với chứng chỉ tự ký (solidoil). Chứng chỉ được tạo khi chúng tôi cài đặt gói ssl-cert.
 
-You will get a warning from your browser. This is because ca-certificates cannot follow a trust chain to a trusted (centralized) source. The connection is however encrypted and will protect your passwords flying around in plain text.
+Bạn sẽ nhận được cảnh báo từ trình duyệt của mình. Điều này là do chứng chỉ ca không thể theo một chuỗi tin cậy đến một nguồn đáng tin cậy (tập trung). Tuy nhiên, kết nối được mã hóa và sẽ bảo vệ mật khẩu của bạn ở dạng văn bản thuần túy
 
 ```bash title=">_ Terminal"
 sudo nano /etc/nginx/sites-available/default
 ```
 
-Replace contents of the file with below.
+Thay thế nội dung của tệp bằng bên dưới.
 
 ```bash title="/etc/nginx/sites-available/default"
 # Default server configuration
@@ -1146,7 +1149,7 @@ server {
 }
 ```
 
-Check that Nginx is happy with our changes and restart it.
+Kiểm tra xem Nginx có hài lòng với các thay đổi của chúng tôi không và khởi động lại nó.
 
 ```bash title=">_ Terminal"
 sudo nginx -t
@@ -1154,73 +1157,70 @@ sudo nginx -t
 sudo service nginx restart
 ```
 
-You can now visit your pi-nodes ip address without any port specification, the connection will be upgraded to SSL/TLS and you will get a scary message(not really scary at all). Continue through to your dashboard.
+Bây giờ bạn có thể truy cập địa chỉ ip pi-node của mình mà không cần bất kỳ thông số cổng nào, kết nối sẽ được nâng cấp lên SSL / TLS và bạn sẽ nhận được một thông báo đáng sợ (không thực sự đáng sợ chút nào). Tiếp tục đến trang tổng quan của bạn.
 
 ![](img/snakeoil.png)
 
-#### Configure Grafana
+#### Định cấu hình Grafana
 
-On your local machine open your browser and enter your nodes private ip address.
+Trên máy cục bộ của bạn, mở trình duyệt của bạn và nhập địa chỉ ip riêng của các nút của bạn.
 
-Log in and set a new password. Default username and password is **admin:admin**.
+Đăng nhập và đặt mật khẩu mới. Tên người dùng và mật khẩu mặc định là **admin:admin**.
 
-**Configure data source**
+**Định cấu hình nguồn dữ liệu**
 
-In the left hand vertical menu go to **Configure** > **Datasources** and click to **Add data source**. Choose Prometheus. Enter [http://localhost:9090](http://localhost:9090) where it is grayed out, everything else can be left default. At the bottom save & test. You should get the green "Data source is working" if cardano-monitor has been started. If for some reason those services failed to start issue **cardano-service restart**.
+Trong menu dọc bên trái, chuyển đến **Configure** > **Datasources** và kich **Add data source**. chọn Prometheus. Enter [http://localhost:9090](http://localhost:9090) ở đó màu xám, mọi thứ khác có thể để mặc định. Ở dưới cùng, lưu & kiểm tra. Bạn sẽ nhận được màu xanh lá cây "Nguồn dữ liệu đang hoạt động" nếu cardano-monitor đã được khởi động. Nếu vì lý do nào đó mà các dịch vụ đó không thể bắt đầu , hãy **khởi động lại cardano-service**.
 
 **Import dashboards**
 
-Save the dashboard json files to your local machine.
+Lưu các tệp json của bảng điều khiển vào máy cục bộ của bạn
 
 [Armada Alliance Grafana Dashboards](https://github.com/armada-alliance/dashboards)
 
-In the left hand vertical menu go to **Dashboards** > **Manage** and click on **Import**. Select the file you just downloaded/created and save. Head back to **Dashboards** > **Manage** and click on your new dashboard.
+Trong menu dọc bên trái, chuyển đến **Dashboards** > **Manage** và kích **Import**. Chọn tệp bạn vừa tải xuống / tạo và lưu. Quay lại  **Dashboards** > **Manage** và nhấp vào trang tổng quan mới của bạn.
 
 ![](<img/pi-pool-grafana.png>)
 
-#### Configure poolDataLive
+#### Định cấu hình poolDataLive
 
-Here you can use the poolData api to bring extra pool data into Grafana like stake & price.
+Tại đây, bạn có thể sử dụng api poolData để đưa thêm dữ liệu pool vào Grafana như cổ phần và giá cả.
 
 [poolData API](https://api.pooldata.live/dashboard)
 
-Follow the instructions to install the Grafana plugin, configure your datasource and import the dashboard.
+Làm theo hướng dẫn để cài đặt plugin Grafana, định cấu hình nguồn dữ liệu của bạn và nhập trang tổng quan.
 
 ```bash title=">_ Terminal"
 sudo grafana-cli plugins install simpod-json-datasource
 cardano-monitor restart
 ```
 
-### Useful Commands
+### Các lệnh hữu ích
 
 
 :::info
 
-View how much zram swap cardano-node is using.
+Xem số lượng zram swap cardano-node đang sử dụng.
 
 ```bash title=">_ Terminal"
 CNZRAM=$(pidof cardano-node)
 grep --color VmSwap /proc/$CNZRAM/status
 ```
 
-Follow log output to journal.
+Theo dõi kết xuất nhật ký vào nhật ký.
 
 ```bash title=">_ Terminal"
 sudo journalctl --unit=cardano-node --follow
 ```
 
-Follow log output to stdout.
+Thực hiện theo đầu ra nhật ký để stdout.
 
 ```bash title=">_ Terminal"
 sudo tail -f /var/log/syslog
 ```
 
-View network connections with netstat.
+Xem các kết nối mạng với netstat.
 
 ```bash title=">_ Terminal"
 sudo netstat -puntw
 ```
 
-:::
-
-From here you have a Pi-Node with tools to build an active relay or a stake pool from the following pages. Best of luck and please join the [armada-alliance](https://armada-alliance.com), together we are stronger! :muscle:

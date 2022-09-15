@@ -162,8 +162,10 @@ const sidebars = {
          type: "category",
          label: "Raspberry Pi Pool Kit",
          items: [
+            "operate-a-stake-pool/Raspberry-Pi-pool-kit/raspberry-pi-os",
             "operate-a-stake-pool/Raspberry-Pi-pool-kit/Binary-Cardano-node-aarch64",
             "operate-a-stake-pool/Raspberry-Pi-pool-kit/note",
+            
          ],
        },
        "operate-a-stake-pool/marketing-stake-pool",
