@@ -104,7 +104,7 @@ const sidebars = {
         }, ],
       },
     ],
-    "Vận hành một Stake Pool": [
+    "Vận hành Stake Pool": [
       //"operate-a-stake-pool/note",
        {
          type: "category",
@@ -169,6 +169,7 @@ const sidebars = {
          ],
        },
        "operate-a-stake-pool/marketing-stake-pool",
+	   "setup-application/dbSync",
        "setup-application/Staking",
        
     ],
