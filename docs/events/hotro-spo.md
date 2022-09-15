@@ -27,7 +27,7 @@ If you need a companion, technical support person, please leave information to u
 - Có kỹ năng sử dụng tốt máy tính.
 - Hiểu biết về ngành Blockchain và dự án Cardano
 
-Đăng ký [tại đây](https://docs.google.com/forms/d/1RqNXogwT_kkphP1e96jKGZp26dKh4U9bzqm2wf0GPX0/prefill)
+Đăng ký [tại đây](https://forms.gle/SKFwFq7tBrDmJj1r9)
 
 **👉 Thời gian**
 -  Đăng ký trước 23:00 ngày 20/9/2022 hoặc khi có đủ 5 cá nhân/nhóm.
