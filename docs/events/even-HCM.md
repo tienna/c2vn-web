@@ -12,7 +12,7 @@
 
 📣Thời gian: 9h30, Chủ Nhật, 18/9/2022
        
-📣 Địa điểm: Book Coffee – Nhà Thiếu Nhi Quận 3 - 36 Lê Quý Đôn, Quận 3, Thành phố Hồ Chí Minh [map tại đây](https://goo.gl/maps/TJf8ESJQH4KwRaaq9).
+📣 Địa điểm: **Good Morning Coffee**: 103 Võ Oanh, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh 72308 [map tại đây](https://www.google.com/maps/place/Good+Morning+Coffee/@10.7990618,106.6918531,13.5z/data=!4m5!3m4!1s0x0:0xfeefd404550f6b67!8m2!3d10.8041902!4d106.7161699).
 
 📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 17/9/2022.
 
