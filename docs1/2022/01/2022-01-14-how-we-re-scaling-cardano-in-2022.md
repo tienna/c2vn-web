@@ -85,6 +85,6 @@ Việc giảm tải một số phép tính, ví dụ như với Thực thi hợp
 
 *infographic: Mikki Pham / Fernando Sanchez.* 
 
-Bài này được dịch bởi Max Long [với bài gốc ](https://iohk.io/en/blog/posts/2022/01/14/how-we-re-scaling-cardano-in-2022/) 
+Bài này được dịch bởi Max Long, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/01/14/how-we-re-scaling-cardano-in-2022/) 
 
 *Dự án này được tài trợ bới Catalyst*

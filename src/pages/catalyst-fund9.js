@@ -73,8 +73,8 @@ function Feature({ imageUrl, title, description, targetUrl, name , score}) {
                   />
                 </div>
               )}
-              
-              
+ 
+                            
           </div>
 	 </div>
             <div className="card__body">

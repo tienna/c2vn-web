@@ -78,6 +78,6 @@ Chuyển từ phiên bản beta không chỉ là một cột mốc quan trọng.
 *Tôi muốn cảm ơn Matthew Capps vì những ý kiến và đóng góp của anh ấy trong việc chuẩn bị bài blog này.*
 
 
-Bài này được dịch bởi Lê Nguyên [với bài gốc](https://iohk.io/en/blog/posts/2022/02/07/the-knowledge-base-for-cardano-is-growing-cardano-stack-exchange-graduates-from-beta-version)
+Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/02/07/the-knowledge-base-for-cardano-is-growing-cardano-stack-exchange-graduates-from-beta-version)
 
 *Dự án này được tài trợ bởi Catalyst*

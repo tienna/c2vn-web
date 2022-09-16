@@ -103,10 +103,10 @@ Tìm đến dòng  **PasswordAuthentication** và sửa thành `no`
 PasswordAuthentication no 
 ```
 
-Tìm đến dòng  **PermitRootLogin** và sửa thành  `no`
+Tìm đến dòn  **PermitRootLogin** và sửa thành  `prohibit-password`
 
 ```
-PermitRootLogin no
+PermitRootLogin prohibit-password
 ```
 
 Tìm đến dòng  **PermitEmptyPasswords** và sửa thành `no`
@@ -212,8 +212,13 @@ và thêm vào dòng:
 ```
 auth required pam_google_authenticator.so
 ```
+Và khởi động lại dịch vụ ssh bằng lệnh: 
 
-Sửa file   `/etc/ssh/sshd_config`
+```
+sudo systemctl restart sshd.service
+```
+
+Sử file   `/etc/ssh/sshd_config`
 
 ```
 sudo nano /etc/ssh/sshd_config
@@ -230,19 +235,7 @@ Tìm đến đoạn**UsePAM** và sửa thành `yes`
 ```
 UsePAM yes
 ```
-Thêm vào cuối file /etc/ssh/sshd_config thông tin sử dụng Pam như sau
-
-```
-AuthenticationMethods keyboard-interactive:pam password,keyboard-interactive:pam
-
-```
-Lưu lại file cấu hình và khởi động lại dịch vụ sshd
-
-```
-sudo systemctl restart sshd.service
-```
-
-Khởi chạy lệnh **google-authenticator**  để lấy code
+Lưu lại file cấu hình và chạy lệnh **google-authenticator** .
 
 ```
 google-authenticator

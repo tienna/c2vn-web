@@ -63,6 +63,6 @@ Thế giới của chúng ta ngày nay vào năm 2022 đã được mô tả t�
 
 *Cầu nối chuyển đổi AGIX ERC20 dự kiến ​​sẽ [hoạt động](https://twitter.com/singularity_net/status/1507760834012930049?s=21&t=xyz7o1UlDSjv78ISignbVw) trên mainnet vào ngày 18 tháng 4. Xem cuộc phỏng vấn với Ben Goertzel trên [chương trình Cardano360 vào tháng Ba](https://twitter.com/InputOutputHK/status/1508832692686757896)*
 
-Bài này được dịch bởi Lê Nguyên [với bài gốc](https://iohk.io/en/blog/posts/2022/03/30/the-critical-role-of-ai-blockchain-synergy-in-humanity-s-future/)
+Bài này được dịch bởi Lê Nguyên, Review bởi Tienna, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/03/30/the-critical-role-of-ai-blockchain-synergy-in-humanity-s-future/)
 
 *Dự án này được tài trợ bởi Catalyst*

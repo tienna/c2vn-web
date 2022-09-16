@@ -75,7 +75,8 @@ const config = {
 		    {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
             //{ to: '/blog', label: 'Blog', position: 'left' },
             //{ to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
-            { to: '/blogiohk', label: 'News', position: 'left' },
+            //{ to: '/blogiohk', label: 'News', position: 'left' },
+            {to: '/C2VN-WMTVN', label: 'News', position: 'left' },
             { to: '/Catalyst-fund9', label: 'Catalyst-Fund9', position: 'left' },
                        
             {to: '/docs/integrate-cardano/Shop-pay-ada-Blockfrost', label: 'Shop Pay tADA', position: 'right'},

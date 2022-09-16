@@ -112,5 +112,5 @@ Và trong khi chúng ta đang thảo luận về một số thuật ngữ 'kiế
 
 *Trong khi đây là những thời điểm thú vị, chúng tôi tiếp tục nhấn mạnh tầm quan trọng của [việc nghiên cứu của riêng bạn](https://iohk.io/en/blog/posts/2021/12/09/when-it-comes-to-defi-do-your-own-research/) và tiếp cận các sản phẩm mới một cách thận trọng. Theo dõi blog và [Twitter](https://twitter.com/InputOutputHK/status/1475107377775099910?s=20) của chúng tôi để biết các thông báo mới không bỏ lỡ điều gì. Và trong suốt năm nay, chúng tôi sẽ có nhiều nội dung hơn theo cách của bạn để giúp bạn điều hướng hệ sinh thái đang phát triển này.
 
-Bài này được dịch bởi Quang Pham. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/01/10/defi-demystified/)
+Bài này được dịch bởi Quang Pham, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/01/10/defi-demystified/)
 *Dự án này được tài trợ bởi Catalyst*
