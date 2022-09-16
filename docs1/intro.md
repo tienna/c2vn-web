@@ -25,6 +25,8 @@ Các bài đã dịch năm 2022
 </summary>
 
 >## Bài viết trong tháng 08 năm 2022
+>[Giải thích về Ofelimos](https://cardano2vn.io/docs1/2022/08/2022-08-18-ofelimos-explained)
+>
 >[Kachina: hợp đồng thông minh bảo vệ quyền riêng tư](https://cardano2vn.io/docs1/2022/08/2022-08-05-kachina-privacy-preserving-smart-contracts/)
 >
 >[Những điều cần biết về Layer 1 & Layer 2](https://cardano2vn.io/docs1/2022/08/2022-08-05-layer-1-layer-2-all-you-need-to-know/)
@@ -33,6 +35,11 @@ Các bài đã dịch năm 2022
  
  >## Bài viết trong tháng 07 năm 2022
  >
+ [Cardano sắp nâng cấp Vasil: điều gì sẽ xảy ra
+](https://cardano2vn.io/docs1/2022/07/2022-07-04-cardano-s-approaching-vasil-upgrade-what-to-expect)
+>
+[Phân tích về khả năng mở rộng của Cardano](https://cardano2vn.io/docs1/2022/07/2022-07-19-an-analysis-of-the-research-underpinning-cardanos-scalability)
+>
  >[Ủy quyền của n](https://cardano2vn.io/docs1/2022/07/2022-07-28-staking-is-the-bedrock-of-cardano)
  >
  >[Những cầu nối và sidechains](https://cardano2vn.io/docs1/2022/07/2022-07-08-bridges-and-sidechains-wanchain-making-cardano-interoperable/)
@@ -42,6 +49,13 @@ Các bài đã dịch năm 2022
  >[Dữ liệu Cardano trên BigQuery](https://cardano2vn.io/docs1/2022/07/2022-07-01-cardano-data-on-bigquery/)
  
 >## Bài viết trong tháng 06 năm 2022
+>
+>[Cập nhật về nâng cấp Vasil](https://cardano2vn.io/docs1/2022/06/2022-06-20-vasil-upgrade-the-state-of-play)
+>
+[Tổng quan về nghiên cứu cho phép hỗ trợ hợp đồng thông minh trên Cardano
+](https://cardano2vn.io/docs1/2022/06/2022-06-23-overview-of-the-research-enabling-smart-contract-support-on-cardano)
+>
+>[Từ Classic đến Chronos: Giải mã việc triển khai Ouroboros](https://cardano2vn.io/docs1/2022/06/2022-06-03-from-classic-to-chronos-the-implementations-of-ouroboros-explained)
 >
 > [Tổng quan nghiên cứu mang tính nền tảng của Cardano](https://cardano2vn.io/docs1/2022/06/2022-06-10-cardanos-foundational-research-overview/)
 > 
@@ -94,6 +108,8 @@ Các bài đã dịch năm 2022
 
 
 >## Bài viết trong tháng 02 năm 2022
+>[Từ  việc cải tiến node đến việc node được đóng block… Bản phát hành tháng 2 của Cardano](https://cardano2vn.io/docs1/2022/02/2022-02-28-from-node-enhancement-to-block-leadership-cardano-s-february-release)
+>
 >[Cơ sở kiến thức về Cardano đang ngày càng phát triển](https://cardano2vn.io/docs1/2022/02/2022-02-07-the-knowledge-base-for-cardano-is-growing-cardano-stack-exchange-graduates-from-beta-version/)
 >
 >[Triển khai Hydra Heads](https://cardano2vn.io/docs1/2022/02/2022-02-03-implementing-hydra-heads-the-first-step-towards-the-full-hydra-vision/)
@@ -101,7 +117,8 @@ Các bài đã dịch năm 2022
 >[Giới thiệu pipelining (phát tán đồng thời)](https://cardano2vn.io/docs1/2022/02/2022-02-01-introducing-pipelining-cardanos-consensus-layer-scaling-solution/)
 
 >## Bài viết trong tháng 01 năm 2022
-
+>[Các bài kiểm tra thuộc tính đơn giản cho trình xác thực Plutus](https://cardano2vn.io/docs1/2022/01/2022-01-27-simple-property-based-tests-for-plutus-validators)
+>
 >[Công cụ ước tính phí Plutus trên Cardano](https://cardano2vn.io/docs1/2022/01/2022-01-21-plutus-fee-estimator-find-out-the-cost-of-transacting-on-cardano/)
 >
 >[Cốt lõi của mạng lưới Cardano đang phát triển nhanh chóng](https://cardano2vn.io/docs1/2022/01/2022-01-19-the-beating-heart-of-a-fast-growing-network/)

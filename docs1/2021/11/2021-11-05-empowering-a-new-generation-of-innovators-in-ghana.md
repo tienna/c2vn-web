@@ -15,7 +15,7 @@ Marketing and Communications
 - ![](img/2021-11-05-empowering-a-new-generation-of-innovators-in-ghana.005.png)[](mailto:fernando.sanchez@iohk.io "Email")
 - ![](img/2021-11-05-empowering-a-new-generation-of-innovators-in-ghana.006.png)[](https://www.linkedin.com/in/linkedinsanchezf/ "LinkedIn")
 
-![Trao quyền cho thế hệ các nhà đổi mới ở Ghana](https://github.com/cardano2vn/iohk-blog/blob/main/vi/docs1/2021/11/img/2021-11-05-empowering-a-new-generation-of-innovators-in-ghana.007.png?raw=true)
+![Trao quyền cho thế hệ các nhà đổi mới ở Ghana](img/2021-11-05-empowering-a-new-generation-of-innovators-in-ghana.007.png)
 
 Là một phần trong cam kết của chúng tôi trong việc tiếp cận toàn cầu và thúc đẩy việc áp dụng công nghệ blockchain trên toàn thế giới, chúng tôi sẽ thông báo về việc ra mắt khóa học lập trình Haskell tại Ghana.
 
@@ -49,6 +49,8 @@ Khóa học này hoàn toàn phù hợp với tầm nhìn đó, với nỗ lự
 
 Lars mô tả hoàn hảo khái niệm này và cho thấy các khóa học này phù hợp với tầm nhìn của Cardano như thế nào:
 
-“Tất cả chúng ta đều muốn làm cho thế giới trở thành một nơi tốt đẹp hơn, và những khóa học này cho phép tôi làm điều này theo cách riêng của mình. Giáo dục và kiến ​​thức mở ra rất nhiều cánh cửa, và tôi cảm thấy biết ơn và may mắn khi có cơ hội tạo ra sự khác biệt bằng cách chia sẻ kiến ​​thức của mình ”.<br><br><br><br>Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/11/05/empowering-a-new-generation-of-innovators-in-ghana)
+“Tất cả chúng ta đều muốn làm cho thế giới trở thành một nơi tốt đẹp hơn, và những khóa học này cho phép tôi làm điều này theo cách riêng của mình. Giáo dục và kiến ​​thức mở ra rất nhiều cánh cửa, và tôi cảm thấy biết ơn và may mắn khi có cơ hội tạo ra sự khác biệt bằng cách chia sẻ kiến ​​thức của mình ”.
+
+Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/11/05/empowering-a-new-generation-of-innovators-in-ghana)
 
 *Dự án này được tài trợ bởi Catalyst*

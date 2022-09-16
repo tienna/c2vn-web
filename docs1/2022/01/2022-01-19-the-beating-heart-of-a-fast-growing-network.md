@@ -87,6 +87,6 @@ Với sự ra mắt của nhiều dự án mới thú vị trên Cardano, hệ s
 
 ##### **Fernando Sanchez đã đóng góp cho bài viết này**.
 
-Bài này được dịch bởi Hoang Tran, Review bởi Tienna, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây]( https://iohk.io/en/blog/posts/2022/01/19/the-beating-heart-of-a-fast-growing-network)
+Bài này được dịch bởi Hoang Tran, Review bởi Tienna, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/01/19/the-beating-heart-of-a-fast-growing-network)
 
 *Dự án này được tài trợ bới Catalyst*
