@@ -6,7 +6,7 @@
 
 ![](img/B9-HCM.png)
 
-📣Chủ đề thảo luận buổi 8 ở HCM: “Xây dựng sản phẩm số tinh gọn”
+📣Chủ đề thảo luận buổi 9 ở HCM: “Xây dựng sản phẩm số tinh gọn”
 
 📣Diễn giả: Huỳnh Đào Hoàng Vũ với Trương Minh Toàn
 

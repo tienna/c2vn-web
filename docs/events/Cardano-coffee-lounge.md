@@ -225,3 +225,19 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/HCM-B8-2.jpg)
 
+## Buổi 13-HN: Cardano Coffee Lounge “dNFT và Ứng dụng trong tương lai!”
+
+![](img/B13-HN.png)
+
+![](img/HN-B13-1.jpg)
+
+![](img/HN-B13-2.jpg)
+
+
+## Buổi 9-HCM: Cardano Coffee Lounge “Xây dựng sản phẩm số tinh gọn”
+
+![](img/B9-HCM.png)
+
+![](img/HCM-B9-1.jpg)
+
+![](img/HCM-B9-2.jpg)
