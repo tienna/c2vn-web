@@ -88,4 +88,9 @@ Chúng ta chỉ mới bắt đầu kỷ nguyên Hợp đồng thông minh trên 
 
 *Nếu bạn là nhà phát triển và muốn được hướng dẫn, hỗ trợ hoặc chỉ thích ghé qua trò chuyện tại một trong các phiên mở của chúng tôi - hãy đảm bảo bạn tham gia* cộng đồng kỹ thuật đang phát triển của chúng tôi trên [*Discord*](https://discord.com/channels/826816523368005654/892858202851516457) .
 
-*Tôi cảm ơn John Woods, Vitor Silva, Kevin Hammond, Duncan Coutts, Romain Pellerin, Michael Peyton Jones, Jean-Frederic Etienne &amp; Olga Hryniuk vì đã hỗ trợ và phản hồi trong việc chuẩn bị bài đăng trên Blog này. Bài này được dịch bởi Nguyễn Văn Tú (https://iohk.io/en/blog/posts/2021/11/10/optimizing-cardano)*Dự án này được tài trợ bởi Catalyst**
+*Tôi cảm ơn John Woods, Vitor Silva, Kevin Hammond, Duncan Coutts, Romain Pellerin, Michael Peyton Jones, Jean-Frederic Etienne &amp; Olga Hryniuk vì đã hỗ trợ và phản hồi trong việc chuẩn bị bài đăng trên Blog này.*
+
+Bài này được dịch bởi Nguyễn Văn Tú, Review, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/11/10/optimizing-cardano)
+
+*Dự án này được tài trợ bởi Catalyst*
+

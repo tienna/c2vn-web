@@ -72,4 +72,8 @@ Nói cách khác, Cardano là một thực thể sống phát triển và thích
 
 Các thay đổi tham số hóa là một phần của quá trình biến đổi , cải tiến này. Mặc dù chắc chắn sẽ có những người muốn đi nhanh hơn, phát triển nhanh hơn, nhưng trọng tâm của chúng tôi vẫn sẽ  là sự phát triển ổn định và an toàn, chậm mà chắc để Cardano ngày càng phát triển trong phạm vi tiếp cận và ứng dụng.
 
-*Cảm ơn Duncan Coutts, Kevin Hammond và Fernando Sanchez vì những đóng góp của họ cho bài viết này.<br><br>Bài này được dịch bởi minh-hieu-102 với <a>với bài gốc</a><br>https://iohk.io/en/blog/posts/2021/11/22/slow-and-steady-wins-the-race-network-evolution-for-network-growth/<br>Dự án này được tài trợ bởi Catalyst<br>*
+*Cảm ơn Duncan Coutts, Kevin Hammond và Fernando Sanchez vì những đóng góp của họ cho bài viết này.
+
+Bài này được dịch bởi minh-hieu-102, Review bởi Pham Quang, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/11/22/slow-and-steady-wins-the-race-network-evolution-for-network-growth)
+
+*Dự án này được tài trợ bởi Catalyst*

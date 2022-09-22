@@ -1,4 +1,4 @@
-# Nói về Cardano vào lễ Giáng sinh (nếu ai đó hỏi...)
+# Nói về Cardano vào lễ Giáng sinh
 
 ### **Trong mùa lễ này, bạn có thể dành chút thời gian không quan tâm đến tiền mã hóa, nhưng nếu chủ đề về Cardano được nhắn đến trong buổi gặp gỡ thì đây có thể là phần khởi đầu của câu chuyện...**
 
@@ -65,4 +65,8 @@ Khi bạn sở hữu ada trong ví của mình, bạn có thể sử dụng nó 
 
 ## **Đưa Cardano trở thành một phần trong giải pháp dành cho năm mới của bạn**
 
-Vậy chúng ta đã có một phần giới thiệu rất đơn giản và ngắn gọn. Nhưng hy vọng, nó có thể giúp bạn giải thích Cardano cho bạn bè hoặc gia đình của mình một cách đơn giản chứ không phải một vấn đề phức tạp. Cuối cùng, khi tiếng cụng ly vang lên và nước thịt gà tây chảy quanh bàn tiệc Giáng sinh, hãy kể một câu chuyện gây bất ngờ, câu chuyện về một blockchain vui vẻ và đầy điều kỳ diệu, một câu chuyện sẽ khiến thế giới tiền mã hóa phát triển lâu dài hơn. Bài này được dịch bởi Kim Chi, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/12/21/cardano-at-christmas-and-what-to-say-if-anyone-asks)*Dự án này được tài trợ bởi Catalyst*
+Vậy chúng ta đã có một phần giới thiệu rất đơn giản và ngắn gọn. Nhưng hy vọng, nó có thể giúp bạn giải thích Cardano cho bạn bè hoặc gia đình của mình một cách đơn giản chứ không phải một vấn đề phức tạp. Cuối cùng, khi tiếng cụng ly vang lên và nước thịt gà tây chảy quanh bàn tiệc Giáng sinh, hãy kể một câu chuyện gây bất ngờ, câu chuyện về một blockchain vui vẻ và đầy điều kỳ diệu, một câu chuyện sẽ khiến thế giới tiền mã hóa phát triển lâu dài hơn. 
+
+Bài này được dịch bởi Kim Chi, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/12/21/cardano-at-christmas-and-what-to-say-if-anyone-asks)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -57,4 +57,8 @@ Bạn có một vấn đề kinh doanh cụ thể và muốn tham gia vào chư�
 - [Catalyst Fund 7 Launch Guide](https://bit.ly/3qzYYP8)
 - [Browse Projects](https://cardano.ideascale.com)
 
-##### ***Tim Richmond, giám đốc truyền thông tại IOG, cũng đóng góp cho bài viết này. Bài này được dịch bởi LinhPool Review và đăng bài bởi Nguyễn Hiệu <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2021/11/10/introducing-catalyst-natives-how-any-business-can-leverage-the-cardano-innovation-engine/">với bài gốc</a>*Dự án này được tài trợ bới Catalyst****
+*Tim Richmond, giám đốc truyền thông tại IOG, cũng đóng góp cho bài viết này.* 
+
+Bài này được dịch bởi LinhPool Review và đăng bài bởi Nguyễn Hiệu. Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/11/10/introducing-catalyst-natives-how-any-business-can-leverage-the-cardano-innovation-engine)
+
+*Dự án này được tài trợ bới Catalyst*

@@ -67,4 +67,7 @@ Các nhà phát triển cũng có thể mở rộng kiến trúc này để xem 
 
 Chúng tôi cũng dự đoán rằng cộng đồng phát triển sẽ xây dựng thêm nhiều mô hình khác và chúng tôi sẵn sàng đưa những mô hình này vào kho của chúng tôi để xây dựng một nhóm tài nguyên cho cộng đồng phát triển Plutus trong những tháng tới.
 
-*Cảm ơn John Woods và nhóm đã đóng góp ý kiến và hỗ trợ đăng bài trên blog này.<br><br><br>Bài này được dịch bởi LinhPool. Phê duyệt bởi tienna <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2021/11/16/architecting-dapps-on-the-eutxo-ledger/">[với bài gốc]</a> <br>Dự án này được tài trợ bới Catalyst*
+*Cảm ơn John Woods và nhóm đã đóng góp ý kiến và hỗ trợ đăng bài trên blog này.*
+
+Bài này được dịch bởi LinhPool, Review bởi Tienna, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/11/16/architecting-dapps-on-the-eutxo-ledger)
+*Dự án này được tài trợ bới Catalyst*

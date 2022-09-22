@@ -69,4 +69,8 @@ Chúng tôi cũng có kế hoạch làm việc với hệ sinh thái các đối
 
 Chứng nhận vẫn còn đang ở giai đoạn đầu. Có một số thách thức kỹ thuật cần phải giải quyết về cách chúng tôi hỗ trợ phiên bản DApp, cách chúng sẽ được đóng gói và cách cung cấp chứng nhận cho công cụ tự động. Tuy nhiên, chúng tôi rất vui mừng về hành trình này cùng với các đối tác và cộng đồng nói chung để cung cấp một nền tảng an toàn và các ứng dụng an toàn được xây dựng trên nền tảng đó.
 
-Để tìm hiểu thêm về các cấp độ chứng nhận và gặp gỡ một số đối tác trong chương trình, bạn hãy xem ([https://summit.cardano.org/sessions/smart-contract-certification-the-why-and-how](https://summit.cardano.org/sessions/smart-contract-certification-the-why-and-how)) từ Hội nghị thượng đỉnh Cardano.<br><br>Bài này được dịch bởi Nguyễn Văn Tú [với bài gốc](https://iohk.io/en/blog/posts/2021/10/25/new-certification-levels-for-smart-contracts-on-cardano/)<br>*Dự án này được tài trợ bởi Catalyst*
+Để tìm hiểu thêm về các cấp độ chứng nhận và gặp gỡ một số đối tác trong chương trình, bạn hãy xem ([https://summit.cardano.org/sessions/smart-contract-certification-the-why-and-how](https://summit.cardano.org/sessions/smart-contract-certification-the-why-and-how)) từ Hội nghị thượng đỉnh Cardano.
+
+Bài này được dịch bởi Nguyễn Văn Tú Review bởi Pham Quang, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/10/25/new-certification-levels-for-smart-contracts-on-cardano)
+
+*Dự án này được tài trợ bởi Catalyst*

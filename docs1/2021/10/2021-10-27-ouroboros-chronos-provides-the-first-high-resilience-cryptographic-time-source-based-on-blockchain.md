@@ -55,4 +55,7 @@ Bằng cách cho phép tính thời gian chính xác và có thể truy xuất n
 
 Để tìm hiểu thêm, hãy xem nghiên cứu đã xuất bản [tại đây](https://eprint.iacr.org/2019/838.pdf).
 
-*Cảm ơn Rachel Bruce, Jenny Corlett, Rod Alexander và Christian Badertscher đã đóng góp ý kiến và hỗ trợ khi viết bài này.<br><br>Bài này được dịch bởi Nguyễn Văn Tú <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2021/10/27/ouroboros-chronos-provides-the-first-high-resilience-cryptographic-time-source-based-on-blockchain/">với bài gốc</a>.<br>*Dự án này được tài trợ bởi Catalyst**
+*Cảm ơn Rachel Bruce, Jenny Corlett, Rod Alexander và Christian Badertscher đã đóng góp ý kiến và hỗ trợ khi viết bài này*
+Bài này được dịch bởi Nguyễn Văn TúReview bởi Pham Quang, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/10/27/ouroboros-chronos-provides-the-first-high-resilience-cryptographic-time-source-based-on-blockchain)
+
+*Dự án này được tài trợ bởi Catalyst*

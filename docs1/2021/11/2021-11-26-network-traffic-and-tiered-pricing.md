@@ -48,4 +48,8 @@ Cơ chế này khác với các phương thức tính phí hiện tại, như đ
 
 Cách tiếp cận theo cấp được tinh chỉnh hơn. Nó hiểu rằng không phải mọi giao dịch đều có nhu cầu giống nhau, đảm bảo rằng các tình huống sử dụng khác nhau có thể xảy ra đồng thời và giúp người dùng dễ dàng lựa chọn loại dịch vụ mong muốn. Theo cách này, phí phân cấp giúp có các khoản phí hợp lý và có thể đoán trước được trong khi kiểm soát được các giai đoạn tắc nghẽn trên chuỗi chính. Kết hợp với các cải tiến trong thiết kế sẽ được tiết lộ trong các bài đăng sau, tập trung vào việc tăng năng lực thông lượng thô và sức mạnh xử lý của chuỗi chính, hệ thống phí phân cấp cho thấy Cardano sẽ có thể đáp ứng bất kỳ tình huống nào về nhu cầu xử lý giao dịch.
 
-*Tôi muốn ghi nhận những đóng góp của Giorgos Panagiotakos, Aggelos Kiayias và Elias Koutsoupias cho bài đăng này. Chúng tôi cùng nhau thành lập nhóm nghiên cứu về thiết kế của cơ chế này. Sẽ sớm có bài báo kỹ thuật.<br><br><br><br>Bài này được dịch bởi Hoàng Tâm <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2021/11/26/network-traffic-and-tiered-pricing/">[với bài gốc]</a><br><em>Dự án này được tài trợ bởi Catalyst</em>*
+*Tôi muốn ghi nhận những đóng góp của Giorgos Panagiotakos, Aggelos Kiayias và Elias Koutsoupias cho bài đăng này. Chúng tôi cùng nhau thành lập nhóm nghiên cứu về thiết kế của cơ chế này. Sẽ sớm có bài báo kỹ thuật.*
+
+Bài này được dịch bởi Hoàng Tâm, Review bởi Pham Quang, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/11/26/network-traffic-and-tiered-pricing)
+
+*Dự án này được tài trợ bởi Catalyst*
