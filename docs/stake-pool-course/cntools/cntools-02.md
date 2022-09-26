@@ -135,5 +135,7 @@ sudo systemctl status cnode
 ./gLiveView.sh
 ```
 Nếu Bạn cấu hình đúng, trong gLiveView sẽ hiển thị kết nối giữa BP và RL
+![image](https://user-images.githubusercontent.com/34856010/192182746-521883b5-32b0-4c8b-8b61-34696181f7ee.png)
 
+![image](https://user-images.githubusercontent.com/34856010/192182723-b905ba63-54cc-45cc-9748-4db7ca6bc22e.png)
 
