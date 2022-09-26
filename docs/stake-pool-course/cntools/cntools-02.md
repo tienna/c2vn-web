@@ -44,7 +44,7 @@ Chọn chức năng import
 ::: 
 
 
-# Tạo Metadata file cho pool và upload lên github
+## Tạo Metadata file cho pool và upload lên github
 
 Bạn cần tạo một file metadata cho pool của mình theo định dạng json với các thông tin căn bản như sau
 ```
@@ -64,7 +64,7 @@ Sau đó upload lên github hoặc website để khi khai báo pool trình khai 
 
 ![image](https://user-images.githubusercontent.com/34856010/192184617-7b5c84dd-4917-4d1f-bb90-9a45c3211109.png)
 
-# Tạo Pool
+## Tạo Pool
 Việc tạo Pool được thực hiện qua công cụ cntools nên bạn cần khởi chạy công cụ này trước
 
  ```bash title=">_ Terminal"
@@ -81,7 +81,7 @@ Nhập vào tên Pool bạn định tạo
 
 ![image](https://user-images.githubusercontent.com/34856010/192185397-61c7aece-969d-4362-bbfd-e5de377322ac.png)
 
-# Đăng ký  Pool
+## Đăng ký  Pool
 Vẫn trong công cụ cntool, bạn cần đăng ký Pool bằng chức năng Register
 
 ![image](https://user-images.githubusercontent.com/34856010/192185788-1170b0fc-ca33-4c90-bf89-a9a913794205.png)
