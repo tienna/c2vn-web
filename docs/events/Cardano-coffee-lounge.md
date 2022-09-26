@@ -241,3 +241,27 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/HCM-B9-1.jpg)
 
 ![](img/HCM-B9-2.jpg)
+
+## Buổi 14-HN: Cardano Coffee Lounge “HFC Vasil- Những cập nhật lớn trên Blockchain Carrdano”
+
+![](img/B14-HN.png)
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/DlVMI7w9fTc" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+![](img/HN-B14-3.jpg)
+
+![](img/HN-B14-1.jpg)
+
+![](img/HN-B14-2.jpg)
+
+
+## Buổi 10-HCM: Cardano Coffee Lounge “Cardano Annual Market Reportn”
+
+![](img/B9-HCM.png)
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/6W7fW43DLw8" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+![](img/HCM-B10-1.jpg)
+
+![](img/HCM-B10-2.jpg)
