@@ -1,19 +1,19 @@
-[Cardano Coffee Lounge - Hà Nội]-Buổi 14
+[Cardano Coffee Lounge - Hà Nội]-Buổi 15
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
 
-![](img/B14-HN.png)
+![](img/B15-HN.png)
 
-📣Chủ đề thảo luận buổi 14 ở HN: “HFC Vasil- Những cập nhật lớn trên Blockchain Carrdano”
+📣Chủ đề thảo luận buổi 15 ở HN: “Những điều cần biết về Layer 1 & Layer 2 trên Cardano”
 
-📣Diễn giả: Nguyễn Văn Hiệu- Cardano2vn.io
+📣Diễn giả: Phạm Quang
 
-📣Thời gian: 9h30, Chủ Nhật, 25/09/2022
+📣Thời gian: 14h30, Chủ Nhật, 2/10/2022
 
 📣 Địa điểm:  BT2-10 Nguyễn Xuân Khoát, Khu ngoại giao đoàn, Tây Hồ, Hà Nội [map tại đây](https://maps.app.goo.gl/6QRmmYxo4XzCQ3aZ7).
 
-📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 25/09/2022.
+📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 2/10/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order nước miễn phí.
 —-------------------

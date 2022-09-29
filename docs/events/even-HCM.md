@@ -1,20 +1,20 @@
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 10
+[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 11
 ==============================================
 
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
 
-![](img/B10-HCM.png)
+![](img/B11-HCM.png)
 
-📣Chủ đề thảo luận buổi 1 ở HCM: “Cardano Annual Market Report" 
+📣Chủ đề thảo luận buổi 11 ở HCM: “Các dự án VN được cấp vốn trong F9 và thảo luận challenge setting F10" 
 
-📣Diễn giả: - Tung Tran, Founder VNEconomics
+📣Diễn giả: - Trang và Minh
 
-📣Thời gian: 9h30, Chủ Nhật, 25/9/2022
+📣Thời gian: 9h30, Chủ Nhật, 2/10/2022
        
 📣 Địa điểm: **Good Morning Coffee**: 103 Võ Oanh, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh 72308 [map tại đây](https://www.google.com/maps/place/Good+Morning+Coffee/@10.7990618,106.6918531,13.5z/data=!4m5!3m4!1s0x0:0xfeefd404550f6b67!8m2!3d10.8041902!4d106.7161699).
 
-📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 24/9/2022.
+📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 1/10/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order đồ uống miễn phí.
 
