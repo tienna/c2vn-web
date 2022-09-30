@@ -1,5 +1,5 @@
 ---
-description: Hướng dẫn cấu hình BP/RL qua cntools
+description: Cài đặt node trên mạng mainnet Cardano 
 ---
 
 # Cài đặt node trên mạng mainnet Cardano
