@@ -1,5 +1,5 @@
 ---
-description: Cài đặt node trên mạng mainnet Cardano 
+description: Cài đặt node trên mạng mainnet Cardano đơn giản
 ---
 
 # Cài đặt node trên mạng mainnet Cardano
