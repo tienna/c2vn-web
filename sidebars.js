@@ -161,6 +161,7 @@ const sidebars = {
 		 type: "category",
          label: "cntools",
          items: [
+          "stake-pool-course/cntools/cntools",
           "stake-pool-course/cntools/cntools-01",
           "stake-pool-course/cntools/cntools-02",
           "stake-pool-course/cntools/cntools-03",
