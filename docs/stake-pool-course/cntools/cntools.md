@@ -73,7 +73,7 @@ source ~/.bashrc
 ```
 
 
-## B5. Downloan Cardano-node, cardano-cli
+## B5. Downloa Cardano-node, cardano-cli
 
 ```
 cd ~/.cabal/bin
