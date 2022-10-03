@@ -33,15 +33,16 @@ Xem thêm: _[Cách tạo USB boot chuẩn UEFI bằng phần mềm Rufus](https
 
 ### **Bước 1:Download file iso hệ điều hành Ubuntu**   
 
-```
-https://ubuntu.com/download/desktop.
-```
+Bạn vào trang web dưới đây để download file iso hệ điều hành Ubuntu bản Ubuntu 20.04.5 Desktop (64-bit)
+
+https://ubuntu.com/download/desktop
+
 
 ### **Bước 2: Download phần mềm tạo USB Boot** 
 
-```
+
 https://rufus.ie/
-```
+
 Ta sẽ dùng phần mềm này để tạo bộ cài đặt Ubuntu lên USB
 
 ### **Bước 3: Chuẩn bị 01 USB** 
