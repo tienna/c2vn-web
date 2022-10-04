@@ -265,3 +265,25 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/HCM-B10-1.jpg)
 
 ![](img/HCM-B10-2.jpg)
+
+
+## Buổi 15-HN: Cardano Coffee Lounge “Layer 1 và 2 trên Blockchain Carrdano”
+
+![](img/B15-HN.png)
+
+
+![](img/HN-B15-1.jpg)
+
+![](img/HN-B15-2.jpg)
+
+
+## Buổi 11-HCM: Cardano Coffee Lounge “Kết quả Catalyst F9 và các thử thách F10”
+
+![](img/B11-HCM.png)
+
+
+![](img/HCM-B11-1.jpg)
+
+![](img/HCM-B11-2.jpg)
+
+

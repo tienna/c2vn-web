@@ -77,7 +77,7 @@ const config = {
             //{ to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             //{ to: '/blogiohk', label: 'News', position: 'left' },
             {to: '/C2VN-WMTVN', label: 'News', position: 'left' },
-            { to: '/Catalyst-fund9', label: 'Catalyst-Fund9', position: 'left' },
+            { to: '/service', label: 'Dịch vụ', position: 'left' },
                        
             {to: '/docs/integrate-cardano/Shop-pay-ada-Blockfrost', label: 'Shop Pay tADA', position: 'right'},
             //{
