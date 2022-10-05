@@ -41,6 +41,9 @@ Các bài đã dịch năm 2022
  [Cardano sắp nâng cấp Vasil: điều gì sẽ xảy ra
 ](https://cardano2vn.io/docs1/2022/07/2022-07-04-cardano-s-approaching-vasil-upgrade-what-to-expect)
 >
+ >[Giới thiệu về Cardano EVM Sidechain
+](https://cardano2vn.io/docs1/2022/07/2022-07-06-introducing-the-cardano-evm-sidechain)
+>
 [Phân tích về khả năng mở rộng của Cardano](https://cardano2vn.io/docs1/2022/07/2022-07-19-an-analysis-of-the-research-underpinning-cardanos-scalability)
 >
  >[Ủy quyền của n](https://cardano2vn.io/docs1/2022/07/2022-07-28-staking-is-the-bedrock-of-cardano)
@@ -144,39 +147,61 @@ Các bài đã dịch năm 2021
 
 ### Bài viết trong tháng 12 năm 2021
 >[Giới thiệu mạng thử nghiệm ngang hàng (P2P) mới](https://cardano2vn.io/docs1/2021/12/2021-12-08-introducing-our-new-peer-to-peer-p2p-testnet)
-
+>
 >[Khi nói đến DeFi, Bạn hãy tự nghiên cứu](https://cardano2vn.io/docs1/2021/12/2021-12-09-when-it-comes-to-defi-do-your-own-research)
-
+>
 >[2021: Năm của những người tiên phong trong giáo dục](https://cardano2vn.io/docs1/2021/12/2021-12-23-cardano-education-in-2021-the-year-of-the-pioneers)
-
+>
 >[Năm 2021: Năm rô bốt và graffiti đến với Cardano phi tập trung và thông minh hơn](https://cardano2vn.io/docs1/2021/12/2021-12-27-review-of-2021-the-year-fun-came-to-cardano-with-beeple-nfts-robots-and-blockchain-graffiti)
+>
+ >[Nói về Cardano vào lễ Giáng sinh](https://cardano2vn.io/docs1/2021/12/2021-12-21-cardano-at-christmas-and-what-to-say-if-anyone-asks)
 
 ### Bài viết trong tháng 11 năm 2021
 
 >[Trao quyền cho thế hệ các nhà đổi mới ở Ghana](https://cardano2vn.io/docs1/2021/11/2021-11-05-empowering-a-new-generation-of-innovators-in-ghana)
-
+>
 >[Hợp tác mới để tiếp tục đà tăng trưởng cho các blockchain sử dụng UTXO](https://cardano2vn.io/docs1/2021/11/2021-11-09-utxo-blockchains-continue-forward-momentum-with-new-collaborations)
-
+>
 >[Bộ chuyển đổi ERC20 hiện đang hoạt động trên Testnet](https://cardano2vn.io/docs1/2021/12/2021-12-07-the-agix-erc20-converter-testnet-is-now-live)
+>
+ >[Giới thiệu về Catalyst Natives - Cách thức để mọi doanh nghiệp có thể tận dụng được công cụ đổi mới của Cardano](https://cardano2vn.io/docs1/2021/11/2021-11-10-introducing-catalyst-natives-how-any-business-can-leverage-the-cardano-innovation-engine)
+ >
+ >[Tối ưu hóa Cardano](https://cardano2vn.io/docs1/2021/11/2021-11-10-optimizing-cardano)
+ >
+ >[Kiến trúc DApp (ứng dụng phi tập trung) trên sổ cái EUTXO](https://cardano2vn.io/docs1/2021/11/2021-11-16-architecting-dapps-on-the-eutxo-ledger)
+ >
+ >[Chậm và chắc sẽ chiến thắng trong cuộc đua cải tiến để phát triển mạng lưới](https://cardano2vn.io/docs1/2021/11/2021-11-22-slow-and-steady-wins-the-race-network-evolution-for-network-growth)
+ >
+ >[Chào mừng đến với kỷ nguyên của RealFi](https://cardano2vn.io/docs1/2021/11/2021-11-25-welcome-to-the-age-of-realfi)
+ >
+ >[Lưu lượng mạng lưới và hệ thống phí phân cấp](https://cardano2vn.io/docs1/2021/11/2021-11-26-network-traffic-and-tiered-pricing)
 
 ### Bài viết trong tháng 10 năm 2021
 
 >[Tóm tắt hội nghị thượng đỉnh Cardano 2021: Điều quan trọng tiếp theo là Quản trị](https://cardano2vn.io/docs1/2021/10/2021-10-08-cardano-summit-2021-summary-governance-is-the-next-big-thing)
-
+>
 >[Liên minh UTXO: Thúc đẩy sự đổi mới và hợp tác trong lĩnh vực Blockchain](https://cardano2vn.io/docs1/2021/10/2021-10-15-utxo-alliance-fostering-innovation-and-collaboration-across-the-blockchain-space)
-
+>
 >[ Châu Phi là nơi những khó khăn được khắc phục
 ](https://cardano2vn.io/docs1/2021/10/2021-10-26-africa-is-where-the-tough-get-going)
-
+>
+>[Các cấp độ chứng nhận Hợp đồng thông minh trên Cardano](https://cardano2vn.io/docs1/2021/10/2021-10-25-new-certification-levels-for-smart-contracts-on-cardano)
+>
+ >[Công bố các SPO được nhận ủy quyền vòng thứ 3 của IOG](https://cardano2vn.io/docs1/2021/10/2021-10-27-iogs-third-round-of-ada-delegation-gives-voice-to-cardano-stake-pool-operators)
+ >
+ >[Ouroboros Chronos cung cấp nguồn thời gian mã hoá có khả năng phục hồi cao đầu tiên dựa trên công nghệ Blockchain](https://cardano2vn.io/docs1/2021/10/2021-10-27-ouroboros-chronos-provides-the-first-high-resilience-cryptographic-time-source-based-on-blockchain)
+ >
+ >[Plutus Application Backend (PAB): hỗ trợ phát triển DApp trên Cardano](https://cardano2vn.io/docs1/2021/10/2021-10-28-plutus-application-backend-pab-supporting-dapp-development-on-cardano)
+ >
 >[Mithril: Một Blockchain Mạnh và nhẹ hơn để đạt hiệu qua hơn.](https://cardano2vn.io/docs1/2021/10/2021-10-29-mithril-a-stronger-and-lighter-blockchain-for-better-efficiency)
 
 ### Bài viết trong tháng 09 năm 2021
 
 >[Thỏa thuận Oasis Pro sẽ giúp các nước đang phát triển tiếp cận thị trường tài chính tốt hơn
 ](https://cardano2vn.io/docs1/2021/09/2021-09-26-cardano-deal-with-oasis-will-give-developing-world-better-access-to-financial-markets)
-
+>
 >[Nhà cung cấp dịch vụ di động Hoa Kỳ hợp tác với Cardano](https://cardano2vn.io/docs1/2021/09/2021-09-28-boost-mobile-and-dish-tv-call-on-cardano)
-
+>
 >[IOG thiết lập quan hệ đối tác chiến lược với Acuant nhằm nâng cao khả năng bảo mật trong không gian DeFi với Atala PRISM](https://cardano2vn.io/docs1/2021/09/2021-09-29-acuants-new-strategic-partnership-with-iog-and-atala-prism-to-offer-enhanced-security-in-the-defi-space)
 
 

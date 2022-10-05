@@ -70,7 +70,7 @@ const config = {
                 type: 'doc',
                 docId: 'getting-started/overview',
                 position: 'left',
-                label: 'Bắt đầu',
+                label: 'Cardano Tech hub',
             },
 		    {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
             //{ to: '/blog', label: 'Blog', position: 'left' },
