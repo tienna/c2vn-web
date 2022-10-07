@@ -61,6 +61,11 @@ html[data-theme=dark] .getStarted {
   width: 400px;
 }
 
+.featureImagesevice {
+  height: 200px;
+  width: 200px;
+}
+
 .featurePadding {
   padding-bottom: 1rem !important;
 }

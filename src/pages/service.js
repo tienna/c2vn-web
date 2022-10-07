@@ -96,7 +96,7 @@ function Feature({ imageUrl, title, description, targetUrl, name }) {
               {imgUrl && (
                 <div className="text--center">
                   <img
-                    className={styles.featureImage}
+                    className={styles.featureImagesevice}
                     src={imgUrl}
                     alt={title}
                   />
