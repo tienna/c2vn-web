@@ -286,4 +286,13 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/HCM-B11-2.jpg)
 
+## Buổi 16-HN: Cardano Coffee Lounge “Các dự án VN chiến thắng Catalyst F9 và nghiên cứu các thử thách F10”
+
+![](img/B16-HN.png)
+
+
+![](img/HN-B16-1.jpg)
+
+![](img/HN-B16-2.jpg)
+
 

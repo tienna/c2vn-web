@@ -1,4 +1,4 @@
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 11
+[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 12
 ==============================================
 
 
@@ -6,15 +6,15 @@
 
 ![](img/B11-HCM.png)
 
-📣Chủ đề thảo luận buổi 11 ở HCM: “Các dự án VN được cấp vốn trong F9 và thảo luận challenge setting F10" 
+📣Chủ đề thảo luận buổi 12 ở HCM: “Layer 1 & Layer 2: Những điều bạn nên biết" 
 
-📣Diễn giả: - Trang và Minh
+📣Diễn giả: - Brit Nguyễn
 
-📣Thời gian: 9h30, Chủ Nhật, 2/10/2022
+📣Thời gian: 9h30, Chủ Nhật, 16/10/2022
        
 📣 Địa điểm: **Good Morning Coffee**: 103 Võ Oanh, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh 72308 [map tại đây](https://www.google.com/maps/place/Good+Morning+Coffee/@10.7990618,106.6918531,13.5z/data=!4m5!3m4!1s0x0:0xfeefd404550f6b67!8m2!3d10.8041902!4d106.7161699).
 
-📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 1/10/2022.
+📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 15/10/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order đồ uống miễn phí.
 
