@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9fa0dd83-1307-4ef8-b791-15c1abacf497/deploy-status)](https://app.netlify.com/sites/cardano2vn/deploys)
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=cardanovn-portal)
 
 ## Website
 
