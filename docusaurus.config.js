@@ -72,11 +72,11 @@ const config = {
                 position: 'left',
                 label: 'Cardano Tech hub',
             },
-		    {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
-            //{ to: '/blog', label: 'Blog', position: 'left' },
+	     {to: '/docs1/intro', label: 'Blog-iohk', position: 'left'},
+             {to: '/blog', label: 'News', position: 'left' }, //Blog
             //{ to: '/dapps-connector', label: 'DApps Connector', position: 'left' },
             //{ to: '/blogiohk', label: 'News', position: 'left' },
-            {to: '/C2VN-WMTVN', label: 'News', position: 'left' },
+            //{to: '/C2VN-WMTVN', label: 'News', position: 'left' },
             { to: '/service', label: 'Dịch vụ', position: 'left' },
                        
             {to: '/docs/integrate-cardano/Shop-pay-ada-Blockfrost', label: 'Shop Pay tADA', position: 'right'},
