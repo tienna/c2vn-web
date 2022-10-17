@@ -2,9 +2,9 @@
 
 ### **Alonzo sẽ xây dựng dựa trên các nâng cấp token của Cardano để cung cấp cho các nhà lập trình công cụ để tạo các ứng dụng kinh doanh**
 
-![](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.002.png) Ngày 8 tháng 4 năm 2021![](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.002.png)[ Olga Hryniuk](tmp//en/blog/authors/olga-hryniuk/page-1/)![](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.003.png) bài đọc 6 phút
+![](img/2021-04-08-smart-contracts-here-we-come.002.png) Ngày 8 tháng 4 năm 2021![](img/2021-04-08-smart-contracts-here-we-come.002.png)[ Olga Hryniuk](tmp//en/blog/authors/olga-hryniuk/page-1/)![](img/2021-04-08-smart-contracts-here-we-come.003.png) bài đọc 6 phút
 
-![Olga Hryniuk](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.004.png)[](tmp//en/blog/authors/olga-hryniuk/page-1/)
+![Olga Hryniuk](img/2021-04-08-smart-contracts-here-we-come.004.png)[](tmp//en/blog/authors/olga-hryniuk/page-1/)
 
 ### [**Olga Hryniuk**](tmp//en/blog/authors/olga-hryniuk/page-1/)
 
@@ -12,10 +12,10 @@ Technical Writer
 
 Marketing &amp; Communications
 
-- ![](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.005.png)[](https://www.linkedin.com/in/olga-hryniuk-1094a3160/ "LinkedIn")
-- ![](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.006.png)[](https://github.com/olgahryniuk "GitHub")
+- ![](img/2021-04-08-smart-contracts-here-we-come.005.png)[](https://www.linkedin.com/in/olga-hryniuk-1094a3160/ "LinkedIn")
+- ![](img/2021-04-08-smart-contracts-here-we-come.006.png)[](https://github.com/olgahryniuk "GitHub")
 
-![Tiến đến cập nhật hợp đồng thông minh](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.007.jpeg)
+![Tiến đến cập nhật hợp đồng thông minh](img/2021-04-08-smart-contracts-here-we-come.007.jpeg)
 
 Vào đầu tháng 3, chúng tôi đã triển khai Mary - một bản nâng cấp giao thức đa tài sản cho phép người dùng tạo token duy nhất cho các giao dịch trên Cardano. Với việc giới thiệu [siêu dữ liệu giao dịch](https://iohk.io/en/blog/posts/2020/10/29/bringing-new-value-and-utility-to-the-cardano-blockchain/), sau đó là [khóa token](https://iohk.io/en/blog/posts/2020/12/02/goguen-brings-token-locking-to-cardano/) với Allegra vào tháng 12 và [tạo token gốc](https://iohk.io/en/blog/posts/2021/02/18/building-native-tokens-on-cardano-for-pleasure-and-profit/), chúng tôi đang tạo nền tảng để thiết lập Cardano trở thành nền tảng hợp đồng thông minh hàng đầu.
 
@@ -53,7 +53,7 @@ Triển khai Alonzo là một quá trình phức tạp. Khi các hợp đồng 
 
 ## **Bây giờ chúng ta đang ở đâu?**
 
-![Lộ trình Alonzo](img/2021-04-08-smart-contracts-%E2%80%93-here-we-come.008.jpeg)
+![Lộ trình Alonzo](img/2021-04-08-smart-contracts-here-we-come.008.jpeg)
 
 Hình 1. Lộ trình Alonzo. Bộ mã sẽ bị khóa trong bốn tuần trước khi phát hành
 
@@ -67,4 +67,10 @@ Tháng 5 và tháng 6 sẽ là thời gian dành cho khâu đảm bảo chất l
 
 Để biết lộ trình chi tiết hơn, hãy xem [bài thuyết trình Cardano360 tháng 3 của Charles Hoskinson](https://www.youtube.com/watch?v=ULBLgPgxtN8&t=5805s).
 
-Đây là những thời điểm thú vị và chúng tôi khuyến khích bạn tiếp tục theo dõi. Bài blog tiếp theo sẽ đi sâu vào mối quan hệ giữa các khái niệm Plutus làm nền tảng cho sự phát triển của Alonzo. Trong thời gian này, [trang web dành cho các nhà lập trình](https://developers.cardano.org/en/programming-languages/plutus/overview/) sẽ có nhiều nội dung về lập trình Plutus, Marlowe và Glow hơn.<br><br><br><br><br>Bài này được dịch bởi Lê Nguyên, soát xét bởi Brit Nguyễn. <a>với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em><br>https://iohk.io/en/blog/posts/2021/04/08/smart-contracts-%E2%80%93-here-we-come/
+Đây là những thời điểm thú vị và chúng tôi khuyến khích bạn tiếp tục theo dõi. Bài blog tiếp theo sẽ đi sâu vào mối quan hệ giữa các khái niệm Plutus làm nền tảng cho sự phát triển của Alonzo. Trong thời gian này, [trang web dành cho các nhà lập trình](https://developers.cardano.org/en/programming-languages/plutus/overview/) sẽ có nhiều nội dung về lập trình Plutus, Marlowe và Glow hơn.
+
+Bài này được dịch bởi Lê Nguyên, soát xét bởi Brit Nguyễn, đăng bài bởi Nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/04/08/smart-contracts-here-we-come)
+
+*Dự án này được tài trợ bởi Catalyst*
