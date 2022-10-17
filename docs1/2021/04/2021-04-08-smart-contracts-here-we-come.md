@@ -69,7 +69,7 @@ Tháng 5 và tháng 6 sẽ là thời gian dành cho khâu đảm bảo chất l
 
 Đây là những thời điểm thú vị và chúng tôi khuyến khích bạn tiếp tục theo dõi. Bài blog tiếp theo sẽ đi sâu vào mối quan hệ giữa các khái niệm Plutus làm nền tảng cho sự phát triển của Alonzo. Trong thời gian này, [trang web dành cho các nhà lập trình](https://developers.cardano.org/en/programming-languages/plutus/overview/) sẽ có nhiều nội dung về lập trình Plutus, Marlowe và Glow hơn.
 
-Bài này được dịch bởi Lê Nguyên, soát xét bởi Brit Nguyễn, đăng bài bởi Nguyễn Hiệu.
+Bài này được dịch bởi Lê Nguyên, review bởi Brit Nguyễn, đăng bài bởi Nguyễn Hiệu.
 
 Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/04/08/smart-contracts-here-we-come)
 
