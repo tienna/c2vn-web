@@ -45,4 +45,10 @@ Nếu bạn quan tâm đến việc đăng ký các chương trình đào tạo 
 
 ### **Nhìn về tương lai**
 
-Chúng tôi có kế hoạch phát hành công khai các chương trình và nội dung đào tạo này trên GitHub trong tương lai gần, để các tổ chức khác có thể làm theo cách tiếp cận này và triển khai các khóa đào tạo Haskell và Plutus của riêng họ. Hãy theo dõi để biết thêm chi tiết về tính khả thi của dự án sắp ra mắt này.<br><br>Bài này được dịch bởi Thanhtintran, soát xét bởi Brit Nguyễn <a>với bài gốc: https://iohk.io/en/blog/posts/2021/08/24/making-education-in-africa-more-accessible-affordable-and-equitable/</a><br><em>Dự án này được tài trợ bởi Catalyst</em>
+Chúng tôi có kế hoạch phát hành công khai các chương trình và nội dung đào tạo này trên GitHub trong tương lai gần, để các tổ chức khác có thể làm theo cách tiếp cận này và triển khai các khóa đào tạo Haskell và Plutus của riêng họ. Hãy theo dõi để biết thêm chi tiết về tính khả thi của dự án sắp ra mắt này.
+
+Bài này được dịch bởi Thanhtintran, review bởi Brit Nguyễn và đăng bài bởi Nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/08/24/making-education-in-africa-more-accessible-affordable-and-equitable)
+
+*Dự án này được tài trợ bởi Catalyst*

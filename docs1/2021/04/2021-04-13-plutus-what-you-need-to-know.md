@@ -84,4 +84,9 @@ Với việc triển khai Plutus, người dùng sẽ có thể viết các chí
 
 Alonzo đang dần được triển khai trên Mainnet thông qua một số Testnet. Vì vậy, các đối tác của chúng tôi và [những người tiên phong của Plutus](https://iohk.io/en/blog/posts/2021/04/01/everything-you-need-to-know-about-our-new-plutus-pioneer-program/) sẽ có thể thử nghiệm Plutus Core bằng cách viết ứng dụng trên Cardano trong suốt tháng 5 và tháng 6 trước khi đóng băng mã Code. Đây cũng sẽ là giai đoạn đảm bảo chất lượng và kiểm tra sự chấp nhận của người dùng bởi các sàn giao dịch để đảm bảo rằng nền tảng đã hoàn toàn sẵn sàng vào thời điểm nâng cấp Mainnet Alonzo. Nếu bạn là nhà phát triển và muốn tìm hiểu thêm về Plutus, hãy cân nhắc tham gia [nhóm  tiên phong trong tương lai](https://developers.cardano.org/en/plutus-pioneer-program/). Ngoài ra, hãy xem kho lưu trữ [Plutus GitHub](https://github.com/input-output-hk/plutus) và tham gia vào các cuộc thảo luận về Plutus tại [Diễn đàn Cardano](https://forum.cardano.org/c/developers/cardano-plutus/148).
 
-*Tôi muốn ghi nhận Jann Müller về những ý kiến đóng góp và bổ sung cho bài đăng trên Blog này. Bài này được dịch bởi Nguyễn Văn Tú, soát xét bởi Brit Nguyễn. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/04/13/plutus-what-you-need-to-know). *Dự án này được tài trợ bởi Catalyst*.*
+*Tôi muốn ghi nhận Jann Müller về những ý kiến đóng góp và bổ sung cho bài đăng trên Blog này. 
+
+Bài này được dịch bởi Nguyễn Văn Tú, review bởi Brit Nguyễn, Đăng bài bởi Nguyễn Hiệu. 
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/04/13/plutus-what-you-need-to-know). 
+
+*Dự án này được tài trợ bởi Catalyst*.*

@@ -49,4 +49,9 @@ Tạo ra một hệ thống tài chính cho các thị trường mới nổi kh�
 
 Charles Hoskinson, Cardano và IOHK đều có một điểm chung là tạo ra một hệ thống tài chính mới cho các thị trường mới nổi, - Watkins cho biết thêm. IOHK đã làm mọi thứ họ có thể làm, ở cấp độ ngang hàng và cấp độ khoa học để tạo ra phần mềm có thể thực hiện được điều đó.
 
-*Để tìm hiểu thêm về tầm nhìn của World Mobile với châu Phi, đừng bỏ lỡ [bộ phim](https://www.youtube.com/watch?v=MhIYXIMJNno) được công chiếu lần đầu tiên như một phần trong chương trình đặc biệt #CardanoAfrica hoặc truy cập [trang web](https://worldmobile.io/).Bài này được dịch bởi Max Long, Review bởi Quang Pham , biên tập bởi ... . Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/08/11/connecting-the-unconnected-banking-the-unbanked/)*Dự án này được tài trợ bởi Catalyst**
+*Để tìm hiểu thêm về tầm nhìn của World Mobile với châu Phi, đừng bỏ lỡ [bộ phim](https://www.youtube.com/watch?v=MhIYXIMJNno) được công chiếu lần đầu tiên như một phần trong chương trình đặc biệt #CardanoAfrica hoặc truy cập [trang web](https://worldmobile.io/).*
+
+Bài này được dịch bởi Max Long, Review bởi Quang Pham , biên tập bởi Nguyễn Hiệu.
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/08/11/connecting-the-unconnected-banking-the-unbanked/)
+
+*Dự án này được tài trợ bởi Catalyst*

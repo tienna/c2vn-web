@@ -52,4 +52,9 @@ Chúng tôi cũng muốn nhiều thành viên chuyên về kỹ thuật của c�
 
 Nếu không giỏi kỹ thuật, bạn vẫn có thể tham gia. Bạn có thể muốn thử nghiệm một công cụ cộng đồng mới thú vị, [Cardano Wall](https://cardanowall.com/en/) . Điều này cho phép bạn dễ dàng ghi vào blockchain Cardano. Tuy nhiên, nếu bạn chọn tham gia, vui lòng thông báo điều này trên phương tiện truyền thông xã hội, bằng cách xuất bản cả mã nguồn (chưa băm) cùng với giá trị băm xuất hiện trong giao dịch của bạn.
 
-*Cảm ơn sự hỗ trợ của bạn và chúng tôi mong muốn đến vị trí 151200 khi chúng tôi có thể tập hợp, tthúc đẩy, cho một "block party' để xem các phiếu bầu của đại biểu nguyên thủy xuất hiện trên chuỗi!<br><br>Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/29/the-secure-transition-to-decentralization/)*
+*Cảm ơn sự hỗ trợ của bạn và chúng tôi mong muốn đến vị trí 151200 khi chúng tôi có thể tập hợp, tthúc đẩy, cho một "block party' để xem các phiếu bầu của đại biểu nguyên thủy xuất hiện trên chuỗi!
+
+Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu.
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/29/the-secure-transition-to-decentralization/)
+ 
+ *Dự án được tài trợ boải Catalyst*

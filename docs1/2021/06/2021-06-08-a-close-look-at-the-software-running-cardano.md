@@ -77,4 +77,10 @@ Với các [hợp đồng thông minh](https://iohk.io/en/blog/posts/2021/04/08/
 
 Bản [nâng cấp giao thức Alonzo](https://iohk.io/en/blog/posts/2021/04/08/smart-contracts-%E2%80%93-here-we-come/) sẽ được xây dựng dựa trên các bản nâng cấp token gần đây và đang được triển khai cho mạng chính thông qua một số mạng thử nghiệm. Các đối tác Plutus của chúng tôi và Plutus Pioneers sẽ giúp chúng tôi kiểm tra Plutus Core và sẽ là một phần của giai đoạn chấp nhận người dùng trước khi triển khai mạng chính. Tại thời điểm này, chúng tôi sẽ chính thức thêm các thành phần Plutus và Marlowe, chẳng hạn như cả hai trình thông dịch, vào stack nền tảng của Cardano.
 
-*Để cập nhật thông tin giới thiệu Alonzo, vui lòng kiểm tra các kênh xã hội và trang blog của chúng tôi. Bài này được dịch bởi LinhPool, Review bởi tienna và đăng bài bởi ... Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/06/08/a-close-look-at-the-software-running-cardano/) *Dự án này được tài trợ bới Catalyst**
+*Để cập nhật thông tin giới thiệu Alonzo, vui lòng kiểm tra các kênh xã hội và trang blog của chúng tôi.*
+
+Bài này được dịch bởi LinhPool, Review bởi tienna và đăng bài bởi Nguyễn Hiệu.
+
+ Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/06/08/a-close-look-at-the-software-running-cardano/) 
+ 
+ *Dự án này được tài trợ bới Catalyst*

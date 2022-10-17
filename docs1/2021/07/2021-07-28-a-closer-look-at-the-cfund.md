@@ -69,10 +69,16 @@ Các dự án và doanh nghiệp tiềm năng có thể liên hệ với [email 
 
 cFund đặt mục tiêu trở thành công ty mạo hiểm hàng đầu, đầu tư vào các dự án trong giai đoạn sớm, chủ yếu vào các công nghệ dựa trên Cardano Blockchain, bên cạnh việc trở thành một phần không thể thiếu của hệ sinh thái Cardano. Theo nguyên tắc sáng lập của IOG về *sự phân phối theo tầng*, *&nbsp;ý tưởng cho rằng hầu hết các cấu trúc hình thành nên hệ thống tài chính, quản trị và xã hội toàn cầu vốn không ổn định. Do đó những lo lắng nhỏ có thể gây ra hiệu ứng gợn sóng về cơ bản cấu hình lại toàn bộ hệ thống.* Mục tiêu của cFund là xác định và hỗ trợ các công nghệ để loại bỏ những lo lắng này, cùng nhau thúc đẩy một trật tự công bằng và minh bạch cho tất cả các bên liên quan.
 
-*Cảm ơn vì thời gian của bạn, David. Bài này được dịch bởi Nguyễn Văn Tú, soát xét bởi Brit Nguyễn. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/07/28/a-closer-look-at-the-cfund). *Dự án này được tài trợ bởi Catalyst*.*
+*Cảm ơn vì thời gian của bạn, David.*
 
 #### **Tài nguyên bổ sung**
 
 - [Trang Web của cFund](https://cfund.vc/)
 - [Trang Web của Wave Financial](https://wavegp.com/)
 - [Trang Web của Cardano](https://cardano.org/)
+
+ Bài này được dịch bởi Nguyễn Văn Tú, soát xét bởi Brit Nguyễn và đăng bài bởi Nguyễn Hiệu
+ 
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/07/28/a-closer-look-at-the-cfund).
+ 
+  *Dự án này được tài trợ bởi Catalyst*.*

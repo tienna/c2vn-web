@@ -29,4 +29,11 @@ Như Philip nói, 'Để ra mắt một thương hiệu siêu cao cấp, việc 
 
 Sự hợp tác này được sắp xếp trùng với sự ra mắt sắp tới của dòng sản phẩm siêu cao cấp được gọi là Badger Head. Tên này xuất phát từ con đường Badger Head Road, nơi đặt nhà máy chưng cất, và thuật ngữ này cũng được người Anh sử dụng để mô tả những con gấu túi địa phương. Bao bì bao gồm một họa tiết gấu túi.
 
-Strait Brands thậm chí còn đang lên kế hoạch cho một phiên bản giới hạn theo chủ đề Cardano đặc biệt phù hợp với CNFTs. Thông tin chi tiết về điều này sẽ sớm được công bố!<br><br><br><br>Bài này được dịch bởi Lê Nguyên. <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2021/10/22/bringing-premium-spirits-to-the-cardano-blockchain/">với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em>
+Strait Brands thậm chí còn đang lên kế hoạch cho một phiên bản giới hạn theo chủ đề Cardano đặc biệt phù hợp với CNFTs. Thông tin chi tiết về điều này sẽ sớm được công bố!
+
+Bài này được dịch bởi Lê Nguyên, Review baoer Phạm Quang, đăng bài bởi nguyễn Hiệu.
+
+
+Nguồng bài viết [tại đây](https://iohk.io/en/blog/posts/2021/10/22/bringing-premium-spirits-to-the-cardano-blockchain)
+
+*Dự án này được tài trợ bởi Catalyst*

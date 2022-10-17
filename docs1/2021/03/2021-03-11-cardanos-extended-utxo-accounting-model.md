@@ -73,4 +73,9 @@ Tổng hợp về mô hình Tài khoản/Số dư:
 - Có thể chi tiêu một phần số dư.
 - Không áp dụng khái niệm tiền thừa.
 
-Trong phần thứ hai của phân tích này vào ngày mai, chúng ta sẽ thảo luận về cách mỗi mô hình xử lý các giao dịch, giải thích lý do phát triển mô hình EUTXO cho Cardano và cung cấp giải thích chuyên sâu về EUTXO là gì và nó hoạt động như thế nào. Bài này được dịch bởi Nguyễn Văn Tú. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/11/cardanos-extended-utxo-accounting-model). *Dự án này được tài trợ bởi Catalyst*.
+Trong phần thứ hai của phân tích này vào ngày mai, chúng ta sẽ thảo luận về cách mỗi mô hình xử lý các giao dịch, giải thích lý do phát triển mô hình EUTXO cho Cardano và cung cấp giải thích chuyên sâu về EUTXO là gì và nó hoạt động như thế nào. 
+
+Bài này được dịch bởi Nguyễn Văn Tú, Review và đăng bài bởi Nguyễn Hiệu.
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/11/cardanos-extended-utxo-accounting-model). 
+
+*Dự án này được tài trợ bởi Catalyst*.

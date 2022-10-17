@@ -48,4 +48,8 @@ Chúng tôi nhìn thấy một tương lai nơi những người sáng tạo thu
 
 Trải nghiệm NFT và cảm giác thân thuộc vốn có chắc chắn sẽ thúc đẩy các thành viên cộng đồng Cardano tạo ra trải nghiệm NFT cho những người bên ngoài Cardano. Giống như những gì chúng ta đã thấy với tác động tức thì của NFT đối với văn hóa đại chúng, những trải nghiệm này sẽ giúp thu hút nhiều người hơn vào cộng đồng của chúng ta.
 
-Tôi rất vui vì WBL là một trong những tổ chức đầu tiên tạo ra những trải nghiệm mới về NFT. Tôi cũng rất vui khi thấy điều gì sẽ diễn ra khi chúng tôi dân chủ hóa các công cụ NFT để mọi người có thể tham gia vui vẻ. Chúng tôi tin rằng điều này sẽ thúc đẩy kết nối toàn cầu và xã hội, người dùng có nhiều quyền kiểm soát hơn đối với các sáng tạo của họ. Điều này sẽ tiếp tục khi chúng tôi dân chủ hóa các dịch vụ tài chính. Bài này được dịch bởi Nguyễn Văn Tú, Review và đăng bài bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/07/22/wolfram-and-cardano-build-communities-with-nfts-and-liveminting). *Dự án này được tài trợ bởi Catalyst*.
+Tôi rất vui vì WBL là một trong những tổ chức đầu tiên tạo ra những trải nghiệm mới về NFT. Tôi cũng rất vui khi thấy điều gì sẽ diễn ra khi chúng tôi dân chủ hóa các công cụ NFT để mọi người có thể tham gia vui vẻ. Chúng tôi tin rằng điều này sẽ thúc đẩy kết nối toàn cầu và xã hội, người dùng có nhiều quyền kiểm soát hơn đối với các sáng tạo của họ. Điều này sẽ tiếp tục khi chúng tôi dân chủ hóa các dịch vụ tài chính. 
+
+Bài này được dịch bởi Nguyễn Văn Tú, Review và đăng bài bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/07/22/wolfram-and-cardano-build-communities-with-nfts-and-liveminting). 
+
+*Dự án này được tài trợ bởi Catalyst*.

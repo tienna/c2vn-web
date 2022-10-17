@@ -74,4 +74,10 @@ Input Output Global, Inc. (IOG) liên tục nghiên cứu và xây dựng các s
 
 Xem video giải thích bên dưới để tìm hiểu thêm về Atala PRISM.
 
-*Tôi muốn gửi lời cảm ơn [Peter Vielhaber](https://iohk.io/en/team/pete-vielhaber) đã đóng góp ý kiến và hỗ trợ cho bài đăng trên blog cộng tác này. Bài này được dịch bởi Vũ Đình Quân, Review bởi Quang Pham, Biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/09/08/advancing-digital-identity-through-did-core-specification). *Dự án này được tài trợ bởi Catalyst**
+*Tôi muốn gửi lời cảm ơn [Peter Vielhaber](https://iohk.io/en/team/pete-vielhaber) đã đóng góp ý kiến và hỗ trợ cho bài đăng trên blog cộng tác này.*
+
+Bài này được dịch bởi Vũ Đình Quân, Review bởi Quang Pham, Biên tập bởi Nguyễn Văn Hiệu
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2022/09/08/advancing-digital-identity-through-did-core-specification). 
+
+*Dự án này được tài trợ bởi Catalyst*

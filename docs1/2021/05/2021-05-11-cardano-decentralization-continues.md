@@ -62,4 +62,9 @@ Kết quả kiểm tra cho thấy rằng các node có thể tùy ý chọn các
 
 *Chúng tôi sẽ sớm ra mắt mạng thử nghiệm P2P bán công khai, với sự hỗ trợ của một nhóm nhỏ các đối tác SPO giúp thực hiện những thử nghiệm ban đầu, trước khi mở rộng phạm vi ra cộng đồng SPO. Như mọi khi, những phản hồi sớm và ý tưởng từ cộng đồng là trọng tâm để kiểm tra, lặp đi lặp lại và cải thiện các quy trình khi chúng ta đang dần tiến tới một kiến trúc P2P hoàn toàn tự động và phi tập trung cho mạng chính Cardano.*
 
-*Bài viết nhận được những đóng góp từ Karl Knutsson, Duncan Coutts, Neil Davies, Prashanti Naik và Olga Hryniuk.<br>Bài này được dịch bởi Hoàng Tâm,soát xét bởi Brit Nguyễn. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/11/cardano-decentralization-continues/)<br>Dự án này do Catalyst tài trợ.*
+*Bài viết nhận được những đóng góp từ Karl Knutsson, Duncan Coutts, Neil Davies, Prashanti Naik và Olga Hryniuk.*
+
+Bài này được dịch bởi Hoàng Tâm,review bởi Brit Nguyễn, Đăng bài bởi Nguyễn Hiệu.
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/11/cardano-decentralization-continues/)
+
+*Dự án này do Catalyst tài trợ.*

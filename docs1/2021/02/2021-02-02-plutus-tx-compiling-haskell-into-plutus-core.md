@@ -123,4 +123,8 @@ Mục tiêu của Plutus Tx là cho phép bạn tự do viết Haskell và sử 
 
 ## **Tái bút: hãy ủng hộ chúng tôi!**
 
-Làm thế nào bạn thực sự có thể sử dụng Plutus Tx? Trình biên dịch sẽ được phát hành cùng với [Plutus Foundation](https://www.youtube.com/watch?v=NjFUYD5FOkE) trong một bản cập nhật của Cardano để hỗ trợ các khả năng của Goguen. Điều này sẽ bao gồm hỗ trợ cho Plutus Core trên chuỗi Cardano. Tại thời điểm đó, chúng tôi sẽ phát hành các thư viện. Cho đến lúc đó, bạn có thể ủng hộ chúng tôi [trên Github](https://github.com/input-output-hk/plutus) và cho chúng tôi biết cách bạn tiếp cận với [Plutus Playground](https://playground.plutus.iohkdev.io/) mới.Bài này được dịch bởi Lê Nguyên. Review và đăng bài bởi Nguyễn Hiệu. Nguồn bài viết gốc [tại đây](https://iohk.io/en/blog/posts/2021/02/02/plutus-tx-compiling-haskell-into-plutus-core). *Dự án này được tài trợ bởi Catalyst*
+Làm thế nào bạn thực sự có thể sử dụng Plutus Tx? Trình biên dịch sẽ được phát hành cùng với [Plutus Foundation](https://www.youtube.com/watch?v=NjFUYD5FOkE) trong một bản cập nhật của Cardano để hỗ trợ các khả năng của Goguen. Điều này sẽ bao gồm hỗ trợ cho Plutus Core trên chuỗi Cardano. Tại thời điểm đó, chúng tôi sẽ phát hành các thư viện. Cho đến lúc đó, bạn có thể ủng hộ chúng tôi [trên Github](https://github.com/input-output-hk/plutus) và cho chúng tôi biết cách bạn tiếp cận với [Plutus Playground](https://playground.plutus.iohkdev.io/) mới.
+
+Bài này được dịch bởi Lê Nguyên. Review và đăng bài bởi Nguyễn Hiệu. Nguồn bài viết gốc [tại đây](https://iohk.io/en/blog/posts/2021/02/02/plutus-tx-compiling-haskell-into-plutus-core). 
+
+*Dự án này được tài trợ bởi Catalyst*

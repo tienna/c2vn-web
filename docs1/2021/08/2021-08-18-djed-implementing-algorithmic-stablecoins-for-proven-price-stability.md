@@ -92,4 +92,10 @@ Ngoài ra còn có một triển khai OpenStar đang diễn ra. OpenStar là m�
 
 Để tìm hiểu thêm về Djed stablecoin, hãy xem [bài báo nghiên cứu được công bố gần đây](https://iohk.io/en/research/library/papers/djeda-formally-verified-crypto-backed-pegged-algorithmic-stablecoin/) hoặc xem [Trình bày của Bruno Woltzenlogel Paleo](https://www.youtube.com/watch?v=zG-rxMCDIa0&t=8366s), giám đốc kỹ thuật IOG, tại hội nghị thượng đỉnh Ergo 2021.
 
-*Chúng tôi muốn cảm ơn và ghi nhận Bruno Woltzenlogel Paleo đã đóng góp ý kiến cho bài viết này và sự hỗ trợ trong suốt quá trình tạo ra nó. Bài dịch được dịch bởi Chitk, Review bởi Quang Pham, Biên tập bởi ... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/08/18/djed-implementing-algorithmic-stablecoins-for-proven-price-stability/).*Dự án này được tài trợ bởi Catalyst*.*
+*Chúng tôi muốn cảm ơn và ghi nhận Bruno Woltzenlogel Paleo đã đóng góp ý kiến cho bài viết này và sự hỗ trợ trong suốt quá trình tạo ra nó.*
+
+Bài dịch được dịch bởi Chitk, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu.
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/08/18/djed-implementing-algorithmic-stablecoins-for-proven-price-stability/).
+
+*Dự án này được tài trợ bởi Catalyst*.

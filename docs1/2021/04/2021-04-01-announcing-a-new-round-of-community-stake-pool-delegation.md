@@ -49,4 +49,8 @@ Chúng tôi ưu tiên các nhà vận hành chạy các pool đơn lẻ và chú
 
 Mặc dù chúng tôi yêu cầu tất cả các SPO đăng ký bảo đảm rằng thông tin họ đã cung cấp là trung thực và chính xác, chúng tôi không điều tra hoạt động pool hoặc kiểm tra trước các yêu cầu về tính chính xác. Tuy nhiên, chúng tôi mong đợi sự minh bạch từ mọi thành viên của cộng đồng.
 
-Các stake pool có thể đăng ký ủy quyền từ hôm nay; việc ứng tuyển sẽ đóng lại vào lúc **nửa đêm giờ UTC vào thứ năm ngày 15 tháng 4**. Sau đó, chúng tôi sẽ xem xét tất cả các đơn đăng ký và thông báo SPO nào sẽ nhận ủy quyền, điều này sẽ được thực hiện vào đầu tháng 5. Chúng tôi mong chờ việc ứng tuyển của bạn.<br><br> <br><br>Bài này được dịch bởi Thanhtintran .Reivew bởi tienna <a>với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em>
+Các stake pool có thể đăng ký ủy quyền từ hôm nay; việc ứng tuyển sẽ đóng lại vào lúc **nửa đêm giờ UTC vào thứ năm ngày 15 tháng 4**. Sau đó, chúng tôi sẽ xem xét tất cả các đơn đăng ký và thông báo SPO nào sẽ nhận ủy quyền, điều này sẽ được thực hiện vào đầu tháng 5. Chúng tôi mong chờ việc ứng tuyển của bạn.
+
+Bài này được dịch bởi Thanhtintran, Reivew bởi tienna, Đăng bài bởi Nguyễn Hiệu.
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/04/01/announcing-a-new-round-of-community-stake-pool-delegation/)
+*Dự án này được tài trợ bởi Catalyst*

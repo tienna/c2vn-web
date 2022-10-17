@@ -64,4 +64,8 @@ Chúng tôi cũng đã làm mới giao diện với các cải tiến về trả
 
 Chúng tôi hiện đang khuyến khích các nhà phát triển có kinh nghiệm (và cả những nhà phát triển ít kinh nghiệm hơn!) thử nghiệm sân chơi Plutus trước khi phát hành nó. Nếu bạn quan tâm đến hợp đồng thông minh và muốn tham gia, hãy phản hồi tới chúng tôi.
 
-Quá trình làm mới sân chơi sẽ được phát trực tiếp vào hôm nay tại [https://playground.plutus.iohkdev.io/](https://playground.plutus.iohkdev.io/). Bạn có thể tham gia các cuộc thảo luận về Plutus tại [Diễn đàn Cardano](https://forum.cardano.org/c/developers/cardano-plutus/148) và truy cập [kho lưu trữ Plutus GitHub](https://github.com/input-output-hk/plutus). Để có quyền truy cập vào hỗ trợ và tài nguyên bổ sung, hãy thể sự quan tâm của bạn bằng cách điền [vào Biểu mẫu này](https://input-output.typeform.com/to/gQ0t9ep5) để chúng tôi thêm bạn vào cộng đồng Slack.Bài này được dịch bởi Max Long, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/25/introducing-the-new-plutus-playground/) *Dự án được tài trợ bởi Catalyst*
+Quá trình làm mới sân chơi sẽ được phát trực tiếp vào hôm nay tại [https://playground.plutus.iohkdev.io/](https://playground.plutus.iohkdev.io/). Bạn có thể tham gia các cuộc thảo luận về Plutus tại [Diễn đàn Cardano](https://forum.cardano.org/c/developers/cardano-plutus/148) và truy cập [kho lưu trữ Plutus GitHub](https://github.com/input-output-hk/plutus). Để có quyền truy cập vào hỗ trợ và tài nguyên bổ sung, hãy thể sự quan tâm của bạn bằng cách điền [vào Biểu mẫu này](https://input-output.typeform.com/to/gQ0t9ep5) để chúng tôi thêm bạn vào cộng đồng Slack.
+
+Bài này được dịch bởi Max Long, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/25/introducing-the-new-plutus-playground/) 
+
+*Dự án được tài trợ bởi Catalyst*

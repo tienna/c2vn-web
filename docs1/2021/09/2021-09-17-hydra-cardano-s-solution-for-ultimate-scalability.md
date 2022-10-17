@@ -62,4 +62,10 @@ Với Hardfork Alonzo, Cardano sẽ bắt đầu một hành trình mới với 
 
 *Tại [Hội nghị thượng đỉnh Cardano 2021](https://summit.cardano.org/), diễn ra từ 25-26 tháng 9, chúng tôi sẽ nói nhiều hơn về Hydra, tiến trình của nó cho đến nay và các mục tiêu cho tương lai. Hãy chắc chắn rằng bạn tham gia với chúng tôi! Và bạn cũng có thể muốn xem [phần giải thích Video này](https://www.youtube.com/watch?v=7ySUbFpTrAk) .*
 
-#### ***Matthias Benkort, Arnaud Bailly và Fernando Sanchez cũng đóng góp vào tác phẩm này. Bài này được dịch bởi Nguyễn Văn Tú, Review bởi Quang Pham, Biên tập bởi..... Bài viết nguồn [tại đây] (https://iohk.io/en/blog/posts/2021/09/17/hydra-cardano-s-solution-for-ultimate-scalability/). *Dự án này được tài trợ bởi Catalyst****
+**Matthias Benkort, Arnaud Bailly và Fernando Sanchez cũng đóng góp vào tác phẩm này.**
+
+ Bài này được dịch bởi Nguyễn Văn Tú, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu.
+ 
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/17/hydra-cardano-s-solution-for-ultimate-scalability/). 
+ 
+ *Dự án này được tài trợ bởi Catalyst*

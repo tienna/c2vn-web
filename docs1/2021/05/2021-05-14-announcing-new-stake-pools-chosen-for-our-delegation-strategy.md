@@ -1,4 +1,4 @@
-# Công bố các Pool mới được chọn cho chiến lược ủy thác
+# Công bố các Pool mới được chọn cho chiến lược ủy thác của IOG
 
 ### **Cam kết về sự lành mạnh và đa dạng của mạng lưới Cardano, chúng tôi công bố các Pool được chọn cho vòng ủy thác mới**
 
@@ -93,4 +93,9 @@ Chúng tôi rất vui khi tìm ra 100 Pool. Chúng tôi tin rằng họ có ti�
 
 Vì vậy, chúng tôi khuyến khích tất cả các Pool đã bỏ lỡ, hãy đăng ký lại cho nhóm mới trong Quý 3. Chúng tôi sẽ thực hiện một đợt kêu gọi mới cho các đơn đăng ký vào tháng Sáu để luân phiên việc uỷ quyền vào tháng Bảy. Mặc dù phân tích kỹ thuật là cách chính mà các Pool được xác định để ủy quyền, chúng tôi luôn hoan nghênh phản hồi của cộng đồng về cách chúng tôi có thể tiếp tục cải thiện quy trình. Chúng tôi cam kết hỗ trợ hệ sinh thái Cardano ngày càng phát triển mạnh mẽ. Chúng ta đã cùng nhau tạo ra hệ sinh thái bằng chứng cổ phần hàng đầu thế giới. Chúng tôi muốn làm tất cả những gì có thể để duy trì và cải thiện hệ sinh thái khi nó trưởng thành.
 
-*Cảm ơn Ben O'Hanlon, Colin Edwards, Francisco Landino, Sam Leathers, Olga Hryniuk &amp; Tim Harrison đã hỗ trợ và đóng góp thêm. Bài này được dịch bởi Nguyễn Văn Tú, Review bởi Quang Pham, Biên tập bởi..... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/14/announcing-new-stake-pools-chosen-for-our-delegation-strategy). *Dự án này được tài trợ bởi Catalyst*.*
+*Cảm ơn Ben O'Hanlon, Colin Edwards, Francisco Landino, Sam Leathers, Olga Hryniuk &amp; Tim Harrison đã hỗ trợ và đóng góp thêm.*
+
+Bài này được dịch bởi Nguyễn Văn Tú, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu.
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/14/announcing-new-stake-pools-chosen-for-our-delegation-strategy). 
+
+*Dự án này được tài trợ bởi Catalyst*.

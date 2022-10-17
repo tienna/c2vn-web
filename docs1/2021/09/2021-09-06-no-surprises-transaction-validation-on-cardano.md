@@ -129,4 +129,9 @@ Hành vi xác định của tập lệnh Cardano và xác thực giao dịch kh�
 
 *Thuộc tính đánh giá xác định được thể hiện trong [đặc điểm kỹ thuật của Alonzo](https://hydra.iohk.io/build/7172824/download/1/alonzo-changes.pdf) và nhóm IOG cũng đã phác thảo bằng chứng rằng trình thông dịch chỉ nhận được những đối số không phá vỡ thuộc tính.*
 
-*Trong bài tiếp theo, chúng tôi sẽ xem xét kỹ hơn quy trình xác thực 2 giai đoạn của các giao dịch Cardano. Vì vậy, hãy chú ý theo dõi phần hai vào cuối tuần này.<br><br><br>Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi .... <a>với bài gốc</a>(https://iohk.io/en/blog/posts/2021/09/06/no-surprises-transaction-validation-on-cardano/)<br><em>Dự án này được tài trợ bởi Catalyst</em>*
+*Trong bài tiếp theo, chúng tôi sẽ xem xét kỹ hơn quy trình xác thực 2 giai đoạn của các giao dịch Cardano. Vì vậy, hãy chú ý theo dõi phần hai vào cuối tuần này.*
+
+Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu.
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/09/06/no-surprises-transaction-validation-on-cardano/)
+
+*Dự án này được tài trợ bởi Catalyst*

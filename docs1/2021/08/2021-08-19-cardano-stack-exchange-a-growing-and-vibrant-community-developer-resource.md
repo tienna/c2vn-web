@@ -60,5 +60,10 @@ Khi ai đó trong cộng đồng trả lời câu hỏi của bạn, bạn có t
 Với trang web hiện vẫn đang trong giai đoạn thử nghiệm, nó cần được sử dụng rộng rãi hơn và hoạt động với đầy đủ các thành phần. Chúng tôi khuyến khích bạn đăng nhập, tham gia và giúp làm cho trang web trở thành tài nguyên có giá trị cho mọi người trong cộng đồng.
 
 *Sáng kiến Stack Exchange thực sự là một nỗ lực của cộng đồng Cardano. Vì vậy, đặc biệt cảm ơn [tất cả những người đóng góp](https://area51.stackexchange.com/proposals/125174?phase=beta&users=reputation#tab-top) làm việc để thúc đẩy dự án này phát triển.*
-
-##### ***Tôi muốn ghi nhận sự đóng góp của Neil Burgess cho bài viết này.Bài này được dịch bởi LinhPool, Review và đăng bài bởi Nguyễn Hiệu. Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/08/19/cardano-stack-exchange-a-growing-and-vibrant-community-developer-resource/) *Dự án này được tài trợ bới Catalyst****
+ **Tôi muốn ghi nhận sự đóng góp của Neil Burgess cho bài viết này.**
+ 
+ Bài này được dịch bởi LinhPool, Review và đăng bài bởi Nguyễn Hiệu.
+ 
+ Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/08/19/cardano-stack-exchange-a-growing-and-vibrant-community-developer-resource/) 
+ 
+ *Dự án này được tài trợ bới Catalyst*

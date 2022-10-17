@@ -71,4 +71,9 @@ Voltaire sẽ giới thiệu:
 
 Sản xuất block phi tập trung - đã hoàn thành. Mạng P2P - ra mắt từ tháng 4. Còn quản trị? Dự án Catalyst đang trên đà phát triển và còn nhiều hơn thế nữa.
 
-Từ một chuỗi liên kết với việc sản xuất block tập trung, đến một chuỗi với các block được cộng đồng sản xuất hoàn toàn. Chúng tôi đang đi trên đúng con đường của chúng tôi. Khi chúng tôi hoàn thành việc xây dựng cả ba trụ cột, chúng tôi sẽ tạo ra một cái gì đó thực sự độc đáo. Một mạng lưới mạnh mẽ và có khả năng phục hồi, nhưng linh hoạt và thích ứng với sự phát triển trong tương lai. Một nền tảng phục vụ người dùng ngày hôm nay, đồng thời trao quyền cho họ xây dựng giá trị và chức năng mới cho ngày mai. Tất cả đều nằm trong khuôn mẫu dân chủ, nơi cộng đồng đưa ra lời kêu gọi. Sự phân quyền thực sự, đứng trên đỉnh ba trụ cột đó.Bài này được dịch bởi LinhPool, Review bởi Quang Pham, biên tập bởi.... Bài viết nguồn <a>tại đây</a> https://iohk.io/en/blog/posts/2021/03/31/decentralization-to-d-0-day-and-beyond/ *Dự án này được tài trợ bởi Catalyst*.
+Từ một chuỗi liên kết với việc sản xuất block tập trung, đến một chuỗi với các block được cộng đồng sản xuất hoàn toàn. Chúng tôi đang đi trên đúng con đường của chúng tôi. Khi chúng tôi hoàn thành việc xây dựng cả ba trụ cột, chúng tôi sẽ tạo ra một cái gì đó thực sự độc đáo. Một mạng lưới mạnh mẽ và có khả năng phục hồi, nhưng linh hoạt và thích ứng với sự phát triển trong tương lai. Một nền tảng phục vụ người dùng ngày hôm nay, đồng thời trao quyền cho họ xây dựng giá trị và chức năng mới cho ngày mai. Tất cả đều nằm trong khuôn mẫu dân chủ, nơi cộng đồng đưa ra lời kêu gọi. Sự phân quyền thực sự, đứng trên đỉnh ba trụ cột đó.
+
+Bài này được dịch bởi LinhPool, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu.
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/31/decentralization-to-d-0-day-and-beyond)
+ 
+  *Dự án này được tài trợ bởi Catalyst*.

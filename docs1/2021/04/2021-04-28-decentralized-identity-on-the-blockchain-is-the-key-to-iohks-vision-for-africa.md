@@ -54,4 +54,9 @@ Hàng ngàn sự đổi mới có thể được thực hiện với cơ sở h�
 
 Dù thật khó khăn nhưng với sự giúp đỡ của hàng nghìn người, chúng tôi đã thực hiện được tới giai đoạn này. Vì vậy, hãy chúc mừng họ khi chúng tôi đánh dấu bước đầu tiên trong việc thực hiện ước mơ mang lại cho người dân Châu Phi quyền kiểm soát cuộc sống của chính họ.
 
-*Để biết thêm về công việc của chúng tôi trên lục địa này, hãy truy cập trang web [Cardano Châu Phi](http://africa.cardano.org).<br><br>Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/04/28/decentralized-identity-on-the-blockchain-is-the-key-to-iohks-vision-for-africa/)*Dự án này được tài trợ bởi Catalyst**
+*Để biết thêm về công việc của chúng tôi trên lục địa này, hãy truy cập trang web [Cardano Châu Phi](http://africa.cardano.org).*
+
+Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu.
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/04/28/decentralized-identity-on-the-blockchain-is-the-key-to-iohks-vision-for-africa/)
+ 
+ *Dự án này được tài trợ bởi Catalyst*

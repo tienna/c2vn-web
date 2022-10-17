@@ -36,3 +36,8 @@ Giám đốc điều hành IO Global Charles Hoskinson cho biết: 'Đồng ổn
 'COTI  là một đối tác lâu năm của hệ sinh thái Cardano. Thật tuyệt khi họ tham gia vào dự án mới này. '
 
 Kiểm tra [trang web Djed](https://djed.xyz/) .
+
+Bài này được dịch bởi Thanhphien237, Review bởi Brit Nguyễn, biên tập bởi Nguyễn Hiệu Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/05/decentralizing-social-media)
+
+*Dự án này được tài trợ bởi Catalyst*
+

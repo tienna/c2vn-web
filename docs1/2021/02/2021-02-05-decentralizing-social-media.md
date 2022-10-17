@@ -250,4 +250,8 @@ Tôi cảm thấy nếu như bạn có thể kết hợp BAT và Steem, bạn s�
 
 **CH:** Như vậy sẽ rất vui. Đó chỉ là những chi tiết nhỏ trong rất nhiều thứ chỉ để thoát khỏi cuộc nội chiến và COVID. Được rồi. Cảm ơn bạn rất nhiều, Ben.
 
-**BG:** Tuyệt vời. Cảm ơn rất nhiều.Bài này được dịch bởi Thanhphien237, Review bởi Quang Pham, biên tập bởi .... Bài viết nguồn <a>tại đây</a> https://iohk.io/en/blog/posts/2021/02/05/decentralizing-social-media/ <em>Dự án này được tài trợ bởi Catalyst</em>
+**BG:** Tuyệt vời. Cảm ơn rất nhiều.
+
+Bài này được dịch bởi Thanhphien237, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/05/decentralizing-social-media)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -1,4 +1,4 @@
-# Hard fork Alonzo một hành trình mới thú vị được bắt đầu ...
+# Hard fork Alonzo một hành trình mới thú vị được bắt đầu
 
 ### **Nâng cấp Alonzo là một thời điểm quan trọng trong sự ra đời của một hệ sinh thái mới**
 
@@ -95,4 +95,10 @@ Vì vậy, khi chúng ta vượt qua ranh giới kỷ nguyên ngày hôm nay, h�
 
 Hãy tự hào về những gì chúng ta đã đạt được. Nhưng đây là nơi công việc thực sự bắt đầu.
 
-Let’s go. Bài này được dịch bởi LinhPool, Review bởi Quang Pham, Biên tập bởi ... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/12/today-will-feel-like-a-destination-yet-a-new-exciting-journey-begins/) *Dự án này được tài trợ bới Catalyst*
+Let’s go. 
+
+Bài này được dịch bởi LinhPool, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu.
+
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/12/today-will-feel-like-a-destination-yet-a-new-exciting-journey-begins/) 
+ 
+ *Dự án này được tài trợ bới Catalyst*

@@ -39,4 +39,8 @@ Gần đây, việc định hình lại nhằm mang đến những công trình 
 
 Nghe nhạc, gặp gỡ bạn bè và gia đình, lên kế hoạch, gặp gỡ đồng nghiệp, đi ra nước ngoài. Tất cả những điều chúng ta đã từng coi là đương nhiên. Đây là những điều tôi đã bỏ lỡ và hy vọng sẽ có thể quay trở lại vào năm 2021.
 
-*Điều hoàn thành "Mười hai ngày Giáng sinh" của chúng tôi. Chúng tôi hy vọng một số người trong số họ - dù là Daedalus, thơ ca Nhật Bản, phi tập trung danh tính  hay suy nghĩ của một con bạch tuộc đang mơ mộng – sẽ đạt được sự đồng điệu với bạn. * *Phần trình diễn của [Mười hai ngày Giáng sinh](https://www.classicfm.com/discover-music/occasions/christmas/twelve-12-days-of-christmas-lyrics-meaning/) do dàn hợp xướng của Clare College Cambridge thực hiện chắc chắn sẽ gây được nhiều tiếng cười. Chúc bạn một năm 2021 thú vị!Bài này được dịch bởi Lê Nguyên, Review và đăng bài bởi Nguyễn Hiệu. Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/01/04/the-final-days-of-christmas) *Dự án này được tài trợ bởi Catalyst**
+*Điều hoàn thành "Mười hai ngày Giáng sinh" của chúng tôi. Chúng tôi hy vọng một số người trong số họ - dù là Daedalus, thơ ca Nhật Bản, phi tập trung danh tính  hay suy nghĩ của một con bạch tuộc đang mơ mộng – sẽ đạt được sự đồng điệu với bạn. * *Phần trình diễn của [Mười hai ngày Giáng sinh](https://www.classicfm.com/discover-music/occasions/christmas/twelve-12-days-of-christmas-lyrics-meaning/) do dàn hợp xướng của Clare College Cambridge thực hiện chắc chắn sẽ gây được nhiều tiếng cười. Chúc bạn một năm 2021 thú vị!
+
+Bài này được dịch bởi Lê Nguyên, Review và đăng bài bởi Nguyễn Hiệu. Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/01/04/the-final-days-of-christmas) 
+
+*Dự án này được tài trợ bởi Catalyst**

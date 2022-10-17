@@ -72,4 +72,10 @@ Cũng như tính linh hoạt có được nhờ các điều chỉnh tham số -
 
 Tham gia [cộng đồng Discord](https://discord.gg/inputoutput) của chúng tôi ngay hôm nay để tìm hiểu thêm và thảo luận mọi thứ về Cardano với cộng đồng tận tâm của chúng tôi.
 
-*Cảm ơn Neil Davies và Olga Hryniuk đã đóng góp và hỗ trợ cho bài viết này. Bài này được dịch bởi vudinhquanhn, Review bởi Quang Pham. <a>với bài gốc</a>(https://iohk.io/en/blog/posts/2021/10/21/cardano-robust-resilient-and-flexible/)<br>Dự án này được tài trợ bởi Catalyst*
+*Cảm ơn Neil Davies và Olga Hryniuk đã đóng góp và hỗ trợ cho bài viết này. 
+
+Bài này được dịch bởi vudinhquanhn, Review bởi Quang Pham, đăng bài bởi Nguễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/10/21/cardano-robust-resilient-and-flexible/)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -80,4 +80,11 @@ Các chữ ký cần thiết để xác nhận việc chi tiêu các đầu vào
 
 Vì đánh giá tập lệnh là xác định, người nắm giữ khóa tài sản thế chấp có thể kiểm tra cục bộ xem giao dịch có vượt qua xác thực giai đoạn 2 trên chuỗi hay không trước khi họ ký nó. Nếu có, thì họ có thể chắc chắn rằng nó cũng sẽ hoạt động trên chuỗi và họ sẽ không bị mất tài sản thế chấp. Người dùng có thiện chí sẽ không bao giờ bị mất tài sản thế chấp. Điều đó cũng có nghĩa là họ có thể tái sử dụng cùng một đầu vào tài sản thế chấp cho nhiều giao dịch và đảm bảo tài sản thế chấp không bị thu lại.
 
-*Bây giờ chúng tôi đã khởi chạy Testnet công khai cho Alonzo, chúng tôi hoan nghênh tất cả người dùng và nhà phát triển đánh giá nó bằng cách xây dựng và thực thi các tập lệnh Plutus. Bạn có thể tìm hiểu thêm thông tin trong [kho lưu trữ Testnet chuyên dụng của Alonzo](https://github.com/input-output-hk/Alonzo-testnet) hoặc [thảo luận về các chủ đề Plutus và Alonzo](https://discord.com/channels/826816523368005654/826829738156621895) với cộng đồng rất đa dạng. Bài này được dịch bởi Nguyễn Văn Tú, review bởi Quang Pham, biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/07/no-surprises-transaction-validation-part-2). *Dự án này được tài trợ bởi Catalyst.**
+*Bây giờ chúng tôi đã khởi chạy Testnet công khai cho Alonzo, chúng tôi hoan nghênh tất cả người dùng và nhà phát triển đánh giá nó bằng cách xây dựng và thực thi các tập lệnh Plutus. Bạn có thể tìm hiểu thêm thông tin trong [kho lưu trữ Testnet chuyên dụng của Alonzo](https://github.com/input-output-hk/Alonzo-testnet) hoặc [thảo luận về các chủ đề Plutus và Alonzo](https://discord.com/channels/826816523368005654/826829738156621895) với cộng đồng rất đa dạng.*
+
+
+Bài này được dịch bởi Nguyễn Văn Tú, review bởi Quang Pham, biên tập bởi Nguyễn Hiệu.
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/07/no-surprises-transaction-validation-part-2). 
+
+*Dự án này được tài trợ bởi Catalyst.*

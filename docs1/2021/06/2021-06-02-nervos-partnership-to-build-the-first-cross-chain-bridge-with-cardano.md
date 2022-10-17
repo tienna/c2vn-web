@@ -40,4 +40,9 @@ Cầu nối này chỉ là một phần trong sự hợp tác của chúng tôi 
 
 Công nghệ blockchain sẽ chỉ đạt được sự chấp nhận chính thống khi những người dùng cuối không bị khóa vào một blockchain hoặc một tiêu chuẩn, nhưng có thể truy cập giá trị và tiện ích liền mạch , bất kể họ đang sử dụng blockchain nào. Pellerin tiếp tục: 'Những cầu nối như thế này là điều cần thiết để đảm bảo rằng người dùng có trải nghiệm liền mạch. Bằng cách kết nối các cộng đồng của chúng tôi và tìm ra những cách thức mới sáng tạo để làm việc cùng nhau, như chúng tôi đã làm với Nervos, chúng tôi có thể đảm bảo rằng blockchain hoạt động theo sứ mệnh của nó là tạo ra một hệ thống điều hành tài chính toàn cầu công bằng và hiệu quả hơn.'
 
-*Hãy xem [trang web của Nervos](https://www.nervos.org/) để biết thêm thông tin về quan hệ đối tác và các sáng kiến ​​nghiên cứu sắp tới. Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, Biên tập bởi ...Nguồn bài viết [tại đây] ( https://iohk.io/en/blog/posts/2021/06/02/nervos-partnership-to-build-the-first-cross-chain-bridge-with-cardano/) *Dự án này được tài trợ bởi Catalyst**
+*Hãy xem [trang web của Nervos](https://www.nervos.org/) để biết thêm thông tin về quan hệ đối tác và các sáng kiến ​​nghiên cứu sắp tới. *
+
+Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu.
+Nguồn bài viết [tại đây] ( https://iohk.io/en/blog/posts/2021/06/02/nervos-partnership-to-build-the-first-cross-chain-bridge-with-cardano/) 
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -88,4 +88,10 @@ Sự phát triển vượt bậc của công nghệ blockchain cạnh tranh duy 
 
 Tôi rất biết ơn khi có cơ hội trình bày về những tình huống sử dụng trong thế giới thực này, cũng như ý kiến của tôi về các giá trị định hướng của ngành và những suy nghĩ liên quan đến triển vọng của ngành công nghiệp blockchain. Các hiểu biết và mạng lưới kết nối của tôi luôn sẵn sàng để hỗ trợ và giúp đỡ Tiểu ban trong quá trình lập pháp. Tóm lại, tôi hy vọng chúng ta có thể tham gia vào một cuộc đối thoại hiệu quả và tiếp diễn trong những tháng tới đây khi Hoa Kỳ tranh luận về tương lai của quy định dành cho ngành công nghiệp Blockchain và Tiền mã hóa. Tôi chân thành cảm ơn quý vị đã dành thời gian cho tôi và mong đợi các câu hỏi từ quý vị.
 
-*Bạn có thể xem video lời khai [tại đây*](https://youtu.be/K4ZM2AlGT-s?t=1832)*.<br><br><br><br>Bài này được dịch bởi Hoàng Tâm review bởi tienna <a>[với bài gốc](https://iohk.io/en/blog/posts/2022/06/23/future-of-digital-asset-regulation-testimony-of-charles-hoskinson/)</a><br><em>Dự án này được tài trợ bởi Catalyst</em>
+*Bạn có thể xem video lời khai [tại đây*](https://youtu.be/K4ZM2AlGT-s?t=1832)*.
+
+Bài này được dịch bởi Hoàng Tâm review bởi tienna, và đăng bài bởi Nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2022/06/23/future-of-digital-asset-regulation-testimony-of-charles-hoskinson/)
+
+*Dự án này được tài trợ bởi Catalyst*

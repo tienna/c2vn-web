@@ -71,4 +71,9 @@ Chúng tôi vừa tổ chức cuộc bầu cử đầu tiên cho các thành vi�
 
 Khi phương pháp tốt nhất đáng tin cậy được thiết lập, Vòng tròn Circle có thể phát triển và phân tách. Biết đâu tương lai sẽ  có nhiều 'Vòng tròn Circle'? Cuối cùng, các thành viên sẽ tùy thuộc vào việc thúc đẩy mục tiêu của chúng tôi là hợp pháp hóa quản trị phi tập trung, mở đường cho một giải pháp thay thế cho hiện trạng và tiếp tục tạo ra nền tảng mới trong việc xây dựng tương lai của quản trị blockchain.
 
-*Tòa thị chính hàng tuần của Project Catalyst diễn ra vào thứ Tư hàng tuần lúc 18:00 UTC. Mọi người đều được chào đón tham gia. Để tìm hiểu thêm và tham gia, hãy nhớ tham gia cộng đồng đổi mới [Project Catalyst](https://cardano.ideascale.com/) và [kênh Telegram](https://t.me/ProjectCatalystChat) chuyên dụng của họ.Bài này được dịch bởi minh-hieu-102, Review và đăng bài bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/07/08/introducing-the-catalyst-circle)*
+*Tòa thị chính hàng tuần của Project Catalyst diễn ra vào thứ Tư hàng tuần lúc 18:00 UTC. Mọi người đều được chào đón tham gia. Để tìm hiểu thêm và tham gia, hãy nhớ tham gia cộng đồng đổi mới [Project Catalyst](https://cardano.ideascale.com/) và [kênh Telegram](https://t.me/ProjectCatalystChat) chuyên dụng của họ.*
+
+Bài này được dịch bởi minh-hieu-102, Review và đăng bài bởi Nguyễn Hiệu.
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/07/08/introducing-the-catalyst-circle)
+
+*Dự án này được tài trợ bởi Catalyst*

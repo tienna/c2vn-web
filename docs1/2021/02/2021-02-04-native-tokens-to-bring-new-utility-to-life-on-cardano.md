@@ -60,4 +60,9 @@ Cơ sở mã của hard fork Mary sẽ được triển khai trên mainnet vào 
 
 Việc triển khai kỷ nguyên Goguen â € ˜Maryâ € ™ đánh dấu một giai đoạn quan trọng trong hành trình của Cardano. Khi Mary chuyển khóa tiền mã hóa của mình, chúng tôi sẽ mở ra cơ chế để người dùng tạo token của riêng họ cho vô số ứng dụng: Tài chính phi tập trung (DeFi) và vô số trường hợp sử dụng với mục đích kinh doanh.
 
-*Tuần tới, chúng tôi sẽ xuất bản một bài đăng trên blog để tìm hiểu sâu hơn về chức năng token gốc cốt lõi (native token) và những gì người dùng có thể mong đợi. Hãy nhớ theo dõi chúng tôi trên [Twitter](https://twitter.com/InputOutputHK) và đăng ký [kênh YouTube](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) để nhận được những cập nhật mới nhất khi chúng tôi tiếp tục giới thiệu về kỷ nguyên Goguen.<br><br>Bài này được dịch bởi Max Long, Review bởi tienna , biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/04/native-tokens-to-bring-new-utility-to-life-on-cardano/)*
+*Tuần tới, chúng tôi sẽ xuất bản một bài đăng trên blog để tìm hiểu sâu hơn về chức năng token gốc cốt lõi (native token) và những gì người dùng có thể mong đợi. Hãy nhớ theo dõi chúng tôi trên [Twitter](https://twitter.com/InputOutputHK) và đăng ký [kênh YouTube](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) để nhận được những cập nhật mới nhất khi chúng tôi tiếp tục giới thiệu về kỷ nguyên Goguen.
+
+Bài này được dịch bởi Max Long, Review bởi tienna , biên tập bởi Nguyễn Hiệu.
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/04/native-tokens-to-bring-new-utility-to-life-on-cardano/)
+
+*Dự án được trài trợ bởi Catalyst*

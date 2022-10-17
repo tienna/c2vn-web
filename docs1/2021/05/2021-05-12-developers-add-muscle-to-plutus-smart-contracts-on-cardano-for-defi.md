@@ -56,6 +56,11 @@ Việc triển khai các hợp đồng thông minh an toàn trong dài hạn là
 
 Sẽ là một mùa hè thú vị đối với tất cả mọi người trong cộng đồng Cardano. Các đối tác, người tiên phong và nhà phát triển trong mọi lĩnh vực làm việc không mệt mỏi để đảm bảo nền tảng hợp đồng thông minh Plutus hoạt động hiệu quả. Hệ thống an toàn, tiết kiệm năng lượng mà tài chính phi tập trung đang rất được chờ đợi.
 
-*Chúng tôi đang trong giai đoạn cuối cùng của việc chuẩn bị Testnet Alonzo đầu tiên vào cuối tháng. Theo dõi các kênh xã hội của chúng tôi trong tuần này để cập nhật. Bạn có thể thử [Plutus Playground](https://playground.plutus.iohkdev.io/) cho chính mình và tham gia [các cuộc thảo luận của Plutus](https://forum.cardano.org/c/developers/cardano-plutus/148) tại Diễn đàn Cardano. Ngoài ra còn có một kho lưu trữ [Plutus GitHub](https://github.com/input-output-hk/plutus). Bạn có thể [đăng ký theo sở thích của mình](https://input-output.typeform.com/to/gQ0t9ep5) và tham gia [cộng đồng Slack](https://iohkdevcommunity.slack.com/join/shared_invite/zt-mdvb06fr-8Tv8pjl~iR0~lGrimqK_yg#/shared-invite/email) của chúng tôi. Bài này được dịch bởi Nguyễn Văn Tú, Review bởi Quang Pham, Biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/12/developers-add-muscle-to-plutus-smart-contracts-on-cardano-for-defi). *Dự án này được tài trợ bởi Catalyst**
+*Chúng tôi đang trong giai đoạn cuối cùng của việc chuẩn bị Testnet Alonzo đầu tiên vào cuối tháng. Theo dõi các kênh xã hội của chúng tôi trong tuần này để cập nhật. Bạn có thể thử [Plutus Playground](https://playground.plutus.iohkdev.io/) cho chính mình và tham gia [các cuộc thảo luận của Plutus](https://forum.cardano.org/c/developers/cardano-plutus/148) tại Diễn đàn Cardano. Ngoài ra còn có một kho lưu trữ [Plutus GitHub](https://github.com/input-output-hk/plutus). Bạn có thể [đăng ký theo sở thích của mình](https://input-output.typeform.com/to/gQ0t9ep5) và tham gia [cộng đồng Slack](https://iohkdevcommunity.slack.com/join/shared_invite/zt-mdvb06fr-8Tv8pjl~iR0~lGrimqK_yg#/shared-invite/email) của chúng tôi.*
 
 ![Dòng thời gian: Sơ lược về lịch sử Plutus trên Cardano](img/2021-05-12-developers-add-muscle-to-plutus-smart-contracts-on-cardano-for-defi.010.png)
+
+Bài này được dịch bởi Nguyễn Văn Tú, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/12/developers-add-muscle-to-plutus-smart-contracts-on-cardano-for-defi). 
+ 
+ *Dự án này được tài trợ bởi Catalyst*

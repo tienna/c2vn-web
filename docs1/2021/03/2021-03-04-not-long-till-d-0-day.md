@@ -85,4 +85,9 @@ Với sự tăng giá của ada, triển khai các token gốc và dự đoán c
 
 Các nhà nghiên cứu và nhà phân tích của chúng tôi cũng đang làm việc với một nhóm tư vấn kinh tế bên ngoài để chính thức hóa cách tiếp cận tối ưu nhằm đảm bảo phí sẽ duy trì ổn định và có thể dự đoán được trong thời gian dài hơn. Kết quả của đánh giá này sẽ bao gồm một mô hình quản trị với nhiệm vụ rõ ràng về thời điểm và cách thức xác định phí trong tương lai khi chúng tôi phát triển, tối ưu hóa và mở rộng mạng lưới. Chúng tôi sẽ đảm bảo cộng đồng được thông báo và tham gia khi chúng tôi phát triển ý tưởng .
 
-*Tôi muốn cảm ơn và ghi nhận ý kiến đóng góp của Francisco Landino, Lars Brünjes, Aikaterini-Panagiota Stouka, Aggelos Kiayias và Tim Harrison ​​cho bài viết và cảm ơn sự phản hồi của họ trong cả bài viết.Bài này được dịch bởi Thanhtintran, Review bởi Pham Quang, biên tập bởi ... Bài viết nguồn [tại đây]https://iohk.io/en/blog/posts/2021/03/04/not-long-till-d-0-day/*Dự án này được tài trợ bởi Catalyst**
+*Tôi muốn cảm ơn và ghi nhận ý kiến đóng góp của Francisco Landino, Lars Brünjes, Aikaterini-Panagiota Stouka, Aggelos Kiayias và Tim Harrison ​​cho bài viết và cảm ơn sự phản hồi của họ trong cả bài viết.*
+
+Bài này được dịch bởi Thanhtintran, Review bởi Pham Quang, biên tập bởi Nguyễn Hiệu
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/04/not-long-till-d-0-day/)
+ 
+ *Dự án này được tài trợ bởi Catalyst*

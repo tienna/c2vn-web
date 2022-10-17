@@ -1,4 +1,4 @@
-# IOG tài trợ 4,5 triệu đô la thành lập trung tâm nghiên cứu blockchain tại Đại học Stanford.
+# IOG tài trợ 4.5 triệu đô la thành lập trung tâm nghiên cứu blockchain tại Đại học Stanford.
 
 ### **Input Output Global tự hào thông báo quan hệ đối tác với Đại học Stanford danh tiếng để tài trợ cho nghiên cứu blockchain**
 
@@ -72,4 +72,10 @@ Lời kêu gọi đề xuất đầu tiên sẽ mở vào tháng 9 năm 2022 và
 
 Sự hợp tác với Stanford - một trong những cơ sở giáo dục và nghiên cứu hàng đầu thế giới - thể hiện một bước đi hợp lý trong công việc do IOG bắt đầu.
 
-Tìm hiểu thêm về công việc của IOG trên Cardano bằng cách đọc [bài tổng quan về nghiên cứu nền tảng của blockchain](https://iohk.io/en/blog/posts/page-4/#blog-posts).<br><br><br><br>Bài này được dịch bởi Thái Ngô, Review bởi Quang Pham. <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2022/08/30/input-output-global-s-4-5m-blockchain-research-hub-at-stanford-university/">với bài gốc</a>(https://iohk.io/en/blog/posts/2022/08/30/input-output-global-s-4-5m-blockchain-research-hub-at-stanford-university/)<br><em>Dự án này được tài trợ bởi Catalyst</em>
+Tìm hiểu thêm về công việc của IOG trên Cardano bằng cách đọc [bài tổng quan về nghiên cứu nền tảng của blockchain](https://iohk.io/en/blog/posts/page-4/#blog-posts).
+
+Bài này được dịch bởi Thái Ngô, Review bởi Quang Pham, đăng bài bởi Nguyễn Hiệu.
+
+ Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2022/08/30/input-output-global-s-4-5m-blockchain-research-hub-at-stanford-university)
+ 
+*Dự án này được tài trợ bởi Catalyst*

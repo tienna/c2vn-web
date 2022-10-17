@@ -62,4 +62,8 @@ Khi các đề xuất đã sẵn sàng, một nhóm chuyên gia đánh giá, đ�
 
 Vòng cấp vốn Fund2 đã tạo ra sự sáng tạo đáng kinh ngạc và các đề xuất chất lượng, một trong số đó sẽ sớm được cấp vốn. Chúng tôi mong đợi những điều tuyệt vời hơn nữa từ vòng cấp vốn Fund3 khi chúng tôi bắt đầu xây dựng một hệ sinh thái DApp phát triển mạnh mẽ trên blockchain Cardano. Chúng tôi gọi dự án Catalyst là một “trải nghiệm” và chúng tôi dự định sẽ khuyến khích tinh thần này trong một khoảng thời gian sắp tới. Nhưng ý định của chúng tôi là rất thực tế và rất kiên quyết. Mỗi tuần trôi qua đều mang đến những cơ hội để cải thiện và tinh chỉnh chương trình đột phá này cho và với cộng đồng Cardano.
 
-*Tham gia cùng chúng tôi trong việc phát triển quản trị chuỗi của Cardano bằng cách đăng ký nền tảng cộng tác [IdeaScale](https://cardano.ideascale.com/) và kênh Catalyst [Telegram](https://t.me/cardanocatalyst) chuyên dụng của chúng tôi. Bài này được dịch bởi minh-hieu-102, Review và đăng bài bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/06/project-catalyst-blasts-off-into-2021/)*
+*Tham gia cùng chúng tôi trong việc phát triển quản trị chuỗi của Cardano bằng cách đăng ký nền tảng cộng tác [IdeaScale](https://cardano.ideascale.com/) và kênh Catalyst [Telegram](https://t.me/cardanocatalyst) chuyên dụng của chúng tôi. 
+
+Bài này được dịch bởi minh-hieu-102, Review và đăng bài bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/06/project-catalyst-blasts-off-into-2021/)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -37,4 +37,9 @@ Chính phủ Ethiopia đang cung cấp cho năm triệu giáo viên và học si
 
 Từ lâu, chúng tôi đã nhận ra rằng các quốc gia đang phát triển có thể được hưởng lợi từ công nghệ blockchain vì họ thiếu các hệ thống kỹ thuật số và thực tế là các blockchain có chi phí thấp hơn so với cơ sở hạ tầng cồng kềnh. Do đó, chúng tôi đã làm việc với các chính phủ khác về việc sử dụng blockchain để số hóa các dịch vụ công, bao gồm một dự án với Bộ Giáo dục Georgia đi tiên phong trong việc sử dụng các sản phẩm Atala để củng cố một hệ thống dựa trên blockchain để xác minh bằng cấp sau đại học. Vào năm 2019, chúng tôi cũng đã thực hiện một chương trình đào tạo phát triển phần mềm tiên phong dành cho tất cả nữ giới tập trung vào các giải pháp blockchain.
 
-*Thông báo hợp tác của chúng tôi với chính phủ Ethiopia là bước đầu tiên mang tính đột phá trong sứ mệnh giúp thúc đẩy chuyển đổi kỹ thuật số phi tập trung ở châu Phi. Hãy nhớ tham gia chương trình [#CardanoAfrica](https://africa.cardano.org/) của chúng tôi vào ngày 29 tháng 4 để tìm hiểu thêm về công việc rộng lớn của chúng tôi trên lục địa này, bao gồm thông báo về các đối tác mới.<br><br>Bài này được dịch bởi Thanhtintran, soát xét bởi Brit Nguyễn.<a>với bài gốc</a><br><em>https://iohk.io/en/blog/posts/2021/04/27/blockchain-finally-comes-of-age-with-worlds-biggest-blockchain-deployment/<br><br>Dự án này được tài trợ bởi Catalyst.</em>*
+*Thông báo hợp tác của chúng tôi với chính phủ Ethiopia là bước đầu tiên mang tính đột phá trong sứ mệnh giúp thúc đẩy chuyển đổi kỹ thuật số phi tập trung ở châu Phi. Hãy nhớ tham gia chương trình [#CardanoAfrica](https://africa.cardano.org/) của chúng tôi vào ngày 29 tháng 4 để tìm hiểu thêm về công việc rộng lớn của chúng tôi trên lục địa này, bao gồm thông báo về các đối tác mới.*
+
+Bài này được dịch bởi Thanhtintran, review bởi Brit Nguyễn, Đăng bài bởi Nguyễn Hiệu
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/04/27/blockchain-finally-comes-of-age-with-worlds-biggest-blockchain-deployment)
+
+*Dự án này được tài trợ bởi Catalyst*

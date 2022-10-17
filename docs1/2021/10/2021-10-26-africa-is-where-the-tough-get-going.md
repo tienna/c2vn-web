@@ -104,6 +104,8 @@ Việc tạo nên chính phủ phi tập trung thực sự rất khó bởi vì 
 
 Đây là mặt trái với đầy những vấn đề khó khăn. Một số người tin rằng bạn có thể làm điều đó trực tiếp trên chuỗi (on-chain); những người khác nói rằng bạn không thể. Tôi sẽ thất vọng nếu chúng ta không đạt được thành tựu theo đúng tiến độ vào năm 2030. Giờ đây, sự tiến bộ không có nghĩa là bạn đã giải quyết được nó. Các blockchain đang chuyển từ hệ thống đồng nhất sang hệ thống không đồng nhất. Thiết kế phản chiếu sinh học (mirrors biology); thiết kế phản chiếu sự sống (mirrors life). Bạn cần phân biệt tế bào, bạn cần tế bào mắt và tế bào tai. Tương tự, một blockchain sẽ vô dụng nếu bạn không có sự đồng nhất vì bạn cần sử dụng nó cho hồ sơ y tế, hệ thống bỏ phiếu, ứng dụng viễn thông và mọi giao dịch với người sử dụng đều có sự khác biệt.
 
-Bài này được dịch bởi Max Long Review bởi Pham Quang, biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/10/26/africa-is-where-the-tough-get-going)
+Bài này được dịch bởi Max Long Review bởi Pham Quang, biên tập bởi Nguyễn Hiệu. 
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/10/26/africa-is-where-the-tough-get-going)
 
 *Dự án này được tài trợ bới Catalyst*

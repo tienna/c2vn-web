@@ -1,4 +1,4 @@
-# Bản thử nghiệm Mithril giờ đã là mã nguồn mở
+# Mithril bằng chứng POC hiện là mã nguồn mở
 
 ### **Mithril là một sơ đồ chữ ký dựa trên cổ phần giúp cải thiện tốc độ và hiệu quả của thời gian đồng bộ hóa cho các node tham gia mạng. Tìm hiểu cách tham gia**
 
@@ -51,4 +51,10 @@ Hiện tại, nhóm đang ở giai đoạn cuối cùng của quá trình tối 
 
 [Kho lưu trữ Mithril hiện là nguồn mở](https://github.com/input-output-hk/mithril) . Nếu bạn muốn tìm hiểu thêm, hãy xem [tài liệu chứng minh khái niệm của Mithril](https://mithril.network/doc/) và tham gia [kênh Discord](https://discord.gg/WmSVtQ5PjZ) này để thảo luận thêm.
 
-*Bài đăng trên blog này đã được chuẩn bị với sự hợp tác của Arnaud Bailly và Jean-Philippe Raynaud.<br><br><br>Bài này được dịch bởi Thái Ngô, review bởi tienna với [bài gốc](https://iohk.io/en/blog/posts/2022/08/29/mithril-proof-of-concept-is-now-open-source/)<br><em>Dự án này được tài trợ bởi Catalyst</em>*
+*Bài đăng trên blog này đã được chuẩn bị với sự hợp tác của Arnaud Bailly và Jean-Philippe Raynaud.
+
+Bài này được dịch bởi Thái Ngô, review bởi tienna, đắng bài bởi Nguyễn Hiệu
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2022/08/29/mithril-proof-of-concept-is-now-open-source/)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -63,4 +63,10 @@ Các đề xuất được tài trợ cũng có thể được thêm lợi ích 
 
 *Project Catalyst tổ chức các cuộc gặp gỡ (online) qua Town Halls hàng tuần để cộng đồng tìm hiểu thêm về quỹ, đặt câu hỏi và chia sẻ các ý tưởng liên quan tới dự án trong các phòng họp nhỏ của Town Halls.*
 
-*Bạn có thể [đăng ký để tham gia các cuộc họp của Town Halls tại đây](https://bit.ly/3rCicSR), đăng nhập [Telegram](https://t.me/cardanocatalyst) hoặc đăng ký vào [danh sách nhận email](https://bit.ly/3dSZJvx) để nhận được các thông báo. Bài này được dịch bởi Max Long, Review và biên tập bởi  Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/08/13/project-catalyst-fund-6-our-biggest-boldest-and-best-cardano-community-innovation-fund-yet/)*
+*Bạn có thể [đăng ký để tham gia các cuộc họp của Town Halls tại đây](https://bit.ly/3rCicSR), đăng nhập [Telegram](https://t.me/cardanocatalyst) hoặc đăng ký vào [danh sách nhận email](https://bit.ly/3dSZJvx) để nhận được các thông báo.* 
+
+Bài này được dịch bởi Max Long, Review và biên tập bởi  Nguyễn Hiệu. 
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/08/13/project-catalyst-fund-6-our-biggest-boldest-and-best-cardano-community-innovation-fund-yet/)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -45,4 +45,9 @@ Thành tựu này sẽ khuyến khích các nhà phát triển và doanh nghiệ
 
 Quan hệ đối tác của IOHK với RV thể hiện cam kết đổi mới và mở rộng Cardano tới một cộng đồng phát triển rộng rãi nhất có thể. Việc triển khai KEVM / IELE sẽ mở rộng phạm vi tiếp cận và khả năng tương tác của Cardano bằng cách tạo ra các con đường hợp tác mới dẫn đến việc khám phá các ý tưởng, khái niệm và phát triển công nghệ mới trong bối cảnh môi trường 'đúng theo xây dựng'.
 
-*Bạn có thể đọc thêm từ Alex tại trang cộng đồng Cardano [Adapulse](https://adapulse.io/) .<br><br>Bài viết này được dịch bởi thanhphien273, được soát xét bởi Brit Nguyễn. Link bài gốc tại: https://iohk.io/en/blog/posts/2021/05/10/runtime-verification-iele-from-interoperability-to-universality/<br><br>Dự án này được tài trợ bởi Catalyst.*
+*Bạn có thể đọc thêm từ Alex tại trang cộng đồng Cardano [Adapulse](https://adapulse.io/).*
+
+
+Bài viết này được dịch bởi thanhphien273, review bởi Brit Nguyễn, Đăng bài bởi Nguyễn Hiệu. 
+Link bài gốc [tại đây](https://iohk.io/en/blog/posts/2021/05/10/runtime-verification-iele-from-interoperability-to-universality)
+*Dự án này được tài trợ bởi Catalyst.*

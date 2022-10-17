@@ -1,4 +1,4 @@
-# Tài chính ngang hàng với Marlowe
+# Tài chính ngang hàng (P2P) với Marlowe
 
 ### **Marlowe phi tập trung các công cụ tài chính cho phép mọi người tạo và thực hiện các thỏa thuận tài chính ngang hàng**
 
@@ -59,4 +59,10 @@ Marlowe dành cho người dùng cuối sẽ triển khai theo từng giai đo�
 
 Chúng tôi cam kết cung cấp bộ sản phẩm này cho hệ sinh thái Marlowe nhằm trao quyền cho mọi người trên toàn cầu xây dựng, kiểm soát và thực thi các công cụ tài chính của riêng họ theo các điều kiện của họ.
 
-*Chúng tôi đang lên kế hoạch cho một loạt hội thảo trên web về tài chính phi tập trung với Marlowe (bắt đầu từ ngày 3 tháng 6), bạn có thể [đăng ký trên trang web](https://webinar.marlowe-finance.io/) của chúng tôi để tham gia các hội thảo trên website ngay bây giờ!<br><br><br>Bài này được dịch bởi Thanhtintran, soát xét bởi Brit Nguyễn, <a>với bài gốc https://iohk.io/en/blog/posts/2021/05/26/reimagining-peer-to-peer-finance-with-marlowe/</a><br><em>Dự án này được tài trợ bởi Catalyst.</em>*
+*Chúng tôi đang lên kế hoạch cho một loạt hội thảo trên web về tài chính phi tập trung với Marlowe (bắt đầu từ ngày 3 tháng 6), bạn có thể [đăng ký trên trang web](https://webinar.marlowe-finance.io/) của chúng tôi để tham gia các hội thảo trên website ngay bây giờ!
+
+Bài này được dịch bởi Thanhtintran, Review bởi Brit Nguyễn,đăng bài bởi Nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/05/26/reimagining-peer-to-peer-finance-with-marlowe)
+
+*Dự án này được tài trợ bởi Catalyst.*

@@ -29,4 +29,10 @@ Lừa đảo là một vấn đề ngày càng nhức nhối với ngành công 
 
 Atala SCAN đang định hình lại cách ngành công nghiệp rượu chống lại các sản phẩm giả mạo. Bằng cách lưu trữ hồ sơ xác thực và an toàn về các thành phần trong suốt quá trình sản xuất, nó có thể loại bỏ hàng giả hoặc các chất độc hại đang được đưa vào rượu.
 
-SCAN là một phần của Atala của Input Output, hiện đã được áp dụng trong quan hệ đối tác blockchain lớn nhất từ trước đến nay. Dự án tiên phong với ngành giáo dục Ethiopia sẽ cung cấp cho 5 triệu học sinh danh tính kỹ thuật số có thể xác minh ngay lập tức. Chúng sẽ được sử dụng để xác minh điểm số, giám sát hiệu suất của trường học và thúc đẩy giáo dục và việc làm trên toàn quốc. Bài này được dịch bởi Thanhtintran, Review bởi Quang Pham, Biên tập bởi ... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/25/spirit-maker-strait-brands-chooses-cardano-to-verify-supply-chain/) *Dự án được tài trợ bởi Catalyst*
+SCAN là một phần của Atala của Input Output, hiện đã được áp dụng trong quan hệ đối tác blockchain lớn nhất từ trước đến nay. Dự án tiên phong với ngành giáo dục Ethiopia sẽ cung cấp cho 5 triệu học sinh danh tính kỹ thuật số có thể xác minh ngay lập tức. Chúng sẽ được sử dụng để xác minh điểm số, giám sát hiệu suất của trường học và thúc đẩy giáo dục và việc làm trên toàn quốc. 
+
+Bài này được dịch bởi Thanhtintran, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu.
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/25/spirit-maker-strait-brands-chooses-cardano-to-verify-supply-chain/) 
+
+*Dự án được tài trợ bởi Catalyst*

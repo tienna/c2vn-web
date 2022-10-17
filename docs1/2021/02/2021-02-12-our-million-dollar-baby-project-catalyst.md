@@ -30,4 +30,9 @@ Trong vòng chưa đầy nửa năm, Project Catalyst đã phát triển thành 
 
 *Nếu bạn là người nắm giữ ada và bạn muốn tạo ảnh hưởng và đóng góp vào định hướng tương lai cho Cardano, hãy mang ý tưởng của bạn đến và tham gia với chúng tôi tại [Project Catalyst](https://cardano.ideascale.com/a/index).*
 
-** Xin lưu ý, do lỗi chỉnh sửa, phiên bản trước của bài blog này đã tuyên bố sai rằng việc đăng ký **và** bỏ phiếu của cử tri sẽ được đưa vào bản phát hành sắp tới của Daedalus. Chúng tôi chân thành xin lỗi vì sự nhầm lẫn này.<br>Bài này được dịch bởi Lê Nguyên, Review bởi Pham Quang, biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/12/our-million-dollar-baby-project-catalyst/)<br>*Dự án này được tài trợ bởi Catalyst**
+** Xin lưu ý, do lỗi chỉnh sửa, phiên bản trước của bài blog này đã tuyên bố sai rằng việc đăng ký ** và ** bỏ phiếu của cử tri sẽ được đưa vào bản phát hành sắp tới của Daedalus. Chúng tôi chân thành xin lỗi vì sự nhầm lẫn này.**
+
+Bài này được dịch bởi Lê Nguyên, Review bởi Pham Quang, biên tập bởi Nguyễn Hiệu.
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/12/our-million-dollar-baby-project-catalyst/)
+
+*Dự án này được tài trợ bởi Catalyst*

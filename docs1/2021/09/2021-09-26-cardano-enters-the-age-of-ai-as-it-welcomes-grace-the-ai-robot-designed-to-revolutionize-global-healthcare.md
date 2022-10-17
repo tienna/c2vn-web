@@ -27,4 +27,10 @@ Ben Goertzel, người tạo ra công nghệ AI cho Grace và là giám đốc �
 
 'Đây là lý do tại sao các giải pháp như Grace rất quan trọng, để chống lại sự cô đơn và giảm bớt gánh nặng cho các nhân viên tuyến đầu. Và với khả năng dẫn đầu thị trường của Cardano, cô ấy sẽ có thể mở rộng quy mô để đáp ứng thách thức toàn cầu này.'
 
-'Khi chúng tôi dần tăng cường khả năng thông minh tổng quát của Grace trong vài năm tới, cô ấy sẽ có thể phục vụ ngày càng nhiều chức năng có giá trị hơn trong không gian chăm sóc sức khỏe người cao tuổi và trong y tế - ngày càng học hỏi nhiều hơn về nhân loại và tiếp thu các giá trị nhân văn khi cô ấy đi vào hoạt động.'<br><br><br><br>Bài này được dịch bởi Lê Nguyên. Review bởi tienna <a>với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em><br>https://iohk.io/en/blog/posts/2021/09/26/cardano-enters-the-age-of-ai-as-it-welcomes-grace-the-ai-robot-designed-to-revolutionize-global-healthcare/
+'Khi chúng tôi dần tăng cường khả năng thông minh tổng quát của Grace trong vài năm tới, cô ấy sẽ có thể phục vụ ngày càng nhiều chức năng có giá trị hơn trong không gian chăm sóc sức khỏe người cao tuổi và trong y tế - ngày càng học hỏi nhiều hơn về nhân loại và tiếp thu các giá trị nhân văn khi cô ấy đi vào hoạt động.'
+
+Bài này được dịch bởi Lê Nguyên. Review bởi tienna, đăng bài bởi Nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/09/26/cardano-enters-the-age-of-ai-as-it-welcomes-grace-the-ai-robot-designed-to-revolutionize-global-healthcare)
+
+*Dự án này được tài trợ bởi Catalyst* 

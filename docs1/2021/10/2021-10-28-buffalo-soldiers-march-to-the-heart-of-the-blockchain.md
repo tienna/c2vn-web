@@ -44,4 +44,10 @@ Một điều khác mà Hoskinson thích ở trò chơi này là người chơi 
 
 (* Trường quốc gia chuyên về trò chơi và phương tiện tương tác kỹ thuật số)
 
-Hãy cập nhật tất cả các thông tin từ trang web [Cardano Summit 2021](https://summit.cardano.org/) và [IOHK’s Twitter](https://twitter.com/InputOutputHK).<br><br><br><br>Bài này được dịch bởi Chitk, review bởi Quang Pham. <a class="_active_edit_href" href="https://iohk.io/en/blog/posts/2021/10/28/buffalo-soldiers-march-to-the-heart-of-the-blockchain/">với bài gốc</a> (https://iohk.io/en/blog/posts/2021/10/28/buffalo-soldiers-march-to-the-heart-of-the-blockchain/)<br><em>Dự án này được tài trợ bởi Catalyst</em>
+Hãy cập nhật tất cả các thông tin từ trang web [Cardano Summit 2021](https://summit.cardano.org/) và [IOHK’s Twitter](https://twitter.com/InputOutputHK).
+
+Bài này được dịch bởi Chitk, review bởi Quang Pham, đăng bài bởi Nguyễn Hiệu
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/10/28/buffalo-soldiers-march-to-the-heart-of-the-blockchain)
+
+*Dự án này được tài trợ bởi Catalyst*

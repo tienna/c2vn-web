@@ -90,4 +90,10 @@ Mục tiêu của chúng tôi là hỗ trợ nhiều Token để tạo khả nă
 
 *Testnet cho bộ chuyển đổi ERC20 hiện đang trong giai đoạn cuối cùng của quá trình kiểm tra đảm bảo chất lượng trước khi khởi chạy công khai. Giai đoạn này sẽ cho phép chúng tôi kiểm tra hành trình của người dùng và cải thiện trải nghiệm của họ cùng với việc khắc phục mọi sự cố đang xảy ra. Chúng tôi cũng sẽ sớm cung cấp môi trường Testnet chuyên dụng với tài liệu và hướng dẫn liên quan về cách người dùng có thể kiểm tra khả năng của bộ chuyển đổi.*
 
-*Chúng tôi sẽ chia sẻ bản cập nhật trong chương trình Cardano 360 vào tháng 5. Trong khi đó, hãy theo dõi các [thông báo trên Twitter](https://twitter.com/InputOutputHK?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) của chúng tôi để tìm hiểu thêm trong quá trình thử nghiệm! Bài này được dịch bởi Nguyễn Văn Tú, soát xét bởi Brit Nguyễn. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/17/bringing-erc20-to-cardano). *Dự án này được tài trợ bởi Catalyst**
+*Chúng tôi sẽ chia sẻ bản cập nhật trong chương trình Cardano 360 vào tháng 5. Trong khi đó, hãy theo dõi các [thông báo trên Twitter](https://twitter.com/InputOutputHK?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) của chúng tôi để tìm hiểu thêm trong quá trình thử nghiệm! *
+
+Bài này được dịch bởi Nguyễn Văn Tú, soát xét bởi Brit Nguyễn, Đăng bài bởi Nguyễn Hiệu. 
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/05/17/bringing-erc20-to-cardano). 
+
+*Dự án này được tài trợ bởi Catalyst*

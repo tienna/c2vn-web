@@ -1,4 +1,5 @@
-# Nền tảng cho vay kỹ thuật số Nexo tích hợp vào Cardano, cho phép chủ sở hữu ada vay và kiếm tiền từ danh mục đầu tư tiền mã hóa đa dạng.
+# Nền tảng cho vay kỹ thuật số Nexo tích hợp vào Cardano
+Cho phép chủ sở hữu ada vay và kiếm tiền từ danh mục đầu tư tiền mã hóa đa dạng.
 
 ### **Mối quan hệ hợp tác gần đây nhất với một công ty tiền mã hóa hàng đầu thế giới đã mở rộng hơn nữa hệ sinh thái Cardano và đưa người dùng mới đến với ada**
 
@@ -32,4 +33,10 @@ Các tổ chức blockchain như Nexo và Cardano có rất nhiều tiềm năng
 
 Đưa Nexo vào hệ sinh thái đang phát triển của chúng tôi sẽ mang lại cho cộng đồng Cardano nhiều lựa chọn và tiện ích hơn nữa cho ada. Làm việc cùng với Nexo để giúp quá trình này thân thiện với người dùng, đặc biệt đối với những người mới sử dụng tiền mã hóa, điều này sẽ khuyến khích việc áp dụng tiền mã hóa rộng rãi hơn, đồng thời những tính năng độc đáo của Nexo là hoàn toàn phù hợp với IOHK.
 
-Nexo là một doanh nghiệp tài sản kỹ thuật số hàng đầu được quản lý với sứ mệnh tối đa hóa giá trị và tiện ích của tiền mã hóa. Họ cung cấp khả năng trao đổi, giao dịch, mua bán tức thì và một loạt các dịch vụ khác được giám sát và bảo mật tuyệt đối từ công nghệ của Ví Nexo. Hãy tìm hiểu thêm về Nexo tại [trang web](https://nexo.io) chính thức của họ.<br><br>Bài này được dịch bởi Thanhtintran, soát xét bởi Brit Nguyễn <a>với bài gốc https://iohk.io/en/blog/posts/2021/06/30/digital-lending-platform-nexo-integrates-cardano/</a><br><em>Dự án này được tài trợ bởi Catalyst</em>
+Nexo là một doanh nghiệp tài sản kỹ thuật số hàng đầu được quản lý với sứ mệnh tối đa hóa giá trị và tiện ích của tiền mã hóa. Họ cung cấp khả năng trao đổi, giao dịch, mua bán tức thì và một loạt các dịch vụ khác được giám sát và bảo mật tuyệt đối từ công nghệ của Ví Nexo. Hãy tìm hiểu thêm về Nexo tại [trang web](https://nexo.io) chính thức của họ.
+
+Bài này được dịch bởi Thanhtintran, review bởi Brit Nguyễn và đăng bài bởi Nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/06/30/digital-lending-platform-nexo-integrates-cardano)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -61,4 +61,8 @@ Bằng cách thêm dữ liệu tùy chỉnh vào đầu ra (ngoài giá trị), 
 
 ### **Kết luận: Điều gì làm cho mô hình EUTXO sáng tạo và phù hợp**
 
-Mô hình sổ cái của Cardano mở rộng mô hình UTXO để hỗ trợ đa tài sản và hợp đồng thông minh mà không ảnh hưởng đến các lợi thế quan trọng của mô hình UTXO. Nghiên cứu sáng tạo của chúng tôi cung cấp chức năng vượt xa những gì được hỗ trợ trong bất kỳ sổ cái UTXO nào khác, biến Cardano trở thành đối thủ cạnh tranh duy nhất trong lĩnh vực Blockchain thế hệ tiếp theo. Bài này được dịch bởi Nguyễn Văn Tú. review bởi tienna. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/12/cardanos-extended-utxo-accounting-model-part-2). *Dự án này được tài trợ bởi Catalyst*.
+Mô hình sổ cái của Cardano mở rộng mô hình UTXO để hỗ trợ đa tài sản và hợp đồng thông minh mà không ảnh hưởng đến các lợi thế quan trọng của mô hình UTXO. Nghiên cứu sáng tạo của chúng tôi cung cấp chức năng vượt xa những gì được hỗ trợ trong bất kỳ sổ cái UTXO nào khác, biến Cardano trở thành đối thủ cạnh tranh duy nhất trong lĩnh vực Blockchain thế hệ tiếp theo. 
+
+Bài này được dịch bởi Nguyễn Văn Tú. review bởi tienna, đăng bài bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/03/12/cardanos-extended-utxo-accounting-model-part-2). 
+
+*Dự án này được tài trợ bởi Catalyst*.

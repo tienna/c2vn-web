@@ -77,4 +77,8 @@ Vui lòng kiểm tra chương trình và nếu bạn muốn một số hỗ tr�
 
 Chúng tôi rất vui khi thấy nhiều pool ngày càng lớn mạnh. Mặt khác, chúng tôi cũng luôn lắng nghe khi một pool nhỏ hơn nói rằng họ đang ngừng hoạt động. Cùng với chương trình này, sự lựa chọn của bạn với tư cách là người ủy quyền là chìa khóa để hỗ trợ hệ sinh thái trở nên phong phú. Bởi vì ở đó có sự phát triển và có cộng đồng mà tất cả chúng ta mong muốn. Đây là những gì chúng ta làm. Là cộng đồng tiền mã hóa hàng đầu, đó là điều mà tất cả chúng ta nên tự hào.
 
-IOG cam kết về hệ sinh thái Cardano phát triển và hưng thịnh. Chúng tôi sẽ tiếp tục làm phần việc của mình. Và hãy nhớ rằng, là thành viên trong một cộng đồng, tất cả chúng ta đều cần tham gia vào công việc chung.<br><br>Bài này được dịch bởi Max Long, Review bởi Quang Pham , biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/22/our-new-delegation-strategy-announcing-the-pools-we-are-supporting/)*Dự án này được tài trợ bởi Catalyst*
+IOG cam kết về hệ sinh thái Cardano phát triển và hưng thịnh. Chúng tôi sẽ tiếp tục làm phần việc của mình. Và hãy nhớ rằng, là thành viên trong một cộng đồng, tất cả chúng ta đều cần tham gia vào công việc chung.
+
+Bài này được dịch bởi Max Long, Review bởi Quang Pham , biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/22/our-new-delegation-strategy-announcing-the-pools-we-are-supporting/)
+
+*Dự án này được tài trợ bởi Catalyst*

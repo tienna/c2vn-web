@@ -41,4 +41,10 @@ Và thêm một điều nữa, chúng tôi không thường xuyên có cơ hộ
 
 ***Tôi là một SPO. Làm thế nào để tôi tham gia?***
 
-*Mỗi tháng, chúng tôi xuất bản một bản tin 'SPO Digest' tập hợp các tin tức quan trọng cho cộng đồng nhà điều hành stake pool. Thông báo SPO tiếp theo mà chúng tôi sẽ gửi đi bao gồm khảo sát mà bạn có thể đăng ký ủy quyền. Các SPO đang tìm kiếm sự ủy quyền nên điền vào thông tin này và cũng thêm tối đa hai SPO bổ sung mà họ thấy cần được công nhận. Để nhận bản khảo sát ủy quyền, hãy đảm bảo bạn đã đăng ký vào danh sách thông báo qua [https://mailchi.mp/iohk/spodigest](https://mailchi.mp/iohk/spodigest) trước nửa đêm giờ UTC vào chủ nhật ngày 4 tháng 9. Bài này được dịch bởi Lê Nguyên, Review và đăng bài bởi Nguyễn Hiệu. Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/09/01/cardano-stake-pool-operator-delegation-a-new-round) *Dự án này được tài trợ bởi Catalyst**
+*Mỗi tháng, chúng tôi xuất bản một bản tin 'SPO Digest' tập hợp các tin tức quan trọng cho cộng đồng nhà điều hành stake pool. Thông báo SPO tiếp theo mà chúng tôi sẽ gửi đi bao gồm khảo sát mà bạn có thể đăng ký ủy quyền. Các SPO đang tìm kiếm sự ủy quyền nên điền vào thông tin này và cũng thêm tối đa hai SPO bổ sung mà họ thấy cần được công nhận. Để nhận bản khảo sát ủy quyền, hãy đảm bảo bạn đã đăng ký vào danh sách thông báo qua [https://mailchi.mp/iohk/spodigest](https://mailchi.mp/iohk/spodigest) trước nửa đêm giờ UTC vào chủ nhật ngày 4 tháng 9.*
+
+Bài này được dịch bởi Lê Nguyên, Review và đăng bài bởi Nguyễn Hiệu. 
+
+Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/09/01/cardano-stake-pool-operator-delegation-a-new-round) 
+
+*Dự án này được tài trợ bởi Catalyst*

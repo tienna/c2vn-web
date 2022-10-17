@@ -28,4 +28,10 @@ Cuối năm nay, người dùng Cardano sẽ có thể truy cập cổng phi t�
 
 Horwell nói: 'Khả năng mở rộng có tầm ảnh hưởng cực kỳ quan trọng đối với Orion để đạt được sự chấp nhận rộng rãi. Để trở thành điểm tiếp cận duy nhất vào thị trường tài sản kỹ thuật số, chúng tôi cần một cơ sở hạ tầng mạnh mẽ, có thể mở rộng để có thể xử lý hiệu quả các giao dịch”.
 
-Sàn giao dịch một cửa của Orion sẽ ra mắt trong thời gian tới. Trong thời gian này, bạn có thể tìm hiểu thêm về họ trên [trang web chính thức của họ](https://www.orionprotocol.io/) hoặc nghe thêm về bản cập nhật hàng tháng của chúng tôi. Hãy đăng ký [kênh YouTube](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) của chúng tôi và tham gia với chúng tôi vào ngày mai trong phần tiếp theo của Cardano360.<br><br><br><br>Bài này được dịch bởi Lê Nguyên, soát xét bởi Brit Nguyễn <a>với bài gốc</a><br><em>Dự án này được tài trợ bởi Catalyst</em><br>https://iohk.io/en/blog/posts/2021/06/23/orion-to-bring-one-stop-crypto-marketplace-to-cardano/
+Sàn giao dịch một cửa của Orion sẽ ra mắt trong thời gian tới. Trong thời gian này, bạn có thể tìm hiểu thêm về họ trên [trang web chính thức của họ](https://www.orionprotocol.io/) hoặc nghe thêm về bản cập nhật hàng tháng của chúng tôi. Hãy đăng ký [kênh YouTube](https://www.youtube.com/channel/UCBJ0p9aCW-W82TwNM-z3V2w) của chúng tôi và tham gia với chúng tôi vào ngày mai trong phần tiếp theo của Cardano360.
+
+Bài này được dịch bởi Lê Nguyên, review bởi Brit Nguyễn và đăng bài bởi Nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/06/23/orion-to-bring-one-stop-crypto-marketplace-to-cardano)
+
+*Dự án này được tài trợ bởi Catalyst*

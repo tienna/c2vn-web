@@ -111,4 +111,10 @@ Việc nâng cấp này được đặt tên để vinh danh đại sứ Cardano
 
 Vì vậy, điều đặc biệt thấm thía - và hoàn toàn trùng hợp - ngày 22 tháng 9 cũng là ngày kỷ niệm năm 1908 tuyên bố [độc lập của nhà nước Bulgaria](https://www.izbite.com/en/traditions-and-celebrations/traditions-and-celebrations/september-22-day-of-bulgarian-independence#:~:text=On%20September%2022%2C%201908%20in,headed%20by%20Crown%20King%20Ferdinand.) (một trong những quốc gia lâu đời nhất ở châu Âu) khỏi đế chế Ottoman. Một "sự ra đi tiếc nuối" dành cho một cộng đồng kiên định và có chủ ý cao mang lại ý nghĩa bổ sung cho các nâng cấp quan trọng nhất này.
 
-*Luôn cập nhật về tiến trình nâng cấp qua [Twitter](https://twitter.com/InputOutputHK) và [YouTube](https://www.youtube.com/c/IohkIo/videos) của IOG. Cảm ơn từ tất cả nhóm tại IOG tới Quỹ Cardano và Cộng đồng Cardano vì đã tiếp tục hỗ trợ họ. Cảm ơn Olga Hryniuk, Fernando Sanchez, Kevin Hammond, Nigel Hemsley &amp; Vitor Silva đã hỗ trợ tạo ra bài viết này.Bài này được dịch bởi minh-hieu-102, Review và đăng bài bởi Nguyễn Hiệu. Bài viết nguồn  [tại đây](https://iohk.io/en/blog/posts/2022/09/16/vasil-what-to-expect). *Dự án này được tài trợ bởi Catalyst**
+*Luôn cập nhật về tiến trình nâng cấp qua [Twitter](https://twitter.com/InputOutputHK) và [YouTube](https://www.youtube.com/c/IohkIo/videos) của IOG. Cảm ơn từ tất cả nhóm tại IOG tới Quỹ Cardano và Cộng đồng Cardano vì đã tiếp tục hỗ trợ họ. Cảm ơn Olga Hryniuk, Fernando Sanchez, Kevin Hammond, Nigel Hemsley &amp; Vitor Silva đã hỗ trợ tạo ra bài viết này.
+
+Bài này được dịch bởi minh-hieu-102, Review và đăng bài bởi Nguyễn Hiệu. 
+
+Bài viết nguồn  [tại đây](https://iohk.io/en/blog/posts/2022/09/16/vasil-what-to-expect). 
+
+*Dự án này được tài trợ bởi Catalyst*

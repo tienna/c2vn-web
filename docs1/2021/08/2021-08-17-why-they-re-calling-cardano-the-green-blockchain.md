@@ -47,4 +47,10 @@ Những hiện tượng thời tiết khắc nghiệt và cháy rừng trong nh�
 
 Vào ngày 12 tháng 12 năm 2015, 196 quốc gia đã ký Hiệp định Paris, một hiệp ước ràng buộc pháp lý nhằm hạn chế sự nóng lên toàn cầu ở mức 2C. Một cuộc chạy đua ['net-zero emissions'](https://eciu.net/netzerotracker) hiện đang được tiến hành, nhằm mục tiêu cắt giảm mạnh lượng khí thải carbon dioxide vào năm 2050. Giai đoạn tiếp theo của quá trình này là [COP26](https://ukcop26.org/), hội nghị của Liên hợp quốc tại Glasgow vào tháng 11.
 
-Khi nói đến giải quyết các vấn đề môi trường, không có câu trả lời nào dễ dàng. Cardano là một nền tảng phi tập trung có thể thay thế sự kém hiệu quả của các hệ thống cũ và kế thừa sự tối ưu. Với thông tin xác thực về tính bền vững của mình, Cardano và các giao thức proof - of - stake khác, được coi là một phần của giải pháp, thay vì góp phần vào những vấn đề của Bitcoin và Ethereum.<br><br><br>Bài này được dịch bởi Thanhtintran. <a>với bài gốc [tại đây](https://iohk.io/en/blog/posts/2021/08/17/why-they-re-calling-cardano-the-green-blockchain/)</a><br><em>Dự án này được tài trợ bởi Catalyst</em>
+Khi nói đến giải quyết các vấn đề môi trường, không có câu trả lời nào dễ dàng. Cardano là một nền tảng phi tập trung có thể thay thế sự kém hiệu quả của các hệ thống cũ và kế thừa sự tối ưu. Với thông tin xác thực về tính bền vững của mình, Cardano và các giao thức proof - of - stake khác, được coi là một phần của giải pháp, thay vì góp phần vào những vấn đề của Bitcoin và Ethereum.
+
+Bài này được dịch bởi Thanhtintran, Review và đăng bài bởi nguyễn Hiệu.
+
+Nguồn bài viết [tại đây](https://iohk.io/en/blog/posts/2021/08/17/why-they-re-calling-cardano-the-green-blockchain/)
+
+*Dự án này được tài trợ bởi Catalyst*

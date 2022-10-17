@@ -54,4 +54,8 @@ Như vậy 11 ý tưởng đã được tài trợ lần này, có một số �
 
 Chúng tôi có [kế hoạch táo bạo và đầy tham vọng](https://youtu.be/GjPhxXDFv58?t=128) cho Dự án Catalyst vào năm 2021, với khoản tiền trị giá hàng triệu USD để tài trợ cho sự đổi mới trên Cardano. Việc nộp đề xuất ở Fund3 sẽ mở vào ngày mai, đừng bỏ lỡ cơ hội để thể hiện tiếng nói của bạn.
 
-*Nếu bạn muốn tham gia cộng đồng Project Catalyst với tư cách là người đề xuất, cố vấn cộng đồng, người triển khai hoặc người bầu chọn, vui lòng tham gia với chúng tôi trên [Ideascale](https://cardano.ideascale.com/a/index) và bắt đầu đổi mới cùng với mạng lưới những người tham gia trên toàn cầu. Đăng ký kênh thông báo [Telegram](https://t.me/cardanocatalyst) để cập nhật tin tức mới nhất.Bài này được dịch bởi Max Long, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/12/project-catalyst-the-first-winning-proposals/)* 
+*Nếu bạn muốn tham gia cộng đồng Project Catalyst với tư cách là người đề xuất, cố vấn cộng đồng, người triển khai hoặc người bầu chọn, vui lòng tham gia với chúng tôi trên [Ideascale](https://cardano.ideascale.com/a/index) và bắt đầu đổi mới cùng với mạng lưới những người tham gia trên toàn cầu. Đăng ký kênh thông báo [Telegram](https://t.me/cardanocatalyst) để cập nhật tin tức mới nhất.
+
+Bài này được dịch bởi Max Long, Review và biên tập bởi Nguyễn Hiệu. Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/01/12/project-catalyst-the-first-winning-proposals/)
+
+*Dự án này được tài trợ bởi Catalyst*

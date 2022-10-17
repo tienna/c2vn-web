@@ -31,4 +31,10 @@ IOHK hoạt động trên khắp lục địa nhằm cung cấp giáo dục và 
 
 John O'Connor, giám đốc phụ trách hoạt động ở châu Phi cho biết: 'Làm việc với các doanh nghiệp ở châu Phi, tôi đã bắt gặp tinh thần kinh doanh truyền cảm hứng nhất. Tại Input Output, chúng tôi tin tưởng vào khả năng phi tập trung, có nghĩa là cho phép mọi người tiếp cận bình đẳng với nguồn tài trợ để hiện thực hóa những ý tưởng đổi mới này, giải quyết các vấn đề trên toàn thế giới'.
 
-'Dự án đầu tư này đánh dấu một cột mốc quan trọng trong sự phát triển ở châu Phi của Input Output, cho phép các ý tưởng mới nảy nở và tận dụng các cơ hội do blockchain cung cấp.'Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, Bien tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/25/blockchain-fund-injecting-6m-to-support-africa-s-pioneers/) *Dự án này được tài trợ bởi Catalyst*
+'Dự án đầu tư này đánh dấu một cột mốc quan trọng trong sự phát triển ở châu Phi của Input Output, cho phép các ý tưởng mới nảy nở và tận dụng các cơ hội do blockchain cung cấp.'
+
+Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, Bien tập bởi Nguyễn Hiệu.
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/25/blockchain-fund-injecting-6m-to-support-africa-s-pioneers/) 
+
+*Dự án này được tài trợ bởi Catalyst*

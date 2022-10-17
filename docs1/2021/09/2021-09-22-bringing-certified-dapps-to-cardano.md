@@ -66,4 +66,10 @@ Thông qua công việc trên Testnet Alonzo, chương trình Plutus Pioneer và
 
 ##### **Simon Thompson và Fernando Sanchez cũng đóng góp vào tác phẩm này.**
 
-*Tham gia với chúng tôi tại Hội nghị thượng đỉnh vào ngày 25-26 tháng 9 để tìm hiểu thêm về sáng kiến mới thú vị này và xem bản Demo của nguyên mẫu dAppStore. Bài này được dịch bởi Nguyễn Văn Tú, review bởi Quang Pham, biên tập bởi....  Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/22/bringing-certified-dapps-to-cardano). *Dự án này được tài trợ bởi Catalyst**
+*Tham gia với chúng tôi tại Hội nghị thượng đỉnh vào ngày 25-26 tháng 9 để tìm hiểu thêm về sáng kiến mới thú vị này và xem bản Demo của nguyên mẫu dAppStore.*
+
+Bài này được dịch bởi Nguyễn Văn Tú, review bởi Quang Pham, biên tập bởiNguyễn Hiệu.
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/22/bringing-certified-dapps-to-cardano). 
+
+*Dự án này được tài trợ bởi Catalyst*

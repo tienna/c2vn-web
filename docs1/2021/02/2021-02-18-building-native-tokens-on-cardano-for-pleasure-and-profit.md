@@ -134,4 +134,10 @@ Vì vậy, rất nhiều điều sẽ xảy ra vào cuối tháng 2 và đầu t
 
 *Tìm hiểu thêm bằng cách tham gia cùng các thành viên cộng đồng khác để thảo luận về token gốc trong [phần dành riêng cho token](https://forum.cardano.org/c/developers/cardano-tokens/150) của Diễn đàn Cardano. Và đừng quên đăng ký [chương trình devnets](https://input-output.typeform.com/c/OJsf0XcD) của chúng tôi.*
 
-*Bài viết có bổ sung yếu tố kỹ thuật của Olga Hryniuk.<br><br><br>Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi .... Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/18/building-native-tokens-on-cardano-for-pleasure-and-profit/) *Dự án này được tài trợ bởi Catalyst**
+Bài viết có bổ sung yếu tố kỹ thuật của Olga Hryniuk.
+
+Bài này được dịch bởi Max Long, Review bởi Quang Pham, biên tập bởi Nguyễn Hiệu.
+
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/02/18/building-native-tokens-on-cardano-for-pleasure-and-profit/) 
+ 
+ *Dự án này được tài trợ bởi Catalyst*

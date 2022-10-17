@@ -61,4 +61,10 @@ Sự kiện hard fork Alonzo sẽ giới thiệu các miếng ghép nền tảng
 
 Nếu bạn là một nhà phát triển, hãy tham gia [cộng đồng Discord](https://discord.gg/ScxDkrxpBg) của chúng tôi và [Project Catalyst](https://cardano.ideascale.com/a/index) nếu bạn đang tìm nguồn tài trợ cho dự án của mình.
 
-*Tôi xin cảm ơn [Lars Brünjes](https://github.com/brunjlar) , [Jann Müller](https://github.com/j-mueller) và [Manuel Chakravarty](https://github.com/mchakravarty) vì những đóng góp và hỗ trợ kỹ thuật của họ trong quá trình chuẩn bị bài đăng này.<br>Bài này được dịch bởi Hoàng Tâm, review bởi Quang Pham , biên tập bởi . Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/10/concurrency-and-all-that-cardano-smart-contracts-and-the-eutxo-model/)*Dự án này được tài trợ bởi Catalyst**
+*Tôi xin cảm ơn [Lars Brünjes](https://github.com/brunjlar) , [Jann Müller](https://github.com/j-mueller) và [Manuel Chakravarty](https://github.com/mchakravarty) vì những đóng góp và hỗ trợ kỹ thuật của họ trong quá trình chuẩn bị bài đăng này.*
+
+Bài này được dịch bởi Hoàng Tâm, review bởi Quang Pham , biên tập bởi Nguyễn Hiệu.
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/10/concurrency-and-all-that-cardano-smart-contracts-and-the-eutxo-model/)
+
+*Dự án này được tài trợ bởi Catalyst*

@@ -43,4 +43,10 @@ Sergey Nazarov, người đồng sáng lập Chainlink, cho biết: “Chúng t�
 
 Niki Ariyasinghe, người đứng đầu quan hệ đối tác blockchain tại Chainlink Labs, cho biết: “Chúng tôi vô cùng tôn trọng hệ sinh thái Cardano. Không những là đối với đội ngũ kỹ thuật đằng sau Cardano – IOG, mà còn đối với sự hợp tác của cộng đồng."
 
-Ariyasinghe nói thêm: "Khả năng tương thích crosschain là một mục tiêu dài hạn khác. Đây thực sự là một khuôn khổ để tạo cầu nối giữa các chuỗi khác nhau và tạo điều kiện cho một thế giới đa chuỗi. Vì vậy, đây là điều mà chúng tôi hy vọng sẽ hợp tác với hệ sinh thái Cardano. Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, Biên tập bởi .... Bài viết nguồn <a>tại đây</a> (https://iohk.io/en/blog/posts/2021/09/25/cardano-to-integrate-chainlink-oracles-for-real-time-market-data/) *Dự án được tài trợ bởi Catalyst*
+Ariyasinghe nói thêm: "Khả năng tương thích crosschain là một mục tiêu dài hạn khác. Đây thực sự là một khuôn khổ để tạo cầu nối giữa các chuỗi khác nhau và tạo điều kiện cho một thế giới đa chuỗi. Vì vậy, đây là điều mà chúng tôi hy vọng sẽ hợp tác với hệ sinh thái Cardano. 
+
+Bài này được dịch bởi Lê Nguyên, Review bởi Quang Pham, Biên tập bởi Nguyễn Hiệu.
+
+Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/09/25/cardano-to-integrate-chainlink-oracles-for-real-time-market-data/) 
+
+*Dự án được tài trợ bởi Catalyst*

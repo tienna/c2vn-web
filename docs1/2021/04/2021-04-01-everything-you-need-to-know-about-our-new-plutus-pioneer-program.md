@@ -55,4 +55,10 @@ Chúng tôi sẽ khen thưởng những người tham gia vì những nỗ lực
 
 ## **Sẵn sàng để bắt đầu**
 
-Chúng tôi rất vui mừng khi có rất nhiều nhà phát triển từ hệ sinh thái của chúng ta tham gia, họ sẵn sàng bắt đầu và tìm hiểu  về chương trình Plutus. Bạn sẽ không chỉ tự học mà còn đóng vai trò là người tiên phong giúp chúng tôi xác định cách tốt nhất để giảng dạy và cung cấp khóa học này - thực sự giúp mở đường cho những người đăng ký học trong tương lai! Chúng tôi mong được đưa bạn vào hành trình học tập này trước khi chúng tôi giới thiệu Plutus ra thế giới!<br><br><br><br>Bài này được dịch bởi minh-hieu-102, Review bới tienna đăng bài bởi .... Bài viết nguồn tại đây https://iohk.io/en/blog/posts/2021/04/01/everything-you-need-to-know-about-our-new-plutus-pioneer-program/
+Chúng tôi rất vui mừng khi có rất nhiều nhà phát triển từ hệ sinh thái của chúng ta tham gia, họ sẵn sàng bắt đầu và tìm hiểu  về chương trình Plutus. Bạn sẽ không chỉ tự học mà còn đóng vai trò là người tiên phong giúp chúng tôi xác định cách tốt nhất để giảng dạy và cung cấp khóa học này - thực sự giúp mở đường cho những người đăng ký học trong tương lai! Chúng tôi mong được đưa bạn vào hành trình học tập này trước khi chúng tôi giới thiệu Plutus ra thế giới!
+
+Bài này được dịch bởi minh-hieu-102, Review bới tienna đăng bài bởi Nguyễn Hiệu
+
+ Bài viết nguồn [tại đây](https://iohk.io/en/blog/posts/2021/04/01/everything-you-need-to-know-about-our-new-plutus-pioneer-program/)
+ 
+ *Dự án này được tài trợ bởi Catalyst*

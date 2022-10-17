@@ -1,4 +1,4 @@
-# Phí ổn định và Hệ thống dự trữ phi tập trung
+# Phí ổn định(Stablefee) và Hệ thống dự trữ phi tập trung
 
 ### **Khám phá một cơ chế mới để giúp các khoản phí trở nên công bằng, ổn định và dễ dự đoán hơn theo thời gian**
 
@@ -59,4 +59,9 @@ Cơ chế trên yêu cầu một hợp đồng dự trữ phi tập trung và vi
 
 ### **Công việc tiếp theo**
 
-Nhóm của chúng tôi hiện đang nghiên cứu các chi tiết cụ thể của cơ chế Stablefees. Sau khi nghiên cứu này hoàn tất, Stablefees có thể được tích hợp vào Cardano để đưa ra giá giao dịch công bằng và có thể dự đoán được. Hơn nữa, oracle về giá  và BEC toàn cầu (và các biến thể khu vực, nếu được bao gồm) chắc chắn sẽ tìm thấy các công dụng ngoài việc trả phí giao dịch, mở rộng khả năng của các ứng dụng phi tập trung trong hệ sinh thái Cardano. Bài này được dịch bởi LinhPool, Review bởi Quang Pham và biên tập bởi ... Nguồn bài dịch [tại đây] https://iohk.io/en/blog/posts/2021/06/10/stablefees-and-the-decentralized-reserve-system/) *Dự án này được tài trợ bới Catalyst*
+Nhóm của chúng tôi hiện đang nghiên cứu các chi tiết cụ thể của cơ chế Stablefees. Sau khi nghiên cứu này hoàn tất, Stablefees có thể được tích hợp vào Cardano để đưa ra giá giao dịch công bằng và có thể dự đoán được. Hơn nữa, oracle về giá  và BEC toàn cầu (và các biến thể khu vực, nếu được bao gồm) chắc chắn sẽ tìm thấy các công dụng ngoài việc trả phí giao dịch, mở rộng khả năng của các ứng dụng phi tập trung trong hệ sinh thái Cardano. 
+
+Bài này được dịch bởi LinhPool, Review bởi Quang Pham và biên tập bởi Nguyễn Hiệu.
+Nguồn bài dịch [tại đây](https://iohk.io/en/blog/posts/2021/06/10/stablefees-and-the-decentralized-reserve-system/) 
+
+*Dự án này được tài trợ bới Catalyst*
