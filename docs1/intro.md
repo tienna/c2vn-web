@@ -27,7 +27,20 @@ Các bài đã dịch năm 2022
 
 ## Các bài đã dịch năm 2022
 
+### Bài viết trong tháng 09 năm 2022
+>[Zk-SNARKs: thiết lập có thể cập nhật trên blockchain](https://cardano2vn.io/docs1/2022/09/2022-09-01-zk-snarks-updatable-setups-on-the-blockchain)
+>
+>[Cải tiến định danh kỹ thuật số thông qua đặc tả cốt lõi của DID](https://cardano2vn.io/docs1/2022/09/2022-09-08-advancing-digital-identity-through-did-core-specification)
+>
+>[Có gì mới trong bản cập nhật Vasil ngày 22 tháng 9 năm 2022](https://cardano2vn.io/docs1/2022/09/2022-09-16-vasil-what-to-expect)
+
+
 ### Bài viết trong tháng 08 năm 2022
+
+>[ Mithril bằng chứng POC hiện là mã nguồn mở](https://cardano2vn.io/docs1/2022/08/2022-08-29-mithril-proof-of-concept-is-now-open-source)
+>
+>[IOG tài trợ 4.5 triệu đô la thành lập trung tâm nghiên cứu blockchain tại Đại học Stanford](https://cardano2vn.io/docs1/2022/08/2022-08-30-input-output-global-s-4-5m-blockchain-research-hub-at-stanford-university)
+>
 >[Giải thích về Ofelimos](https://cardano2vn.io/docs1/2022/08/2022-08-18-ofelimos-explained)
 >
 >[Kachina: hợp đồng thông minh bảo vệ quyền riêng tư](https://cardano2vn.io/docs1/2022/08/2022-08-05-kachina-privacy-preserving-smart-contracts/)
@@ -55,6 +68,8 @@ Các bài đã dịch năm 2022
  >[Dữ liệu Cardano trên BigQuery](https://cardano2vn.io/docs1/2022/07/2022-07-01-cardano-data-on-bigquery/)
  
 ### Bài viết trong tháng 06 năm 2022
+
+>[Tương lai của Quy định tài sản kỹ thuật số](https://cardano2vn.io/docs1/2022/06/2022-06-23-future-of-digital-asset-regulation-testimony-of-charles-hoskinson)
 >
 >[Cập nhật về nâng cấp Vasil](https://cardano2vn.io/docs1/2022/06/2022-06-20-vasil-upgrade-the-state-of-play)
 >
@@ -182,6 +197,12 @@ Các bài đã dịch năm 2021
 >
 >[Liên minh UTXO: Thúc đẩy sự đổi mới và hợp tác trong lĩnh vực Blockchain](https://cardano2vn.io/docs1/2021/10/2021-10-15-utxo-alliance-fostering-innovation-and-collaboration-across-the-blockchain-space)
 >
+>[Cardano: Mạnh mẽ, Bền bỉ và Linh hoạt](https://cardano2vn.io/docs1/2021/10/2021-10-21-cardano-robust-resilient-and-flexible)
+>
+>[Mang Rượu mạnh cao cấp đến blockchain Cardano](https://cardano2vn.io/docs1/2021/10/2021-10-22-bringing-premium-spirits-to-the-cardano-blockchain)
+>
+>[Những chiến binh bò rừng tham gia vào thế giới blockchain](https://cardano2vn.io/docs1/2021/10/2021-10-28-buffalo-soldiers-march-to-the-heart-of-the-blockchain)
+>
 >[ Châu Phi là nơi những khó khăn được khắc phục
 ](https://cardano2vn.io/docs1/2021/10/2021-10-26-africa-is-where-the-tough-get-going)
 >
@@ -197,6 +218,30 @@ Các bài đã dịch năm 2021
 
 ### Bài viết trong tháng 09 năm 2021
 
+>[Ủy ban điều hành stake pool của Cardano - một vòng ủy quyền mới](https://cardano2vn.io/docs1/2021/09/2021-09-01-cardano-stake-pool-operator-delegation-a-new-round)
+>
+>[Xác thực giao dịch trên Cardano](https://cardano2vn.io/docs1/2021/09/2021-09-06-no-surprises-transaction-validation-on-cardano)
+>
+>[Xác thực giao dịch: phần 2](https://cardano2vn.io/docs1/2021/09/2021-09-07-no-surprises-transaction-validation-part-2)
+>
+>[Xử lý đồng thời: Hợp đồng thông minh của Cardano và mô hình EUTXO](https://cardano2vn.io/docs1/2021/09/2021-09-10-concurrency-and-all-that-cardano-smart-contracts-and-the-eutxo-model)
+>
+>[Hard fork Alonzo một hành trình mới thú vị được bắt đầu](https://cardano2vn.io/docs1/2021/09/2021-09-12-today-will-feel-like-a-destination-yet-a-new-exciting-journey-begins)
+>
+>[Hydra - Giải pháp Layer 2 để Cardano tối ưu khả năng mở rộng](https://cardano2vn.io/docs1/2021/09/2021-09-17-hydra-cardano-s-solution-for-ultimate-scalability)
+>
+>[Chứng nhận DApp trên Cardano](https://cardano2vn.io/docs1/2021/09/2021-09-22-bringing-certified-dapps-to-cardano)
+>
+>[Quỹ Cardano đầu tư 6 triệu đô la để hỗ trợ những người tiên phong ở châu Phi](https://cardano2vn.io/docs1/2021/09/2021-09-25-blockchain-fund-injecting-6m-to-support-africa-s-pioneers)
+>
+>[Cardano tích hợp oracle của Chainlink để cập nhật dữ liệu thị trường theo thời gian thực](https://cardano2vn.io/docs1/2021/09/2021-09-25-cardano-to-integrate-chainlink-oracles-for-real-time-market-data)
+>
+>[Thương hiệu rượu mạnh xa xỉ chọn Cardano để xác minh chuỗi cung ứng rượu](https://cardano2vn.io/docs1/2021/09/2021-09-25-spirit-maker-strait-brands-chooses-cardano-to-verify-supply-chain)
+>
+>[Cardano bước vào kỷ nguyên AI khi chào đón Grace được thiết kế để cách mạng hóa lĩnh vực chăm sóc sức khỏe toàn cầu](https://cardano2vn.io/docs1/2021/09/2021-09-26-cardano-enters-the-age-of-ai-as-it-welcomes-grace-the-ai-robot-designed-to-revolutionize-global-healthcare)
+>
+>[COTI phát hành stablecoin Djed trên Cardano](https://cardano2vn.io/docs1/2021/09/2021-09-26-coti-to-issue-djed-stablecoin-on-cardano)
+>
 >[Thỏa thuận Oasis Pro sẽ giúp các nước đang phát triển tiếp cận thị trường tài chính tốt hơn
 ](https://cardano2vn.io/docs1/2021/09/2021-09-26-cardano-deal-with-oasis-will-give-developing-world-better-access-to-financial-markets)
 >
@@ -204,9 +249,114 @@ Các bài đã dịch năm 2021
 >
 >[IOG thiết lập quan hệ đối tác chiến lược với Acuant nhằm nâng cao khả năng bảo mật trong không gian DeFi với Atala PRISM](https://cardano2vn.io/docs1/2021/09/2021-09-29-acuants-new-strategic-partnership-with-iog-and-atala-prism-to-offer-enhanced-security-in-the-defi-space)
 
+### Bài viết trong tháng 08năm 2021
+
+>[Kết nối mọi người không có ngân hàng](https://cardano2vn.io/docs1/2021/08/2021-08-11-connecting-the-unconnected-banking-the-unbanked)
+>
+>[Project Catalyst Fund6 - Nhiều đổi mới: lớn nhất, đột phá nhất và hoàn thiện nhất của cộng đồng Cardano](https://cardano2vn.io/docs1/2021/08/2021-08-13-project-catalyst-fund-6-our-biggest-boldest-and-best-cardano-community-innovation-fund-yet)
+>
+>[Tại sao người ta gọi Cardano là "blockchain xanh"](https://cardano2vn.io/docs1/2021/08/2021-08-17-why-they-re-calling-cardano-the-green-blockchain)
+>
+>[Djed: Stablecoin thuật toán đã được xác minh chính thức](https://cardano2vn.io/docs1/2021/08/2021-08-18-djed-implementing-algorithmic-stablecoins-for-proven-price-stability)
+>
+>[Cardano Stack Exchange: một tài nguyên dành cho cộng đồng nhà phát triển đang được phát triển và hoạt động sôi nổi](https://cardano2vn.io/docs1/2021/08/2021-08-19-cardano-stack-exchange-a-growing-and-vibrant-community-developer-resource)
+>
+>[Giúp cho giáo dục ở Châu Phi dễ tiếp cận, giá cả phù hợp và công bằng hơn](https://cardano2vn.io/docs1/2021/08/2021-08-24-making-education-in-africa-more-accessible-affordable-and-equitable)
+
+### Bài viết trong tháng 07 năm 2021
+
+>[Giới thiệu về Catalyst Circle](https://cardano2vn.io/docs1/2021/07/2021-07-08-introducing-the-catalyst-circle)
+>
+>[Wolfram và Cardano xây dựng cộng đồng với NFT và Liveminting](https://cardano2vn.io/docs1/2021/07/2021-07-22-wolfram-and-cardano-build-communities-with-nfts-and-liveminting)
+>
+>[Chi tiết hơn về cFund](https://cardano2vn.io/docs1/2021/07/2021-07-28-a-closer-look-at-the-cfund)
 
 
+### Bài viết trong tháng 06 năm 2021
 
+>[Nervos hợp tác xây dựng cầu nối crosschain đầu tiên với Cardano](https://cardano2vn.io/docs1/2021/06/2021-06-02-nervos-partnership-to-build-the-first-cross-chain-bridge-with-cardano)
+>
+>[Cận cảnh phần mềm trên Cardano](https://cardano2vn.io/docs1/2021/06/2021-06-08-a-close-look-at-the-software-running-cardano)
+>
+>[Phí ổn định(Stablefee) và Hệ thống dự trữ phi tập trung](https://cardano2vn.io/docs1/2021/06/2021-06-10-stablefees-and-the-decentralized-reserve-system)
+>
+>[Orion mang sàn giao dịch tiền mã hóa một cửa đến Cardano](https://cardano2vn.io/docs1/2021/06/2021-06-23-orion-to-bring-one-stop-crypto-marketplace-to-cardano)
+>
+>[Nền tảng cho vay kỹ thuật số Nexo tích hợp vào Cardano](https://cardano2vn.io/docs1/2021/06/2021-06-30-digital-lending-platform-nexo-integrates-cardano)
+
+### Bài viết trong tháng 05 năm 2021
+
+>[Xác minh thời gian chạy và IELE - từ khả năng tương tác đến tính phổ biến](https://cardano2vn.io/docs1/2021/05/2021-05-10-runtime-verification-iele-from-interoperability-to-universality)
+>
+>[Cardano tiếp tục hoàn thiện tính phi tập trung: Triển khai P2P](https://cardano2vn.io/docs1/2021/05/2021-05-11-cardano-decentralization-continues)
+>
+>[Đối tác chiến lược mở đường cho hợp đồng thông minh Plutus](https://cardano2vn.io/docs1/2021/05/2021-05-12-developers-add-muscle-to-plutus-smart-contracts-on-cardano-for-defi)
+>
+>[Công bố các Pool mới được chọn cho chiến lược ủy thác của IOG](https://cardano2vn.io/docs1/2021/05/2021-05-14-announcing-new-stake-pools-chosen-for-our-delegation-strategy)
+>
+>[Mang ERC20 đến Cardano](https://cardano2vn.io/docs1/2021/05/2021-05-17-bringing-erc20-to-cardano)
+>
+>[Tài chính ngang hàng P2P với Marlowe](https://cardano2vn.io/docs1/2021/05/2021-05-26-reimagining-peer-to-peer-finance-with-marlowe)
+
+### Bài viết trong tháng 04 năm 2021
+
+>[Thông báo vòng ủy quyền mới tới cộng đồng stake pool](https://cardano2vn.io/docs1/2021/04/2021-04-01-announcing-a-new-round-of-community-stake-pool-delegation)
+>
+>[Những điều bạn cần biết về Chương trình Plutus tiên phong mới của chúng tôi](https://cardano2vn.io/docs1/2021/04/2021-04-01-everything-you-need-to-know-about-our-new-plutus-pioneer-program)
+>
+>[Tiến đến cập nhật hợp đồng thông minh](https://cardano2vn.io/docs1/2021/04/2021-04-08-smart-contracts-here-we-come)
+>
+>[Những điều bạn cần biết về Plutus](https://cardano2vn.io/docs1/2021/04/2021-04-13-plutus-what-you-need-to-know)
+>
+>[hời kỳ triển khai công nghệ blockchain lớn nhất thế giới](https://cardano2vn.io/docs1/2021/04/2021-04-27-blockchain-finally-comes-of-age-with-worlds-biggest-blockchain-deployment)
+>
+>[Xác minh danh tính là chìa khoá cho tầm nhìn của chúng tôi về Châu Phi](https://cardano2vn.io/docs1/2021/04/2021-04-28-decentralized-identity-on-the-blockchain-is-the-key-to-iohks-vision-for-africa)
+>
+>[Danh sách những điều thiết yếu về Cardano - một nguồn tài nguyên mới cho cộng đồng](https://cardano2vn.io/docs1/2021/04/2021-04-30-the-essential-cardano-list-a-new-resource-for-the-community)
+
+### Bài viết trong tháng 03 năm 2021
+
+>[Gần tới ngày hệ số 'd'= 0](https://cardano2vn.io/docs1/2021/03/2021-03-04-not-long-till-d-0-day)
+>
+>[Mô hình EUTxO của Cardano hỗ trợ đa tài sản và hợp đồng thông minh-phần 1](https://cardano2vn.io/docs1/2021/03/2021-03-11-cardanos-extended-utxo-accounting-model)
+>
+>[Mô hình kế toán EUTXO của Cardano hỗ trợ đa tài sản và hợp đồng thông minh - phần 2](https://cardano2vn.io/docs1/2021/03/2021-03-12-cardanos-extended-utxo-accounting-model-part-2)
+>
+>[Động lực tiếp tục cho Cardano khi Coinbase niêm yết ADA và Bloomberg thêm Cardano](https://cardano2vn.io/docs1/2021/03/2021-03-17-momentum-continues-as-coinbase-lists-ada-and-bloomberg-adds-cardano)
+>
+>[Bài phát biểu của Charles Hoskinson tại Hội thảo Blockchain Châu Phi 2021](https://cardano2vn.io/docs1/2021/03/2021-03-22-blockchain-africa-2021-charles-hoskinsons-keynote-speech)
+>
+>[Sự chuyển dịch của Cardano sang phân quyền](https://cardano2vn.io/docs1/2021/03/2021-03-29-the-secure-transition-to-decentralization)
+>
+>[Phân quyền: Ngày tham số D = 0 và hơn thế nữa](https://cardano2vn.io/docs1/2021/03/2021-03-31-decentralization-to-d-0-day-and-beyond)
+
+### Bài viết trong tháng 02năm 2021
+
+>[Plutus Tx: biên dịch Haskell thành Plutus Core](https://cardano2vn.io/docs1/2021/02/2021-02-02-plutus-tx-compiling-haskell-into-plutus-core)
+>
+>[Token gốc trên Cardano mang lại nhiều tiện ích mới cho cuộc sống](https://cardano2vn.io/docs1/2021/02/2021-02-04-native-tokens-to-bring-new-utility-to-life-on-cardano)
+>
+>[Mạng xã hội phi tập trung: Cuộc hội thoại giữa Ben Goertzel và Charles Hoskinson](https://cardano2vn.io/docs1/2021/02/2021-02-05-decentralizing-social-media)
+>
+>[Đứa con triệu đô của chúng tôi: Project Catalyst](https://cardano2vn.io/docs1/2021/02/2021-02-12-our-million-dollar-baby-project-catalyst)
+>
+>[Xây dựng token gốc trên Cardano để mang lại niềm vui và lợi nhuận](https://cardano2vn.io/docs1/2021/02/2021-02-18-building-native-tokens-on-cardano-for-pleasure-and-profit)
+>
+>[Phí Babel - xác định phí giao dịch bằng Token gốc](https://cardano2vn.io/docs1/2021/02/2021-02-25-babel-fees)
+>
+>[Mang ngôn ngữ lập trình Glow đến với Cardano](https://cardano2vn.io/docs1/2021/02/2021-02-26-bringing-glow-to-cardano)
+
+ ### Bài viết trong tháng 01năm 2021
+ 
+>[Những ngày cuối cùng của Giáng sinh](https://cardano2vn.io/docs1/2021/01/2021-01-04-the-final-days-of-christmas)
+>
+>[Dự án Catalyst bùng nổ vào năm 2021](https://cardano2vn.io/docs1/2021/01/2021-01-06-project-catalyst-blasts-off-into-2021)
+>
+>[Project Catalyst - Những đề xuất đầu tiên chiến thắng](https://cardano2vn.io/docs1/2021/01/2021-01-12-project-catalyst-the-first-winning-proposals)
+>
+>[Chiến lược ủy quyền mới - công bố các pool mà chúng tôi đang hỗ trợ](https://cardano2vn.io/docs1/2021/01/2021-01-22-our-new-delegation-strategy-announcing-the-pools-we-are-supporting)
+>
+>[Giới thiệu sân chơi Plutus mới](https://cardano2vn.io/docs1/2021/01/2021-01-25-introducing-the-new-plutus-playground)
 
 
 
