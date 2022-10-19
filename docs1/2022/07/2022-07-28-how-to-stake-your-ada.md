@@ -12,6 +12,6 @@ Marketing & Communication
 - ![](img/2022-07-28-how-to-stake-your-ada.006.png)[](https://twitter.com/The_ADA_Poet "Twitter")
 
 
-<img src="img/2022-07-28-how-to-stake-your-ada.007.webp" width="900" />
+<img src="https://ucarecdn.com/9f7ec0ab-ee46-43c0-9efb-de96f76fcbff/" width="900" />
 
 *For more details about staking and delegation, read '[Staking is the bedrock of Cardano](https://iohk.io/en/blog/posts/2022/07/28/staking-is-the-bedrock-of-cardano/)'.*

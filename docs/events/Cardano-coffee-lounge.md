@@ -295,4 +295,20 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/HN-B16-2.jpg)
 
+## Buổi 12-HCM: Cardano Coffee Lounge “Layer 1 và 2 trên Blockchain Carrdano”
+
+![](img/B12-HCM.png)
+
+
+
+## Buổi 16-HN: Cardano Coffee Lounge “Stablecoin Djed - Cardano và những vị thế cho chúng ta”
+
+![](img/B17-HN.png)
+
+
+![](img/HN-B17-1.jpg)
+
+![](img/HN-B17-2.jpg)
+
+
 

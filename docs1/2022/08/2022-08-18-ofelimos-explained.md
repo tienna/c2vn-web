@@ -16,6 +16,6 @@ Truyền thông tiếp thị
 - ![](img/2022-08-18-ofelimos-explained.006.png)[](https://twitter.com/The_ADA_Poet "Twitter")
 
 
-<img src="img/2022-08-18-ofelimos-explained.007.webp" width="900" />
+<img src="https://ucarecdn.com/d9ef4236-2c80-41a9-ba32-dc179550ffe3/" width="900" />
 
 Để có cái nhìn sâu hơn về Ofelimos, hãy đọc ' [Ofelimos: một giao thức đồng thuận bằng chứng hữu ích trong công việc](https://iohk.io/en/blog/posts/2022/08/16/introducing-ofelimos-a-proof-of-useful-work-consensus-protocol/) '.

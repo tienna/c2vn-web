@@ -23,7 +23,8 @@ Tuy nhiên, tiến độ cho đến nay là một minh chứng đáng kinh ngạ
 
 Chúng tôi đã bắt đầu biên soạn một số thống kê testnet và một số  trong số đó chúng tôi đã ghi lại ở đây. Minh bạch luôn là mục tiêu của chúng tôi: chúng tôi muốn cộng đồng nhìn thấy những gì chúng tôi làm. Cuối cùng, đây là cái nhìn về câu chuyện của Incentivized Testnet cho đến nay, cùng với phản ứng của cộng đồng. Chúng tôi sẽ tiếp tục thu thập phản hồi và dữ liệu của cộng đồng và chúng tôi sẽ chia sẻ những thông tin này khi chúng tôi tiếp tục. Vì vậy, hãy theo dõi khi chúng tôi tiếp tục lập biểu đồ hành trình của mình.
 
-<img src="img/2020-02-07-shelley-incentivized-testnet-story-in-numbers.009.webp" width="900" />
+
+<img src="https://ucarecdn.com/df1b0cb3-5d65-4a0a-ad3c-059c66bf6c69/-/format/webp/-/quality/best/-/progressive/yes/" width="900" />
 
 Bài này được dịch bởi Nguyễn Đức, Review và đăng bài bởi Nguyễn Hiệu. 
 
