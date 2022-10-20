@@ -161,7 +161,8 @@ const sidebars = {
 		 type: "category",
          label: "cntools",
          items: [
-          "stake-pool-course/cntools/air-gap",
+         "stake-pool-course/cntools/air-gap",
+          "stake-pool-course/cntools/cntools-tao-pool-bao-mat",
           "stake-pool-course/cntools/cntools",
           "stake-pool-course/cntools/cntools-01",
           "stake-pool-course/cntools/cntools-02",
