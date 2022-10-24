@@ -32,6 +32,9 @@ description: "null"
 3. [Cardano Coffee lounge in Vietnam](https://cardano.ideascale.com/c/idea/398359)
 4. [Localize iohk.io for vietnamese](https://cardano.ideascale.com/c/idea/401887)
 
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/kHaVzvJauR0" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ![Thank You Card (Landscape)](https://user-images.githubusercontent.com/34856010/163514635-a8fbf5f9-7bf3-4810-81d8-21c66658ea72.png)
 
 **Cardano2vn**

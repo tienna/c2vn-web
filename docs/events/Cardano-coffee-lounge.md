@@ -301,7 +301,7 @@ Thành viên tham gia đặc các câu hỏi
 
 
 
-## Buổi 16-HN: Cardano Coffee Lounge “Stablecoin Djed - Cardano và những vị thế cho chúng ta”
+## Buổi 17-HN: Cardano Coffee Lounge “Stablecoin Djed - Cardano và những vị thế cho chúng ta”
 
 ![](img/B17-HN.png)
 
@@ -310,5 +310,24 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/HN-B17-2.jpg)
 
+## Buổi 13-HCM: Cardano Coffee Lounge “Hiểu về StableCoin Djed-Cardano”
+
+![](img/B13-HCM.png)
+
+![](img/HCM-B13-1.jpg)
+
+## Buổi 18-HN: Cardano Coffee Lounge “Mikomeda: Cầu nối đầu tiên của Cardano ra thế giới blockchain”
+
+![](img/B18-HN.png)
+
+
+<iframe width="740" height="415" src="https://www.youtube.com/embed/m1Nl5VjobbA" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+![](img/HN-B18-1.jpg)
+
+![](img/HN-B18-2.jpg)
+
+![](img/HN-B18-3.jpg)
 
 
