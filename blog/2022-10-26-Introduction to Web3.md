@@ -77,9 +77,34 @@ Bạn muốn thay đổi tên hiển thị hoặc ảnh hồ sơ của mình? B�
 
 Bạn cũng có thể sử dụng đăng nhập mạng xã hội trong một số trường hợp, nhưng điều này gây ra một vấn đề quen thuộc — **kiểm duyệt**. Chỉ với một cú nhấp chuột, các **nền tảng này có thể khóa** tài khoản của bạn khỏi toàn bộ nền tảng trực tuyến của mình. Thậm chí tệ hơn, nhiều nền tảng yêu cầu bạn phải tin tưởng họ giao thông tin nhận dạng cá nhân để tạo tài khoản.
 
-Web3 giải quyết những vấn đề này bằng cách cho phép bạn kiểm soát danh tính kỹ thuật số của mình bằng địa chỉ Ethereum và hồ sơ ENS. Sử dụng địa chỉ Ethereum cung cấp một thông tin đăng nhập duy nhất trên các nền tảng an toàn, chống kiểm duyệt và ẩn danh.
+Web3 giải quyết những vấn đề này bằng cách cho phép bạn **kiểm soát danh tính kỹ thuật số của mình** bằng địa chỉ Ethereum và hồ sơ ENS. Sử dụng địa chỉ Ethereum cung cấp một thông tin đăng nhập duy nhất trên các nền tảng an toàn, chống kiểm duyệt và ẩn danh.
 
 
+### Thanh toán
+Hạ tầng thanh toán của Web2 phụ thuộc vào các **ngân hàng và đơn vị thanh toán**, loại trừ những người không có tài khoản ngân hàng hoặc những người tình cờ sống trong biên giới của quốc gia không hợp lệ. Web3 sử dụng các mã **thông báo (token)** để gửi tiền trực tiếp và không yêu cầu bên trung gian thứ ba.
+
+
+## Giới hạn của Web3
+Mặc dù có rất nhiều lợi ích của Web3 ở dạng hiện tại, vẫn còn nhiều hạn chế mà hệ sinh thái phải giải quyết để nó phát triển tốt.
+
+
+### Khả năng tiếp cận
+Các tính năng Web3 quan trọng, như Đăng nhập bằng ví, đã có sẵn cho mọi người sử dụng với chi phí bằng không. Tuy nhiên, chi phí giao dịch vẫn còn là giới hạn với nhiều người. Web3 **ít có khả năng được sử dụng** ở các quốc gia đang phát triển, ít giàu có do phí giao dịch cao. Trên Ethereum, những thách thức này đang được giải quyết thông qua nâng cấp mạng và các giải pháp mở rộng quy mô lớp 2 . Công nghệ đã sẵn sàng, nhưng chúng tôi cần mức độ áp dụng cao hơn ở lớp 2 để mọi người có thể truy cập Web3.
+
+### Kinh nghiệm người dùng
+Rào cản kỹ thuật đối với việc sử dụng Web3 hiện quá cao. Người dùng phải hiểu rõ các mối quan tâm về bảo mật, hiểu tài liệu kỹ thuật phức tạp và điều hướng các giao diện người dùng không trực quan. Đặc biệt, các nhà cung cấp ví đang làm việc để giải quyết vấn đề này, nhưng cần có thêm tiến bộ trước khi Web3 được chấp nhận hàng loạt.
+
+### Giáo dục
+Web3 giới thiệu các mô hình mới yêu cầu học các mô hình khác với các mô hình được sử dụng trong Web2.0. 
+
+### Cơ sở hạ tầng tập trung
+Hệ sinh thái Web3 còn non trẻ và nhanh chóng phát triển. Do đó, nó hiện phụ thuộc chủ yếu vào cơ sở hạ tầng tập trung (GitHub, Twitter, Discord, v.v.). Nhiều công ty Web3 đang gấp rút lấp đầy những khoảng trống này, nhưng việc xây dựng cơ sở hạ tầng chất lượng cao, đáng tin cậy cần có thời gian
+
+## Một tương lai phi tập trung
+
+Web3 là một hệ sinh thái trẻ và đang phát triển. Gavin Wood đã đặt ra thuật ngữ này vào năm 2014, nhưng nhiều ý tưởng trong số này chỉ gần đây mới trở thành hiện thực. Chỉ trong năm ngoái, sự quan tâm đến tiền điện tử đã tăng lên đáng kể, các cải tiến đối với các giải pháp mở rộng quy mô lớp 2, các thử nghiệm lớn với các hình thức quản trị mới và các cuộc cách mạng trong nhận dạng kỹ thuật số.
+
+Chúng tôi chỉ mới bắt đầu tạo ra một trang Web tốt hơn với Web3, nhưng khi chúng tôi tiếp tục cải thiện cơ sở hạ tầng sẽ hỗ trợ nó, tương lai của trang Web có vẻ tươi sáng.
 
 
 
