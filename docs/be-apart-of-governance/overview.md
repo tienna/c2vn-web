@@ -7,21 +7,21 @@ description: "null"
 **Cardano2vn xin cảm ơn Cộng đồng đã tin tưởng và ủng hộ chúng tôi.**
 
 ## Dự án được cấp vốn ở Fund 6
-### Bring Smart Contracts to Vietnam
+
 1. [Bring Smart Contracts to Vietnam.](https://cardano.ideascale.com/c/idea/367834)
 
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed//pfxZPxSGeSs" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Dự án được cấp vốn ở Fund 7
-### Catalyst Events 4 Vietnam Students
+
 1. [Catalyst Events 4 Vietnam Students.](https://cardano.ideascale.com/a/dtd/Catalyst-Events-4-Vietnam-Students/382615-48088)
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/6hbiL0ZHSzI" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 2. [Localize Yoroi for Vietnam market.](https://cardano.ideascale.com/a/dtd/Localize-Yoroi-for-Vietnam-market/382591-48088)
 
-### Cardano Technical hub in Vietnamese
+
 3. [Cardano Technical hub in Vietnamese.](https://cardano.ideascale.com/a/dtd/Cardano-Technical-hub-in-Vietnamese/382651-48088)
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/rLYlY28dzXA" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
