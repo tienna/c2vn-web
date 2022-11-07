@@ -321,7 +321,7 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/B18-HN.png)
 
 
-<iframe width="740" height="415" src="https://www.youtube.com/embed/m1Nl5VjobbA" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="940" height="515" src="https://www.youtube.com/embed/m1Nl5VjobbA" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ![](img/HN-B18-1.jpg)
@@ -330,4 +330,37 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/HN-B18-3.jpg)
 
+## Buổi 14-HCM: Cardano Coffee Lounge “CoTi công ty phát triển Djed”
+
+![](img/B14-HCM.png)
+
+![](img/HCM-B14-1.jpg)
+
+## Buổi 19-HN: Cardano Coffee Lounge “Web3 là gì”
+
+![](img/B19-HN.png)
+
+
+![](img/HN-B19-1.jpg)
+
+![](img/HN-B19-2.jpg)
+
+
+## Buổi 15-HCM: Cardano Coffee Lounge “CoTi công ty phát triển Djed (P2)”
+
+![](img/B15-HCM.jpg)
+
+![](img/HCM-B15-1.jpg)
+
+
+## Buổi 20-HN: Cardano Coffee Lounge “ATALA PRISM Là gì”
+
+![](img/B20-HN.png)
+
+
+![](img/HN-B20-1.jpg)
+
+![](img/HN-B20-2.jpg)
+
+![](img/HN-B20-3.jpg)
 
