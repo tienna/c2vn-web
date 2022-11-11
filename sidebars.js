@@ -84,6 +84,7 @@ const sidebars = {
       "integrate-cardano/overview",
       "integrate-cardano/creating-wallet-faucet",
       "integrate-cardano/multi-witness-transactions-cli",
+      "integrate-cardano/multi_sign",
       "integrate-cardano/listening-for-payments-cli",
       "integrate-cardano/listening-for-payments-wallet",
       "integrate-cardano/dapps-connector",
