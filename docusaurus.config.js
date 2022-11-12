@@ -78,6 +78,11 @@ const config = {
             {
                 to: '/blog', label: 'News', position: 'left' 
             },
+            
+            
+            {
+                href: 'http://openispo.cardano2vn.io/infomation', label: 'Open ISPO', position: 'right'
+            },
             {
                 href: 'https://shop.cardano2vn.io', label: 'Cardano2vn Shop', position: 'right'
             },
