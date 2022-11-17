@@ -12,7 +12,12 @@ Khai trương Cardano Coffee Lounge cầu tp. Hồ Chí Minh
 
 ![](img/Coffee2.jpg)
 
-## Buổi 1: Lễ ra mắt Carda Coffee Lounge in Việt Nam
+## Cardano Coffee Lounge close out report
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/TRZOcBDM9Bw" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Buổi 1: Lễ ra mắt Cardano Coffee Lounge in Việt Nam
  
 ![](img/Cardano-coffee1.jpg)
 

@@ -4,7 +4,7 @@ Tôi đã nghe nói nhiều lần về các địa chỉ có nhiều chữ ký t
 
 Nhưng trước tiên, địa chỉ đa chữ ký là gì? Địa chỉ có nhiều chữ ký là một địa chỉ được liên kết với nhiều khóa cá nhân, có thể thuộc quyền sở hữu của những người khác nhau, do đó, giao dịch từ địa chỉ đó chỉ có thể được thực hiện khi tất cả các khóa riêng được sử dụng để ký giao dịch.
 
-Tôi đã quyết định tạo 3 khóa riêng cho bản demo địa chỉ đa chữ ký của mình và tôi đã thực hiện trên testnet, nhưng nó tương tự với mainnet. Tôi đang sử dụng Daedalus-testnet làm nút cardano cho bản demo của mình. Tôi cũng đã tạo một kho lưu trữ Github với các tệp được sử dụng trong bản demo này, để dễ dàng hơn trong việc tạo cục bộ các tệp, trong trường hợp ai đó muốn kiểm tra điều này.
+Tôi đã quyết định tạo 3 khóa riêng cho bản demo địa chỉ đa chữ ký của mình và tôi đã thực hiện trên testnet, nhưng nó tương tự với mainnet. Tôi đang sử dụng Daedalus-testnet làm nút cardano cho bản demo của mình. Tôi cũng đã tạo một [github cardano2vn](https://github.com/cardano2vn/multi-sign.git) với các tệp được sử dụng trong bản demo này, để dễ dàng hơn trong việc tạo cục bộ các tệp, trong trường hợp ai đó muốn kiểm tra điều này.
 
 Điều đầu tiên tôi tạo là một tệp có một vài biến môi trường sẽ được sử dụng bởi tất cả các tập lệnh. Điều này cũng tạo ra các thư mục cần thiết cho các tập lệnh khác, trong trường hợp chúng chưa tồn tại và tệp tham số giao thức, được yêu cầu bởi một số lệnh. Tôi đã gọi tệp này là “env”:
 
