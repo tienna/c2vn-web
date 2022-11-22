@@ -1,14 +1,15 @@
 Hà nội - Cardano Summit 2022
 =======================================
 
-Cardano Summit 2022 in Hanoi
-Ngày 21/11/2022 Khoa công nghệ thông tin phối hợp với Cardano2vn, DevMaster tổ chức Cardano Summit 2022. Tham dự hội nghị có hơn 400 đại biểu là các nhà khoa học, các lãnh đạo, giảng viên, sinh viên của các Khoa CNTT đến từ trường: ĐH Giao thông vận tải, ĐH Nguyễn Trãi, ĐH Kinh tế quốc dân, ĐH Phenikaa, ĐH Sư phạm Hà Nội, ĐH Kinh tế kỹ thuật công nghiệp, ĐH Tài nguyên và môi trường, ĐH Thăng Long, Đại học Công nghệ Đông Á, Học viện ngân hàng, các thành viên của 07 dự án được Catalyst cấp vốn và cộng đồng Cardano Việt Nam. 
+Cardano Summit 2022 in Hanoi.
+
+Ngày 21/11/2022 Cardano2vn phối hợp với Khoa công nghệ thông tin - ĐH GTVT và DevMaster tổ chức Cardano Summit 2022. Tham dự hội nghị có hơn 400 đại biểu là các nhà khoa học, các lãnh đạo, giảng viên, sinh viên của các Khoa CNTT đến từ trường: ĐH Giao thông vận tải, ĐH Nguyễn Trãi, ĐH Kinh tế quốc dân, ĐH Phenikaa, ĐH Sư phạm Hà Nội, ĐH Kinh tế kỹ thuật công nghiệp, ĐH Tài nguyên và môi trường, ĐH Thăng Long, Đại học Công nghệ Đông Á, Học viện ngân hàng, các thành viên của 07 dự án được Catalyst cấp vốn và cộng đồng Cardano Việt Nam. 
 Hội nghị được nghe 04 báo cáo của các diễn giả:
 1. Ông Đỗ Ngọc Minh, Viện CNTT - ĐH Quốc Gia Hà Nội,
 2. TS. Đặng Minh Tuấn, Học viện Công nghệ bưu chính viễn thông
 3. Ông Nguyễn Anh Tiến - CEO Cardano2vn
 4. Ông Long Nguyễn - CEO and Founder Minswap.
-Và chia sẻ của 07 dự án:
+Và 07 dự án chia sẻ con đường phát triển từ Catalyst- Blockch:
  1. Blocktree
  2. vcoincheck
  3. minswap
@@ -92,7 +93,7 @@ Thay mặt Ban tổ chức, chúng tôi xin chân thành cảm ơn các diễn g
 ![](img/37.JPG)
 
 
-—-------------------
+------------------
 
 👉Cardano2vn - Mang Cardano về Việt 
 Nam Website: https://cardano2vn.io/ 
