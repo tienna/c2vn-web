@@ -221,6 +221,7 @@ const sidebars = {
       "events/Cardano-coffee-lounge",
       "events/even-HN",
       "events/even-HCM",
+      "Cardano-summit-2022/Cardano-summit-2022-hanoi"
 	    
     ],
 

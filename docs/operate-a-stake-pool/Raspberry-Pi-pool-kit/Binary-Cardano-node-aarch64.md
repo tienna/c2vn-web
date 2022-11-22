@@ -18,6 +18,13 @@ Cảm ơn [PGWAD](https://armada-alliance.com/stake-pools/7e45a7e6ab3afcf99120e9
 
 
 ### Dynamic build (Ubuntu 20.04 and above. Requires [Libsodium and SECP256K1](/docs/operate-a-stake-pool/Raspberry-Pi-pool-kit/note)
+
+Cardano-node/cli 1.35.4
+
+```
+wget -O cardano-1_35_4-aarch64-ubuntu_2004.zip https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.35.4/cardano-1_35_4-aarch64-ubuntu_2004.zip?raw=true
+```
+
 [1.35.3](https://github.com/armada-alliance/cardano-node-binaries/blob/main/dynamic-binaries/1.35.3/cardano-1_35_3-aarch64-ubuntu_2004.zip?raw=true) (Mainnet)
 
 ```
