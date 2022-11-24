@@ -16,7 +16,8 @@
 📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 27/11/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order nước miễn phí.
-—-------------------
+
+-------------------
 
 👉Cardano2vn - Mang Cardano về Việt 
 Nam Website: https://cardano2vn.io/ 

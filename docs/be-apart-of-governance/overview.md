@@ -28,8 +28,17 @@ description: "null"
 
 ## Dự án được cấp vốn ở Fund 8
 1. [Simplify SPO rollups in Vietnam.](https://cardano.ideascale.com/c/idea/399806)
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/RX6koZToZ-g" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 2. [Open ISPO](https://cardano.ideascale.com/c/idea/403106)
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/H088XCmXtVM" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 3. [Cardano Coffee lounge in Vietnam](https://cardano.ideascale.com/c/idea/398359)
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/TRZOcBDM9Bw" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 4. [Localize iohk.io for vietnamese](https://cardano.ideascale.com/c/idea/401887)
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/kHaVzvJauR0" title="Report Catalyst Events 4 Vietnam Students - Func7 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
