@@ -369,3 +369,10 @@ Thành viên tham gia đặc các câu hỏi
 
 ![](img/HN-B20-3.jpg)
 
+## Buổi 16-HCM: Cardano Coffee Lounge “Web3 là gì và Ứng dụng”
+
+![](img/B16-HCM.png)
+
+![](img/HCM-B16-1.jpg)
+
+![](img/HCM-B16-2.jpg)
