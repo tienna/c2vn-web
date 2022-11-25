@@ -4,17 +4,17 @@
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
 
-![](img/B16-HCM.png)
+![](img/B17-HCM.png)
 
-📣Chủ đề thảo luận buổi 16 ở HCM: “TWeb 3 là gì? Xu thế & tiềm năng Trong tương lai " 
+📣Chủ đề thảo luận buổi 16 ở HCM: “Sàn giao dịch tập trung (CEX) kiếm tiền “khủng” như thế nào?" 
 
-📣Diễn giả: -Nguyễn Anh Tiến - Cardano2vn
+📣Diễn giả: -Brit Nguyen
 
-📣Thời gian: 9h30, Chủ Nhật, 20/11/2022
+📣Thời gian: 9h30, Chủ Nhật, 27/11/2022
        
 📣 Địa điểm: **Good Morning Coffee**: 103 Võ Oanh, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh 72308 [map tại đây](https://www.google.com/maps/place/Good+Morning+Coffee/@10.7990618,106.6918531,13.5z/data=!4m5!3m4!1s0x0:0xfeefd404550f6b67!8m2!3d10.8041902!4d106.7161699).
 
-📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 19/11/2022.
+📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 26/11/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order đồ uống miễn phí.
 
