@@ -376,3 +376,23 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/HCM-B16-1.jpg)
 
 ![](img/HCM-B16-2.jpg)
+
+## Buổi 21-HN: Cardano Coffee Lounge “Cơ Chế đồng thuận Oroboros -Cardano”
+
+![](img/B21-HN.png)
+
+### Video
+
+<iframe width="940" height="515" src="https://www.youtube.com/embed/xOKdECtQEUg" title="Bring smart contract to Vietnam - Func6 - Catalyst" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+![](img/HN-B21-1.png)
+
+![](img/HN-B21-2.jpg)
+
+
+
+## Buổi 17-HCM: Cardano Coffee Lounge “Sàn giao dịch tập trung (CEX) kiếm tiền “khủng” như thế nào?"”
+
+![](img/B17-HCM.png)
+
+![](img/HCM-B17-1.jpg)
