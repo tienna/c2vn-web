@@ -195,6 +195,14 @@ const sidebars = {
       "setup-application/Datums_redeemer_tutorial",
       "setup-application/Validator_scripts_tutorial",
     ],
+    
+    
+    
+    "Khoa học Haskell": [
+      "haskell_iog/intro_haskell",
+      "haskell_iog/Intro_to_Haskell_and_tools",
+	  
+    ],
     "Project Catalyst": [
       "project-catalyst/overview",
       "project-catalyst/funding-process",
