@@ -1,4 +1,4 @@
-Cardano Coffee Lounge
+Even Cardano Coffee Lounge
 =====================
 
 ## Hà Nội - Cardano Coffee Lounge “Cardano Native Token những điều cơ bản cần biết”
@@ -82,7 +82,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 3
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 3
 ==============================================
 
 
@@ -108,7 +108,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 8
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 8
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -137,7 +137,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 4
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 4
 ==============================================
 
 
@@ -163,7 +163,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 4
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 4
 ==============================================
 
 
@@ -189,7 +189,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 9
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 9
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -218,7 +218,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 4
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 4
 ==============================================
 
 
@@ -244,7 +244,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 10
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 10
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -273,7 +273,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 5
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 5
 ==============================================
 
 
@@ -301,7 +301,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 11
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 11
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -329,7 +329,9 @@ Telegram: https://t.me/cardano2vn
 
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 6
+
+
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 6
 ==============================================
 
 
@@ -358,7 +360,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 12
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 12
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -386,7 +388,8 @@ Telegram: https://t.me/cardano2vn
 
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 7
+
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 7
 ==============================================
 
 
@@ -409,7 +412,7 @@ Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA
 👉Cardano2vn - Mang Cardano về Việt Nam
 Website: https://cardano2vn.io/ 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 8
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 8
 ==============================================
 
 
@@ -439,7 +442,7 @@ Telegram: https://t.me/cardano2vn
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 12b
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 12b
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -474,7 +477,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 13
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 13
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -503,7 +506,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 9
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 9
 ==============================================
 
 
@@ -534,7 +537,7 @@ Telegram: https://t.me/cardano2vn
 
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 14
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 14
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -563,7 +566,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 10
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 10
 ==============================================
 
 
@@ -592,7 +595,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 15
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 15
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -621,7 +624,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 11
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 11
 ==============================================
 
 
@@ -649,7 +652,8 @@ Telegram: https://t.me/cardano2vn
 
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 16
+
+##[Cardano Coffee Lounge - Hà Nội]-Buổi 16
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -678,7 +682,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 17
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 17
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -707,7 +711,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 12
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 12
 ==============================================
 
 
@@ -736,7 +740,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 18
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 18
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -765,7 +769,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 13
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 13
 ==============================================
 
 
@@ -794,7 +798,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 19
+##  [Cardano Coffee Lounge - Hà Nội]-Buổi 19
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -823,7 +827,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 14
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 14
 ==============================================
 
 
@@ -852,7 +856,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hà Nội]-Buổi 20
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 20
 =======================================
 
 **Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
@@ -881,7 +885,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 15
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 15
 ==============================================
 
 
@@ -910,7 +914,7 @@ Telegram: https://t.me/cardano2vn
 👉Video bài giảng về lập trình trên Cardano
 Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
 
-[Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 16
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 16
 ==============================================
 
 
@@ -927,6 +931,66 @@ Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA
 📣 Địa điểm: **Good Morning Coffee**: 103 Võ Oanh, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh 72308 [map tại đây](https://www.google.com/maps/place/Good+Morning+Coffee/@10.7990618,106.6918531,13.5z/data=!4m5!3m4!1s0x0:0xfeefd404550f6b67!8m2!3d10.8041902!4d106.7161699).
 
 📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 19/11/2022.
+
+📣Khi đến buổi họp mặt, vui lòng check in với BTC để order đồ uống miễn phí.
+
+👉Cardano2vn - Mang Cardano về Việt Nam
+Website: https://cardano2vn.io/ 
+
+👉Trao đổi về ngôn ngữ lập trình Smartcontract - Plutus, Marlove trên Cardano
+Telegram: https://t.me/cardano2vn 
+
+👉Video bài giảng về lập trình trên Cardano
+Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
+
+## [Cardano Coffee Lounge - Hà Nội]-Buổi 22
+=======================================
+
+**Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
+
+![](img/B22-HN.png)
+
+📣Chủ đề thảo luận: “Tìm hiểu về định danh phi tập trung”
+
+📣Diễn giả: Nguyễn Anh Tiến - Cardano2vn
+
+📣Thời gian: 14h30, Chủ Nhật, 4/12/2022
+
+📣 Địa điểm:  BT2-10 Nguyễn Xuân Khoát, Khu ngoại giao đoàn, Tây Hồ, Hà Nội [map tại đây](https://maps.app.goo.gl/6QRmmYxo4XzCQ3aZ7).
+
+📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 4/12/2022.
+
+📣Khi đến buổi họp mặt, vui lòng check in với BTC để order nước miễn phí.
+
+-------------------
+
+👉Cardano2vn - Mang Cardano về Việt 
+Nam Website: https://cardano2vn.io/ 
+
+👉Trao đổi về ngôn ngữ lập trình Smartcontract - Plutus, Marlove trên Cardano
+Telegram: https://t.me/cardano2vn 
+
+👉Video bài giảng về lập trình trên Cardano
+Youtube: https://www.youtube.com/channel/UCJTdAQPGJntJet5v-nk9ebA 
+
+## [Cardano Coffee Lounge - Hồ Chí Minh] - Buổi 18
+==============================================
+
+
+**Cardano Coffee Lounge là một hoạt động họp mặt định kỳ hàng tuần do Catalyst tài trợ, mục đích là đưa những kiến thức về Blockchain và Cardano tới rộng rãi cộng đồng Việt Nam.**
+
+![](img/B18-HCM.png)
+
+📣Chủ đề thảo luận buổi 18 ở HCM: “Tâm an giữa thị trường crypto đầy biến động
+” như thế nào?" 
+
+📣Diễn giả: -Tony Nguyen
+
+📣Thời gian: 9h30, Chủ Nhật, 4/12/2022
+       
+📣 Địa điểm: **Good Morning Coffee**: 103 Võ Oanh, Phường 25, Bình Thạnh, Thành phố Hồ Chí Minh 72308 [map tại đây](https://www.google.com/maps/place/Good+Morning+Coffee/@10.7990618,106.6918531,13.5z/data=!4m5!3m4!1s0x0:0xfeefd404550f6b67!8m2!3d10.8041902!4d106.7161699).
+
+📣Để phục vụ bạn được tốt nhất (Miễn phí nước uống), vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/GooGW2cGpVEdhXHX9) trước 17:00 ngày 3/12/2022.
 
 📣Khi đến buổi họp mặt, vui lòng check in với BTC để order đồ uống miễn phí.
 

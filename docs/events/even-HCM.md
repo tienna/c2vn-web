@@ -6,8 +6,7 @@
 
 ![](img/B18-HCM.png)
 
-📣Chủ đề thảo luận buổi 18 ở HCM: “Tâm an giữa thị trường crypto đầy biến động
-” như thế nào?" 
+📣Chủ đề thảo luận buổi 18 ở HCM: “Tâm an giữa thị trường crypto đầy biến động như thế nào?" 
 
 📣Diễn giả: -Tony Nguyen
 

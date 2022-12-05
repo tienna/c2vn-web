@@ -396,3 +396,24 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/B17-HCM.png)
 
 ![](img/HCM-B17-1.jpg)
+
+## Buổi 22-HN: Cardano Coffee Lounge “Tìm hiểu về định danh phi tập trung”
+
+![](img/B22-HN.png)
+
+
+![](img/HN-B22_1.jpg)
+
+
+
+## Buổi 18-HCM: Cardano Coffee Lounge “Tâm an giữa thị trường crypto đầy biến động như thế nào?"”
+
+![](img/B18-HCM.png)
+
+![](img/HCM-B18-1.jpg)
+
+![](img/HCM-B18-2.jpg)
+
+![](img/HCM-B18-3.jpg)
+
+![](img/HCM-B18-4.jpg)
