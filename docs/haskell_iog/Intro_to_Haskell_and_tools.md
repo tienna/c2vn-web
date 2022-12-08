@@ -1,6 +1,6 @@
 
 
-Giới thiệu công cụ Haskell
+1-Giới thiệu Haskell
 =========================
 
 Bài giảng 1:

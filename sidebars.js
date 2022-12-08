@@ -199,8 +199,10 @@ const sidebars = {
     
     
     "Khoa học Haskell": [
+      "haskell_iog/README",
       "haskell_iog/intro_haskell",
       "haskell_iog/Intro_to_Haskell_and_tools",
+      "haskell_iog/Functions-Data-Types-and-Signatures-2",
 	  
     ],
     "Project Catalyst": [
