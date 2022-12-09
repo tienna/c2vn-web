@@ -1,10 +1,10 @@
-# Lecture 1: EUTxO and English Auction
+# Bài giảng 1: EUTxO và đấu giá kiểu Anh
 
 
 Plutus Pioneer Program - Cohort 3
 January 12, 2022
 
-Offical Video by Lars Brünjes: [PPP-Cohort3-Lecture1](https://youtu.be/X80uNXenWF4)
+Offical Video by Lars Brünjes: [PPP-Cohort3-Lecture1](https://www.youtube.com/watch?v=X80uNXenWF4&list=PLNEK_Ejlx3x2nLM4fAck2JS6KhFQlXq2N)
 
 Google Doc version can be found [HERE](https://docs.google.com/document/d/1cd1wtXYH3ej8udF02cV9cyJYziPqln-uPyCPlFMANKM/edit?usp=sharing)
 
@@ -21,36 +21,36 @@ Google Doc version can be found [HERE](https://docs.google.com/document/d/1cd1wt
     - [Evaluation](#evaluation)
   - [Homework](#homework)
   
-## Preparation for Lecture 1
-Before we can get started in lecture 1, we first must get our development environment setup. 
+## Chuẩn bị cho bài giảng 1
+Trước khi bắt đầu bài giảng 1, trước tiên chúng ta phải thiết lập môi trường phát triển.
 
-This guide will be using a fresh install of Ubuntu Linux. If you want to use Linux but only have a computer with Windows installed, you can run a virtual environment inside of Windows. A great step by step guide for how to get started can be found here:<br/>
+Hướng dẫn này sẽ sử dụng bản cài đặt mới của Ubuntu Linux. Nếu bạn muốn sử dụng Linux nhưng chỉ có một máy tính cài đặt Windows, bạn có thể chạy một môi trường ảo bên trong Windows. Bạn có thể tìm thấy hướng dẫn từng bước tuyệt vời về cách bắt đầu tại đây:<br/>
 [How to install an Ubuntu VM in Windows](https://youtu.be/x5MhydijWmc)
 
-You can copy and paste any of the code in this guide directly into your terminal or IDE. If you are new to Linux and are unfamiliar with terminal shell commands, this cheat sheet gives a quick overview:<br/>
+Bạn có thể sao chép và dán trực tiếp bất kỳ mã nào trong hướng dẫn này vào thiết bị đầu cuối hoặc IDE của mình. Nếu bạn chưa quen với Linux và không quen với các lệnh trình bao đầu cuối, bảng cheat này cung cấp tổng quan nhanh:<br/>
 [Linux Command Master List](https://drive.google.com/file/d/10xz7Dm3E_20doL08Wu_dfWJqiIfvTKlc/view?usp=sharing)
 
 
-The haddock documentation is also a great source of information for all the public plutus libraries.  This can be found here:<br/>
+Tài liệu về cá tuyết chấm đen cũng là một nguồn thông tin tuyệt vời cho tất cả các thư viện plutus công cộng. Điều này có thể được tìm thấy ở đây:<br/>
 [Documentation for all public Plutus Libraries](https://www.google.com/url?q=https://playground.plutus.iohkdev.io/doc/haddock/&sa=D&source=editors&ust=1644942252629960&usg=AOvVaw2eoK-uGZuqWIqtuCZt0t_H)
 
-First, Open up the terminal to get started. We will first install the necessary dependencies first for a fresh copy of Linux.
+Đầu tiên, Mở terminal để bắt đầu. Trước tiên, chúng tôi sẽ cài đặt các phụ thuộc cần thiết trước cho một bản sao Linux mới.
 
-We need to install Nix and get it configured properly to use IOG’s caches. In this guide we will be doing a single user install.
-Before we can install Nix, we need to make sure the version of Linux you are using has both curl and git installed. First run:
+Chúng ta cần cài đặt Nix và cấu hình nó đúng cách để sử dụng bộ đệm của IOG. Trong hướng dẫn này, chúng tôi sẽ thực hiện cài đặt một người dùng. Trước khi chúng tôi có thể cài đặt Nix, chúng tôi cần đảm bảo rằng phiên bản Linux bạn đang sử dụng đã được cài đặt cả curl và git. Lần chạy đầu tiên:
 
 ```
 ~$ sudo sh -c 'apt update && apt install curl'
 ```
 
 
-Now that curl is installed, we can install git. Run:
+Bây giờ curl đã được cài đặt, chúng ta có thể cài đặt git. Chạy:
+
 
 ```
 ~$ sudo apt-get install git
 ```
 
-We can now install Nix single user install. Run:
+Bây giờ chúng ta có thể cài đặt cài đặt Nix một user. Chạy:
 
 ```
 ~$ sh <(curl -L https://nixos.org/nix/install) --no-daemon
@@ -65,41 +65,43 @@ variables are set, either log in again, or type
 ```
 
 
-Now to finish, we need to set the environment with the following command notice from above.
-Very important here to replace ```totinj``` with your current Linux user!!
+Bây giờ để kết thúc, chúng ta cần thiết lập môi trường với thông báo lệnh sau từ phía trên. Rất quan trọng ở đây để thay thế `totinj` bằng người dùng Linux hiện tại của bạn!!
 ```
 ~$ . /home/totinj/.nix-profile/etc/profile.d/nix.sh
 ```
 
 
-We now need to add Input Outputs caches to greatly speed up the building process. Without this step, you might be running nix-shell for days rather than minutes! This can be found here: [IOG Binaries](https://github.com/input-output-hk/plutus-apps#iohk-binary-cache). Let’s create a new config file that has the associated IOG links. Run:
+Bây giờ chúng ta cần thêm bộ nhớ đệm Đầu ra, Đầu vào để tăng tốc đáng kể quá trình xây dựng. Nếu không có bước này, bạn có thể chạy nix-shell trong nhiều ngày thay vì vài phút! Điều này có thể được tìm thấy ở đây:  [IOG Binaries](https://github.com/input-output-hk/plutus-apps#iohk-binary-cache). Hãy tạo một tệp cấu hình mới có các liên kết IOG được liên kết. Chạy:
 ```
 ~$ mkdir ~/.config/nix
 echo 'substituters = https://hydra.iohk.io https://iohk.cachix.org https://cache.nixos.org/' >> ~/.config/nix/nix.conf
 echo 'trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=' >> ~/.config/nix/nix.conf
 ```
 
+Với Nix hiện đã được cài đặt và định cấu hình, chúng tôi sẽ sao chép các kho lưu trữ thích hợp từ github. Chúng tôi sẽ sao chép các ứng dụng plutus và chương trình tiên phong plutus. Đầu tiên, hãy clone plutus-apps:
 
-
-With Nix now installed and configured,  we will clone the appropriate repositories from github. We will be cloning the plutus-apps and the plutus-pioneer program.
-First, let’s clone plutus-apps:
 ```
 ~$ git clone https://github.com/input-output-hk/plutus-apps.git
 ```
-Next, let’s clone the plutus-pioneer-program repo:
+Tiếp theo, hãy sao chép repo plutus-pioneer-program:
+
 ```
 ~$ git clone https://github.com/input-output-hk/plutus-pioneer-program.git
 ```
-You can now navigate to the current week01 directory in the plutus-pioneer-program folder and open the cabal.project file:
+
+Bây giờ bạn có thể điều hướng đến thư mục week01 hiện tại trong thư mục chương trình plutus-pioneer và mở tệp cabal.project:
+
 ```
 ~/plutus-pioneer-program/code/week01$ cat cabal.project
 ```
- Grab the plutus-apps tag inside the cabal.project file:
+Lấy thẻ plutus-apps bên trong tệp cabal.project:
+
 ```
 location: https://github.com/input-output-hk/plutus-apps.git
  tag:41149926c108c71831cfe8d244c83b0ee4bf5c8a
 ```
-Head back to  to the plutus-apps directory and update it to the  current git tag:
+Quay trở lại thư mục plutus-apps và cập nhật nó vào thẻ git hiện tại:
+
 ```
 ~/plutus-apps$ git checkout main
 ```
@@ -111,18 +113,19 @@ Head back to  to the plutus-apps directory and update it to the  current git tag
 ```
 
 
-You should now be up to date and can run nix-shell in this directory. Run nix-shell:
+Bây giờ bạn đã được cập nhật và có thể chạy nix-shell trong thư mục này. Chạy nix-shell:
+
 ```
 ~/plutus-apps$ nix-shell
 ```
-Nix-shell will take a good amount of time to build the first time you are running it, so be patient. If you have setup your caches correctly, you will notice it building from https://hydra.iohk.io.
-If successful, you should see the nix-shell:
+Nix-shell sẽ mất khá nhiều thời gian để xây dựng trong lần đầu tiên bạn chạy nó, vì vậy hãy kiên nhẫn. Nếu bạn đã thiết lập chính xác bộ đệm của mình, bạn sẽ thấy nó được xây dựng từ https://hydra.iohk.io. Nếu thành công, bạn sẽ thấy nix-shell:
+
 ```
 [nix-shell:~/plutus-apps]$ 
 ```
 
 
-Head back to the week01 folder to start running the cabal commands:
+Quay trở lại thư mục week01 để bắt đầu chạy các lệnh cabal:
 ```
 [nix-shell:~/plutus-pioneer-program/code/week01]$ cabal update
 ```
@@ -132,152 +135,150 @@ Head back to the week01 folder to start running the cabal commands:
 ```
 [nix-shell:~/plutus-pioneer-program/code/week01]$ cabal repl
 ```
-These will also take a long time to run the first time. If successful,  you should now be ready to start the lecture:
+Những thứ này cũng sẽ mất nhiều thời gian để chạy lần đầu tiên. Nếu thành công, bây giờ bạn đã sẵn sàng để bắt đầu bài giảng:
+
 ```haskell
 Ok, one module loaded.
 Prelude Week01.EnglishAuction> 
 ```
 
 ## The EUTxO Model
-This is the transcript for the lecture video on EUTxOs by Lars Brünjes. Further information about EUTxO models can be found here:<br/> [Accounting Systems for Blockchains](https://iohk.io/en/blog/posts/2021/03/11/cardanos-extended-utxo-accounting-model/) <br/><br/>
-One of the most important things you need to understand in order to write Plutus smart contracts is the accounting model that Cardano uses; and that is the so-called (E)UTxO model, which is an abbreviation for extended unspent transaction output model. The UTxO model without being extended is the one that has been introduced by Bitcoin. But there are other models. Ethereum, for example, uses a so-called account-based model, which is what you're used to from a normal bank, where everybody has an account and each account has a balance. And if you transfer money from one account to another, then the balance gets updated accordingly, but that is not how the UTxO model works. Unspent transaction outputs are exactly what the name says. They are transaction outputs that are outputs from previous transactions that happened on the blockchain that have not yet been spent.<br/>
+
+Đây là bản ghi video bài giảng về EUTxOs của Lars Brünjes. Thông tin thêm về các mô hình EUTxO có thể được tìm thấy tại đây:<br/> [Accounting Systems for Blockchains](https://iohk.io/en/blog/posts/2021/03/11/cardanos-extended-utxo-accounting-model/) <br/><br/>
+Một trong những điều quan trọng nhất bạn cần hiểu để viết hợp đồng thông minh Plutus là mô hình kế toán mà Cardano sử dụng; và đó là cái gọi là mô hình (E)UTxO, là từ viết tắt của mô hình đầu ra giao dịch chưa chi tiêu mở rộng. Mô hình UTxO mà không được mở rộng là mô hình đã được giới thiệu bởi Bitcoin. Nhưng có những mô hình khác. Ethereum, ví dụ, sử dụng cái gọi là mô hình dựa trên tài khoản, đó là những gì bạn đã quen với một ngân hàng bình thường, nơi mọi người đều có tài khoản và mỗi tài khoản có số dư. Và nếu bạn chuyển tiền từ tài khoản này sang tài khoản khác, thì số dư sẽ được cập nhật tương ứng, nhưng đó không phải là cách hoạt động của mô hình UTxO. Đầu ra giao dịch chưa được xác định đúng như tên gọi.<br/>
 
 ![Screenshot 2022-03-22 at 19-54-02 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159595570-f8a5f9e9-3cfe-4213-8ce0-bab6937de382.png)
 
-So let's look at an example where we have two such UTxOs, one belonging to Alice, 100 ADA and another one belonging to Bob, 50 ADA. And as an example, let's assume that Alice wants to send 10 ADA to Bob. So she creates a transaction and the transaction is something that has inputs and outputs, can be an arbitrary number of inputs and an arbitrary number of outputs. And an important thing is that you can always only use complete UTxOs as input. So, if she wants to send 10 ADA to Bob, she can't simply split herexisting 100 ADA into a 90 to 10 piece. She has to use the full 100 ADA as input. 
+Vì vậy, hãy xem một ví dụ trong đó chúng ta có hai UTxO như vậy, một thuộc về Alice, 100 ADA và một thuộc về Bob, 50 ADA. Và để làm ví dụ, giả sử rằng Alice muốn gửi 10 ADA cho Bob. Vì vậy, cô ấy tạo một giao dịch và giao dịch là thứ có đầu vào và đầu ra, có thể là số lượng đầu vào tùy ý và số lượng đầu ra tùy ý. Và một điều quan trọng là bạn luôn có thể chỉ sử dụng các UTxO hoàn chỉnh làm đầu vào. Vì vậy, nếu cô ấy muốn gửi 10 ADA cho Bob, cô ấy không thể đơn giản chia 100 ADA hiện có của mình thành 90 đến 10 phần. Cô ấy phải sử dụng toàn bộ 100 ADA làm đầu vào. 
 
 ![Screenshot 2022-03-22 at 19-55-18 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159595764-3208715a-08c2-4811-83b4-91939b4f7a48.png)
 
-So by using the UTxO 100 ADA as input to a transaction. Alice has not spent that UTxO, so it's no longer an UTxO. It's no longer unspent, it's been spent. And now she can create outputs for a transaction. So she wants to pay 10 ADA to Bob. So one output will be 10 ADA to Bob, and then she wants her change back. So she creates a second output of 90 ADA to herself.<br/>
+Vì vậy, bằng cách sử dụng UTxO 100 ADA làm đầu vào cho giao dịch. Alice đã không sử dụng UTxO đó, vì vậy nó không còn là UTxO nữa. Nó không còn là không được sử dụng, nó đã được sử dụng. Và bây giờ cô ấy có thể tạo đầu ra cho một giao dịch. Vì vậy, cô ấy muốn trả 10 ADA cho Bob. Vì vậy, một đầu ra sẽ là 10 ADA cho Bob, và sau đó cô ấy muốn trả lại số tiền thừa của mình. Vì vậy, cô ấy tạo ra đầu ra thứ hai là 90 ADA cho chính mình.<br/>
 
 ![Screenshot 2022-03-22 at 19-56-56 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159595910-34d76fae-61fc-4d57-9f55-602cd0f26461.png)
 
-And so this is how, even though you always have to consume complete UTxOs, you can get your change back. So you consume the complete UTxO, but then you create an output for the change and note that in a transaction, the sum of the input values must equal the sum of the output values. So in this case, 100 ADA go in and 10 plus 90 ADA go out. This is strictly speaking, not true. There are two exceptions, the first exception is transaction fees. So in the real blockchain for each transaction, you have to pay fees. So that means that the sum of input values has to be slightly higher than the sum of output values to accommodate for the fees. And the second exception is the native tokens that we have on Cardano. So it's possible for transactions to create new tokens. In which case the outputs will be higher than the inputs or to burn tokens, in which case the inputs will be higher than the outputs. But that is a somewhat advanced topic, how to handle minting and burning of native tokens in Plutus. And we'll come back to that later in the course. So for now we only look at transactions where the sum of the input value equals the sum of the output values.<br/>
+Và đây là cách, mặc dù bạn luôn phải sử dụng các UTxO hoàn chỉnh, nhưng bạn vẫn có thể nhận lại tiền thừa của mình. Vì vậy, bạn sử dụng UTxO hoàn chỉnh, nhưng sau đó bạn tạo đầu ra cho thay đổi và lưu ý rằng trong một giao dịch, tổng giá trị đầu vào phải bằng tổng giá trị đầu ra. Vì vậy, trong trường hợp này, 100 ADA được đưa vào và 10 cộng với 90 ADA được rút ra. Đây là nói nghiêm túc, không đúng sự thật. Có hai trường hợp ngoại lệ, ngoại lệ đầu tiên là phí giao dịch. Vì vậy, trong blockchain thực cho mỗi giao dịch, bạn phải trả phí. Vì vậy, điều đó có nghĩa là tổng giá trị đầu vào phải cao hơn một chút so với tổng giá trị đầu ra để đáp ứng các khoản phí. Và ngoại lệ thứ hai là các mã thông báo gốc mà chúng tôi có trên Cardano. Vì vậy, các giao dịch có thể tạo mã thông báo mới. Trong trường hợp đó, đầu ra sẽ cao hơn đầu vào hoặc để ghi mã thông báo, trong trường hợp đó đầu vào sẽ cao hơn đầu ra. Nhưng đó là một chủ đề hơi nâng cao, làm thế nào để xử lý việc đúc và đốt các mã thông báo gốc trong Plutus. Và chúng ta sẽ quay lại vấn đề đó sau trong khóa học. Vì vậy, hiện tại chúng tôi chỉ xem xét các giao dịch trong đó tổng giá trị đầu vào bằng tổng giá trị đầu ra.
 
-So this is a first example of a simple transaction, and we see that the effect of a transaction is to consume and spend transaction output and to produce new ones. So in this example, one UTxO has been consumed, Alice original 100 ADA UTxO, and two new ones have been created. One 90 ADA UTxO belongs to Alice and another 10 ADA UTxO belongs to Bob. It's important to note that this is the only thing that happens on an UTxO blockchain. The only thing that happens when a new transaction is added to the blockchain is that someform a UTxOs becomes spent and UTxOs appear. So in particular, nothing is ever changed, no value or any other data associated with the transaction output is ever changed. The only thing that changes by a new transaction is that some of the formerly unspent transaction outputs disappear and others are created, but the outputs themselves never change. The only thing that changes is whether they are unspent or not.<br/>
+Vì vậy, đây là ví dụ đầu tiên về giao dịch đơn giản và chúng tôi thấy rằng tác động của giao dịch là tiêu thụ và chi tiêu đầu ra của giao dịch và tạo ra giao dịch mới. Vì vậy, trong ví dụ này, một UTxO đã được sử dụng, 100 ADA UTxO ban đầu của Alice và hai UTxO mới đã được tạo. Một 90 ADA UTxO thuộc về Alice và 10 ADA UTxO khác thuộc về Bob. Điều quan trọng cần lưu ý rằng đây là điều duy nhất xảy ra trên chuỗi khối UTxO. Điều duy nhất xảy ra khi một giao dịch mới được thêm vào chuỗi khối là một số UTxO sẽ được sử dụng và UTxO xuất hiện. Vì vậy, cụ thể là không có gì thay đổi, không có giá trị hoặc bất kỳ dữ liệu nào khác liên quan đến đầu ra giao dịch được thay đổi. Điều duy nhất thay đổi bởi một giao dịch mới là một số đầu ra giao dịch chưa được sử dụng trước đây biến mất và những đầu ra khác được tạo ra, nhưng bản thân kết quả đầu ra không bao giờ thay đổi. Điều duy nhất thay đổi là liệu chúng có được sử dụng hay không.
 
-Let's do one other example, a slightly more complicated one where Alice and Bob together want to pay 55 ADA each to Charlie. So they create a transaction together. And as inputs, Alice has no choice, she only has one UTxO, so she uses that one. And Bob also doesn't have a choice because neither of his two UTxOs is large enough to cover 55 ADA. So Bob has to use both his UTxOs as input. 
+Hãy làm một ví dụ khác, một ví dụ phức tạp hơn một chút khi Alice và Bob cùng nhau muốn trả 55 ADA mỗi người cho Charlie. Vì vậy, họ cùng nhau tạo ra một giao dịch. Và với tư cách là đầu vào, Alice không có lựa chọn nào khác, cô ấy chỉ có một UTxO, vì vậy cô ấy sử dụng cái đó. Và Bob cũng không có lựa chọn nào khác vì cả hai UTxO của anh ấy đều không đủ lớn để bao phủ 55 ADA. Vì vậy, Bob phải sử dụng cả hai UTxO của mình làm đầu vào.
 
 ![Screenshot 2022-03-22 at 19-58-43 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159596144-411b6d09-bbfa-4636-b6dd-a3df3b52776a.png)
 
-This time we need three outputs, one the 55 plus 55 equals 110 ADA for Charlie, and the two change outputs, one for Alice's change and one for Bob's change. So Alice paid 90, so she should get 35 change and Bob paid 60. So he should get five change. 
+Lần này chúng ta cần ba đầu ra, một là 55 cộng 55 bằng 110 ADA cho Charlie, và hai đầu ra thay đổi, một cho thay đổi của Alice và một cho thay đổi của Bob. Vì vậy, Alice đã trả 90, vì vậy cô ấy sẽ nhận được 35 tiền lẻ và Bob trả 60. Vì vậy, anh ấy sẽ nhận được 5 tiền lẻ.
 
 ![Screenshot 2022-03-22 at 20-01-15 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159596202-c5f5b1e7-dd5a-4764-861f-4ba4bea294c4.png)
 
-One thing I haven't yet explained is under which conditions a transaction can spend a given UTxO. Obviously it wouldn't be a good idea if any transaction could spend arbitrary UTxOs, if that was the case, then Bob could spend Alice's money without her consent. So the way it works is by adding signatures to transactions, so for our first example, our transaction one, because that consumes an UTxO belonging to Alice as input. Alice's signature has to be added to the transaction. And in the second example, because there are inputs belonging to both Alice and Bob, both Alice and Bob have to sign that transaction, which incidentally is something you can't do in Daedalus. So you would have to use the Cardano CLI for complex transactions like that.<br/>
+Một điều tôi chưa giải thích là trong những điều kiện nào thì một giao dịch có thể chi tiêu một UTxO nhất định. Rõ ràng sẽ không phải là một ý tưởng hay nếu bất kỳ giao dịch nào có thể chi tiêu UTxO tùy ý, nếu đúng như vậy, thì Bob có thể chi tiêu tiền của Alice mà không cần sự đồng ý của cô ấy. Vì vậy, cách thức hoạt động của nó là bằng cách thêm chữ ký vào các giao dịch, ví dụ đầu tiên của chúng ta, giao dịch của chúng ta, bởi vì điều đó sử dụng một UTxO thuộc về Alice làm đầu vào. Chữ ký của Alice phải được thêm vào giao dịch. Và trong ví dụ thứ hai, vì có đầu vào thuộc về cả Alice và Bob nên cả Alice và Bob đều phải ký vào giao dịch đó, tình cờ đây lại là điều bạn không thể thực hiện trong Daedalus. Vì vậy, bạn sẽ phải sử dụng Cardano CLI cho các giao dịch phức tạp như vậy.
 
-Everything I've explained so far is just about the UTxO model, not the extended UTxO model. So this is all just a simple UTxO model. And the extended part comes in when we talk about smart contracts. So in order to understand that, let's just concentrate on one consumption on a UTxO by an input. 
+Mọi thứ tôi đã giải thích cho đến nay chỉ là về mô hình UTxO, không phải mô hình UTxO mở rộng. Vì vậy, đây chỉ là một mô hình UTxO đơn giản. Và phần mở rộng xuất hiện khi chúng ta nói về hợp đồng thông minh. Vì vậy, để hiểu điều đó, chúng ta hãy chỉ tập trung vào một mức tiêu thụ trên UTxO theo đầu vào. 
 
 ![Screenshot 2022-03-22 at 20-02-40 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159596277-5db97b72-55fc-4edb-b273-1c9399c3cf7e.png)
 
-And as I just explained, the validation that decides whether the transaction this input belongs to is allowed to consume that you take so in the simple UTxO model relies on digital signatures. So in this case, Alice has to sign the transaction for this consumption of the UTxO to be valid. And now the idea of the extended UTxO model is to make this more general. So instead of just having one condition, namely that the appropriate signature is present in the transaction. We replace this by arbitrary logic, and this is where Plutus comes in. 
+Và như tôi vừa giải thích, việc xác thực quyết định liệu giao dịch mà đầu vào này thuộc về có được phép sử dụng hay không mà bạn thực hiện trong mô hình UTxO đơn giản dựa trên chữ ký điện tử. Vì vậy, trong trường hợp này, Alice phải ký giao dịch để việc tiêu thụ UTxO này có hiệu lực. Và bây giờ, ý tưởng về mô hình UTxO mở rộng là làm cho điều này trở nên tổng quát hơn. Vì vậy, thay vì chỉ có một điều kiện, cụ thể là có chữ ký phù hợp trong giao dịch. Chúng tôi thay thế điều này bằng logic tùy ý và đây là lúc Plutus xuất hiện.
 
-So instead of just having an address that corresponds to a public key, and that can be verified by a signature that is added to the transaction, instead we have more general addresses that are not based on public keys or the hashes of public keys, but instead contain arbitrary logic that can decide under which condition this specific UTxO can be spent by a transaction. So instead of an address going to a public key, like Alice's public key in this example, there will be an arbitrary script, a script containing arbitrary logic. And instead of the signature in the transaction, the input will justify that it is allowed to consume this output with some arbitrary piece of data that we call the redeemer. So we replace the public key address.<br/>
+Vì vậy, thay vì chỉ có một địa chỉ tương ứng với khóa chung và địa chỉ đó có thể được xác minh bằng chữ ký được thêm vào giao dịch, thay vào đó, chúng tôi có nhiều địa chỉ chung hơn không dựa trên khóa chung hoặc giá trị băm của khóa chung, nhưng thay vào đó chứa logic tùy ý có thể quyết định trong điều kiện nào UTxO cụ thể này có thể được chi tiêu bởi một giao dịch. Vì vậy, thay vì một địa chỉ chuyển đến khóa chung, như khóa chung của Alice trong ví dụ này, sẽ có một tập lệnh tùy ý, một tập lệnh chứa logic tùy ý. Và thay vì chữ ký trong giao dịch, đầu vào sẽ chứng minh rằng nó được phép sử dụng đầu ra này với một số phần dữ liệu tùy ý mà chúng tôi gọi là người mua lại. Vì vậy, chúng tôi thay thế địa chỉ khóa công khai.
 
 
 ![Screenshot 2022-03-22 at 20-04-22 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159596485-9d39165d-167c-4624-84ff-15f68c52c3db.png)
 
-Alice in our example by a script, we place a digital signature by a redeemer which is an arbitrary piece of data. Now, the next question is, what exactly does that mean? What do we mean by arbitrary logic? And in particular it's important to consider what information? What context does this script have? So there are several options. And the one indicated in this diagram is that all the script sees is the redeemer. So all the information the script has in order to decide whether it's okay for the transaction to consume this UTxO or not is looking at the redeemer. And that is the thing that Bitcoin incidentally does.So, in Bitcoin, there are smart contracts, they are just not very smart.They are called Bitcoin script and Bitcoin script works exactly like this. So there's a script on the UTxO site and a redeemer on the input side and the script gets the redeemer and can use the redeemer to decide whether it's okay to consume the UTxO or not. But that's not the only option, we can decide to give more information to the script. 
+Alice trong ví dụ của chúng tôi bằng một tập lệnh, chúng tôi đặt chữ ký điện tử của người mua lại, đây là một phần dữ liệu tùy ý. Bây giờ, câu hỏi tiếp theo là, điều đó chính xác có nghĩa là gì? Chúng ta có ý nghĩa gì bởi logic tùy ý? Và đặc biệt quan trọng là xem xét thông tin gì? Kịch bản này có ngữ cảnh gì? Vì vậy, có một số tùy chọn. Và điều được chỉ ra trong sơ đồ này là tất cả những gì tập lệnh nhìn thấy là người chuộc lỗi. Vì vậy, tất cả thông tin mà tập lệnh có để quyết định liệu giao dịch có sử dụng UTxO này hay không đều đang xem xét người mua lại. Và đó là điều mà Bitcoin tình cờ làm được. Vì vậy, trong Bitcoin, có các hợp đồng thông minh, chúng không thông minh lắm. Chúng được gọi là tập lệnh Bitcoin và tập lệnh Bitcoin hoạt động chính xác như thế này. Vì vậy, có ' sa trên trang web UTxO và một công cụ đổi thưởng ở phía đầu vào và tập lệnh này nhận được công cụ đổi quà và có thể sử dụng công cụ đổi quà để quyết định xem có thể sử dụng UTxO hay không. Nhưng đó không phải là lựa chọn duy nhất, chúng tôi có thể quyết định cung cấp thêm thông tin cho tập lệnh.
 
 ![Screenshot 2022-03-22 at 20-01-15 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159596728-7f3c241d-810c-4cfd-bcfb-42ec86b1f04a.png)
 
-So, Ethereum uses a different concept. In Ethereum the script basically can see everything, the whole blockchain,the whole state of the blockchain. So that's like the opposite extreme of Bitcoin. Bitcoin the script has very little context, all it can see is the redeemer. In Ethereum the solidity scripts in Ethereum can see the complete state of the blockchain. So that enables Ethereum's scripts to be much more powerful so they can do basically everything, but it also comes with problems because the scripts are so powerful, it's also very difficult to predict what a given script will do and that opens the door to all sorts of security issues and dangerous, because it's very hard to predict for the developers of an Ethereum smart contract what can possibly happen because there are so many possibilities.<br/>
+Vì vậy, Ethereum sử dụng một khái niệm khác. Trong Ethereum, về cơ bản, tập lệnh có thể nhìn thấy mọi thứ, toàn bộ chuỗi khối, toàn bộ trạng thái của chuỗi khối. Vì vậy, đó giống như một thái cực đối lập với Bitcoin. Tập lệnh Bitcoin có rất ít ngữ cảnh, tất cả những gì nó có thể thấy là người mua lại. Trong Ethereum, các tập lệnh solidity trong Ethereum có thể thấy trạng thái hoàn chỉnh của chuỗi khối. Vì vậy, điều đó cho phép các tập lệnh của Ethereum mạnh hơn nhiều để về cơ bản chúng có thể làm được mọi thứ, nhưng nó cũng đi kèm với các vấn đề vì các tập lệnh quá mạnh, cũng rất khó để dự đoán một tập lệnh cụ thể sẽ làm gì và điều đó mở ra cơ hội cho mọi loại về các vấn đề bảo mật và nguy hiểm, bởi vì rất khó để dự đoán đối với các nhà phát triển hợp đồng thông minh Ethereum điều gì có thể xảy ra vì có rất nhiều khả năng.
 
-So what Cardano does is something in the middle, so it doesn't offer such a restricted view as Bitcoin, but also does not have a global view as Ethereum, but instead chooses a middle ground. So, the Plutus script can't see the whole blockchain, but it can see the whole transaction that is being validated. 
+Vì vậy, những gì Cardano làm là một cái gì đó ở giữa, vì vậy nó không đưa ra quan điểm hạn chế như Bitcoin, nhưng cũng không có quan điểm toàn cầu như Ethereum, mà thay vào đó chọn một nền tảng trung gian. Vì vậy, tập lệnh Plutus không thể nhìn thấy toàn bộ chuỗi khối, nhưng nó có thể thấy toàn bộ giao dịch đang được xác thực.
 
 
 ![Screenshot 2022-03-22 at 20-08-04 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159596869-3ebf8181-ae73-4539-bded-21b1eaf5d9fd.png)
 
-So, in contrast to Bitcoin it can just see this one input, the redeem of this one input, but it can see that and all the other inputs of the transaction and also all the outputs of the transaction and the transaction itself, and the Plutus script can use that information to decide whether it's okay to consume this output.<br/>
+Vì vậy, trái ngược với Bitcoin, nó chỉ có thể thấy một đầu vào này, việc mua lại một đầu vào này, nhưng nó có thể thấy đầu vào đó và tất cả các đầu vào khác của giao dịch cũng như tất cả các đầu ra của giao dịch và chính giao dịch đó, và Plutus tập lệnh có thể sử dụng thông tin đó để quyết định xem có nên sử dụng đầu ra này hay không.
 
-Now, in this example, there's only one input, but if this transaction had more than one input, then the script would be able to see those as well. There's one last ingredient that Plutus scripts need in order to be as powerful and expressive as Ethereum scripts. And that is a so-called datum which is a piece of data that can be associated with a UTxO in addition to the value. So at a script address, like in this example, in addition to this 100 ADA value, that can be an arbitrary piece of data attached, which we call datum. And with this, we can actually mathematically prove that Plutus is at least as powerful as Ethereum, so everything, every logic you can express in Ethereum you can also express in this extended UTxO model that Cardano uses, but it has a lot of important advantages in comparison to the Ethereum model. So for example, in Plutus, it is possible to check whether a transaction will validate in your wallet before you ever sent it to the chain. So something can still go wrong, so for example, your transaction can consume an output and then when it gets to the chain, somebody else has already consumed that output.This output has already been consumed by another transaction.You can't prevent that, but in that case, your transaction will simply fail without you having to pay any fees. But if all the inputs are still there, that your transaction expects, then you can be sure that the transaction will validate and that it will have the effect that you predicted when you ran it in your wallet.<br/>
+Bây giờ, trong ví dụ này, chỉ có một đầu vào, nhưng nếu giao dịch này có nhiều hơn một đầu vào, thì tập lệnh cũng có thể nhìn thấy những đầu vào đó. Còn một thành phần cuối cùng mà các tập lệnh Plutus cần để trở nên mạnh mẽ và biểu cảm như các tập lệnh Ethereum. Và đó là cái gọi là dữ liệu chuẩn, là một phần dữ liệu có thể được liên kết với UTxO ngoài giá trị. Vì vậy, tại một địa chỉ tập lệnh, như trong ví dụ này, ngoài giá trị 100 ADA này, đó có thể là một phần dữ liệu tùy ý được đính kèm, mà chúng tôi gọi là mốc thời gian. Và với điều này, chúng ta thực sự có thể chứng minh về mặt toán học rằng Plutus ít nhất cũng mạnh ngang với Ethereum, vì vậy mọi thứ, mọi logic bạn có thể thể hiện trong Ethereum, bạn cũng có thể thể hiện trong mô hình UTxO mở rộng này mà Cardano sử dụng, nhưng nó có rất nhiều lợi thế quan trọng so với mô hình Ethereum. Ví dụ, trong Plutus, có thể kiểm tra xem một giao dịch có được xác thực trong ví của bạn hay không trước khi bạn gửi giao dịch đó đến chuỗi. Vì vậy vẫn có thể xảy ra sự cố, ví dụ: giao dịch của bạn có thể sử dụng một đầu ra và sau đó khi nó được đưa vào chuỗi, ai đó khác đã sử dụng đầu ra đó. Đầu ra này đã được sử dụng bởi một giao dịch khác. Bạn không thể ngăn chặn điều đó , nhưng trong trường hợp đó, giao dịch của bạn sẽ không thành công mà bạn không phải trả bất kỳ khoản phí nào. Nhưng nếu tất cả các đầu vào vẫn còn đó, mà giao dịch của bạn mong đợi, thì bạn có thể chắc chắn rằng giao dịch sẽ hợp lệ và nó sẽ có tác dụng như bạn đã dự đoán khi chạy nó trong ví của mình. giao dịch của bạn có thể tiêu thụ một đầu ra và sau đó khi nó đến chuỗi, ai đó khác đã tiêu thụ đầu ra đó. Đầu ra này đã được sử dụng bởi một giao dịch khác. Bạn không thể ngăn chặn điều đó, nhưng trong trường hợp đó, giao dịch của bạn sẽ đơn giản là thất bại mà bạn không phải trả bất kỳ khoản phí nào. Nhưng nếu tất cả các đầu vào vẫn còn đó, mà giao dịch của bạn mong đợi, thì bạn có thể chắc chắn rằng giao dịch sẽ hợp lệ và nó sẽ có tác dụng như bạn đã dự đoán khi chạy nó trong ví của mình. giao dịch của bạn có thể tiêu thụ một đầu ra và sau đó khi nó đến chuỗi, ai đó khác đã tiêu thụ đầu ra đó. Đầu ra này đã được sử dụng bởi một giao dịch khác. Bạn không thể ngăn chặn điều đó, nhưng trong trường hợp đó, giao dịch của bạn sẽ đơn giản là thất bại mà bạn không phải trả bất kỳ khoản phí nào. Nhưng nếu tất cả các đầu vào vẫn còn đó, mà giao dịch của bạn mong đợi, thì bạn có thể chắc chắn rằng giao dịch sẽ hợp lệ và nó sẽ có tác dụng như bạn đã dự đoán khi chạy nó trong ví của mình.
 
-This is definitely not the case in Ethereum, in Ethereum in the time between you constructing the transaction and it being incorporated into the blockchain, a lot of stuff can happen concurrently and that's unpredictable, and that can have unpredictable effects on what will happen when your script eventually executes. So that means in Ethereum it's always possible that you have to pay gas fee for a transaction, although the transaction eventually fails with an error, and that is guaranteed not to happen in Cardano. In addition to that, it's also easier to analyze a Plutus script and to check or even proof that it is secure because you don't have to consider the whole state of the blockchain, which is unknowable. You can concentrate on this context that just consists of the spending transaction. So you have a much more limited scope and that makes it much easier to understand what a script is actually doing and what can possibly happen or what could possibly go wrong.So this is it, that's the extended UTxO model that Plutus uses.<br/>
+Đây chắc chắn không phải là trường hợp của Ethereum, trong Ethereum trong khoảng thời gian giữa bạn xây dựng giao dịch và nó được tích hợp vào chuỗi khối, rất nhiều thứ có thể xảy ra đồng thời và điều đó không thể đoán trước, và điều đó có thể có những tác động không thể đoán trước đối với những gì sẽ xảy ra khi giao dịch của bạn kịch bản cuối cùng thực thi. Vì vậy, điều đó có nghĩa là trong Ethereum, luôn có khả năng bạn phải trả phí gas cho một giao dịch, mặc dù giao dịch cuối cùng không thành công do lỗi và điều đó được đảm bảo không xảy ra trong Cardano. Ngoài ra, việc phân tích tập lệnh Plutus cũng dễ dàng hơn và kiểm tra hoặc thậm chí chứng minh rằng nó an toàn vì bạn không phải xem xét toàn bộ trạng thái của chuỗi khối, điều không thể biết được. Bạn có thể tập trung vào bối cảnh chỉ bao gồm giao dịch chi tiêu này.
 
-So to recapitulate in extending the normal UTxO model, we replace public key addresses from the normal UTxO model with scripts, Plutus scripts, and instead of legitimizing the consumption of new UTxO by digital signatures, as in the simple UTxO model, arbitrary data  called redeemer is used on the input side. And we also add arbitrary custom data on the output side. And the script as context when it runs, sees the spending transaction, the transaction one, in this example. So given the redeemer and the datum and the transaction with its other inputs and outputs, the script can run arbitrary logic to decide whether it's okay for this transaction to consume the output or not. And that is how Plutus works.<br/>
+Vì vậy, để tóm tắt lại việc mở rộng mô hình UTxO thông thường, chúng tôi thay thế các địa chỉ khóa công khai từ mô hình UTxO thông thường bằng tập lệnh, tập lệnh Plutus và thay vì hợp pháp hóa việc sử dụng UTxO mới bằng chữ ký số, như trong mô hình UTxO đơn giản, dữ liệu tùy ý được gọi là người mua lại được sử dụng ở phía đầu vào. Và chúng tôi cũng thêm dữ liệu tùy chỉnh tùy ý ở phía đầu ra. Và tập lệnh dưới dạng ngữ cảnh khi nó chạy, sẽ thấy giao dịch chi tiêu, giao dịch, trong ví dụ này. Vì vậy, với người mua lại và mốc thời gian cũng như giao dịch với các đầu vào và đầu ra khác của nó, tập lệnh có thể chạy logic tùy ý để quyết định xem giao dịch này có thể tiêu thụ đầu ra hay không. Và đó là cách Plutus hoạt động.
 
-One thing I haven't mentioned yet is who is responsible for providing datum, redeemer and the validator, the script that validates whether a transaction can consume an input. And the rule in Plutus is that the spending transaction has to do that whereas the producing transaction only has to provide hashes.So that means if I produce an output that sits at a script address, then this producing transaction only has to include the hash of the script and the hash of the datum that belongs to this output. But optionally, it can include the datum and the script as well, fully, but that's only optional. And if a transaction wants to consume such a script output, then that transaction,the spending transaction has to include the datum and the redeemer and the script. So that's the rule, how it works in Plutus, which of course means that in order to be able to spend a given input, you need to know the datum because only the hash is publicly visible on the blockchain. Which is sometimes a problem and not what you want and that's where this possibility comes into to also include it in the producing transaction. Otherwise only people that know the datum by some other means not by looking at the blockchain would be able to ever spend such an output.<br/>
+Một điều tôi chưa đề cập đến là ai chịu trách nhiệm cung cấp dữ liệu, người mua lại và trình xác thực, tập lệnh xác thực xem một giao dịch có thể sử dụng đầu vào hay không. Và quy tắc trong Plutus là giao dịch chi tiêu phải thực hiện điều đó trong khi giao dịch sản xuất chỉ phải cung cấp hàm băm. Vì vậy, điều đó có nghĩa là nếu tôi tạo ra một đầu ra nằm ở địa chỉ tập lệnh, thì giao dịch tạo ra này chỉ phải bao gồm hàm băm của tập lệnh và hàm băm của dữ liệu thuộc về đầu ra này. Nhưng theo tùy chọn, nó cũng có thể bao gồm dữ liệu và tập lệnh đầy đủ, nhưng đó chỉ là tùy chọn. Và nếu một giao dịch muốn sử dụng đầu ra tập lệnh như vậy, thì giao dịch đó, giao dịch chi tiêu phải bao gồm dữ liệu và người mua lại và tập lệnh. Đó là quy tắc, cách nó hoạt động trong Plutus, tất nhiên, điều đó có nghĩa là để có thể chi tiêu một đầu vào nhất định, bạn cần biết dữ liệu vì chỉ hàm băm được hiển thị công khai trên chuỗi khối. Điều này đôi khi là một vấn đề và không phải là điều bạn muốn và đó là lúc khả năng này xuất hiện để đưa nó vào giao dịch sản xuất. Mặt khác, chỉ những người biết dữ liệu bằng một số phương tiện khác chứ không phải bằng cách nhìn vào chuỗi khối mới có thể chi tiêu một đầu ra như vậy.
 
-So this is the UTxO model, the extended unspent transaction output model. And that is of course not tied to a specific programming language.I mean, what we have is Plutus, which is based on Haskell, but in principle, you could use the same concept, the same UTxO model with a completely different programming language. And we also plan to write compilers from other programming languages to Plutus script which issort of the assembly language and aligned Plutus.So there's an extended UTxO model is different from the specific programming language we use. In this course, we will use Plutus obviously, but the understanding the UTxO model is independently valid from understanding Plutus or learning Plutus syntax.
+Đây là mô hình UTxO, mô hình đầu ra giao dịch chưa chi tiêu mở rộng. Và điều đó tất nhiên là không gắn với một ngôn ngữ lập trình cụ thể nào. Ý tôi là, cái chúng ta có là Plutus, dựa trên Haskell, nhưng về nguyên tắc, bạn có thể sử dụng cùng một khái niệm, cùng một mô hình UTxO với một ngôn ngữ lập trình hoàn toàn khác. Và chúng tôi cũng có kế hoạch viết các trình biên dịch từ các ngôn ngữ lập trình khác sang tập lệnh Plutus, một loại ngôn ngữ hợp ngữ và Plutus được căn chỉnh. Vì vậy, có một mô hình UTxO mở rộng khác với ngôn ngữ lập trình cụ thể mà chúng tôi sử dụng. Trong khóa học này, rõ ràng chúng ta sẽ sử dụng Plutus, nhưng việc hiểu mô hình UTxO có giá trị độc lập với việc hiểu Plutus hoặc học cú pháp Plutus.
 
-## The Auction Contract in the EUTxO Model
+## Hợp đồng đấu giá trong Mô hình EUTxO
 
 
 ![Screenshot 2022-03-22 at 20-13-48 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159597264-b3900135-1d11-4796-ae1b-11c4965c48a7.png)
 
-As our introductory example we are going to look at an English Auction. Somebody wants to auction an NFT (Non-fungible token) - a native token on Cardano that exists only once. An NFT can represent some digital art or maybe some real-world asset.
+Như ví dụ giới thiệu của chúng tôi, chúng tôi sẽ xem xét Đấu giá kiểu Anh. Ai đó muốn bán đấu giá NFT (Mã thông báo không thể thay thế) - mã thông báo gốc trên Cardano chỉ tồn tại một lần. Một NFT có thể đại diện cho một số tác phẩm nghệ thuật kỹ thuật số hoặc có thể là một số tài sản trong thế giới thực.
 
-The auction is parameterised by the owner of the token, the token itself, a minimal bid and a deadline.
+Phiên đấu giá được tham số hóa bởi chủ sở hữu mã thông báo, chính mã thông báo, giá thầu tối thiểu và thời hạn.
 
-So let's say that Alice has an NFT and wants to auction it.
-Alice Creates an English Auction
+Vì vậy, giả sử Alice có một NFT và muốn bán đấu giá nó. Alice tạo một cuộc đấu giá bằng tiếng Anh
 
-She creates a UTxO at the script output. We will look at the code later, but first we will just examine the ideas of the UTxO model.
+Cô ấy tạo một UTxO ở đầu ra tập lệnh. Chúng ta sẽ xem xét mã sau, nhưng trước tiên chúng ta sẽ chỉ xem xét các ý tưởng của mô hình UTxO.
 
-The value of the UTxO is the NFT, and the datum is Nothing. Later on it will be the highest bidder and the highest bid. But right now, there hasn't yet been a bid.
+Giá trị của UTxO là NFT và dữ liệu chuẩn là Không có gì. Sau đó, nó sẽ là người trả giá cao nhất và giá thầu cao nhất. Nhưng ngay bây giờ, vẫn chưa có giá thầu.
 
-In the real blockchain you can't have a UTxO that just contains native tokens, they always have to be accompanied by some Ada, but for simplicity we will ignore that here.
+Trong chuỗi khối thực, bạn không thể có UTxO chỉ chứa mã thông báo gốc, chúng luôn phải đi kèm với một số Ada, nhưng để đơn giản, chúng tôi sẽ bỏ qua điều đó ở đây.
 
 
 ![Screenshot 2022-03-22 at 20-15-58 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159597444-ab704788-ab82-42f0-b343-4e987a4a50e7.png)
 
 
-Not let's say that Bob wants to bid 100 Ada.
-Bob Makes a Bid
+Không giả sử rằng Bob muốn đặt giá thầu 100 Ada. Bob đưa ra giá thầu
 
-In order to do this, Bob creates a transaction with two inputs and one output. The first input is the auction UTxO and the second input is Bob's bid of 100 Ada. The output is, again, at the output script, but now the value and the datum has changed. Previously the datum was Nothing but now it is (Bob, 100).
+Để làm điều này, Bob tạo một giao dịch với hai đầu vào và một đầu ra. Đầu vào đầu tiên là phiên đấu giá UTxO và đầu vào thứ hai là giá thầu của Bob là 100 Ada. Đầu ra, một lần nữa, ở tập lệnh đầu ra, nhưng bây giờ giá trị và mốc thời gian đã thay đổi. Trước đây tiêu chuẩn là Không có gì nhưng bây giờ là như vậy (Bob, 100).
 
-The value has changed because now there is not only the NFT in the UTxO, but also the 100 Ada bid.
+Giá trị đã thay đổi vì giờ đây không chỉ có NFT trong UTxO mà còn có giá thầu 100 Ada.
 
-As a redeemer, in order to unlock the original auction UTxO, we use something called Bid. This is just an algebraic data type. There will be other values as well but one of those is Bid. And the auction script will check that all the conditions are satisfied. So, in this case the script has to check that the bid happens before the deadline, that the bid is high enough.
+Với tư cách là người đổi thưởng, để mở khóa phiên đấu giá gốc UTxO, chúng tôi sử dụng thứ gọi là Giá thầu. Đây chỉ là một kiểu dữ liệu đại số. Cũng sẽ có các giá trị khác nhưng một trong số đó là Giá thầu. Và kịch bản đấu giá sẽ kiểm tra xem tất cả các điều kiện có được đáp ứng hay không. Vì vậy, trong trường hợp này, tập lệnh phải kiểm tra xem giá thầu có diễn ra trước thời hạn không, giá thầu có đủ cao không.
 
-It also has to check that the correct inputs and outputs are present. In this case that means checking that the auction is an output containing the NFT and has the correct datum.
+Nó cũng phải kiểm tra xem có đúng đầu vào và đầu ra không. Trong trường hợp này, điều đó có nghĩa là kiểm tra xem phiên đấu giá có phải là đầu ra chứa NFT và có datum chính xác hay không. 
 
 
 ![Screenshot 2022-03-22 at 20-17-06 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159597527-ad86acf8-8fae-4718-9358-2cb383414b2a.png)
 
 
 
-Next, let's assume that Charlie wants to outbid Bob and bid 200 Ada.
-Charlie Makes a Bid
+Tiếp theo, giả sử rằng Charlie muốn trả giá cao hơn Bob và đặt giá thầu 200 Ada. Charlie đưa ra giá thầu
 
-Charlie will create another transaction, this time one with two inputs and two outputs. As in the first case, the two inputs are the bid (this time Charlie's bid of 200 Ada), and the auction UTxO. One of the outputs is the updated auction UTxO. There will also be a second output, which will be a UTxO which returns Bob's bid of 100 Ada.
+Charlie sẽ tạo một giao dịch khác, lần này là giao dịch có hai đầu vào và hai đầu ra. Như trong trường hợp đầu tiên, hai đầu vào là giá thầu (lần này giá thầu của Charlie là 200 Ada) và phiên đấu giá UTxO. Một trong những kết quả đầu ra là phiên đấu giá UTxO được cập nhật. Cũng sẽ có đầu ra thứ hai, sẽ là UTxO trả về giá thầu 100 Ada của Bob.
 
-Note
+Ghi chú
 
-In reality the auction UTxO is not updated because nothing ever changes.
+Trên thực tế, phiên đấu giá UTxO không được cập nhật vì không có gì thay đổi.
 
-What really happens is that the old auction UTxO is spent and a new one is created, but it has the feel of updating the state of the auction UTxO
+Điều thực sự xảy ra là phiên đấu giá cũ UTxO đã được sử dụng và một phiên đấu giá mới được tạo, nhưng nó có cảm giác cập nhật trạng thái của phiên đấu giá UTxO
 
-This time we again use the Bid redeemer. This time the script has to check that the deadline has been reached, that the bid is higher than the previous bid, it has to check that the auction UTxO is correctly created and it has to check that the previous highest bidder gets their bid back.
+Lần này, chúng tôi lại sử dụng công cụ mua lại Giá thầu. Lần này, tập lệnh phải kiểm tra xem đã đạt đến thời hạn chưa, giá thầu có cao hơn giá thầu trước đó không, tập lệnh phải kiểm tra xem phiên đấu giá UTxO có được tạo chính xác hay không và phải kiểm tra xem người trả giá cao nhất trước đó có nhận lại giá thầu của họ không.
 
 
 ![Screenshot 2022-03-22 at 20-18-31 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159597670-239a57c9-1dbe-4d07-ae2d-4b30de61b474.png)
 
-Finally, let's assume that there won't be another bid, so once the deadline has been reached, the auction can be closed.
+Cuối cùng, giả sử rằng sẽ không có giá thầu nào khác, vì vậy khi đã hết thời hạn, phiên đấu giá có thể kết thúc.
 
-In order to do that, somebody has to create yet another transaction. That could be Alice who wants to collect the bid or it could be Charlie who wants to collect the NFT. It can be anybody, but Alice and Charlie have an incentive to do so.
+Để làm được điều đó, ai đó phải tạo một giao dịch khác. Đó có thể là Alice muốn thu thập giá thầu hoặc có thể là Charlie muốn thu thập NFT. Đó có thể là bất kỳ ai, nhưng Alice và Charlie có động cơ để làm như vậy.
 
-This transaction will have one input - the auction UTxO, this time with the Close redeemer - and it will have two outputs. One of the outputs is for highest bidder, Charlie, and he gets the NFT and the second output goes to Alice who gets the highest bid.
+Giao dịch này sẽ có một đầu vào - phiên đấu giá UTxO, lần này với người mua lại Đóng - và giao dịch này sẽ có hai đầu ra. Một trong những kết quả đầu ra dành cho người trả giá cao nhất, Charlie, và anh ấy nhận được NFT và kết quả thứ hai thuộc về Alice, người nhận được giá thầu cao nhất.
 
-In the Close case, the script has to check that the deadline has been reached and that the winner gets the NFT and the auction owner gets the highest bid.
+Trong trường hợp Đóng, tập lệnh phải kiểm tra xem đã đến thời hạn chưa và người chiến thắng nhận được NFT và chủ sở hữu phiên đấu giá nhận được giá thầu cao nhất.
 
 
 ![Screenshot 2022-03-22 at 20-19-24 PPP 030101 - Welcome and Introduction](https://user-images.githubusercontent.com/59018247/159597728-da57dd37-5236-4665-b099-877b66620db3.png)
 
 
-There is one more scenario for us to consider, namely that nobody makes any bid.
-Nobody Makes a Bid
+Có một kịch bản nữa để chúng ta xem xét, đó là không ai đưa ra bất kỳ giá thầu nào. Không ai đặt giá thầu
 
-Alice creates the auction, but receives no bids. In this case, there must be a mechanism for Alice to retrieve her NFT.
+Alice tạo phiên đấu giá nhưng không nhận được giá thầu nào. Trong trường hợp này, phải có một cơ chế để Alice lấy lại NFT của mình.
 
-For that she creates a transaction with the Close redeemer, but now because there is no bidder, the NFT doesn't go to the highest bidder but simply goes back to Alice.
+Để làm được điều đó, cô ấy đã tạo một giao dịch với người mua lại Đóng, nhưng bây giờ vì không có người đặt giá thầu, NFT không chuyển đến người đặt giá thầu cao nhất mà chỉ quay trở lại Alice.
 
-The logic in this case is slightly different. It will check that the NFT goes back to Alice, however, it doesn't really need to check the recipient because the transaction will be triggered by Alice and she can send the NFT wherever she wants.
+Logic trong trường hợp này hơi khác một chút. Nó sẽ kiểm tra xem NFT có quay trở lại Alice hay không, tuy nhiên, nó không thực sự cần kiểm tra người nhận vì giao dịch sẽ được kích hoạt bởi Alice và cô ấy có thể gửi NFT đến bất cứ đâu cô ấy muốn.
 
-Plutus code is broken down into on-chain and off-chain code. On-chain code just checks and validates, as in it just says yes or no. The off-chain code actively creates that translation that will then pass validation. Both of the on-chain and off-chain parts are uniformly written in haskell. This is largely advantageous as code can be shared, and you only need to concern yourself with one programming language.
+Mã Plutus được chia thành mã trên chuỗi và mã ngoài chuỗi. Mã trên chuỗi chỉ cần kiểm tra và xác thực, vì trong đó chỉ nói có hoặc không. Mã ngoài chuỗi tích cực tạo bản dịch đó, sau đó sẽ vượt qua xác thực. Cả hai phần on-chain và off-chain đều được viết thống nhất bằng haskell. Điều này phần lớn có lợi vì mã có thể được chia sẻ và bạn chỉ cần quan tâm đến một ngôn ngữ lập trình.
 
-Looking at the auction contract EnglishAuction.hs, we see the various data types are listed first in the contract:
+Nhìn vào hợp đồng đấu giá EnglishAuction.hs, chúng tôi thấy các loại dữ liệu khác nhau được liệt kê đầu tiên trong hợp đồng:
 
 ```haskell
 minLovelace :: Integer
@@ -324,7 +325,7 @@ instance Scripts.ValidatorTypes Auctioning where
   type instance DatumType Auctioning = AuctionDatum
 ```
 
-Followed by the main on-chain code (validation):
+Tiếp theo là mã trên chuỗi chính (xác thực)- on-chain code (validation):
 
 
 ```haskell
@@ -417,7 +418,8 @@ where
     in
       txOutAddress o == pubKeyHashAddress h Nothing
 ```
-Next is where the compilation happens:
+**Tiếp theo là nơi quá trình biên dịch diễn ra:**
+
 ```haskell
 typedAuctionValidator :: Scripts.TypedValidator Auctioning
 typedAuctionValidator = Scripts.mkTypedValidator @Auctioning
@@ -427,7 +429,7 @@ where
   wrap = Scripts.wrapValidator @AuctionDatum @AuctionAction
 ```
 
-After that follows with the off-chain code starting with the three endpoints start, bid, and close.
+Sau đó, tiếp theo là mã ngoại tuyến bắt đầu bằng ba điểm cuối bắt đầu, đặt giá thầu và đóng.
 
 ```haskell
 data StartParams = StartParams
@@ -550,12 +552,12 @@ myToken :: KnownCurrency
 myToken = KnownCurrency (ValidatorHash "f") "Token" (TokenName "T" :| [])
 ```
 
-## The Auction Contract in Plutus Playground
+## Hợp đồng đấu giá trên Plutus Playground
 
 
-In order to get started with Plutus Playground, we need to have two terminals running, both of which are in the nix-shell.
+Để bắt đầu với Plutus Playground, chúng ta cần có hai thiết bị đầu cuối đang chạy, cả hai đều nằm trong nix-shell.
 
-Let’s get started with terminal 1. Head to the plutus-apps directory and first run nix-shell:
+Hãy bắt đầu với terminal 1. Đi tới thư mục plutus-apps và chạy nix-shell trước:
 
 
 ```
@@ -565,7 +567,7 @@ Terminal 1
 ```
 
 
-Next we head to plutus-playground-server directory and run: 
+Tiếp theo, chúng tôi đi đến thư mục plutus-playground-server và chạy:
 
 ```
 Terminal 1
@@ -573,7 +575,7 @@ Terminal 1
 [nix-shell:~/plutus-apps/plutus-playground-server]$ plutus-playground-server
 ```
 
-If Successful, you will see the output:
+Nếu thành công, bạn sẽ thấy đầu ra:
 
 ```
 Terminal 1
@@ -581,7 +583,7 @@ Terminal 1
 Interpreter Ready
 ```
 
-Let’s get started with terminal 2. Head to the plutus-apps directory and first run nix-shell:
+Hãy bắt đầu với terminal 2. Đi tới thư mục plutus-apps và chạy nix-shell trước:
 
 
 ```
@@ -591,7 +593,7 @@ Terminal 2
 ```
 
 
-Next we head to plutus-playground-client directory and run: 
+Tiếp theo, chúng tôi đi đến thư mục plutus-playground-client và chạy:
 
 ```
 Terminal 2
@@ -599,7 +601,7 @@ Terminal 2
 [nix-shell:~/plutus-apps/plutus-playground-client]$ npm run start
 ```
 
-If Successful, you will see the output:
+Nếu thành công, bạn sẽ thấy đầu ra:
 
 ```
 Terminal 2
@@ -611,52 +613,49 @@ or
 [wdm]: Compiled with warnings.
 ```
 
-Keep both terminals open, and we should now be able to access Plutus Playground from the browser.
+Giữ cả hai thiết bị đầu cuối mở và giờ đây chúng ta có thể truy cập Plutus Playground từ trình duyệt.
 
-Open a browser and head to the address:
+Mở trình duyệt và truy cập địa chỉ:
 
 ```
 https://localhost:8009
 ```
 
-You will get a warning complaining about it being a risky website, ignore the message to click through anyway.
+Bạn sẽ nhận được một cảnh báo phàn nàn về việc đây là một trang web nguy hiểm, dù sao hãy bỏ qua thông báo để nhấp qua.
 
-You should now be able to successfully compile and run the auctions contract by using the two buttons in the top right corner: “Compile” and “Simulate”.<br/><br/><br/>
+Giờ đây, bạn có thể biên dịch và chạy thành công hợp đồng đấu giá bằng cách sử dụng hai nút ở góc trên cùng bên phải: `“Biên dịch” và “Mô phỏng”. “Compile” and “Simulate”`.<br/><br/><br/>
 **The next part is taken from reddit (u/RikAlexander) which walks through plutus playground. Credit to him for this submission:** <br/>
 
 ### Simulation
 
-Press "simulate" (blue button in the top right).
+Nhấn "simulate" (nút màu xanh lam ở trên cùng bên phải).
+
+
+Điều này sẽ mở ra cửa sổ Mô phỏng, nơi chúng tôi có thể thử hợp đồng mới được biên dịch của mình.
+
+Điều này mặc định là 2 ví, tuy nhiên, để làm cho mọi thứ trở nên thú vị, hãy thêm một ví khác. (the big `"add wallet"` button)
+
+
+oàn bộ ý tưởng của hợp đồng này là bán đấu giá một NFT (Mã thông báo không thể thay thế).
+
+Mỗi ví có 10 lovelaces và 10 T (T ở đây là Token).
+
+Thay đổi tổng số T cho Wallet1 thành 1 và cho Wallet2 và 3 thành 0. (nếu có nhiều hơn 1 thì tất nhiên đó không phải là NFT)
+
+
+***Nói một cách đơn giản:*** Wallet1 sẽ đưa ra đấu giá 1T và Wallet2-3 sẽ đấu thầu.
+
+Như bạn có thể thấy, mỗi ví có các chức năng `"bid", "close" and "start".`
+
+**Bid** -> đặt giá thầu x lovelaces
+
+**Start** ->bắt đầu quy trình đặt giá thầu với getSlot (thời gian đặt giá thầu sẽ kéo dài bao lâu), spMinBid (yêu cầu dây buộc tối thiểu)
+
+**Close** ->  đóng giá thầu; cung cấp cho người trả giá cao nhất NFT/Token của nó
 
 
 
-This opens the Simulate window, where we can try out our newly compiled contract.
-
-This defaults to 2 wallets, to make things interesting though, add another one. (the big "add wallet" button)
-
-
-
-The whole idea of this contract is to auction off an NFT (Non-Fungible Token).
-
-Each wallet has 10 lovelaces, and 10 T (T is the Token here).
-
-Change the total of T's for Wallet1 to 1, and for Wallet2 and 3, to 0. (if there were more than 1 it wouldn't be an NFT ofcourse)
-
-_**Simply put:**_ Wallet1 is going to put up for auction 1T, and Wallet2-3 will be bidding.
-
-
-
-As you can see, each wallet has the functions "bid", "close" and "start".
-
-**Bid** -> places a bid of x lovelaces
-
-**Start** -> starts the bidding procedure with getSlot (how long will the bidding last for), spMinBid (minimal lovelaces required)
-
-**Close** -> closes the bidding; gives the highest bidder its NFT/Token
-
-
-
-**Note:** "pay to wallet" is always there, don't worry about that now :)
+**Note:** "pay to wallet" luôn ở đó, đừng lo lắng về điều đó bây giờ :)
 
 
 
@@ -664,19 +663,17 @@ As you can see, each wallet has the functions "bid", "close" and "start".
 
 
 
-6 - Wallet1 is going to put the Token up for auction, we'll do this by pressing the "start" button at Wallet1.
+6 - Wallet1 sẽ đưa Token lên đấu giá, chúng tôi sẽ thực hiện việc này bằng cách nhấn nút "start" tại Wallet1.
 
-This will add an Action to the Action Sequence.
+Thao tác này sẽ thêm một Hành động vào Chuỗi Hành động.
 
-
-
-Here we need to set the parameters:
+Ở đây chúng ta cần thiết lập các thông số:
 
 **getSlot:** 20 (the bidding will close on slot 20)
 
 **spMinBid:** 3 (atleast 3 lovelaces are required)
 
-**spCurrency:** 66 (the currencysymbol for the T token; will be explained in future lectures)
+**spCurrency:** 66 (ký hiệu tiền tệ của token T; sẽ được giải thích trong các bài giảng sau)
 
 **spToken:** T (the Token)
 
@@ -684,13 +681,15 @@ Here we need to set the parameters:
 
 [![r/cardano - Week 01 Contract - EnglishAuction - Plutus Pioneer Program](https://preview.redd.it/qag2ffs7r0t61.png?width=316&format=png&auto=webp&s=6b75cf9e5fd4e886880897d22fa73939dc84ea3c)](https://preview.redd.it/qag2ffs7r0t61.png?width=316&format=png&auto=webp&s=6b75cf9e5fd4e886880897d22fa73939dc84ea3c)
 
-Wallet 1
 
 
 
-7 - Next we need to add a wait action (1 slot).
 
-This will give all the actions time to be executed.
+**Ví 1**
+
+7 - Tiếp theo, chúng ta cần thêm hành động chờ (1 vị trí).
+
+Điều này sẽ cung cấp cho tất cả các hành động thời gian để được thực hiện.
 
 
 
@@ -698,9 +697,10 @@ This will give all the actions time to be executed.
 
 
 
-8 - Now for this example Wallet2 will start the bidding with a Bid of 3 lovelaces.
+8 - Bây giờ, trong ví dụ này, Wallet2 sẽ bắt đầu đặt giá thầu với Giá thầu là 3 dây buộc tình yêu.
 
-Press the "bid" button at Wallet2, and update the Action with the parameters:
+Nhấn nút "đặt giá thầu" tại Wallet2 và cập nhật Hành động với các tham số:
+
 
 **spCurrency:** 66 (Same as above)
 
@@ -712,39 +712,33 @@ Press the "bid" button at Wallet2, and update the Action with the parameters:
 
 [![r/cardano - Week 01 Contract - EnglishAuction - Plutus Pioneer Program](https://preview.redd.it/j2xc9wiar0t61.png?width=321&format=png&auto=webp&s=684dbc484a9cf8b702fd04c1b458ba194eb26fe0)](https://preview.redd.it/j2xc9wiar0t61.png?width=321&format=png&auto=webp&s=684dbc484a9cf8b702fd04c1b458ba194eb26fe0)
 
-Wallet 2
+**Ví 2**
 
+9 - Chèn một hành động chờ khác tại đây (1 vị trí)
 
+10 - Bây giờ Wallet3 cũng muốn đặt giá thầu.
 
-9 - Insert another wait action here (1 slot)
+Tương tự như Wallet2, thêm hành động "đặt giá thầu" với tất cả các tham số giống như trên; ngoại trừ tham số bpBid.
 
-
-
-10 - Now Wallet3 also wants to place a bid.
-
-Same as Wallet2, add a "bid" action, with all the same parameters as above; except for the bpBid parameter.
-
-This could be set to anything (min. 3), but for this example we'll set it to 5.
+Điều này có thể được đặt thành bất kỳ thứ gì (tối thiểu 3), nhưng trong ví dụ này, chúng tôi sẽ đặt thành 5.
 
 
 
 [![r/cardano - Week 01 Contract - EnglishAuction - Plutus Pioneer Program](https://preview.redd.it/ekgbkrzbr0t61.png?width=315&format=png&auto=webp&s=f07a612bdad692299bdd9f7a0211b740888751cd)](https://preview.redd.it/ekgbkrzbr0t61.png?width=315&format=png&auto=webp&s=f07a612bdad692299bdd9f7a0211b740888751cd)
 
-Wallet 3
+**Ví 3**
+
+Tuyệt quá. Toàn bộ trình tự đặt giá thầu ĐÃ XONG.
+
+11 - Để kết thúc việc đặt giá thầu, chúng tôi sẽ thêm một hành động chờ khác; chỉ lần này chúng tôi sẽ "chờ cho đến" vị trí 20.
+
+(hãy nhớ hành động đầu tiên chứ? Tại khe 20, cuộc đấu thầu sẽ kết thúc!)
+
+Sau đó, chức năng cuối cùng (đóng) vẫn cần được thêm vào để hoàn tất trình tự đặt giá thầu.
+
+Chúng tôi sẽ gọi điều này từ Wallet1, vì vậy hãy thêm hành động "đóng" từ Wallet1, với các tham số chính xác (bạn biết phải làm gì).
 
 
-
-Great. The whole bidding sequence is *DONE.*
-
-
-
-11 - To finish the bidding, we'll add yet another wait action; only this time we'll "wait until" slot 20.
-
-(remember the first action? At slot 20 the bidding will be closed!)
-
-After this the last function (close) still needs to be added, to finalize the bidding sequence.
-
-We will call this from Wallet1, so add the "close" action from Wallet1, with the correct parameters (you know what to do).
 
 
 
@@ -756,52 +750,49 @@ We will call this from Wallet1, so add the "close" action from Wallet1, with the
 
 
 
-12 - Last but not least, we'll add another wait action here (1 slot)
+12 - Cuối cùng nhưng không kém phần quan trọng, chúng tôi sẽ thêm một hành động chờ khác tại đây (1 vị trí)
 
 
 ### Evaluation
 
-**Great we're done with the whole setup!**
+**Thật tuyệt, chúng ta đã hoàn tất toàn bộ quá trình thiết lập!**
 
 
 
-To execute everything on the simulated blockchain, press the green "Evaluate" button on the bottom of your screen.
+Để thực thi mọi thứ trên chuỗi khối mô phỏng, hãy nhấn nút "Đánh giá" màu xanh lục ở cuối màn hình của bạn.
 
-
-
-On the next screen you'll see the individual slots.
+Trên màn hình tiếp theo, bạn sẽ thấy các vị trí riêng lẻ.
 
 [![r/cardano - Week 01 Contract - EnglishAuction - Plutus Pioneer Program](https://preview.redd.it/exzozcyfr0t61.png?width=800&format=png&auto=webp&s=7ada65e6443b2d594099374195c0bf50c33f78f7)](https://preview.redd.it/exzozcyfr0t61.png?width=800&format=png&auto=webp&s=7ada65e6443b2d594099374195c0bf50c33f78f7)
 
 
 
-_**Slot 0, Tx 0**_ -> the Genesis slot. This is there to setup everything.
+_**Slot 0, Tx 0**_ ->  vị trí Genesis. Đây là có để thiết lập tất cả mọi thứ.
 
-Wallet1 -> 1T and 10 lovelaces, Wallet2 -> 10 lovelaces, Wallet3 -> 10 lovelaces
+Wallet1 -> 1T và 10 lovelace, Wallet2 -> 10 lovelace, Wallet3 -> 10 lovelace
 
-_**Slot 1, Tx 0**_ -> The start action, this is where Wallet1 transfers it's 1T (the Token) to the Contract.
+_**Slot 1, Tx 0**_ -> Hành động bắt đầu, đây là nơi Wallet1 chuyển 1T (Mã thông báo) vào Hợp đồng.
 
-_**Slot 2, Tx 0**_ -> The bid of Wallet2 (3 lovelaces)
+_**Slot 2, Tx 0**_ -> Giá thầu của Wallet2 (3 lovelaces)
 
-**Note:** The contract now has 1T and 3 lovelaces
+**Note:** Hợp đồng hiện có 1T và 3 lovelaces
 
-_**Slot 3, Tx 0**_ -> The bid of Wallet3 (5 lovelaces)
+_**Slot 3, Tx 0**_ -> Giá thầu của Wallet3 (5 lovelaces)
 
-**Note:** The contract now has 1T and 5 lovelaces; Wallet2 gets it's 3 lovelaces back
+**Note:**  Hợp đồng hiện có 1T và 5 lovelaces; Wallet2 lấy lại được 3 lovelaces
 
-_**Slot 20, Tx 0**_ -> Here Wallet3 has won the bidding "war", and is granted its 1T! Also Wallet1 gets its 5 lovelaces :)
+_**Slot 20, Tx 0**_ -> Tại đây, Wallet3 đã thắng "cuộc chiến" đấu thầu và được cấp 1T! Ngoài ra, Wallet1 có 5 dây buộc tình yêu :)
 
-**Note:** The contract now does not have anything at all :) everything is nicely given to it's rightful owners.
+**Note:** Hợp đồng bây giờ không có bất cứ thứ gì cả :) mọi thứ đều được trao cho chủ sở hữu hợp pháp của nó.
 
 
-13 - To check the final output of all wallets, scroll down to the "Final balances" section.
+13 - Để kiểm tra đầu ra cuối cùng của tất cả các ví, hãy cuộn xuống phần "Số dư cuối cùng".
 
-As you can see, Wallet3 now has the 1T.
+Như bạn có thể thấy, Wallet3 hiện có 1T.
 
 [![r/cardano - Week 01 Contract - EnglishAuction - Plutus Pioneer Program](https://preview.redd.it/2yswtd1ir0t61.png?width=1188&format=png&auto=webp&s=25a895aa510ff3e7faa7f3fb25b8f91d4f7ffcf2)](https://preview.redd.it/2yswtd1ir0t61.png?width=1188&format=png&auto=webp&s=25a895aa510ff3e7faa7f3fb25b8f91d4f7ffcf2)
 
 
-## Homework 
+## Bài tập về nhà
 
-
-The objective of the homework this week is to get familiar with running the environment and playing around inside of Plutus Playground. If you have been following the guide up to this point, we should now have the essentials both knowledge and dev environment wise to be ready to move on to lecture 2.
+Mục tiêu của bài tập về nhà tuần này là làm quen với việc vận hành môi trường và chơi đùa bên trong Plutus Playground. Nếu bạn đã làm theo hướng dẫn cho đến thời điểm này, thì bây giờ chúng ta đã có những kiến ​​thức cần thiết cả về kiến ​​thức và môi trường phát triển để sẵn sàng chuyển sang bài giảng 2.
