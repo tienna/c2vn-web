@@ -53,7 +53,11 @@ Nix là một công cụ tuyệt vời, trong số những thứ khác, cho phé
 Cài đặt Nix trên bất kỳ IOS nào **Linux distribution**, **MacOS** or **Windows** (via WSL) thông qua [multi-user installation](https://nixos.org/manual/nix/stable/#chap-installation). Tóm lại, bạn cần chạy điều này tại terminal của mình:
 
 ```
-$ sh <(curl -L https://nixos.org/nix/install) --daemon
+sh <(curl -L https://nixos.org/nix/install) --daemon
+or
+
+curl -L https://nixos.org/nix/install | sh
+. /home/nvhieu_gcp/.nix-profile/etc/profile.d/nix.sh
 ```
 
 Thêm IOHK Binary Cache. Để cải thiện tốc độ xây dựng, có thể thiết lập bộ đệm nhị phân do IOHK duy trì.

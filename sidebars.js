@@ -80,6 +80,14 @@ const sidebars = {
       "dr-lars-lession/week10",
 
     ],
+    
+    "Khóa 3-Plutus của Dr.Lars": [
+      
+      "dr-lars-lession/K_03/Lecture_01",
+      "dr-lars-lession/K_03/Lecture_02",
+      "dr-lars-lession/K_03/Lecture_03",
+
+    ],
     "Tích hợp với Cardano": [
       "integrate-cardano/overview",
       "integrate-cardano/creating-wallet-faucet",
