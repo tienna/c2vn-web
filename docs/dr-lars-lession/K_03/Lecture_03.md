@@ -7,6 +7,10 @@ Offical Video by Lars Brünjes: [PPP-Cohort3-Lecture3](https://youtu.be/sLMhsqiW
 
 Google Doc version can be found [HERE](https://docs.google.com/document/d/1MKEcgNl5QUugBhan39eOKM6zkBJ9_kLkQ6abjWp9pUY/edit#)
 
+**Video thực hành Deploy smartcontract Vesting trên testnet Preprod.**
+
+
+ <iframe width="100%" height="600" src="https://www.youtube.com/embed/ju3To-i9fnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Table of Contents
 - [Lecture 3: Vesting and the Cardano Testnet](#lecture-3-vesting-and-the-cardano-testnet)
@@ -17,7 +21,7 @@ Google Doc version can be found [HERE](https://docs.google.com/document/d/1MKEcg
   - [Handling Time](#handling-time)
   - [Vesting Contract](#vesting-contract)
   - [Parameterized Contract](#parameterized-contract)
-  - [Cardano Testnet](#cardano-testnet)
+  - [Cardano Testnet](#cardano-testnet-smartconctact-trên-mạng-preprod)
   - [Homework Part 1](#homework-part-1)
   - [Homework Part 2](#homework-part-2)
 
@@ -83,7 +87,7 @@ Ok, 7 modules loaded.
 Prelude week03.Deploy> 
 ```
 
-Bài giảng này cũng sẽ khám phá Cardano Testnet Preprod. Để tương tác với nó sau này, trước tiên chúng tôi cần đồng bộ hóa nút cục bộ, có thể mất hơn 1 giờ. Hãy bắt đầu trong nền:
+Bài giảng này cũng sẽ khám phá Cardano Testnet Preprod. Để tương tác với nó sau này, trước tiên chúng ta cần đồng bộ hóa nút cục bộ, có thể mất hơn 1 giờ. Hãy bắt đầu trong nền:
 
 Giữ cabal mở trên Terminal  1 và mở Terminal mới 2. Đi tới thư mục ứng dụng plutus và chạy nix-shell trước:
 
@@ -265,13 +269,13 @@ Chúng tôi muốn có thể thể hiện logic xác thực nói rằng một gi
 
 Nếu bạn nghĩ về điều đó, thì đó dường như là một mâu thuẫn bởi vì thời gian rõ ràng là đang trôi. Khi bạn cố gắng xác thực một giao dịch mà bạn đang xây dựng trong ví của mình, tất nhiên, thời gian xảy ra trong ví có thể khác với thời gian giao dịch đến một nút để xác thực. Không rõ làm thế nào để kết hợp hai thứ này lại với nhau để một mặt xử lý thời gian, nhưng mặt khác đảm bảo rằng việc xác thực là xác định theo nghĩa là nếu nó thành công trong ví thì nó cũng sẽ thành công trong nút.
 
-Cardano giải quyết vấn đề này bằng cách thêm trường phạm vi thời gian POSIX này và trường phạm vi hợp lệ của thông tin TX vào một giao dịch. Với điều này, chúng tôi có thể tuyên bố một giao dịch là hợp lệ trong khoảng thời gian xác định được chỉ định trong giao dịch. Khi một nút đang xác thực một giao dịch, một trong những bước kiểm tra trước này trước khi xác thực, là nút sẽ kiểm tra thời gian hiện tại và so sánh nó với phạm vi thời gian được chỉ định trong giao dịch. Nếu thời gian hiện tại không nằm trong phạm vi thời gian này, thì quá trình xác thực không thành công ngay lập tức mà không bao giờ chạy tập lệnh trình xác thực. Điều đó cũng có nghĩa là nếu những lần kiểm tra trước này thành công, thì chúng ta có thể giả định rằng thời gian hiện tại rơi vào khoảng thời gian này. Điều này bảo tồn các thuộc tính eUTxO xác định.
+Cardano giải quyết vấn đề này bằng cách thêm trường phạm vi thời gian POSIX này và trường phạm vi hợp lệ của thông tin TX vào một giao dịch. Với điều này, chúng ta có thể tuyên bố một giao dịch là hợp lệ trong khoảng thời gian xác định được chỉ định trong giao dịch. Khi một nút đang xác thực một giao dịch, một trong những bước kiểm tra trước này trước khi xác thực, là nút sẽ kiểm tra thời gian hiện tại và so sánh nó với phạm vi thời gian được chỉ định trong giao dịch. Nếu thời gian hiện tại không nằm trong phạm vi thời gian này, thì quá trình xác thực không thành công ngay lập tức mà không bao giờ chạy tập lệnh trình xác thực. Điều đó cũng có nghĩa là nếu những lần kiểm tra trước này thành công, thì chúng ta có thể giả định rằng thời gian hiện tại rơi vào khoảng thời gian này. Điều này bảo tồn các thuộc tính eUTxO xác định.
 
-Theo mặc định, tất cả các giao dịch sử dụng phạm vi thời gian vô hạn. Điều này bắt đầu từ đầu thời gian hoặc tại khối Genesis và kéo dài vĩnh viễn. Các giao dịch này sẽ luôn hợp lệ, bất kể thời gian chúng đến một nút để xác thực. Các trường hợp ngoại lệ duy nhất mà chúng tôi đã thấy cho đến nay là những trường hợp trong ví dụ đấu giá, trong đó giá thầu và giá đóng không thể sử dụng khoảng thời gian vô hạn vì chúng tôi đảm bảo rằng giá thầu diễn ra trước thời hạn và giá đóng sau thời hạn. Tuy nhiên, theo mặc định, tất cả các giao dịch bao gồm các giao dịch mà bạn gửi từ Daedalus chẳng hạn, sẽ luôn sử dụng phạm vi thời gian vô hạn.
+Theo mặc định, tất cả các giao dịch sử dụng phạm vi thời gian vô hạn. Điều này bắt đầu từ đầu thời gian hoặc tại khối Genesis và kéo dài vĩnh viễn. Các giao dịch này sẽ luôn hợp lệ, bất kể thời gian chúng đến một nút để xác thực. Các trường hợp ngoại lệ duy nhất mà chúng ta đã thấy cho đến nay là những trường hợp trong ví dụ đấu giá, trong đó giá thầu và giá đóng không thể sử dụng khoảng thời gian vô hạn vì chúng ta đảm bảo rằng giá thầu diễn ra trước thời hạn và giá đóng sau thời hạn. Tuy nhiên, theo mặc định, tất cả các giao dịch bao gồm các giao dịch mà bạn gửi từ Daedalus chẳng hạn, sẽ luôn sử dụng phạm vi thời gian vô hạn.
 
-Có một sự phức tạp nhỏ là Ouroboros, giao thức đồng thuận cung cấp năng lượng cho Cardano, không sử dụng thời gian POSIX; nó sử dụng khe cắm. Plutus sử dụng thời gian thực, vì vậy chúng tôi cần có khả năng chuyển đổi qua lại giữa thời gian thực và thời gian. Ngay bây giờ, độ dài khe là một giây. Biết rằng, thật dễ dàng để chuyển đổi qua lại giữa thời gian thực và số vị trí. Tuy nhiên, điều này có thể thay đổi trong tương lai thông qua thay đổi tham số thông qua một hard fork. Và, tất nhiên, chúng ta không thể biết trước điều đó.
+Có một sự phức tạp nhỏ là Ouroboros, giao thức đồng thuận cung cấp năng lượng cho Cardano, không sử dụng thời gian POSIX; nó sử dụng khe cắm. Plutus sử dụng thời gian thực, vì vậy chúng ta cần có khả năng chuyển đổi qua lại giữa thời gian thực và thời gian. Ngay bây giờ, độ dài khe là một giây. Biết rằng, thật dễ dàng để chuyển đổi qua lại giữa thời gian thực và số vị trí. Tuy nhiên, điều này có thể thay đổi trong tương lai thông qua thay đổi tham số thông qua một hard fork. Và, tất nhiên, chúng ta không thể biết trước điều đó.
 
-Chẳng hạn, hiện tại chúng tôi không biết độ dài của vị trí sẽ là bao nhiêu trong 10 năm nữa. Điều này có nghĩa là chúng ta không được có giới hạn trên nhất định. Chúng tôi biết thời lượng của vị trí sẽ là bao nhiêu trong 36 giờ tới vì nếu có thay đổi về tham số giao thức, thì chúng tôi sẽ biết điều đó trước ít nhất 36 giờ. Bạn không thể chỉ định phạm vi thời gian tùy ý trong khoảng thời gian giao dịch. Nó chỉ được tối đa là 36 giờ trong tương lai hoặc có thể là vô thời hạn.
+Chẳng hạn, hiện tại chúng ta không biết độ dài của vị trí sẽ là bao nhiêu trong 10 năm nữa. Điều này có nghĩa là chúng ta không được có giới hạn trên nhất định. Chúng tôi biết thời lượng của vị trí sẽ là bao nhiêu trong 36 giờ tới vì nếu có thay đổi về tham số giao thức, thì chúng ta sẽ biết điều đó trước ít nhất 36 giờ. Bạn không thể chỉ định phạm vi thời gian tùy ý trong khoảng thời gian giao dịch. Nó chỉ được tối đa là 36 giờ trong tương lai hoặc có thể là vô thời hạn.
 
 Vì vậy, hãy xem loại phạm vi thời gian POSIX này.
 
@@ -571,7 +575,7 @@ False
 
 Bây giờ chúng ta sẽ xem xét một ví dụ về hợp đồng trao quyền `Vesting Contract`. Hãy tưởng tượng bạn muốn tặng một món quà ADA cho một đứa trẻ. Bạn muốn đứa trẻ sở hữu ADA, tuy nhiên, bạn chỉ muốn đứa trẻ có quyền truy cập vào ADA khi chúng đến một độ tuổi cụ thể. Sử dụng plutus, rất dễ dàng thực hiện một kế hoạch trao quyền thỏa mãn các điều kiện đó.
 
-Trước tiên, chúng tôi xem xét mốc thời gian được thông qua với hai mẩu thông tin; Người thụ hưởng và thời hạn:
+Trước tiên, chúng ta xem xét mốc thời gian được thông qua với hai mẩu thông tin; Người thụ hưởng và thời hạn:
 
 ```haskell
 data VestingDatum = VestingDatum
@@ -580,7 +584,7 @@ data VestingDatum = VestingDatum
    } deriving Show
 ```
 
-Sau đó, chúng tôi xem xét chức năng trình xác thực:
+Sau đó, chúng ta xem xét chức năng trình xác thực:
 
 ```haskell
 {-# INLINABLE mkValidator #-}
@@ -598,9 +602,9 @@ mkValidator dat () ctx = traceIfFalse "beneficiary's signature missing" signedBy
    deadlineReached = contains (from $ deadline dat) $ txInfoValidRange info
 ```
 
-Chúng tôi đã xác định mốc thời gian là dat và context là ctx. Sau đó, chúng tôi kiểm tra đúng người thụ hưởng bằng cách tạo hàm SignByBeneficiary và thời hạn bằng hàm deadlineReached.
+Chúng tôi đã xác định mốc thời gian là dat và context là ctx. Sau đó, chúng ta kiểm tra đúng người thụ hưởng bằng cách tạo hàm SignByBeneficiary và thời hạn bằng hàm deadlineReached.
 
-Sau đó mã hóa mốc thời gian và người đổi quà:
+Sau đó mã hóa mốc thời gian và redeemer:
 
 ```haskell
 data Vesting
@@ -709,7 +713,7 @@ Terminal 3
 ```
 
 
-Tiếp theo, chúng tôi đi đến thư mục plutus-playground-server và chạy:
+Tiếp theo, chúng ta đi đến thư mục plutus-playground-server và chạy:
 
 ```haskell
 Terminal 3
@@ -731,7 +735,7 @@ Terminal 4
 ~/plutus-apps$ nix-shell
 ```
 
-Tiếp theo, chúng tôi đi đến thư mục plutus-playground-client và chạy:
+Tiếp theo, chúng ta đi đến thư mục plutus-playground-client và chạy:
 
 ```haskell
 Terminal 4
@@ -759,7 +763,7 @@ https://localhost:8009
 Bạn sẽ nhận được một cảnh báo phàn nàn về việc đây là một trang web nguy hiểm, dù sao hãy bỏ qua thông báo để nhấp qua.
 Giờ đây, bạn có thể biên dịch và chạy thành công hợp đồng quà tặng bằng cách sao chép/dán nó vào Plutus Playground và sử dụng hai nút ở góc trên cùng bên phải: “Biên dịch” và “Mô phỏng”.
 
-Trước khi chúng tôi thực hiện mô phỏng của mình, chúng tôi cần tìm hiểu thanh toán `pubkeyhash` cho ví 2 và 3. Chúng tôi có thể thực hiện việc này:
+Trước khi chúng ta thực hiện mô phỏng của mình, chúng ta cần tìm mã hash của ví thanh toán `pubkeyhash` cho ví 2 và 3. Chúng tôi có thể thực hiện việc này:
 
 ```haskell
 Prelude week03.Deploy> import Wallet.Emulator
@@ -783,7 +787,7 @@ Output:
 
 Chúng tôi có thể sao chép/dán các giá trị băm đó vào simulation cho ví 2 và 3.
 
-Chúng tôi cũng cần chuyển đổi các vị trí thành POSIXTime, điều mà chúng tôi cũng có thể thực hiện trong bản thay thế:
+Chúng tôi cũng cần chuyển đổi các vị trí thành POSIXTime, điều mà chúng ta cũng có thể thực hiện trong Terminal này:
 
 ```haskell
 Prelude week03.Deploy> import Ledger.TimeSlot
@@ -875,7 +879,7 @@ instance Scripts.ValidatorTypes Vesting where
    type instance RedeemerType Vesting = ()
 ```
 
-Sửa đổi phần tổng hợp:
+Sửa đổi phần compiler:
 
 ```haskell
 typedValidator :: VestingParam -> Scripts.TypedValidator Vesting
@@ -886,7 +890,7 @@ typedValidator p = Scripts.mkTypedValidator @Vesting
    wrap = Scripts.wrapValidator @() @()
 ```
 
-Tiếp theo là mã soạn sẵn cho trình xác thực, hàm băm và địa chỉ:
+Tiếp theo là mã cho trình xác thực, hàm băm và địa chỉ:
 
 ```haskell
 validator :: VestingParam -> Validator
@@ -1135,7 +1139,7 @@ Kết quả sẽ thấy như sau là đã đồng bộ xong và có thể chạy
 
 ```
 
-Chuyển đến thư mục con week03 trong thư mục tiên phong plutus, sau đó bên trong thư mục testnet. Trước tiên, chúng tôi sẽ tạo khóa công khai và khóa riêng 01.vkey và 01.skey tương ứng bằng lệnh:
+Chuyển đến thư mục con week03 trong thư mục tiên phong plutus, sau đó bên trong thư mục testnet. Trước tiên, chúng ta sẽ tạo khóa công khai và khóa riêng 01.vkey và 01.skey tương ứng bằng lệnh:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
@@ -1199,7 +1203,7 @@ Output:
 addr_test1vprfsx932ejfehn64vkkchpsu95hw28ae0hudqkk3c50zesxpmzkh
 ```
 
-Bây giờ chúng tôi cần tạo một số ADA để gửi đến địa chỉ đầu tiên của chúng tôi. Điều này có thể được thực hiện từ trang sau bằng cách sử dụng faucet Cardano.
+Bây giờ chúng ta cần tạo một số ADA để gửi đến địa chỉ đầu tiên của chúng ta. Điều này có thể được thực hiện từ trang sau bằng cách sử dụng faucet Cardano.
 
 ```
 https://testnets.cardano.org/en/testnets/cardano/tools/faucet/
@@ -1223,7 +1227,7 @@ Output:
 
 ```
 
-Bây giờ chúng tôi sẽ gửi một số tiền đến địa chỉ thứ hai của mình bằng cách sử dụng tập lệnh được tạo sẵn send.sh:
+Bây giờ chúng ta sẽ gửi một số tiền đến địa chỉ thứ hai của mình bằng cách sử dụng tập lệnh được tạo sẵn send.sh:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
@@ -1250,7 +1254,7 @@ cardano-cli transaction submit \
 
 ```
 
-Lưu ý quan trọng, bạn cần thay đổi `tx-in` thành hàm băm `TxHash` của 01.addr nơi chúng tôi đã gửi tiền ở bước trước! Cũng lưu ý rằng nó kết thúc bằng #0 chỉ định chỉ số  `TxIx` giao dịch ở đây là 0
+Lưu ý quan trọng, bạn cần thay đổi `tx-in` thành hàm băm `TxHash` của 01.addr nơi chúng ta đã gửi tiền ở bước trước! Cũng lưu ý rằng nó kết thúc bằng #0 chỉ định chỉ số  `TxIx` giao dịch ở đây là 0
 và chạy:
 
 ```
@@ -1263,7 +1267,7 @@ Transaction successfully submitted.
 
 ```
 
-Sau khi đợi khoảng 20 giây, chúng tôi có thể truy vấn địa chỉ đầu tiên để xem tiền đã được gửi chưa:
+Sau khi đợi khoảng 20 giây, chúng ta có thể truy vấn địa chỉ đầu tiên để xem tiền đã được gửi chưa:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
@@ -1309,7 +1313,7 @@ tạo biến
 signer_hash="469818b156649cde7aab2d6c5c30e1697728fdcbefc682d68e28f166"
 ```
 
-Nhìn vào Deploy.hs, chúng tôi cần thay thế hàm băm khóa công khai thanh toán của người thụ hưởng bằng hàm băm mà chúng tôi đã tạo ở trên. Lưu ý rằng hàm băm của bạn sẽ khác với hàm băm trong hướng dẫn này. Chúng tôi cũng thay thế thời hạn bằng một thời gian trong tương lai. (bạn có thể sử dụng [Epoch Converter](https://www.epochconverter.com/) để tìm dấu thời gian trong tương lai)
+Nhìn vào Deploy.hs, chúng ta cần thay thế hàm băm khóa công khai thanh toán của người thụ hưởng bằng hàm băm mà chúng ta đã tạo ở trên. Lưu ý rằng hàm băm của bạn sẽ khác với hàm băm trong hướng dẫn này. Chúng tôi cũng thay thế thời hạn bằng một thời gian trong tương lai. (bạn có thể sử dụng [Epoch Converter](https://www.epochconverter.com/) để tìm dấu thời gian trong tương lai)
 
 ```haskell
 {-# LANGUAGE OverloadedStrings #-}
@@ -1410,7 +1414,7 @@ TXIN1="f9f0655084b8ab67df1ac1fb5c016379ea03068505bd1d0e97b94bdd4b4fe734#1"
 ```
 ### B3: tạo giao dịch gửi tADA lên Smartcontract
 
-Nhìn vào tập lệnh give.sh, chúng tôi thay đổi `tx-in` thành địa chỉ query 1 utxo mà chúng ta đã tạo trước đó:
+Nhìn vào tập lệnh give.sh, chúng ta thay đổi `tx-in` thành địa chỉ query 1 utxo mà chúng ta đã tạo trước đó:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
@@ -1440,7 +1444,7 @@ cardano-cli transaction submit \
     --tx-file tx.signed
 ```
 
-Bây giờ chúng ta có thể xem tập lệnh grab.sh. Chúng ta sẽ thay đổi hàm băm `Txin` thành hàm băm của vesting.addr mà chúng ta đã gửi lên. Chúng tôi sẽ thay đổi tài sản thế chấp thành hàm băm của 02.addr từ trước đó. Chúng tôi cũng sẽ thay đổi hàm băm của người ký thành hàm băm của 02.pkh. Cuối cùng, chúng ta cần thay đổi `invalid-before` để phản ánh vị trí hiện tại; mà chúng tôi đã truy vấn ở bước cuối cùng:
+Bây giờ chúng ta có thể xem tập lệnh grab.sh. Chúng ta sẽ thay đổi hàm băm `Txin` thành hàm băm của vesting.addr mà chúng ta đã gửi lên. Chúng tôi sẽ thay đổi tài sản thế chấp thành hàm băm của 02.addr từ trước đó. Chúng tôi cũng sẽ thay đổi hàm băm của người ký thành hàm băm của 02.pkh. Cuối cùng, chúng ta cần thay đổi `invalid-before` để phản ánh vị trí hiện tại; mà chúng ta đã truy vấn ở bước cuối cùng:
 
 
 ### B4: Lấy Txin của địa chỉ  Smartcontract   vừa gửi lên
@@ -1479,7 +1483,9 @@ cardano-cli query utxo --address $(cat 02.addr) --testnet-magic 1
 TXIN2="d1c42f58ac97fc1b8a9d2966bdce8687358a475dba9ea9d4083044d258c38d31#0" 
 ```
 
-### B8: thay đổi các thông số --tx-in; tx-in-collateral; --invalid-before; --required-signer-hash (vẫn hợp đồng cũ thì không đổi) 
+### B8: Ví người thụ hưởng nhận quà (tADA)
+
+thay đổi các thông số --tx-in; tx-in-collateral; --invalid-before; --required-signer-hash (vẫn hợp đồng cũ thì không đổi) 
 
 ```
 TXINSM="5d3ddaf94078cc7d3ee7e3a42e2676576a689e216d53e4d72b0301624de0f5c1#0"
@@ -1553,10 +1559,8 @@ cardano-cli query utxo --address $(cat vesting.addr) --testnet-magic 1
 
 ## Homework Part 1
 
-```haskell
--- This should validate if either beneficiary1 has signed the transaction and the current slot is before or at the deadline
--- or if beneficiary2 has signed the transaction and the deadline has passed.
-```
+- Điều này sẽ hợp lệ nếu một trong hai người thụ hưởng1 đã ký giao dịch và vị trí hiện tại là trước hoặc vào thời hạn
+- Hoặc nếu người thụ hưởng2 đã ký giao dịch và thời hạn đã qua.
 
 Phần đầu tiên của bài tập về nhà, chúng ta cần viết một hàm trình xác thực sẽ trả về giá trị true nếu người thụ hưởng1 đã ký giao dịch và vị trí hiện tại là trước hoặc vào thời hạn chót. Nó cũng phải trả về true nếu người thụ hưởng2 đã ký giao dịch và thời hạn đã qua.
 
@@ -1648,12 +1652,12 @@ mkValidator :: PaymentPubKeyHash -> POSIXTime -> () -> ScriptContext -> Bool
 ```
 
 
-Chúng tôi có thể bắt đầu bằng cách kiểm tra xem chữ ký của người thụ hưởng có tồn tại hay không và thời hạn đã đến chưa. Đầu tiên chúng tôi vượt qua:
+Chúng tôi có thể bắt đầu bằng cách kiểm tra xem chữ ký của người thụ hưởng có tồn tại hay không và thời hạn đã đến chưa. Đầu tiên chúng ta vượt qua:
 ```haskell
 mkValidator pkh s () ctx =
 ```
 
-Bây giờ chúng tôi lấy logic như được mô tả ở trên:
+Bây giờ chúng ta lấy logic như được mô tả ở trên:
 
 ```haskell
    traceIfFalse "beneficiary's signature missing" checkSig      &&
@@ -1681,8 +1685,8 @@ typedValidator p = Scripts.mkTypedValidator @Vesting
    wrap = Scripts.wrapValidator @POSIXTime @()
 ```
 
-Finally the boilerplate code for validator and address. Here we need to add PaymentPubKeyHash:
-Cuối cùng là mã soạn sẵn cho trình xác thực và địa chỉ. Ở đây chúng ta cần thêm PaymentPubKeyHash:
+
+Cuối cùng là mã cho trình xác thực và địa chỉ. Ở đây chúng ta cần thêm PaymentPubKeyHash:
 
 ```haskell
 validator :: PaymentPubKeyHash -> Validator
@@ -1692,7 +1696,7 @@ scrAddress :: PaymentPubKeyHash -> Ledger.Address
 scrAddress = scriptAddress . validator
 ```
 
-Mã sẽ giống như:
+Mã cuối sẽ giống như này:
 
 ```haskell
 {-# INLINABLE mkValidator #-}
