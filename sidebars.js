@@ -66,7 +66,7 @@ const sidebars = {
       "smart-contracts/plutus",
       "smart-contracts/video_demo_smartcontract",
     ],
-    "Khoá đào tạo Plutus của Dr. Lars": [
+    "Khóa 2-Plutus của Dr.Lars": [
       "dr-lars-lession/overview",
       "dr-lars-lession/week1",
       "dr-lars-lession/week2",

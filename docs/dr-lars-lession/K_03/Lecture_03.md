@@ -24,7 +24,7 @@ Google Doc version can be found [HERE](https://docs.google.com/document/d/1MKEcg
 
 ## Preparation for Lecture 3
 
-Trước khi chúng ta có thể bắt đầu trong Bài giảng 3, trước tiên chúng ta phải cập nhật môi trường phát triển của mình. Bạn có thể sao chép và dán trực tiếp bất kỳ mã nào trong hướng dẫn này vào thiết bị đầu cuối hoặc IDE của mình.
+Trước khi chúng ta có thể bắt đầu trong Bài giảng 3, trước tiên chúng ta phải cập nhật môi trường phát triển của mình. Bạn có thể sao chép và dán trực tiếp bất kỳ mã nào trong hướng dẫn này vào Terminal  hoặc IDE của mình.
 
 Đầu tiên, hãy vào thư mục plutus-pioneer-program để lấy nội dung bài giảng tuần 3. Hành hình:
 
@@ -60,6 +60,7 @@ Quay trở lại thư mục plutus-apps và cập nhật nó vào thẻ git hi�
 Bây giờ bạn đã được cập nhật và có thể chạy nix-shell trong thư mục này. Chạy nix-shell:
 
 ```
+. ~/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
@@ -75,19 +76,20 @@ Quay trở lại thư mục week03 để bắt đầu chạy các lệnh cabal:
 [nix-shell:~/plutus-pioneer-program/code/week03]$ cabal repl
 ```
 
-Nếu thành công, bây giờ bạn sẽ thấy trong thiết bị đầu cuối:
+Nếu thành công, bây giờ bạn sẽ thấy trong Terminal :
 
 ```haskell
 Ok, 7 modules loaded.
 Prelude week03.Deploy> 
 ```
 
-Bài giảng này cũng sẽ khám phá Cardano Testnet. Để tương tác với nó sau này, trước tiên chúng tôi cần đồng bộ hóa nút cục bộ, có thể mất hơn 5 giờ. Hãy bắt đầu trong nền:
+Bài giảng này cũng sẽ khám phá Cardano Testnet Preprod. Để tương tác với nó sau này, trước tiên chúng tôi cần đồng bộ hóa nút cục bộ, có thể mất hơn 1 giờ. Hãy bắt đầu trong nền:
 
-Giữ thay thế cabal mở trên thiết bị đầu cuối 1 và mở thiết bị đầu cuối mới 2. Đi tới thư mục ứng dụng plutus và chạy nix-shell trước:
+Giữ cabal mở trên Terminal  1 và mở Terminal mới 2. Đi tới thư mục ứng dụng plutus và chạy nix-shell trước:
 
 ```
 Terminal 2
+. ~/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
@@ -98,8 +100,9 @@ Terminal 2
 [nix-shell:~/plutus-apps]$ cardano-node --version
 
 Output:
-cardano-node 1.33.0 - linux-x86_64 - ghc-8.10
-git rev 0000000000000000000000000000000000000000
+cardano-node 1.35.4 - linux-x86_64 - ghc-8.10
+git rev ebc7be471b30e5931b35f9bbc236d21c375b91bb
+
 ```
 
 ```
@@ -107,37 +110,63 @@ Terminal 2
 [nix-shell:~/plutus-apps]$ cardano-cli --version
 
 Output:
-cardano-cli 1.33.0 - linux-x86_64 - ghc-8.10
-git rev 0000000000000000000000000000000000000000
+cardano-cli 1.35.4 - linux-x86_64 - ghc-8.10
+git rev ebc7be471b30e5931b35f9bbc236d21c375b91bb
+
+```
+Nếu chưa có cardano-node và cardano-cli chúng ta có thể download file binary của iohk về máy
+```
+cd ~/.cabal/bin
+
+sudo wget https://update-cardano-mainnet.iohk.io/cardano-node-releases/cardano-node-1.35.4-linux.tar.gz
+sudo tar zxvf cardano-node-1.35.4-linux.tar.gz
+```
+sau đó kiểm tra lại bước trên
+
+Tiếp đến chúng ta chạy node trên testnet preprod
+
+ **tạo cấu trúc thư mục cntool**
+```
+echo export CNODE_HOME=/opt/cardano/cnode  >> $HOME/.bashrc
+source ~/.bashrc
+
+sudo whoami
+mkdir "$HOME/tmp";
+cd "$HOME/tmp"
+curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh       
+chmod 755 prereqs.sh
+./prereqs.sh -n preprod
 ```
 
 
-Chuyển đến thư mục con week03 trong thư mục tiên phong plutus, sau đó bên trong thư mục testnet. Chúng tôi sẽ chạy tập lệnh start-node-test.sh sẽ khởi tạo quá trình tải xuống chuỗi khối testnet dựa trên các tệp cấu hình trong thư mục này:
+
+ Cập nhật PATH
+```
+echo export PATH=~/.cabal/bin:$PATH >> ~/.bashrc
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH" 
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+echo export CNODE_HOME=/opt/cardano/cnode  >> $HOME/.bashrc
+source ~/.bashrc
+
+echo export CARDANO_NODE_SOCKET_PATH="$CNODE_HOME/sockets/node0.socket" >> $HOME/.bashrc
+source ~/.bashrc
+
+echo export PATH="$HOME/.cargo/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+sau đó vào thư mục để chạy node
 
 ```
-Terminal 2
-[nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-./start-node-testnet.sh
-
-Output:
-[penguin:cardano.node.ChainDB:Notice:34] [2022-02-22 14:23:14.33 UTC] Chain extended, new tip: 73912d4f092b24fcbb0b9f8f7e4668026ca91d6dba2b2758b62b704766e1faa7 at slot 51170578
+cd $CNODE_HOME/scripts
+./cnode.sh
 ```
+kết quả như thế này và để nguyên Terminal đó để đồng bộ
 
-Nơi start-node-test.sh trông giống như:
-
-```haskell
-cardano-node run \
- --topology testnet-topology.json \
- --database-path db \
- --socket-path node.socket \
- --host-addr 127.0.0.1 \
- --port 3001 \
- --config testnet-config.json
 ```
-
-Quá trình này sẽ mất hơn 5 giờ để đồng bộ hóa. Bạn sẽ được đồng bộ hóa 100% sau khi bạn bắt đầu thấy một khối mới cứ sau 20 giây, thay vì nhiều khối mỗi giây. Để thiết bị đầu cuối này mở và bây giờ chúng ta có thể bắt đầu.
-
-
+.............ncTargetNumberOfActivePeers = 20, ncEnableP2P = EnabledP2PMode}
+Listening on http://127.0.0.1:12798
+```
+Quá trình này sẽ mất 1 giờ or hơn để đồng bộ hóa. Bạn sẽ được đồng bộ hóa 100% sau khi bạn bắt đầu thấy một khối mới cứ sau 20 giây, thay vì nhiều khối mỗi giây. Để thiết bị đầu cuối này mở và bây giờ chúng ta có thể bắt đầu.
 
 ## Plutus Playground Timeout
 
@@ -151,7 +180,7 @@ plutus-playground-server -i 120s
 ## Script Context
 
 
-Trong bài giảng này, chúng ta sẽ khám phá bối cảnh kịch bản. Nếu chúng ta còn nhớ bài giảng 2, `script context` là phần thứ ba của dữ liệu trên chuỗi xác định mục đích chạy:
+Trong bài giảng này, chúng ta sẽ khám phá `script context`. Nếu chúng ta còn nhớ bài giảng 2, `script context` là phần thứ ba của dữ liệu trên chuỗi xác định mục đích cho việc chạy:
 
 ```haskell
 data ScriptContext
@@ -202,7 +231,7 @@ txInfoId :: TxId  Hash of the pending transaction (excluding witnesses)
 
 Nếu xem tài liệu về cardano, chúng ta có thể thấy một ví dụ đơn giản:
 
-Ví dụ trực quan Ví dụ, một đứa trẻ muốn đi đu quay, nhưng trước khi lên, chúng phải cao hơn biển báo an toàn. Chúng ta có thể diễn đạt ý tưởng đó bằng mã giả, như:
+Ví dụ trực quan: một đứa trẻ muốn đi đu quay, nhưng trước khi lên, chúng phải cao hơn biển báo an toàn. Chúng ta có thể diễn đạt ý tưởng đó bằng mã giả, như:
 
 ```haskell
 if isTallEnough(attraction=ferrisWheel,passenger=michael):
@@ -569,7 +598,7 @@ mkValidator dat () ctx = traceIfFalse "beneficiary's signature missing" signedBy
    deadlineReached = contains (from $ deadline dat) $ txInfoValidRange info
 ```
 
-Chúng tôi đã xác định mốc thời gian là dat và ngữ cảnh là ctx. Sau đó, chúng tôi kiểm tra đúng người thụ hưởng bằng cách tạo hàm SignByBeneficiary và thời hạn bằng hàm deadlineReached.
+Chúng tôi đã xác định mốc thời gian là dat và context là ctx. Sau đó, chúng tôi kiểm tra đúng người thụ hưởng bằng cách tạo hàm SignByBeneficiary và thời hạn bằng hàm deadlineReached.
 
 Sau đó mã hóa mốc thời gian và người đổi quà:
 
@@ -669,12 +698,13 @@ mkKnownCurrencies []
 
 Bây giờ chúng ta có thể kiểm tra điều này trong Plutus Playground.
 
-Để bắt đầu với Plutus Playground, chúng ta cần có hai thiết bị đầu cuối đang chạy, cả hai đều nằm trong nix-shell.
+Để bắt đầu với Plutus Playground, chúng ta cần có hai Terminal  đang chạy, cả hai đều nằm trong nix-shell.
 
 Hãy bắt đầu với terminal 1. Đi tới thư mục plutus-apps và chạy nix-shell trước:
 
 ```haskell
 Terminal 3
+. ~/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
@@ -697,6 +727,7 @@ Hãy bắt đầu với terminal 2. Đi tới thư mục plutus-apps và chạy 
 
 ```haskell
 Terminal 4
+. ~/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
@@ -718,7 +749,7 @@ or
 [wdm]: Compiled with warnings.
 ```
 
-Giữ cả hai thiết bị đầu cuối mở và giờ đây chúng ta có thể truy cập Plutus Playground từ trình duyệt.
+Giữ cả hai Terminal  mở và giờ đây chúng ta có thể truy cập Plutus Playground từ trình duyệt.
 
 Mở trình duyệt và truy cập địa chỉ:
 
@@ -728,7 +759,7 @@ https://localhost:8009
 Bạn sẽ nhận được một cảnh báo phàn nàn về việc đây là một trang web nguy hiểm, dù sao hãy bỏ qua thông báo để nhấp qua.
 Giờ đây, bạn có thể biên dịch và chạy thành công hợp đồng quà tặng bằng cách sao chép/dán nó vào Plutus Playground và sử dụng hai nút ở góc trên cùng bên phải: “Biên dịch” và “Mô phỏng”.
 
-Trước khi chúng tôi thực hiện mô phỏng của mình, chúng tôi cần tìm hiểu thanh toánpubkeyhash cho ví 2 và 3. Chúng tôi có thể thực hiện việc này trong phần thay thế:
+Trước khi chúng tôi thực hiện mô phỏng của mình, chúng tôi cần tìm hiểu thanh toán `pubkeyhash` cho ví 2 và 3. Chúng tôi có thể thực hiện việc này:
 
 ```haskell
 Prelude week03.Deploy> import Wallet.Emulator
@@ -819,12 +850,11 @@ Slot 12, TX 1:
 
 ## Parameterized Contract
 
-Bây giờ chúng ta sẽ xem xét một ví dụ tương tự về hợp đồng trao quyền, ngoại trừ việc chúng ta sẽ chuyển một tham số thay vì một mốc thời gian. Trước tiên chúng ta có thể xem mkValidator, trong đó dữ liệu hiện là loại đơn vị ():
+Bây giờ chúng ta sẽ xem xét một ví dụ tương tự về hợp đồng trao quyền, ngoại trừ việc chúng ta sẽ chuyển một tham số thay vì một mốc thời gian. Trước tiên chúng ta có thể xem mkValidator, trong đó datum hiện là kiểu unit():
 
 ```haskell
 mkValidator :: VestingParam -> () -> () -> ScriptContext -> Bool
-mkValidator p () () ctx = traceIfFalse "beneficiary's signature missing" signedByBeneficiary &&
-                         traceIfFalse "deadline not reached" deadlineReached
+mkValidator p () () ctx = traceIfFalse "beneficiary's signature missing" signedByBeneficiary && traceIfFalse "deadline not reached" deadlineReached
  where
    info :: TxInfo
    info = scriptContextTxInfo ctx
@@ -836,7 +866,7 @@ mkValidator p () () ctx = traceIfFalse "beneficiary's signature missing" signedB
    deadlineReached = contains (from $ deadline p) $ txInfoValidRange info
 ```
 
-Sau đó mã hóa dữ liệu để nhập đơn vị:
+Sau đó mã hóa datum tới kiểu unit:
 
 ```haskell
 data Vesting
@@ -968,15 +998,15 @@ Số dư cuối kỳ:
 ![Screenshot 2022-02-23 10 13 15 AM](https://user-images.githubusercontent.com/59018247/155421860-7749eb55-993a-4e96-ae4a-4d9061cb14bd.png)
 
 
-## Cardano Testnet
+## Cardano Testnet Smartconctact trên mạng Preprod
 
-Mạng thử nghiệm Cardano
+Mạng thử nghiệm Cardano preprod
 
 Bây giờ chúng ta sẽ xem xét Cardano CLI và cách nó tương tác với testnet. Hy vọng rằng tại thời điểm này, nút cục bộ của bạn hiện đã được đồng bộ hóa từ công việc được thực hiện trong phần “chuẩn bị cho bài giảng 3”.
 
 Giao diện dòng lệnh (CLI) cung cấp một tập hợp các công cụ để tạo khóa, xây dựng giao dịch, tạo chứng chỉ và thực hiện các tác vụ quan trọng khác. Nó được tổ chức theo một hệ thống phân cấp các lệnh con và mỗi cấp độ đi kèm với tài liệu tích hợp sẵn về cú pháp lệnh và các tùy chọn.
 
-Phần này cung cấp tài liệu tham khảo về các lệnh cốt lõi cardano-clivà các lệnh con liên quan của chúng:
+Phần này cung cấp tài liệu tham khảo về các lệnh cốt lõi `cardano-cli` và các lệnh con liên quan của chúng:
 
 cardano-cli
 
@@ -1074,16 +1104,35 @@ The `genesis` command contains the following subcommands: <br/>
 - `create`: creates a genesis file from a genesis template, as well as genesis keys, delegation keys, and spending keys. <br/>
 - `create-staked`: creates a staked genesis file <br/>
 - `hash`: retrieves the hash value <br/>
-
+unit
 *cardano-cli text-view* <br/>
 The `text-view` command contains the following subcommand: <br/>
 - `decode-cbor`: prints a text view file as decoded CBOR. <br/>
 
  
-Để kiểm tra các hợp đồng của chúng tôi, trước tiên chúng tôi cần tạo các cặp khóa trên mạng thử nghiệm. Chúng ta có thể bắt đầu bằng cách mở một thiết bị đầu cuối mới để chạy nix-shell, đảm bảo không đóng nút đồng bộ hóa trong terminal khác:
+Để kiểm tra các hợp đồng của chúng ta, trước tiên chúng ta cần tạo các cặp khóa trên mạng thử nghiệm. Chúng ta có thể bắt đầu bằng cách mở một Terminal mới để chạy nix-shell, đảm bảo không đóng nút đồng bộ hóa trong terminal khác:
 
 ```
+. ~/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
+```
+Kiểm tra mạng đã đồng bộ xong chưa bằng lệnh
+
+```
+cardano-cli query tip --testnet-magic 1
+```
+Kết quả sẽ thấy như sau là đã đồng bộ xong và có thể chạy thử nghiệm được.
+```
+{
+    "block": 388004,
+    "epoch": 38,
+    "era": "Babbage",
+    "hash": "e65317fa3ef1eef097d251ad31d4d3e8d90198cf7095d4ab9756a42f62d0cda8",
+    "slot": 15078737,
+    "syncProgress": "100.00"
+}
+
+
 ```
 
 Chuyển đến thư mục con week03 trong thư mục tiên phong plutus, sau đó bên trong thư mục testnet. Trước tiên, chúng tôi sẽ tạo khóa công khai và khóa riêng 01.vkey và 01.skey tương ứng bằng lệnh:
@@ -1119,7 +1168,7 @@ Bây giờ chúng ta có thể tạo địa chỉ trên testnet cho 01.vkey và 
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli address build --payment-verification-key-file 01.vkey --testnet-magic 1097911063 --out-file 01.addr
+cardano-cli address build --payment-verification-key-file 01.vkey --testnet-magic 1 --out-file 01.addr
 ```
 
 Nhìn vào 01.addr:
@@ -1130,14 +1179,14 @@ cat 01.addr
 ```
 ```
 Output:
-addr_test1vpvlskugythmdnutq2745am2ss8sfmhz25dr7zgx8t5cjcqkw2m3l
+addr_test1vreew5etr04emz52u2jdm4fp37q9kx4pq963tt0ahflmdzgn3y7v0
 ```
 
 Bây giờ chúng ta có thể tạo địa chỉ trên testnet cho 02.vkey và xuất địa chỉ đó vào tệp 02.addr bằng lệnh sau:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli address build --payment-verification-key-file 02.vkey --testnet-magic 1097911063 --out-file 02.addr
+cardano-cli address build --payment-verification-key-file 02.vkey --testnet-magic 1 --out-file 02.addr
 ```
 
 Nhìn vào 02.addr:
@@ -1147,10 +1196,10 @@ Nhìn vào 02.addr:
 cat 02.addr
 
 Output:
-addr_test1vrqv87nzpwwd5q4x3ecx38ds8l3suheumc49dgvu3x9emmgvaw5kp
+addr_test1vprfsx932ejfehn64vkkchpsu95hw28ae0hudqkk3c50zesxpmzkh
 ```
 
-Bây giờ chúng tôi cần tạo một số ADA để gửi đến địa chỉ đầu tiên của chúng tôi. Điều này có thể được thực hiện từ trang sau bằng cách sử dụng vòi Cardano.
+Bây giờ chúng tôi cần tạo một số ADA để gửi đến địa chỉ đầu tiên của chúng tôi. Điều này có thể được thực hiện từ trang sau bằng cách sử dụng faucet Cardano.
 
 ```
 https://testnets.cardano.org/en/testnets/cardano/tools/faucet/
@@ -1161,23 +1210,17 @@ https://testnets.cardano.org/en/testnets/cardano/tools/faucet/
 
 Điều quan trọng cần lưu ý ở đây là địa chỉ của bạn cho 01.addr sẽ khác với địa chỉ được tạo trong hướng dẫn này! Đảm bảo bạn gửi ADA testnet đến địa chỉ bạn đã tạo trong CLI!
 
-Để truy vấn chuỗi khối để xem tiền đã đến chưa, trước tiên chúng ta cần chạy lệnh:
-
-```
-[nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-export CARDANO_NODE_SOCKET_PATH=node.socket
-```
-
 Bây giờ chúng ta sẽ có thể truy vấn địa chỉ. Điều quan trọng cần lưu ý ở đây, nút cục bộ của bạn phải được đồng bộ hóa với chuỗi khối vào thời điểm này, nếu không bạn sẽ không thể thấy tiền!
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli query utxo --address $(cat 01.addr) --testnet-magic 1097911063
+cardano-cli query utxo --address $(cat 01.addr) --testnet-magic 1
 
 Output:
                            TxHash                                 TxIx        Amount
----------------------------------------------------------------------------
-a5f29c533d8da891f05e53e8b4cd0e7beb0674245464df8b98a15d38184c8baa     0        1000000000 lovelace + TxOutDatumNone
+--------------------------------------------------------------------------------------
+6524545abf8050de175d489e0ec8f9f789e7e975932e528a3b398367caa0a9f8     0        10000000000 lovelace + TxOutDatumNone
+
 ```
 
 Bây giờ chúng tôi sẽ gửi một số tiền đến địa chỉ thứ hai của mình bằng cách sử dụng tập lệnh được tạo sẵn send.sh:
@@ -1187,59 +1230,66 @@ Bây giờ chúng tôi sẽ gửi một số tiền đến địa chỉ thứ ha
 cat send.sh
 
 Output:
-cardano-cli transaction build \
+
     --alonzo-era \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --change-address $(cat 01.addr) \
-    --tx-in a5f29c533d8da891f05e53e8b4cd0e7beb0674245464df8b98a15d38184c8baa#0 \
+    --tx-in 6524545abf8050de175d489e0ec8f9f789e7e975932e528a3b398367caa0a9f8#0 \
     --tx-out "$(cat 02.addr) 10000000 lovelace" \
     --out-file tx.body
 
 cardano-cli transaction sign \
     --tx-body-file tx.body \
     --signing-key-file 01.skey \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --out-file tx.signed
 
 cardano-cli transaction submit \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --tx-file tx.signed
+
 ```
 
-Lưu ý quan trọng, bạn cần thay đổi hàm băm `tx-in` thành hàm băm tx-hash của 01.addr nơi chúng tôi đã gửi tiền ở bước trước! Cũng lưu ý rằng nó kết thúc bằng #0 chỉ định chỉ số giao dịch là 0
+Lưu ý quan trọng, bạn cần thay đổi `tx-in` thành hàm băm `TxHash` của 01.addr nơi chúng tôi đã gửi tiền ở bước trước! Cũng lưu ý rằng nó kết thúc bằng #0 chỉ định chỉ số  `TxIx` giao dịch ở đây là 0
+và chạy:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
 ./send.sh
 
 Output:
-Estimated transaction fee: Lovelace 165721
+Estimated transaction fee: Lovelace 165545
 Transaction successfully submitted.
+
 ```
 
 Sau khi đợi khoảng 20 giây, chúng tôi có thể truy vấn địa chỉ đầu tiên để xem tiền đã được gửi chưa:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli query utxo --address $(cat 01.addr) --testnet-magic 1097911063
+cardano-cli query utxo --address $(cat 01.addr) --testnet-magic 1
 
 Output:
+
                            TxHash                                 TxIx        Amount
----------------------------------------------------------------------------
-ea5f29c533d8da891f05e53e8b4cd0e7beb0674245464df8b98a15d38184c8baa     0        989834279 lovelace + TxOutDatumNone
+--------------------------------------------------------------------------------------
+d1c42f58ac97fc1b8a9d2966bdce8687358a475dba9ea9d4083044d258c38d31     1        9989834455 lovelace + TxOutDatumNone
+
 ```
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli query utxo --address $(cat 02.addr) --testnet-magic 1097911063
+cardano-cli query utxo --address $(cat 02.addr) --testnet-magic 1
 
 Output:
+
                            TxHash                                 TxIx        Amount
----------------------------------------------------------------------------
-eeaff45ffb4a1f06fc6e1a48fef36472d6a1323d5a90edda04d21f66dc847755     1        10000000 lovelace + TxOutDatumNone
+--------------------------------------------------------------------------------------
+d1c42f58ac97fc1b8a9d2966bdce8687358a475dba9ea9d4083044d258c38d31     0        10000000 lovelace + TxOutDatumNone
+
 ```
 
-Để bắt đầu sử dụng Plutus bằng Cardano-CLI, chúng ta cần tuần tự hóa và ghi vào đĩa các loại Plutus khác nhau. Tuy nhiên, trước tiên chúng ta cần lấy PaymentPubKeyHash của ví 2:
+Để bắt đầu sử dụng Plutus bằng Cardano-CLI, chúng ta cần tuần tự hóa và ghi vào đĩa các loại Plutus khác nhau. Tuy nhiên, trước tiên chúng ta cần lấy `PaymentPubKeyHash` của ví 2:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
@@ -1251,7 +1301,12 @@ cardano-cli address key-hash --payment-verification-key-file 02.vkey --out-file 
 cat 02.pkh
 
 Output:
-c0c3fa620b9cda02a68e70689db03fe30e5f3cde2a56a19c898b9ded
+469818b156649cde7aab2d6c5c30e1697728fdcbefc682d68e28f166
+
+```
+tạo biến 
+```
+signer_hash="469818b156649cde7aab2d6c5c30e1697728fdcbefc682d68e28f166"
 ```
 
 Nhìn vào Deploy.hs, chúng tôi cần thay thế hàm băm khóa công khai thanh toán của người thụ hưởng bằng hàm băm mà chúng tôi đã tạo ở trên. Lưu ý rằng hàm băm của bạn sẽ khác với hàm băm trong hướng dẫn này. Chúng tôi cũng thay thế thời hạn bằng một thời gian trong tương lai. (bạn có thể sử dụng [Epoch Converter](https://www.epochconverter.com/) để tìm dấu thời gian trong tương lai)
@@ -1297,12 +1352,20 @@ writeUnit = writeJSON "testnet/unit.json" ()
 
 writeVestingValidator :: IO (Either (FileError ()) ())
 writeVestingValidator = writeValidator "testnet/vesting.plutus" $ validator $ VestingParam
-   { beneficiary = Ledger.PaymentPubKeyHash "c0c3fa620b9cda02a68e70689db03fe30e5f3cde2a56a19c898b9ded"
-   , deadline    = 1645653114
+   { beneficiary = Ledger.PaymentPubKeyHash "469818b156649cde7aab2d6c5c30e1697728fdcbefc682d68e28f166"
+   , deadline    = 15300036
    }
 ```
+### Biên dịch smartcontract plutus
 
-Mở cabal repl trong thiết bị đầu cuối khác và chạy:
+Mở cabal repl trong Terminal  khác và chạy:
+
+```
+cd ~plutus-apps/
+nix-shell
+cd ~/plutus-pioneer-program/code/week03
+[nix-shell:~/plutus-pioneer-program/code/week03]$ cabal repl 
+```
 
 ```haskell
 Prelude week03.Deploy> writeUnit
@@ -1314,12 +1377,13 @@ Prelude week03.Deploy> writeVestingValidator
 Output:
 Right ()
 ```
+## Tạo giao dịch với SmartContract
 
-Bây giờ chúng ta có thể tạo địa chỉ của tập lệnh:
+### B1 Tạo địa chỉ ví smartcontract
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli address build --payment-script-file vesting.plutus --testnet-magic 1097911063 --out-file vesting.addr
+cardano-cli address build --payment-script-file vesting.plutus --testnet-magic 1 --out-file vesting.addr
 ```
 
 ```
@@ -1327,114 +1391,138 @@ cardano-cli address build --payment-script-file vesting.plutus --testnet-magic 1
 cat vesting.addr
 
 Output:
-addr_test1wzptv89prnw0tt307l09enlussrsc7n7nau4phc2kduth2gv4lsan
+addr_test1wq43pks2g94gzh2rqgjrf5ee6l7pzhju8vwpjpca2m8dchsn6t6a8
 ```
 
-Nhìn vào tập lệnh give.sh, chúng tôi thay đổi tx-in thành địa chỉ cat 1 utxo mà chúng tôi đã tạo trước đó:
+### B2: Lấy Txin của địa chỉ gửi
+```
+cardano-cli query utxo --address $(cat 01.addr) --testnet-magic 1
+
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+f9f0655084b8ab67df1ac1fb5c016379ea03068505bd1d0e97b94bdd4b4fe734     1        9989834455 lovelace + TxOutDatumNone
+
+```
+tạo biến
+
+```
+TXIN1="f9f0655084b8ab67df1ac1fb5c016379ea03068505bd1d0e97b94bdd4b4fe734#1"
+```
+### B3: tạo giao dịch gửi tADA lên Smartcontract
+
+Nhìn vào tập lệnh give.sh, chúng tôi thay đổi `tx-in` thành địa chỉ query 1 utxo mà chúng ta đã tạo trước đó:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cat give.sh
 
-Output:
+```
+
+```
+TXIN1="f9f0655084b8ab67df1ac1fb5c016379ea03068505bd1d0e97b94bdd4b4fe734#1"
+
 cardano-cli transaction build \
     --alonzo-era \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --change-address $(cat 01.addr) \
-    --tx-in a5f29c533d8da891f05e53e8b4cd0e7beb0674245464df8b98a15d38184c8baa#0 \
-    --tx-out "$(cat vesting.addr) 200000000 lovelace" \
+    --tx-in $TXIN1 \
+    --tx-out "$(cat vesting.addr) 2000002 lovelace" \
     --tx-out-datum-hash-file unit.json \
     --out-file tx.body
 
 cardano-cli transaction sign \
     --tx-body-file tx.body \
     --signing-key-file 01.skey \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --out-file tx.signed
 
 cardano-cli transaction submit \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --tx-file tx.signed
 ```
 
-```
-[nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-./give.sh
+Bây giờ chúng ta có thể xem tập lệnh grab.sh. Chúng ta sẽ thay đổi hàm băm `Txin` thành hàm băm của vesting.addr mà chúng ta đã gửi lên. Chúng tôi sẽ thay đổi tài sản thế chấp thành hàm băm của 02.addr từ trước đó. Chúng tôi cũng sẽ thay đổi hàm băm của người ký thành hàm băm của 02.pkh. Cuối cùng, chúng ta cần thay đổi `invalid-before` để phản ánh vị trí hiện tại; mà chúng tôi đã truy vấn ở bước cuối cùng:
 
-Output:
-Estimated transaction fee: Lovelace 167217
-Transaction successfully submitted.
-```
 
-Chúng tôi có thể truy vấn địa chỉ tập lệnh:
+### B4: Lấy Txin của địa chỉ  Smartcontract   vừa gửi lên
 
-```
-[nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli query utxo --address $(cat vesting.addr) --testnet-magic 1097911063
+``` 
+cardano-cli query utxo --address $(cat vesting.addr) --testnet-magic 1
 
-Output:
-                           TxHash                                 TxIx        Amount
----------------------------------------------------------------------------
-50d9ad6558a6963d72dc25b4f37f31db15a512c708bb735a8f67f30b878bd4e3     1        200000000 lovelace + TxOutDatumHash ScriptDataInAlonzoEra "923918e403bf43c34b4ef6b48eb2ee04babed17320d8d1b9ff9ad086e86f44ec"
-```
-
-Chúng tôi cũng cần vị trí hiện tại cho tập lệnh tiếp theo. Chúng ta có thể chạy:
+TXINSM="5d3ddaf94078cc7d3ee7e3a42e2676576a689e216d53e4d72b0301624de0f5c1#0"
 
 ```
-[nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli query tip --testnet-magic 1097911063cat vesting.addr
 
-Output:
+### B5: Lấy slot hiện tại 
+
+```
+cardano-cli query tip --testnet-magic 1 
+
 {
-    "era": "Alonzo",
-    "syncProgress": "100.00",
-    "hash": "b5a4c29a91ab22789c0412eba329598f6ad5d17c7162b06112ee5da4679e5322",
-    "epoch": 188,
-    "slot": 51272239,
-    "block": 3343799
+    "block": 398631,
+    "epoch": 39,
+    "era": "Babbage",
+    "hash": "348a710d1eab461b20b94c36a41f8d8ca537ce6054658ce32d04e04b725737da",
+    "slot": 15300036,
+    "syncProgress": "100.00"
 }
 ```
 
-Bây giờ chúng ta có thể xem tập lệnh grab.sh. Chúng tôi sẽ thay đổi hàm băm Txin thành hàm băm của vesting.addr mà chúng tôi đã truy vấn ở trên trong bước cuối cùng. Chúng tôi sẽ thay đổi tài sản thế chấp thành hàm băm của 02.addr từ trước đó. Chúng tôi cũng sẽ thay đổi hàm băm của người ký thành hàm băm của 02.pkh. Cuối cùng, chúng ta cần thay đổi invalid-before để phản ánh vị trí hiện tại; mà chúng tôi đã truy vấn ở bước cuối cùng:
+### B6: tải protocol.json
+```
+cardano-cli query protocol-parameters --testnet-magic 1  --out-file protocol.json
+```
+### B7: Lấy Txin của địa chỉ nhận (trả phí)
 
 ```
-[nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cat grab.sh
+cardano-cli query utxo --address $(cat 02.addr) --testnet-magic 1
 
-Output:
+TXIN2="d1c42f58ac97fc1b8a9d2966bdce8687358a475dba9ea9d4083044d258c38d31#0" 
+```
+
+### B8: thay đổi các thông số --tx-in; tx-in-collateral; --invalid-before; --required-signer-hash (vẫn hợp đồng cũ thì không đổi) 
+
+```
+TXINSM="5d3ddaf94078cc7d3ee7e3a42e2676576a689e216d53e4d72b0301624de0f5c1#0"
+TXIN2="d1c42f58ac97fc1b8a9d2966bdce8687358a475dba9ea9d4083044d258c38d31#0"
+signer_hash="469818b156649cde7aab2d6c5c30e1697728fdcbefc682d68e28f166"
+
 cardano-cli transaction build \
     --alonzo-era \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --change-address $(cat 02.addr) \
-    --tx-in 50d9ad6558a6963d72dc25b4f37f31db15a512c708bb735a8f67f30b878bd4e3#1 \
+    --tx-in $TXINSM \
     --tx-in-script-file vesting.plutus \
     --tx-in-datum-file unit.json \
     --tx-in-redeemer-file unit.json \
-    --tx-in-collateral eeaff45ffb4a1f06fc6e1a48fef36472d6a1323d5a90edda04d21f66dc847755#1 \
-    --required-signer-hash c0c3fa620b9cda02a68e70689db03fe30e5f3cde2a56a19c898b9ded \
-    --invalid-before 51272239 \
+    --tx-in-collateral $TXIN2 \
+    --required-signer-hash $signer_hash \
+    --invalid-before 15300036 \
     --protocol-params-file protocol.json \
     --out-file tx.body
 
 cardano-cli transaction sign \
     --tx-body-file tx.body \
     --signing-key-file 02.skey \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --out-file tx.signed
 
 cardano-cli transaction submit \
-    --testnet-magic 1097911063 \
+    --testnet-magic 1 \
     --tx-file tx.signed
+ ```   
+
+
+
+
+
+Nếu sai thì sẽ báo lỗi sau
+
 ```
 
-
-
-
-
+Command failed: transaction build  Error: The followings tx inputs were expected to be key witnessed but are actually script witnessed: ["6e7bd85be4c37d9c8deb70236bdd9c61f22812ec5779055778e53a762b9ac54b#0"]
 ```
-[nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-./grab.sh
-
+Nếu không
+```
 Output:
 Estimated transaction fee: Lovelace 365397
 Transaction successfully submitted.
@@ -1445,17 +1533,21 @@ Sau khi đợi khoảng 20 giây, chúng ta có thể truy vấn địa chỉ th
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week03/testnet]$ 
-cardano-cli query utxo --address $(cat 02.addr) --testnet-magic 1097911063
+cardano-cli query utxo --address $(cat 02.addr) --testnet-magic 1
 
-Output:
                            TxHash                                 TxIx        Amount
----------------------------------------------------------------------------
-61644770e875457981d69dc3f6344a358996ea848a03e4ec17c5017071ec468b     0        199634603 lovelace + TxOutDatumNone
-eeaff45ffb4a1f06fc6e1a48fef36472d6a1323d5a90edda04d21f66dc847755     1        10000000 lovelace + TxOutDatumNone
+--------------------------------------------------------------------------------------
+582e65894b72410057dce6cdabb5be18d401a2e124732c1c2f8272e5f0e1699a     0        1639485 lovelace + TxOutDatumNone
+d1c42f58ac97fc1b8a9d2966bdce8687358a475dba9ea9d4083044d258c38d31     0        10000000 lovelace + TxOutDatumNone
 ```
+Địa chỉ Smartcontract đã không còn UTxO 
 
+```
+cardano-cli query utxo --address $(cat vesting.addr) --testnet-magic 1    
 
-
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+```
 
 
 
@@ -1468,7 +1560,7 @@ eeaff45ffb4a1f06fc6e1a48fef36472d6a1323d5a90edda04d21f66dc847755     1        10
 
 Phần đầu tiên của bài tập về nhà, chúng ta cần viết một hàm trình xác thực sẽ trả về giá trị true nếu người thụ hưởng1 đã ký giao dịch và vị trí hiện tại là trước hoặc vào thời hạn chót. Nó cũng phải trả về true nếu người thụ hưởng2 đã ký giao dịch và thời hạn đã qua.
 
-Trước tiên chúng ta cần chuyển dữ liệu (dat) và ngữ cảnh (ctx) vào trình xác thực:
+Trước tiên chúng ta cần chuyển datum (dat) và context (ctx) vào trình xác thực:
 
 ```haskell
 mkValidator :: VestingDatum -> () -> ScriptContext -> Bool

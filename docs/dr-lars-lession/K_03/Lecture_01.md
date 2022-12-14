@@ -39,7 +39,7 @@ Tài liệu về cá tuyết chấm đen cũng là một nguồn thông tin tuy�
 Chúng ta cần cài đặt Nix và cấu hình nó đúng cách để sử dụng bộ đệm của IOG. Trong hướng dẫn này, chúng tôi sẽ thực hiện cài đặt một người dùng. Trước khi chúng tôi có thể cài đặt Nix, chúng tôi cần đảm bảo rằng phiên bản Linux bạn đang sử dụng đã được cài đặt cả curl và git. Lần chạy đầu tiên:
 
 ```
-~$ sudo sh -c 'apt update && apt install curl'
+sudo sh -c 'apt update && apt install curl'
 ```
 
 
@@ -47,13 +47,13 @@ Bây giờ curl đã được cài đặt, chúng ta có thể cài đặt git. 
 
 
 ```
-~$ sudo apt-get install git
+sudo apt-get install git
 ```
 
 Bây giờ chúng ta có thể cài đặt cài đặt Nix một user. Chạy:
 
 ```
-~$ sh <(curl -L https://nixos.org/nix/install) --no-daemon
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
 
@@ -65,34 +65,42 @@ variables are set, either log in again, or type
 ```
 
 
-Bây giờ để kết thúc, chúng ta cần thiết lập môi trường với thông báo lệnh sau từ phía trên. Rất quan trọng ở đây để thay thế `totinj` bằng người dùng Linux hiện tại của bạn!!
+Bây giờ để kết thúc, chúng ta cần thiết lập môi trường với thông báo lệnh sau từ phía trên. Rất quan trọng ở đây bạn thay thế `totinj` bằng user Linux hiện tại của bạn!!
 ```
-~$ . /home/totinj/.nix-profile/etc/profile.d/nix.sh
+. /home/totinj/.nix-profile/etc/profile.d/nix.sh
 ```
 
 
 Bây giờ chúng ta cần thêm bộ nhớ đệm Đầu ra, Đầu vào để tăng tốc đáng kể quá trình xây dựng. Nếu không có bước này, bạn có thể chạy nix-shell trong nhiều ngày thay vì vài phút! Điều này có thể được tìm thấy ở đây:  [IOG Binaries](https://github.com/input-output-hk/plutus-apps#iohk-binary-cache). Hãy tạo một tệp cấu hình mới có các liên kết IOG được liên kết. Chạy:
 ```
-~$ mkdir ~/.config/nix
+mkdir ~/.config/nix
 echo 'substituters = https://hydra.iohk.io https://iohk.cachix.org https://cache.nixos.org/' >> ~/.config/nix/nix.conf
 echo 'trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=' >> ~/.config/nix/nix.conf
 ```
+Nếu CPU là ARM thì thêm vào ~/.config/nix/nix.conf
 
+```
+extra-platforms = x86_64-darwin aarch64-darwin
+```
+or tạm thời dùng lệnh dưới đây khi chạy nix-shell
+```
+nix-build default.nix  --argstr system x86_64-darwin --option extra-platforms  "x86_64-darwin aarch64-darwin"
+```
 Với Nix hiện đã được cài đặt và định cấu hình, chúng tôi sẽ sao chép các kho lưu trữ thích hợp từ github. Chúng tôi sẽ sao chép các ứng dụng plutus và chương trình tiên phong plutus. Đầu tiên, hãy clone plutus-apps:
 
 ```
-~$ git clone https://github.com/input-output-hk/plutus-apps.git
+git clone https://github.com/input-output-hk/plutus-apps.git
 ```
 Tiếp theo, hãy sao chép repo plutus-pioneer-program:
 
 ```
-~$ git clone https://github.com/input-output-hk/plutus-pioneer-program.git
+git clone https://github.com/input-output-hk/plutus-pioneer-program.git
 ```
 
 Bây giờ bạn có thể điều hướng đến thư mục week01 hiện tại trong thư mục chương trình plutus-pioneer và mở tệp cabal.project:
 
 ```
-~/plutus-pioneer-program/code/week01$ cat cabal.project
+cat ~/plutus-pioneer-program/code/week01/cabal.project
 ```
 Lấy thẻ plutus-apps bên trong tệp cabal.project:
 
@@ -113,7 +121,14 @@ Quay trở lại thư mục plutus-apps và cập nhật nó vào thẻ git hi�
 ```
 
 
-Bây giờ bạn đã được cập nhật và có thể chạy nix-shell trong thư mục này. Chạy nix-shell:
+Bây giờ bạn đã được cập nhật và có thể chạy nix-shell trong thư mục này. 
+bạn chạy để mở một tab có thể chạy ẩn
+
+```
+tmux
+```
+
+và Chạy nix-shell:
 
 ```
 ~/plutus-apps$ nix-shell
@@ -560,44 +575,41 @@ myToken = KnownCurrency (ValidatorHash "f") "Token" (TokenName "T" :| [])
 Hãy bắt đầu với terminal 1. Đi tới thư mục plutus-apps và chạy nix-shell trước:
 
 
-```
+```haskell
 Terminal 1
-
+. /home/user/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
-
 Tiếp theo, chúng tôi đi đến thư mục plutus-playground-server và chạy:
 
-```
+```haskell
 Terminal 1
-
+cd ~/plutus-apps/plutus-playground-server
 [nix-shell:~/plutus-apps/plutus-playground-server]$ plutus-playground-server
 ```
 
 Nếu thành công, bạn sẽ thấy đầu ra:
 
-```
+```haskell
 Terminal 1
-
 Interpreter Ready
 ```
 
 Hãy bắt đầu với terminal 2. Đi tới thư mục plutus-apps và chạy nix-shell trước:
 
-
-```
+```haskell
 Terminal 2
-
+. /home/user/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
 
 Tiếp theo, chúng tôi đi đến thư mục plutus-playground-client và chạy:
 
-```
+```haskell
 Terminal 2
-
+cd ~/plutus-apps/plutus-playground-clien
 [nix-shell:~/plutus-apps/plutus-playground-client]$ npm run start
 ```
 

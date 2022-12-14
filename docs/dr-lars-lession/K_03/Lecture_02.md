@@ -19,7 +19,7 @@ Google Doc version can be found [HERE](https://docs.google.com/document/d/1wclIp
 
 ## Chuẩn bị cho bài giảng 2
 
-Trước khi bắt đầu bài giảng 2, trước tiên chúng ta phải cập nhật môi trường phát triển của mình. Bạn có thể sao chép và dán trực tiếp bất kỳ mã nào trong hướng dẫn này vào thiết bị đầu cuối hoặc IDE của mình.
+Trước khi bắt đầu bài giảng 2, trước tiên chúng ta phải cập nhật môi trường phát triển của mình. Bạn có thể sao chép và dán trực tiếp bất kỳ mã nào trong hướng dẫn này vào Terminal hoặc IDE của mình.
 
 Đầu tiên, hãy vào thư mục plutus-pioneer-program để lấy nội dung bài giảng tuần 2. Hành hình:
 
@@ -111,7 +111,7 @@ B ByteString
 
 ```
 
-Bây giờ chúng ta có thể sử dụng bản thay thế để có được một số trải nghiệm thực tế. Đầu tiên, hãy nhập PlutusTx
+Bây giờ chúng ta có thể sử dụng  Terminal để có được một số trải nghiệm thực tế. Đầu tiên, hãy nhập PlutusTx
 
 ```haskell
 Prelude week02.Burn > import PlutusTx
@@ -150,7 +150,8 @@ Output:
 I 42 :: Data
 ```
 
-Bây giờ chúng ta có thể sử dụng tiện ích mở rộng này (-XOverloadedStrings) để sử dụng các chuỗi ký tự cho các loại giống như chuỗi khác. Một ví dụ là kiểu chuỗi Byte. Hành hình:
+Bây giờ chúng ta có thể sử dụng tiện ích mở rộng này (-XOverloadedStrings) để sử dụng các chuỗi ký tự cho các  kiểu string-like. Một ví dụ là kiểu Byte string. 
+Execute:
 
 ```haskell
 Prelude PlutusTx week02.Burn > :set -XOverloadedStrings
@@ -225,7 +226,7 @@ mkValidatorScript :: CompiledCode (BuiltinData -> BuiltinData -> BuiltinData -> 
 {-# INLINABLE mkValidator #-}
 ```
 
-Bây giờ chúng ta có thể tải tệp này trong phần thay thế:
+Bây giờ chúng ta có thể tải tệp này:
 
 ```haskell 
 Prelude PlutusTx week02.Burn > :l src/Week02/Gift.hs
@@ -272,7 +273,7 @@ Script
 unScript :: Program DeBruijn DefaultUni DefaultFun ()
 ```
 
-Bây giờ chúng ta có thể chạy trình xác thực unScript $ getValidator:
+### Bây giờ chúng ta có thể chạy trình xác thực unScript $ getValidator:
 
 ```haskell
 Prelude PlutusTx Ledger.Scripts week02.Gift >
@@ -312,14 +313,15 @@ Output:
 Address {addressCredential = ScriptCredential 67f33146617a5e61936081db3b2117cbf59bd2123748f58ac9678656, addressStakingCredential = Nothing}
 ```
 
-Bây giờ chúng ta có thể kiểm tra điều này trong Plutus Playground.
+### Bây giờ chúng ta có thể kiểm tra điều này trong Plutus Playground.
 
-Để bắt đầu với Plutus Playground, chúng ta cần có hai thiết bị đầu cuối đang chạy, cả hai đều nằm trong nix-shell.
+Để bắt đầu với Plutus Playground, chúng ta cần có hai Terminal đang chạy, cả hai đều nằm trong nix-shell.
 
 Hãy bắt đầu với terminal 1. Đi tới thư mục plutus-apps và chạy nix-shell trước:
 
 ```haskell
 Terminal 1
+. /home/user/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
@@ -327,6 +329,7 @@ Tiếp theo, chúng tôi đi đến thư mục plutus-playground-server và ch�
 
 ```haskell
 Terminal 1
+cd ~/plutus-apps/plutus-playground-server
 [nix-shell:~/plutus-apps/plutus-playground-server]$ plutus-playground-server
 ```
 
@@ -341,6 +344,7 @@ Hãy bắt đầu với terminal 2. Đi tới thư mục plutus-apps và chạy 
 
 ```haskell
 Terminal 2
+. /home/user/.nix-profile/etc/profile.d/nix.sh
 ~/plutus-apps$ nix-shell
 ```
 
@@ -349,6 +353,7 @@ Tiếp theo, chúng tôi đi đến thư mục plutus-playground-client và ch�
 
 ```haskell
 Terminal 2
+cd ~/plutus-apps/plutus-playground-clien
 [nix-shell:~/plutus-apps/plutus-playground-client]$ npm run start
 ```
 
@@ -363,7 +368,7 @@ or
 [wdm]: Compiled with warnings.
 ```
 
-Giữ cả hai thiết bị đầu cuối mở và giờ đây chúng ta có thể truy cập Plutus Playground từ trình duyệt.
+Giữ cả hai Terminal mở và giờ đây chúng ta có thể truy cập Plutus Playground từ trình duyệt.
 
 Mở trình duyệt và truy cập địa chỉ:
 
@@ -405,7 +410,7 @@ Final Balances:<br/>
 
 ![Screenshot 2022-02-17 4 14 07 PM](https://user-images.githubusercontent.com/59018247/154708099-31f7a939-0b37-4883-b1cc-eed6965d3ca1.png)
 
-Bây giờ chúng ta xem tệp **Burn.hs** nơi mkValidator trông giống như:
+### Bây giờ chúng ta xem tệp **Burn.hs** nơi mkValidator trông giống như:
 
 ```haskell
 mkValidator :: BuiltinData -> BuiltinData -> BuiltinData -> ()
