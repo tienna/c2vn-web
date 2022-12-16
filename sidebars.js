@@ -211,6 +211,7 @@ const sidebars = {
       "haskell_iog/intro_haskell",
       "haskell_iog/Intro_to_Haskell_and_tools",
       "haskell_iog/Functions-Data-Types-and-Signatures-2",
+      "haskell_iog/Conditions-and-helper-constructions-3",
 	  
     ],
     "Project Catalyst": [
