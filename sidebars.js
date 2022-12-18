@@ -66,6 +66,14 @@ const sidebars = {
       "smart-contracts/plutus",
       "smart-contracts/video_demo_smartcontract",
     ],
+    "Khoa học Haskell": [
+      "haskell_iog/README",
+      "haskell_iog/intro_haskell",
+      "haskell_iog/Intro_to_Haskell_and_tools",
+      "haskell_iog/Functions-Data-Types-and-Signatures-2",
+      "haskell_iog/Conditions-and-helper-constructions-3",
+	  
+    ],
     "Khóa 2-Plutus của Dr.Lars": [
       "dr-lars-lession/overview",
       "dr-lars-lession/week1",
@@ -86,8 +94,10 @@ const sidebars = {
       "dr-lars-lession/K_03/Lecture_01",
       "dr-lars-lession/K_03/Lecture_02",
       "dr-lars-lession/K_03/Lecture_03",
+      "dr-lars-lession/K_03/Lecture_04",
 
     ],
+
     "Tích hợp với Cardano": [
       "integrate-cardano/overview",
       "integrate-cardano/creating-wallet-faucet",
@@ -204,16 +214,6 @@ const sidebars = {
       "setup-application/Validator_scripts_tutorial",
     ],
     
-    
-    
-    "Khoa học Haskell": [
-      "haskell_iog/README",
-      "haskell_iog/intro_haskell",
-      "haskell_iog/Intro_to_Haskell_and_tools",
-      "haskell_iog/Functions-Data-Types-and-Signatures-2",
-      "haskell_iog/Conditions-and-helper-constructions-3",
-	  
-    ],
     "Project Catalyst": [
       "project-catalyst/overview",
       "project-catalyst/funding-process",

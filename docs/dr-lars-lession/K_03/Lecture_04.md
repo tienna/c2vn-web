@@ -1,4 +1,4 @@
-# Lecture 4: Emulator Trace and Contract Monads
+# Bài giảng 4: Emulator Trace and Contract Monads
 
 Plutus Pioneer Program - Cohort 3 
 February 3, 2022
@@ -13,36 +13,35 @@ Google Doc version can be found [HERE](https://docs.google.com/document/d/1gRv1m
   - [Table of Contents](#table-of-contents)
   - [Preparation for Lecture 4](#preparation-for-lecture-4)
   - [Monads](#monads)
-  - [The Emulator Trace Monad](#the-emulator-trace-monad)
+  - [The Emulator Trace Monad](#trình-giả-lập-monad)
   - [The Contract Monad](#the-contract-monad)
   - [Homework Part 1](#homework-part-1)
   - [Homework Part 2](#homework-part-2)
 
-## Preparation for Lecture 4
+## Chuẩn bị cho bài giảng 4
 
-Before we can get started in lecture 4, we first must get our development environment up to date. You can copy and paste any of the code in this guide directly into your terminal or IDE.
+Trước khi bắt đầu bài giảng 4, trước tiên chúng ta phải cập nhật môi trường phát triển của mình. Bạn có thể sao chép và dán trực tiếp bất kỳ mã nào trong hướng dẫn này vào thiết bị đầu cuối hoặc IDE của mình.
 
-
-First, head to the plutus-pioneer-program directory to grab the lecture week 4 contents. Execute: 
+Đầu tiên, hãy đến thư mục plutus-pioneer-program để lấy nội dung bài giảng tuần 4.
 
 ```
 ~/plutus-pioneer-program$ git pull
 ```
 
-You can now navigate to the current week04 directory and open the cabal.project file:
+Bây giờ bạn có thể điều hướng đến thư mục week04 hiện tại và mở tệp cabal.project:
 
 ```
 ~/plutus-pioneer-program/code/week04$ cat cabal.project
 ```
 
-Grab the plutus-apps tag inside the cabal.project file:
+Lấy thẻ plutus-apps bên trong tệp cabal.project:
 
 ```
 location: https://github.com/input-output-hk/plutus-apps.git
   tag:ea1bfc6a49ee731c67ada3bfb326ee798001701a
 ```
 
-Head back to  to the plutus-apps directory and update it to the  current git tag:
+Quay trở lại thư mục plutus-apps và cập nhật nó vào thẻ git hiện tại:
 
 ```
 ~/plutus-apps$ git checkout main
@@ -54,13 +53,15 @@ Head back to  to the plutus-apps directory and update it to the  current git tag
 ~/plutus-apps$ git checkout ea1bfc6a49ee731c67ada3bfb326ee798001701a
 ```
 
-You should now be up to date and can run nix-shell in this directory. Run nix-shell:
+Bây giờ bạn đã được cập nhật và có thể chạy nix-shell trong thư mục này. 
+Chạy nix-shell:
 
 ```
 ~/plutus-apps$ nix-shell
 ```
 
-Head back to the week04 folder to start running the cabal commands:
+Quay trở lại thư mục week04 để bắt đầu chạy các lệnh cabal:
+
 ```
 [nix-shell:~/plutus-pioneer-program/code/week04]$ cabal update
 ```
@@ -70,7 +71,7 @@ Head back to the week04 folder to start running the cabal commands:
 ```
 [nix-shell:~/plutus-pioneer-program/code/week04]$ cabal repl
 ```
-If successful,  you should now be ready to start the lecture:
+Nếu thành công, bây giờ bạn đã sẵn sàng để bắt đầu bài giảng:
 
 ```
 Ok, 9 modules loaded.
@@ -80,13 +81,15 @@ Prelude Week04.Contract>
 ## Monads
 
 
-In order to explore some new Haskell classes, we need to load hello.hs. In the nix-shell in the week04 folder, *run:
+Để khám phá một số lớp Haskell mới, chúng ta cần tải hello.hs. Trong nix-shell trong thư mục week04, *run*:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week04]$ cabal repl plutus-pioneer-program-week04:exe:hello
+```
 
 Output:
 
+```
 Build profile: -w ghc-8.10.4.20210212 -O1
 In order, the following will be built (use -v for more details):
  - plutus-pioneer-program-week04-0.1.0.0 (exe:hello) (ephemeral targets)
@@ -98,11 +101,9 @@ Ok, one module loaded.
 ```
 
 
-*note: If repl is already running you can hit CTRL+Z to return to nix-shell
+* lưu ý: Nếu repl đang chạy, bạn có thể nhấn CTRL+Z để quay lại nix-shell
 
-
-
-We learned about the Functor IO class.
+Chúng ta đã học về lớp Functor IO.
 
 ```haskell
 class Functor f where
@@ -111,8 +112,8 @@ Methods
 fmap :: (a -> b) -> f a -> f b
 Plutus Tx version of fmap.
 ```
+Ví dụ, Hàm chữ hoa. Đầu tiên import Data.Char:
 
-Example, upper case function. First import Data.Char:
 
 ```
 *Main> import Data.Char
@@ -143,7 +144,7 @@ Output:
 ```
 
 
-(>>) Operator:
+Toán tử (>>):
 
 ```haskell
 (>>) :: Monad m => m a -> m b -> m b
@@ -157,7 +158,7 @@ Hello
 World
 ```
 
-(>>=) Bind Operator:
+Toán tử liên kết (>>=):
 
 ```haskell
 (>>=) :: Monad m => m a -> (a -> m b) -> m b
@@ -184,8 +185,7 @@ Output:
 Haskell
 ```
 
-
-A more complicated IO function in hello.hs:
+Một Hàm IO phức tạp hơn trong hello.hs:
 
 ```haskell
 main :: IO ()
@@ -198,7 +198,7 @@ bar = getLine >>= \s ->
 ```
 
 
-Call the *bar function:
+Gọi hàm *bar:
 
 ```
 *Main Data.Char> bar
@@ -209,7 +209,7 @@ Output:
 onetwo
 ```
 
-*note, if you are outside the repl you can directly run hello.hs by:
+*lưu ý, nếu bạn ở bên ngoài thay thế, bạn có thể trực tiếp chạy hello.hs bằng cách:*
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week04]$ cabal run hello
@@ -222,10 +222,7 @@ onetwo
 ```
 
 
-
-
-
-Maybe Type:
+### Kiểu Maybe:
 
 ```haskell
 data Maybe a
@@ -235,8 +232,7 @@ Nothing
 Just a
 ```
 
-
-Example, read. First import Text.Read (readMaybe):
+Ví dụ, đọc. Đầu tiên import Text.Read (readMaybe):
 
 ```
 *Main Data.Char> import Text.Read (readMaybe)
@@ -255,7 +251,8 @@ Output:
 ```
 
 
-Read Maybe (more ideal, avoids throwing an exception):
+readMaybe (lý tưởng hơn, tránh đưa ra một ngoại lệ):
+
 ```
 *Main Data.Char Text.Read> readMaybe "42+x" :: Maybe Int
 
@@ -270,9 +267,7 @@ Output:
 Just 42
 ```
 
-
-
-We will now learn more intricate uses of readMaybe in the Maybe.hs file. Exit the repl with CTRL+Z, then execute:
+Bây giờ chúng ta sẽ tìm hiểu cách sử dụng phức tạp hơn của read Maybe trong tệp Maybe.hs. Thoát thay thế bằng CTRL+Z, sau đó thực hiện:
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week04]$ cabal repl
@@ -282,7 +277,7 @@ Ok, 9 modules loaded.
 Prelude Week04.Contract>
 ```
 
-Now we load the Maybe.hs file:
+Bây giờ chúng ta tải tệp Maybe.hs:
 
 ```
 Prelude Week04.Contract> :l src/Week4/Maybe.hs
@@ -292,8 +287,8 @@ Ok, two modules loaded.
 Prelude Week04.Maybe>
 ```
 
+Bên trong tệp Maybe.hs, trước tiên chúng ta xem xét hàm foo:
 
-Inside the Maybe.hs file, we first look at the foo function:
 
 ```haskell
 foo :: String -> String -> String -> Maybe Int
@@ -306,7 +301,7 @@ foo x y z = case readMaybe x of
            Just m  -> Just (k + l + m)
 ```
 
-Example outputs of the foo function:
+Đầu ra ví dụ của chức năng foo:
 
 ```
 Prelude Week04.Maybe> foo "1" "2" "3"
@@ -324,8 +319,8 @@ Prelude Week04.Maybe> foo "1" "2" ""
 Output:
 Nothing
 ```
+Bây giờ chúng ta xem xét bindMaybe trong Maybe.hs (để tạo một phiên bản ngắn gọn hơn của hàm foo được gọi là foo' ):
 
-Now we look at bindMaybe in Maybe.hs(to create a more concise version of the foo function called foo’ ):
 
 ```haskell
 bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
@@ -339,7 +334,7 @@ foo' x y z = readMaybe x `bindMaybe` \k ->
             Just (k + l + m)
 ```
 
-Example outputs of the foo’ function as expected:
+Kết quả đầu ra ví dụ của hàm foo' như mong đợi:
 
 ```
 Prelude Week04.Maybe> foo' "1" "2" "3"
@@ -358,7 +353,7 @@ Output:
 Nothing
 ```
 
-Either Type:
+### Kiểu Either:
 
 ```haskell
 data Either a b
@@ -369,7 +364,7 @@ Left a
 Right b
 ```
 
-Example of Either Type:
+Ví dụ kiểu Either:
 
 ```
 Prelude Week04.Maybe> Left "Haskell" :: Either String Int
@@ -384,7 +379,7 @@ Right 7
 ```
 
 
-Now we load the Either.hs file:
+Bây giờ chúng tôi tải file Either.hs:
 
 ```
 Prelude Week04.Contract> :l src/Week04/Either.hs
@@ -394,7 +389,7 @@ Ok, two modules loaded.
 Prelude Week04.Either>
 ```
 
-Inside Either.hs, we first look at the readEither function:
+Bên trong both.hs, trước tiên chúng ta xem xét hàm readEither:
 
 ```haskell
 readEither :: Read a => String -> Either String a
@@ -403,7 +398,7 @@ readEither s = case readMaybe s of
    Just a  -> Right a
 ```
 
-Example outputs of readEither:
+Đầu ra ví dụ của readEither:
 
 ```
 Prelude Week04.Either> readEither "42" :: Either String Int
@@ -417,7 +412,7 @@ Output:
 Left "can't parse: 42+x"
 ```
 
-We then look at the foo function:
+Sau đó, chúng tôi xem xét hàm foo:
 
 
 ```haskell
@@ -436,7 +431,7 @@ foo x y z = case readEither x of
            Right m  -> Right (k + l + m)
 ```
 
-Example outputs of foo:
+Ví dụ đầu ra của foo:
 
 ```
 Prelude Week04.Either> foo "1" "2" "3"
@@ -460,7 +455,7 @@ Output:
 Left "can't parse: aws"
 ```
 
-We then look at foo’ (more concise version of foo):
+Sau đó, chúng tôi xem foo' (phiên bản ngắn gọn hơn của foo):
 
 ```haskell
 bindEither :: Either String a -> (a -> Either String b) -> Either String b
@@ -475,7 +470,7 @@ foo' x y z = readEither x `bindEither` \k ->
 ```
 
 
-Example outputs of foo’ as expected:
+Kết quả đầu ra ví dụ của foo' như mong đợi:
 
 ```
 Prelude Week04.Either> foo' "1" "2" "3"
@@ -499,7 +494,7 @@ Output:
 Left "can't parse: aws"
 ```
 
-Finally, we load the Writer.hs file:
+Cuối cùng, chúng tôi tải tệp Writer.hs:
 
 ```
 Prelude Week04.Either> :l src/Week04/Writer.hs
@@ -509,14 +504,14 @@ Ok, two modules loaded.
 Prelude Week04.Writer>
 ```
 
-The first function of interest in the file is number:
+Hàm quan tâm đầu tiên trong tệp là `number`:
 
 ```haskell
 number :: Int -> Writer Int
 number n = Writer n $ ["number: " ++ show n]
 ```
 
-Example of number:
+Ví dụ về number:
 
 ```
 Prelude Week04.Writer> number 42
@@ -525,7 +520,7 @@ Output:
 Writer 42 ["number: 42"]
 ```
 
-Now we look at foo:
+Bây giờ chúng ta nhìn vào foo:
 
 ```haskell
 foo :: Writer Int -> Writer Int -> Writer Int -> Writer Int
@@ -538,7 +533,7 @@ foo (Writer k xs) (Writer l ys) (Writer m zs) =
 ```
 
 
-Example of foo:
+Ví dụ về  foo:
 ```
 Prelude Week04.Writer> foo (number 1) (number 2) (number 3)
 
@@ -547,7 +542,7 @@ Writer 6 ["number: 1","number: 2","number: 3","sum: 6"]
 ```
 
 
-Now we look at the bindWriter function with foo’:
+Bây giờ chúng ta xem xét hàm bindWriter với foo':
 
 ```haskell
 bindWriter :: Writer a -> (a -> Writer b) -> Writer b
@@ -568,14 +563,14 @@ foo' x y z = x `bindWriter` \k ->
 
 
 
-Example of foo’:
+Ví dụ về foo':
 ```
 Prelude Week04.Writer> foo' (number 1) (number 2) (number 3)
 
 Output:
 Writer 6 ["number: 1","number: 2","number: 3","sum: 6"]
 ```
-Lastly, we looked at the entire Monad Class:
+*Cuối cùng, chúng tôi đã xem xét toàn bộ Lớp Monad:*
 
 ```haskell
 Monad
@@ -585,10 +580,11 @@ Monad
 return :: Monad m => a -> m a
 ```
 
-## The Emulator Trace Monad
+## Trình giả lập Monad
 
 
-Before we can get started with using the Emulator Trace Monad, start by loading the repl.
+
+Trước khi chúng ta có thể bắt đầu sử dụng Trình giả lập Trace Monad, hãy bắt đầu bằng cách tải bản repl.
 
 ```
 [nix-shell:~/plutus-pioneer-program/code/week04]$ cabal repl
@@ -605,7 +601,8 @@ Prelude Plutus.Trace.Emulator Week04.Contract> import Data.Default
 Prelude Plutus.Trace.Emulator Data.Default Week04.Contract>
 ```
 
-We are introduced to the Emulator Config:
+Chúng tôi được giới thiệu về Cấu hình giả lập:
+
 ```haskell
 data EmulatorConfig
 Constructors
@@ -619,7 +616,7 @@ _feeConfig :: FeeConfig
 Configure the fee of a transaction
 ```
 
-Then the Default Emulator Config instance:
+Sau đó là phiên bản Default Emulator Config:
 
 ```haskell
 Defined in Wallet.Emulator.Stream
@@ -627,7 +624,7 @@ Methods
 def :: EmulatorConfig
 ```
 
-Simple example of an Default Emulator Config:
+Ví dụ đơn giản Default Emulator Config:
 
 ```
 Prelude Plutus.Trace.Emulator Data.Default Week04.Contract> 
@@ -637,8 +634,7 @@ Output:
 EmulatorConfig {_initialChainState = Left (fromList [(Wallet 1bc5f27d7b4e20083977418e839e429d00cc87f3,Value (Map [(,Map [("",100000000)])])),(Wallet 3a4778247ad35117d7c3150d194da389f3148f4a,Value (Map [(,Map [("",100000000)])])),(Wallet 4e76ce6b3f12c6cc5a6a2545f6770d2bcb360648,Value (Map [(,Map [("",100000000)])])),(Wallet 5f5a4f5f465580a5500b9a9cede7f4e014a37ea8,Value (Map [(,Map [("",100000000)])])),(Wallet 7ce812d7a4770bbf58004067665c3a48f28ddd58,Value (Map [(,Map [("",100000000)])])),(Wallet 872cb83b5ee40eb23bfdab1772660c822a48d491,Value (Map [(,Map [("",100000000)])])),(Wallet bdf8dbca0cadeb365480c6ec29ec746a2b85274f,Value (Map [(,Map [("",100000000)])])),(Wallet c19599f22890ced15c6a87222302109e83b78bdf,Value (Map [(,Map [("",100000000)])])),(Wallet c30efb78b4e272685c1f9f0c93787fd4b6743154,Value (Map [(,Map [("",100000000)])])),(Wallet d3eddd0d37989746b029a0e050386bc425363901,Value (Map [(,Map [("",100000000)])]))]), _slotConfig = SlotConfig {scSlotLength = 1000, scSlotZeroTime = POSIXTime {getPOSIXTime = 1596059091000}}, _feeConfig = FeeConfig {fcConstantFee = Lovelace {getLovelace = 10}, fcScriptsFeeFactor = 1.0}}
 ```
 
-
-Run Emulator Trace:
+Chạy trình giả lập Trace:
 
 ```haskell
 runEmulatorTrace :: EmulatorConfig -> EmulatorTrace () -> ([EmulatorEvent], Maybe EmulatorErr, EmulatorState)Source#
@@ -652,16 +648,16 @@ Output:
 <pages of data>
 ```
 
-We see here that the output contains an overwhelming amount of data, corresponding to the emulator events of the default configuration. This is not practical, so we will instead use another emulator trace called runEmulatorTraceIO.
+Ở đây chúng ta thấy rằng đầu ra chứa một lượng dữ liệu quá lớn, tương ứng với các sự kiện giả lập của cấu hình mặc định. Điều này là không thực tế, vì vậy thay vào đó, chúng tôi sẽ sử dụng một trình mô phỏng khác có tên là runEmulatorTraceIO.
 
-Run Emulator Trace IO:
+Chạy Trình giả lập Trace IO:
 
 ```haskell
 runEmulatorTraceIO :: EmulatorTrace () -> IO ()
 Runs the trace with runEmulatorTrace, with default configuration that prints a selection of events to stdout.
 ```
 
-Simple example of Run Emulator TraceIO:
+Ví dụ đơn giản về Run Emulator TraceIO:
 
 ```
 Prelude Plutus.Trace.Emulator Data.Default Week04.Contract> 
@@ -693,14 +689,14 @@ Wallet d3eddd0d37989746b029a0e050386bc425363901:
 ```
 
 
-Run Emulator TraceIO’
+Chạy trình giả lập TraceIO’
 
 ```haskell
 runEmulatorTraceIO' :: TraceConfig -> EmulatorConfig -> EmulatorTrace () -> IO ()
 ```
-As you can see, Run Emulator TraceIO’ takes two additional arguments. You could potentially change the initial wallet distribution.
+Như bạn có thể thấy, Run Emulator TraceIO' có thêm hai đối số. Bạn có thể thay đổi cách phân phối ví ban đầu.
 
-Where TraceConfig is:
+TraceConfig ở đâu:
 
 ```haskell
 data TraceConfig
@@ -714,7 +710,8 @@ outputHandle :: Handle
 Where to print the outputs to. Default: stdout
 ```
 
-We will now look at a practical example in the file Trace.hs. Load the Trace.hs file:
+Bây giờ chúng ta sẽ xem xét một ví dụ thực tế trong tệp Trace.hs. 
+Tải tệp Trace.hs:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Contract> 
@@ -725,7 +722,7 @@ Ok, two modules loaded.
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Trace> 
 ```
 
-Looking at the Trace.hs file:
+Nhìn vào tệp Trace.hs:
 
 ```haskell
 -- Contract w s e a
@@ -749,7 +746,7 @@ myTrace = do
    Extras.logInfo $ "reached " ++ show s
 ```
 
-We can run a trace using the test function:
+Chúng ta có thể chạy theo dõi bằng hàm test:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Trace> 
@@ -803,18 +800,15 @@ Contract
  
 unContract :: Eff (ContractEffs w e) a
 ```
+Trong đó w: Cho phép hợp đồng ghi log  kiểu w (có thể truyền thông tin ra bên ngoài)
 
+Where s: Chỉ định những điểm cuối nào khả dụng
 
-Where W: Allows contract to write log messages of type w (can pass information to the outside)
+Trong đó e: Chỉ định loại thông báo lỗi
 
-Where S: Specifies what endpoints are available
+Trong đó a: Là kết quả
 
-Where E: Specifies the type of error messages
-
-Where A: Is the Result
-
-
-First, we need to load the Contract.hs file:
+Trước tiên, chúng ta cần tải tệp Contract.hs:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Trace> 
@@ -827,7 +821,7 @@ Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Contract>
 
 
 
-Opening the file Contract.hs, we will first learn how to throw an error in the contract:
+Mở file Contract.hs, trước tiên chúng ta sẽ tìm hiểu cách đưa ra lỗi trong hợp đồng:
 
 ```haskell
 myContract1 :: Contract () Empty Text ()
@@ -843,7 +837,7 @@ test1 = runEmulatorTraceIO myTrace1
 ```
 
 
-We can test out contract 1 by calling the test1 function:
+Chúng ta có thể kiểm tra myContract1 bằng cách gọi hàm test1:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Contract> 
@@ -852,8 +846,8 @@ test1
 Output:
 Slot 00001: *** CONTRACT STOPPED WITH ERROR: "\"BOOM!\""
 ```
+Thay vào đó, chúng ta có thể sửa đổi myContract1 để bắt ngoại lệ. Contract2 hiện được tạo để xử lý ngoại lệ:
 
-We can modify myContract1 in order to instead catch the exception. Contract2 is now created to handle the exception:
 
 ```haskell
 myContract2 :: Contract () Empty Void ()
@@ -869,7 +863,7 @@ test2 = runEmulatorTraceIO myTrace2
 ```
 
 
-We can test out contract 2 by calling the test2 function:
+Chúng ta có thể kiểm tra mycontract2 bằng cách gọi hàm test2:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Contract> 
@@ -879,7 +873,7 @@ Output:
 Slot 00001: *** CONTRACT LOG: "caught: BOOM!"
 ```
 
-Creating a new contract myContract3, we can see how to use endpoints in the Contract:
+Tạo một hợp đồng mới myContract3, chúng ta có thể xem cách sử dụng các endpoints trong Hợp đồng:
 
 ```haskell
 type MySchema = Endpoint "foo" Int .\/ Endpoint "bar" String
@@ -899,7 +893,7 @@ test3 :: IO ()
 test3 = runEmulatorTraceIO myTrace3
 ```
 
-We can test out contract 3 by calling the test3 function:
+Chúng ta có thể  kiểm tra contract 3 bằng cách gọi hàm test3:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Contract> 
@@ -911,8 +905,7 @@ Contract log: Number 42.0
 Receive endpoint call on 'bar' for Object XXX
 Slot 00001: *** CONTRACT LOG: "Haskell"
 ```
-
-Creating a new contract myContract4, we can see how to have the contract wait ‘n’ slots:
+Tạo một hợp đồng mới myContract4, chúng ta có thể xem cách để hợp đồng chờ 'n' vị trí:
 
 ```haskell
 myContract4 :: Contract [Int] Empty Text ()
@@ -946,8 +939,7 @@ test4 = runEmulatorTraceIO myTrace4
 We can test out contract 4 by calling the test4 function:
 
 ```
-Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Contract> 
-test4
+Chúng ta có thể kiểm tra hợp đồng 4 bằng cách gọi hàm test4:
 
 Output:
 Slot 00007: *** USER LOG: []
@@ -965,24 +957,22 @@ Slot 00027: *** USER LOG: [1,2]
 -- after each endpoint call.
 ```
 
+Bài tập về nhà mục tiêu 1 là viết một theo dõi trình giả lập nhận 2 khoản thanh toán số nguyên và sử dụng payContract để thực hiện hai khoản thanh toán cho ví người nhận 2 với độ trễ là một vị trí. Nhập Wallet.Emulator.Wallet: nhập Wallet.Emulator.Wallet
 
-The goal homework 1 is to write an emulator trace that takes 2 integer payments, and utilizes the payContract to execute two payments to the recipient wallet 2 with a delay of one slot.
-Import Wallet.Emulator.Wallet:
-import Wallet.Emulator.Wallet
+Đầu tiên, chúng ta cần chuyển hai giá trị vào paytrace (tôi đã định nghĩa chúng lần lượt là x , y):
 
-
-First, we need to pass two values into paytrace (I defined them as x , y respectively):
 ```haskell
 payTrace x y = do
 ```
+Thứ hai, chúng ta cần gọi payContract từ Wallet 1:
 
-Second, we need to call the payContract from Wallet 1:
 ```haskell
 h <- activateContractWallet (knownWallet 1) payContract
 let pkh = mockWalletPaymentPubKeyHash $ knownWallet 2
 ```
 
-Now, we need to use the @pay endpoint and use the Payparams to pay the beneficiary Wallet2 with the first value, x:
+Bây giờ, chúng ta cần sử dụng điểm cuối @pay và sử dụng Payparams để thanh toán cho người thụ hưởng Wallet2 với giá trị đầu tiên, x:
+
 ```haskell
 callEndpoint @"pay" h $ PayParams
        { ppRecipient = pkh
@@ -991,14 +981,14 @@ callEndpoint @"pay" h $ PayParams
 
 ```
 
+Chờ 1 slot trước khi gọi thanh toán tiếp theo:
 
-
-Wait 1 slot before calling the next payment:
 ```haskell
 void $ Emulator.waitNSlots 1
 ```
 
-Now, we need to use the @pay endpoint again and use the Payparams to pay the beneficiary Wallet2 with the second value, y:
+Bây giờ, chúng ta cần sử dụng lại điểm cuối @pay và sử dụng Payparams để thanh toán cho người thụ hưởng Wallet2 với giá trị thứ hai, y:
+
 ```haskell
 callEndpoint @"pay" h $ PayParams
        { ppRecipient = pkh
@@ -1006,12 +996,13 @@ callEndpoint @"pay" h $ PayParams
        }
 ```
 
-Wait 1 slot after the second payment:
+Chờ 1 slot sau lần thanh toán thứ 2:
+
 ```haskell
 void $ Emulator.waitNSlots 1
 ```
 
-The final trace emulator should look like:
+Trình giả lập dấu vết cuối cùng sẽ giống như:
 
 ```haskell
 payTrace :: Integer -> Integer -> EmulatorTrace ()
@@ -1031,7 +1022,7 @@ payTrace x y = do
 ```
 
 
-Running payTest1, we get the following result:
+Chạy payTest1 ta được kết quả như sau:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Homework> 
@@ -1065,24 +1056,29 @@ Wallet d3eddd0d37989746b029a0e050386bc425363901:
 ## Homework Part 2
 
 
-The goal of homework 2 is to account for the case where a wallet has insufficient funds to pass to the second wallet. In payTest2, the first payment is larger than the wallet balance in wallet 1. Therefore we need to handle an error for the first payment x, while still continuing the contract to pass for value y.
+Mục tiêu của bài tập 2 là giải thích trường hợp một ví không có đủ tiền để chuyển sang ví thứ hai. Trong payTest2, khoản thanh toán đầu tiên lớn hơn số dư ví trong ví 1. Do đó, chúng tôi cần xử lý lỗi cho khoản thanh toán đầu tiên x, trong khi vẫn tiếp tục hợp đồng để chuyển sang giá trị y.
+
+Trước tiên, chúng ta cần xem xét payContract, cụ thể hơn:
 
 We need to first look at the payContract, more specifically:
 ```haskell
 $ void $ submitTx tx
 ```
 
-First, since we will be using the unpack error handling, we need to import it to the file:
+Đầu tiên, vì chúng tôi sẽ sử dụng xử lý lỗi giải nén, chúng tôi cần nhập nó vào tệp:
+
 ```haskell
 import Data.Text              (Text, unpack)
 ```
 
-Now we can modify the submit transaction line above to handle an error, create a log, and then continue the contract:
+Bây giờ chúng ta có thể sửa đổi dòng gửi giao dịch ở trên để xử lý lỗi, tạo nhật ký và sau đó tiếp tục hợp đồng:
+
 ```haskell
 handleError (\err -> Contract.logInfo $ "caught error: " ++ unpack err) $ void $ submitTx tx
 ```
 
-The final payContract should look like:
+PayContract cuối cùng sẽ giống như sau:
+
 ```haskell
 payContract :: Contract () PaySchema Text ()
 payContract = do
@@ -1092,7 +1088,7 @@ payContract = do
    payContract
 ```
 
-Running payTest2, we get the following result:
+Chạy payTest2 ta được kết quả như sau:
 
 ```
 Prelude Prelude Plutus.Trace.Emulator Data.Default Week04.Homework> 
