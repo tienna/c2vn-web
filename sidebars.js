@@ -72,7 +72,7 @@ const sidebars = {
       "haskell_iog/Intro_to_Haskell_and_tools",
       "haskell_iog/Functions-Data-Types-and-Signatures-2",
       "haskell_iog/Conditions-and-helper-constructions-3",
-	  
+      "haskell_iog/Pattern-matching-4",
     ],
     "Khóa 2-Plutus của Dr.Lars": [
       "dr-lars-lession/overview",

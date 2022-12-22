@@ -1,33 +1,5 @@
----
-jupyter:
-  celltoolbar: Slideshow
-  kernelspec:
-    display_name: Haskell
-    language: haskell
-    name: haskell
-  language_info:
-    codemirror_mode: ihaskell
-    file_extension: .hs
-    mimetype: text/x-haskell
-    name: haskell
-    pygments_lexer: Haskell
-    version: 8.10.7
-  nbformat: 4
-  nbformat_minor: 4
-  rise:
-    enable_chalkboard: true
-    header: "\\<img style=\\\"position: relative; left: 1230px; width:
-      200px; top: 10px;\\\"
-      src=\\\"https://raw.githubusercontent.com/rober-m/haskell-bootcamp/main/images/input-output.svg\\\"/\\>"
-  vscode:
-    interpreter:
-      hash: e7370f93d1d0cde622a1f8e1c04877d8463912d04d973331ad4851f04de6915a
----
 
-
-# Pattern matching and Case expressions-4
-
-
+# Pattern matching và biểu thức Case
 
 ## Outline
 
@@ -45,38 +17,27 @@ jupyter:
 ## Pattern matching
 
 
- 
-**Pattern matching** is the act of matching data (values, types, etc.)
-against a pattern, optionally binding variables to successful matches.
+**Pattern matching** là hành động khớp dữ liệu (giá trị, kiểu, v.v.) với một mẫu, tùy chọn ràng buộc các biến để khớp thành công.
+
+Chúng ta sẽ thảo luận về khớp mẫu trong ba trường hợp:
+
+- Khớp mẫu (Pattern matching) trong định nghĩa hàm.
+
+- Kết hợp mẫu cho danh sách.
+
+- Kết hợp mẫu cho bộ dữ liệu.
+
+Nghe có vẻ phức tạp, nhưng nó thực sự khá trực quan khi bạn hiểu rõ về nó. Sẽ rõ như ban ngày sau một vài ví dụ.
+
+Hãy để mô hình khớp với một số hàm!
 
 
 
-We are going to discuss pattern matching in three cases:
+
+## Pattern matching trong hàm
 
 
-
--   Pattern matching in function definitions.
-
--   Pattern matching for lists.
-
--   Pattern matching for tuples.
-
-
-
-It sounds complicated, but it\'s actually pretty intuitive when you get
-the hang of it. It\'ll be clear as day after a few examples.
-
-
-
-Let\'s pattern match some functions!
-
-
-
-## Pattern matching in functions
-
-
-
-Remember `specialBirthday` function from last lesson?
+Nhớ lại hàm `specialBirthday` trong bài học trước?
 
 
 
@@ -96,14 +57,9 @@ specialbirthday age =
 
 
 
-I know, I know\... we fixed that atrocity with guards. But now, we\'ll
-get fancier and solve it with pattern matching!
+Tôi biết \... Chúng ta đã khắc phục sự rườm rà đó với guards. Nhưng bây giờ, chúng ta sẽ sáng tạo hơn và giải quyết vấn đề bằng khớp mẫu (Pattern matching)!
 
-
-
-To pattern match on function definitions, we just have to define the
-same function multiple times, replacing the parameters with values. Like
-this:
+Để khớp mẫu trên các định nghĩa hàm, chúng ta chỉ cần xác định cùng một hàm nhiều lần, thay thế các tham số bằng các giá trị. Như thế này:
 
 
 
@@ -114,64 +70,31 @@ specialBirthday 18  = "You're an adult!"
 specialBirthday 60  = "finally, I can stop caring about new lingo!"
 ```
 
+Và làm như thế nào? Chà, khi được trình bày với mã như thế này, Haskell sẽ cố gắng khớp giá trị của `age` với định nghĩa đầu tiên. Nếu `age /= 1`, nó sẽ cố khớp với định nghĩa thứ hai. Nếu `age /= 18`, nó sẽ cố khớp với định nghĩa thứ ba. Và tiếp tục như vậy cho đến khi giá trị được truyền dưới dạng tham số khớp với một trong các giá trị của định nghĩa.
 
-
-Our function has been defined! And it looks way nicer than before!
-
-And how does it work? Well, when presented with code like this, Haskell
-will attempt to match the value of `age` with the first definition. If
-`age /= 1`, it will try to match the second definition. If `age /= 18`,
-it will try to match the third definition. And so on until the value
-passed as a parameter matches one of the definition\'s values.
-
-
-
-And, of course, I\'m sure you noticed a huge problem. What happens if we
-pass a number different from the ones defined? Like 29? We can solve
-that with catch-all patterns!
-
+Và, tất nhiên, tôi chắc rằng bạn đã nhận thấy một vấn đề lớn. Điều gì xảy ra nếu chúng ta chuyển một số khác với số đã xác định? Giống như 29? Chúng ta có thể giải quyết vấn đề đó bằng `catch-all patterns`!
 
 
 ### Catch-all patterns
 
+Chữ ký của hàm nêu rõ rằng bạn có thể chuyển bất kỳ giá trị nào thuộc kiểu `Int`.
 
+Vì vậy, chúng ta có thể chuyển `14` ---theo ví dụ---hoặc bất kỳ số nào khác, cho vấn đề đó. Nhưng các hàm nên làm gì nếu chúng ta vượt qua `14`? Chúng tôi không chỉ định nó vì chúng ta không khớp mẫu cho `14`! Vì vậy, chương trình sẽ bị sập 💥 vì không biết cách xử lý giá trị đó! 😱
 
-The function\'s signature clearly states that you can pass any value of
-type `Int`.
+Bởi vì chúng ta cần hàm hoạt động với bất kỳ giá trị nào mà các kiểu của chúng ta có thể chấp nhận, nên chúng ta cần khớp mẫu cho tất cả các tình huống có thể xảy ra. Nhưng bạn không thể viết định nghĩa cho mọi giá trị đơn lẻ! Sau đó, bạn có thể làm gì?!?!
 
-So, we could pass `14`---per example---or any other number, for that
-matter. But what should the function do if we pass `14`? We didn\'t
-specify it because we didn\'t pattern match for `14`! So, the program
-will crash 💥 because it doesn\'t know how to handle that value! 😱
-
-Because we need the function to work with any value that our types can
-accept, we need to pattern match for all possible situations. But you
-can\'t write a definition for every single value! Then, what can you
-do?!?!
-
-You use a catch-all pattern!
-
-
+Bạn sử dụng một **catch-all pattern**!
  
-**Catch-all patterns allow you to provide a default definition in case
-none of your specific ones match**
+**Catch-all patterns cho phép bạn cung cấp một định nghĩa mặc định trong trường hợp không có định nghĩa cụ thể nào của bạn phù hợp**
 
 
-
-In this case, it\'ll play the role of the `else` at the end of
-`specialBirthday`.
-
-
+Trong trường hợp này, nó sẽ đóng vai trò `else` ở cuối `specialBirthday`.
  
-To use catch-all patterns, you have to provide a name that starts with
-lowercase, like `age`, `x`, or
-`yearsSinceThisPoorSoulHasTouchedTheEarth`.
+Để sử dụng các mẫu catch-all, bạn phải cung cấp tên bắt đầu bằng chữ thường, như  `age`, `x`, hoặc `yearsSinceThisPoorSoulHasTouchedTheEarth`.
 
 
 
-Like this:
-
-
+Như thế này:
 
 ``` {.haskell}
 specialBirthday :: Int -> [Char]
@@ -187,28 +110,22 @@ Kết quả:
     "You're an adult!"
 
 
-
-
-Now, if we pass any number different from `1`, `18`, or `60`,
-`specialBirthday` will evaluate to `"Nothing special"`.
+Bây giờ, nếu chúng ta chuyển bất kỳ số nào khác với `1`, `18`, or `60`,
+`specialBirthday` sẽ ước tính thành`"Nothing special"`.
 
 
  
 ```
 
-IMPORTANT:Always provide Pattern matches for all possible scenarios!
-If you don't, you'll get the next warning:
+QUAN TRỌNG:Luôn cung cấp Mẫu phù hợp cho tất cả các tình huống có thể xảy ra!
+Nếu không, bạn sẽ nhận được cảnh báo tiếp theo:
     
-`Pattern match(es) are non-exhaustive In an equation for specialBirthday`
+`(Các) đối sánh mẫu là không đầy đủ Trong một phương trình cho ngày đặc biệt`
 
 
 ```
 
-
-
-Another important detail is that Haskell matches from top to bottom. So,
-if you do something like:
-
+Một chi tiết quan trọng khác là Haskell so khớp từ trên xuống dưới. Vì vậy, nếu bạn làm điều gì đó như:
 
 
 ``` {.haskell}
@@ -225,22 +142,15 @@ Kết quả:
     "Nothing special"
 
 
+Định nghĩa đầu tiên sẽ nắm bắt tất cả các lần xuất hiện và chúng ta sẽ luôn nhận được `"Nothing special"` kết quả, bất kể chúng ta vượt qua số nào. Vì vậy, hãy đảm bảo thêm mẫu bắt tất cả làm định nghĩa cuối cùng.
 
-
-The first definition will catch all the occurrences, and we\'ll always
-get `"Nothing special"` as a result, no matter the number we pass. So,
-make sure to add the catch-all pattern as the last definition.
-
-
-
-Finally, we said that you can optionally **bind variables to successful
-matches**, and that\'s what we just did!
+Cuối cùng, chúng ta đã nói rằng bạn có thể tùy chọn **liên kết các biến để khớp thành công** và đó là những gì chúng ta vừa làm!
 
 When using `specialBirthday`, every time the value falls into the `age`
 catch-all pattern, we bind that value to the `age` variable. Allowing us
 to use the value inside the definition\'s expression (it\'s just an
 argument)!:
-
+Khi sử dụng `specialBirthday`, mỗi khi giá trị rơi vào mẫu catch-all `age`, chúng ta sẽ liên kết giá trị đó với biến `age`. Cho phép chúng ta sử dụng giá trị bên trong biểu thức của định nghĩa (nó chỉ là một đối số)!:
 
 
 ``` {.haskell}
@@ -261,29 +171,19 @@ Kết quả:
 
 
 
-You cannot overstate how useful this is! **You\'re filtering values to
-the ones that match a specific pattern AND binding those values to
-variables for later use at the same time!**
+Bạn không thể phóng đại mức độ hữu ích của điều này! **Bạn đang lọc các giá trị thành những giá trị khớp với một mẫu cụ thể VÀ đồng thời liên kết các giá trị đó với các biến để sử dụng sau này!**
 
-A more compelling example of how this is useful is when pattern matching
-more complex structures like lists and tuples. Let\'s explore that.
+Một ví dụ hấp dẫn hơn về cách điều này hữu ích là khi mẫu khớp với các cấu trúc phức tạp hơn như danh sách và bộ dữ liệu. Hãy khám phá điều đó.
 
 
 
-## A closer look at lists
+## em kỹ hơn về lists
+
+Trước khi tìm hiểu về khớp mẫu với danh sách, chúng ta cần xem xét kỹ hơn về danh sách.
+
+Chúng ta biết rằng toán tử  `:` (khuyết điểm) thêm một phần tử vào đầu danh sách (đặt trước một phần tử):
 
 
-
-Before learning about pattern matching with lists, we need to take a
-closer look at lists.
-
-
-
-We know that the `:` (cons) operator adds an element to the beginning of
-a list (prepends an element):
-
-
- {.cell .code execution_count="64" slideshow="{\"slide_type\":\"fragment\"}"}
 ``` {.haskell}
 -- (:) :: a -> [a] -> [a]
 
@@ -300,15 +200,8 @@ Kết quả:
     "Look, mom! I'm programming"
 
 
+Hãy nhớ khi tôi nói với bạn rằng  `String` là cú pháp list cho [Char]? Chà, hãy sẵn sàng cho việc bất ngờ cách chúng ta viết danh sách cho đến nay thực sự là  cú pháp cho  Haskell thực sự nhìn thấy danh sách! Là một danh sách trống được thêm vào trước tất cả các phần tử mà nó chứa! 🤯
 
-
-Remember when I told you that `String` was syntactic sugar for `[Char]`?
-Well, get ready for a sugar rush because **the way we wrote lists so far
-is actually syntactic sugar for the real way Haskell sees lists! As an
-empty list prepended with all the elements that it contains!** 🤯
-
-
- {.cell .code execution_count="65" slideshow="{\"slide_type\":\"fragment\"}"}
 ``` {.haskell}
 [1,2,3,4] == 1:2:3:4:[]  -- True
 
@@ -317,11 +210,19 @@ empty list prepended with all the elements that it contains!** 🤯
 
 Kết quả:
 ```
+Use list literal
+Found:
+1 : 2 : 3 : 4 : []
+Why Not:
+[1, 2, 3, 4]
+Use list literal
+Found:
+'H' : 'e' : 'l' : 'l' : 'o' : '!' : []
+Why Not:
+['H', 'e', 'l', 'l', 'o', '!']
 
-class="suggestion-warning">Found:<div class="highlight-code" id="haskell">1 : 2 : 3 : 4 : []<div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Why Not:<div class="highlight-code" id="haskell">[1, 2, 3, 4]<div class="suggestion-name" style="clear:both;">Use list literal<div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Found:<div class="highlight-code" id="haskell">'H' : 'e' : 'l' : 'l' : 'o' : '!' : []<div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Why Not:<div class="highlight-code" id="haskell">['H', 'e', 'l', 'l', 'o', '!']
 ```
 
-
 Kết quả:
     True
 
@@ -331,22 +232,16 @@ Kết quả:
 
 
 
-
-Now, you could be thinking: \"Why do I care? I\'ll keep writing lists as
-always.\" To what I say: \"AHA! PATTERN MATCHING!!\"
+Bây giờ, bạn có thể nghĩ: "Tại sao tôi phải quan tâm? Tôi sẽ tiếp tục viết các danh sách như mọi khi." Đối với những gì tôi nói: "AHA! KHỐI MẪU!!"
 
 
 
 ## Pattern matching lists
 
 
+Bây giờ chúng ta đã biết danh sách trông như thế nào khi không trang điểm 💅, chúng ta có thể sử dụng nó để khớp mẫu với các định nghĩa hàm khác nhau tùy thuộc vào cấu trúc của danh sách!
 
-Now that we know what lists look like without makeup 💅, we can use it to
-pattern match different function definitions depending on the list\'s
-structure!
-
-Let\'s pattern match in a bunch of different ways and investigate how
-the code works later:
+Hãy để mẫu khớp với nhau theo nhiều cách khác nhau và điều tra cách thức hoạt động của mã sau:
 
 
 
@@ -366,8 +261,16 @@ whatsInsideThisList [1, 2, 3, 4] -- "The first element is: 1, and there are quit
 
 Kết quả:
 ```
-
-</style><div class="suggestion-name" style="clear:both;">Use list literal pattern<div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Found:<div class="highlight-code" id="haskell">(x : y : z : [])<div class="suggestion-row" style="float: left;"><div class="suggestion-warning">Why Not:<div class="highlight-code" id="haskell">[x, y, z]
+Use list literal pattern
+Found:
+(x : y : z : [])
+Why Not:
+[x, y, z]
+"It's empty!"
+"Two elements: 1 and 2"
+"The list has three elements: [1,2,3]"
+"The first element is: 1, and there are quite a few more!"
+As you can see, you can pattern match for:
 ```
 
 
@@ -388,38 +291,29 @@ Kết quả:
 
 
 
+Như bạn có thể thấy, bạn có thể  khớp mẫu cho:
 
-As you can see, you can pattern match for:
+-   Danh sách trống `[]`.
 
--   Empty list `[]`.
+-   Danh sách có kích thước cố định, cả với (`[x]`, `[x,y]`) và không có cú pháp
+    (`x:[]`,`x:y:[]`).
 
--   List of fixed size, both with (`[x]`, `[x,y]`) and without
-    (`x:[]`,`x:y:[]`) syntactic sugar.
-
--   Non-empty lists of any size with `x:rest`. (Commonly used in
-    recursive functions and usually named `x:xs`.)
+-   Danh sách không trống ở bất kỳ kích thước nào với `x:rest`. ( (Thường được sử dụng trong các hàm đệ quy và thường được đặt tên là `x:xs`.)
 
 
 
 ```
-<div class="alert alert-block alert-info">
-We surround with `()` the patterns of the last two definitions to indicate that the function takes everything inside the `()` as a single argument.
+Chúng tôi bao quanh `()` các mẫu của hai định nghĩa cuối cùng để chỉ ra rằng hàm lấy mọi thứ bên trong `()` làm một đối số duy nhất.
 
 ```
 
 
 
-And, because we bound the matches to variables (`x`, `y`,`z`, `rest`),
-you can use those variables inside the function\'s definition.
+Và, bởi vì chúng ta đã ràng buộc các kết quả khớp với các biến (`x`, `y`,`z`, `rest`),nên bạn có thể sử dụng các biến đó bên trong định nghĩa của hàm.
 
-But what if you don\'t need them? What if you want to do something when
-a specific pattern matches, but don\'t care for the actual value/values?
+Nhưng nếu bạn không cần chúng thì sao? Điều gì sẽ xảy ra nếu bạn muốn làm điều gì đó khi một mẫu cụ thể phù hợp, nhưng không quan tâm đến giá trị/giá trị thực tế?
 
-**Binding values and then ignoring them pollutes your environment with
-variables you\'ll never use!** But don\'t worry. To put the cherry on
-top, you can ignore the data you don\'t care for while pattern matching
-for the rest! Take a look at the following function. It tells us which
-are the first and third elements in a list of `Bool` (if any):
+**Liên kết các giá trị và sau đó bỏ qua chúng sẽ làm ô nhiễm môi trường của bạn bằng các biến mà bạn sẽ không bao giờ sử dụng!** Nhưng đừng lo lắng. Để đặt hiệu quả lên hàng đầu, bạn có thể bỏ qua dữ liệu mà bạn không quan tâm trong khi khớp mẫu cho phần còn lại! Hãy xem hàm sau. Nó cho chúng ta biết đâu là phần tử đầu tiên và thứ ba trong danh sách `Bool` (if any):
 
 
 
@@ -435,22 +329,12 @@ Kết quả:
     "The first and third elements are: True and False"
 
 
+Định nghĩa đầu tiên sẽ khớp mẫu cho bất kỳ danh sách nào có 3 phần tử trở lên, trong khi `_` sẽ bỏ qua phần tử thứ hai và phần còn lại của danh sách.
 
+Và đối với bất kỳ danh sách nào khác, chúng ta hoàn toàn bỏ qua nó với `_` toàn bộ danh sách.
 
-The first definition will pattern match for any list with 3 or more
-elements, while `_` will ignore the second element and the rest of the
-list.
+Tuyệt vời, phải không? Biết được điều này, chúng ta có thể sửa đổi hàm `initials` của bài học cuối cùng từ đây:
 
-And for any other list, we just entirely ignore it with `_` for the
-whole list.
-
-
-
-Awesome, right? Knowing this, we can modify the `initials` function of
-the last lesson from this:
-
-
- {.cell .code execution_count="71" slideshow="{\"slide_type\":\"slide\"}"}
 ``` {.haskell}
 initials :: String -> String -> String
 initials name lastName = if name == "" || lastName == ""
@@ -466,10 +350,7 @@ Kết quả:
     "N.T."
 
 
-
-
-To this:
-
+Về điều này tương tương:
 
 
 ``` {.haskell}
@@ -486,11 +367,9 @@ Kết quả:
 
 
 
-Shorter and clearer.
+Trong ngắn ngọn và rõ ràng hơn.
 
-
-
-Now let\'s see how pattern matching makes our lives easier with tuples!
+Bây giờ, hãy xem cách khớp mẫu giúp cuộc sống của chúng ta dễ dàng hơn với các bộ dữ liệu!
 
 
 
@@ -498,15 +377,11 @@ Now let\'s see how pattern matching makes our lives easier with tuples!
 
 
 
-As you can recall from previous lessons, we could only get the elements
-inside a pair (tuple of two elements) using the `fst` and `snd`
-functions.
+Như bạn có thể nhớ lại từ các bài học trước, chúng ta chỉ có thể lấy các phần tử bên trong một cặp (bộ gồm hai phần tử) bằng cách sử dụng hàm `fst` và `snd` .
 
-If you needed a value from tuples bigger than that, you were in a
-pickle. 👀 But now that you\'re a pattern-matching magician 🪄, the sky is
-the limit!
+Nếu bạn cần một giá trị từ các bộ dữ liệu lớn hơn thế, thì bạn đang gặp khó khăn. 👀 Nhưng bây giờ bạn đã là một ảo thuật gia khớp mẫu 🪄, nó không còn là là giới hạn!
 
-Want to extract the first element of a 3-element tuple? No problem:
+Bạn muốn trích xuất phần tử đầu tiên của bộ 3 phần tử? Không vấn đề gì:
 
 
 
@@ -525,8 +400,7 @@ Kết quả:
 
 **Done!**
 
-Want to create a pair with the second and fourth elements of a 4-element
-tuple? Same as before!:
+Bạn muốn tạo một cặp có phần tử thứ hai và thứ tư của bộ 4 phần tử? Giống như trước!:
 
 
 
@@ -543,22 +417,20 @@ Kết quả:
 
 
 
-**BOOM! 💥 Done!** And you can keep going if you want. But, right now,
-we\'re going to move to `case` expressions.
+**BOOM! 💥 Done!**Và bạn có thể tiếp tục nếu bạn muốn. Tuy nhiên, ngay bây giờ, chúng ta sẽ chuyển sang biểu thức `case`.
 
 
 
-## Case expressions
+## Biểu thức Case 
 
 
 
-With `case` expressions, we can execute a specific block of code based
-on a variable\'s pattern.
+Với biểu thức `case`, chúng ta có thể thực thi một khối mã cụ thể dựa trên mẫu của một biến.
 
 
 
-Same as with `switch` statements in other programming languages. `case`
-expressions look like this:
+Tương tự như với câu lệnh  `switch` trong các ngôn ngữ lập trình khác. `case`
+trông như sau:
 
 
  
@@ -571,20 +443,14 @@ case <Exp> of <Pattern1> -> <Result1>
 
 
 
-Where the value of `<Exp>` is compared to every `<Pattern>` inside the
-`of` block. And if it matches, the corresponding `<Result>` is
-evaluated.
+Trong đó giá trị của `<Exp>`được sao sánh với `<Pattern>` bên trong khối
+`of`. và nó phù hượp thì `<Result>` là giá trị tương ứng.
 
 (Notice that there\'s no `=` sign! That\'s because the entire `case`
 expression is just an expression. Not a function or a binding.)
 
+Ví dụ, chúng ta có thể viết một hàm nhận vào một bộ 3 `Int`  và kiểm tra xem có bất kỳ phần tử nào trong hàm chứa số  `0` không:
 
-
-As an example, we can write a function that takes a 3-`Int` tuple and
-checks if any of the elements it contains is a zero:
-
-
- {.cell .code execution_count="72" slideshow="{\"slide_type\":\"slide\"}"}
 ``` {.haskell}
 checkForZeroes :: (Int, Int, Int) -> String
 checkForZeroes tuple3 = case tuple3 of
@@ -602,12 +468,9 @@ Kết quả:
 
 
 
-And I already can hear you saying. \"Isn\'t the end result the same that
-we got when pattern matching on parameters in function definitions?\"
+Và tôi đã có thể thấy rằng. "Không phải kết quả cuối cùng giống với kết quả chúng ta nhận được khi so khớp mẫu trên các tham số trong định nghĩa hàm sao?"
 
-Well\... yes. At its core, pattern matching on parameters in function
-definitions is just syntactic sugar for case expressions! So, the
-previous code is interchangeable with this one:
+Chà . .. Vâng. Về cốt lõi, khớp mẫu trên các tham số trong định nghĩa hàm chỉ là  cú pháp cho các biểu thức chữ hoa chữ thường! Vì vậy, mã trước đó có thể hoán đổi với mã này:
 
 
 
@@ -626,11 +489,7 @@ Kết quả:
 
 
 
-
-But! Because now we\'re using case EXPRESSIONS, we can use them anywhere
-an expression can be used! Not only when defining a function. So, for
-example, we can concatenate the result of evaluating the case expression
-with another String:
+Nhưng mà! Bởi vì bây giờ chúng ta đang sử dụng BIỂU THỨC viết hoa chữ thường, nên chúng ta có thể sử dụng chúng ở bất kỳ đâu mà một biểu thức có thể được sử dụng! Không chỉ khi xác định một chức năng. Vì vậy, ví dụ, chúng ta có thể nối kết quả đánh giá biểu thức trường hợp với một Chuỗi khác:
 
 
 
@@ -649,84 +508,49 @@ checkForZeroes' (32,0,256)
 Kết quả:
     "The (32,0,256) has a zero as its second element"
 
+Điều đó làm cho biểu thức `case` thuận tiện để sử dụng bên trong các biểu thức khác. Ngoài ra, hãy nhớ rằng bất kỳ điều gì bạn có thể làm với các biểu thức  `case` đều có thể được thực hiện bằng cách xác định các hàm với let, where, hoặc guards.
 
+Và điều đó đặt ra câu hỏi: "Tại sao chúng ta lại có quá nhiều cách để làm cùng một việc?!" Tôi sẽ cho bạn biết tại sao . ..
 
+## Phong cách khai báo 🆚 Phong cách thể hiện
+Declaration style 🆚 Expression style
 
-That makes `case` expressions convenient to use inside other
-expressions. But also, keep in mind that anything that you can do with
-`case` expressions can be done by defining functions with `let`,
-`where`, or guards.
+Có hai phong cách chính để viết các chương trình chức năng trong Haskell:
 
-And that begs the question: \"Why do we have so many ways of doing the
-same thing?!\" I\'ll tell you why\...
-
-
-
-## Declaration style 🆚 Expression style {#declaration-style--expression-style}
-
-
-
-There are two main styles for writing functional programs in Haskell:
-
-
+- **Kiểu khai báo** là nơi bạn xây dựng một thuật toán theo một số phương trình được thỏa mãn.
+- **Kiểu biểu thức** là nơi bạn soạn các biểu thức lớn từ các biểu thức nhỏ.
  
--   The **declaration style** is where you formulate an algorithm in
-    terms of several equations to be satisfied.
--   The **expression style** is where you compose big expressions from
-    small expressions.
 
+Nhiều mặt trước đây, những `<s>` người tạo ra các `</s>` Haskell đã tham gia vào một cuộc tranh luận gay gắt xem phong cách nào tốt hơn. Chủ yếu là vì nếu có thể, chỉ có một cách để làm điều gì đó sẽ ít gây nhầm lẫn và dư thừa hơn. Nhưng mà! Sau khi đổ máu, mồ hôi và nước mắt, họ quyết định hỗ trợ toàn diện về mặt cú pháp cho cả hai. Và hãy để những người bình thường sử dụng những gì họ thích nhất.
 
+Như ví dụ về điều này, chúng ta đã nhận được:
 
-Many moons ago, the `<s>`creators of`</s>` Haskell gods
-engaged in furious debate as to which style was better. Mainly because
-if there was possible, having just one way of doing something provided
-less confusion and redundancy. But! After blood, sweat, and tears were
-shed, they decided to provide full syntactic support to both. And let
-the mere mortals use what they like best.
-
-As examples of this, we got:
-
-
- 
   ------------------------------------------------------------------------
-  Declaration style                    Expression style
-  ------------------------------------ -----------------------------------
-  `where` clause                       `let` expressions
-
-  Pattern matching in function         case expression:
-  definitions: `f [] = 0`              `f xs = case xs of [] -> 0`
-
-  Guards on function definitions:      `if` expression:
-  `f [x] \| x > 0 = 'a'`               `f [x] if x > 0 then 'a' else...`
-
-  Function arguments on left-hand      Lambda abstraction: `f = \x -> x*x`
-  side: `f x = x*x`                    
+  |Declaration style                    |Expression style|
+  |:---                                  |:---:|
+  |`where` clause                       |`let` expressions|
+  |Pattern matching in function         |case expression:|
+  |definitions: `f [] = 0`              |`f xs = case xs of [] -> 0`|
+  |Guards on function definitions       |`if` expression:|
+  |`f [x] \| x > 0 = 'a'`               |`f [x] if x > 0 then 'a' else...`|
+  |Function arguments on left-hand      |ambda abstraction|
+  |side: `f x = x*x`                    |`f = \x -> x*x`|
   ------------------------------------------------------------------------
 
 
 
-And what\'s that lambda thing at the end of the table? That\'s a subject
-for next week\'s lesson! 😁 So make sure to watch it!
+Và thứ lambda đó ở cuối bảng là gì? Đó là một chủ đề cho bài học tuần tới! 😁 Vì vậy hãy chắc chắn rằng bạn đã xem nó!
 
-Now, as a summary:
-
+Bây giờ, như một bản tóm tắt:
 
 
 ## Summary
 
--   Pattern matching for function definitions makes it straightforward
-    to do different things depending on the structure or value of the
-    arguments.
+- Khớp mẫu cho các định nghĩa hàm giúp dễ dàng thực hiện những việc khác nhau tùy thuộc vào cấu trúc hoặc giá trị của các đối số.
 
--   Pattern matching on tuples, lists, and other structures, allows you
-    to easily extract the values contained.
+- Khớp mẫu trên bộ dữ liệu, danh sách và các cấu trúc khác cho phép bạn dễ dàng trích xuất các giá trị chứa trong đó.
 
--   Case expressions are a more expressive way of pattern-matching
-    function definitions, but they can also be used almost everywhere as
-    any other expression. (Not only to define functions.)
+- Các biểu thức chữ hoa chữ thường là một cách biểu đạt hơn của các định nghĩa hàm so khớp mẫu, nhưng chúng cũng có thể được sử dụng ở hầu hết mọi nơi như bất kỳ biểu thức nào khác. (Không chỉ để xác định chức năng.)
 
--   The two main styles for writing functional programming in Haskell
-    are the \"Declaration style\" and \"Expression style.\" Don\'t waste
-    time arguing about which one is the best. Adopt the one you like
-    more, or mix and match as you want.
+- Hai kiểu chính để viết lập trình chức năng trong Haskell là "Kiểu khai báo" và "Kiểu biểu thức". Đừng lãng phí thời gian để tranh luận xem kiểu nào là tốt nhất. Áp dụng cái bạn thích hơn hoặc trộn và kết hợp theo ý muốn.
 
