@@ -1,5 +1,5 @@
 
-# Pattern matching và biểu thức Case
+# 4-Khớp mẫu và biểu thức Case
 
 ## Outline
 
@@ -177,7 +177,7 @@ Một ví dụ hấp dẫn hơn về cách điều này hữu ích là khi mẫu
 
 
 
-## em kỹ hơn về lists
+## Xem kỹ hơn về lists
 
 Trước khi tìm hiểu về khớp mẫu với danh sách, chúng ta cần xem xét kỹ hơn về danh sách.
 
