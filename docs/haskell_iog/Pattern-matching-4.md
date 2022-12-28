@@ -79,7 +79,7 @@ Và, tất nhiên, tôi chắc rằng bạn đã nhận thấy một vấn đề
 
 Chữ ký của hàm nêu rõ rằng bạn có thể chuyển bất kỳ giá trị nào thuộc kiểu `Int`.
 
-Vì vậy, chúng ta có thể chuyển `14` ---theo ví dụ---hoặc bất kỳ số nào khác, cho vấn đề đó. Nhưng các hàm nên làm gì nếu chúng ta vượt qua `14`? Chúng tôi không chỉ định nó vì chúng ta không khớp mẫu cho `14`! Vì vậy, chương trình sẽ bị sập 💥 vì không biết cách xử lý giá trị đó! 😱
+Vì vậy, chúng ta có thể chuyển `14` ---theo ví dụ---hoặc bất kỳ số nào khác, cho vấn đề đó. Nhưng các hàm nên làm gì nếu chúng ta vượt qua `14`? Chúng ta không chỉ định nó vì chúng ta không khớp mẫu cho `14`! Vì vậy, chương trình sẽ bị sập 💥 vì không biết cách xử lý giá trị đó! 😱
 
 Bởi vì chúng ta cần hàm hoạt động với bất kỳ giá trị nào mà các kiểu của chúng ta có thể chấp nhận, nên chúng ta cần khớp mẫu cho tất cả các tình huống có thể xảy ra. Nhưng bạn không thể viết định nghĩa cho mọi giá trị đơn lẻ! Sau đó, bạn có thể làm gì?!?!
 
@@ -302,10 +302,8 @@ Như bạn có thể thấy, bạn có thể  khớp mẫu cho:
 
 
 
-```
-Chúng tôi bao quanh `()` các mẫu của hai định nghĩa cuối cùng để chỉ ra rằng hàm lấy mọi thứ bên trong `()` làm một đối số duy nhất.
 
-```
+Chúng ta sử dụng `()` các mẫu của hai định nghĩa cuối cùng để chỉ ra rằng hàm lấy mọi thứ bên trong `()` làm một đối số duy nhất.
 
 
 
@@ -512,10 +510,10 @@ Kết quả:
 
 Và điều đó đặt ra câu hỏi: "Tại sao chúng ta lại có quá nhiều cách để làm cùng một việc?!" Tôi sẽ cho bạn biết tại sao . ..
 
-## Phong cách khai báo 🆚 Phong cách thể hiện
+## Kiểu khai báo 🆚 kiểu thể hiện
 Declaration style 🆚 Expression style
 
-Có hai phong cách chính để viết các chương trình chức năng trong Haskell:
+Có hai kiểu chính để viết các chương trình hàm trong Haskell:
 
 - **Kiểu khai báo** là nơi bạn xây dựng một thuật toán theo một số phương trình được thỏa mãn.
 - **Kiểu biểu thức** là nơi bạn soạn các biểu thức lớn từ các biểu thức nhỏ.
@@ -529,12 +527,12 @@ Như ví dụ về điều này, chúng ta đã nhận được:
   |Declaration style                    |Expression style|
   |:---                                  |:---:|
   |`where` clause                       |`let` expressions|
-  |Pattern matching in function         |case expression:|
-  |definitions: `f [] = 0`              |`f xs = case xs of [] -> 0`|
+  |Pattern matching in function definitions         |case expression:|
+  | `f [] = 0`              |`f xs = case xs of [] -> 0`|
   |Guards on function definitions       |`if` expression:|
   |`f [x] \| x > 0 = 'a'`               |`f [x] if x > 0 then 'a' else...`|
-  |Function arguments on left-hand      |ambda abstraction|
-  |side: `f x = x*x`                    |`f = \x -> x*x`|
+  |Function arguments on left-hand side:     |ambda abstraction|
+  | `f x = x*x`                    |`f = \x -> x*x`|
   ------------------------------------------------------------------------
 
 

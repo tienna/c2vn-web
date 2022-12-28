@@ -4,7 +4,7 @@
 :opt no-lint
 ```
 
-# Improving and combining functions
+# Cải tiến và kết hợp các hàm
 
 ## Outline
 
@@ -21,19 +21,15 @@
 -   Point-free style
 
 
-## Higher-order functions
+## Hàm bậc cao
 
-A **higher-order function** is a function that takes other functions as
-arguments or returns a function as a result.
+**Hàm bậc cao**  là một hàm lấy các hàm khác làm đối số hoặc kết quả là trả về một hàm..
 
+Bởi vì chúng ta có thể chuyển các hàm làm đầu vào, trả về chúng dưới dạng kết quả và gán chúng cho các biến, nên chúng giống như bất kỳ giá trị nào khác. Vì vậy, chúng ta nói rằng các hàm là **"công dân hạng nhất"** .
 
+Hãy bắt đầu với một ví dụ cổ điển. Hãy tưởng tượng rằng bạn có một hàm mà bạn thường áp dụng hai lần. 
 
-Because we can pass functions as an input, return them as a result, and
-assign them to variables, they are like any other value. So we say that
-functions are **first-class citizens**.
-
-Let\'s start with a classic example. Imagine that you have a function
-you usually apply twice (for some reason). Like this:
+Như thế này:
 
 
 ``` {.haskell}
@@ -50,33 +46,25 @@ func2 :: Int -> Int
 func2 x = (complexFunc2 (complexFunc2 x)) + (complexFunc2 (complexFunc2 x))
 ```
 
-This is an exaggerated example, but you can see how a pattern starts to
-emerge. You always use the `complexFunc1` and `complexFunc2` twice! As
-soon as we saw this pattern, we realized we could do better. What if we
-create a function that takes two parameters--a function and a value--and
-applies the function to the value twice!
 
-We can do that by simply writing:
+Đây là một ví dụ phóng đại, nhưng bạn có thể thấy một mô hình bắt đầu xuất hiện như thế nào. Bạn luôn luôn sử dụng `complexFunc1` và `complexFunc2` nhiều lần! Ngay khi nhìn thấy mô hình này, chúng tôi nhận ra rằng mình có thể làm tốt hơn. Điều gì sẽ xảy ra nếu chúng ta tạo một hàm nhận hai tham số--một hàm và một giá trị--và áp dụng hàm cho giá trị đó hai lần!
+
+Chúng ta có thể làm điều đó bằng cách viết đơn giản:
 
 ``` {.haskell}
 applyTwice :: (a -> a) -> a -> a
 applyTwice f x = f (f x)
 ```
 
-Here, the type signature is different from previous ones. The `(a -> a)`
-part indicates that the first parameter is a function that takes a value
-of type `a` and returns a value of the same type. The second parameter
-is just a value of type `a`, and the whole `applyTwice` function returns
-a value of type `a`.
+Ở đây, chữ ký kiểu khác với những chữ ký từ trước đây. Phần `(a -> a)` chỉ ra rằng tham số đầu tiên là một hàm nhận một giá trị kiểu `a` và trả về một giá trị cùng kiểu. Tham số thứ hai chỉ là một giá trị của kiểu `a` và toàn bộ hàm `applyTwice`  trả về một giá trị của kiểu `a`.
 
-And in the body of the function, you can see that it takes the first
-parameter (the function `f`), applies it to `x`, and then applies `f`
-again to the result. So we\'re applying the function `f` twice.
+Và trong phần nội dung của hàm, bạn có thể thấy rằng nó nhận tham số đầu tiên (hàm f), áp dụng nó cho `x` và sau đó áp dụng `f` lại cho kết quả. Vì vậy, chúng tôi đang áp dụng hàm `f` hai lần.
 
-And that\'s it! We created a higher-order function!
+Và đó là nó! Chúng tôi đã tạo một hàm bậc cao hơn!
 
-We can use the `applyTwice` function to simplify the previous code like
-this:
+Chúng ta có thể sử dụng hàm `applyTwice`  để đơn giản hóa mã trước đó như thế này:
+
+
 
 
 ``` {.haskell}
@@ -87,17 +75,13 @@ func2' :: Int -> Int
 func2' x = (applyTwice complexFunc2 x) + (applyTwice complexFunc2 x)
 ```
 
-This is a simple example, but higher-order functions are an extremely
-powerful feature. So much so that they are everywhere! In fact, you
-could create your own Domain Specific Language using higher-order
-functions! But let\'s take it step-by-step. Let\'s start by using two
-higher-order functions that come with Haskell.
+Đây là một ví dụ đơn giản, nhưng các hàm bậc cao hơn là một tính năng cực kỳ mạnh mẽ. Nhiều đến mức chúng ở khắp mọi nơi! Trên thực tế, bạn có thể tạo Ngôn ngữ dành riêng cho mình bằng cách sử dụng các hàm bậc cao hơn! Nhưng hãy thực hiện từng bước một. Hãy bắt đầu bằng cách sử dụng hai hàm bậc cao đi kèm với Haskell.
 
 
 
-### `filter` function
+### Hàm `filter`
 
-Let\'s start with the `filter` function:
+Bắt đầu với hàm `filter`:
 
 ``` {.haskell}
 :t filter 
