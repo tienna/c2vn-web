@@ -266,7 +266,7 @@ Bởi vì phép nhân có mức ưu tiên là 7, cao hơn mức ưu tiên của 
 
 Và điều gì xảy ra khi hai toán tử có cùng quyền ưu tiên? Đây là khi tính kết hợp phát huy tác dụng.
 
-### Kết h (Associativity)
+### Kết hợp (Associativity)
 
 Khi chung ta sử  dụng lệnh `:i`, nó cũng trả về từ khóa `infixl`. TĐây là tính kết hợp của toán tử.
 
@@ -585,7 +585,7 @@ show $ (2**) $ max 3 $ 2 + 2
 
 Tất nhiên, bạn có thể làm nhiều việc hơn là xóa dấu ngoặc đơn, nhưng đó là điều bạn sẽ làm hầu hết thời gian. Vì vậy, chúng ta sẽ để nó ở đó và bắt đầu tìm hiểu về toán tử thành phần hàm  (`.`)!
 
-### T
+### Toán tử `.`
 
 Chúng tôi đã đề cập đến khái niệm về thành phần chức năng trong bài học đầu tiên của chúng tôi. Vì vậy, nếu bạn không chắc chắn về nó, hãy kiểm tra nó! Nhưng, chỉ là một sự bồi dưỡng và trong một vài từ:
 
