@@ -585,7 +585,7 @@ show $ (2**) $ max 3 $ 2 + 2
 
 Tất nhiên, bạn có thể làm nhiều việc hơn là xóa dấu ngoặc đơn, nhưng đó là điều bạn sẽ làm hầu hết thời gian. Vì vậy, chúng ta sẽ để nó ở đó và bắt đầu tìm hiểu về toán tử thành phần hàm  (`.`)!
 
-### Thành phần Hàm
+### T
 
 Chúng tôi đã đề cập đến khái niệm về thành phần chức năng trong bài học đầu tiên của chúng tôi. Vì vậy, nếu bạn không chắc chắn về nó, hãy kiểm tra nó! Nhưng, chỉ là một sự bồi dưỡng và trong một vài từ:
 
@@ -672,7 +672,7 @@ Như bạn có thể thấy, `$` và `.` có thể làm cho mã của bạn rõ 
 
 Và bây giờ, như là một cách cuối cùng để làm cho chức năng của bạn dễ đọc hơn, thưa quý vị và các bạn, chúng tôi trình bày phong cách không có điểm!! 👏👏👏
 
-### Point-free style `.`
+### Point-free style 
 
 
 Theo kiểu không có điểm (còn gọi là lập trình ngầm), các định nghĩa hàm không khai báo các đối số.
