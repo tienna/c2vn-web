@@ -1,6 +1,6 @@
 
 🗣Danh sách các pool ISKY ISPO vòng 1
-=======================================
+================================================================================================================================
 
 
 Dự án IronSky trân trọng thông báo với cộng đồng Cardano danh sách 8 pool chính thức tham gia chương trình ISPO hợp lệ:
@@ -26,8 +26,7 @@ ISKY ISPO 2023 Vòng 1
 Kéo dài 5 epoch, từ 383 (27/12/2022) đến 387 (16/01/2023).
 
 👉 Phân bổ 1.000.000 ISKY cho người tham gia ở, mỗi epoch 200.000 ISKY.
-   ✍ Số ISKY ước tính nhận được của mỗi ví sẽ khác nhau qua mỗi epoch vì nó phụ thuộc vào tổng ADA trong các ví đủ điều kiện nhận thưởng của mỗi epoch. 
-Ví dụ: Epoch 383 có 10 triệu ADA được snapshot, nhưng chỉ có 2 triệu ADA trong các ví Gửi yêu cầu nhận ISKY  thì ví 1000 ADA sẽ nhận được 100 ISKY.
+   ✍ Số ISKY ước tính nhận được của mỗi ví sẽ khác nhau qua mỗi epoch vì nó phụ thuộc vào tổng ADA trong các ví đủ điều kiện nhận thưởng của mỗi epoch. Ví dụ: Epoch 383 có 10 triệu ADA được snapshot, nhưng chỉ có 2 triệu ADA trong các ví Gửi yêu cầu nhận ISKY  thì ví 1000 ADA sẽ nhận được 100 ISKY.
 
 💥💥💥Get ISKY, without sharing reward💥💥💥
 👉 Người nắm giữ ADA sẽ nhận được token ISKY mà không phải chia sẻ phần thưởng uỷ thác.

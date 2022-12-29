@@ -1,8 +1,5 @@
 
 
-``` {.haskell}
-:opt no-lint
-```
 
 # Cải tiến và kết hợp các hàm
 
@@ -87,12 +84,11 @@ Bắt đầu với hàm `filter`:
 :t filter 
 ```
 
-This function takes a predicate (a function that returns a boolean)
-`a -> Bool` and a list of elements of type `a` and filters the elements
-of the list given the predicate.
+Hàm này nhận một vị từ (một hàm trả về giá trị boolean) `a -> Bool` và một danh sách các phần tử có kiểu `a` và lọc các phần tử của danh sách đã cung cấp cho vị từ.
 
-For example, if we want to filter only the even numbers from a list of 1
-to 20, we could do something like:
+Ví dụ: nếu chúng ta chỉ muốn lọc các số chẵn từ danh sách từ 1 đến 20, chúng tôi có thể thực hiện một số việc như:
+
+
 
 ``` {.haskell}
 filter even [1..20]
@@ -102,8 +98,7 @@ Kết quả:
     [2,4,6,8,10,12,14,16,18,20]
 
 
-Or, for a more involved condition, we could filter from a list of fruits
-only the ones that contain the letter `'a'`:
+Hoặc, đối với một điều kiện liên quan hơn, chúng ta có thể lọc từ danh sách các loại trái cây chỉ những loại có chứa chữ cái `'a'`:
 
 
 ``` {.haskell}
@@ -115,24 +110,19 @@ fruitWithA
 Kết quả:
     ["Banana","Pear","Grape"]
 
-As you can see, you can also define a function in a `where` clause to
-pass it as the predicate of the `filter` function.
+Như bạn có thể thấy, bạn cũng có thể định nghĩa một hàm trong một mệnh đề  `where` để chuyển nó làm vị từ của hàm `filter`.
 
-### `any` function
+### Hàm `any`
 
-We also have the `any` function:
+Chúng ta có hàm `any`:
 
 ``` {.haskell}
 -- Only for lists:  any :: (a -> Bool) -> [a] -> Bool
 ```
 
-This function also takes a predicate and a list of elements. But this
-one checks if there exists **any** element in the list for which the
-predicate holds.
+Hàm này cũng nhận một vị từ và một danh sách các phần tử. Nhưng cái này kiểm tra xem có tồn tại **bất kỳ** phần tử nào trong danh sách mà vị từ nắm giữ hay không.
 
-For example, here we\'re checking if any of the elements of the list is
-greater than 4. If only one is, `any` returns `True`, else, it returns
-`False`:
+Ví dụ: ở đây chúng ta đang kiểm tra xem có bất kỳ phần tử nào của danh sách lớn hơn 4 không. Nếu chỉ có một phần tử lớn hơn, `any` trả về True, nếu không, nó trả về  `False`:
 
 ``` {.haskell}
 biggerThan4 x = x > 4
@@ -144,8 +134,7 @@ Kết quả:
     False
 
 
-A more realistic way to use `any` would be to check if we have any cars
-left on our car-selling website:
+Một cách thực tế hơn để sử dụng `any` là kiểm tra xem chúng ta còn chiếc xe nào trên trang web bán xe của mình không:
 
 ``` {.haskell}
 cars = [("Toyota",0), ("Nissan",3), ("Ford",1)]
@@ -158,62 +147,43 @@ any biggerThan0 cars
 Kết quả:
     True
 
+Trong `biggerThan0`, chúng ta khớp mẫu trên bộ dữ liệu để trích xuất số lượng ô tô và kiểm tra xem nó có lớn hơn 0 hay không. Sau đó, chúng ta sử dụng `any` để kiểm tra xem có bất kỳ cặp nào trong số tất cả các cặp trong danh sách còn lại ít nhất 1 ô tô hay không.
 
-In `biggerThan0`, we\'re pattern matching on the tuple to extract the
-number of cars and check if it\'s greater than zero. Then, we\'re using
-`any` to check if any of all the pairs in the list has at least one car
-left.
+Ok, chúng ta đã thấy rất nhiều ví dụ về các hàm lấy các hàm khác làm tham số. Nhưng còn những hàm trả về hàm dưới dạng kết quả thì sao? Chúng ta sẽ đến đó. Trước tiên, chúng ta sẽ tìm hiểu về  hàm trừu tượng hóa `lambda ` và các hàm `curried`.
 
-Ok, we saw plenty of examples of functions that take other functions as
-parameters. But what about functions that return functions as results?
-We\'ll get there. First we\'ll learn about lambda abstractions and
-curried functions.
 
-## Lambda functions
+## Hàm Lambda
 
-The term lambda function comes from the mathematical system called
-**lambda calculus**. It\'s an intriguing and powerful subject by itself,
-but today, we\'re going to look at it from the practical-programmer
-point of view.
+Thuật ngữ hàm lambda xuất phát từ hệ thống toán học gọi là **phép tính lambda** . Bản thân nó đã là một chủ đề hấp dẫn và mạnh mẽ, nhưng hôm nay, chúng ta sẽ xem xét nó từ quan điểm của một lập trình viên thực tế.
 
-A lambda function (also called anonymous function) is a function
-definition that doesn\'t have a name.
+Hàm lambda (còn được gọi là hàm ẩn danh) là một định nghĩa hàm không có tên.
 
-For example, here\'s how a lambda function that takes two arguments and
-multiplies them ( $f(x,y)=x*y$ ) looks in Haskell:
+Ví dụ: đây là cách một hàm lambda nhận hai đối số và nhân chúng ( $f(x,y)=x*y$ ) trong Haskell:
 
 ``` {.haskell}
 \x y -> x * y
 ```
 
-A lambda function consists of four things:
+Hàm lambda bao gồm bốn điều:
 
-1.  The backslash `\` at the beginning tells us that this is a lambda
-    function.
-2.  The parameter names (in this case `x y`) that the function takes as
-    inputs.
-3.  The arrow (`->`) that **separates** the inputs from the body.
-4.  And everything after the arrow that is the **body** of the function.
+1. Dấu gạch chéo ngược `\` ở đầu cho chúng ta biết rằng đây là hàm lambda.
 
-```{=html}
-<div class="alert alert-block alert-info">
-Most modern programming languages also have anonymous functions. But not all of them work the same way.
-</div>
-```
+2. Tên tham số (trong trường hợp này  là `x y`  ) mà hàm lấy làm đầu vào.
 
-### Why should you care?
+3. Mũi tên (`->`) phân tách đầu vào khỏi phần thân.
 
-It sounds useless because how can you use a name-less function? You have
-no way of calling it later!
+4. Và mọi thứ sau mũi tên là phần thân của hàm.
 
-Actually, it\'s a powerful component of the language! Through this
-course, we\'ll encounter many situations where lambda expressions are
-practical. For starters, you can use lambda expressions to avoid naming
-functions that you\'ll only use once!
 
-This is useful in and of itself, but it really shines when working with
-higher-order functions! For example, take a look at the previous
-example:
+    Hầu hết các ngôn ngữ lập trình hiện đại cũng có chức năng ẩn danh. Nhưng không phải tất cả chúng đều hoạt động theo cùng một cách.
+
+### Tại sao bạn cần quan tâm?
+
+Nghe có vẻ vô dụng vì làm sao bạn có thể sử dụng một chức năng không có tên? Bạn không có cách nào gọi nó sau này!
+
+Trên thực tế, đó là một thành phần mạnh mẽ của ngôn ngữ! Thông qua khóa học này, chúng ta sẽ gặp nhiều tình huống trong đó các biểu thức **lambda** được sử dụng trong thực tế. Để bắt đầu, bạn có thể sử dụng biểu thức **lambda** để tránh đặt tên cho các hàm mà bạn sẽ chỉ sử dụng một lần!
+
+Bản thân điều này rất hữu ích, nhưng nó thực sự tỏa sáng khi làm việc với các hàm bậc cao hơn! Ví dụ: hãy xem ví dụ trước:
 
 ``` {.haskell}
 biggerThan4 x = x > 4
@@ -225,12 +195,9 @@ Kết quả:
     False
 
 
-That `biggerThan4` function won\'t be used anywhere else, but it will
-linger in our environment forever. Also, it\'s an awfully simple
-function! The name is longer than the body!
+Hàm `biggerThan4` sẽ không được sử dụng ở bất kỳ nơi nào khác, nhưng nó sẽ tồn tại mãi mãi trong môi trường của chúng ta. Ngoài ra, đó là một chức năng cực kỳ đơn giản! Tên dài hơn thân!
 
-By using lambda expressions, we can create and use `biggerThan4` as a
-parameter for `any` all at the same time like this:
+Bằng cách sử dụng các biểu thức **lambda**, chúng ta có thể tạo và sử dụng `biggerThan4` làm tham số cho `any` tất cả cùng một lúc như sau:
 
 ``` {.haskell}
 any (\x -> x > 4) [1,2,3,4]
@@ -240,8 +207,7 @@ Kết quả:
     False
 
 
-We can also use lambda expressions to simplify other functions. Let\'s
-review the `fruitWithA` function:
+Chúng ta cũng có thể sử dụng các biểu thức `lambda` để đơn giản hóa các hàm khác. Hãy xem lại Hàm `fruitWithA`:
 
 ``` {.haskell}
 fruitWithA = filter tempFunct ["Apple", "Banana", "Pear", "Grape", "Wood"]
@@ -252,9 +218,8 @@ fruitWithA
 Kết quả:
     ["Banana","Pear","Grape"]
 
+Chúng ta có thể đơn giản hóa hàm `fruitWithA` bằng cách loại bỏ `tempFunct` và thay thế nó bằng hàm **lambda**:
 
-We can simplify `fruitWithA` by removing the `tempFunct` and replacing
-it with a lambda function:
 
 ``` {.haskell}
 filter (\x -> 'a' `elem` x) ["Apple", "Banana", "Pear", "Grape", "Wood"]
@@ -264,8 +229,7 @@ Kết quả:
     ["Banana","Pear","Grape"]
 
 
-And, of course, because lambda functions are just expressions, you could
-use them anywhere an expression can be used. Even by themselves:
+Và, tất nhiên, vì các hàm **lambda** chỉ là các biểu thức nên bạn có thể sử dụng chúng ở bất kỳ đâu mà một biểu thức có thể được sử dụng. Ngay cả với chính chúng: 
 
 ``` {.haskell}
 (\x -> x*2 + 1) 3
@@ -274,22 +238,17 @@ use them anywhere an expression can be used. Even by themselves:
 Kết quả:
     7
 
-If you need more examples, keep watching/reading. Lambda functions will
-be a valuable tool to easily visualize currying.
+Nếu bạn cần thêm ví dụ, hãy tiếp tục xem/đọc. Các hàm **lambda** sẽ là một công cụ có giá trị để dễ dàng hình dung quá trình **nấu cà ri**.
 
-Right now, we\'ll take a few minutes to learn about precedence and
-associativity.
+Ngay bây giờ, chúng ta sẽ dành vài phút để tìm hiểu về mức độ ưu tiên và tính kết hợp.
 
-## Precedence and associativity
+## Ưu tiên và tính kết hợp
 
-### Precedence
+### Precedence (Ưu tiên)
 
-Precedence indicates the priority of an operator (denoted by a number
-from 0 to 9). If we use two operators with different precedence, the one
-with the higher precedence gets applied first. Meaning that higher
-precedence operators bind more tightly!
+Precedence cho biết mức độ ưu tiên của toán tử (được biểu thị bằng một số từ 0 đến 9). Nếu chúng ta sử dụng hai toán tử có mức độ ưu tiên khác nhau, toán tử có mức độ ưu tiên cao hơn sẽ được áp dụng trước. Có nghĩa là các toán tử ưu tiên cao hơn liên kết chặt chẽ hơn!
 
-We can get the precedence for an operator with the info command `:i`.
+Chúng ta có thể lấy quyền ưu tiên cho một toán tử bằng lệnh thông tin `:i`.
 
 ``` {.haskell}
 :i (+)  -- infixl 6 +
@@ -303,36 +262,21 @@ Kết quả:
     7
 
 
-```{=html}
-<div class="alert alert-block alert-info">
-    <code>infixl 6 +</code> and <code>infixl 7 *</code> are called <b>fixity declarations</b>.
-</div>
-```
+Bởi vì phép nhân có mức ưu tiên là 7, cao hơn mức ưu tiên của phép cộng là 6, nên kết quả là 7 chứ không phải 9.
 
-Because multiplication has precedence of 7, which is higher than the
-addition\'s precedence of 6, the result is 7 and not 9.
+Và điều gì xảy ra khi hai toán tử có cùng quyền ưu tiên? Đây là khi tính kết hợp phát huy tác dụng.
 
-And what happens when two operators have the same precedence? This is
-when associativity comes into play.
+### Kết howpk (Associativity)
 
-### Associativity
+Khi chung ta sử  dụng lệnh `:i`, nó cũng trả về từ khóa `infixl`. TĐây là tính kết hợp của toán tử.
 
-When we used the `:i` command previously, it also returned the keyword
-`infixl`. This is the operator\'s associativity.
+Khi hai toán tử có cùng mức độ ưu tiên, tính kết hợp cho bạn biết bên nào (bên trái với `infixl` hoặc bên phải `infixr`) sẽ được đánh gí trước.
 
-When two operators have the same precedence, the associativity tells you
-which side (left with `infixl` or right with `infixr`) will be evaluated
-first.
+Ví dụ:
 
-For example:
-
--   The operators `(+)` and `(*)` have left associativity, which means
-    they evaluate the left side first.
--   The `(:)` operator has right associativity, which means it evaluates
-    the right side first.
--   The `(==)` operator has no associativity (`infix`), which means
-    that, if you use more than one, you need parenthesis to indicate the
-    order.
+-   Toán tử `(+)` và `(*)` có tính kết hợp trái, có nghĩa là chúng đánh giá vế trái trước.
+-   Toán tử `(:)` có tính kết hợp phải, có nghĩa là nó đánh giá phía bên phải trước.
+-   TYaons tử `(==)` không có tính kết hợp ( infix), có nghĩa là nếu bạn sử dụng nhiều hơn một, bạn cần có dấu ngoặc đơn để biểu thị thứ tự.
 
 ``` {.haskell}
 1 + 2 + 3 + 4  -- infixl: Same as ((1 + 2) + 3) + 4
@@ -353,7 +297,7 @@ Kết quả:
 Kết quả:
     True
 
-And, of course, you can change the evaluation order using parenthesis:
+Và, tất nhiên, bạn có thể thay đổi thứ tự đánh giá bằng cách sử dụng dấu ngoặc đơn:
 
 ``` {.haskell}
 :i (**) -- infixr 8 **
@@ -362,8 +306,7 @@ And, of course, you can change the evaluation order using parenthesis:
 (2**3)**4
 ```
 
-Finally, we can define precedence and associativity when creating our
-own operator. Like this:
+Cuối cùng, chúng ta có thể xác định mức độ ưu tiên và tính kết hợp khi tạo toán tử của riêng mình. Như thế này:
 
 ``` {.haskell}
 x +++ y = x + y -- Creating +++ operator
@@ -376,58 +319,40 @@ Kết quả:
     9
 
 
-Now, the result is 9 because `+++` and `*` are both left-associative and
-have the same precedence.
+Bây giờ, kết quả là 9 vì `+++` và `*` đều là liên kết trái và có cùng mức độ ưu tiên.
 
-```{=html}
-<div class="alert alert-block alert-info">
-<b>Important note:</b> 
-   <ul>
-       <li>Operators without an explicit fixity declaration are <code>infixl 9</code></li>
-       <li>Function application (the "whitespace operator") always has the highest precedence (imagine precedence 10).</li>
-   </ul>
-</div>
-```
+    Các toán tử không có khai báo tính cố định rõ ràng là `infixl 9`
+    Ứng dụng hàm ("toán tử khoảng trắng") luôn có mức ưu tiên cao nhất (hãy tưởng tượng mức ưu tiên là 10).
 
-## Curried functions
+## Các hàm bị xáo trộn
 
-Currying is the process of changing a function so that rather than
-taking multiple inputs, it takes a single input and returns a function
-which accepts the second input, and so forth.
+**Currying** là quá trình thay đổi một hàm sao cho thay vì nhận nhiều đầu vào, nó chỉ nhận một đầu vào duy nhất và trả về một hàm chấp nhận đầu vào thứ hai, v.v.
 
-And here\'s the kicker:
+Và đây là kicker:
 
-**In Haskell, all functions are considered curried! That is, all
-functions in Haskell take just one argument!**
+**Trong Haskell, tất cả các hàm được coi là đã được xử lý! Nghĩa là, tất cả các hàm trong Haskell chỉ nhận một đối số!**
 
-To exemplify this, take a look at this function:
+Để minh họa điều này, hãy xem chức năng này:
 
 ``` {.haskell}
 add3 :: Int -> Int -> Int -> Int
 add3 x y z = x + y + z
 ```
 
-It seems like a multi-parameter function. But!, there are hidden
-associativities in play! We know that function application (the
-\"whitespace operator\") always has the highest precedence and
-associates to the left, so if we make that obvious, we get:
+Nó có vẻ giống như một hàm đa tham số. Nhưng!, có những mối liên hệ tiềm ẩn trong trò chơi! Chúng tôi biết rằng ứng dụng hàm ("toán tử khoảng trắng") luôn có mức độ ưu tiên cao nhất và liên kết với bên trái, vì vậy nếu chúng tôi làm rõ điều đó, chúng tôi sẽ nhận được:
 
 ``` {.haskell}
 add3 :: Int -> Int -> Int -> Int
 ((add3 x) y) z = x + y + z
 ```
 
-And if we check the fixture of the function arrow (`->`):
+Và nếu chúng ta kiểm tra mức ưu tiên của tioans tử mũi tên (`->`):
 
 ``` {.haskell}
 :i (->)  -- infixr -1 ->
 ```
 
-Kết quả:
-
-
-We see that it associates to the right! So, a more explicit way of
-writing the signature of the `add3` function is:
+Chúng tôi thấy rằng nó liên kết với bên phải! Vì vậy, một cách rõ ràng hơn để viết chữ ký của hàm add3  là:
 
 ``` {.haskell}
 add3 :: Int -> (Int -> (Int -> Int))
@@ -440,72 +365,53 @@ Kết quả:
     6
 
 
-Which perfectly corresponds with the function\'s definition! But, just
-to make it painfully obvious, we\'ll make currying explicit using lambda
-functions.
+Hoàn toàn tương ứng với định nghĩa của hàm! Tuy nhiên, để làm cho nó rõ ràng một cách dễ hiểu, chúng tôi sẽ làm rõ ràng việc này bằng cách sử dụng các hàm **lambda**.
 
-Starting with the previous definition:
+Bắt đầu với định nghĩa trước:
 
-60" slideshow="{\"slide_type\":\"slide\"}"}
+
 ``` {.haskell}
 add3 :: Int -> (Int -> (Int -> Int)) -- Same as: add3 :: Int -> Int -> Int -> Int
 ((add3 x) y) z = x + y + z           -- Same as: add3 x y z = x + y + z
 ```
-
-We\'ll move each parameter from the left side of the `=` sign to the
-right side. Creating the same function several times but written
-differently. So, starting with `z` (the outermost parameter), an
-equivalent `add3` function that does exactly the same as the original
-can be written like this:
+Chúng tôi sẽ di chuyển từng tham số từ phía bên trái của `=` sang phía bên phải. Tạo cùng một hàm nhiều lần nhưng được viết khác nhau. Vì vậy, bắt đầu với `z` (tham số ngoài cùng), một hàm `add3`  tương đương thực hiện chính xác như hàm ban đầu có thể được viết như sau:
 
 ``` {.haskell}
 add3 :: Int -> (Int -> (Int -> Int))
 (add3 x) y = \z -> x + y + z
 ```
 
-Now, `add3` is a function that takes two numbers (`x y`) and returns a
-function that takes another number (`z`) and adds the three together.
+Bây giờ, `add3` là một hàm lấy hai số `(x y)` và trả về một hàm lấy một số khác `(z)` và cộng ba số lại với nhau.
 
-If we do it again for the second value:
-
+Nếu chúng ta làm điều đó một lần nữa cho giá trị thứ hai:
 
 ``` {.haskell}
 add3 :: Int -> (Int -> (Int -> Int))
 add3 x = \y -> (\z -> x + y + z)
 ```
 
-Now, `add3` is a function that takes one number (`x`) and returns a
-function that takes one number (`y`) that returns a function that takes
-one number (`z`) and adds the three together.
+Bây giờ, `add3l` à một hàm lấy một số `(x)` và trả về một hàm lấy một số `( y)` trả về một hàm lấy một số `( z)` và cộng ba số lại với nhau.
 
-And if we do it one more time:
+Và nếu chúng ta làm điều đó một lần nữa:
 
 ``` {.haskell}
 add3 :: Int -> (Int -> (Int -> Int))
 add3 = \x -> (\y -> (\z -> x + y + z))
 ```
+Chúng tôi nhận được đó `add3` là một tên trả về một hàm lấy một số `( x)` và trả về một hàm lấy một số `( y)` trả về một hàm lấy một số `( z)` cộng ba số lại với nhau.
 
-We get that `add3` is a name that returns a function that takes one
-number (`x`) and returns a function that takes one number (`y`) that
-returns a function that takes one number (`z`) that adds the three
-numbers together.
+Đó là một hành trình khá dài, nhưng chúng tôi đã xoay sở để làm cho **món cà ri** này trở nên rõ ràng!
 
-That was quite a journey, but we managed to make currying explicit!
+Và bây giờ, cách chữ ký được viết có ý nghĩa hơn nhiều! Mỗi khi bạn thay thế một tham số, kết quả là nó sẽ trả về một hàm mới. Đó là cho đến khi bạn thay thế cái cuối cùng mang lại cho bạn kết quả cuối cùng.
 
-And now, the way signatures are written makes way more sense! Each time
-you replace one parameter, it returns a new function as a result. That
-is until you replace the final one that gives you the final result.
-
-And because `->` is right-associative, we can remove the use-less
-parentheses of both the signature and definition to get a cleaner code:
+Và bởi vì `->` là liên kết phải, chúng tôi có thể xóa dấu ngoặc đơn ít sử dụng của cả chữ ký và định nghĩa để có được mã rõ ràng hơn:
 
 ``` {.haskell}
 add3 :: Int -> Int -> Int -> Int
 add3 = \x -> \y -> \z -> x + y + z
 ```
 
-And now, for example, if we apply the function to 3 parameters like
-this:
+Và bây giờ, ví dụ, nếu chúng ta áp dụng hàm cho 3 tham số như thế này:
 
 ``` {.haskell}
 add3 1 2 3 
@@ -515,8 +421,7 @@ Kết quả:
     6
 
 
-This is what happens step by step (I added the parentheses for visual
-aid):
+Đây là những gì xảy ra từng bước (tôi đã thêm dấu ngoặc đơn để hỗ trợ trực quan):
 
 ``` {.haskell}
 add3 :: Int -> (Int -> (Int -> Int))
@@ -531,33 +436,21 @@ add3 1 2 = \z -> 1 + 2 + z             :: Int -> Int
 add3 1 2 3 = 1 + 2 + 3                 :: Int
 ```
 
-So, besides being a cool conversation starter at the club, how is this
-useful to you? Well\... with uncurried functions, if you provide fewer
-parameters than the ones required, you get an error. But because, in
-Haskell, all functions are curried, you can take advantage of it to use
-partial application!
+Vì vậy, bên cạnh việc là người bắt đầu cuộc trò chuyện thú vị tại câu lạc bộ, điều này hữu ích như thế nào đối với bạn? Chà . .. với các hàm chưa được xử lý, nếu bạn cung cấp ít tham số hơn những tham số được yêu cầu, bạn sẽ gặp lỗi. Nhưng bởi vì, trong Haskell, tất cả các Hàm đều được xử lý, bạn có thể tận dụng nó để sử dụng một phần ứng dụng!
 
-### Partial application
+### Ứng dụng một phần
 
-Partial application in Haskell means that you provide fewer arguments
-than the maximum amount the function accepts.
+Kết quả (như chúng ta đã thấy trước đó) là một hàm mới nhận phần còn lại của các tham số mà bạn không cung cấp cho hàm ban đầu.
 
-The result (like we saw earlier) is a new function that takes in the
-rest of the parameters you did not provide to the original function.
-
-As a practical example of how this is useful, let\'s say you have a
-function used to create an email in the format `name.lastName@domain`.
-The parameters you provide are the domain, the name, and the last name:
+Như một ví dụ thực tế về mức độ hữu ích của tính năng này, giả sử bạn có một hàm được sử dụng để tạo email ở định dạng `name.lastName@domain`. Các tham số bạn cung cấp là tên miền, tên và họ:
 
 ``` {.haskell}
 createEmail :: String -> String -> String -> String
 createEmail domain name lastName = name ++ "." ++ lastName ++ "@" ++ domain
 ```
 
-Now, your company has two communities as clients, which have two
-different domain names. You don\'t want your users to write out the
-domain name every time, so you create 2 functions where you partially
-apply their domain names:
+Bây giờ, công ty của bạn có hai cộng đồng là khách hàng, có hai tên miền khác nhau. Bạn không muốn người dùng của mình viết ra tên miền mỗi lần, vì vậy bạn tạo 2 hàm để áp dụng một phần tên miền của họ:
+
 
 ``` {.haskell}
 createEmailTeckel :: String -> String -> String
@@ -571,16 +464,15 @@ createEmailSCL "Vitalik" "Buterin"
 ```
 Kết quả:
     "Robertino.Martinez@teckel-owners.com"
+
 Kết quả:
     "Vitalik.Buterin@secret-cardano-lovers.com"
 
 
-Notice that this is possible because the domain is the first parameter
-in the function `createEmail`. So the order of the arguments matters.
+Lưu ý rằng điều này là có thể bởi vì miền là tham số đầu tiên trong hàm `createEmail`. Vì vậy, thứ tự của các đối số quan trọng.
 
-If, for some reason, the parameter you want to apply is not the first
-one and you are not allowed to rewrite the existing function, you can
-create a helper function:
+Nếu vì lý do nào đó, tham số bạn muốn áp dụng không phải là tham số đầu tiên và bạn không được phép viết lại hàm hiện có, bạn có thể tạo một hàm trợ giúp:
+
 
 ``` {.haskell}
 -- With partial application:
@@ -594,12 +486,10 @@ createEmail' :: String -> String -> String -> String
 createEmail' name lastName domain = createEmail domain name lastName
 ```
 
-And because operators are just infix functions, we can also partially
-apply them!
+Và bởi vì các toán tử chỉ là các hàm trung tố, chúng ta cũng có thể áp dụng chúng một phần!
 
-For example, recalling the previous example of a higher-order function:
+Ví dụ: nhớ lại ví dụ trước về hàm bậc cao hơn
 
-95" slideshow="{\"slide_type\":\"slide\"}"}
 ``` {.haskell}
 any (\x -> x > 4) [1,2,3,4]
 ```
@@ -607,11 +497,7 @@ any (\x -> x > 4) [1,2,3,4]
 Kết quả:
     False
 
-In the function we pass as a parameter, we need to compare if the input
-is larger than `4`. And the `>` operator is already a function that
-takes two parameters and compares if the first is larger than the
-second. So we can partially apply the parameter on the right to get the
-same result:
+Trong hàm chúng ta truyền dưới dạng tham số, chúng ta cần so sánh xem đầu vào có lớn hơn không `4`. Và toán tử `>` đã là một hàm nhận hai tham số và so sánh xem tham số đầu tiên có lớn hơn tham số thứ hai hay không. Vì vậy, chúng ta có thể áp dụng một phần tham số bên phải để có được kết quả tương tự:
 
 ``` {.haskell}
 any (>4) [1,2,3,4]
@@ -621,11 +507,9 @@ Kết quả:
     False
 
 
-The partial application of an infix operator is called a *section*.
+Ứng dụng một phần của toán tử trung tố được gọi là phần .
 
-And I\'m not sure if you noticed, but we just replaced the second
-parameter (the one on the right). The cool thing about sections is that
-you can partially apply the more convenient side:
+Và tôi không chắc bạn có để ý hay không, nhưng chúng tôi vừa thay thế tham số thứ hai (tham số bên phải). Điều thú vị về các phần là bạn có thể áp dụng một phần mặt thuận tiện hơn:
 
 
 ``` {.haskell}
@@ -641,39 +525,27 @@ Kết quả:
 Kết quả:
     "Antilibrary"
 
+    Cảnh báo: Toán tử `-` đặc biệt vì bạn không thể áp dụng nó một phần. `-1` được phân tích cú pháp dưới dạng chữ `-1` thay vì toán tử phân đoạn `-` được áp dụng cho `1`. Hàm `trừ` tồn tại để giải quyết vấn đề này.
 
-```{=html}
-<div class="alert alert-block alert-warning">
-<b>Warning:</b> The <code>-</code> operator is special because you can't partially apply it. <code>-1</code> is parsed as the literal <code>-1</code> rather than the sectioned operator <code>-</code> applied to <code>1</code>. The <code>subtract</code> function exists to circumvent this issue.
-</div>
-```
+## Áp dụng và soạn các Hàm
 
-## Applying and composing functions
+### Hàm ứng dụng sử dụng toán tử `$` {#the-function-application--operator}
 
-### The function application `$` operator {#the-function-application--operator}
-
-If we check how the function application operator is defined in Haskell,
-it seems a little\... weird:
+Nếu chúng ta kiểm tra xem toán tử ứng dụng hàm được định nghĩa như thế nào trong Haskell, thì có vẻ hơi . .. kỳ dị:
 
 ``` {.haskell}
 ($) :: (a -> b) -> a -> b
 f $ x =  f x
 ```
+Chúng ta thấy rằng nó nhận vào một hàm `f` và một biến `x`, sau đó áp dụng hàm đó cho biến (`f x`). Vì vậy, có vẻ như toán tử này là dư thừa vì nó hoạt động giống như một ứng dụng hàm thông thường (`f x`).
 
-We see that it takes in a function `f` and a variable `x` and then
-applies the function to the variable (`f x`). So, it looks like this
-operator is redundant since it does the same as an ordinary function
-application (`f x`).
+Và bạn biết những gì? Nó là..! Tuy nhiên, có một sự khác biệt nhỏ nhưng đáng kể giữa chúng:
 
-And, you know what? It is! However, there\'s a small but significant
-difference between the two:
+- Toán tử "khoảng trắng" có mức độ ưu tiên liên kết bên trái cao nhất.
+- Toán tử ứng dụng hàm `($)` có quyền ưu tiên liên kết phải thấp nhất: `infixr 0 $`.
 
--   The \"white space\" operator has the highest left-associative
-    precedence.
--   The function application operator (`$`) has the lowest
-    right-associative precedence: `infixr 0 $`.
+Bạn có thể thấy sự khác biệt nếu chúng ta làm rõ điều này bằng cách sử dụng dấu ngoặc đơn:
 
-You can see the difference if we make this evident using parenthesis:
 
 ``` {.haskell}
 f g h x      = ((f g) h) x
@@ -681,8 +553,7 @@ f g h x      = ((f g) h) x
 f $ g $ h x  =  f (g (h x))
 ```
 
-As an example of how this changes things, take a look at the following
-expressions:
+Để làm ví dụ về cách điều này thay đổi mọi thứ, hãy xem các biểu thức sau:
 
 ``` {.haskell}
 (2 *) 3 + 4    -- Same as: ((2 *) 3) + 4
@@ -692,15 +563,11 @@ max 5 4 + 2    -- Same as: ((max 5) 4) + 2
 max 5 $ 4 + 2  -- Same as: (max 5) (4 + 2)
 ```
 
-As you can see in the previous examples, when using `$`, the whole
-expression on its right is applied as the parameter to the function on
-its left. So you can see how using `$` is like surrounding everything to
-its right between parentheses.
+Như bạn có thể thấy trong các ví dụ trước, khi sử dụng `$`, toàn bộ biểu thức bên phải của nó được áp dụng làm tham số cho hàm bên trái. Vì vậy, bạn có thể thấy cách sử dụng `$` giống như bao quanh mọi thứ ở bên phải giữa các dấu ngoặc đơn.
 
-This brings us to the primary use of `$`: Omitting parentheses!
+Điều này đưa chúng ta đến cách sử dụng chính của `$`: Bỏ qua dấu ngoặc đơn!
 
-In the following expression, there are 3 opportunities to remove
-parenthesis, so we remove them:
+Trong biểu thức sau, có 3 cơ hội để loại bỏ dấu ngoặc đơn, vì vậy chúng tôi loại bỏ chúng:
 
 ``` {.haskell}
 -- All these expressions are equivalent:
@@ -714,39 +581,32 @@ show $ (2**) $ max 3 (2 + 2)
 show $ (2**) $ max 3 $ 2 + 2
 ```
 
-This makes your code more readable and easy to understand.
+Điều này làm cho mã của bạn dễ đọc và dễ hiểu hơn.
 
-Of course, you can do more than remove parenthesis, but that\'s what
-you\'ll do most of the time. So we\'ll leave it there and start learning
-about the function composition operator (`.`)!
+Tất nhiên, bạn có thể làm nhiều việc hơn là xóa dấu ngoặc đơn, nhưng đó là điều bạn sẽ làm hầu hết thời gian. Vì vậy, chúng ta sẽ để nó ở đó và bắt đầu tìm hiểu về toán tử thành phần hàm  (`.`)!
 
-### Function composition
+### Thành phần Hàm
 
-We already covered the concept of function composition in our first
-lesson. So if you\'re not sure about it, go check it out! But, just a
-refresher and in a few words:
+Chúng tôi đã đề cập đến khái niệm về thành phần chức năng trong bài học đầu tiên của chúng tôi. Vì vậy, nếu bạn không chắc chắn về nó, hãy kiểm tra nó! Nhưng, chỉ là một sự bồi dưỡng và trong một vài từ:
 
-When we compose two functions, we produce a new function that is the
-equivalent of calling the two functions in sequence when the first one
-takes the output of the second one as input.
+Khi chúng ta kết hợp hai hàm, chúng ta tạo ra một hàm mới tương đương với việc gọi hai hàm theo trình tự khi hàm thứ nhất lấy đầu ra của hàm thứ hai làm đầu vào.
 
-We could do this with parenthesis. Here, the function `f` takes as input
-the result of applying the function `g` to `x`:
+Chúng ta có thể làm điều này với dấu ngoặc đơn. Ở đây, hàm flấy đầu vào là kết quả của việc áp dụng hàm `g` cho `x`:
 
 ``` {.haskell}
 f (g x)
 ```
 
-As a probably overcomplicated example, we could do something like this:
+Như một ví dụ có lẽ quá phức tạp, chúng ta có thể làm điều gì đó như thế này:
 
 ``` {.haskell}
 complicatedF :: [Int] -> Bool
 complicatedF x = any even (filter (>25) (tail ( take 10 x)))
 ```
 
-Here, we\'re composing quite a lot! 3 times to be exact! And as you can
-see, this is quite hard to read, so a diagram could help:
+Ở đây, chúng tôi đang sáng tác khá nhiều! Chính xác là 3 lần! Và như bạn có thể thấy, điều này khá khó đọc, vì vậy sơ đồ có thể hữu ích:
 
+```
 $$
     \boxed{\mathrm{[Int]}}
         \xrightarrow{\mathrm{~~~~~~take~10~~~~~~}}
@@ -770,20 +630,13 @@ $$
         \xrightarrow{\mathrm{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~complicatedF~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}
     \boxed{\mathrm{Bool}}
 $$
+```
 
-We take a list of `Int` as input, then use `take 10` to take the first
-10 elements of the list, then use the result as an input for `tail` that
-returns the last 9 elements, then use the result of that as an input for
-`filter (>25)` to filter the values greater than 25, and finally, take
-the result of that as an input for `any even` to check if there are any
-even numbers left in the list.
+Chúng tôi lấy một danh sách `Int` làm đầu vào, sau đó sử dụng `take 10` để lấy 10 phần tử đầu tiên của danh sách, sau đó sử dụng kết quả làm đầu vào để `tail` trả về 9 phần tử cuối cùng, sau đó sử dụng kết quả của danh sách đó làm đầu vào `filter (>25)` để lọc các giá trị lớn hơn hơn 25, và cuối cùng, lấy kết quả của nó làm đầu vào `any even` để kiểm tra xem có bất kỳ số chẵn nào còn lại trong danh sách hay không.
 
-The diagram helped, but what if I tell you there\'s a way to have
-something as clean and easy to understand but in our code?
+Sơ đồ đã giúp ích, nhưng điều gì sẽ xảy ra nếu tôi nói với bạn rằng có một cách để có thứ gì đó rõ ràng và dễ hiểu nhưng có trong mã của chúng ta?
 
-This can be done by abstracting function composition to an operator. And
-because, in mathematics, the composition symbol is a ring that kind of
-resembles a dot, we\'ll use a dot:
+Điều này có thể được thực hiện bằng cách trừu tượng hóa thành phần chức năng cho một toán tử. Và bởi vì, trong toán học, ký hiệu tổng hợp là một chiếc nhẫn giống như một dấu chấm, nên chúng ta sẽ sử dụng một dấu chấm:
 
 ``` {.haskell}
 (.)  :: (b -> c) -> (a -> b) -> a -> c
@@ -791,34 +644,23 @@ f . g = \x -> f (g x)
 infixr 9 .
 ```
 
-Here, we see that the `.` operator takes two functions (`f :: b -> c`
-and `g :: a -> b`) and composes them using a lambda function to indicate
-that the whole `f . g` expression returns a function that takes the
-parameter `x :: a`, applies `g` to it to get a value of type `b`, and
-finally applies `f` to it to get a value of type `c`.
+Ở đây, chúng ta thấy rằng toán tử `.` nhận hai hàm `( f :: b -> c` và `g :: a -> b)` và kết hợp chúng bằng cách sử dụng hàm **lambda** để chỉ ra rằng toàn bộ `f . g ` biểu thức trả về một hàm nhận tham số `x :: a`, áp dụng `g` cho nó để nhận giá trị loại `b` và cuối cùng áp dụng `f` cho nó nhận giá trị kiểu `c`.
 
-It\'s important to notice that `f` takes as input a value that has the
-same type as the output of `g`. So the resulting function takes as input
-a value of the same type as `g`\'s input (`a`) and returs as output a
-value of the same type as `f`\'s output (`c`).
+Điều quan trọng cần lưu ý là `f` lấy một giá trị đầu vào có cùng loại với đầu ra của `g`. Vì vậy, hàm kết quả lấy đầu vào là một giá trị cùng loại với `g` đầu vào của `( a)` và trả về giá trị đầu ra cùng kiêu với`f` đầu ra của `( c)`.
 
-So, now that we have this new operator, how does the `complicatedF`
-function look now? Like this:
+Vì vậy, bây giờ chúng ta có toán tử mới này, `complicatedF` bây giờ hàm trông như thế nào? Như thế này:
+
 
 ``` {.haskell}
 complicatedF :: [Int] -> Bool
 complicatedF x = any even . filter (>25) . tail . take 10 $ x
 ```
 
-Waaay more readable! You can tell everything the function does with a
-quick glance!
+Hooo dễ đọc hơn! Bạn có thể nói mọi thứ mà hàm thực hiện chỉ bằng một cái nhìn nhanh!
 
-Also, notice that every function to both sides of the `.` operator takes
-a single argument or is partially applied until it takes a single
-argument.
+Ngoài ra, hãy lưu ý rằng mọi hàm ở cả hai phía của toán tử  `.` đều nhận một đối số duy nhất hoặc được áp dụng một phần cho đến khi nó nhận một đối số duy nhất.
 
-If we rewrite the example from the application operator chapter by using
-the dot operator, we get:
+Nếu chúng ta viết lại ví dụ từ toán tử ứng dụng bằng cách sử dụng toán tử dấu chấm, chúng ta sẽ nhận được:
 
 ``` {.haskell}
 show ((2**) (max 3 (2 + 2)))
@@ -826,19 +668,16 @@ show ((2**) (max 3 (2 + 2)))
 show . (2**) . max 3 $ 2 + 2
 ```
 
-As you can see, `$` and `.` can make your code clear and concise. But be
-wary to not overuse them! You could end up having a worst result!
+Như bạn có thể thấy, `$` và `.` có thể làm cho mã của bạn rõ ràng và ngắn gọn. Nhưng hãy cảnh giác để không lạm dụng chúng! Bạn có thể sẽ có một kết quả tồi tệ nhất!
 
-And now, as a final way to make your functions more readable, ladies and
-gentlemen, we present the point-free style!! 👏👏👏
+Và bây giờ, như là một cách cuối cùng để làm cho chức năng của bạn dễ đọc hơn, thưa quý vị và các bạn, chúng tôi trình bày phong cách không có điểm!! 👏👏👏
 
 ### Point-free style
 
 
-In point-free style (also called tacit programming), function
-definitions don\'t declare the arguments.
+Theo kiểu không có điểm (còn gọi là lập trình ngầm), các định nghĩa hàm không khai báo các đối số.
 
-So, instead of doing this:
+Vì vậy, thay vì làm điều này:
 
 ``` {.haskell}
 fourOrLarger :: Int -> Int
@@ -848,7 +687,7 @@ add1 :: Int -> Int
 add1 x = 1 + x
 ```
 
-We can do this:
+Chung ta co thể lam được việc nay:
 
 ``` {.haskell}
 fourOrLarger :: Int -> Int
@@ -858,39 +697,29 @@ add1 :: Int -> Int
 add1 = (1+)
 ```
 
-The functions do the same, but now, we\'re not explicitly binding the
-argument and using it inside the body. That\'s implicit in the
-definition but still explicit in the signature.
+Các hàm cũng làm như vậy, nhưng bây giờ, chúng ta không ràng buộc rõ ràng đối số và sử dụng nó bên trong nội dung. Điều đó ngầm định trong định nghĩa nhưng vẫn rõ ràng trong chữ ký.
 
-Pont-free functions have the advantages of:
+Chức năng Pont-free có ưu điểm là:
 
--   Being more compact.
--   Easier to understand.
--   Cleaner, since they discard redundant information.
-
-So, we can use the point-free style to change this:
+- Nhỏ gọn hơn.
+- Dễ hiểu.
+- Sạch hơn, vì chúng loại bỏ thông tin dư thừa.
+Vì vậy, chúng ta có thể sử dụng kiểu không có điểm để thay đổi điều này:
 
 ``` {.haskell}
 complicatedF :: [Int] -> Bool
 complicatedF x = any even . filter (>25) . tail . take 10 $ x
 ```
 
-Into this:
+Vào cái này:
 
 ``` {.haskell}
 complicatedF :: [Int] -> Bool
 complicatedF = any even . filter (>25) . tail . take 10
 ```
 
-This gives us our final expression of `complicatedF`.
+Điều này cho chúng ta biểu thức cuối cùng của `complicatedF`.
 
-This style is particularly useful when deriving efficient programs by
-calculation and, in general, constitutes good discipline. It helps the
-writer and reader think about composing functions at the high level
-instead of shuffling data at the low level.
+Phong cách này đặc biệt hữu ích khi rút ra các chương trình hiệu quả bằng tính toán và nói chung, tạo thành kỷ luật tốt. Nó giúp người viết và người đọc suy nghĩ về việc soạn các chức năng ở mức cao thay vì xáo trộn dữ liệu ở mức thấp.
 
-This concludes today\'s lesson. Today we learned plenty of new concepts
-and ways to improve and combine our functions. It may be a lot to take
-in at once, but all these concepts are important. So make sure you
-understand them well before advancing with the course.
-
+Điều này kết thúc bài học hôm nay. Hôm nay chúng ta đã học được nhiều khái niệm và cách thức mới để cải thiện và kết hợp các chức năng của mình. Có thể có rất nhiều thứ phải tiếp thu cùng một lúc, nhưng tất cả những khái niệm này đều quan trọng. Vì vậy, hãy chắc chắn rằng bạn hiểu rõ về chúng trước khi tiếp tục với khóa học.
