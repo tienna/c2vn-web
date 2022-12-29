@@ -1,7 +1,7 @@
 
 
 
-# Cải tiến và kết hợp các hàm
+# 5-Cải tiến và kết hợp các hàm
 
 ## Outline
 
@@ -266,7 +266,7 @@ Bởi vì phép nhân có mức ưu tiên là 7, cao hơn mức ưu tiên của 
 
 Và điều gì xảy ra khi hai toán tử có cùng quyền ưu tiên? Đây là khi tính kết hợp phát huy tác dụng.
 
-### Kết howpk (Associativity)
+### Kết h (Associativity)
 
 Khi chung ta sử  dụng lệnh `:i`, nó cũng trả về từ khóa `infixl`. TĐây là tính kết hợp của toán tử.
 
@@ -672,7 +672,7 @@ Như bạn có thể thấy, `$` và `.` có thể làm cho mã của bạn rõ 
 
 Và bây giờ, như là một cách cuối cùng để làm cho chức năng của bạn dễ đọc hơn, thưa quý vị và các bạn, chúng tôi trình bày phong cách không có điểm!! 👏👏👏
 
-### Point-free style
+### Point-free style `.`
 
 
 Theo kiểu không có điểm (còn gọi là lập trình ngầm), các định nghĩa hàm không khai báo các đối số.
