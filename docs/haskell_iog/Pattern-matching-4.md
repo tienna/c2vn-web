@@ -510,12 +510,12 @@ Kết quả:
 
 Và điều đó đặt ra câu hỏi: "Tại sao chúng ta lại có quá nhiều cách để làm cùng một việc?!" Tôi sẽ cho bạn biết tại sao . ..
 
-## Kiểu khai báo 🆚 kiểu thể hiện
+## Kiểu tuyên bố 🆚 kiểu biểu thức
 Declaration style 🆚 Expression style
 
 Có hai kiểu chính để viết các chương trình hàm trong Haskell:
 
-- **Kiểu khai báo** là nơi bạn xây dựng một thuật toán theo một số phương trình được thỏa mãn.
+- **Kiểu tuyên bố ** là nơi bạn xây dựng một thuật toán theo một số phương trình được thỏa mãn.
 - **Kiểu biểu thức** là nơi bạn soạn các biểu thức lớn từ các biểu thức nhỏ.
  
 
