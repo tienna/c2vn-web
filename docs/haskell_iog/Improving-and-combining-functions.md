@@ -1,7 +1,7 @@
 
 
 
-# 5-Cải thiến và kết hợp các hàm
+# 5-Cải thiện và kết hợp các hàm
 
 ## Outline
 
