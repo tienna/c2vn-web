@@ -1,4 +1,4 @@
-Even Cardano Coffee Lounge
+Cardano Coffee Lounge Event
 =====================
 
 ## Hà Nội - Cardano Coffee Lounge “Cardano Native Token những điều cơ bản cần biết”
