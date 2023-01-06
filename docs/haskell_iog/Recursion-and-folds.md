@@ -1,9 +1,9 @@
 # 6-Đệ quy và Fold
 
-## Outline
+## Nội dung
 
 -   Tại sao là đệ quy?
--   TTư duy đệ quy
+-   Tư duy đệ quy
     -   `sum` and `product`
 -   Các bước để tạo hàm đệ quy của riêng bạn
 -   Ví dụ về đệ quy
@@ -19,7 +19,7 @@
 
 Một trong những hàm cơ bản cần thiết trong bất kỳ ngôn ngữ lập trình nào là sự lặp lại (vòng lặp). Ví dụ:
 
-- Bạn có một danh sách các đối tượng và muốn làm điều gì đó với tất cả chúng. Từng cái một.
+- Bạn có một danh sách các đối tượng và muốn làm điều gì đó với chúng. Từng thành phần một trong đó.
 - Bạn muốn thực hiện một số phép tính 5 lần với các giá trị khác nhau.
 - Vân vân.
 
@@ -38,17 +38,17 @@ while (i < 5) {
 ```
 
 
-Nhưng, nếu chúng ta cố gắng tạo một cái gì đó như thế này trong Haskell, chúng ta sẽ gặp vấn đề lớn. Và đó là biến `i`.
+Nhưng, nếu chúng ta cố gắng tạo một cái gì đó như thế này trong Haskell, chúng ta gặp vấn đề lớn. Và đó là biến `i`.
 
-Như chúng ta đã đề cập trong bài một, Haskell là một ngôn ngữ hàm thuần túy. Nhưng hai khối mã này dựa vào sự thay đổi `i` trên mỗi lần lặp lại. Điều đó có nghĩa là chúng có tác dụng phụ là cập nhật trạng thái chung khi chương trình tiến triển.
+Như chúng ta đã đề cập trong bài một, Haskell là một ngôn ngữ hàm thuần túy. Nhưng hai nhóm lệnh trên dựa vào sự thay đổi `i` trên mỗi lần lặp lại. Điều đó có nghĩa là chúng có tác dụng phụ là cập nhật trạng thái khi chương trình chạy.
 
-Vì vậy, trong Haskell, chúng ta không có các hàm lặp tích hợp sẵn này. Thay vào đó, chúng ta có đệ quy!
+Vì vậy, trong Haskell, chúng ta không có các hàm lặp tích hợp sẵn. Thay vào đó, chúng ta có đệ quy!
 
-Và làm thế nào là đệ quy tốt hơn vòng lặp, bạn nói? Dưới đây là một vài lý do:
+Và làm thế nào là đệ quy tốt hơn vòng lặp, ý của bạn? Dưới đây là một vài lý do:
 
 Lý do tại sao đệ quy lại hữu ích:
 
-- Mọi thứ bạn có thể làm với vòng lặp, bạn có thể làm điều đó bằng cách sử dụng đệ quy. Và trên hết, thậm chí có những chương trình mà bạn có thể định nghĩa đệ quy mà không thể viết bằng vòng lặp `for`.
+- Mọi thứ bạn có thể làm với vòng lặp, bạn có thể làm điều đó bằng cách sử dụng đệ quy. Và trên hết, thậm chí có những chương trình mà bạn có thể sử dụng đệ quy mà không thể viết bằng vòng lặp `for`.
 - Nhiều hàm (nếu không muốn nói là hầu hết) có thể được định nghĩa một cách tự nhiên bằng cách sử dụng đệ quy. Điều này có nghĩa là cách bạn nghĩ một cách trừu tượng về hàm và cách bạn viết nó bằng cách sử dụng đệ quy là rất giống nhau.
 - Một số hàm rõ ràng hơn và ngắn gọn hơn nếu được định nghĩa bằng cách sử dụng đệ quy.
 - Bạn có thể sử dụng phương pháp quy nạp để lập luận toán học và chứng minh các thuộc tính của các hàm được xác định bằng cách sử dụng đệ quy. (Cao cấp hơn, nhưng vô cùng mạnh mẽ.)
@@ -57,9 +57,9 @@ Bây giờ bạn đã biết mình sắp học một khái niệm khá mạnh m�
 
 ## Tư duy đệ quy
 
-Đệ quy xảy ra khi một thứ được định nghĩa theo chính nó. Vì vậy, một hàm đệ quy là một hàm mà nó được định nghĩa theo chính nó.
+Đệ quy xảy ra khi một thứ được định nghĩa theo chính nó. Vì vậy, một hàm đệ quy là một hàm mà nó được định nghĩa chính nó.
 
-Đó là nó. Khái niệm này thực sự đơn giản. Việc thực hiện là những gì gây ra hầu hết các rắc rối. Vì vậy, chúng ta sẽ bắt đầu bằng cách định nghĩa một hàm sử dụng cả vòng lặp `for` (sử dụng Python) và đệ quy (sử dụng Haskell) để làm nổi bật sự khác biệt trong cách suy nghĩ về vấn đề.
+Là vậy đấy. Khái niệm này thực sự đơn giản. Việc thực hiện sẽ gây ra hầu hết các rắc rối. Vì vậy, chúng ta sẽ bắt đầu bằng cách định nghĩa một hàm sử dụng cả vòng lặp `for` (sử dụng Python) và đệ quy (sử dụng Haskell) để làm nổi bật sự khác biệt trong cách suy nghĩ về vấn đề.
 
 Giả sử chúng ta muốn tính tổng của một danh sách các số.
 
@@ -80,7 +80,7 @@ def sum(list):
 3. Sau đó, đối với mỗi phần tử trong danh sách, chúng ta lấy `total`, thêm phần tử vào phần tử đó và ghi đè phép gán cho `total` bằng giá trị mới.
 4. Sau khi vòng lặp kết thúc, hàm trả về biến `total` .
 
-Như bạn có thể thấy, trong các ngôn ngữ mệnh lệnh, chúng ta sử dụng một chuỗi các câu lệnh để xác định CÁCH để đạt được mục tiêu. Trong trường hợp này, tổng của các phần tử trong danh sách.
+Như bạn có thể thấy, trong các ngôn ngữ mệnh lệnh, chúng ta sử dụng một chuỗi các câu lệnh để xác định CÁCH đạt được mục tiêu. Trong trường hợp này, tổng của các phần tử trong danh sách.
 
 Để dễ dàng viết các hàm đệ quy, bạn phải kiểu bỏ lối suy nghĩ đó và chuyển sang lập trình khai báo. Nơi bạn tuyên bố những thứ LÀ thay vì làm thế nào để có được chúng từng bước.
 
@@ -95,7 +95,7 @@ sum :: [Int] -> Int
 
 Vì vậy, chúng ta biết nó lấy một danh sách các số nguyên và trả về một số nguyên.
 
-Bây giờ, dựa trên hàm LÀ: Hàm lấy danh sách các số và trả về tổng của nó, bước tiếp theo là tìm các trường hợp cạnh.
+Bây giờ, dựa trên hàm LÀ: Hàm lấy danh sách các số và trả về tổng của nó, bước tiếp theo là tìm các trường hợp đầu và cuối danh sách.
 
 Chúng ta lấy một danh sách làm đầu vào. Điều gì xảy ra nếu danh sách trống chẳng hạn? Chà, trong trường hợp đó, chúng ta biết rằng tổng của một danh sách trống là 0. Vì vậy, chúng ta có thể bắt đầu bằng cách xác định rằng:
 
@@ -121,7 +121,7 @@ sum :: [Int] -> Int
 sum [] = 0
 sum (x:xs) = x + ...
 ```
-Và bây giờ, chúng ta cần tìm tổng của tất cả các phần tử trong xs. Nhưng chờ một phút ... chúng ta đã có hàm để làm điều đó! nó giống như chúng ta đang xác định ngay bây giờ! Vì vậy, chúng ta chỉ có thể sử dụng nó!:
+Và bây giờ, chúng ta cần tìm tổng của tất cả các phần tử trong xs. Nhưng chờ một phút ... chúng ta đã có hàm để làm điều đó! nó giống như chúng ta đang làm! Vì vậy, chúng ta chỉ có thể sử dụng nó!:
 
 ``` {.haskell}
 sum :: [Int] -> Int
@@ -129,7 +129,7 @@ sum [] = 0
 sum (x:xs) = x + sum xs
 ```
 
-Và ở đó! Chúng ta đã triển khai hàm đệ quy đầu tiên của mình! Tại sao? Bởi vì chúng ta đã xác định `sum` bằng cách sử dụng chính nó!
+Chúng ta đã triển khai hàm đệ quy đầu tiên của mình! Tại sao? Bởi vì chúng ta đã xác định `sum` bằng cách sử dụng chính nó!
 
 Hãy xem điều gì sẽ xảy ra khi chúng ta sử dụng hàm này. Ví dụ: hãy tính tổng của một danh sách chứa tất cả các số nguyên từ `1` đến `5`:
 
@@ -148,7 +148,7 @@ Và đó là cách Haskell đánh giá hàm của chúng ta .
 
 Lưu ý rằng trường hợp cơ sở là trường hợp cho phép chúng ta dừng đệ quy và có kết quả. Nếu chúng ta xác định hàm đệ quy mà không có trường hợp cơ sở, hàm đó sẽ bị lỗi hoặc chạy vĩnh viễn.
 
-Vì vậy, trong một vài từ:
+Vì vậy, Tóm tắt là:
 
 Với các vòng lặp, bạn thay đổi ngữ cảnh bằng bộ tích lũy đột biến bao gồm các bước để xác định CÁCH đạt được mục tiêu.
 
@@ -160,12 +160,12 @@ Bây giờ, mặc dù đây là hướng dẫn đầy đủ về cách tạo  h�
 
 ## Các bước để tạo hàm đệ quy của riêng bạn
 
-Tôi đã chuẩn bị một phiên bản sửa đổi đôi chút của các bước do Tiến sĩ Graham Hutton  tạo ra. Nhà nghiên cứu, giáo viên và thành viên hội đồng quản trị nổi tiếng của Haskell Foundation. Vì vậy . .. bạn biết đấy . .. Đây là những bước thật sự:
+Tôi đã chuẩn bị một phiên bản sửa đổi đôi chút của các bước do Tiến sĩ Graham Hutton  tạo ra. Nhà nghiên cứu, giáo viên và thành viên hội đồng quản trị nổi tiếng của Haskell Foundation. Vì vậy . .. bạn biết đấy . .. Đây là công việc nghiêm túc:
 
 
 1. Viết ra kiểu: Điều này sẽ giúp bạn xác định hàm đề quy sau này. (Bạn phải luôn xác định kiểu trước, ngay cả khi bạn không xác định hàm đệ quy.)
-2. Liệt kê các trường hợp có thể xảy ra mà bạn có thể có dựa trên đầu vào của nó. (Bắt đầu với những cái "tiêu chuẩn" và thay đổi hoặc tinh chỉnh chúng nếu cần.)
-3. Giữa tất cả các trường hợp đã khởi tạo trước đó, hãy xác định trường hợp nào đơn giản nhất và định nghĩa chúng. (Đây thường là các trường hợp cơ sở (hoặc cạnh).)
+2. Liệt kê các trường hợp có thể xảy ra mà bạn có thể có dựa trên đầu vào. (Bắt đầu với những "tiêu chuẩn" và thay đổi hoặc tinh chỉnh chúng nếu cần.)
+3. Giữa tất cả các trường hợp đã khởi tạo trước đó, hãy xác định trường hợp nào đơn giản nhất và định nghĩa chúng. (Đây thường là các trường hợp cơ sở (hoặc đầu và cuối danh sách).)
 4. Hãy suy nghĩ về những gì bạn có sẵn (tham số, hàm, toán tử, giá trị khác, toán tử cho kiểu đó, v.v.).
 5. Xác định các trường hợp còn lại.
 6. Phản ánh về hàm. Định nghĩa có thể được đơn giản hóa? Chữ ký có thể được khái quát hóa? (chúng ta sẽ xem cách thực hiện trong các bài học sau) Nó có hoạt động như bạn dự định không?
@@ -173,7 +173,7 @@ Tôi đã chuẩn bị một phiên bản sửa đổi đôi chút của các b�
 
 Không phải lúc nào bạn cũng phải thực hiện các bước này. Khi bạn cảm thấy thoải mái hơn, bạn có thể bỏ qua một số hoặc thậm chí viết hàm ngay lập tức.
 
-Nói chung, trường hợp cơ sở (hoặc cạnh) thường là trường hợp "identity". Một trường hợp không sửa đổi kết quả mà chỉ dừng đệ quy. Ở đây chúng ta có một vài ví dụ:
+Nói chung, trường hợp cơ sở (hoặc đầu và cuối danh sách) thường là trường hợp "giống nhau". Một trường hợp không sửa đổi kết quả mà chỉ dừng đệ quy. Ở đây chúng ta có một vài ví dụ:
 
 Hai mẫu tiêu chuẩn phổ biến:
 
@@ -201,7 +201,7 @@ product (x:xs) = x * product xs
 
 Và ở đó. Chúng ta đã xác định hàm đệ quy thứ hai.
 
-Thực hành là thứ nó sẽ cung cấp cho bạn trực giác cần thiết để nhanh chóng xác định các hàm đệ quy. Vì vậy, hãy xác định một loạt các hàm để làm cho trực giác đó hoạt động! 💪
+Thực hành sẽ cung cấp cho bạn trực giác cần thiết để nhanh chóng xác định các hàm đệ quy. Vì vậy, hãy xác định một loạt các hàm để làm cho trực giác đó hoạt động! 💪
 
 
 ## Ví dụ đệ quy
@@ -377,7 +377,7 @@ Kết quả
 
 Vâng. Chúng ta đã thấy đủ các ví dụ dễ dàng. Bây giờ chúng ta hãy làm điều gì đó phức tạp hơn một chút:
 
-### `drop'`: Xóa `n` phần tử dduuf tiên trong list
+### `drop'`: Xóa `n` phần tử đầu tiên trong list
 
 Vì vậy, nó nhận một số nguyên và một danh sách rồi trả về một danh sách. Và bởi vì, về nguyên tắc, chúng ta sẽ không thao tác trên các phần tử của danh sách, nên chúng ta có thể sử dụng một kiểu đa hình như sau:
 
