@@ -75,6 +75,7 @@ const sidebars = {
       "haskell_iog/Pattern-matching",
       "haskell_iog/Improving-and-combining-functions",
       "haskell_iog/Recursion-and-folds",
+      "haskell_iog/Intro-to-Type-Classes",
     ],
     "Khóa 2-Plutus của Dr.Lars": [
       "dr-lars-lession/overview",
