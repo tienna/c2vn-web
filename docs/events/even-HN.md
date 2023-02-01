@@ -9,11 +9,11 @@
 
 📣Diễn giả: Phạm Quang
 
-📣Thời gian: 14h30, Chủ Nhật, 05/01/2023
+📣Thời gian: 14h30, Chủ Nhật, 05/02/2023
 
 📣 Địa điểm:  BT2-10 Nguyễn Xuân Khoát, Khu ngoại giao đoàn, Tây Hồ, Hà Nội [map tại đây](https://maps.app.goo.gl/6QRmmYxo4XzCQ3aZ7).
 
-📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 05/01/2023.
+📣Để phục vụ bạn được tốt nhất *(Miễn phí nước uống)*, vui lòng đăng ký 👉  [theo biểu mẫu sau đây](https://forms.gle/efnSWqbFaH6R7m7f6) trước 8:00 ngày 05/02/2023.
 
 📣Vì chúng tôi đã kết thúc tài trợ của quỹ Catalyst F8 nên các bạn khi đến buổi họp mặt tự tiền đồ uống. Rất vui mùng chào đón các bạn và Xin cảm ơn!
 
