@@ -1,7 +1,7 @@
 
 
 
-7-Giới thiệu về kiểu lớp
+7-Giới thiệu về kiểu lớp (Type Classes)
 ===================
 
 
@@ -527,7 +527,7 @@ Bây giờ, chúng ta hãy xem trình biên dịch suy ra các kiểu như thế
 
 
 
-## Loại hợp lệ chung nhất
+## Kiểu hợp lệ chung nhất
 
 
 

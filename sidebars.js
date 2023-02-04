@@ -76,6 +76,7 @@ const sidebars = {
       "haskell_iog/Improving-and-combining-functions",
       "haskell_iog/Recursion-and-folds",
       "haskell_iog/Intro-to-Type-Classes",
+      "haskell_iog/Creating-non-parameterized-types",
     ],
     "Khóa 2-Plutus của Dr.Lars": [
       "dr-lars-lession/overview",
