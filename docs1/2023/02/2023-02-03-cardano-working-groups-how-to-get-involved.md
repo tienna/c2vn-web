@@ -6,10 +6,6 @@
 
 ### [**Ivan Irakoze**](/en/blog/authors/ivan-irakoze/page-1/)
 
-Blog/Người viết truyện
-
-Truyền thông tiếp thị
-
 - ![](img/2023-02-03-cardano-working-groups-how-to-get-involved.005.png)[](mailto:ivan.irakoze@iohk.io "E-mail")
 - ![](img/2023-02-03-cardano-working-groups-how-to-get-involved.006.png)[](https://twitter.com/The_ADA_Poet "Twitter")
 
@@ -17,11 +13,11 @@ Truyền thông tiếp thị
 
 Hệ sinh thái Cardano đã chứng kiến sự tăng trưởng vượt bậc trong năm qua. Với sự tăng trưởng này, đã có những lĩnh vực phát triển cần phải mở rộng song song. Một cách để giải quyết các lĩnh vực khả năng sử dụng và khả năng tương tác này thông qua cộng tác cộng đồng là tập hợp một số Nhóm làm việc dành cho nhà phát triển không chính thức (WG). Đọc tiếp để tìm hiểu về những điều này là gì và cách bạn có thể tham gia.
 
-## **Nhóm làm việc là gì?<br>Cardano Working Groups?**
+## **Nhóm làm việc là gì? Cardano Working Groups?**
 
 Nhóm làm việc tập hợp các chuyên gia và các thành viên cộng đồng cam kết xung quanh một chủ đề thảo luận cụ thể. Mỗi nhóm đặt mục tiêu riêng về các giải pháp để thúc đẩy sự thành công của hệ sinh thái và việc áp dụng trong tương lai.
 
-[Đầu vào Đầu ra Toàn cầu (IOG)](https://iohk.io/en/about/) Â hiện đang tạo điều kiện thuận lợi cho việc tạo và khởi động các nhóm này. Mục tiêu cuối cùng là trao quyền cho cộng đồng để tự huy động và hợp tác trong các quy trình ra quyết định và thực hiện giải pháp.
+[Đầu vào Đầu ra Toàn cầu (IOG)](https://iohk.io/en/about/) Hiện đang tạo điều kiện thuận lợi cho việc tạo và khởi động các nhóm này. Mục tiêu cuối cùng là trao quyền cho cộng đồng để tự huy động và hợp tác trong các quy trình ra quyết định và thực hiện giải pháp.
 
 ## **Các loại nhóm làm việc**
 
