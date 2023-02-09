@@ -87,6 +87,9 @@ const config = {
                 href: 'https://shop.cardano2vn.io', label: 'Cardano2vn Shop', position: 'right'
             },
             {
+                href: 'http://blockchain-demo.cardano2vn.io', label: 'Blockchain Demo', position: 'right'
+            },
+            {
                 to: '/dapps-connector', label: 'DApps Connector', position: 'right' 
             },
             //{ to: '/blogiohk', label: 'News', position: 'left' },
