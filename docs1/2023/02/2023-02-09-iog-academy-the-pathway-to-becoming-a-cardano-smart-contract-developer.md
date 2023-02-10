@@ -85,7 +85,7 @@ Giờ đây, bạn đã sẵn sàng tiếp nhận các khái niệm nâng cao h�
 
 Lưu ý rằng những bài học này đang được phát triển kể từ ngày xuất bản này.
 
-### **sao mai**
+### **Plutus**
 
 Khi bạn đã học Haskell bằng cách theo dõi khóa học của chúng tôi, đọc sách hoặc nếu bạn đã quen thuộc với Haskell, bạn đã sẵn sàng bắt đầu với Plutus.
 
