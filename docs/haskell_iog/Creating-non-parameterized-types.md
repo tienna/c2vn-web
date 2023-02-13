@@ -53,27 +53,27 @@ Khi bạn xác định một kiểu đồng nghĩa, bạn sẽ không tạo mộ
 
 ### Tại sao nên sử dụng Kiểu đồng nghĩa
 
-Tại sao bạn lại thêm độ phức tạp mà không thêm nhiều hàm hơn?
+Tại sao bạn lại thêm độ phức tạp mà không thêm nhiều tính năng hơn?
 
 Bởi vì kiểu đồng nghĩa cho phép chúng ta truyền đạt nhiều thông tin hơn! Hãy xem một ví dụ.
 
-Hãy tưởng tượng bạn bắt đầu làm việc với một thư viện cho phép bạn tạo các giao dịch tiền tệ. Bạn muốn tạo một giao dịch mới, vì vậy bạn hãy xem chữ ký kiểu của hàm mà bạn cần sử dụng:
+Hãy tưởng tượng bạn bắt đầu làm việc với một thư viện cho phép bạn tạo giao dịch tiền tệ. Bạn muốn tạo một giao dịch mới, và đây là chữ ký kiểu của hàm mà bạn cần sử dụng:
 
 ```{.haskell}
 generateTx :: String -> String -> Int -> String
 ```
 
-Không phải là một chữ ký cực kỳ hữu ích. Bạn có thể suy luận rằng `Int` là giá trị cần chuyển, nhưng những `Strings` đó là gì? Và `String` mà nó trả về  gì?
+Đây không phải là một chữ ý có ý nghĩa. Bạn có thể suy luận rằng `Int` là giá trị cần chuyển, nhưng những `Strings` đó là gì? Và `String` mà nó trả về  gì? nó rất khó mô tả.
 
-Bây giờ, hãy so sánh chữ ký kiểu đó với chữ ký này:
+Bây giờ, hãy so sánh chữ ký kiểu trên với chữ ký mới này này:
 
 ```{.haskell}
 generateTx :: Address -> Address -> Value -> Id
 ```
 
-Rõ ràng, chữ ký thứ hai truyền tải ngữ cảnh tốt hơn! Hai tham số đầu tiên là địa chỉ, tham số thứ ba là giá trị của giao dịch và có vẻ như nó trả về id của giao dịch.
+Rõ ràng hơn phải không nào, chữ ký thứ hai truyền tải ngữ cảnh tốt hơn! Hai tham số đầu tiên là địa chỉ, tham số thứ ba là giá trị của giao dịch và có vẻ như nó trả về id của giao dịch.
 
-Tất cả điều đó chỉ từ chữ ký kiểu. Sự khác biệt? Chỉ cần một vài kiểu đồng nghĩa.
+Tất cả điều đó có được từ đổi kiểu chữ ký. Có sự khác biệt? Chỉ cần một vài kiểu đồng nghĩa.
 
 Hãy xem những gì chúng ta đã làm để cải thiện bối cảnh rất nhiều. Bắt đầu bằng cách tạo lại hàm có tên `generateTx` sẽ lấy địa chỉ và giá trị của giao dịch và tạo id cho giao dịch đó:
 
@@ -93,7 +93,7 @@ generateTx :: Address -> Address -> Value -> Id
 generateTx from to value = from ++ to ++ show value
 ```
 
-Siêu dễ dàng! Và nếu bạn muốn kiểm tra xem các kiểu `Address` , `Value` hoặc `Id` là gì, bạn có thể mở GHCi, tải tệp và kiểm tra thông tin của nó:
+Cực dễ hiểu! Và nếu bạn muốn kiểm tra xem các kiểu `Address` , `Value` hoặc `Id` là gì, bạn có thể mở GHCi, tải tệp và kiểm tra thông tin của nó:
 
 ```{.haskell}
 :i Address
