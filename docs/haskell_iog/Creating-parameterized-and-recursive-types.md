@@ -451,7 +451,7 @@ Kết quả:
 
 Bạn đã thấy điều này đến từ cách xa một dặm và nói: "Không thành vấn đề! Nếu chúng ta có các giá trị được sắp xếp theo thứ tự, chúng ta có thể sử dụng Cây tìm kiếm nhị phân!"
 
-### Một `Tree` `Node` s
+### `Tree` `Nodes` 
 
 Người phỏng vấn đã đúng! Hãy tưởng tượng bạn có 10.000 mục để xem qua. Nếu bạn đi từng người một, nó sẽ mất mãi mãi! Vậy bạn làm gì? Hãy nghĩ về lần cuối cùng bạn tìm kiếm một từ trong từ điển. Không, không phải trên máy tính. Tôi có nghĩa là một từ điển vật lý thực tế. Bạn đã làm nó như thế nào? Bạn có đi đến trang đầu tiên, tìm từ ở đó, sau đó đến trang thứ hai, v.v.? KHÔNG! Bạn thẳng lên mở từ điển ở giữa! Và khi bạn thấy rằng từ đó không có ở đó, bạn đã chọn một trong các nửa dựa trên thứ tự của bảng chữ cái, chia đôi nửa đó và kiểm tra lại từ đó. Bằng cách đó, mỗi lần bạn kiểm tra, bạn đã giảm được một nửa kích thước của vấn đề. Đó được gọi là "thuật toán tìm kiếm nhị phân" và nó tốt hơn nhiều so với tìm kiếm tuyến tính. Bạn hỏi tốt hơn bao nhiêu?
 
@@ -644,7 +644,7 @@ Tất nhiên, có những trường hợp khi quy tắc ngón tay cái này khô
 
 Như bạn có thể thấy, có quá nhiều thứ đang diễn ra với các kiểu, hàm tạo giá trị, hàm tạo kiểu, v.v. nên thật khó để theo dõi mọi thứ. Rất may, Haskell có một mánh khóe: **Kinds** !
 
-## các kiểu
+## Kinds
 
 Hãy quay trở lại những ngày đơn giản hơn. Ghi nhớ các kiểu `Box` ? KHÔNG? Xem nào.. nó có một hàm tạo giá trị được gọi là `Has` . Hãy kiểm tra kiểu của nó:
 
@@ -654,17 +654,17 @@ Hãy quay trở lại những ngày đơn giản hơn. Ghi nhớ các kiểu `Bo
 
 Thật tuyệt, vì vậy nó nhận một giá trị thuộc bất kỳ kiểu nào và trả về một giá trị thuộc kiểu `Box a` . Và chuyện gì xảy ra với kiểu `Box` đó? Làm thế nào tôi có thể biết thêm về nó? Nếu bạn cố kiểm tra kiểu của một kiểu, bạn sẽ gặp lỗi:
 
-"28"
+
 
 ```{.haskell}
 :t Box
 ```
 
-{.output .error ename="" evalue=""}<interactive> :1:1: lỗi: Hàm tạo dữ liệu không nằm trong phạm vi: Hộp</interactive>
+
 
 Nhưng có một cách để biết thêm về kiểu đó. Chúng ta có thể sử dụng lệnh `:i` (info):
 
-"3"
+
 
 ```{.haskell}
 :i Box
@@ -736,7 +736,7 @@ Ngoài ra, hãy lưu ý rằng ngay khi một hàm tạo kiểu nhận được 
 
 Và rằng bạn cũng có thể áp dụng một phần các hàm tạo kiểu, giống như với các hàm hoặc hàm tạo giá trị!:
 
-"12"
+
 
 ```{.haskell}
 data DoubleBox a b = Empty | Has a b deriving (Show)

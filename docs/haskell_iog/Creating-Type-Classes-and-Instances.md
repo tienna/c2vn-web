@@ -19,7 +19,7 @@ jupyter:
       hash: 31f2aee4e71d21fbe5cf8b01ff0e069b9275f58929596ceb00d14d90e3e16cd6
 ---
 
-10-Tạo các lớp và trường hợp kiểu
+10-Tạo lớp kiểu và trường
 =================================
 
 ## Outline
@@ -45,14 +45,19 @@ Trước khi tìm hiểu Overloading là gì, chúng ta hãy tìm hiểu nghĩa 
 
 "date" có nghĩa là gì? Nếu tôi nói rằng bạn chỉ có một cơ hội để trả lời và tôi sẽ cho bạn 100 đô la nếu bạn trả lời đúng, thì câu trả lời trực quan là: "Còn tùy!"
 
-Nếu bạn đang nói: "What is your date of birth?" thì điều đó có nghĩa là: > Thời gian mà một sự kiện xảy ra.
+Nếu bạn đang nói: "What is your date of birth?" thì điều đó có nghĩa là: 
+
+1. Thời gian mà một sự kiện xảy ra.
 
 
-Nếu bạn đang nói: "Joe took Laura out on a date.", thì điều đó có nghĩa là: > Một sự tham gia xã hội thường có tính chất lãng mạn (trừ khi Joe được khoanh vùng kết bạn).
+Nếu bạn đang nói: "Joe took Laura out on a date.", thì điều đó có nghĩa là:  
+
+2. Một sự tham gia xã hội thường có tính chất lãng mạn (trừ khi Joe được khoanh vùng kết bạn).
 
 
+Nếu bạn đang nói: "I'll want to date a fossil", tôi muốn tin rằng bạn không đề cập đến một cuộc hẹn hò lãng mạn mà là: 
 
-Nếu bạn đang nói: "I'll want to date a fossil", tôi muốn tin rằng bạn không đề cập đến một cuộc hẹn hò lãng mạn mà là:> Hành động ước tính hoặc tính toán ngày tháng hoặc niên đại.
+3. Hành động ước tính hoặc tính toán ngày tháng hoặc niên đại.
 
 
 Và nếu bạn tra cứu từ này, "date" cũng là tên của một kiểu trái cây và thậm chí còn có nhiều định nghĩa hơn!
@@ -63,17 +68,22 @@ Bản thân từ "Overloading" là quá tải.
 
 QUÁ TẢI:
 
-- Trong bối cảnh hàng ngày, nó thường có nghĩa là: Để đặt một tải trọng quá lớn lên hoặc vào (cái gì đó).
+Trong bối cảnh hàng ngày, nó thường có nghĩa là: 
+
+1. Để đặt một tải trọng quá lớn lên hoặc vào (cái gì đó).
 
 
-- Trong bối cảnh lập trình thông thường, nó có nghĩa là: Có nhiều triển khai của một chức năng có cùng tên.
+Trong bối cảnh lập trình thông thường, nó có nghĩa là: 
+
+2. Có nhiều triển khai của một chức năng có cùng tên.
 
 
 Làm thế nào điều này làm việc trong thực tế phụ thuộc vào ngôn ngữ. Ví dụ: một số ngôn ngữ, chẳng hạn như JavaScript, không hỗ trợ nạp chồng. Vì vậy, bạn không thể làm điều đó. Và trong các hàm khác, như C++, bạn có thể tạo nhiều hàm có cùng tên và trình biên dịch sẽ chọn định nghĩa sẽ sử dụng dựa trên các kiểu đối số.
 
 Trong Haskell, "Overloading" có nghĩa là:
 
-1. Có nhiều triển khai của một chức năng hoặc giá trị có cùng tên.
+3. Có nhiều triển khai của một chức năng hoặc giá trị có cùng tên.
+
 
 Tất nhiên, Haskell phải đẩy mạnh trò chơi. Trong Haskell, quá tải không bị hạn chế đối với các chức năng. Các giá trị cũng có thể bị quá tải. Ví dụ:
 
@@ -99,10 +109,10 @@ Khi tạo các lớp kiểu của riêng mình, chúng ta chỉ cần hai thứ.
 
 1. Tạo một Type Class nêu rõ một số hành vi.
 
-2. Tạo một Kiểu thể hiện của lớp kiểu đó với một triển khai của các hành vi cho kiểu cụ thể đó.
+2. Tạo một Kiểu trường của lớp kiểu đó với một triển khai của các hành vi cho kiểu cụ thể đó.
 
 
-**Thực hành tạo nên sự hoàn hảo**, vì vậy hãy học bằng cách thực hành. Chúng ta sẽ bắt đầu bằng cách xác định lại Kiểu `Eq` .
+**Thực hành tạo nên sự hoàn hảo**, vì vậy hãy học bằng cách thực hành. Chúng ta sẽ bắt đầu bằng cách định nghĩa lại Kiểu `Eq` .
 
 ## Lớp kiểu `Eq`
 
@@ -119,17 +129,17 @@ class Eq a where
   (/=) :: a -> a -> Bool
 ```
 
-Trong dòng đầu tiên, chúng ta bắt đầu với từ khóa `class` để cho biết chúng ta đang tạo một lớp kiểu. Tiếp theo là cách lớp kiểu sẽ được gọi ( `Eq` ). Sau đó, chúng ta viết một biến kiểu ( `a` ) đại diện cho bất kỳ kiểu nào sẽ được tạo thành một thể hiện của lớp kiểu này trong tương lai. Vì vậy, nó giống như một trình giữ chỗ. Và cuối cùng, chúng ta sử dụng từ khóa `where` để bắt đầu khối nơi chúng ta xác định các hành vi của lớp kiểu mới được tạo.
+Trong dòng đầu tiên, chúng ta bắt đầu với từ khóa `class` để cho biết chúng ta đang tạo một lớp kiểu. Tiếp theo là cách lớp kiểu sẽ được gọi ( `Eq` ). Sau đó, chúng ta viết một biến kiểu ( `a` ) đại diện cho bất kỳ kiểu nào sẽ được tạo thành một trường của lớp kiểu này trong tương lai. Vì vậy, nó giống như một trình giữ chỗ. Và cuối cùng, chúng ta sử dụng từ khóa `where` để bắt đầu khối nơi chúng ta định nghĩa các hành vi của lớp kiểu mới được tạo.
 
-Và bây giờ đến phần thú vị. Chúng ta phải xác định các hành vi. Để làm điều đó, chúng ta viết tên và kiểu chức năng hoặc giá trị mà chúng ta cần. Trong trường hợp này, chúng ta xác định các hành vi là hàm `==` --để kiểm tra xem hai giá trị có bằng nhau hay không và hàm `/=` --để kiểm tra xem hai giá trị có khác nhau không.
+Và bây giờ đến phần thú vị. Chúng ta phải định nghĩa các hành vi. Để làm điều đó, chúng ta viết tên và kiểu chức năng hoặc giá trị mà chúng ta cần. Trong trường hợp này, chúng ta định nghĩa các hành vi là hàm `==` --để kiểm tra xem hai giá trị có bằng nhau hay không và hàm `/=` --để kiểm tra xem hai giá trị có khác nhau không.
 
-Chúng tôi cũng chỉ ra rằng cả hai đều nhận hai giá trị của kiểu `a` mà chúng ta đã chỉ định làm tham số của lớp kiểu và trả về một `Bool` . `True` nếu điều kiện vượt qua và `False` nếu không.
+Chúng ta cũng chỉ ra rằng cả hai đều nhận hai giá trị của kiểu `a` mà chúng ta đã chỉ định làm tham số của lớp kiểu và trả về một `Bool` . `True` nếu điều kiện vượt qua và `False` nếu không.
 
-Và thực hiện! Chúng tôi đã có lớp kiểu `Eq` sẵn sàng hoạt động! Điều này có nghĩa là chúng ta có tên và kiểu của hai hàm mà lớp kiểu `Eq` cung cấp. Chúng tôi không có các định nghĩa ở đây vì mỗi kiểu sẽ có các định nghĩa riêng. Và những định nghĩa đó được cung cấp khi định nghĩa một thể hiện cho lớp kiểu.
+Và thực hiện! Chúng ta đã có lớp kiểu `Eq` sẵn sàng hoạt động! Điều này có nghĩa là chúng ta có tên và kiểu của hai hàm mà lớp kiểu `Eq` cung cấp. Chúng ta không có các định nghĩa ở đây vì mỗi kiểu sẽ có các định nghĩa riêng. Và những định nghĩa đó được cung cấp khi định nghĩa một trường cho lớp kiểu.
 
-### Xác định một thể hiện cho lớp kiểu `Eq`
+### Định nghĩa một trường cho lớp kiểu `Eq`
 
-Trước tiên, chúng ta cần một kiểu, vì vậy, hãy xác định một kiểu cho các phương thức thanh toán mà khách hàng có thể sử dụng trong ứng dụng của chúng ta:
+Trước tiên, chúng ta cần một kiểu, vì vậy, hãy định nghĩa một kiểu cho các phương thức thanh toán mà khách hàng có thể sử dụng trong ứng dụng của chúng ta:
 
 ```{.haskell}
 data PaymentMethod = Cash | Card | CC -- CC stands for Cryptocurrency
@@ -158,7 +168,7 @@ No instance for (Eq PaymentMethod) arising from a use of ‘==’
 In the expression: pm1 == pm2
 ```
 
-Chúng tôi đang sử dụng `==` trong biểu thức `pm1 == pm1` . Tuy nhiên, bởi vì `==` là một hành vi của lớp kiểu `Eq` và kiểu Phương thức `PaymentMethod` mới của chúng ta không phải là một thể hiện của lớp kiểu `Eq` ! Vì vậy, nó không có triển khai `==` và `/=` để sử dụng. Để khắc phục điều này, chúng ta sẽ biến nó thành một ví dụ!
+Chúng ta đang sử dụng `==` trong biểu thức `pm1 == pm1` . Tuy nhiên, bởi vì `==` là một hành vi của lớp kiểu `Eq` và kiểu Phương thức `PaymentMethod` mới của chúng ta không phải là một trường của lớp kiểu `Eq` ! Vì vậy, nó không có triển khai `==` và `/=` để sử dụng. Để khắc phục điều này, chúng ta sẽ biến nó thành một ví dụ!
 
 ```{.haskell}
 -- class Eq a where
@@ -168,11 +178,11 @@ instance Eq PaymentMethod where
   -- Implementations for Eq behaviors specific to PaymentMethod
 ```
 
-Để tạo một thể hiện, chúng ta sử dụng từ khóa `instance` hiện theo sau là tên của lớp kiểu mà chúng ta muốn tạo một thể hiện, kiểu sẽ là một thể hiện của lớp kiểu đó và từ khóa `where` . Sau đó, bên trong khối đó, chúng ta triển khai các chức năng được định nghĩa trong lớp kiểu đó.
+Để tạo một trường, chúng ta sử dụng từ khóa `instance` hiện theo sau là tên của lớp kiểu mà chúng ta muốn tạo một trường, kiểu sẽ là một trường của lớp kiểu đó và từ khóa `where` . Sau đó, bên trong khối đó, chúng ta triển khai các chức năng được định nghĩa trong lớp kiểu đó.
 
-Như bạn có thể thấy, bởi vì bây giờ chúng ta đang tạo một thể hiện cho một kiểu, nên chúng ta thay thế biến kiểu ( `a` ) mà chúng ta có trong định nghĩa lớp kiểu bằng kiểu cụ thể của mình ( `PaymentMethod` ).
+Như bạn có thể thấy, bởi vì bây giờ chúng ta đang tạo một trường cho một kiểu, nên chúng ta thay thế biến kiểu ( `a` ) mà chúng ta có trong định nghĩa lớp kiểu bằng kiểu cụ thể của mình ( `PaymentMethod` ).
 
-Và bởi vì chúng ta đang tạo một thể hiện cho lớp kiểu Eq, nên chúng ta cần triển khai các hàm `==` và `/=` . Vì vậy, chúng ta sẽ làm điều đó:
+Và bởi vì chúng ta đang tạo một trường cho lớp kiểu Eq, nên chúng ta cần triển khai các hàm `==` và `/=` . Vì vậy, chúng ta sẽ làm điều đó:
 
 ```{.haskell}
 -- class Eq a where
@@ -195,7 +205,7 @@ instance Eq PaymentMethod where
   _ /= _ = True
 ```
 
-Và thế là xong! Đó là cách bạn định nghĩa một lớp kiểu và biến một kiểu thành một thể hiện của nó! Giờ đây, `PaymentMethod` có thể tự do sử dụng các hành vi `Eq` ( `==` và `/=` ):
+Và thế là xong! Đó là cách bạn định nghĩa một lớp kiểu và biến một kiểu thành một trường của nó! Giờ đây, `PaymentMethod` có thể tự do sử dụng các hành vi `Eq` ( `==` và `/=` ):
 
 
 ```{.haskell}
@@ -224,11 +234,11 @@ Kết quả: True
 
 ### Cải thiện lớp kiểu `Eq` của chúng ta với Đệ quy lẫn nhau
 
-Công việc của chúng ta được thực hiện về mặt kỹ thuật. Chúng tôi có lớp kiểu của chúng ta và ví dụ của chúng ta. Nhưng có một thuộc tính của các hàm mà chúng ta vừa định nghĩa mà chúng ta không tận dụng được.
+Công việc của chúng ta được thực hiện về mặt kỹ thuật. Chúng ta có lớp kiểu của chúng ta và ví dụ của chúng ta. Nhưng có một thuộc tính của các hàm mà chúng ta vừa định nghĩa mà chúng ta không tận dụng được.
 
 Nếu hai giá trị bằng nhau, điều đó có nghĩa là chúng không khác nhau và nếu chúng khác nhau, điều đó có nghĩa là chúng không bằng nhau. Vì vậy, chúng ta biết rằng đối với mỗi cặp giá trị, `==` và `/=` sẽ luôn cho chúng ta giá trị `Bool` ngược lại.
 
-Chúng tôi đang trên đường trở thành những nhà phát triển Haskell vĩ đại và những nhà phát triển Haskell vĩ đại có thể làm tốt hơn thế. Vì vậy, hãy sử dụng kiến thức này để cải thiện lớp kiểu và thể hiện của chúng ta! Bắt đầu bằng cách xác định lại lớp kiểu `Eq` như thế này:
+Chúng ta đang trên đường trở thành những nhà phát triển Haskell vĩ đại và những nhà phát triển Haskell vĩ đại có thể làm tốt hơn thế. Vì vậy, hãy sử dụng kiến thức này để cải thiện lớp kiểu và trường của chúng ta! Bắt đầu bằng cách định nghĩa lại lớp kiểu `Eq` như thế này:
 
 ```{.haskell}
 class Eq a where
@@ -237,7 +247,7 @@ class Eq a where
   x == y      = not (x /= y)
 ```
 
-**Đó là cách `Eq` thực sự được xác định trong Haskell!**
+**Đó là cách `Eq` thực sự được định nghĩa trong Haskell!**
 
 Hãy phân tích mã này. Vì cả hai hàm đều có cùng kiểu nên chúng ta có thể chỉ định chúng trong một dòng. Và vâng, chúng ta cũng đang viết các định nghĩa hàm bên trong lớp kiểu. Chúng ta có thể làm điều đó miễn là chúng không phụ thuộc vào kiểu vì chúng phải làm việc với tất cả các kiểu.
 
@@ -245,11 +255,10 @@ Xem xét các định nghĩa chi tiết hơn, chúng ta thấy mình đang sử 
 
 Vì vậy, trong dòng thứ ba, chúng ta đang nói rằng kết quả của việc áp dụng `/=` cho `x` và `y` là đối lập ( `not` ) của kết quả của việc áp dụng `==` cho cùng một `x` và `y` . Và ở dòng thứ tư, chúng ta đang nói rằng kết quả của việc áp dụng `==` cho `x` và `y` là đối lập ( `not` ) của kết quả của việc áp dụng `/=` cho cùng một `x` và `y` .
 
-Điều này được gọi là đệ quy lẫn nhau vì cả hai chức năng được xác định theo thuật ngữ của nhau. Bằng cách định nghĩa `==` và `/=` là đối lập của nhau, Haskell có thể suy ra hành vi của cái này từ cái kia.
+Điều này được gọi là đệ quy lẫn nhau vì cả hai chức năng được định nghĩa theo thuật ngữ của nhau. Bằng cách định nghĩa `==` và `/=` là đối lập của nhau, Haskell có thể suy ra hành vi của cái này từ cái kia.
 
-Và, tất nhiên, giống như bất kỳ đệ quy nào khác, nó cần một trường hợp cơ sở để biết khi nào nên dừng đệ quy! Và đó là những gì chúng ta cung cấp khi triển khai một phiên bản! Ví dụ: hãy xác định lại đối tượng PaymentMethod cho kiểu lớp mới này:
+Và, tất nhiên, giống như bất kỳ đệ quy nào khác, nó cần một trường hợp cơ sở để biết khi nào nên dừng đệ quy! Và đó là những gì chúng ta cung cấp khi triển khai một phiên bản! Ví dụ: hãy định nghĩa lại đối tượng PaymentMethod cho kiểu lớp mới này:
 
-{.cell .code
 
 ```{.haskell}
 instance Eq PaymentMethod where
@@ -281,7 +290,7 @@ Trong dòng này:
 
 Nó nói rằng để có *định nghĩa đầy đủ tối thiểu* của lớp kiểu, bạn phải triển khai `==` OR `/=` .
 
-Trong thế giới thực, hầu hết tất cả các kiểu đều là thể hiện của lớp kiểu `Eq` . Nhưng hãy nhớ rằng, chúng ta đang ở trong một vũ trụ song song nơi bạn là người có tầm nhìn xa tạo ra lớp kiểu `Eq` để biến thế giới thành một nơi tốt đẹp hơn. Vì vậy, nếu chúng ta dừng ở đây, các hàm `==` và `/=` sẽ không bị quá tải! Bởi vì họ sẽ chỉ có định nghĩa cho `PaymentMethod` .
+Trong thế giới thực, hầu hết tất cả các kiểu đều là trường của lớp kiểu `Eq` . Nhưng hãy nhớ rằng, chúng ta đang ở trong một vũ trụ song song nơi bạn là người có tầm nhìn xa tạo ra lớp kiểu `Eq` để biến thế giới thành một nơi tốt đẹp hơn. Vì vậy, nếu chúng ta dừng ở đây, các hàm `==` và `/=` sẽ không bị quá tải! Bởi vì họ sẽ chỉ có định nghĩa cho `PaymentMethod` .
 
 Nhưng có một lý do khiến bạn quyết định tạo lớp kiểu `Eq` này. Và lý do là bạn nghĩ rằng các hành vi mà nó cung cấp là hữu ích cho nhiều kiểu. Ví dụ như kiểu Blockchain:
 
@@ -308,13 +317,13 @@ Bây giờ, `==` và `/=` thực sự bị quá tải vì chúng có nhiều hơ
 
 Chúng ta làm được rồi!! Và chúng ta đang trên đà phát triển, vì vậy hãy tiếp tục!
 
-Cho đến nay, chúng ta đã tạo hai phiên bản của lớp kiểu `Eq` . Cả hai cho các kiểu không tham số. Hãy tìm hiểu cách chúng ta có thể định nghĩa một thể hiện cho một kiểu được tham số hóa.
+Cho đến nay, chúng ta đã tạo hai phiên bản của lớp kiểu `Eq` . Cả hai cho các kiểu không tham số. Hãy tìm hiểu cách chúng ta có thể định nghĩa một trường cho một kiểu được tham số hóa.
 
-### Xác định một thể hiện cho một kiểu tham số
+### Định nghĩa trường cho một kiểu tham số
 
-Để tạo một thể hiện cho kiểu được tham số hóa, trước tiên, chúng ta cần kiểu được tham số hóa:
+Để tạo một trường cho kiểu được tham số hóa, trước tiên, chúng ta cần kiểu được tham số hóa:
 
-"32"
+
 
 ```{.haskell}
 data Box a = Empty | Has a
@@ -388,9 +397,9 @@ instance Eq (Box a) where
 -- ...
 ```
 
-Bằng cách xác định thể hiện này, tất cả các kiểu được tạo bằng hàm tạo kiểu `Box` (như `Box String` hoặc `Box Int` ) sẽ là một thể hiện của `Eq` .
+Bằng cách định nghĩa này, tất cả các kiểu được tạo bằng hàm tạo kiểu `Box` (như `Box String` hoặc `Box Int` ) sẽ là một trường của `Eq` .
 
-Bây giờ, đợi một chút. Làm cách nào để chúng ta xác định thể hiện nếu chúng ta không biết kiểu giá trị bên trong hộp? Chà, nếu chúng ta quyết định rằng:
+Bây giờ, đợi một chút. Làm cách nào để chúng ta định nghĩa chúng nếu chúng ta không biết kiểu giá trị bên trong hộp? Chà, nếu chúng ta quyết định rằng:
 
 - Hai hộp chứa các phần tử bằng nhau thì bằng nhau.
 - Hai ô trống bằng nhau.
@@ -414,9 +423,9 @@ instance Eq (Box a) where
           In the instance declaration for ‘Eq (Box a)’
 ```
 
-Trong công thức đầu tiên, chúng ta xác định `==` cho kiểu `Box a` bằng cách áp dụng `==` cho `a` mà nó chứa. Vì `Has x` thuộc kiểu `Box a` nên `x` thuộc kiểu `a` . Tương tự cho các giá trị còn lại. Vì vậy, nếu cả hai hộp chứa cùng một phần tử, thì bản thân các hộp đều giống nhau. Khác, họ khác nhau. Vì vậy, chúng ta đã làm cho phiên bản của `Box a` phụ thuộc vào phiên `a` của .
+Trong công thức đầu tiên, chúng ta định nghĩa `==` cho kiểu `Box a` bằng cách áp dụng `==` cho `a` mà nó chứa. Vì `Has x` thuộc kiểu `Box a` nên `x` thuộc kiểu `a` . Tương tự cho các giá trị còn lại. Vì vậy, nếu cả hai hộp chứa cùng một phần tử, thì bản thân các hộp đều giống nhau. Khác, họ khác nhau. Vì vậy, chúng ta đã làm cho phiên bản của `Box a` phụ thuộc vào phiên `a` của .
 
-Trong công thức thứ hai, chúng ta xác định rằng nếu cả hai ô đều trống thì chúng bằng nhau.
+Trong công thức thứ hai, chúng ta định nghĩa rằng nếu cả hai ô đều trống thì chúng bằng nhau.
 
 Đối với mọi trường hợp khác, các hộp là khác nhau.
 
@@ -436,7 +445,7 @@ In an equation for ‘==’: Has x == Has y = x == y
 In the instance declaration for ‘Eq (Box a)’
 ```
 
-Trình biên dịch là chính xác! Chúng tôi đang sử dụng `==` giữa hai giá trị ( `x` và `y` ) của kiểu `a` mà không đảm bảo rằng chính kiểu `a` là một thể hiện của `Eq` !
+Trình biên dịch là chính xác! Chúng ta đang sử dụng `==` giữa hai giá trị ( `x` và `y` ) của kiểu `a` mà không đảm bảo rằng chính kiểu `a` là một trường của `Eq` !
 
 Vậy chúng ta nên làm gì? Chà, trình biên dịch cũng cho chúng ta biết cách sửa lỗi này:
 
@@ -444,7 +453,7 @@ Vậy chúng ta nên làm gì? Chà, trình biên dịch cũng cho chúng ta bi�
 Possible fix: add (Eq a) to the context of the instance declaration
 ```
 
-Tương tự với các hàm, chúng ta có thể thêm ràng buộc rằng kiểu `a` trong thể hiện của `Eq (Box a)` cũng phải là một thể hiện của lớp kiểu `Eq` . Như thế này:
+Tương tự với các hàm, chúng ta có thể thêm ràng buộc rằng kiểu `a` trong trường của `Eq (Box a)` cũng phải là một trường của lớp kiểu `Eq` . Như thế này:
 
 ```{.haskell}
 instance (Eq a) => Eq (Box a) where
@@ -453,7 +462,7 @@ instance (Eq a) => Eq (Box a) where
   _ == _ = False
 ```
 
-Bằng cách này, kiểu `Box a` sẽ là một thể hiện của `Eq` cho tất cả các kiểu `a` cũng là một thể hiện của `Eq` .
+Bằng cách này, kiểu `Box a` sẽ là một trường của `Eq` cho tất cả các kiểu `a` cũng là một trường của `Eq` .
 
 Aaaaa và chúng ta xong rồi! Chúng ta có thể sử dụng ví dụ mới này như thế này:
 
@@ -525,7 +534,7 @@ class WeAccept a where
 :k WeAccept
 ```
 
-Bây giờ chúng ta đã có lớp kiểu của mình, chúng ta có thể tạo các thể hiện cho `PaymentMethod` , `Blockchain` , `Country` và thậm chí cả `Box` như thế này:
+Bây giờ chúng ta đã có lớp kiểu của mình, chúng ta có thể tạo các trường cho `PaymentMethod` , `Blockchain` , `Country` và thậm chí cả `Box` như thế này:
 
 ```{.haskell}
 instance WeAccept PaymentMethod where
@@ -571,7 +580,7 @@ Kết quả:
     True
 ```
 
-Chúng tôi cũng có thể tạo các chức năng có thể được áp dụng cho tất cả các kiểu là phiên bản của `WeAccept` :
+Chúng ta cũng có thể tạo các chức năng có thể được áp dụng cho tất cả các kiểu là phiên bản của `WeAccept` :
 
 ```{.haskell}
 -- Creating fancyFunction
@@ -606,7 +615,7 @@ Chúng ta sẽ làm thêm một ví dụ nữa trước khi tiếp tục sang ph
 
 ## Lớp kiểu `Container`
 
-Đây là tình huống: Chúng tôi đang làm việc trên một phần mềm hậu cần có hai kiểu gói hàng khác nhau. Một chiếc hộp thông thường có thể chứa hoặc không chứa thứ gì đó, và một món quà, có thể chứa hoặc không chứa thứ gì đó, nhưng nó luôn có bảng tên ghi món quà đó dành cho ai. Vì vậy, chúng ta có hai kiểu:
+Đây là tình huống: Chúng ta đang làm việc trên một phần mềm hậu cần có hai kiểu gói hàng khác nhau. Một chiếc hộp thông thường có thể chứa hoặc không chứa thứ gì đó, và một món quà, có thể chứa hoặc không chứa thứ gì đó, nhưng nó luôn có bảng tên ghi món quà đó dành cho ai. Vì vậy, chúng ta có hai kiểu:
 
 ```{.haskell}
 data Box a       = Empty          | Has a            deriving (Show)
@@ -616,15 +625,15 @@ data Present t a = EmptyPresent t | PresentFor t a   deriving (Show)
 :k Present
 ```
 
-Bởi vì chúng ta đã quyết định rằng thẻ của món quà ( `t` ) có thể là một số, tên hoặc bất kỳ thứ gì khác có thể xác định khách hàng, chúng ta cũng sẽ tham số hóa kiểu của nó.
+Bởi vì chúng ta đã quyết định rằng thẻ của món quà ( `t` ) có thể là một số, tên hoặc bất kỳ thứ gì khác có thể định nghĩa khách hàng, chúng ta cũng sẽ tham số hóa kiểu của nó.
 
-Bây giờ, một số phần của quy trình yêu cầu các chức năng chung cho cả hai kiểu. Chúng tôi cần:
+Bây giờ, một số phần của quy trình yêu cầu các chức năng chung cho cả hai kiểu. Chúng ta cần:
 
 - Một để kiểm tra xem hộp hoặc quà có trống không.
 - Một để kiểm tra xem một giá trị cụ thể có được chứa bên trong hộp hay không.
 - Và một để thay thế nội dung của hộp hoặc quà tặng.
 
-Thay vì tự viết các hàm và sau đó chuyển đổi chúng thành một lớp kiểu và các thể hiện như chúng ta đã làm trong hai ví dụ trước, hãy chuyển thẳng sang lớp kiểu.
+Thay vì tự viết các hàm và sau đó chuyển đổi chúng thành một lớp kiểu và các trường như chúng ta đã làm trong hai ví dụ trước, hãy chuyển thẳng sang lớp kiểu.
 
 ```{.haskell}
 class Container c where
@@ -694,9 +703,9 @@ Chúng ta có thể thấy điều này nếu chúng ta kiểm tra kiểu của 
 :k Container
 ```
 
-Bây giờ chúng ta đã có lớp kiểu của mình, hãy tạo các thể hiện cho kiểu `Box` :
+Bây giờ chúng ta đã có lớp kiểu của mình, hãy tạo các trường cho kiểu `Box` :
 
-"27"
+
 
 ```{.haskell}
 -- class Container c where
@@ -749,9 +758,9 @@ instance Container (Present t) where
 :k Present String
 ```
 
-Bây giờ, thể hiện dành cho hàm tạo kiểu `Present t` . Điều này là do bản thân `Present` có kiểu `* -> * -> *` , nhưng vì `Container` nhận một hàm tạo kiểu `* -> *` , nên chúng ta phải áp dụng `Present` cho một kiểu---như `Present String` --- để có được kiểu chúng ta cần. Và bởi vì chúng ta muốn có thể sử dụng bất kỳ kiểu nào làm thẻ, nên chúng ta sử dụng biến kiểu `t` .
+Bây giờ, trường dành cho hàm tạo kiểu `Present t` . Điều này là do bản thân `Present` có kiểu `* -> * -> *` , nhưng vì `Container` nhận một hàm tạo kiểu `* -> *` , nên chúng ta phải áp dụng `Present` cho một kiểu---như `Present String` --- để có được kiểu chúng ta cần. Và bởi vì chúng ta muốn có thể sử dụng bất kỳ kiểu nào làm thẻ, nên chúng ta sử dụng biến kiểu `t` .
 
-Vì vậy, phần này là quan trọng. Chữ `t` trong `Present t` là thẻ. Và toàn bộ hàm tạo kiểu `Present t` là `c` . Chúng ta có thể coi hàm tạo kiểu `Present t` là `c` vì nó là kiểu không bao giờ thay đổi. Chúng tôi không thay đổi kiểu thẻ trong bất kỳ chức năng nào. Nhưng chúng ta sửa đổi kiểu nội dung trong chức năng `replace` . Khi chúng ta sử dụng `replace` , kiểu nội dung có thể thay đổi từ `a` thành `b` , vì vậy chúng ta không thể coi chúng là kiểu không đổi như `t` . Đó là lý do tại sao chúng là tham số cho hàm tạo kiểu `c` , vì vậy chúng ta có thể thay đổi kiểu trong hàm `replace` nếu cần.
+Vì vậy, phần này là quan trọng. Chữ `t` trong `Present t` là thẻ. Và toàn bộ hàm tạo kiểu `Present t` là `c` . Chúng ta có thể coi hàm tạo kiểu `Present t` là `c` vì nó là kiểu không bao giờ thay đổi. Chúng ta không thay đổi kiểu thẻ trong bất kỳ chức năng nào. Nhưng chúng ta sửa đổi kiểu nội dung trong chức năng `replace` . Khi chúng ta sử dụng `replace` , kiểu nội dung có thể thay đổi từ `a` thành `b` , vì vậy chúng ta không thể coi chúng là kiểu không đổi như `t` . Đó là lý do tại sao chúng là tham số cho hàm tạo kiểu `c` , vì vậy chúng ta có thể thay đổi kiểu trong hàm `replace` nếu cần.
 
 Giống như trước đây, việc triển khai thực tế các chức năng là đơn giản.
 
@@ -777,15 +786,15 @@ guessWhat'sInside (PresentFor "Mary" "A Raspberry Pi!") "A Ponny!"  -- **Mary's 
 guessWhat'sInside (Has 1) 15
 ```
 
-Hiểu lớp kiểu này và các thể hiện là phần khó nhất của bài học. Có thể mất một lúc để hiểu đầy đủ những gì chúng ta vừa thấy. Nhưng đừng lo lắng, nếu một cái gì đó không nhấp, nó sẽ làm với một số thực hành. Đó là lý do tại sao điều quan trọng là phải làm bài tập về nhà.
+Hiểu lớp kiểu này và các trường là phần khó nhất của bài học. Có thể mất một lúc để hiểu đầy đủ những gì chúng ta vừa thấy. Nhưng đừng lo lắng, nếu một cái gì đó không nhấp, nó sẽ làm với một số thực hành. Đó là lý do tại sao điều quan trọng là phải làm bài tập về nhà.
 
 Bây giờ, hãy tìm hiểu về phân lớp. Sau tất cả những gì chúng ta đã trải qua, đây là một miếng bánh.
 
 ## Khám phá lớp kiểu `Ord` (Phân lớp)
 
-Chúng tôi chưa bao giờ nói về phân lớp trước đây, nhưng bạn đã biết nó hoạt động như thế nào.
+Chúng ta chưa bao giờ nói về phân lớp trước đây, nhưng bạn đã biết nó hoạt động như thế nào.
 
-Chúng ta hãy xem nó trong thực tế khi định nghĩa một thể hiện cho lớp kiểu `Ord` .
+Chúng ta hãy xem nó trong thực tế khi định nghĩa một trường cho lớp kiểu `Ord` .
 
 Nếu chúng ta chạy lệnh info trên lớp kiểu `Ord` ( `:i Ord` ), chúng ta sẽ nhận được kết quả như sau:
 
@@ -802,30 +811,30 @@ class Eq a => Ord a where           -- That "Eq a =>" is new!! 🤔
   {-# MINIMAL compare | (<=) #-}    -- We can only implement "compare" or "<=".
 ```
 
-Tất cả mọi thứ kiểm tra ra. Ngoại trừ `Eq a =>` . Chúng tôi đã thấy điều này trong cả chức năng và trường hợp. Nhưng không bao giờ trên định nghĩa lớp kiểu.
+Tất cả mọi thứ kiểm tra ra. Ngoại trừ `Eq a =>` . Chúng ta đã thấy điều này trong cả chức năng và trường hợp. Nhưng không bao giờ trên định nghĩa lớp kiểu.
 
 Điều này ( `Eq a =>` ) có nghĩa là những gì bạn tưởng tượng:
 
-**Để biến một kiểu `a` một thể hiện của `Ord` , trước tiên chúng ta phải biến nó thành một thể hiện của `Eq` ! Có nghĩa là `Eq` là điều kiện tiên quyết cho `Ord` . Nói cách khác, `Eq` là lớp cha của `Ord` hoặc `Ord` là lớp con của `Eq` .**
+**Để biến một kiểu `a` một trường của `Ord` , trước tiên chúng ta phải biến nó thành một trường của `Eq` ! Có nghĩa là `Eq` là điều kiện tiên quyết cho `Ord` . Nói cách khác, `Eq` là lớp cha của `Ord` hoặc `Ord` là lớp con của `Eq` .**
 
-Các siêu lớp cho phép suy ra các chữ ký đơn giản hơn. Bằng cách nói rằng một kiểu là một thể hiện của `Ord` , chúng ta không chỉ biết rằng nó có các hành vi của `Ord` mà còn có các hành vi của `Eq` . Ngoài ra, điều này cho phép chúng ta sử dụng các hành vi của lớp kiểu `Eq` để xác định các thể hiện của lớp kiểu `Ord` . Đó thực sự là một cái gì đó xảy ra trong trường hợp này. Lớp kiểu `Ord` sử dụng các chức năng được cung cấp bởi lớp kiểu `Eq` .
+Các siêu lớp cho phép suy ra các chữ ký đơn giản hơn. Bằng cách nói rằng một kiểu là một trường của `Ord` , chúng ta không chỉ biết rằng nó có các hành vi của `Ord` mà còn có các hành vi của `Eq` . Ngoài ra, điều này cho phép chúng ta sử dụng các hành vi của lớp kiểu `Eq` để định nghĩa các trường của lớp kiểu `Ord` . Đó thực sự là một cái gì đó xảy ra trong trường hợp này. Lớp kiểu `Ord` sử dụng các chức năng được cung cấp bởi lớp kiểu `Eq` .
 
-Chúng tôi không thể nhìn thấy nó vì lệnh thông tin không hiển thị toàn bộ định nghĩa lớp kiểu. Giống như khi chúng ta chạy lệnh info cho lớp kiểu `Eq` , nó không hiển thị các định nghĩa đệ quy lẫn nhau của `==` và `/=` mà chúng ta vừa viết.
+Chúng ta không thể nhìn thấy nó vì lệnh thông tin không hiển thị toàn bộ định nghĩa lớp kiểu. Giống như khi chúng ta chạy lệnh info cho lớp kiểu `Eq` , nó không hiển thị các định nghĩa đệ quy lẫn nhau của `==` và `/=` mà chúng ta vừa viết.
 
-Tuy nhiên, mặc dù chúng ta không thể nhìn thấy chúng, nhưng chúng ta biết rằng có một loạt các định nghĩa hàm được định nghĩa theo thuật ngữ của nhau. Đó là lý do tại sao chúng ta có thể triển khai toàn bộ phiên bản bằng cách chỉ xác định `compare` hoặc `<=` .
+Tuy nhiên, mặc dù chúng ta không thể nhìn thấy chúng, nhưng chúng ta biết rằng có một loạt các định nghĩa hàm được định nghĩa theo thuật ngữ của nhau. Đó là lý do tại sao chúng ta có thể triển khai toàn bộ phiên bản bằng cách chỉ định nghĩa `compare` hoặc `<=` .
 
-Lệnh thông tin không hiển thị tất cả mã đó vì chúng ta, các nhà phát triển, không quan tâm đến nó. Chúng tôi chỉ muốn biết:
+Lệnh thông tin không hiển thị tất cả mã đó vì chúng ta, các nhà phát triển, không quan tâm đến nó. Chúng ta chỉ muốn biết:
 
 - Những hành vi nào đi kèm với lớp kiểu. Để xem đó có phải thứ chúng ta cần không.
 - Kiểu của lớp kiểu và các hành vi tối thiểu chúng ta cần thực hiện. Để chỉ thực hiện những điều đó.
 - Nếu nó phụ thuộc vào lớp kiểu khác. Để thực hiện cái đó trước cái này.
-- Và cuối cùng, những kiểu nào đã là một thể hiện của lớp kiểu này. Để xem kiểu nào đã có thể sử dụng những hành vi đó.
+- Và cuối cùng, những kiểu nào đã là một trường của lớp kiểu này. Để xem kiểu nào đã có thể sử dụng những hành vi đó.
 
 Và đó là những gì lệnh thông tin cho chúng ta thấy.
 
-Vì vậy, để biến một kiểu thành thể hiện của `Ord` , trước tiên, chúng ta phải biến nó thành một thể hiện của `Eq` . May mắn thay, chúng ta đã tạo một vài phiên bản cho `Eq` trước đây, vì vậy chúng ta đã hoàn thành được nửa chặng đường nếu muốn tạo phiên bản `Ord` cho bất kỳ kiểu nào trong số đó.
+Vì vậy, để biến một kiểu thành trường của `Ord` , trước tiên, chúng ta phải biến nó thành một trường của `Eq` . May mắn thay, chúng ta đã tạo một vài phiên bản cho `Eq` trước đây, vì vậy chúng ta đã hoàn thành được nửa chặng đường nếu muốn tạo phiên bản `Ord` cho bất kỳ kiểu nào trong số đó.
 
-Ví dụ: nếu chúng ta muốn tạo một thể hiện của `Box a` cho lớp kiểu `Ord` , chúng ta phải triển khai một trong các hàm cần thiết cho định nghĩa đầy đủ tối thiểu! Trong trường hợp này, chúng ta đã chọn chức năng `compare` :
+Ví dụ: nếu chúng ta muốn tạo một trường của `Box a` cho lớp kiểu `Ord` , chúng ta phải triển khai một trong các hàm cần thiết cho định nghĩa đầy đủ tối thiểu! Trong trường hợp này, chúng ta đã chọn chức năng `compare` :
 
 ```{.haskell}
 -- type Ord :: * -> Constraint
@@ -857,28 +866,28 @@ Kết quả:
 
 Đây là những gì đang xảy ra ở đây:
 
-- Nếu cả hai hộp có một số giá trị bên trong, chúng ta sẽ so sánh các giá trị. Và bởi vì chúng ta đang áp dụng hàm `compare` cho `x` và `y` của kiểu `a` , nên chúng ta cần thêm ràng buộc rằng kiểu `a` phải là một thể hiện của `Ord` .
+- Nếu cả hai hộp có một số giá trị bên trong, chúng ta sẽ so sánh các giá trị. Và bởi vì chúng ta đang áp dụng hàm `compare` cho `x` và `y` của kiểu `a` , nên chúng ta cần thêm ràng buộc rằng kiểu `a` phải là một trường của `Ord` .
 - Nếu một trong các hộp `Empty` và hộp kia thì không, thì bên trong hộp có gì không quan trọng. Nó sẽ luôn lớn hơn cái `Empty` . Bởi vì tôi nói thế.
 - Tất nhiên, nếu cả hai đều là `Empty` thì chúng bằng nhau.
 
 Và bùm! đó là nó!
 
-Chúng tôi tạo ra:
+Chúng ta tạo ra:
 
 - Lớp kiểu `Eq` với 3 trường hợp khác nhau.
 - Lớp kiểu `WeAccept` với 4 phiên bản.
-- Sau đó, lớp kiểu `Container` với 3 thể hiện.
-- Và cuối cùng, chúng ta tạo một kiểu là một thể hiện của lớp kiểu `Ord` .
+- Sau đó, lớp kiểu `Container` với 3 trường.
+- Và cuối cùng, chúng ta tạo một kiểu là một trường của lớp kiểu `Ord` .
 
 **Chúc mừng! 🎉 Bạn biết mọi thứ cần thiết để làm việc với các kiểu lớp!!**
 
 Trong phần cuối cùng của bài học này, chúng ta sẽ tìm hiểu cách thức và thời điểm tự động lấy các phiên bản. Tiết kiệm cho chúng ta một chút thời gian quý báu và giảm số lượng mã chúng ta phải duy trì.
 
-## xuất phát
+## Deriving
 
-Các thể hiện có nguồn gốc là một cách tự động để biến một kiểu thành một thể hiện thành một lớp kiểu. Điều này là có thể bởi vì nhiều kiểu lớp phổ biến thường được thực hiện theo cùng một cách. Và một số người thông minh có bằng tiến sĩ đã tìm ra cách tạo mã này dựa trên định nghĩa của kiểu.
+Các trường có nguồn gốc là một cách tự động để biến một kiểu thành một trường thành một lớp kiểu. Điều này là có thể bởi vì nhiều kiểu lớp phổ biến thường được thực hiện theo cùng một cách. Và một số người thông minh có bằng tiến sĩ đã tìm ra cách tạo mã này dựa trên định nghĩa của kiểu.
 
-Điều này được giới hạn trong `Eq` , `Ord` , `Enum` , `Show` và các thư viện khác được xác định trong Prelude hoặc thư viện chuẩn---các thư viện đi kèm với Haskell và chúng ta sẽ khám phá trong các bài học sau. Bây giờ, hãy nghĩ rằng tất cả các lớp kiểu mà chúng ta đã sử dụng cho đến bây giờ và chúng ta không tự tạo ra chúng đều có thể được dẫn xuất.
+Điều này được giới hạn trong `Eq` , `Ord` , `Enum` , `Show` và các thư viện khác được định nghĩa trong Prelude hoặc thư viện chuẩn---các thư viện đi kèm với Haskell và chúng ta sẽ khám phá trong các bài học sau. Bây giờ, hãy nghĩ rằng tất cả các lớp kiểu mà chúng ta đã sử dụng cho đến bây giờ và chúng ta không tự tạo ra chúng đều có thể được dẫn xuất.
 
 Để sử dụng tính năng này, hãy thêm từ khóa `deriving` sinh vào cuối khai báo kiểu của bạn với tên của tất cả các lớp kiểu mà bạn muốn dẫn xuất. Ví dụ: nếu chúng ta làm điều này:
 
@@ -919,9 +928,9 @@ Vì vậy, nếu chúng ta có thể làm điều đó ngay từ đầu, thì t�
 
 Chà... Một lý do là không phải tất cả các lớp kiểu đều có thể được dẫn xuất. Và một điều nữa là việc bắt nguồn đôi khi có thể sai.
 
-### Bắt nguồn có thể đi sai
+### Deriving có thể đi sai
 
-Mỗi kiểu lớp có bộ quy tắc riêng để dẫn xuất các thể hiện. Ví dụ: khi lấy kiểu `Ord` , các hàm tạo giá trị được xác định trước đó sẽ nhỏ hơn. Vì vậy, trong trường hợp này:
+Mỗi kiểu lớp có bộ quy tắc riêng để dẫn xuất các trường. Ví dụ: khi lấy kiểu `Ord` , các hàm tạo giá trị được định nghĩa trước đó sẽ nhỏ hơn. Vì vậy, trong trường hợp này:
 
 ```{.haskell}
 data PaymentMethod = Cash | Card | CC deriving (Eq, Ord)
@@ -961,19 +970,19 @@ Kết quả:
     True
 ```
 
-Nếu một hàm tạo giá trị có một tham số ( `Has a` ) và hai giá trị được tạo từ cùng một hàm tạo ( `Has 5` và `Has 6` ), thì các tham số sẽ được so sánh (giống như chúng ta đã làm khi tự định nghĩa các thể hiện).
+Nếu một hàm tạo giá trị có một tham số ( `Has a` ) và hai giá trị được tạo từ cùng một hàm tạo ( `Has 5` và `Has 6` ), thì các tham số sẽ được so sánh (giống như chúng ta đã làm khi tự định nghĩa các trường).
 
 Đó là những quy tắc mà trình biên dịch tuân theo để tự động tạo cá thể `Ord` cho kiểu của bạn. Các lớp kiểu khác có các quy tắc khác. Chúng ta sẽ không đi qua các quy tắc của từng kiểu lớp, nhưng tôi sẽ cung cấp một [liên kết](https://www.haskell.org/onlinereport/haskell2010/haskellch11.html) với một lời giải thích ngắn trong bài học tương tác. Trong trường hợp bạn muốn tìm hiểu thêm.
 
 Bây giờ, giả sử chúng ta muốn sử dụng một kiểu để quản lý độ dài cho phần mềm Kỹ thuật dân dụng.
 
-Chúng tôi làm việc với cả mét và kilômét, nhưng vì chúng ta không muốn vô tình trộn lẫn chúng và gặp lỗi nghiêm trọng tiềm ẩn, nên chúng ta xác định một kiểu dữ liệu có hai hàm tạo. Một cho mét và một cho km. Cả hai đều chứa giá trị kiểu `Double` . Chúng tôi cũng sẽ dẫn xuất lớp kiểu `Eq` .
+Chúng ta làm việc với cả mét và kilômét, nhưng vì chúng ta không muốn vô tình trộn lẫn chúng và gặp lỗi nghiêm trọng tiềm ẩn, nên chúng ta định nghĩa một kiểu dữ liệu có hai hàm tạo. Một cho mét và một cho km. Cả hai đều chứa giá trị kiểu `Double` . Chúng ta cũng sẽ dẫn xuất lớp kiểu `Eq` .
 
 ```{.haskell}
 data Length = M Double | Km Double deriving (Eq)
 ```
 
-Tuy nhiên, ngay khi bắt đầu sử dụng kiểu dữ liệu này, chúng ta phát hiện ra một vấn đề nhỏ. Chúng tôi biết rằng 1000 mét bằng 1 km, nhưng khi chúng ta kiểm tra điều này trong mã của mình, chúng ta nhận thấy rằng không phải vậy!:
+Tuy nhiên, ngay khi bắt đầu sử dụng kiểu dữ liệu này, chúng ta phát hiện ra một vấn đề nhỏ. Chúng ta biết rằng 1000 mét bằng 1 km, nhưng khi chúng ta kiểm tra điều này trong mã của mình, chúng ta nhận thấy rằng không phải vậy!:
 
 ```{.haskell}
 M 1000 == Km 1 -- False
@@ -992,7 +1001,7 @@ instance Eq Length where
 
 Điều này rất hiệu quả nếu chúng ta so sánh mét với mét và kilômét với kilômét. Nhưng chúng ta đã triển khai sai để so sánh giữa các hàm tạo vì Haskell không biết rằng giá trị của các hàm tạo khác nhau có liên quan theo bất kỳ cách nào!! Haskell chỉ giả định rằng nếu các hàm tạo khác nhau, thì các giá trị cũng vậy!
 
-Vì vậy, trong trường hợp này, chúng ta phải tự viết thể hiện để tính đến mối quan hệ giữa các hàm tạo. Như thế này:
+Vì vậy, trong trường hợp này, chúng ta phải tự viết trường để tính đến mối quan hệ giữa các hàm tạo. Như thế này:
 
 ```{.haskell}
 data Length = M Double | Km Double
@@ -1020,11 +1029,11 @@ Và để kết thúc bài học, đây là một số mẹo để viết mã tr
 
 
 
-- Chúng tôi không định nghĩa các lớp kiểu thường xuyên. Thông thường, những thứ đi kèm với Haskell là tất cả những gì chúng ta cần.
+- Chúng ta không định nghĩa các lớp kiểu thường xuyên. Thông thường, những thứ đi kèm với Haskell là tất cả những gì chúng ta cần.
 
 
 
-- Chúng tôi triển khai các phiên bản khá nhiều. Và nó thường (nhưng không phải luôn luôn) là một ý tưởng tốt để lấy chúng. Nếu bạn nghi ngờ, hãy thử tính toán tự động và kiểm tra các giả định của bạn. Bạn luôn có thể quay lại và xác định các phiên bản theo cách thủ công.
+- Chúng ta triển khai các phiên bản khá nhiều. Và nó thường (nhưng không phải luôn luôn) là một ý tưởng tốt để lấy chúng. Nếu bạn nghi ngờ, hãy thử tính toán tự động và kiểm tra các giả định của bạn. Bạn luôn có thể quay lại và định nghĩa các phiên bản theo cách thủ công.
 
 
 

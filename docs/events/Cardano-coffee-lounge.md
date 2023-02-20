@@ -417,3 +417,10 @@ Thành viên tham gia đặc các câu hỏi
 ![](img/HCM-B18-3.jpg)
 
 ![](img/HCM-B18-4.jpg)
+
+## Buổi 23-HN: Cardano Coffee Lounge “Stablecoin Djed mainnet-Cơ hội & rủi ro”
+
+![](img/B23-HN.png)
+
+
+![](img/HN-B23-1.jpg)
