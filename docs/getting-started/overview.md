@@ -61,3 +61,5 @@ Nếu bạn có kinh nghiệm với các nền tảng hợp đồng thông minh 
 - Bạn có thể chứng minh sự tồn tại của tệp, văn bản hoặc bất kỳ dữ liệu nào khác tại một thời điểm cụ thể bằng [transaction metadata](https://developers.cardano.org/docs/transaction-metadata/). và bạn có thể dụng [metadata của giao dịch](https://developers.cardano.org/docs/transaction-metadata/)để xác minh sản phẩm vật lý và các sản phẩm chính hangx.
 - Bạn có thể [thiết lập, quản lý và duy trì một nhóm cổ phần](https://developers.cardano.org/docs/operate-a-stake-pool/) trên Cardano.
 - Bạn có thể [tạo hợp đồng thông minh](https://cardano2vn.io/docs/smart-contracts/overview).
+
+![](/img/footer.png)
