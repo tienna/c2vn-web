@@ -1,9 +1,8 @@
 ---
-id: Shelley-Incentivized-Testnet
-title: Shelley Incentivized Testnet-câu chuyện về những con số
-sidebar_label: Shelley Incentivized Testnet-câu chuyện về những con số
-description: Shelley Incentivized Testnet câu chuyện về những con số
---- 
+title: Shelley Incentivized Testnet câu chuyện về những con số
+description: Shelley Incentivized Testnet đang được chứng tỏ là một cuộc hành trình đáng kinh ngạc. Ban đầu, chúng tôi hy vọng có khoảng 100 pools. Tính đến ngày hôm nay, chúng tôi đã đạt hơn 1.000 đăng ký và hơn 670 nhóm đang hoạt động. Hơn 11,5B ada hiện đang được đặt trên testnet. Nhiều cải tiến đối với hiệu suất đã dẫn đến việc tăng thời gian hoạt động - nhưng vẫn còn một chặng đường. Chúng tôi không nghỉ ngơi trên vòng nguyệt quế của mình, dù chỉ một phút, và những nỗ lực để cải thiện sự ổn định và hiệu suất vẫn đang diễn ra.
+keywords: [Shelley, Incentivized, Testnet, cardano, câu chuyện về những con số]
+---
 
 # Shelley Incentivized Testnet: câu chuyện về những con số
 
