@@ -1,3 +1,10 @@
+---
+id: Shelley-Incentivized-Testnet
+title: Shelley Incentivized Testnet-câu chuyện về những con số
+sidebar_label: Shelley Incentivized Testnet-câu chuyện về những con số
+description: Shelley Incentivized Testnet câu chuyện về những con số
+--- 
+
 # Shelley Incentivized Testnet: câu chuyện về những con số
 
 ### **Chúng tôi đã biên soạn một số thống kê Testnet . Hãy kiểm tra chúng.**
