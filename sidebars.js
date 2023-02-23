@@ -118,7 +118,8 @@ const sidebars = {
     "Khám phá Native Tokens": [
       "native-tokens/overview",
       "native-tokens/minting",
-      "native-tokens/minting-nfts",
+      //"native-tokens/mintingnfts",
+      "native-tokens/Mint-nfts"
     // {
     //   type: "category",
     //    label: "Token Registry",

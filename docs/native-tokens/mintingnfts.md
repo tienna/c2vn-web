@@ -5,9 +5,9 @@ sidebar_label: Mint NFT
 description: Cách Mint NFT trên Cardano.
 ---
 
-<iframe width="100%" height="325" src="https://www.youtube.com/embed/IeB-QgRk95A" title="Hướng dẫn tạo token trên Cardano bằng câu lệnh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
-:::note Có nhiều cách để nhận ra NFT với Cardano. Tuy nhiên, trong hướng dẫn này, chúng tôi sẽ tập trung vào cách chiếm ưu thế nhất, để đính kèm các tham chiếu lưu trữ của các dịch vụ khác như [IPFS](https://ipfs.io/) vào mã thông báo của chúng tôi. :::
+:::note 
+Có nhiều cách để nhận ra NFT với Cardano. Tuy nhiên, trong hướng dẫn này, chúng tôi sẽ tập trung vào cách chiếm ưu thế nhất, để đính kèm các tham chiếu lưu trữ của các dịch vụ khác như [IPFS](https://ipfs.io/) vào mã thông báo của chúng tôi. :::
 
 ## Có gì khác biệt?
 
@@ -67,7 +67,8 @@ Siêu dữ liệu giúp chúng tôi hiển thị những thứ như URI hình �
 4. Khớp tên nội dung và (trong trường hợp này) mục nhập {policy_name}.
 5. Truy vấn hàm băm IPFS và tất cả các thuộc tính khác cho mục nhập tương ứng.
 
-:::note **Hiện tại không có tiêu chuẩn thống nhất nào về cách xác định NFT hoặc siêu dữ liệu.** Tuy nhiên, có [Đề xuất cải tiến Cardano](https://github.com/cardano-foundation/CIPs/pull/85) nếu bạn muốn theo dõi cuộc thảo luận. :::
+:::note 
+**Hiện tại không có tiêu chuẩn thống nhất nào về cách xác định NFT hoặc siêu dữ liệu.** Tuy nhiên, có [Đề xuất cải tiến Cardano](https://github.com/cardano-foundation/CIPs/pull/85) nếu bạn muốn theo dõi cuộc thảo luận. :::
 
 ### Khóa thời gian
 
@@ -92,7 +93,9 @@ Ngoài các yêu cầu cần thiết giống như trong hướng dẫn [Mint n�
 4. Băm nếu hình ảnh được tải lên IPFS
      -&gt; Chúng tôi sẽ sử dụng [hình ảnh](https://gateway.pinata.cloud/ipfs/QmRhTTbUrPYEw3mJGGhQqQST9k86v1DPBiTTWJGKDJsVFw) này
 
-:::note Chúng tôi khuyên bạn nên tải hình ảnh lên IPFS vì đây là dịch vụ lưu trữ phi tập trung phổ biến nhất. Có nhiều lựa chọn thay thế, nhưng IPFS được áp dụng nhiều nhất xét về số lượng NFT được Mint. :::
+:::note 
+Chúng tôi khuyên bạn nên tải hình ảnh lên IPFS vì đây là dịch vụ lưu trữ phi tập trung phổ biến nhất. Có nhiều lựa chọn thay thế, nhưng IPFS được áp dụng nhiều nhất xét về số lượng NFT được Mint. 
+:::
 
 ## Cài đặt
 
@@ -122,7 +125,8 @@ output="0"
 ipfs_hash="please insert your ipfs hash here"
 ```
 
-:::note Hàm băm IPFS là một yêu cầu quan trọng và có thể được tìm thấy sau khi bạn tải hình ảnh của mình lên IPFS. Đây là một ví dụ về giao diện của IPFS khi một hình ảnh được tải lên trong [pinata](https://pinata.cloud/) ![hình ảnh](https://user-images.githubusercontent.com/34856010/162868237-0085e25f-daa0-4cfc-b82d-0c85ad2dec1c.png)
+:::note 
+Hàm băm IPFS là một yêu cầu quan trọng và có thể được tìm thấy sau khi bạn tải hình ảnh của mình lên IPFS. Đây là một ví dụ về giao diện của IPFS khi một hình ảnh được tải lên trong [pinata](https://pinata.cloud/) ![hình ảnh](https://user-images.githubusercontent.com/34856010/162868237-0085e25f-daa0-4cfc-b82d-0c85ad2dec1c.png)
 
 :::
 
@@ -179,7 +183,8 @@ Giống như khi tạo nội dung gốc, chúng tôi sẽ cần tạo một số
 mkdir policy
 ```
 
-:::note Chúng tôi không thay đổi thư mục này và mọi thứ được thực hiện từ thư mục làm việc của chúng tôi. :::
+:::note 
+Chúng tôi không thay đổi thư mục này và mọi thứ được thực hiện từ thư mục làm việc của chúng tôi. :::
 
 Tạo một bộ cặp khóa mới:
 
@@ -260,7 +265,9 @@ Dán JSON từ phía trên, điền `keyHash` và số `slot` của bạn vào �
 nano policy/policy.script
 ```
 
-:::note Xin lưu ý rằng số vị trí được định nghĩa là một số nguyên và do đó không cần dấu ngoặc kép, trong khi `keyHash` được định nghĩa là một chuỗi và cần được đặt trong dấu ngoặc kép. :::
+:::note 
+Xin lưu ý rằng số vị trí được định nghĩa là một số nguyên và do đó không cần dấu ngoặc kép, trong khi `keyHash` được định nghĩa là một chuỗi và cần được đặt trong dấu ngoặc kép. 
+:::
 
 Vui lòng ghi lại số vị trí của bạn và lưu nó vào một biến.
 
@@ -301,7 +308,9 @@ Vì hiện tại chúng tôi đã xác định chính sách cũng như `policyID
 }
 ```
 
-:::note Phần tử thứ ba trong hệ thống phân cấp cần phải có cùng tên với nội dung gốc NFT của chúng tôi. :::
+:::note 
+Phần tử thứ ba trong hệ thống phân cấp cần phải có cùng tên với nội dung gốc NFT của chúng tôi. 
+:::
 
 Lưu tệp này dưới dạng `metadata.json` .
 
@@ -322,8 +331,9 @@ echo "  }" >> metadata.json
 echo "}" >> metadata.json
 ```
 
-:::note Vui lòng đảm bảo rằng giá trị hình ảnh / hàm băm IPFS được đặt với giao thức sửa sẵn giao thức chính xác <i>ipfs://</i>
- (ví dụ <i>: "ipfs://QmRhTTbUrPYEw3mJGGhQqQST9k86v1DPBiTTWJGKDJsVFw"</i> )
+:::note 
+Vui lòng đảm bảo rằng giá trị hình ảnh / hàm băm IPFS được đặt với giao thức sửa sẵn giao thức chính xác `ipfs://`
+ (ví dụ : "ipfs://QmRhTTbUrPYEw3mJGGhQqQST9k86v1DPBiTTWJGKDJsVFw")
 
 :::
 
@@ -417,7 +427,9 @@ cardano-cli transaction sign  \
 --out-file matx.signed
 ```
 
-:::note Giao dịch đã ký sẽ được lưu trong một tệp mới có tên <i>matx.signed</i> thay vì <i>matx.raw</i> . :::
+:::note 
+Giao dịch đã ký sẽ được lưu trong một tệp mới có tên `matx.signed` thay vì `matx.raw` .
+ :::
 
 Bây giờ chúng tôi sẽ gửi giao dịch, do đó Mint tài sản gốc của chúng tôi:
 
@@ -461,7 +473,9 @@ Giao dịch trông như thế này:
 cardano-cli transaction build --mainnet --alonzo-era --tx-in $txhash#$txix --tx-out $address+$burnoutput --mint="-1 $policyid.$tokenname" --minting-script-file $script --change-address $address --invalid-hereafter $slot --witness-override 2 --out-file burning.raw
 ```
 
-:::note Tham số Mint hiện được gọi với giá trị âm, do đó hủy một mã thông báo. :::
+:::note 
+Tham số Mint hiện được gọi với giá trị âm, do đó hủy một mã thông báo. 
+:::
 
 Ký giao dịch.
 
