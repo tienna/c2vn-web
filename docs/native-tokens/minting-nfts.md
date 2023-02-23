@@ -1,43 +1,42 @@
 ---
-id: minting-nfts
-title: Minting NFTs
-sidebar_label: Minting NFTs
-description: How to mint NFTs on Cardano. 
-
+id: Mint-nfts
+title: Mint NFT
+sidebar_label: Mint NFT
+description: Cách Mint NFT trên Cardano.
 ---
+
 <iframe width="100%" height="325" src="https://www.youtube.com/embed/IeB-QgRk95A" title="Hướng dẫn tạo token trên Cardano bằng câu lệnh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
+:::note Có nhiều cách để nhận ra NFT với Cardano. Tuy nhiên, trong hướng dẫn này, chúng tôi sẽ tập trung vào cách chiếm ưu thế nhất, để đính kèm các tham chiếu lưu trữ của các dịch vụ khác như [IPFS](https://ipfs.io/) vào mã thông báo của chúng tôi. :::
 
-:::note
-There are many ways to realize NFTs with Cardano. However, in this guide, we will concentrate on the most dominant way, to attach storage references of other services like [IPFS](https://ipfs.io/) to our tokens.
-:::
+## Có gì khác biệt?
 
-## What's the difference?
-What is the difference between native assets and NFTs?  
-From a technical point of view, NFTs are the same as native assets. But some additional characteristics make a native asset truly an NFT:
+Sự khác biệt giữa tài sản gốc và NFT là gì?
+ Từ quan điểm kỹ thuật, NFT giống như tài sản gốc. Nhưng một số đặc điểm bổ sung làm cho nội dung gốc thực sự là một NFT:
 
-1. As the name states - it must be 'non-fungible. This means you need to have unique identifiers or attributes attached to a token to make it distinguishable from others.
-2. Most of the time, NFT's should live on the chain forever. Therefore we need some mechanism to ensure an NFT stays unique and can not be duplicated.
+1. Như tên gọi - nó phải là 'không thể thay thế'. Điều này có nghĩa là bạn cần phải có các số nhận dạng hoặc thuộc tính duy nhất được đính kèm với một mã thông báo để làm cho mã đó có thể phân biệt được với các mã khác.
+2. Hầu hết thời gian, NFT sẽ tồn tại mãi mãi trên chuỗi. Do đó, chúng tôi cần một số cơ chế để đảm bảo NFT luôn là duy nhất và không thể trùng lặp.
 
-### The policyID
-Native assets in Cardano feature the following characteristics:
-1. An amount/value (how much are there?)
-2. A name 
-3. A unique `policyID`
+### policyID
 
-Since asset names are not unique and can be easily duplicated, Cardano NFTs need to be identified by the `policyID`.  
-This ID is unique and attached permanently to the asset.
-The policy ID stems from a policy script that defines characteristics such as who can mint tokens and when those actions can be made.
+Tài sản gốc trong Cardano có các đặc điểm sau:
 
-Many NFT projects make the `policyID` under which the NFTs were minted publicly available, so anyone can differentiate fraudulent/duplicate NFTs from the original tokens.
+1. Một số tiền/giá trị (có bao nhiêu?)
+2. Một cái tên
+3. `policyID` duy nhất
 
-Some services even offer to register your `policyID` to detect tokens that feature the same attributes as your token but were minted under a different policy.
+Vì tên tài sản không phải là duy nhất và có thể dễ dàng bị trùng lặp, nên các Cardano NFT cần được xác định bằng `policyID` .
+ ID này là duy nhất và được gắn vĩnh viễn vào nội dung. ID chính sách bắt nguồn từ tập lệnh chính sách xác định các đặc điểm như ai có thể Mint mã thông báo và thời điểm có thể thực hiện các hành động đó.
 
-### Metadata attributes
+Nhiều dự án NFT cung cấp `policyID` mà theo đó các NFT được Mint có sẵn công khai, vì vậy bất kỳ ai cũng có thể phân biệt các NFT gian lận/trùng lặp với các mã thông báo ban đầu.
 
-In addition to the unique `policyID` we can also attach metadata with various attributes to a transaction. 
+Một số dịch vụ thậm chí còn đề nghị đăng ký `policyID` của bạn để phát hiện các mã thông báo có các thuộc tính giống như mã thông báo của bạn nhưng được Mint theo một chính sách khác.
 
-Here is an example from [nft-maker.io](https://www.nft-maker.io/)
+### Thuộc tính siêu dữ liệu
+
+Ngoài `policyID` duy nhất, chúng tôi cũng có thể đính kèm siêu dữ liệu với các thuộc tính khác nhau vào một giao dịch.
+
+Đây là một ví dụ từ [nft-maker.io](https://www.nft-maker.io/)
 
 ```json
 {
@@ -59,65 +58,61 @@ Here is an example from [nft-maker.io](https://www.nft-maker.io/)
   }
 }
 ```
-Metadata helps us to display things like image URIs and stuff that truly makes it an NFT. With this workaround of attaching metadata, third-party platforms like [pool.pm](https://pool.pm/) can easily trace back to the last minting transaction, read the metadata, and query images and attributes accordingly.
-The query would look something like this:
 
-1. Get asset name and `policyID`.
-2. Look up the latest minting transaction of this asset.
-3. Check the metadata for label `721`.
-4. Match the asset name and (in this case) the {policy_name}-entry.
-5. Query the IPFS hash and all other attributes to the corresponding entry.
+Siêu dữ liệu giúp chúng tôi hiển thị những thứ như URI hình ảnh và những thứ thực sự biến nó thành một NFT. Với giải pháp đính kèm siêu dữ liệu này, các nền tảng của bên thứ ba như [pool.pm](https://pool.pm/) có thể dễ dàng truy ngược lại giao dịch Mint cuối cùng, đọc siêu dữ liệu cũng như truy vấn hình ảnh và thuộc tính tương ứng. Truy vấn sẽ giống như thế này:
 
+1. Nhận tên nội dung và `policyID` .
+2. Tra cứu giao dịch Mint mới nhất của tài sản này.
+3. Kiểm tra siêu dữ liệu cho nhãn `721` .
+4. Khớp tên nội dung và (trong trường hợp này) mục nhập {policy_name}.
+5. Truy vấn hàm băm IPFS và tất cả các thuộc tính khác cho mục nhập tương ứng.
 
-:::note
-**There is currently no agreed standard as to how an NFT or the metadata is defined.**
-However, there is a [Cardano Improvement Proposal](https://github.com/cardano-foundation/CIPs/pull/85) if you want to follow the discussion.
-:::
+:::note **Hiện tại không có tiêu chuẩn thống nhất nào về cách xác định NFT hoặc siêu dữ liệu.** Tuy nhiên, có [Đề xuất cải tiến Cardano](https://github.com/cardano-foundation/CIPs/pull/85) nếu bạn muốn theo dõi cuộc thảo luận. :::
 
-### Time locking
+### Khóa thời gian
 
-Since NFTs are likely to be traded or sold, they should follow a more strict policy. Most of the time, a value is defined by the (artificial) scarcity of an asset.
+Vì NFT có khả năng được giao dịch hoặc bán nên chúng phải tuân theo một chính sách nghiêm ngặt hơn. Hầu hết thời gian, một giá trị được xác định bởi sự khan hiếm (nhân tạo) của một tài sản.
 
-You can regulate such factors with  [multi-signature scripts](https://github.com/input-output-hk/cardano-node/blob/c6b574229f76627a058a7e559599d2fc3f40575d/doc/reference/simple-scripts.md).
+Bạn có thể điều chỉnh các yếu tố như vậy bằng [tập lệnh đa chữ ký](https://github.com/input-output-hk/cardano-node/blob/c6b574229f76627a058a7e559599d2fc3f40575d/doc/reference/simple-scripts.md) .
 
-For this guide, we will choose the following constraints:
+Đối với hướng dẫn này, chúng tôi sẽ chọn các ràng buộc sau:
 
-1. There should be only one defined signature allowed to mint (or burn) the NFT.
-2. The signature will expire in **10000 slots** from now to leave the room if we screw something up.
+1. Chỉ nên có một chữ ký xác định được phép Mint (hoặc ghi) NFT.
+2. Chữ ký sẽ hết hạn sau **10000 chỗ** kể từ bây giờ để rời khỏi phòng nếu chúng tôi làm hỏng điều gì đó.
 
+## Điều kiện tiên quyết
 
-## Prerequisites
-Apart from the same requisites as on the [minting native assets](minting.md) guide, we will additionally need:
+Ngoài các yêu cầu cần thiết giống như trong hướng dẫn [Mint nội dung gốc](minting.md) , chúng tôi sẽ cần thêm:
 
-1. Obviously, what / how many NFTs you want to make.  
---> We are going to make only one NFT
-2. An already populated `metadata.json`  
-3. Know how your minting policy should look like.
---> Only one signature allowed (which we will create in this guide)  
---> No further minting or burning of the asset allowed after 10000 slots have passed since the transaction was made
-4. Hash if uploaded image to IPFS  
---> We will use this [image](https://gateway.pinata.cloud/ipfs/QmRhTTbUrPYEw3mJGGhQqQST9k86v1DPBiTTWJGKDJsVFw)
+1. Rõ ràng, bạn muốn tạo bao nhiêu NFT.
+     -&gt; Chúng tôi sẽ chỉ tạo một NFT
+2. Một `metadata.json` đã được điền sẵn
+3. Biết chính sách Mint token của bạn sẽ như thế nào. -&gt; Chỉ cho phép một chữ ký (mà chúng tôi sẽ tạo trong hướng dẫn này)
+     -&gt; Không được phép Mint hoặc đốt tài sản nữa sau khi 10000 vị trí đã trôi qua kể từ khi giao dịch được thực hiện
+4. Băm nếu hình ảnh được tải lên IPFS
+     -&gt; Chúng tôi sẽ sử dụng [hình ảnh](https://gateway.pinata.cloud/ipfs/QmRhTTbUrPYEw3mJGGhQqQST9k86v1DPBiTTWJGKDJsVFw) này
 
-:::note
-We recommend upload images to IPFS as it is the most common decentralized storage service. There are alternatives, but IPFS has the biggest adoption in terms of how many NFTs got minted.
-:::
+:::note Chúng tôi khuyên bạn nên tải hình ảnh lên IPFS vì đây là dịch vụ lưu trữ phi tập trung phổ biến nhất. Có nhiều lựa chọn thay thế, nhưng IPFS được áp dụng nhiều nhất xét về số lượng NFT được Mint. :::
 
-## Setup
-Since the creation of native assets is documented extensively in the [minting](minting.md) chapter, we won't go into much detail here.
-Here's a little recap and needed setup
+## Cài đặt
 
-### Working directory
-First of all, we are going to set up a new working directory and change into it.
+Vì quá trình tạo nội dung gốc được ghi lại rộng rãi trong chương [Mint token](minting.md) nên chúng tôi sẽ không đi sâu vào chi tiết ở đây. Đây là một bản tóm tắt nhỏ và thiết lập cần thiết
+
+### Thư mục làm việc
+
+Trước hết, chúng ta sẽ thiết lập một thư mục làm việc mới và thay đổi nó.
 
 ```bash
 mkdir nft
 cd nft/
 ```
 
-### Set variables
-We will set important values in a more readable variable for better readability and debugging of failed transactions.
+### Đặt biến
 
-Since cardano-node version 1.31.0 the token name should be in hex format. We will set the variable $realtokenname (real name in utf-8) and then convert it to $tokenname (name in hex format). 
+Chúng tôi sẽ đặt các giá trị quan trọng trong một biến dễ đọc hơn để dễ đọc hơn và gỡ lỗi các giao dịch không thành công.
+
+Kể từ phiên bản nút cardano 1.31.0, tên mã thông báo phải ở định dạng hex. Chúng ta sẽ đặt biến $realtokenname (tên thật ở định dạng utf-8) và sau đó chuyển nó thành $tokenname (tên ở định dạng hex).
+
 ```bash
 realtokenname="NFT1"
 tokenname=$(echo -n $realtokenname | xxd -b -ps -c 80 | tr -d '\n')
@@ -126,70 +121,67 @@ fee="0"
 output="0"
 ipfs_hash="please insert your ipfs hash here"
 ```
-:::note
-The IPFS hash is a key requirement and can be found once you upload your image to IPFS. Here's an example of how the IPFS looks like when an image is uploaded in [pinata](https://pinata.cloud/)
-![image](https://user-images.githubusercontent.com/34856010/162868237-0085e25f-daa0-4cfc-b82d-0c85ad2dec1c.png)
+
+:::note Hàm băm IPFS là một yêu cầu quan trọng và có thể được tìm thấy sau khi bạn tải hình ảnh của mình lên IPFS. Đây là một ví dụ về giao diện của IPFS khi một hình ảnh được tải lên trong [pinata](https://pinata.cloud/) ![hình ảnh](https://user-images.githubusercontent.com/34856010/162868237-0085e25f-daa0-4cfc-b82d-0c85ad2dec1c.png)
 
 :::
 
+### Tạo khóa và địa chỉ
 
-### Generate keys and address
-
-We will be generating new keys and a new payment address:
+Chúng tôi sẽ tạo khóa mới và địa chỉ thanh toán mới:
 
 ```bash
 cardano-cli address key-gen --verification-key-file payment.vkey --signing-key-file payment.skey
 ```
 
-Those two keys can now be used to generate an address.
+Hai khóa đó hiện có thể được sử dụng để tạo địa chỉ.
 
 ```bash
 cardano-cli address build --payment-verification-key-file payment.vkey --out-file payment.addr --mainnet
 ```
 
-We will save our address hash in a variable called address.
+Chúng tôi sẽ lưu hàm băm địa chỉ của chúng tôi trong một biến có tên là địa chỉ.
 
 ```bash
 address=$(cat payment.addr)
 ```
 
-### Fund the address
+### Địa chỉ quỹ
 
-Submitting transactions always require you to pay a fee. 
-Sending native assets requires sending at least 1 ada.  
-So make sure the address you are going to use as the input for the minting transaction has sufficient funds. 
-For our example, the newly generated address was funded with 10 ada.
+Gửi các giao dịch luôn yêu cầu bạn phải trả một khoản phí. Gửi nội dung gốc yêu cầu gửi ít nhất 1 ada.
+ Vì vậy, hãy đảm bảo rằng địa chỉ bạn sẽ sử dụng làm đầu vào cho giao dịch Mint token có đủ tiền. Ví dụ của chúng tôi, địa chỉ mới được tạo đã được tài trợ bằng 10 ada.
 
 ```bash
 cardano-cli query utxo --address $address --mainnet
 ```
 
-You should see something like this.
+Bạn sẽ thấy một cái gì đó như thế này.
+
 ```bash
                            TxHash                                 TxIx        Amount
 --------------------------------------------------------------------------------------
 974e98c4529f8fc75fa8baf5618f7b5ade81aa9ed29ce33cd1c2f2e70838180e     0        10000000 lovelace
 ```
-### Export protocol parameters
 
-For our transaction calculations, we need some of the current protocol parameters. The parameters can be saved in a file called `protocol.json` with this command:
+### Xuất thông số giao thức
+
+Để tính toán giao dịch của chúng tôi, chúng tôi cần một số tham số giao thức hiện tại. Các tham số có thể được lưu trong một tệp có tên là `protocol.json` bằng lệnh này:
 
 ```bash
 cardano-cli query protocol-parameters --mainnet --out-file protocol.json
 ```
 
-### Creating the policyID
-Just as in generating native assets, we will need to generate some policy-related files like key pairs and a policy script.
+### Tạo ID chính sách
+
+Giống như khi tạo nội dung gốc, chúng tôi sẽ cần tạo một số tệp liên quan đến chính sách như cặp khóa và tập lệnh chính sách.
 
 ```bash
 mkdir policy
 ```
 
-:::note
-We don’t change into this directory, and everything is done from our working directory.
-:::
+:::note Chúng tôi không thay đổi thư mục này và mọi thứ được thực hiện từ thư mục làm việc của chúng tôi. :::
 
-Generate a new set of key pairs:
+Tạo một bộ cặp khóa mới:
 
 ```bash
 cardano-cli address key-gen \
@@ -197,12 +189,12 @@ cardano-cli address key-gen \
     --signing-key-file policy/policy.skey
 ```
 
-Instead of only defining a single signature (as we did in the native asset minting guide), our script file needs to implement the following characteristics (which we defined above):
+Thay vì chỉ xác định một chữ ký duy nhất (như chúng tôi đã làm trong hướng dẫn tạo nội dung gốc), tệp tập lệnh của chúng tôi cần triển khai các đặc điểm sau (mà chúng tôi đã xác định ở trên):
 
-1. Only one signature allowed
-2. No further minting or burning of the asset allowed after 10000 slots have passed since the transaction was made
+1. Chỉ cho phép một chữ ký
+2. Không cho phép Mint thêm hoặc đốt tài sản sau khi 10000 vị trí đã trôi qua kể từ khi giao dịch được thực hiện
 
-For this specific purpose `policy.script` file which will look like this:
+Đối với mục đích cụ thể này, tệp `policy.script` sẽ trông như thế này:
 
 ```json
 {
@@ -221,75 +213,78 @@ For this specific purpose `policy.script` file which will look like this:
 }
 ```
 
-As you can see, we need to adjust two values here, the `slot` number as well as the `keyHash`.
+Như bạn có thể thấy, chúng ta cần điều chỉnh hai giá trị ở đây, số `slot` cũng như `keyHash` .
 
-To set everything at once and copy and paste it, use this command(s):
-**You need to have the `jq` installed to parse the tip correctly!**
+Để đặt mọi thứ cùng một lúc và sao chép và dán nó, hãy sử dụng (các) lệnh này: **Bạn cần cài đặt `jq` để phân tích mẹo chính xác!**
 
 ```bash
 echo "{" >> policy/policy.script
-echo "  \"type\": \"all\"," >> policy/policy.script 
-echo "  \"scripts\":" >> policy/policy.script 
-echo "  [" >> policy/policy.script 
-echo "   {" >> policy/policy.script 
-echo "     \"type\": \"before\"," >> policy/policy.script 
-echo "     \"slot\": $(expr $(cardano-cli query tip --mainnet | jq .slot?) + 10000)" >> policy/policy.script
-echo "   }," >> policy/policy.script 
+echo "  \"type\": \"all\"," >> policy/policy.script
+echo "  \"scripts\":" >> policy/policy.script
+echo "  [" >> policy/policy.script
 echo "   {" >> policy/policy.script
-echo "     \"type\": \"sig\"," >> policy/policy.script 
-echo "     \"keyHash\": \"$(cardano-cli address key-hash --payment-verification-key-file policy/policy.vkey)\"" >> policy/policy.script 
+echo "     \"type\": \"before\"," >> policy/policy.script
+echo "     \"slot\": $(expr $(cardano-cli query tip --mainnet | jq .slot?) + 10000)" >> policy/policy.script
+echo "   }," >> policy/policy.script
+echo "   {" >> policy/policy.script
+echo "     \"type\": \"sig\"," >> policy/policy.script
+echo "     \"keyHash\": \"$(cardano-cli address key-hash --payment-verification-key-file policy/policy.vkey)\"" >> policy/policy.script
 echo "   }" >> policy/policy.script
-echo "  ]" >> policy/policy.script 
+echo "  ]" >> policy/policy.script
 echo "}" >> policy/policy.script
 ```
 
-**If this command is not working, please set the key hash and correct slot manually.**
+**Nếu lệnh này không hoạt động, vui lòng đặt mã băm chính và vị trí chính xác theo cách thủ công.**
 
-To generate the `keyHash`, use the following command:
+Để tạo `keyHash` , hãy sử dụng lệnh sau:
+
 ```bash
 cardano-cli address key-hash --payment-verification-key-file policy/policy.vkey
 ```
 
-To calculate the correct slot, query the current slot and add 10000 to it:
+Để tính đúng vị trí, hãy truy vấn vị trí hiện tại và thêm 10000 vào vị trí đó:
+
 ```bash
 cardano-cli query tip --mainnet
 ```
 
-Make a new file called policy.script in the policy folder 
+Tạo một tệp mới có tên policy.script trong thư mục chính sách
+
 ```bash
 touch policy/policy.script
 ```
-Paste the JSON from above, populated with your `keyHash` and your `slot` number into it
+
+Dán JSON từ phía trên, điền `keyHash` và số `slot` của bạn vào đó
+
 ```bash
 nano policy/policy.script
 ```
 
-:::note
-Be aware the slot number is defined as an integer and therefore needs no double quotation marks, whereas the `keyHash` is defined as a string and needs to be wrapped in double quotation marks.
-:::
+:::note Xin lưu ý rằng số vị trí được định nghĩa là một số nguyên và do đó không cần dấu ngoặc kép, trong khi `keyHash` được định nghĩa là một chuỗi và cần được đặt trong dấu ngoặc kép. :::
 
-Please take note of your slot number and save it in a variable.
+Vui lòng ghi lại số vị trí của bạn và lưu nó vào một biến.
 
 ```bash
 slotnumber="Replace this with your slot number"
 ```
 
-And save the location of the script file into a variable as well.
+Và cũng lưu vị trí của tệp script vào một biến.
 
 ```bash
 script="policy/policy.script"
 ```
 
-The last step is to generate the policyID:
+Bước cuối cùng là tạo policyID:
 
 ```bash
 cardano-cli transaction policyid --script-file ./policy/policy.script > policy/policyID
 ```
 
-### Metadata
-Since we now have our policy as well as our `policyID` defined, we need to adjust our metadata information.
+### metadata
 
-Here’s an example of the metadata.json which we’ll use for this guide:
+Vì hiện tại chúng tôi đã xác định chính sách cũng như `policyID` của mình, nên chúng tôi cần điều chỉnh thông tin siêu dữ liệu của mình.
+
+Đây là một ví dụ về metadata.json mà chúng tôi sẽ sử dụng cho hướng dẫn này:
 
 ```json
 {
@@ -306,45 +301,41 @@ Here’s an example of the metadata.json which we’ll use for this guide:
 }
 ```
 
-:::note
-The third element in the hierarchy needs to have the same name as our NFT native asset.
-:::
+:::note Phần tử thứ ba trong hệ thống phân cấp cần phải có cùng tên với nội dung gốc NFT của chúng tôi. :::
 
-Save this file as `metadata.json`. 
+Lưu tệp này dưới dạng `metadata.json` .
 
-If you want to generate it "on the fly," use the following commands:
+Nếu bạn muốn tạo nó "một cách nhanh chóng", hãy sử dụng các lệnh sau:
 
 ```bash
 echo "{" >> metadata.json
-echo "  \"721\": {" >> metadata.json 
-echo "    \"$(cat policy/policyID)\": {" >> metadata.json 
+echo "  \"721\": {" >> metadata.json
+echo "    \"$(cat policy/policyID)\": {" >> metadata.json
 echo "      \"$(echo $realtokenname)\": {" >> metadata.json
 echo "        \"description\": \"This is my first NFT thanks to the Cardano foundation\"," >> metadata.json
 echo "        \"name\": \"Cardano foundation NFT guide token\"," >> metadata.json
 echo "        \"id\": \"1\"," >> metadata.json
 echo "        \"image\": \"ipfs://$(echo $ipfs_hash)\"" >> metadata.json
 echo "      }" >> metadata.json
-echo "    }" >> metadata.json 
-echo "  }" >> metadata.json 
+echo "    }" >> metadata.json
+echo "  }" >> metadata.json
 echo "}" >> metadata.json
 ```
 
-:::note
-Please make sure the image value / IPFS hash is set with the correct protocol pre-fix <i>ipfs://</i>  
-(for example <i>"ipfs://QmRhTTbUrPYEw3mJGGhQqQST9k86v1DPBiTTWJGKDJsVFw"</i>)
+:::note Vui lòng đảm bảo rằng giá trị hình ảnh / hàm băm IPFS được đặt với giao thức sửa sẵn giao thức chính xác <i>ipfs://</i>
+ (ví dụ <i>: "ipfs://QmRhTTbUrPYEw3mJGGhQqQST9k86v1DPBiTTWJGKDJsVFw"</i> )
 
 :::
-### Crafting the transaction
 
-Let's begin building our transaction.
-Before we start, we will again need some setup to make the transaction building easier.
-Query your payment address and take note of the different values present.
+### Lập giao dịch
+
+Hãy bắt đầu xây dựng giao dịch của chúng tôi. Trước khi bắt đầu, một lần nữa chúng ta sẽ cần một số thiết lập để giúp việc xây dựng giao dịch dễ dàng hơn. Truy vấn địa chỉ thanh toán của bạn và lưu ý các giá trị khác nhau hiện có.
 
 ```bash
 cardano-cli query utxo --address $address --mainnet
 ```
 
-Your output should look something like this (fictional example):
+Đầu ra của bạn sẽ trông giống như thế này (ví dụ hư cấu):
 
 ```bash
                            TxHash                                 TxIx        Amount
@@ -352,7 +343,7 @@ Your output should look something like this (fictional example):
 b35a4ba9ef3ce21adcd6879d08553642224304704d206c74d3ffb3e6eed3ca28     0        1000000000 lovelace
 ```
 
-Since we need each of those values in our transaction, we will store them individually in a corresponding variable.
+Vì chúng tôi cần từng giá trị đó trong giao dịch của mình nên chúng tôi sẽ lưu trữ chúng riêng lẻ trong một biến tương ứng.
 
 ```bash
 txhash="insert your txhash here"
@@ -362,9 +353,9 @@ policyid=$(cat policy/policyID)
 output=1400000
 ```
 
-Here we are setting the `output` value to `1400000` Lovelace which is equivalent to `1.4` ADA. This amount is used because this is the minimum UTxO requirement.
+Ở đây, chúng tôi đang đặt giá trị `output` thành `1400000` Lovelace, tương đương với `1.4` ADA. Số tiền này được sử dụng vì đây là yêu cầu UTxO tối thiểu.
 
-If you're unsure, check if all of the other needed variables for the transaction are set:
+Nếu bạn không chắc chắn, hãy kiểm tra xem tất cả các biến cần thiết khác cho giao dịch đã được đặt chưa:
 
 ```bash
 echo $fee
@@ -377,7 +368,7 @@ echo $slotnumber
 echo $script
 ```
 
-If everything is set, run the following command:
+Nếu mọi thứ đã được đặt, hãy chạy lệnh sau:
 
 ```bash
 cardano-cli transaction build \
@@ -394,29 +385,29 @@ cardano-cli transaction build \
 --out-file matx.raw
 ```
 
-The above command may generate output as per below:
+Lệnh trên có thể tạo đầu ra theo bên dưới:
 
 ```bash
 Minimum required UTxO: Lovelace 1448244
 ```
 
-This means that we need to change the value of the `$output` variable to the given value.
+Điều này có nghĩa là chúng ta cần thay đổi giá trị của biến `$output` thành giá trị đã cho.
 
 ```
 output=1448244
 ```
 
-Remember to use the value that you got in your own output.
+Hãy nhớ sử dụng giá trị mà bạn nhận được trong đầu ra của riêng mình.
 
-If the minimum value was right then this command will generate `matx.raw` and will give output similar to:
+Nếu giá trị tối thiểu là đúng thì lệnh này sẽ tạo `matx.raw` và sẽ cho đầu ra tương tự như:
 
 ```bash
 Estimated transaction fee: Lovelace 176677
 ```
 
-__NOTE__: Its possible that the Lovelace value for you is different.
+**LƯU Ý** : Có thể giá trị Lovelace dành cho bạn là khác.
 
-Sign the transaction
+Ký giao dịch
 
 ```bash
 cardano-cli transaction sign  \
@@ -426,39 +417,33 @@ cardano-cli transaction sign  \
 --out-file matx.signed
 ```
 
-:::note
-The signed transaction will be saved in a new file called <i>matx.signed</i> instead of <i>matx.raw</i>.
-:::
+:::note Giao dịch đã ký sẽ được lưu trong một tệp mới có tên <i>matx.signed</i> thay vì <i>matx.raw</i> . :::
 
-Now we are going to submit the transaction, therefore minting our native assets:
+Bây giờ chúng tôi sẽ gửi giao dịch, do đó Mint tài sản gốc của chúng tôi:
+
 ```bash
 cardano-cli transaction submit --tx-file matx.signed --mainnet
 ```
 
-Congratulations, we have now successfully minted our own token.
-After a couple of seconds, we can check the output address
+Xin chúc mừng, chúng tôi hiện đã Mint thành công mã thông báo của riêng mình. Sau vài giây, chúng ta có thể kiểm tra địa chỉ đầu ra
+
 ```bash
 cardano-cli query utxo --address $address --mainnet
 ```
 
-and should see something like this:
+và sẽ thấy một cái gì đó như thế này:
 
-### Displaying your NFT
+### Hiển thị NFT của bạn
 
-One of the most adopted NFT browsers is [pool.pm](https://pool.pm/tokens).
-Enter your address in the search bar, hit enter, and your NFT will be displayed with all its attributes and the corresponding image.
+Một trong những trình duyệt NFT được sử dụng nhiều nhất là [pool.pm](https://pool.pm/tokens) . Nhập địa chỉ của bạn vào thanh tìm kiếm, nhấn enter và NFT của bạn sẽ được hiển thị với tất cả các thuộc tính và hình ảnh tương ứng.
 
+![hình ảnh](https://user-images.githubusercontent.com/34856010/162868291-aeafb26c-fafa-4ab0-8ca0-14a7fa60e3b1.png)
 
-![image](https://user-images.githubusercontent.com/34856010/162868291-aeafb26c-fafa-4ab0-8ca0-14a7fa60e3b1.png)
+Bạn có thể tự kiểm tra và xem NFT được tạo cho hướng dẫn này [tại đây](https://pool.pm/6574f051ee0c4cae35c0407b9e104ed8b3c9cab31dfb61308d69f33c.NFT1) .
 
+## Ghi mã thông báo của bạn
 
-You can check it out yourself and see the NFT created for this tutorial [here](https://pool.pm/6574f051ee0c4cae35c0407b9e104ed8b3c9cab31dfb61308d69f33c.NFT1).
-
-
-## Burn your token
-
-If you messed something up and want to re-start, you can always burn your token if the slot defined in your policy script isn't over yet.
-Assuming you have still every variable set, you need to re-set:
+Nếu bạn làm hỏng thứ gì đó và muốn bắt đầu lại, bạn luôn có thể ghi mã thông báo của mình nếu vị trí được xác định trong tập lệnh chính sách của bạn chưa kết thúc. Giả sử bạn vẫn còn mọi biến được đặt, bạn cần đặt lại:
 
 ```bash
 burnfee="0"
@@ -468,25 +453,24 @@ txix="Insert your txix"
 burnoutput=1400000
 ```
 
-Here we are setting the `output` value to `1400000` Lovelace which is equivalent to `1.4` ADA. This amount is used because this is the minimum UTxO requirement.
+Ở đây, chúng tôi đang đặt giá trị `output` thành `1400000` Lovelace, tương đương với `1.4` ADA. Số tiền này được sử dụng vì đây là yêu cầu UTxO tối thiểu.
 
-The transaction looks like this:
+Giao dịch trông như thế này:
 
 ```bash
 cardano-cli transaction build --mainnet --alonzo-era --tx-in $txhash#$txix --tx-out $address+$burnoutput --mint="-1 $policyid.$tokenname" --minting-script-file $script --change-address $address --invalid-hereafter $slot --witness-override 2 --out-file burning.raw
 ```
 
-:::note
-The minting parameter is now called with a negative value, therefore destroying one token.
-:::
+:::note Tham số Mint hiện được gọi với giá trị âm, do đó hủy một mã thông báo. :::
 
+Ký giao dịch.
 
-Sign the transaction.
 ```bash
 cardano-cli transaction sign  --signing-key-file payment.skey  --signing-key-file policy/policy.skey --mainnet  --tx-body-file burning.raw --out-file burning.signed
 ```
-Full send.
+
+Gửi đầy đủ.
+
 ```bash
 cardano-cli transaction submit --tx-file burning.signed --mainnet
 ```
-

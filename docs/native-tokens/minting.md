@@ -12,6 +12,8 @@ Chúng tôi đặc biệt khuyên bạn nên tham khảo phần này để hiể
 Minting NFTs sẽ tuân theo quy trình tương tự, chỉ với một vài chỉnh sửa. Nếu bạn quan tâm NFT, vui lòng truy cập 
 [Minting NFTs](minting-nfts.md).
 
+<iframe width="100%" height="325" src="https://www.youtube.com/embed/IeB-QgRk95A" title="Hướng dẫn tạo token trên Cardano bằng câu lệnh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
+
 ## Yêu cầu
 1. Một nút Cardano đang chạy và được đồng bộ hóa - có thể truy cập thông qua lệnh `cardano-cli`. Hướng dẫn này được viết bằng `cardano-cli` v 1.27.0. Một số lệnh có thể thay đổi.
 2. Bạn có một số kiến thức về Linux về cách điều hướng giữa các thư mục, tạo và chỉnh sửa tệp cũng như thiết lập và kiểm tra các biến thông qua Linux shell.
@@ -185,20 +187,15 @@ cardano-cli query protocol-parameters $testnet --out-file protocol.json
 
 ### Tạo policy
 
-Chính sách (Policies) là yếu tố quyết định việc đúc tài sản gốc. Chỉ những người sở hữu khóa chính sách mới có thể đúc tài sản gốc theo chính sách này.
-We'll make a separate sub-directory in our work directory to keep everything policy-wise separated and more organized.
-For further reading, please check [the official docs](https://docs.cardano.org/native-tokens/getting-started/#tokenmintingpolicies) or the [github page about multi-signature scripts](https://github.com/input-output-hk/cardano-node/blob/c6b574229f76627a058a7e559599d2fc3f40575d/doc/reference/simple-scripts.md).
+Chính sách (Policies) là yếu tố quyết định công việc tài sản gốc. Chỉ những người sở hữu từ khóa chính sách mới mới có thể tạo ra tài liệu gốc theo chính sách này. Chúng tôi sẽ tạo một thư mục con riêng biệt trong thư mục công việc của mình để giữ cho mọi thứ được tách biệt theo chính sách và có tổ chức hơn. Để đọc thêm, vui lòng xem [tài liệu chính thức](https://docs.cardano.org/native-tokens/getting-started/#tokenmintingpolicies) hoặc [trang github về tập lệnh đa chữ ký](https://github.com/input-output-hk/cardano-node/blob/c6b574229f76627a058a7e559599d2fc3f40575d/doc/reference/simple-scripts.md) .
 
 ```bash
 mkdir policy
 ```
 
-:::note 
-We don't navigate into this directory, and everything is done from our working directory.
-:::
+:::note Chúng tôi không điều hướng vào thư mục này và mọi thứ được thực hiện từ thư mục làm việc của chúng tôi. :::
 
-
-First of all, we — again — need some key pairs:
+Trước hết, chúng tôi - một lần nữa - cần một số cặp khóa:
 
 ```bash
 cardano-cli address key-gen \
@@ -206,62 +203,58 @@ cardano-cli address key-gen \
     --signing-key-file policy/policy.skey
 ```
 
-Create a `policy.script` file and fill it with an empty string.
+Tạo một tệp `policy.script` và điền vào đó một chuỗi trống.
 
 ```bash
 touch policy/policy.script && echo "" > policy/policy.script
 ```
 
-Use the `echo` command to populate the file:
+Sử dụng lệnh `echo` để điền vào tệp:
 
 ```bash
-echo "{" >> policy/policy.script 
-echo "  \"keyHash\": \"$(cardano-cli address key-hash --payment-verification-key-file policy/policy.vkey)\"," >> policy/policy.script 
-echo "  \"type\": \"sig\"" >> policy/policy.script 
+echo "{" >> policy/policy.script
+echo "  \"keyHash\": \"$(cardano-cli address key-hash --payment-verification-key-file policy/policy.vkey)\"," >> policy/policy.script
+echo "  \"type\": \"sig\"" >> policy/policy.script
 echo "}" >> policy/policy.script
 ```
 
-:::note 
-The second echo uses a sub-shell command to generate the so-called key-hash. But, of course, you could also do that by hand.
-:::
+:::note Tiếng vang thứ hai sử dụng lệnh sub-shell để tạo cái gọi là key-hash. Nhưng, tất nhiên, bạn cũng có thể làm điều đó bằng tay. :::
 
-We now have a simple script file that defines the policy verification key as a witness to sign the minting transaction. There are no further constraints such as token locking or requiring specific signatures to successfully submit a transaction with this minting policy.
+Bây giờ chúng tôi có một tệp tập lệnh đơn giản xác định khóa xác minh chính sách làm nhân chứng để ký giao dịch đúc. Không có ràng buộc nào khác như khóa mã thông báo hoặc yêu cầu chữ ký cụ thể để gửi thành công giao dịch với chính sách đúc tiền này.
 
-### Asset minting
-To mint the native assets, we need to generate the policy ID from the script file we created.
+### Mint tài sản
+
+Để đúc nội dung gốc, chúng tôi cần tạo ID chính sách từ tệp tập lệnh mà chúng tôi đã tạo.
 
 ```bash
 cardano-cli transaction policyid --script-file ./policy/policy.script > policy/policyID
 ```
 
-The output gets saved to the file `policyID` as we need to reference it later on.
+Đầu ra được lưu vào tệp `policyID` vì chúng tôi cần tham khảo nó sau này.
 
-### Build the raw transaction to send to oneself
-To mint the tokens, we will make a transaction using our previously generated and funded address.
+### Xây dựng giao dịch thô để gửi cho chính mình
 
-#### A quick word about transactions in Cardano
+Để đúc mã thông báo, chúng tôi sẽ thực hiện giao dịch bằng cách sử dụng địa chỉ được tạo và tài trợ trước đó của chúng tôi.
 
-Each transaction in Cardano requires the payment of a fee which — as of now — will mostly be determined by the size of what we want to transmit.
-The more bytes get sent, the higher the fee.
+#### Nói nhanh về các giao dịch trong Cardano
 
-That's why making a transaction in Cardano is a three-way process.
+Mỗi giao dịch trong Cardano yêu cầu thanh toán một khoản phí — tính đến thời điểm hiện tại — phần lớn sẽ được xác định bởi quy mô của những gì chúng tôi muốn truyền tải. Càng nhiều byte được gửi, phí càng cao.
 
-1. First, we will build a transaction, resulting in a file. This will be the foundation of how the transaction fee will be calculated. 
-2. We use this `raw` file and our protocol parameters to calculate our fees
-3. Then we need to re-build the transaction, including the correct fee and the adjusted amount we're able to send. Since we send it to ourselves, the output needs to be the amount of our fundings minus the calculated fee.
+Đó là lý do tại sao thực hiện giao dịch trong Cardano là một quá trình ba chiều.
 
-Another thing to keep in mind is the model of how transactions and "balances" are designed in Cardano.
-Each transaction has one (or multiple) inputs (the source of your funds, like which bill you'd like to use in your wallet to pay) and one or multiple outputs.
-In our minting example, the input and output will be the same - <b>our own address</b>.
+1. Đầu tiên, chúng tôi sẽ xây dựng một giao dịch, kết quả là một tệp. Đây sẽ là cơ sở để tính phí giao dịch.
+2. Chúng tôi sử dụng tệp `raw` này và các tham số giao thức của mình để tính phí
+3. Sau đó, chúng tôi cần xây dựng lại giao dịch, bao gồm phí chính xác và số tiền đã điều chỉnh mà chúng tôi có thể gửi. Vì chúng tôi gửi nó cho chính mình nên đầu ra cần phải là số tiền chúng tôi tài trợ trừ đi phí tính toán.
 
-Before we start, we will again need some setup to make the transaction building easier.
-First, query your payment address and take note of the different values present.
+Một điều khác cần lưu ý là mô hình về cách các giao dịch và "số dư" được thiết kế trong Cardano. Mỗi giao dịch có một (hoặc nhiều) đầu vào (nguồn tiền của bạn, chẳng hạn như hóa đơn bạn muốn sử dụng trong ví của mình để thanh toán) và một hoặc nhiều đầu ra. Trong ví dụ đúc tiền của chúng tôi, đầu vào và đầu ra sẽ giống nhau - <b>địa chỉ của chính chúng tôi</b> .
+
+Trước khi bắt đầu, một lần nữa chúng ta sẽ cần một số thiết lập để giúp việc xây dựng giao dịch dễ dàng hơn. Trước tiên, hãy truy vấn địa chỉ thanh toán của bạn và lưu ý các giá trị khác nhau hiện có.
 
 ```bash
 cardano-cli query utxo --address $address $testnet
 ```
 
-Your output should look something like this (fictional example):
+Đầu ra của bạn sẽ trông giống như thế này (ví dụ hư cấu):
 
 ```bash
                            TxHash                                 TxIx        Amount
@@ -269,7 +262,7 @@ Your output should look something like this (fictional example):
 b35a4ba9ef3ce21adcd6879d08553642224304704d206c74d3ffb3e6eed3ca28     0        1000000000 lovelace
 ```
 
-Since we need each of those values in our transaction, we will store them individually in a corresponding variable.
+Vì chúng tôi cần từng giá trị đó trong giao dịch của mình nên chúng tôi sẽ lưu trữ chúng riêng lẻ trong một biến tương ứng.
 
 ```bash
 txhash="insert your txhash here"
@@ -278,7 +271,7 @@ funds="insert Amount here"
 policyid=$(cat policy/policyID)
 ```
 
-For our fictional example, this would result in the following output - <b>please adjust your values accordingly</b>:
+Đối với ví dụ hư cấu của chúng tôi, điều này sẽ dẫn đến đầu ra sau - <b>vui lòng điều chỉnh các giá trị của bạn cho phù hợp</b> :
 
 ```bash
 $ txhash="b35a4ba9ef3ce21adcd6879d08553642224304704d206c74d3ffb3e6eed3ca28"
@@ -286,15 +279,15 @@ $ txix="0"
 $ funds="1000000000"
 $ policyid=$(cat policy/policyID)
 ```
-Also, transactions only used to calculate fees must still have a fee set, though it doesn't have to be exact.  The calculated fee will be included *the second time* this transaction is built (i.e. the transaction to sign and submit).  This first time, only the fee parameter *length* matters, so here we choose a maximum value ([note](https://github.com/cardano-foundation/developer-portal/pull/283#discussion_r705612888)): 
+
+Ngoài ra, các giao dịch chỉ được sử dụng để tính phí vẫn phải có một khoản phí được đặt, mặc dù không nhất thiết phải chính xác. Phí tính toán sẽ được bao gồm *trong lần thứ hai* giao dịch này được xây dựng (tức là giao dịch để ký và gửi). Lần đầu tiên, chỉ *có độ dài* tham số phí là quan trọng, vì vậy ở đây chúng tôi chọn giá trị tối đa ( [lưu ý](https://github.com/cardano-foundation/developer-portal/pull/283#discussion_r705612888) ):
 
 ```bash
 $ fee="300000"
 ```
 
-Now we are ready to build the first transaction to calculate our fee and save it in a file called <i>matx.raw</i>.
-We will reference the variables in our transaction to improve readability because we saved almost all of the needed values in variables.
-This is what our transaction looks like:
+Bây giờ chúng tôi đã sẵn sàng tạo giao dịch đầu tiên để tính phí của chúng tôi và lưu nó vào một tệp có tên <i>matx.raw</i> . Chúng tôi sẽ tham chiếu các biến trong giao dịch của mình để cải thiện khả năng đọc vì chúng tôi đã lưu gần như tất cả các giá trị cần thiết trong các biến. Đây là giao dịch của chúng tôi trông như thế nào:
+
 ```bash
 cardano-cli transaction build-raw \
  --fee $fee \
@@ -305,79 +298,82 @@ cardano-cli transaction build-raw \
  --out-file matx.raw
 ```
 
-:::note 
-In later versions of cardano-cli (at least from >1.31.0) <b>the tokennames must be base16 encoded or you will receive an error</b>
+:::note Trong các phiên bản sau của cardano-cli (ít nhất là từ &gt;1.31.0), <b>tên mã thông báo phải được mã hóa base16 nếu không bạn sẽ gặp lỗi</b>
+
 ```bash
-option --tx-out: 
+option --tx-out:
 unexpected 'T'
 expecting alphanumeric asset name, white space, "+" or end of input
 ```
 
-You can fix this by redefining the tokennames. In this tutorial the equivalent base16 token names are:
+Bạn có thể khắc phục điều này bằng cách xác định lại tên mã thông báo. Trong hướng dẫn này, tên mã thông báo base16 tương đương là:
+
 ```bash
 tokenname1="54657374746F6B656E"
 tokenname2="5365636F6E6454657374746F6B656E"
 ```
+
 :::
 
-#### Syntax breakdown 
-Here's a breakdown of the syntax as to which parameters we define in our minting transaction:
+#### phân tích cú pháp
+
+Dưới đây là bảng phân tích cú pháp về các tham số chúng tôi xác định trong giao dịch đúc tiền của mình:
+
 ```bash
 --fee: $fee
 ```
-The network fee we need to pay for our transaction. Fees will be calculated through the network parameters and depending on the size (in bytes) our transaction will have. The bigger the file size, the higher the fee.
+
+Phí mạng mà chúng tôi cần phải trả cho giao dịch của mình. Phí sẽ được tính thông qua các tham số mạng và tùy thuộc vào kích thước (tính bằng byte) mà giao dịch của chúng tôi sẽ có. Dung lượng file càng lớn thì phí càng cao.
 
 ```bash
 --tx-in $txhash#$txix \
 ```
-The hash of our address we use as the input for the transaction needs sufficient funds.
-So the syntax is: the hash, followed by a hashtag, followed by the value of TxIx of the corresponding hash.
+
+Hàm băm của địa chỉ mà chúng tôi sử dụng làm đầu vào cho giao dịch cần có đủ tiền. Vì vậy, cú pháp là: hàm băm, theo sau là dấu thăng, theo sau là giá trị TxIx của hàm băm tương ứng.
 
 ```bash
 --tx-out $address+$output+"$tokenamount $policyid.$tokenname1 + $tokenamount $policyid.$tokenname2" \
 ```
-Here is where part one of the magic happens. For the <i>--tx-out</i>, we need to specify which address will receive our transaction. 
-In our case, we send the tokens to our own address. 
-:::note
-The syntax is very important, so here it is word for word. There are no spaces unless explicitly stated:
-1. address hash
-2. a plus sign
-3. the output in Lovelace (ada) (output = input amount — fee)
-4. a plus sign
-5. quotation marks
-6. the amount of the token
-7. a blank/space
-8. the policy id
-9. a dot
-10. the token name (optional if you want multiple/different tokens: a blank, a plus, a blank, and start over at 6.) 
-11. quotation marks
-:::
+
+Đây là nơi phần một của phép thuật xảy ra. Đối với <i>--tx-out</i> , chúng tôi cần chỉ định địa chỉ nào sẽ nhận giao dịch của chúng tôi. Trong trường hợp của chúng tôi, chúng tôi gửi mã thông báo đến địa chỉ của chúng tôi. :::note Cú pháp rất quan trọng, vì vậy đây là từng từ một. Không có khoảng trống trừ khi được nêu rõ ràng:
+
+1. băm địa chỉ
+2. một dấu cộng
+3. đầu ra tính bằng Lovelace (ada) (đầu ra = số tiền đầu vào — phí)
+4. một dấu cộng
+5. dấu ngoặc kép
+6. số lượng mã thông báo
+7. một khoảng trống/không gian
+8. id chính sách
+9. một dấu chấm
+10. tên mã thông báo (tùy chọn nếu bạn muốn có nhiều/mã thông báo khác nhau: một ô trống, một dấu cộng, một ô trống và bắt đầu lại từ 6.)
+11. dấu ngoặc kép :::
 
 ```bash
 --mint="$tokenamount $policyid.$tokenname1 + $tokenamount $policyid.$tokenname2" \
 ```
-Again, the same syntax as specified in <i>--tx-out</i> but without the address and output.
+
+Một lần nữa, cú pháp tương tự như được chỉ định trong <i>--tx-out</i> nhưng không có địa chỉ và đầu ra.
 
 ```bash
 --out-file matx.raw
 ```
-We save our transaction to a file that you can name however you want. 
-Just be sure to reference the correct filename in upcoming commands. I chose to stick with the official docs and declared it as <i>matx.raw</i>.
 
-Based on this raw transaction we can calculate the minimal transaction fee and store it in the variable <i>$fee</i>. We get a bit fancy here and only store the value so we can use the variable for terminal based calculations:
+Chúng tôi lưu giao dịch của mình vào một tệp mà bạn có thể đặt tên theo ý muốn. Chỉ cần đảm bảo tham chiếu đúng tên tệp trong các lệnh sắp tới. Tôi đã chọn gắn bó với các tài liệu chính thức và khai báo nó là <i>matx.raw</i> .
+
+Dựa trên giao dịch thô này, chúng tôi có thể tính phí giao dịch tối thiểu và lưu trữ nó trong biến <i>$fee</i> . Chúng tôi hơi lạ mắt ở đây và chỉ lưu trữ giá trị để chúng tôi có thể sử dụng biến cho các phép tính dựa trên thiết bị đầu cuối:
 
 ```bash
 fee=$(cardano-cli transaction calculate-min-fee --tx-body-file matx.raw --tx-in-count 1 --tx-out-count 1 --witness-count 2 $testnet --protocol-params-file protocol.json | cut -d " " -f1)
 ```
 
-Remember, the transaction input and the output of ada must be equal, or otherwise, the transaction will fail. There can be no leftovers.
-To calculate the remaining output we need to subtract the fee from our funds and save the result in our output variable.
+Hãy nhớ rằng, đầu vào và đầu ra của giao dịch phải bằng nhau, nếu không, giao dịch sẽ thất bại. Không thể có thức ăn thừa. Để tính toán sản lượng còn lại, chúng ta cần trừ phí từ quỹ của mình và lưu kết quả vào biến đầu ra.
 
 ```bash
 output=$(expr $funds - $fee)
 ```
 
-We now have every value we need to re-build the transaction, ready to be signed. So we reissue the same command to re-build, the only difference being our variables now holding the correct values.
+Bây giờ chúng tôi có mọi giá trị chúng tôi cần để xây dựng lại giao dịch, sẵn sàng để được ký kết. Vì vậy, chúng tôi phát hành lại cùng một lệnh để xây dựng lại, sự khác biệt duy nhất là các biến của chúng tôi hiện đang giữ các giá trị chính xác.
 
 ```bash
 cardano-cli transaction build-raw \
@@ -389,7 +385,7 @@ cardano-cli transaction build-raw \
 --out-file matx.raw
 ```
 
-Transactions need to be signed to prove the authenticity and ownership of the policy key.
+Các giao dịch cần phải được ký để chứng minh tính xác thực và quyền sở hữu của khóa chính sách.
 
 ```bash
 cardano-cli transaction sign  \
@@ -399,21 +395,21 @@ $testnet --tx-body-file matx.raw  \
 --out-file matx.signed
 ```
 
-:::note The signed transaction will be saved in a new file called <i>matx.signed</i> instead of <i>matx.raw</i>.
-:::
+:::note Giao dịch đã ký sẽ được lưu trong một tệp mới có tên <i>matx.signed</i> thay vì <i>matx.raw</i> . :::
 
-Now we are going to submit the transaction, therefore minting our native assets:
+Bây giờ chúng tôi sẽ gửi giao dịch, do đó đúc tài sản gốc của chúng tôi:
+
 ```bash
 cardano-cli transaction submit --tx-file matx.signed $testnet
 ```
 
-Congratulations, we have now successfully minted our own token.
-After a couple of seconds, we can check the output address
+Xin chúc mừng, chúng tôi hiện đã đúc thành công mã thông báo của riêng mình. Sau vài giây, chúng ta có thể kiểm tra địa chỉ đầu ra
+
 ```bash
 cardano-cli query utxo --address $address $testnet
 ```
 
-and should see something like this (fictional example):
+và sẽ thấy một cái gì đó như thế này (ví dụ hư cấu):
 
 ```bash
                            TxHash                                 TxIx        Amount
@@ -421,10 +417,9 @@ and should see something like this (fictional example):
 d82e82776b3588c1a2c75245a20a9703f971145d1ca9fba4ad11f50803a43190     0        999824071 lovelace + 10000000 45fb072eb2d45b8be940c13d1f235fa5a8263fc8ebe8c1af5194ea9c.5365636F6E6454657374746F6B656E + 10000000 45fb072eb2d45b8be940c13d1f235fa5a8263fc8ebe8c1af5194ea9c.54657374746F6B656E
 ```
 
-## Sending token to a wallet
+## Gửi mã thông báo đến ví
 
-To send tokens to a wallet, we need to build another transaction - this time only without the minting parameter.
-We will set up our variables accordingly.
+Để gửi mã thông báo đến ví, chúng tôi cần tạo một giao dịch khác - chỉ lần này là không có tham số đúc. Chúng tôi sẽ thiết lập các biến của chúng tôi cho phù hợp.
 
 ```bash
 fee="0"
@@ -435,7 +430,7 @@ txix=""
 funds="Amout of lovelace"
 ```
 
-Again - here is an example of how it would look if we use our fictional example:
+Một lần nữa - đây là một ví dụ về giao diện của nó nếu chúng ta sử dụng ví dụ hư cấu của mình:
 
 ```bash
 $ fee="0"
@@ -446,8 +441,7 @@ $ txix="0"
 $ funds="999824071"
 ```
 
-You should still have access to the other variables from the minting process.
-Please check if those variables are set:
+Bạn vẫn có quyền truy cập vào các biến khác từ quá trình đúc. Vui lòng kiểm tra xem các biến đó đã được đặt chưa:
 
 ```bash
 echo Tokenname 1: $tokenname1
@@ -456,21 +450,19 @@ echo Address: $address
 echo Policy ID: $policyid
 ```
 
-We will be sending 2 of our first tokens, `Testtoken`, to the foreign address.  
-A few things worth pointing out:
+Chúng tôi sẽ gửi 2 mã thông báo đầu tiên của mình, `Testtoken` , đến địa chỉ nước ngoài.
+ Một vài điều đáng chỉ ra:
 
-1. We are forced to send at least a minimum of 1 ada (1000000 Lovelace) to the foreign address. We can not send tokens only. So we need to factor this value into our output. We will reference the output value of the remote address with the variable receiver_output.
-2. Apart from the receiving address, we also need to set our own address as an additional output. Since we don't want to send everything we have to the remote address, we're going to use our own address to receive everything else coming from the input.
-3. Our own address, therefore, needs to receive our funds, subtracted by the transaction fee as well as the minimum of 1 ada we need to send to the other address and
-4. all of the tokens the txhash currently holds, subtracted by the tokens we send.
+1. Chúng tôi buộc phải gửi ít nhất tối thiểu 1 ada (1000000 Lovelace) đến địa chỉ nước ngoài. Chúng tôi không thể chỉ gửi mã thông báo. Vì vậy, chúng ta cần tính giá trị này vào đầu ra của mình. Chúng tôi sẽ tham chiếu giá trị đầu ra của địa chỉ từ xa với biến receiver_output.
+2. Ngoài địa chỉ nhận, chúng ta cũng cần đặt địa chỉ của chính mình làm đầu ra bổ sung. Vì chúng tôi không muốn gửi mọi thứ chúng tôi có đến địa chỉ từ xa, nên chúng tôi sẽ sử dụng địa chỉ của chính mình để nhận mọi thứ khác đến từ đầu vào.
+3. Do đó, địa chỉ riêng của chúng tôi cần nhận tiền của chúng tôi, trừ đi phí giao dịch cũng như tối thiểu 1 ada chúng tôi cần gửi đến địa chỉ khác và
+4. tất cả các mã thông báo mà txhash hiện đang nắm giữ, trừ đi các mã thông báo chúng tôi gửi.
 
-:::note Depending on the size and amount of native assets you are going to send it might be possible to send more than the minimum requirement of only 1 ada. For this guide, we will be sending 10 ada to be on the safe side.
-Check the [Cardano ledger docs for further reading](https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo-alonzo.html#example-min-ada-value-calculations-and-current-constants)
-:::
+:::note Tùy thuộc vào quy mô và số lượng nội dung gốc mà bạn định gửi, có thể gửi nhiều hơn yêu cầu tối thiểu chỉ 1 ada. Đối với hướng dẫn này, chúng tôi sẽ gửi 10 ada để đảm bảo an toàn. Kiểm tra [tài liệu sổ cái Cardano để đọc thêm](https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo-alonzo.html#example-min-ada-value-calculations-and-current-constants) :::
 
-Since we will send 2 of our first tokens to the remote address we are left with 999998 of the `Testtoken` as well as the additional 1000000 `SecondTesttoken`.
+Vì chúng tôi sẽ gửi 2 trong số các mã thông báo đầu tiên của mình đến địa chỉ từ xa nên chúng tôi còn lại 999998 `Testtoken` cũng như 1000000 `SecondTesttoken` bổ sung.
 
-Here’s what the `raw` transaction looks like:
+Đây là giao dịch `raw` trông như thế nào:
 
 ```bash
 cardano-cli transaction build-raw  \
@@ -481,21 +473,19 @@ cardano-cli transaction build-raw  \
 --out-file rec_matx.raw
 ```
 
-Again we are going to calculate the fee and save it in a variable.
+Một lần nữa, chúng ta sẽ tính phí và lưu nó vào một biến.
 
 ```bash
 fee=$(cardano-cli transaction calculate-min-fee --tx-body-file rec_matx.raw --tx-in-count 1 --tx-out-count 2 --witness-count 1 $testnet --protocol-params-file protocol.json | cut -d " " -f1)
 ```
 
-As stated above, we need to calculate the leftovers that will get sent back to our address.
-The logic being:
-`TxHash Amount` — `fee` — `min Send 10 ada in Lovelace` = `the output for our own address`
+Như đã nêu ở trên, chúng tôi cần tính toán phần còn lại sẽ được gửi trở lại địa chỉ của chúng tôi. Logic là: `TxHash Amount` — `fee` — `min Send 10 ada in Lovelace` = `the output for our own address`
 
 ```bash
 output=$(expr $funds - $fee - 10000000)
 ```
 
-Let’s update the transaction:
+Hãy cập nhật giao dịch:
 
 ```bash
 cardano-cli transaction build-raw  \
@@ -506,39 +496,37 @@ cardano-cli transaction build-raw  \
 --out-file rec_matx.raw
 ```
 
-Sign it:
+Kí tên:
+
 ```bash
 cardano-cli transaction sign --signing-key-file payment.skey $testnet --tx-body-file rec_matx.raw --out-file rec_matx.signed
 ```
 
-Send it:
+Gửi nó:
+
 ```bash
 cardano-cli transaction submit --tx-file rec_matx.signed $testnet
 ```
 
-After a few seconds, you, the receiver, should have your tokens. For this example, a Daedalus testnet wallet is used.
+Sau vài giây, bạn, người nhận, sẽ có mã thông báo của mình. Đối với ví dụ này, một ví testnet Daedalus được sử dụng.
 
-![image](https://user-images.githubusercontent.com/34856010/162867390-459b718b-505c-45e5-8a4c-ef0860cb21c5.png)
+![hình ảnh](https://user-images.githubusercontent.com/34856010/162867390-459b718b-505c-45e5-8a4c-ef0860cb21c5.png)
 
+## Đốt mã thông báo
 
+Trong phần cuối của vòng đời mã thông báo, chúng tôi sẽ đốt 5000 mã thông báo mới được tạo <i>SecondTesttoken</i> , do đó sẽ hủy chúng vĩnh viễn.
 
-## Burning token
+Bạn sẽ không ngạc nhiên khi điều này — một lần nữa — sẽ được thực hiện với một giao dịch. Nếu bạn đã làm theo hướng dẫn này cho đến thời điểm này, thì bạn đã quen với quy trình, vì vậy hãy bắt đầu lại.
 
-In the last part of our token lifecycle, we will burn 5000 of our newly made tokens <i>SecondTesttoken</i>, thereby destroying them permanently.
-
-You won't be surprised that this — again — will be done with a transaction.
-If you've followed this guide up to this point, you should be familiar with the process, so let's start over.
-
-Set everything up and check our address:
+Thiết lập mọi thứ và kiểm tra địa chỉ của chúng tôi:
 
 ```bash
 cardano-cli query utxo --address $address $testnet
 ```
 
-:::note Since we've already sent tokens away, we need to adjust the amount of Testtoken we are going to send.
-:::
+:::note Vì chúng tôi đã gửi mã thông báo đi, nên chúng tôi cần điều chỉnh số lượng Testtoken mà chúng tôi sẽ gửi. :::
 
-Let's set our variables accordingly (if not already set). Variables like address and the token names should also be set.
+Hãy đặt các biến của chúng tôi cho phù hợp (nếu chưa được đặt). Các biến như địa chỉ và tên mã thông báo cũng phải được đặt.
 
 ```bash
 txhash="insert your txhash here"
@@ -549,8 +537,7 @@ policyid=$(cat policy/policyID)
 burnoutput="0"
 ```
 
-Burning tokens is fairly straightforward.
-You will issue a new minting action, but this time with a <b>negative</b> input. This will essentially subtract the amount of token.
+Việc đốt mã thông báo khá đơn giản. Bạn sẽ đưa ra một hành động đúc kết mới, nhưng lần này với đầu vào <b>âm</b> . Điều này về cơ bản sẽ trừ đi số lượng mã thông báo.
 
 ```bash
 cardano-cli transaction build-raw \
@@ -560,28 +547,23 @@ cardano-cli transaction build-raw \
  --mint="-5000 $policyid.$tokenname2" \
  --minting-script-file policy/policy.script \
  --out-file burning.raw
- ```
- 
+```
 
-:::note Since we already have multiple transaction files, we will give this transaction a better name and call it <i>burning.raw</i>.
-We also need to specify the amount of tokens left after destroying.
-The math is:
-<i>amount of input token</i> — <i>amount of destroyed token</i> = <i>amount of output token</i>
-:::
+:::note Vì chúng tôi đã có nhiều tệp giao dịch, chúng tôi sẽ đặt cho giao dịch này một cái tên hay hơn và gọi nó là <i>burn.raw</i> . Chúng tôi cũng cần chỉ định số lượng mã thông báo còn lại sau khi hủy. Phép toán là: <i>lượng token đầu vào</i> — <i>lượng token bị hủy</i> = <i>lượng token đầu ra</i> :::
 
-As usual, we need to calculate the fee. 
-To make a better differentiation, we named the variable <i>burnfee</i>:
+Như thường lệ, chúng ta cần tính phí. Để tạo sự khác biệt tốt hơn, chúng tôi đặt tên biến là <i>burnfee</i> :
 
 ```bash
 burnfee=$(cardano-cli transaction calculate-min-fee --tx-body-file burning.raw --tx-in-count 1 --tx-out-count 1 --witness-count 2 $testnet --protocol-params-file protocol.json | cut -d " " -f1)
 ```
 
-Calculate the correct output value
+Tính toán giá trị đầu ra chính xác
+
 ```bash
 burnoutput=$(expr $funds - $burnfee)
 ```
 
-Re-build the transaction with the correct amounts
+Xây dựng lại giao dịch với số tiền chính xác
 
 ```bash
 cardano-cli transaction build-raw \
@@ -591,12 +573,12 @@ cardano-cli transaction build-raw \
  --mint="-5000 $policyid.$tokenname2" \
  --minting-script-file policy/policy.script \
  --out-file burning.raw
- ```
+```
 
- Sign the transaction:
+Ký giao dịch:
 
- ```bash
- cardano-cli transaction sign  \
+```bash
+cardano-cli transaction sign  \
 --signing-key-file payment.skey  \
 --signing-key-file policy/policy.skey  \
 $testnet  \
@@ -604,19 +586,20 @@ $testnet  \
 --out-file burning.signed
 ```
 
-Send it:
+Gửi nó:
 
 ```bash
 cardano-cli transaction submit --tx-file burning.signed $testnet
 ```
 
-Check your address: 
+Kiểm tra địa chỉ của bạn:
 
 ```bash
 cardano-cli query utxo --address $address $testnet
 ```
 
-You should now have 5000 tokens less than before:
+Bây giờ bạn sẽ có ít hơn 5000 mã thông báo so với trước đây:
+
 ```bash
                            TxHash                                 TxIx        Amount
 --------------------------------------------------------------------------------------
