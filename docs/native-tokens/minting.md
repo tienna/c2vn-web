@@ -12,7 +12,7 @@ Chúng tôi đặc biệt khuyên bạn nên tham khảo phần này để hiể
 Minting NFTs sẽ tuân theo quy trình tương tự, chỉ với một vài chỉnh sửa. Nếu bạn quan tâm NFT, vui lòng truy cập 
 [Minting NFTs](minting-nfts.md).
 
-
+<iframe width="100%" height="325" src="https://www.youtube.com/embed/IeB-QgRk95A" title="Hướng dẫn tạo token trên Cardano bằng câu lệnh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
 ## Yêu cầu
 1. Một nút Cardano đang chạy và được đồng bộ hóa - có thể truy cập thông qua lệnh `cardano-cli`. Hướng dẫn này được viết bằng `cardano-cli` v 1.27.0. Một số lệnh có thể thay đổi.

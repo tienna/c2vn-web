@@ -7,7 +7,8 @@ description: Cách Mint NFT trên Cardano.
 
 
 :::note 
-Có nhiều cách để nhận ra NFT với Cardano. Tuy nhiên, trong hướng dẫn này, chúng tôi sẽ tập trung vào cách chiếm ưu thế nhất, để đính kèm các tham chiếu lưu trữ của các dịch vụ khác như [IPFS](https://ipfs.io/) vào mã thông báo của chúng tôi. :::
+Có nhiều cách để nhận ra NFT với Cardano. Tuy nhiên, trong hướng dẫn này, chúng tôi sẽ tập trung vào cách chiếm ưu thế nhất, để đính kèm các tham chiếu lưu trữ của các dịch vụ khác như [IPFS](https://ipfs.io/) vào mã thông báo của chúng tôi. 
+:::
 
 ## Có gì khác biệt?
 
@@ -68,7 +69,8 @@ Siêu dữ liệu giúp chúng tôi hiển thị những thứ như URI hình �
 5. Truy vấn hàm băm IPFS và tất cả các thuộc tính khác cho mục nhập tương ứng.
 
 :::note 
-**Hiện tại không có tiêu chuẩn thống nhất nào về cách xác định NFT hoặc siêu dữ liệu.** Tuy nhiên, có [Đề xuất cải tiến Cardano](https://github.com/cardano-foundation/CIPs/pull/85) nếu bạn muốn theo dõi cuộc thảo luận. :::
+**Hiện tại không có tiêu chuẩn thống nhất nào về cách xác định NFT hoặc siêu dữ liệu.** Tuy nhiên, có [Đề xuất cải tiến Cardano](https://github.com/cardano-foundation/CIPs/pull/85) nếu bạn muốn theo dõi cuộc thảo luận. 
+:::
 
 ### Khóa thời gian
 
@@ -184,7 +186,8 @@ mkdir policy
 ```
 
 :::note 
-Chúng tôi không thay đổi thư mục này và mọi thứ được thực hiện từ thư mục làm việc của chúng tôi. :::
+Chúng tôi không thay đổi thư mục này và mọi thứ được thực hiện từ thư mục làm việc của chúng tôi. 
+:::
 
 Tạo một bộ cặp khóa mới:
 
@@ -429,7 +432,7 @@ cardano-cli transaction sign  \
 
 :::note 
 Giao dịch đã ký sẽ được lưu trong một tệp mới có tên `matx.signed` thay vì `matx.raw` .
- :::
+:::
 
 Bây giờ chúng tôi sẽ gửi giao dịch, do đó Mint tài sản gốc của chúng tôi:
 
