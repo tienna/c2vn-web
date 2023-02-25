@@ -10,7 +10,7 @@ Trong phần này, chúng tôi sẽ khai thác tài sản gốc --**chứ không
 
 Chúng tôi đặc biệt khuyên bạn nên tham khảo phần này để hiểu cách hoạt động của giao dịch và đúc tiền.
 Minting NFTs sẽ tuân theo quy trình tương tự, chỉ với một vài chỉnh sửa. Nếu bạn quan tâm NFT, vui lòng truy cập 
-[Minting NFTs](minting-nfts.md).
+[Minting NFTs](mint-nfts).
 
 <iframe width="100%" height="325" src="https://www.youtube.com/embed/IeB-QgRk95A" title="Hướng dẫn tạo token trên Cardano bằng câu lệnh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"></iframe>
 
