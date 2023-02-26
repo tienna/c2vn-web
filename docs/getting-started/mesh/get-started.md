@@ -56,11 +56,11 @@ Cho dù bạn là người mới trong lĩnh vực phát triển web hay nhà ph
 
 | [Duyệt qua tất cả các hướng dẫn](https://meshjs.dev/guides) | |
 |---|---|
-| [Bắt đầu một ứng dụng Web3 trên Next.js](https://meshjs.dev/guides/nextjs) | Hướng dẫn từng bước để thiết lập ứng dụng web Next.js, kết nối ví và duyệt nội dung của ví.|
-| [Đúc tiền trên Node.js](https://meshjs.dev/guides/minting-on-nodejs) | Tải khóa do CLI tạo và tài sản đúc trên Node.js|
-| [Giao dịch đa chữ ký (đúc tiền)](https://meshjs.dev/guides/multisig-minting) | Tạo giao dịch multi-sig và đúc NFT|
-| [Sử dụng Hợp đồng thông minh với Mesh](https://meshjs.dev/guides/smart-contract) | Hướng dẫn từng bước để tích hợp Hợp đồng thông minh Cardano của bạn với ứng dụng web.|
-| [Chứng minh quyền sở hữu ví bằng mật mã](https://meshjs.dev/guides/prove-wallet-ownership) | Chứng minh bằng mật mã quyền sở hữu của ví bằng cách ký một phần dữ liệu bằng ký hiệu dữ liệu.|
+| [Bắt đầu một ứng dụng Web3 trên Next.js](start-app-web3) | Hướng dẫn từng bước để thiết lập ứng dụng web Next.js, kết nối ví và duyệt nội dung của ví.|
+| [Đúc tiền trên Node.js](start-mint-nft-web3) | Tải khóa do CLI tạo và tài sản đúc trên Node.js|
+| [Giao dịch đa chữ ký (đúc tiền)](start-mint-multisig) | Tạo giao dịch multi-sig và đúc NFT|
+| [Sử dụng Hợp đồng thông minh với Mesh](smart-contract) | Hướng dẫn từng bước để tích hợp Hợp đồng thông minh Cardano của bạn với ứng dụng web.|
+| [Chứng minh quyền sở hữu ví bằng mật mã](prove-wallet-ownership) | Chứng minh bằng mật mã quyền sở hữu của ví bằng cách ký một phần dữ liệu bằng ký hiệu dữ liệu.|
 
 ## Cài đặt thủ công
 
