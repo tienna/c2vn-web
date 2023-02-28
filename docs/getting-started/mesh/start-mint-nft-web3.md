@@ -10,39 +10,41 @@ description: Ví để xây dựng các giao dịch trong các ứng dụng củ
 Đúc tài sản trên Node.js
 Tải khóa do CLI tạo và tài sản đúc trên Node.js
 
-Trong hướng dẫn này, chúng tôi sẽ tạo một số nội dung trên Node.js. AppWallet
+Trong hướng dẫn này, chúng ta sẽ tạo tài sản với `AppWallet` trên Node.js. 
 
 ## Thiết lập hệ thống
+
 1. Visual Studio Code
 
-Visual Studio Code là một trình chỉnh sửa mã được tạo bởi Microsoft. Tải xuống và cài đặt Visual Studio Code để chỉnh sửa mã.
+Visual Studio Code là một trình chỉnh sửa mã được tạo bởi Microsoft. Tải xuống và cài đặt [Visual Studio Code](https://code.visualstudio.com/) để chỉnh sửa mã.
 
-2. node.js
+2. Node.js
 
-Node.js là môi trường thời gian chạy JavaScript đa nền tảng chạy trên công cụ V8 và thực thi mã JavaScript. Cài đặt phiên bản Hỗ trợ dài hạn (LTS) của Node.js (khi viết v16.16.0).
+Node.js là môi trường thời gian chạy JavaScript đa nền tảng chạy trên công cụ V8 và thực thi mã JavaScript. Cài đặt phiên bản Hỗ trợ dài hạn (LTS) của [Node.js](https://nodejs.org/) (v16.16.0).
 
 ## Thiết lập dự án
+
 Đầu tiên, tạo một thư mục mới và khởi tạo dự án Node.js:
 
 ```
-npm init .
+npm init
 ```
 
 Tiếp theo, cài đặt `typescript` và gói `Mesh` :
 
-```
+```javascript
 npm install --dev typescript && npm install @meshsdk/core
 ```
 
 Sau đó, khởi tạo `TypeScript` cần thiết để biên dịch `TypeScript`:
 
-```
+```javascript
 npx tsc --init
 ```
 
-Sau đó, mở tệp `tsconfig.json`  và xác định các cấu hình sau:
+Sau đó, mở tệp `tsconfig.json`  và định cấu hình sau:
 
-```
+```javascript
 {
   ...
   "target": "ESNext",
@@ -53,9 +55,9 @@ Sau đó, mở tệp `tsconfig.json`  và xác định các cấu hình sau:
 }
 ```
 
-Cuối cùng, mở tệp package.json  thêm các cấu hình sau:
+Cuối cùng, mở tệp `package.json`  thêm các cấu hình sau:
 
-```
+```javascript
 {
   ...
   "type": "module",
@@ -68,11 +70,11 @@ Cuối cùng, mở tệp package.json  thêm các cấu hình sau:
 
 ## Xây dựng giao dịch đúc tài sản
 
-1. Tạo danh sách siêu dữ liệu của NFT
+### 1. Tạo danh sách siêu dữ liệu của NFT
 
-Tạo một tệp có tên metadata.tsvà xác định siêu dữ liệu cho NFT của chúng tôi:
+Tạo một tệp có tên `metadata.ts` và định nghĩa siêu dữ liệu cho NFT của chúng ta như sau:
 
-```
+```javascript
 export const metadata: { [assetName: string]: any } = {
   MeshToken01: {
     name: "Mesh Token 1",
@@ -99,11 +101,11 @@ export const metadata: { [assetName: string]: any } = {
 
 ```
 
-2. Tạo danh sách người nhận
+### 2. Tạo danh sách người nhận
 
-Tạo một tệp có tên recipients.tsvà chỉ định danh sách người nhận:
+Tạo một tệp có tên `recipients.ts` và chỉ định danh sách người nhận:
 
-```
+```javascript
 export const recipients: { [recipient: string]: string } = {
   addr_test1vpvx0sacufuypa2k4sngk7q40zc5c4npl337uusdh64kv0c7e4cxr:
     "MeshToken01",
@@ -114,11 +116,11 @@ export const recipients: { [recipient: string]: string } = {
 };
 ```
 
-3. Tạo main.tsvà nhập các gói:
+### 3. Tạo `main.ts` và import các gói:
 
-Hãy tạo một tệp có tên main.tsvà nhập các gói chúng tôi cần và các tệp chúng tôi đã tạo:
+Hãy tạo một tệp có tên `main.ts` và nhập các gói chúng ta cần và các tệp chúng ta đã tạo:
 
-```
+```javascript
 import {
   AppWallet,
   Transaction,
@@ -133,34 +135,36 @@ import { recipients } from './recipients.js';
 
 ```
 
-4. Định nghĩa các biến
+### 4. Định nghĩa các biến
 
 Tiếp theo, hãy xác định một số biến chúng ta sẽ cần để đúc. Bạn nên sử dụng ví của riêng mình nếu bạn muốn đúc một bộ sưu tập của riêng mình. Đối với ví dụ này, đây là những biến chúng ta cần:
 
+```javascript
+
+const networkId = 0;
+const blockfrostKey = 'BLOCKFROST_KEY_HERE...';
 ```
+
+### 5. Xây dựng giao dịch đúc NFT
+
+Trong hướng dẫn này, chúng ta đang xây dựng một giao dịch đúc NFT, nhưng nó có thể là bất kỳ giao dịch nào. [Tìm hiểu thêm về Giao dịch](https://meshjs.dev/apis/transaction).
+
+Đầu tiên, chúng ta cần một nhà cung cấp API blockchain, trong hướng dẫn này, chúng ta sẽ dùng `BlockfrostProvider`, nhưng bạn cũng có thể sử dụng các nhà cung cấp khác:
+
+```javascript
+const blockchainProvider = new BlockfrostProvider(blockfrostKey);
+```
+
+Tiếp theo, hãy khởi tạo tập lệnh `AppWallet` và tập lệnh `forgingScript` của nó. Trong ví dụ này, chúng ta khởi tạo bằng cách sử dụng các khóa do CLI tạo, nhưng bạn cũng có thể tải ví của mình bằng khóa riêng và các cụm từ ghi nhớ. Tìm hiểu thêm về [AppWallet](https://meshjs.dev/apis/appwallet).
+
+```javascript
 const demoCLIKey = {
   paymentSkey:
     '5820aaca553a7b95b38b5d9b82a5daa7a27ac8e34f3cf27152a978f4576520dd6503',
   stakeSkey:
     '582097c458f19a3111c3b965220b1bef7d548fd75bc140a7f0a4f080e03cce604f0e',
 };
-const networkId = 0;
-const blockfrostKey = 'BLOCKFROST_KEY_HERE';
-```
 
-5. Xây dựng giao dịch đúc NFT
-
-Trong hướng dẫn này, chúng tôi đang xây dựng một giao dịch đúc tiền, nhưng nó có thể là bất kỳ giao dịch nào. Tìm hiểu thêm về Giao dịch .
-
-Đầu tiên, chúng tôi cần một nhà cung cấp blockchain, trong hướng dẫn này, chúng tôi sẽ nhập `BlockfrostProvider`, nhưng bạn cũng có thể sử dụng các nhà cung cấp khác:
-
-```
-const blockchainProvider = new BlockfrostProvider(blockfrostKey);
-```
-
-Tiếp theo, hãy khởi tạo tập lệnh AppWalletvà tập lệnh rèn của nó. Trong ví dụ này, chúng tôi khởi tạo bằng cách sử dụng các khóa do CLI tạo, nhưng bạn cũng có thể tải ví của mình bằng khóa riêng và các cụm từ ghi nhớ. Tìm hiểu thêm về AppWallet .
-
-```
 const wallet = new AppWallet({
   networkId: networkId,
   fetcher: blockchainProvider,
@@ -171,14 +175,29 @@ const wallet = new AppWallet({
     stake: demoCLIKey.stakeSkey,
   },
 });
+```
+hoặc
+```javascript
+  const wallet = new AppWallet({
+    networkId: 0,
+    fetcher: blockchainProvider,
+    submitter: blockchainProvider,
+    key: {
+      type: 'mnemonic',
+      words: ["pave","base","hello","weekend","symptom","charge","embark","clerk","polar","wish","ribbon","boat","nerve","split","diagram","athlete","holiday","real","slide","judge","lawn","predict","give","comfort"],
+    },
+  });
 
+```
+Rồi tạo biến `walletAddress` và `forgingScript`
+```javascript
 const walletAddress = wallet.getPaymentAddress();
 const forgingScript = ForgeScript.withOneSignature(walletAddress);
 ```
 
-Sau đó, hãy tạo một cái mới Transaction, lặp qua từng người nhận và đúc một tài sản với mintAsset( Tìm hiểu thêm về giao dịch đúc ):
+Sau đó, hãy tạo một giao dịch `Transaction`, lặp qua từng người nhận và đúc một tài sản với `mintAsset`( [Tìm hiểu thêm về giao dịch đúc](https://meshjs.dev/apis/transaction) ):
 
-```
+```javascript
 const tx = new Transaction({ initiator: wallet });
 for (let recipient in recipients) {
   const recipientAddress = recipient;
@@ -197,7 +216,7 @@ for (let recipient in recipients) {
 ```
 Cuối cùng, hãy ký và gửi giao dịch:
 
-```
+```javascript
 const unsignedTx = await tx.build();
 const signedTx = await wallet.signTx(unsignedTx, false);
 const txHash = await wallet.submitTx(signedTx);

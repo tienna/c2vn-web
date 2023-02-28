@@ -48,7 +48,7 @@ Mô hình Người dùng được lưu trữ trong cơ sở dữ liệu của `b
 
 Với ví của người dùng được kết nối, lấy địa chỉ đặt cược của người dùng và gửi nó đến `backend` của chúng ta.
 
-```
+```javascript
 const { wallet, connected } = useWallet();
 
 async function frontendStartLoginProcess() {
@@ -71,7 +71,7 @@ Nếu người dùng là người dùng mới, chúng ta có thể tạo mục n
 
 Đối với người dùng đã tồn tại, chúng ta chỉ cần lưu trữ số nonce mới được tạo vào cơ sở dữ liệu.
 
-```
+```javascript
 import { generateNonce } from '@meshsdk/core';
 
 async function backendGetNonce(userAddress) {
@@ -93,7 +93,7 @@ chúng ta sẵn sàng sử dụng khóa cá nhân được liên kết với ví
 
 Chúng ta yêu cầu sự cho phép của người dùng và hiển thị cho họ thông báo sẽ được ký: `Sign to login in to Mesh: nonce`. Sau khi được chấp nhận, chữ ký sẽ được tạo và dApp sẽ xử lý chữ ký để xác thực người dùng.
 
-```
+```javascript
 async function frontendSignMessage(nonce) {
   try {
     const userAddress = (await wallet.getRewardAddresses())[0];
@@ -117,7 +117,7 @@ Nếu chữ ký được xác minh, người dùng đã xác thực thành công
 
 chúng ta cũng đảm bảo rằng `nonce` không được sử dụng lại, vì điều này sẽ giúp kẻ tấn công có thể giành được quyền truy cập vào tài khoản của người dùng. Điều này được thực hiện bằng cách tạo một `nonce` ngẫu nhiên cho người dùng và lưu nó vào cơ sở dữ liệu. Bằng cách liên tục tạo một `nonce` duy nhất mỗi khi người dùng đăng nhập, chúng ta có thể đảm bảo chữ ký của người dùng được bảo mật và tài khoản của họ an toàn.
 
-```
+```javascript
 import { checkSignature } from '@meshsdk/core';
 
 async function backendVerifySignature(userAddress, signature) {
@@ -141,7 +141,7 @@ Hãy đặt tất cả chúng lại với nhau. Mã lối vào của bạn phả
 
 Để đăng nhập bằng ví, bạn có thể sử dụng `CardanoWallet` thành phần React UI để kết nối và đăng nhập bằng ví:
 
-```
+```javascript
 <CardanoWallet
   label="Sign In with Cardano"
   onConnected={() => frontendStartLoginProcess()}
@@ -150,7 +150,7 @@ Hãy đặt tất cả chúng lại với nhau. Mã lối vào của bạn phả
 
 Đặt các mã giao diện người dùng lại với nhau có thể trông như thế này:
 
-```
+```javascript
 import { CardanoWallet, useWallet } from '@meshsdk/react';
 
 export default function Page() {
@@ -189,7 +189,7 @@ Và mã phía máy chủ phải có 2 điểm cuối REST ` backendGetNonce(user
 
  mã có thể giống như sau:
  
-```
+```javascript
 import { checkSignature, generateNonce } from '@meshsdk/core';
 
 async function backendGetNonce(userAddress) {

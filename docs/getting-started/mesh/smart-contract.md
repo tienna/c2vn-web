@@ -73,7 +73,7 @@ npm install @meshsdk/core
 
 Mở next.config.jsvà nối webpack các cấu hình. của bạn next.config.jssẽ trông như thế này:
 
-```
+```javascript
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -103,9 +103,10 @@ yarn add @meshsdk/react
 ```
 
 2. Thiết lập MeshProvider
+
 Mở `pages/_app.tsx` và thay thế nó bằng đoạn mã sau:
 
-```
+```javascript
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { MeshProvider } from "@meshsdk/react";
@@ -125,7 +126,7 @@ export default MyApp;
 
 Mở `pages/index.tsx` và thay thế nó bằng cách sau:
 
-```
+```javascript
 import { CardanoWallet, useWallet } from '@meshsdk/react';
 import { useState } from "react";
 import type { NextPage } from "next";
@@ -156,7 +157,7 @@ Xong! Bây giờ hãy truy cập http://localhost:3000 để xem nút kết nố
 
 Tạo một thư mục mới có tên `config` và trong đó tạo một tệp mới có tên `contract.ts`. Mở nó và chèn đoạn mã sau:
 
-```
+```javascript
 import { PlutusScript, resolvePlutusScriptAddress } from '@meshsdk/core';
 
 export const script: PlutusScript = {
@@ -177,7 +178,7 @@ Bây giờ chúng ta đã đưa thành công hợp đồng của mình vào dự
 
 Mở `pages/index.tsx` và thêm hai thư viện sau vào đầu tệp của bạn:
 
-```
+```javascript
 import { script, scriptAddr } from "../config/contract";
 import { Transaction, Data, BlockfrostProvider, resolveDataHash } from '@meshsdk/core';
 ```
@@ -186,7 +187,7 @@ Bây giờ chúng ta sẽ sử dụng trình xây dựng giao dịch của Mesh 
 
 Thêm hàm sau vào `pages/index.tsx` của bạn, ngay trước `return`.
 
-```
+```javascript
 async function lockFunds() {
   if (wallet) {
     const addr = (await wallet.getUsedAddresses())[0];
@@ -220,7 +221,7 @@ Nếu bạn đang thắc mắc, chúng ta sử dụng `policyId+hexTokenName` đ
 
 Bây giờ thay thế hàm `return` bằng cách sau
 
-```
+```javascript
 return (
   <div>
     <h1>Connect Wallet</h1>
@@ -259,7 +260,7 @@ Trước tiên, hãy tìm nạp dữ liệu từ chuỗi khối tại địa ch�
 
 Dán hàm sau ngay trước phần `return`  của bạn
 
-```
+```javascript
 async function _getAssetUtxo({scriptAddress, asset, datum}) {
   const blockfrostProvider = new BlockfrostProvider(
     '<blockfrostApiKey>',
@@ -280,7 +281,7 @@ Hàm `_getAssetUtxo` quét các UTxO tại đỉa chỉ `scriptAddress` và lọ
 
 Bây giờ chúng ta có thể xây dựng giao dịch mở khóa của mình, dán hàm sau ngay trước phần `return` của bạn. Đảm bảo xây dựng cùng dữ liệu bạn đã sử dụng khi khóa tiền.
 
-```
+```javascript
 async function unlockFunds() {
   if (wallet) {
     setLoading(true);
@@ -324,7 +325,7 @@ Hãy xem hàm này làm gì. Trước tiên, chúng ta đặt các hằng số c
 
 Cuối cùng, hãy thay đổi hàm `return`  một lần nữa để lần này mở khóa tiền. Thay thế nó bằng đoạn mã sau:
 
-```
+```javascript
 return (
   <div>
     <h1>Connect Wallet</h1>

@@ -17,38 +17,60 @@ Trong phần này, chúng ta sẽ khám phá những điều sau đây:
 ## Đúc tài sản
 
 Chúng ta sẽ xem cách đúc NFT bằng `ForgeScript` .
+Đầu tiên thêm các đối tượng vào site của bạn.
 
 ```javascript
 import { Transaction, ForgeScript } from "@meshsdk/core";
 import type { Mint, AssetMetadata } from "@meshsdk/core";
+```
 
-// prepare forgingScript
-const usedAddress = await wallet.getUsedAddresses();
-const address = usedAddress[0];
-const forgingScript = ForgeScript.withOneSignature(address);
+Tạo một hàm mintNFT() 
 
-const tx = new Transaction({ initiator: wallet });
+```javascript
+async function mintNFT() {
+      // prepare forgingScript
+      const usedAddress = await wallet.getUsedAddresses();
+      const address = usedAddress[0];
+      const forgingScript = ForgeScript.withOneSignature(address);
 
-// define asset#1 metadata
-const assetMetadata1: AssetMetadata = {
-  name: "Mesh Token",
-  image: "ipfs://QmRzicpReutwCkM6aotuKjErFCUD213DpwPq6ByuzMJaua",
-  mediaType: "image/jpg",
-  description: "This NFT is minted by Mesh (https://meshjs.dev/).",
-};
+      const tx = new Transaction({ initiator: wallet });
 
-const asset1: Mint = {
-  assetName: "MeshToken",
-  assetQuantity: "1",
-  metadata: assetMetadata1,
-  label: "721",
-  recipient: "addr_test1vpvx0sacufuypa2k4sngk7q40zc5c4npl337uusdh64kv0c7e4cxr",
-};
-tx.mintAsset(forgingScript, asset1);
+      // define asset#1 metadata
+      const assetMetadata1: AssetMetadata = {
+        "name": "T1",
+        "image": "ipfs://QmREp3TLtFCeTFozpDUTnpkLvjDe2Mvdu1r6x8k4m6mdtk",
+        "mediaType": "image/jpg",
+        "description": "This NFT is minted by Mesh (https://meshjs.dev/)."
+      };
+      const asset1: Mint = {
+        assetName: 'T1',
+        assetQuantity: '1',
+        metadata: assetMetadata1,
+        label: '721',
+        recipient: 'addr_test1qrsatwqzdh6w0ucekezvlrhe3cs76mpp7pup3eddkmq4ax8n0l9jsm5npkmszc2jeet7w6wwp5a94aqadlueuzk4sjdsd3dq4j',
+      };
+      tx.mintAsset(
+        forgingScript,
+        asset1,
+      );
 
-const unsignedTx = await tx.build();
-const signedTx = await wallet.signTx(unsignedTx);
-const txHash = await wallet.submitTx(signedTx);
+      const unsignedTx = await tx.build();
+      const signedTx = await wallet.signTx(unsignedTx);
+      const txHash = await wallet.submitTx(signedTx);
+
+  }
+```
+Sau đó bạn tạo một tác vụ button
+
+```javascript
+      <div className="demo">
+        <button
+           type="button"
+           onClick={() => mintNFT()}   
+        >
+        Mint NFT       
+        </button>
+      </div>
 ```
 
 Ngoài ra, bạn có thể sử dụng tập lệnh bằng `NativeScript`. 
@@ -83,26 +105,50 @@ Giống như đúc NFT, chúng ta cần xác định `ForgeScript` . Chúng ta s
 ```javascript
 import { Transaction, ForgeScript } from "@meshsdk/core";
 import type { Asset } from "@meshsdk/core";
+```
 
-// prepare forgingScript
-const usedAddress = await wallet.getUsedAddresses();
-const address = usedAddress[0];
-const forgingScript = ForgeScript.withOneSignature(address);
+Tạo một hàm BuntNFT
 
-const tx = new Transaction({ initiator: wallet });
+```javascript
+  async function BuntNFT() {
+    const usedAddress = await wallet.getUsedAddresses();
+    const address = usedAddress[0];
+    const forgingScript = ForgeScript.withOneSignature(address);
+    console.log (forgingScript)
+    
+    const tx = new Transaction({ initiator: wallet });
 
-// burn asset#1
-const asset1: Asset = {
-  unit: "64af286e2ad0df4de2e7de15f8ff5b3d27faecf4ab2757056d860a424d657368546f6b656e",
-  quantity: "1",
-};
-tx.burnAsset(forgingScript, asset1);
+    // burn asset#1
+    // const asset1: Asset = {
+    //   unit: '64af286e2ad0df4de2e7de15f8ff5b3d27faecf4ab2757056d860a424d657368546f6b656e',
+    //   quantity: '1',
+    // };
+    // tx.burnAsset(forgingScript, asset1);
 
+    // burn asset#2
+    const asset2: Asset = {
+      unit: 'b7f76d528982d71f0367491eb6a21dbf8a8507304d4e3fb944416b284332564e',
+      quantity: '1',
+    };
+    tx.burnAsset(forgingScript, asset2);
 
+    const unsignedTx = await tx.build();
+    const signedTx = await wallet.signTx(unsignedTx);
+    const txHash = await wallet.submitTx(signedTx);
+  }
+```
 
-const unsignedTx = await tx.build();
-const signedTx = await wallet.signTx(unsignedTx);
-const txHash = await wallet.submitTx(signedTx);
+Sau đó tạo thêm một tác vụ button Bunt
+
+```javascript
+      <div className="demo">
+        <button
+              type="button"
+              onClick={() => BuntNFT()}            
+         >
+            Bunt Asset       
+         </button>
+      </div>
 ```
 
 Kiểm tra [Sân chơi Mesh](https://meshjs.dev/apis/transaction/minting) để xem bản trình diễn trực tiếp và giải thích đầy đủ.

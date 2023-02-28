@@ -16,26 +16,31 @@ Next.js và Mesh là các thư viện JavaScript, vì vậy chúng tôi giả đ
 
 ## Thiết lập hệ thống
 1. Visual Studio Code
+
 Visual Studio Code là một trình chỉnh sửa mã được tạo bởi Microsoft. Tải xuống và cài đặt Visual Studio Code để chỉnh sửa mã.
 
 2. Node.js
+
 Node.js là môi trường thời gian chạy JavaScript đa nền tảng chạy trên công cụ V8 và thực thi mã JavaScript. Cài đặt phiên bản Hỗ trợ dài hạn (LTS) của Node.js (khi viết v16.16.0).
 
 ## Thiết lập Next.js
 1. Tạo thư mục dự án và mở Visual Studio Code
+
 Tạo một thư mục mới cho dự án của bạn và đặt cho thư mục một cái tên có ý nghĩa. Mở ứng dụng Visual Studio Code và kéo thư mục dự án của bạn vào Visual Studio Code.
 
 2. Tạo ứng dụng Next.js
+
 Từ các tùy chọn menu trong Visual Studio Code của bạn, hãy mở và thực thi lệnh này để tạo một ứng dụng NextJs mới: Terminal
 
-```
+```javascript
 npx create-next-app@latest --typescript .
 ```
 
 3. Bắt đầu phát triển máy chủ
+
 Sau khi cài đặt hoàn tất, hãy khởi động máy chủ phát triển với:
 
-```
+```javascript
 npm run dev
 ```
 
@@ -44,9 +49,10 @@ Truy cập http://localhost:3000 để xem ứng dụng của bạn. để dừn
 ## Thiết lập với Mesh
 
 1. Cài đặt gói MeshJS
+
 Cài đặt phiên bản mới nhất của Lưới với npm:
 
-```
+```javascript
 npm install @meshsdk/core @meshsdk/react
 ```
 
@@ -54,7 +60,7 @@ npm install @meshsdk/core @meshsdk/react
 
 Mở `next.config.js` và  cấu hình `webpack`. file `next.config.js` sẽ trông như thế này:
 
-```
+```javascript
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -69,6 +75,7 @@ module.exports = nextConfig;
 ```
 
 3. Xin chúc mừng
+
 Bạn vừa tiết kiệm được một vài tuần học tập và một số ngày cố gắng bắt đầu. Ứng dụng Next.js của bạn đã sẵn sàng để kết nối ví, duyệt nội dung và thực hiện một số giao dịch.
 
 
@@ -80,7 +87,8 @@ Bạn vừa tiết kiệm được một vài tuần học tập và một số 
 
 Mở `pages/_app.tsx`,  import [MeshProvider.](https://meshjs.dev/react/getting-started)  File `_app.tsx` của bạn sẽ trông giống như thế này: 
 
-```
+
+```javascript
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { MeshProvider } from "@meshsdk/react";
@@ -106,7 +114,7 @@ Cuối cùng, chúng tôi liên kết các thành phần đó lại với nhau, 
 Mở `pages/index.tsx` và thay thế nó bằng các mã sau:
 
 
-```
+```javascript
 import { useState } from "react";
 import type { NextPage } from "next";
 import { useWallet } from '@meshsdk/react';
