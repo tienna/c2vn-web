@@ -82,7 +82,7 @@ const config = {
             
  
              {
-                href: 'http://cardano2vn.io/vesting/', label: 'Vesting', position: 'left'
+                href: 'http://cardano2vn.duckdns.org:9081', label: 'Vesting', position: 'left'
             },  
                        
             {
