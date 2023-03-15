@@ -92,7 +92,7 @@ curl_close($ch);
 $transaction = json_decode($response, true);
 $transactionHash
 ```
-8. Khi bạn đã tạo giao dịch, hãy ký giao dịch đó bằng khóa riêng được liên kết với địa chỉ nguồn bằng cách sử dụng điểm /txs/{txHash}/signcuối. Bạn sẽ cần đưa giao dịch được tuần tự hóa vào nội dung yêu cầu và khóa API của bạn trong tiêu đề yêu cầu.
+8. Khi bạn đã tạo giao dịch, hãy ký giao dịch đó bằng khóa riêng được liên kết với địa chỉ nguồn bằng cách sử dụng `/txs/{txHash}/sign`. Bạn sẽ cần đưa giao dịch được tuần tự hóa vào nội dung yêu cầu và khóa API của bạn trong tiêu đề yêu cầu.
 
 ```javascript
 
@@ -115,7 +115,7 @@ curl_close($ch);
 $signedTransaction = json_decode($response, true)["hex"];
 ```
 
-9. Cuối cùng, gửi giao dịch đã ký tới mạng Cardano bằng /txs/submitđiểm cuối. Bạn sẽ cần đưa giao dịch đã ký vào nội dung yêu cầu và khóa API của bạn trong tiêu đề yêu cầu.
+9. Cuối cùng, gửi giao dịch đã ký tới mạng Cardano bằng `/txs/submit`. Bạn sẽ cần đưa giao dịch đã ký vào nội dung yêu cầu và khóa API của bạn trong tiêu đề yêu cầu.
 
 ```javascript
 

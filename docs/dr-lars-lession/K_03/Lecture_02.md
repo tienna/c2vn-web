@@ -479,7 +479,7 @@ Hàm mkValidator bên trong Typed.hs có dạng:
 mkValidator :: () -> Integer -> ScriptContext -> Bool
 mkValidator _ r _ = traceIfFalse "wrong redeemer" $ r == 42
 ```
-Người đổi quà này sẽ kiểm tra xem số nguyên có phải là 42 hay không, nếu không, nó sẽ trả về giá trị sai, xuất ra “người đổi quà sai”.
+Redeemer này sẽ kiểm tra xem số nguyên có phải là 42 hay không, nếu không, nó sẽ trả về giá trị False, xuất ra “Redeemer False”.
 Sau đó, chúng tôi đã sửa đổi chức năng biên dịch:
 
 ```haskell
@@ -577,7 +577,7 @@ mkValidator :: () -> (Bool, Bool) -> ScriptContext -> Bool
 mkValidator () (b, c) _ = traceIfFalse "wrong redeemer" $ b == c
 ```
 
-Tiếp theo, chúng tôi kiểm tra xem b và c có giá trị bằng nhau không; nếu không thì ném thông báo "người chuộc lỗi sai". Sau đó, chúng ta cần khai báo các kiểu dữ liệu cho cả tham số đơn vị và boolean.
+Tiếp theo, chúng tôi kiểm tra xem b và c có giá trị bằng nhau không; nếu không thì ném thông báo "wrong Redeemer". Sau đó, chúng ta cần khai báo các kiểu dữ liệu cho cả tham số đơn vị và boolean.
 
 ```haskell
 data Typed
