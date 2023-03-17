@@ -1,4 +1,4 @@
-# P2P động khả dụng trên mạng chính
+# P2P động đã chạy trên mạng mainnet C
 
 ### **Kết nối mạng ngang hàng (P2P) động đi kèm với việc phát hành nút v.1.35.6. Những người tham gia mạng hiện có thể kiểm tra giao tiếp nút tự động mà không cần cấu hình tĩnh**
 
