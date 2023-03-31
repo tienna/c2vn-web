@@ -7,7 +7,7 @@ description: Kết quả vòng cấp vốn Deep funding round 2
 
 ---
 
-#3 Vòng tài trợ  số 2 và Phần thưởng trung thành — Kết quả sự kiện bỏ phiếu
+## Vòng tài trợ  số 2 và Phần thưởng trung thành — Kết quả sự kiện bỏ phiếu
 
 
 Xin chào,
@@ -168,7 +168,7 @@ Số tiền được trao: 25.000 đô la
 
 [Đọc thêm](https://proposals.deepfunding.ai/collaborate/83e6c5ad-af6d-46ae-a50e-d5f6bb924281)
 
-**Tiêu đề: **JumpStart - SNET service onboarding
+**Tiêu đề: ** Agreement Building Platform
 
 Người đề xuất: Aharon Porath 
 
