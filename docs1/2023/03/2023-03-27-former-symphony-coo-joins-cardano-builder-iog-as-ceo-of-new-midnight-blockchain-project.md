@@ -1,4 +1,4 @@
-# Cựu COO của Symphony tham gia IOG, nhà xây dựng Cardano với tư cách là Giám đốc điều hành của dự án chuỗi khối Midnight mới
+# Cựu CEO của Symphony tham gia IOG, nhà xây dựng Cardano với tư cách là Giám đốc điều hành của dự án chuỗi khối Midnight mới
 
 ### **Eran Barak đảm nhận vai trò Giám đốc điều hành mới được thành lập, mang lại trải nghiệm dịch vụ tài chính phong phú cho nhà phát triển phần mềm**
 
@@ -19,7 +19,7 @@ truyền thông
 - ![](img/2023-03-27-former-symphony-coo-joins-cardano-builder-iog-as-ceo-of-new-midnight-blockchain-project.007.png)[](https://twitter.com/timbharrison "Twitter")
 - ![](img/2023-03-27-former-symphony-coo-joins-cardano-builder-iog-as-ceo-of-new-midnight-blockchain-project.008.png)[](https://github.com/timbharrison "GitHub")
 
-![Cựu COO của Symphony tham gia IOG, nhà xây dựng Cardano với tư cách là Giám đốc điều hành của dự án chuỗi khối Midnight mới](img/2023-03-27-former-symphony-coo-joins-cardano-builder-iog-as-ceo-of-new-midnight-blockchain-project.009.png)
+![Cựu CEO của Symphony tham gia IOG, nhà xây dựng Cardano với tư cách là Giám đốc điều hành của dự án chuỗi khối Midnight mới](img/2023-03-27-former-symphony-coo-joins-cardano-builder-iog-as-ceo-of-new-midnight-blockchain-project.009.png)
 
 Input Output Global, Inc. (IOG), một công ty nghiên cứu và phát triển phần mềm, đồng thời là một trong những nhà xây dựng đằng sau nền tảng chuỗi khối bền vững hàng đầu thế giới Cardano, đã bổ nhiệm Eran Barak làm Giám đốc điều hành của Midnight, giao thức tập trung vào bảo vệ dữ liệu mới của họ.
 

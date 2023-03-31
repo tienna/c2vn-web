@@ -271,7 +271,11 @@ const sidebars = {
       "Cardano-summit-2022/Cardano-summit-2022-hanoi"
 	    
     ],
-
+    "SNET-360": [
+        "sNET-360/deep-funding-round-2",
+              
+     ],
+          
     // "Mang Project Catalyst Townhall đến Việt Nam": [
     //   "vn-townhall-channel/note",
     // ],
