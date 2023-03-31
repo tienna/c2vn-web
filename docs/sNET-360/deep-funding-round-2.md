@@ -13,6 +13,8 @@ description: Kết quả vòng cấp vốn Deep funding round 2
 Xin chào,
 Chúng tôi rất vui mừng được chia sẻ điều mà nhiều bạn đang chờ đợi: **Kết quả của sự kiện bỏ phiếu cho vòng Tài trợ sâu thứ hai và nhóm Phần thưởng cho lòng trung thành.**
 
+![](img/Deep-funding-2.jpg)
+
 Chúng ta sẽ bắt đầu với Vòng gọi vốn thứ 2. Mặc dù đây mới chỉ là vòng gọi vốn thứ hai, nhưng chúng tôi đã thấy rất nhiều tiến bộ và rất nhiều đổi mới đang diễn ra:
 
 **Xét từ góc độ lượng:**
