@@ -23,7 +23,7 @@ sudo mkdir ~/cardano
 cd ~/cardano
 ```
 
-Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 3 năm 2022. [Truy cập ](https://hydra.iohk.io/build/13065941#tabs-constituents) để tải phiên bản mới nhất.
+Tải xuống và giải nén tệp nhị phân được biên dịch trước cho Cardano Node. Sau đây là kể từ tháng 3 năm 2022. [Truy cập ](https://github.com/input-output-hk/cardano-node/releases) để tải phiên bản mới nhất.
 
 ```
 
@@ -33,7 +33,7 @@ sudo tar zxvf cardano-node-1.34.1-linux.tar.gz
 
 Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng. [Đây là hướng dẫn bạn tự xây dựng các file nhị phân](https://cardano2vn.io/docs/setup-application/setup-node-mainnet) 
 
-Sao chép hai mã nhị phân chính vào local/bin.
+Sao chép hai mã nhị phân chính vào ~/.local/bin.
 
 ```
 sudo mkdir -p ~/.local/bin
