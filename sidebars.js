@@ -30,6 +30,7 @@ const sidebars = {
           "getting-started/installing-cardano-node",
           "getting-started/running-cardano",
           "getting-started/installing-cardano-wallet",
+          "getting-started/wallet-cardano",
         ],
       },
       {

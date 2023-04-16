@@ -130,7 +130,7 @@ class Eq a where
 
 Trong dòng đầu tiên, chúng ta bắt đầu với từ khóa `class` để cho biết chúng ta đang tạo một lớp kiểu. Tiếp theo là cách lớp kiểu sẽ được gọi ( `Eq` ). Sau đó, chúng ta viết một biến kiểu ( `a` ) đại diện cho bất kỳ kiểu nào sẽ được tạo thành một instance của lớp kiểu này trong tương lai. Vì vậy, nó giống như một trình giữ chỗ. Và cuối cùng, chúng ta sử dụng từ khóa `where` để bắt đầu khối nơi chúng ta định nghĩa các hành vi của lớp kiểu mới được tạo.
 
-Và bây giờ đến phần thú vị. Chúng ta phải định nghĩa các hành vi. Để làm điều đó, chúng ta viết tên và kiểu hàm hoặc giá trị mà chúng ta cần. Trong instance hợp này, chúng ta định nghĩa các hành vi là
+Và bây giờ đến phần thú vị. Chúng ta phải định nghĩa các hành vi. Để làm điều đó, chúng ta viết tên và kiểu hàm hoặc giá trị mà chúng ta cần. Trong trường hợp này, chúng ta định nghĩa các hành vi là
 
 hàm `==` --để kiểm tra xem hai giá trị có bằng nhau hay không.
 
@@ -817,13 +817,13 @@ class Eq a => Ord a where           -- That "Eq a =>" is new!! 🤔
   {-# MINIMAL compare | (<=) #-}    -- We can only implement "compare" or "<=".
 ```
 
-Tất cả mọi thứ kiểm tra ra. Ngoại trừ `Eq a =>` . Chúng ta đã thấy điều này trong cả hàm và instance hợp. Nhưng không bao giờ trên định nghĩa lớp kiểu.
+Tất cả mọi thứ kiểm tra ra. Ngoại trừ `Eq a =>` . Chúng ta đã thấy điều này trong cả hàm và trường hợp. Nhưng không bao giờ trên định nghĩa lớp kiểu.
 
 Điều này ( `Eq a =>` ) có nghĩa là những gì bạn tưởng tượng:
 
 **Để biến một kiểu `a` một instance của `Ord` , trước tiên chúng ta phải biến nó thành một instance của `Eq` ! Có nghĩa là `Eq` là điều kiện tiên quyết cho `Ord` . Nói cách khác, `Eq` là lớp cha của `Ord` hoặc `Ord` là lớp con của `Eq` .**
 
-Các siêu lớp cho phép suy ra các chữ ký đơn giản hơn. Bằng cách nói rằng một kiểu là một instance của `Ord` , chúng ta không chỉ biết rằng nó có các hành vi của `Ord` mà còn có các hành vi của `Eq` . Ngoài ra, điều này cho phép chúng ta sử dụng các hành vi của lớp kiểu `Eq` để định nghĩa các instance của lớp kiểu `Ord` . Đó thực sự là một cái gì đó xảy ra trong instance hợp này. Lớp kiểu `Ord` sử dụng các hàm được cung cấp bởi lớp kiểu `Eq` .
+Các siêu lớp cho phép suy ra các chữ ký đơn giản hơn. Bằng cách nói rằng một kiểu là một instance của `Ord` , chúng ta không chỉ biết rằng nó có các hành vi của `Ord` mà còn có các hành vi của `Eq` . Ngoài ra, điều này cho phép chúng ta sử dụng các hành vi của lớp kiểu `Eq` để định nghĩa các instance của lớp kiểu `Ord` . Đó thực sự là một cái gì đó xảy ra trong trường hợp này. Lớp kiểu `Ord` sử dụng các hàm được cung cấp bởi lớp kiểu `Eq` .
 
 Chúng ta không thể nhìn thấy nó vì lệnh thông tin không hiển thị toàn bộ định nghĩa lớp kiểu. Giống như khi chúng ta chạy lệnh info cho lớp kiểu `Eq` , nó không hiển thị các định nghĩa đệ quy lẫn nhau của `==` và `/=` mà chúng ta vừa viết.
 
@@ -840,7 +840,7 @@ Và đó là những gì lệnh thông tin cho chúng ta thấy.
 
 Vì vậy, để biến một kiểu thành instance của `Ord` , trước tiên, chúng ta phải biến nó thành một instance của `Eq` . May mắn thay, chúng ta đã tạo một vài phiên bản cho `Eq` trước đây, vì vậy chúng ta đã hoàn thành được nửa chặng đường nếu muốn tạo phiên bản `Ord` cho bất kỳ kiểu nào trong số đó.
 
-Ví dụ: nếu chúng ta muốn tạo một instance của `Box a` cho lớp kiểu `Ord` , chúng ta phải triển khai một trong các hàm cần thiết cho định nghĩa đầy đủ tối thiểu! Trong instance hợp này, chúng ta đã chọn hàm `compare` :
+Ví dụ: nếu chúng ta muốn tạo một instance của `Box a` cho lớp kiểu `Ord` , chúng ta phải triển khai một trong các hàm cần thiết cho định nghĩa đầy đủ tối thiểu! Trong trường hợp này, chúng ta đã chọn hàm `compare` :
 
 ```{.haskell}
 -- type Ord :: * -> Constraint
@@ -880,14 +880,14 @@ Và bùm! đó là nó!
 
 Chúng ta tạo ra:
 
-- Lớp kiểu `Eq` với 3 instance hợp khác nhau.
+- Lớp kiểu `Eq` với 3 trường hợp khác nhau.
 - Lớp kiểu `WeAccept` với 4 phiên bản.
 - Sau đó, lớp kiểu `Container` với 3 trường.
 - Và cuối cùng, chúng ta tạo một kiểu là một instance của lớp kiểu `Ord` .
 
 **Chúc mừng! 🎉 Bạn biết mọi thứ cần thiết để làm việc với các kiểu lớp!!**
 
-Trong phần cuối cùng của bài học này, chúng ta sẽ tìm hiểu cách thức và thời điểm tự động lấy các phiên bản. Tiết kiệm cho chúng ta một chút thời gian quý báu và giảm số lượng mã chúng ta phải duy trì.
+Trong phần cuối cùng của bài học này, chúng ta sẽ tìm hiểu cách thức và thời điểm tự động lấy các phiên bản. Tiết kiệm cho chúng ta một chút thời gian quý báu và giảm số lượng mã chúng ta phải làm.
 
 ## Deriving
 
@@ -934,9 +934,9 @@ Vì vậy, nếu chúng ta có thể làm điều đó ngay từ đầu, thì t�
 
 Chà... Một lý do là không phải tất cả các lớp kiểu đều có thể được dẫn xuất. Và một điều nữa là việc bắt nguồn đôi khi có thể sai.
 
-### Deriving có thể đi sai
+### Deriving có thể  sai
 
-Mỗi kiểu lớp có bộ quy tắc riêng để dẫn xuất các trường. Ví dụ: khi lấy kiểu `Ord` , các hàm tạo giá trị được định nghĩa trước đó sẽ nhỏ hơn. Vì vậy, trong instance hợp này:
+Mỗi lớp kiểu có bộ quy tắc riêng với deriving instances. Ví dụ: khi lấy kiểu `Ord` , các hàm tạo giá trị được định nghĩa trước đó sẽ nhỏ hơn. Vì vậy, trong trường hợp này:
 
 ```{.haskell}
 data PaymentMethod = Cash | Card | CC deriving (Eq, Ord)
@@ -960,7 +960,7 @@ Kết quả:
 
 `Cash` nhỏ hơn `Card` , nhỏ hơn `CC` .
 
-Và trong instance hợp này:
+Và trong trường hợp này:
 
 ```{.haskell}
 data Box a = Empty | Has a deriving (Eq, Ord)
@@ -978,7 +978,7 @@ Kết quả:
 
 Nếu một hàm tạo giá trị có một tham số ( `Has a` ) và hai giá trị được tạo từ cùng một hàm tạo ( `Has 5` và `Has 6` ), thì các tham số sẽ được so sánh (giống như chúng ta đã làm khi tự định nghĩa các trường).
 
-Đó là những quy tắc mà trình biên dịch tuân theo để tự động tạo cá thể `Ord` cho kiểu của bạn. Các lớp kiểu khác có các quy tắc khác. Chúng ta sẽ không đi qua các quy tắc của từng kiểu lớp, nhưng tôi sẽ cung cấp một [liên kết](https://www.haskell.org/onlinereport/haskell2010/haskellch11.html) với một lời giải thích ngắn trong bài học tương tác. Trong instance hợp bạn muốn tìm hiểu thêm.
+Đó là những quy tắc mà trình biên dịch tuân theo để tự động tạo cá thể `Ord` cho kiểu của bạn. Các lớp kiểu khác có các quy tắc khác. Chúng ta sẽ không đi qua các quy tắc của từng lớp kiểu, nhưng tôi sẽ cung cấp một [liên kết](https://www.haskell.org/onlinereport/haskell2010/haskellch11.html) với một lời giải thích ngắn trong bài học tương tác. Trong trường hợp bạn muốn tìm hiểu thêm.
 
 Bây giờ, giả sử chúng ta muốn sử dụng một kiểu để quản lý độ dài cho phần mềm Kỹ thuật dân dụng.
 
@@ -1007,7 +1007,7 @@ instance Eq Length where
 
 Điều này rất hiệu quả nếu chúng ta so sánh mét với mét và kilômét với kilômét. Nhưng chúng ta đã triển khai sai để so sánh giữa các hàm tạo vì Haskell không biết rằng giá trị của các hàm tạo khác nhau có liên quan theo bất kỳ cách nào!! Haskell chỉ giả định rằng nếu các hàm tạo khác nhau, thì các giá trị cũng vậy!
 
-Vì vậy, trong instance hợp này, chúng ta phải tự viết instance để tính đến mối quan hệ giữa các hàm tạo. Như thế này:
+Vì vậy, trong trường hợp này, chúng ta phải tự viết instance để tính đến mối quan hệ giữa các hàm tạo. Như thế này:
 
 ```{.haskell}
 data Length = M Double | Km Double
