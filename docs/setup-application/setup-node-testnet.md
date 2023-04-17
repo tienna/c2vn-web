@@ -27,8 +27,8 @@ Tải xuống và giải nén tệp nhị phân được biên dịch trước c
 
 ```
 
-sudo wget https://hydra.iohk.io/build/13065769/download/1/cardano-node-1.34.1-linux.tar.gz
-sudo tar zxvf cardano-node-1.34.1-linux.tar.gz
+sudo wget https://s3.ap-southeast-1.amazonaws.com/update-cardano-mainnet.iohk.io/cardano-node-releases/cardano-node-1.35.7-linux.tar.gz
+sudo tar zxvf cardano-node-1.35.7-linux.tar.gz
 ```
 
 Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng. [Đây là hướng dẫn bạn tự xây dựng các file nhị phân](https://cardano2vn.io/docs/setup-application/setup-node-mainnet) 
@@ -47,7 +47,7 @@ sudo chmod 700 cardano-node
 Cấp quyền cho user 
 
 ```
-sudo chown -R hada_gcp /opt/cardano
+sudo chown -R nvhieu ~/cardano
 ```
 Thêm local/bin đó vào đường dẫn của shell của bạn.
 
@@ -79,26 +79,28 @@ Tải xuống blockchain
 Tạo một nơi để đặt testnet blockchain.
 
 ```
-sudo mkdir ~/cardano
-sudo mkdir ~/cardano/testnet
-cd ~/cardano/testnet
-sudo  mkdir testnet-db
+sudo mkdir ~/cardano/preprod
+cd ~/cardano/preprod
+sudo  mkdir db
 ```
 
 Tải xuống tệp cấu hình testnet từ IOHK.
 
 ```
-sudo curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-topology.json
-sudo curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-shelley-genesis.json
-sudo curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-config.json
-sudo curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-byron-genesis.json
-sudo curl -O -J https://hydra.iohk.io/build/7654130/download/1/testnet-alonzo-genesis.json
+#preprod-testnet
+wget https://book.world.dev.cardano.org/environments/preprod/config.json
+wget https://book.world.dev.cardano.org/environments/preprod/db-sync-config.json
+wget https://book.world.dev.cardano.org/environments/preprod/submit-api-config.json
+wget https://book.world.dev.cardano.org/environments/preprod/topology.json
+wget https://book.world.dev.cardano.org/environments/preprod/byron-genesis.json
+wget https://book.world.dev.cardano.org/environments/preprod/shelley-genesis.json
+wget https://book.world.dev.cardano.org/environments/preprod/alonzo-genesis.json
 ```
 
 Đặt một số biến môi trường.
 
 ```
-echo export CARDANO_NODE_SOCKET_PATH="$HOME/cardano/testnet-db/node0.socket" >> $HOME/.bashrc
+echo export CARDANO_NODE_SOCKET_PATH="$HOME/cardano/preprod/node0.socket" >> $HOME/.bashrc
 $HOME/.bashrc
 ```
 
@@ -106,46 +108,22 @@ Kết nối với testnet và tải xuống blockchain. Quá trình này có th�
 
 ```
 cardano-node run \
---topology ~/cardano/testnet/testnet-topology.json \
---database-path ~/cardano/testnet-db \
---socket-path ~/cardano/testnet-db/node.socket \
+--topology ~/cardano/preprod/topology.json \
+--database-path ~/cardano/preprod/db \
+--socket-path ~/cardano/preprod/node.socket \
 --host-addr 127.0.0.1 \
 --port 3001 \
---config ~/cardano/testnet/testnet-config.json
+--config ~/cardano/preprod/config.json
 ```
 
 Kiểm tra xem liệu nút của bạn đã được đồng bộ hóa chưa.
 Mở cửa sổ shell thứ hai 
 
 ```
-cardano-cli query tip --testnet-magic 1097911063
+cardano-cli query tip --testnet-magic 2
 ```
 
-Cài đặt Ví Cardano
------
 
-Mở cửa sổ shell thứ hai (sử dụng Alt + F2). Chúng tôi sẽ để nút chạy trong trình bao khác (chuyển trở lại nó bằng cách sử dụng Alt + F1). Ngoài ra, kết nối bằng Putty hoặc ứng dụng SSH yêu thích của bạn.
-
-Tải xuống tệp nhị phân được biên dịch trước cho Ví Cardano và đặt nó ở local/bin. Sau đây là kể từ tháng 12 năm 2021. Truy cập https://developers.cardano.org/docs/get-started/installing-cardano-wallet/ để tải phiên bản mới nhất.
-
-```
-sudo mkdir ~/cardano/wallet
-cd ~/cardano/wallet
-wget https://hydra.iohk.io/build/8600272/download/1/cardano-wallet-v2021-11-11-linux64.tar.gz
-tar zxvf cardano-wallet-v2021-11-11-linux64.tar.gz
-cd cardano-wallet-v2021-11-11-linux64/
-sudo cp cardano-wallet ~/.local/bin/
-```
-
-Chạy Ví Cardano như một máy chủ API.
-
-```
-cardano-wallet serve \
---port 8090 \
---database ~/cardano/testnet-db \
---node-socket $CARDANO_NODE_SOCKET_PATH \
---testnet ~/cardano/testnet/testnet-byron-genesis.json
-```
 
 Để biết thêm thông tin, hãy xem Hướng dẫn sử dụng ví cardano.
 https://input-output-hk.github.io/cardano-wallet/user-guide/cli
