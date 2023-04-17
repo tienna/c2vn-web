@@ -27,8 +27,12 @@ Tải xuống và giải nén tệp nhị phân được biên dịch trước c
 
 ```
 
-sudo wget https://s3.ap-southeast-1.amazonaws.com/update-cardano-mainnet.iohk.io/cardano-node-releases/cardano-node-1.35.7-linux.tar.gz
-sudo tar zxvf cardano-node-1.35.7-linux.tar.gz
+sudo wget https://s3.ap-southeast-1.amazonaws.com/update-cardano-mainnet.iohk.io/cardano-node-releases/cardano-node-1.35.6-linux.tar.gz
+sudo tar zxvf cardano-node-1.35.6-linux.tar.gz
+
+
+sudo wget https://github.com/input-output-hk/cardano-addresses/releases/download/3.12.0/cardano-addresses-3.12.0-linux64.tar.gz
+sudo tar zxvf cardano-addresses-3.12.0-linux64.tar.gz
 ```
 
 Ngoài ra, bạn có thể dành cả ngày để xây dựng các tệp nhị phân từ nguồn. Bạn sẽ mất rất nhiều thời gian, bạn sẽ nản lòng sau hai giờ đầu tiên và muốn bỏ nó. Việc sử dụng các mã nhị phân ở trên (được xây dựng bởi IOHK, nhóm đứng sau Cardano) chỉ mất vài giây, ít tham gia hơn và chính xác là những gì bạn nhận được nếu bạn tự xây dựng chúng. [Đây là hướng dẫn bạn tự xây dựng các file nhị phân](https://cardano2vn.io/docs/setup-application/setup-node-mainnet) 
@@ -42,6 +46,21 @@ sudo cp ./cardano-node ~/.local/bin/
 cd ~/.local/bin
 sudo chmod 700 cardano-cli
 sudo chmod 700 cardano-node
+
+```
+
+
+```
+#cardano-addresses 
+
+sudo wget https://github.com/input-output-hk/cardano-addresses/releases/download/3.12.0/cardano-addresses-3.12.0-linux64.tar.gz
+sudo tar zxvf cardano-addresses-3.12.0-linux64.tar.gz
+
+
+sudo cp ./cardano-addresses ~/.local/bin/
+cd ~/.local/bin
+sudo chmod 700 cardano-addresses
+
 ```
 
 Cấp quyền cho user 
@@ -69,6 +88,8 @@ echo $PATH
 Kiểm tra phiên bản cardano
 
 ```
+sudo chown -R nvhieu ~/.local
+
 cardano-cli --version
 cardano-node --version
 ```
@@ -82,6 +103,7 @@ Tạo một nơi để đặt testnet blockchain.
 sudo mkdir ~/cardano/preprod
 cd ~/cardano/preprod
 sudo  mkdir db
+
 ```
 
 Tải xuống tệp cấu hình testnet từ IOHK.
@@ -100,13 +122,16 @@ wget https://book.world.dev.cardano.org/environments/preprod/alonzo-genesis.json
 Đặt một số biến môi trường.
 
 ```
-echo export CARDANO_NODE_SOCKET_PATH="$HOME/cardano/preprod/node0.socket" >> $HOME/.bashrc
-$HOME/.bashrc
+sudo chown -R nvhieu ~/cardano
+
+echo export CARDANO_NODE_SOCKET_PATH="$HOME/cardano/preprod/node.socket" >> $HOME/.bashrc
+~/.bashrc
 ```
 
 Kết nối với testnet và tải xuống blockchain. Quá trình này có thể mất vài giờ.
 
 ```
+cd ~/cardano/preprod
 cardano-node run \
 --topology ~/cardano/preprod/topology.json \
 --database-path ~/cardano/preprod/db \
@@ -120,10 +145,8 @@ Kiểm tra xem liệu nút của bạn đã được đồng bộ hóa chưa.
 Mở cửa sổ shell thứ hai 
 
 ```
-cardano-cli query tip --testnet-magic 2
+cardano-cli query tip --testnet-magic 1
 ```
 
 
 
-Để biết thêm thông tin, hãy xem Hướng dẫn sử dụng ví cardano.
-https://input-output-hk.github.io/cardano-wallet/user-guide/cli
