@@ -236,7 +236,7 @@ const sidebars = {
       "setup-application/Installation",
       "setup-application/setup-node-mainnet",
       "setup-application/setup-node-testnet",
-      "setup-application/setup-node-testnet",
+      "setup-application/recovery-phrase-wallet",
       "setup-application/step-by-step",
       "setup-application/Plutus_transactions_tutorial",
       "setup-application/Datums_redeemer_tutorial",
