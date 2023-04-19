@@ -85,6 +85,7 @@ const sidebars = {
       "smart-contracts/overview",
       "smart-contracts/marlowe",
       "smart-contracts/plutus",
+      "smart-contracts/smart-contracts-cardano",
       "smart-contracts/video_demo_smartcontract",
     ],
     "Khoa học Haskell": [
