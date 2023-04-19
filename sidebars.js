@@ -83,9 +83,11 @@ const sidebars = {
     ],
     "Tạo Hợp đồng thông minh": [
       "smart-contracts/overview",
+      "smart-contracts/smart-contracts-cardano",
       "smart-contracts/marlowe",
       "smart-contracts/plutus",
-      "smart-contracts/smart-contracts-cardano",
+       "smart-contracts/aiken",   
+      "smart-contracts/opshin",
       "smart-contracts/video_demo_smartcontract",
     ],
     "Khoa học Haskell": [
