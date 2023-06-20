@@ -259,11 +259,24 @@ const sidebars = {
       "project-catalyst/project-catalyst-community-resources",
 	  
     ],
-
-    "Catalyst 4 students": [
-      "catalyst4students/overview",
+    
+    "Cardano 4 UNI": [
+      {
+        type: "category",
+        label: "Catalyst 4 students",
+        items: [
+	      "catalyst4students/overview",
+	      "catalyst4students/daihocnguyentrai",
+	      "catalyst4students/report",
+        ],
+      },
+      "Cardano4uni/daihocgiaothongvantai",
+      "Cardano4uni/sv-dh-gtvt-gckh",
       "catalyst4students/daihocnguyentrai",
-      "catalyst4students/report",
+      "Cardano4uni/daihoccongnghiephn",
+      "Cardano4uni/daihoc-kinhte-kythuat-congnghiep",
+      
+
     ],
     "Các sự kiện": [
       "events/overview",
