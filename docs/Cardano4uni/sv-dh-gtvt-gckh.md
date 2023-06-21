@@ -1,7 +1,7 @@
 Sinh viên Nghiên cứu khoa học với Blockchain Cardano
 ==========
 
-Tháng 6 năm 2023, Khoa Công nghệ thông tin Đạt Học Giao thông Vận tải tổ chức công tác đánh giá nghiên cứu khoa học của sinh viên năm 2022-2023. Cardano2vn hướng dẫn 5 đề tài hướng Blockchain Cardano đều đạt giải cao.
+Tháng 6 năm 2023, Khoa Công nghệ thông tin Đạ Học Giao thông Vận tải tổ chức công tác đánh giá nghiên cứu khoa học của sinh viên năm 2022-2023. Cardano2vn hướng dẫn 5 đề tài hướng Blockchain Cardano đều đạt giải cao.
 
 Tóm tắt nhanh tại Hội nghị tổng kết công tác nghiên cứu khoa học của sinh viên năm 2022-2023 tại ĐH GTVT
 
