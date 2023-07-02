@@ -276,6 +276,7 @@ const sidebars = {
       "catalyst4students/daihocnguyentrai",
       "Cardano4uni/daihoccongnghiephn",
       "Cardano4uni/daihoc-kinhte-kythuat-congnghiep",
+      "Cardano4uni/daihoc-kinhte-kythuat-congnghiep1",
       
       
 
