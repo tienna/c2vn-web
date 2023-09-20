@@ -90,44 +90,70 @@ const sidebars = {
       "smart-contracts/opshin",
       "smart-contracts/video_demo_smartcontract",
     ],
-    "Khoa học Haskell": [
-      "haskell_iog/README",
-      "haskell_iog/intro_haskell",
-      "haskell_iog/Intro_to_Haskell_and_tools",
-      "haskell_iog/Functions-Data-Types-and-Signatures",
-      "haskell_iog/Conditions-and-helper-constructions",
-      "haskell_iog/Pattern-matching",
-      "haskell_iog/Improving-and-combining-functions",
-      "haskell_iog/Recursion-and-folds",
-      "haskell_iog/Intro-to-Type-Classes",
-      "haskell_iog/Creating-non-parameterized-types",
-      "haskell_iog/Creating-parameterized-and-recursive-types",
-      "haskell_iog/Creating-Type-Classes-and-Instances",
-    ],
-    "Khóa 2-Plutus của Dr.Lars": [
-      "dr-lars-lession/overview",
-      "dr-lars-lession/week1",
-      "dr-lars-lession/week2",
-      "dr-lars-lession/week3",
-      "dr-lars-lession/week4",
-      "dr-lars-lession/week5",
-      "dr-lars-lession/week6",
-      "dr-lars-lession/week7",
-      "dr-lars-lession/week8",
-      "dr-lars-lession/week9",
-      "dr-lars-lession/week10",
+    "Khoa học Smartcontract": [
+      {
+        type: "category",
+        label: "Khoa học Haskell",
+        items: [
+              	"haskell_iog/README",
+      		"haskell_iog/intro_haskell",
+      		"haskell_iog/Intro_to_Haskell_and_tools",
+      		"haskell_iog/Functions-Data-Types-and-Signatures",
+      		"haskell_iog/Conditions-and-helper-constructions",
+      		"haskell_iog/Pattern-matching",
+      		"haskell_iog/Improving-and-combining-functions",
+      		"haskell_iog/Recursion-and-folds",
+      		"haskell_iog/Intro-to-Type-Classes",
+      		"haskell_iog/Creating-non-parameterized-types",
+      		"haskell_iog/Creating-parameterized-and-recursive-types",
+      		"haskell_iog/Creating-Type-Classes-and-Instances",
+        	],
+      	},  
+       {
+        type: "category",
+        label: "Khóa 2-Plutus của Dr.Lars",
+        items:  [
+      		"dr-lars-lession/overview",
+      		"dr-lars-lession/week1",
+      		"dr-lars-lession/week2",
+      		"dr-lars-lession/week3",
+      		"dr-lars-lession/week4",
+      		"dr-lars-lession/week5",
+      		"dr-lars-lession/week6",
+      		"dr-lars-lession/week7",
+      		"dr-lars-lession/week8",
+      		"dr-lars-lession/week9",
+      		"dr-lars-lession/week10",
 
-    ],
-    
-    "Khóa 3-Plutus của Dr.Lars": [
-      
-      "dr-lars-lession/K_03/Lecture_01",
-      "dr-lars-lession/K_03/Lecture_02",
-      "dr-lars-lession/K_03/Lecture_03",
-      "dr-lars-lession/K_03/Lecture_04",
+    		],
+    	},
+      	{
+        type: "category",
+        label: "Khóa 3-Plutus của Dr.Lars",
+        items: [     
+      		"dr-lars-lession/K_03/Lecture_01",
+      		"dr-lars-lession/K_03/Lecture_02",
+      		"dr-lars-lession/K_03/Lecture_03",
+      		"dr-lars-lession/K_03/Lecture_04",
 
-    ],
-
+    		],
+    	},
+    	{
+    	type: "category",
+        label: "Cài đặt plutus và Các ví dụ Smartcontract",
+        items:  [
+		"setup-application/Installation",
+      		"setup-application/setup-node-mainnet",
+      		"setup-application/setup-node-testnet",
+      		"setup-application/recovery-phrase-wallet",
+      		"setup-application/step-by-step",
+      		"setup-application/Plutus_transactions_tutorial",
+      		"setup-application/Datums_redeemer_tutorial",
+      		"setup-application/Validator_scripts_tutorial",
+    		],
+    	},
+	],
+	
     "Tích hợp với Cardano": [
       "integrate-cardano/overview",
       "integrate-cardano/creating-wallet-faucet",
@@ -235,16 +261,7 @@ const sidebars = {
        "setup-application/Staking",
        
     ],
-    "Cài đặt và Ví dụ Plutus": [
-      "setup-application/Installation",
-      "setup-application/setup-node-mainnet",
-      "setup-application/setup-node-testnet",
-      "setup-application/recovery-phrase-wallet",
-      "setup-application/step-by-step",
-      "setup-application/Plutus_transactions_tutorial",
-      "setup-application/Datums_redeemer_tutorial",
-      "setup-application/Validator_scripts_tutorial",
-    ],
+
     
     "Project Catalyst": [
       "project-catalyst/overview",
@@ -293,8 +310,9 @@ const sidebars = {
       "Cardano-summit-2022/Cardano-summit-2022-hanoi"
 	    
     ],
-    "SNET-360": [
-        "sNET-360/deep-funding-round-2",
+    "Deep Funding": [
+        "Deep-funding/deep-funding-round-2",
+        "Deep-funding/deep-funding-round-3",
               
      ],
           

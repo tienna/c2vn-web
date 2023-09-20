@@ -25,7 +25,11 @@ const config = {
                     // Please change this to your repo.
                     editUrl: 'https://github.com/cardano2vn/cardanovn-portal/edit/main/',
                 },
-               /* blog: {
+                
+               /* deep: {
+                    sidebarPath: require.resolve('./sidebarsdeepfunding.js'),
+                    },
+                blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     editUrl: 'https://github.com/cardano2vn/cardanovn-portal/edit/main/blog/',
@@ -36,6 +40,7 @@ const config = {
             },
         ],
     ],
+    
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
@@ -48,6 +53,21 @@ const config = {
       },
     ],
   ],    
+  
+  /*    plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'G-NYJGVMHGCD',
+        path: './deep',
+        routeBasePath: 'deep',
+        sidebarPath: require.resolve('./sidebarsdeepfunding.js'),
+        // ... other options
+      },
+    ],
+  ],
+*/
+  
     themeConfig:
     
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -71,19 +91,29 @@ const config = {
                 type: 'doc',
                 docId: 'getting-started/overview',
                 position: 'left',
-                label: 'Cardano Tech hub',
+                label: 'CTech hub',
             },
-	        {
+            {
+                type: 'doc',
+                docId: 'Deep-funding/deep-funding-round-2',
+                position: 'left',
+                label: 'Deep funding',
+            },
+            	    
+	    {
                 to: '/docs1/intro', label: 'Blog-iohk', position: 'left'
             },
             {
                 to: '/blog', label: 'News', position: 'left' 
             },
-            
+          
  
-             {
-                href: 'http://cardano2vn.duckdns.org:9081', label: 'Vesting', position: 'left'
-            },  
+          //   {
+          //      href: 'http://cardano2vn.duckdns.org:9081', label: 'Vesting', position: 'left'
+          //  },  
+             { 
+                to: '/service', label: 'Dịch vụ', position: 'left'
+            },
                        
             {
                 href: 'http://openispo.cardano2vn.io/', label: 'Open ISPO', position: 'right'
@@ -94,14 +124,12 @@ const config = {
             {
                 href: 'http://blockchain-demo.cardano2vn.io', label: 'Blockchain Demo', position: 'right'
             },
-            {
-                to: '/dapps-connector', label: 'DApps Connector', position: 'right' 
-            },
+            //{
+            //    to: '/dapps-connector', label: 'DApps Connector', position: 'right' 
+           // },
             //{ to: '/blogiohk', label: 'News', position: 'left' },
             //{to: '/C2VN-WMTVN', label: 'News', position: 'left' },
-            { 
-                to: '/service', label: 'Dịch vụ', position: 'left'
-            },
+
                        
             //{
             //    href: 'http://194.233.73.17:3030/index.html',
