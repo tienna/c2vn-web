@@ -312,6 +312,7 @@ const sidebars = {
     ],
     "Deep Funding": [
         "Deep-funding/deep-funding-round-2",
+        "Deep-funding/sNET-360",
         "Deep-funding/deep-funding-round-3",
               
      ],
