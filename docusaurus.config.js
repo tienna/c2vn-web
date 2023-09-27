@@ -52,6 +52,16 @@ const config = {
         // ... other options
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'Deep-funding',
+        path: './Deep-funding',
+        routeBasePath: 'Deep-funding',
+        sidebarPath: require.resolve('./sidebarsdeepfunding.js'),
+        // ... other options
+      },
+    ],
   ],    
   
   /*    plugins: [
@@ -93,13 +103,16 @@ const config = {
                 position: 'left',
                 label: 'CTech hub',
             },
-            {
-                type: 'doc',
-                docId: 'Deep-funding/deep-funding-round-2',
-                position: 'left',
-                label: 'Deep funding',
+//            {
+//                type: 'doc',
+//                docId: 'Deep-funding/deep-funding-round-2',
+//                position: 'left',
+//                label: 'Deep funding',
+//            },
+	    {
+                to: 'Deep-funding/deep-funding-round-2', label: 'Deep funding', position: 'left'
             },
-            	    
+                        	    
 	    {
                 to: '/docs1/intro', label: 'Blog-iohk', position: 'left'
             },
