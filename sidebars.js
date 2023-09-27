@@ -295,6 +295,7 @@ const sidebars = {
       "Cardano4uni/daihoc-kinhte-kythuat-congnghiep",
       "Cardano4uni/daihoc-kinhte-kythuat-congnghiep1",
       "Cardano4uni/daihoc-phenikaa",
+      "Cardano4uni/Huong-nghiep-sv-gtvt-2023",
       
       
 
