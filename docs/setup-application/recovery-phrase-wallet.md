@@ -3,6 +3,13 @@
 Điều kiện tiên quyết
 Quy trình này yêu cầu cardano-wallet và cardano-cli .
 
+**Cardano Wallet**
+
+Navigating the HD wallet tree structure
+
+![](img/Cardano-Wallet.png)
+
+
 ## Tạo cụm từ bí mật
 
 ```
