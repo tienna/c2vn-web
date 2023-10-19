@@ -129,9 +129,9 @@ const config = {
 	    {
                 to: '/docs1/intro', label: 'Blog-iohk', position: 'left'
             },
-            {
-                to: '/blog', label: 'News', position: 'left' 
-            },
+            //{
+            //    to: '/blog', label: 'News', position: 'left' 
+            //},
           
  
           //   {
