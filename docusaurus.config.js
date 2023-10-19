@@ -62,6 +62,16 @@ const config = {
         // ... other options
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'Marlowe',
+        path: './Marlowe',
+        routeBasePath: 'Marlowe',
+        sidebarPath: require.resolve('./sidebarsmarlowe.js'),
+        // ... other options
+      },
+    ],
   ],    
   
   /*    plugins: [
@@ -111,6 +121,9 @@ const config = {
 //            },
 	    {
                 to: 'Deep-funding/deep-funding-round-2', label: 'Deep funding', position: 'left'
+            },
+	    {
+                to: 'Marlowe/Overview', label: 'Marlowe', position: 'left'
             },
                         	    
 	    {
