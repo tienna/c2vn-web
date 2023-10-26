@@ -116,7 +116,7 @@ function HomepageHeader() {
         <header style={{position: 'relative', width: '100%', overflow: 'hidden'}}>
             <canvas id='canvas' style={{background: 'linear-gradient(to right, #000428, #004e92)', position: 'relative'}}></canvas>
             <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white'}}>
-                <h1 className="hero__title">Đội ngũ</h1>
+                <h1 className="hero__title">Teams</h1>
             </div>
         </header>
     );
