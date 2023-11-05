@@ -11,7 +11,7 @@ const MemberList = [
     imageUrl: '../img/team/tienna.jpg',
     description: (
       <>
-        Founder of the VILAI stake pool, former Experts at HPE
+        Founder of the VILAI stake pool, former Experts at HPE; Blockchain Support Engineer
       </>
     ),
     socialLink: (
