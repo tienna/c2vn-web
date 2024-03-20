@@ -37,6 +37,10 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
+                googleAnalytics: {
+                    trackingID: 'G-NYJGVMHGCD',
+                    anonymizeIP: true,
+                },
                 gtag: {
                     trackingID: 'G-NYJGVMHGCD',
                     anonymizeIP: true,
@@ -96,10 +100,6 @@ const config = {
     
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-        googleAnalytics: {
-            trackingID: 'G-NYJGVMHGCD',
-            anonymizeIP: true,
-        },
         metadata: [{ name: "cardano,plutus,Haskell, cardano-cli, cardano-node, pool, stake, phần thưởng, ISPO, Shop, ADA,ada ", content: "blog,tech, hub," }],
         navbar: {
             title: 'Cardano2vn',
