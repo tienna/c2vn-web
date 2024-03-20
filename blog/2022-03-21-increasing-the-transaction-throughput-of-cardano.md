@@ -1,7 +1,6 @@
 ---
 slug: increasing-the-transaction-throughput-of-cardano
 title: Increasing the transaction throughput of Cardano
-authors: tantnd
 tags: []
 ---
 
