@@ -138,6 +138,18 @@ const sidebars = {
 
     		],
     	},
+      	{
+        type: "category",
+        label: "Khóa học Aiken",
+        items: [     
+      		"Aiken/Chuong1/Bai1",
+		"Aiken/Chuong1/Bai4",
+		"Aiken/Chuong1/Bai5",
+		"Aiken/Chuong1/Bai6",
+		"Aiken/Chuong1/Bai7",
+
+    		],
+    	},
     	{
     	type: "category",
         label: "Cài đặt plutus và Các ví dụ Smartcontract",
