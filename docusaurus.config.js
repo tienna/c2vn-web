@@ -37,6 +37,10 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
+                gtag: {
+                    trackingID: 'G-NYJGVMHGCD',
+                    anonymizeIP: true,
+                },
             },
         ],
     ],
@@ -93,10 +97,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
         googleAnalytics: {
-            trackingID: 'G-NYJGVMHGCD',
-            anonymizeIP: true,
-        },
-        gtag: {
             trackingID: 'G-NYJGVMHGCD',
             anonymizeIP: true,
         },
