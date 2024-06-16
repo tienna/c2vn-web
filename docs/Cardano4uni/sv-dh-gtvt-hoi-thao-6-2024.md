@@ -40,6 +40,6 @@ Một số hình ảnh tại buổi hội thảo:
 
 
 Trân trọng,
-UBA
+Cardano2vn
 
 
