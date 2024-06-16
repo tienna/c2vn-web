@@ -311,6 +311,8 @@ const sidebars = {
       "Cardano4uni/daihoc-DongA",
       "Cardano4uni/daihoc-kinhte-kythuat-congnghiep3",
       "Cardano4uni/ITCI-daihoc-DongA",
+      "Cardano4uni/sv-dh-gtvt-hoi-thao-6-2024",
+      "Cardano4uni/khai-truong-Blockchain-lab",
       
       
 
