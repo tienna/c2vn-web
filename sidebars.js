@@ -327,7 +327,8 @@ const sidebars = {
       "events/even-HCM",
       "events/even",
       "Cardano-summit-2022/Cardano-summit-2022-hanoi",
-      "Cardano-summit-2023/Cardano-summit-2023-hanoi"
+      "Cardano-summit-2023/Cardano-summit-2023-hanoi",
+      "events/F12",
 	    
     ],
     "Deep Funding": [
