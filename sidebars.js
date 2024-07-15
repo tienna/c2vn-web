@@ -319,6 +319,8 @@ const sidebars = {
 
     ],
     "Các sự kiện": [
+      
+      "events/CBCA01",
       "events/overview",
       "events/iohk-blog",
       "events/hotro-spo",
