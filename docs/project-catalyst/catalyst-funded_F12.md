@@ -2,7 +2,7 @@ Kết quả của quỹ Catalyst Fund 12 đã có!
 =====================================
 
 
-ℹ️ Kết quả chính thức của Project Catalyst Fund 12 đã được công bố. Xin chúc mừng tất cả những người tham gia vòng này.
+ℹ️ [Kết quả chính thức](https://projectcatalyst.io/funds/12/voting-results) của Project Catalyst Fund 12 đã được công bố. Xin chúc mừng tất cả những người tham gia vòng này.
 
 ## Kết quả vòng bỏ phiếu F12
 
