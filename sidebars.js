@@ -314,12 +314,12 @@ const sidebars = {
       "Cardano4uni/sv-dh-gtvt-hoi-thao-6-2024",
       "Cardano4uni/khai-truong-Blockchain-lab",
       "Cardano4uni/sv-dh-gtvt-hoi-thao-6-2024-2",
+       "events/CBCA02", 
       
       
 
     ],
-    "Các sự kiện": [
-      
+    "Các sự kiện": [     
       "events/CBCA01",
       "events/overview",
       "events/iohk-blog",
