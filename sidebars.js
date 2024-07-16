@@ -276,6 +276,7 @@ const sidebars = {
 
     
     "Project Catalyst": [
+      "project-catalyst/catalyst-funded_F12",
       "project-catalyst/overview",
       "project-catalyst/funding-process",
       "project-catalyst/catalyst-funded",
@@ -331,6 +332,7 @@ const sidebars = {
       "Cardano-summit-2022/Cardano-summit-2022-hanoi",
       "Cardano-summit-2023/Cardano-summit-2023-hanoi",
       "events/F12",
+      
 	    
     ],
     "Deep Funding": [
