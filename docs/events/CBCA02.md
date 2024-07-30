@@ -181,3 +181,70 @@ Cardano2vn xin chân thành cảm ơn tất cả các giảng viên đã tích c
 
 Xin Cảm Ơn!
 
+## Buổi 6 chia sẻ về CBCA 
+
+Hôm nay, ngày 27/7/2024, Cardano2vn đã tiếp tục buổi học thứ sáu về Blockchain cơ bản dành cho các giảng viên đại học. Trong buổi học này, ông Cao Xuân Trường đã trình bày Module 3, tập trung vào các chủ đề thú vị liên quan đến Blockchain Cardano.
+
+Nội Dung Module 3: Blockchain Cardano
+3.5 Địa Chỉ
+
+Thảo luận về khái niệm địa chỉ trong Cardano, bao gồm cách chúng được tạo ra và sử dụng trong các giao dịch.
+3.6 Lập Trình Trên Blockchain Cardano
+
+Khám phá cách lập trình trên blockchain Cardano, bao gồm các công cụ và ngôn ngữ liên quan.
+3.7 Cộng Đồng Cardano
+
+Hiểu về vai trò của cộng đồng Cardano, cấu trúc của nó, và cách cộng đồng đóng góp vào hệ sinh thái.
+3.8 Đề Xuất Cải Tiến Cardano (CIPs)
+
+Tìm hiểu về quy trình Đề Xuất Cải Tiến Cardano, cách các ý tưởng cải tiến mạng lưới Cardano được nộp và đánh giá.
+Điểm Nổi Bật Của Buổi Học
+Buổi học đã có nhiều thảo luận sâu về địa chỉ ví trên Cardano. Các giảng viên đã khám phá cách những địa chỉ này được tạo ra, từ việc tạo seed đến việc tạo khóa riêng tư, khóa công khai và địa chỉ ví. Đồng thời, buổi học cũng đề cập đến các khái niệm như khóa chính, khóa con và cấu trúc phân cấp của quản lý khóa.
+
+Một số hình ảnh của buổi chia sẻ:
+
+![](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/f/2/f2833adb9bd9186ca4aaae61f828b86b9cad3ae5.jpeg)
+
+![](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/4/1/416af7a709ab8b0b1bab94d1cbecd128c86e5d67.jpeg)
+
+![](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/b/b/bbab11d84c65c6007d138cc588729b1c35466266.jpeg)
+
+Cardano2vn xin chân thành cảm ơn tất cả các giảng viên đã tích cực tham gia và gắn bó trong việc nâng cao hiểu biết về Blockchain Cardano.
+
+Xin Cảm Ơn!
+
+## Buổi 7 chia sẻ về CBCA 
+
+Buổi Học Thứ Bảy về Khóa Học Blockchain Cơ Bản cho Giảng Viên Đại Học
+Hôm nay, ngày 30/7/2024, Cardano2vn tiếp tục buổi học thứ bảy chia sẻ về Blockchain cơ bản (CBCA) dành cho các giảng viên đại học. Trong buổi học này, các giảng viên đã được trình bày về các nội dung trong Module 4: Bắt Đầu Với Cardano.
+
+Module 4: Bắt Đầu Với Cardano
+4.1 Tổng Quan về Hệ Sinh Thái Builder
+
+Khám phá hệ sinh thái các công cụ và nền tảng hỗ trợ cho việc phát triển trên Cardano.
+4.2 Mua, Lưu Trữ và Chuyển ADA
+
+Hướng dẫn cách mua, lưu trữ và chuyển ADA một cách an toàn và hiệu quả.
+4.3 Staking trên Cardano
+
+Tìm hiểu về cơ chế staking, cách tham gia và lợi ích của việc staking trên Cardano.
+4.4 Tạo và Chuyển Tài Sản Gốc
+
+Hướng dẫn cách tạo và chuyển các tài sản gốc (native assets) trên blockchain Cardano.
+4.5 Ứng Dụng Phi Tập Trung (DApps) và Sàn Giao Dịch Phi Tập Trung (DEX)
+
+Giới thiệu về các ứng dụng phi tập trung và sàn giao dịch phi tập trung trên Cardano, cách thức hoạt động và tiềm năng của chúng.
+Một Số Hình Ảnh Của Buổi Chia Sẻ
+
+
+![](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/6/8/6851f44ec2edc9179158dd79e53b06e134099878.jpeg)
+
+![](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/2/3/23dbb23434479e5ddcbe3bcc2ba2629f7a61c93f.jpeg)
+
+![](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/9/6/9690fc01cc86ceb660a3e9a1e4e511f0c69195f5.jpeg)
+
+![](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/c/8/c8b8b3f33ea76be476afb5b930ca3fc42c45ee2d.jpeg)
+
+Cardano2vn xin chân thành cảm ơn sự tham gia tích cực của các giảng viên và hy vọng rằng các buổi học sẽ giúp ích cho việc giảng dạy và nghiên cứu về Blockchain trong tương lai.
+
+Xin Cảm Ơn!
