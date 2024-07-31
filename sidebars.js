@@ -181,7 +181,8 @@ const sidebars = {
       "native-tokens/overview",
       "native-tokens/minting",
       //"native-tokens/mintingnfts",
-      "native-tokens/Mint-nfts"
+      "native-tokens/Mint-nfts",
+      "native-tokens/tx-mint-burn-token"
     // {
     //   type: "category",
     //    label: "Token Registry",
