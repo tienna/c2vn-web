@@ -248,3 +248,46 @@ Một Số Hình Ảnh Của Buổi Chia Sẻ
 Cardano2vn xin chân thành cảm ơn sự tham gia tích cực của các giảng viên và hy vọng rằng các buổi học sẽ giúp ích cho việc giảng dạy và nghiên cứu về Blockchain trong tương lai.
 
 Xin Cảm Ơn!
+
+## Buổi Học Thứ Tám về Khóa Học Blockchain Cơ Bản (CBCA) Dành Cho Giảng Viên Đại Học
+
+Hôm nay, ngày 1/8/2024, Cardano2vn tiếp tục buổi học thứ tám của khóa học Blockchain cơ bản (CBCA) dành cho các giảng viên đại học. Trong buổi học này, các giảng viên và học viên (Thầy/Cô) đã cùng nhau thực hành tương tác với Blockchain Cardano qua dòng lệnh (cardano-cli).
+
+**Nội Dung Buổi Học**
+
+Trong buổi học, các học viên đã thực hiện nhiều tình huống thực hành để hiểu sâu về Blockchain Cardano, bao gồm:
+
+* **Khôi phục ví từ 24 từ:** 
+
+Tìm hiểu cách khôi phục ví và hiểu rõ các thành phần liên quan như khóa bí mật, khóa công khai, địa chỉ payment, và địa chỉ stake.
+
+* **Tạo khóa con và địa chỉ ví con:** 
+
+Khám phá cách tạo khóa con và địa chỉ ví con để quản lý tài sản hiệu quả.
+
+* **Tạo giao dịch chuyển ADA:** 
+
+Thực hành tạo giao dịch chuyển ADA để hiểu rõ hơn về mô hình UTxO.
+
+* **Tạo Token và NFT:** 
+
+Học cách tạo token bằng các policy đơn giản như native scripts, cũng như tạo và chuyển NFT.
+
+
+**Trình Tự Các Bước Thực Hiện**
+
+*[Hướng dẫn từng bước thực hiện](https://www.cardano2vn.io/docs/native-tokens/tx-mint-burn-token)*
+
+**Một Số Hình Ảnh Của Buổi Chia Sẻ**
+
+![6149880039995456529|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/d/9/d9b022fd93a963bf95ee1b3b1f8f44f9c8e22643.jpeg)
+
+![6149880039995456526|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/a/d/ad5ff2a533c553c44e54e5049b807f8f95ef19e9.jpeg)
+
+![6149880039995456521|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/8/e/8e209d393a03d7882c49cd8d11d594799afbef2d.jpeg)
+![6149880039995456520|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/9/0/9004cb980cc0004dc8d6f0fc80aac1677997dde9.jpeg)
+![6149880039995456519|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/9/0/9004cb980cc0004dc8d6f0fc80aac1677997dde9.jpeg)
+
+Cardano2vn xin chân thành cảm ơn sự tham gia tích cực của các giảng viên và học viên trong buổi học. Chúng tôi hy vọng rằng những kiến thức và kỹ năng được chia sẻ hôm nay sẽ giúp ích cho việc giảng dạy và nghiên cứu về Blockchain trong tương lai.
+
+**Cảm ơn!**
