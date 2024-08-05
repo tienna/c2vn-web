@@ -249,7 +249,7 @@ Cardano2vn xin chân thành cảm ơn sự tham gia tích cực của các giả
 
 Xin Cảm Ơn!
 
-## Buổi Học Thứ Tám về Khóa Học Blockchain Cơ Bản (CBCA) Dành Cho Giảng Viên Đại Học
+## Buổi 8: Khóa Học Blockchain Cơ Bản (CBCA) Dành Cho Giảng Viên Đại Học
 
 Hôm nay, ngày 1/8/2024, Cardano2vn tiếp tục buổi học thứ tám của khóa học Blockchain cơ bản (CBCA) dành cho các giảng viên đại học. Trong buổi học này, các giảng viên và học viên (Thầy/Cô) đã cùng nhau thực hành tương tác với Blockchain Cardano qua dòng lệnh (cardano-cli).
 
@@ -291,3 +291,68 @@ Học cách tạo token bằng các policy đơn giản như native scripts, cũ
 Cardano2vn xin chân thành cảm ơn sự tham gia tích cực của các giảng viên và học viên trong buổi học. Chúng tôi hy vọng rằng những kiến thức và kỹ năng được chia sẻ hôm nay sẽ giúp ích cho việc giảng dạy và nghiên cứu về Blockchain trong tương lai.
 
 **Cảm ơn!**
+
+
+## Buổi 9: Khóa Học Blockchain Cơ Bản (CBCA) Dành Cho Giảng Viên Đại Học
+
+Hôm nay, ngày 3/8/2024, Cardano2vn đã tiếp tục buổi học thứ chín về Blockchain cơ bản (CBCA) dành cho các giảng viên đại học. Trong buổi học này, các thầy cô đã được hướng dẫn và thực hành về việc tạo token bằng cách sử dụng các policy đơn giản như native scripts với công cụ cardano-cli.
+
+**Nội Dung Buổi Học**
+
+**Tạo Token bằng Native Scripts:** 
+
+Các giảng viên được thực hành tạo token bằng cách sử dụng các native scripts đơn giản thông qua cardano-cli. Điều này giúp các giảng viên hiểu rõ hơn về cơ chế tạo và quản lý token trên blockchain Cardano.
+
+**Sử dụng API để Tạo Token:** 
+
+Cardano2vn đã chia sẻ về cách các nhà phát triển thường sử dụng API để thiết kế dApps và thực hiện các giao dịch phức tạp. Các giảng viên đã được hướng dẫn cách tạo giao dịch với nhiều đầu ra và tạo token thông qua API, một phương pháp phổ biến và hiệu quả trong phát triển ứng dụng blockchain.
+
+**Một Số Hình Ảnh từ Buổi Học**
+
+![CBCA9|1000x512](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/d/6/d679ed2029163fb4802b0d8eea4141ed2afb7d24.jpeg)
+![6156575894009922017|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/optimized/3X/3/9/3976d7cb283e975fc71df5254afc0307241be676_2_1000x467.jpeg)
+![6156575894009922016|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/optimized/3X/c/2/c2b6b732b0b39fdd56d149bb95f8be707b619bd4_2_1000x467.jpeg)
+
+
+Cardano2vn xin chân thành cảm ơn sự tham gia và tích cực học tập của các giảng viên. Chúng tôi hy vọng rằng những kiến thức và kỹ năng được chia sẻ trong buổi học này sẽ giúp các giảng viên ứng dụng và phát triển các dự án blockchain trong tương lai.
+
+**Trân Trọng Cảm Ơn!**
+
+
+## Tổng Kết
+
+
+Sau 9 buổi học trong 3 tuần tháng 7 năm 2024, chúng tôi, UBA và Cardano2vn, đã tổ chức thành công khóa học Blockchain Cơ Bản (CBCA) cho các giảng viên đại học. Trong khóa học này, các thầy/cô đã hiểu rõ về blockchain, cách nó hoạt động, và các kỹ thuật liên quan như chữ ký số, sổ cái phân tán, mạng ngang hàng, và nhiều hơn nữa.
+
+
+Khóa học tập trung vào nền tảng Blockchain Cardano, một blockchain phát triển từ học thuật, rất phù hợp cho việc giảng dạy và đào tạo sinh viên đại học. Trong quá trình học, các thầy/cô đã có cơ hội tương tác với Blockchain Cardano thông qua Cardano-cli và trình duyệt API, giúp họ hiểu sâu hơn về cách thức hoạt động và ứng dụng thực tiễn của blockchain.
+Chi tiết nội dung khóa học [có tại đây](https://docs.google.com/spreadsheets/d/1rE7ROAQ38t5-0R-dKv97N4rHj3OPIXzqcyXZQi8HPRU/edit?usp=sharing).
+
+**Hình Ảnh**
+
+Dưới đây là một số hình ảnh của khóa học và buổi trao chứng nhận, giải thưởng cho các thầy/cô xuất sắc:
+
+![6122863149515390738|1000x562](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/6/9/6954b12516e1ad8a05106fc250123b58f0de9459.jpeg)
+![6134375001898466774|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/b/b/bbab11d84c65c6007d138cc588729b1c35466266.jpeg)
+![6143005506751545029|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/8/7/87b158b665228ea9875be78db758e2a2768b9305.jpeg)
+![6149880039995456526|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/a/d/ad5ff2a533c553c44e54e5049b807f8f95ef19e9.jpeg)
+![6129829238577152410|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/8/a/8a86866d7c977705ca0c63a8e695c0b57d5dbde9.jpeg)
+![6149880039995456517|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/d/3/d33407e6af9b631e3d9cc640b3b936ed529afbbd.jpeg)
+![6156575894009921999|1000x467](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/c/3/c356630b15a9c1450c4515f812eb06795bad1aa9.jpeg)
+
+
+
+**Kết Quả Học Tập**
+
+Sau khóa học, các thầy/cô đã đạt thành tích cao trong các bài kiểm tra qua nền tảng giáo dục CBCA của Cardano Foundation và đã nhận được chứng chỉ. Dưới đây là một vài hình ảnh chứng chỉ mà các thầy/cô đã đạt được:
+
+![CaoLuyen|1000x697](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/a/4/a4ca1a8193dc4d57dd297114664ff92f5cc6ac80.jpeg)
+![Chung Trinh|999x707](https://global.discourse-cdn.com/business4/uploads/cardano/optimized/3X/5/1/510664fd2c9ef1d8fdc648990238266f9eb0b232_2_999x707.jpeg)
+![6163337572693163255|825x579](https://global.discourse-cdn.com/business4/uploads/cardano/original/3X/b/c/bc0c3091cab7f24c79138d6b663d4d17027a2a75.jpeg)
+
+
+**Lời Kết**
+
+Chúng tôi, UBA và Cardano2vn, xin chân thành cảm ơn sự tham gia và nỗ lực học tập của các thầy/cô. Hy vọng rằng những kiến thức và kỹ năng đã học được sẽ giúp các thầy/cô ứng dụng và truyền đạt hiệu quả trong công tác giảng dạy, góp phần vào việc phát triển ngành công nghệ blockchain trong tương lai.
+
+**Xin Trân Trọng Cảm Ơn!**
