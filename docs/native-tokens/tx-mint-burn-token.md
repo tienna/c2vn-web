@@ -131,6 +131,7 @@ cardano-cli query utxo --address $(cat $BASENAME.payment-0.addr) --testnet-magic
 Chúng ta cũng muốn kiểm tra xem Node của chúng ta có được cập nhật hay không. Để làm điều đó, chúng ta kiểm tra kỷ nguyên / khối hiện tại và so sánh nó với giá trị hiện tại được hiển thị trong [Cardano Explorer for the testnet](https://explorer.cardano-testnet.iohkdev.io/en).
 
 ```bash
+testnet="--testnet-magic 2"
 cardano-cli query tip $testnet
 ```
 
@@ -178,10 +179,11 @@ cardano-cli query protocol-parameters $testnet --out-file protocol.json
 ### Thiết lập các biến môi trường để thuận thiện cho việc giao dịch
 
 ```bash
+testnet="--testnet-magic 2"
 address=$(cat $BASENAME.payment-0.addr)
 address_SKEY="$BASENAME.payment-0.skey"
-BOB_ADDR="addr_test1qz8shh6wqssr83hurdmqx44js8v7tglg9lm3xh89auw007dd38kf3ymx9c2w225uc7yjmplr794wvc96n5lsy0wsm8fq9n5epq"
-LOVELACE_VALUE=101000000
+OUT_ADDR="addr_test1qz8shh6wqssr83hurdmqx44js8v7tglg9lm3xh89auw007dd38kf3ymx9c2w225uc7yjmplr794wvc96n5lsy0wsm8fq9n5epq"
+LOVELACE_VALUE=5000000
 ```
 
 ### Lấy txhash và txid
@@ -208,7 +210,7 @@ UTXO_IN=b8c108bde14a183b79d00a48108c40808f46757ddfd16cdbf797fc0ebecd8047#0
 ```bash
 cardano-cli transaction build $testnet \
 --tx-in $UTXO_IN \
---tx-out $BOB_ADDR+$LOVELACE_VALUE \
+--tx-out $OUT_ADDR+$LOVELACE_VALUE \
 --change-address $address \
 --out-file simple-tx.raw
 ```
@@ -228,7 +230,7 @@ cardano-cli transaction sign $testnet \
 Bạn sẽ thấy xuất hiện file simple-tx.signed trong cùng thư mục thực hiện câu lệnh.
 
 
-### B3. Gửo giao dịch lên Preview Testnet (Submit Tx)
+### B3. Gửi giao dịch lên Preview Testnet (Submit Tx)
 
 ```bash
 cardano-cli transaction submit $testnet \
