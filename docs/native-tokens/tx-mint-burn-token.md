@@ -27,7 +27,7 @@ Taọ thư mục chứa các key và không gian làm việc.
 mkdir Lab_cli
 
 ```
-cardano-address recovery-phrase generate --size 24 > phrase.prv
+cardano-address recovery-phrase generate --size 24 > recovery-phrase.prv
 ```
 
 Nhập cụm mật khẩu 15 từ  hoặc cụm 24 từ (ví Shelley trên Daedalus,...) tại dấu nhắc để chuyển đổi nó thành khóa cá nhân gốc:
@@ -208,7 +208,7 @@ UTXO_IN=b8c108bde14a183b79d00a48108c40808f46757ddfd16cdbf797fc0ebecd8047#0
 ### B1. Xây dựng giao dịch (Build Tx)
 
 ```bash
-cardano-cli transaction build $testnet \
+cardano-cli conway transaction build $testnet \
 --tx-in $UTXO_IN \
 --tx-out $OUT_ADDR+$LOVELACE_VALUE \
 --change-address $address \
@@ -460,9 +460,8 @@ Bây giờ chúng ta đã sẵn sàng tạo giao dịch đầu tiên để tính
 
 ```bash
 
-cardano-cli transaction build \
+cardano-cli conway transaction build \
 $testnet \
---babbage-era \
 --tx-in $txhash#$txix \
 --tx-out $address+$output+"$tokenamount $policyid.$tokenname1 + $tokenamount $policyid.$tokenname2" \
 --mint "$tokenamount $policyid.$tokenname1 + $tokenamount $policyid.$tokenname2" \
@@ -603,7 +602,7 @@ UTXO_IN=71dce5be551f2c69d139eb8de50b9cd94fa94d6b47214307c6f32e574820755d#0
 ### B1. Xây dựng giao dịch (Build Tx)
 
 ```bash
-cardano-cli transaction build $testnet \
+cardano-cli conway transaction build $testnet \
 --tx-in $UTXO_IN \
 --tx-out $BOB_ADDR+$LOVELACE_VALUE+"2 $policyid.$tokenname1" \
 --change-address $address \
@@ -669,9 +668,8 @@ Việc đốt mã thông báo khá đơn giản. Bạn sẽ đưa ra một hành
 
 ```bash
 
-cardano-cli transaction build \
+cardano-cli conway transaction build \
 $testnet \
---babbage-era \
 --tx-in $txhash#$txix \
 --mint="-5000 $policyid.$tokenname2" \
 --minting-script-file policy/policy.script \
@@ -781,9 +779,8 @@ echo "}" >> metadata.json
 
 ```bash
 
-cardano-cli transaction build \
+cardano-cli conway transaction build \
 $testnet \
---babbage-era \
 --tx-in $txhash#$txix \
 --tx-out $address+$output+"$tokenamount $policyid.$tokenname" \
 --mint "$tokenamount $policyid.$tokenname" \
