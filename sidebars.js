@@ -21,6 +21,7 @@ const sidebars = {
     "Getting Started": [
       "getting-started/overview",
       //"getting-started/Catalyst",
+      "drep/drep",
 
       {
         type: "category",
@@ -283,7 +284,7 @@ const sidebars = {
       "project-catalyst/catalyst-funded",
       "project-catalyst/proposer",
       "project-catalyst/community-advisor",
-	  "project-catalyst/yellow-and-red-card",
+      "project-catalyst/yellow-and-red-card",
       "project-catalyst/voter",
       "project-catalyst/catalyst-registration-and-voting-guide",
       "project-catalyst/check-rewards",
