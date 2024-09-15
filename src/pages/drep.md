@@ -7,7 +7,9 @@ C2VN Drep
 
 Với mục tiêu tập hợp và đóng góp tiếng nói của cộng đồng vào bản chất dân chủ của mô hình quản trị, Mục tiêu của C2VN với tư cách là DRep bao gồm:
 - Là người phát ngôn của cộng đồng trong các hoạt động quản trị, đảm bảo rằng những người nắm giữ ADA có tiếng nói thông qua quyền biểu quyết.
-- Đóng vai trò minh bạch, hợp lý trong việc định hình tương lai của Cardano
+- Đóng vai trò minh bạch, hợp lý trong việc định hình tương lai của Cardano.
+
+![](https://img.cexplorer.io/i/8645fee8d7d502d27bb80c7174bf145a.jpg)
 
 ---------------------------------------
 ## Ủy quyền Drep
@@ -18,7 +20,8 @@ Mã Drep: **drep1q8l8jsn35qkpnasrg5zad52xjf34dhmkxcdn6w88y59nzyyhrdt**
 -----------------------
 
 ## Chúng tôi là:
-- Quản trị viên/Người điều hành tích cực của cộng đồng [ETH](https://t.me/easterntownhall) [ETH-Vietnam](https://web.telegram.org/a/#-1001549660753)
+- Các thành viên: https://www.cardano2vn.io/about-us
+- Quản trị viên/Người điều hành tích cực của cộng đồng [ETH](https://t.me/easterntownhall),  [ETH-Vietnam](https://web.telegram.org/a/#-1001549660753)
 - Thành viên C2VN là Đại sứ Cardano tại Việt Nam
 - Tổ chức các sự kiện cộng đồng lớn như sự kiện do cộng đồng Cardano Summit tổ chức tại Hà Nội vào năm 2021, [2022](https://www.cardano2vn.io/docs/Cardano-summit-2022/Cardano-summit-2022-hanoi), [2023](https://www.cardano2vn.io/docs/Cardano-summit-2023/Cardano-summit-2023-hanoi), Nhóm làm việc [Catalyst](https://www.cardano2vn.io/docs/project-catalyst/overview), Hackathon
 - Là chủ các dự án được tài trợ từ [Fund6 đến Fund12](https://www.cardano2vn.io/docs/be-apart-of-governance/overview)
