@@ -21,7 +21,7 @@ const sidebars = {
     "Getting Started": [
       "getting-started/overview",
       //"getting-started/Catalyst",
-      "drep/drep",
+      //"drep/drep",
 
       {
         type: "category",

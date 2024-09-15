@@ -140,6 +140,9 @@ const config = {
              { 
                 to: '/service', label: 'Dịch vụ', position: 'left'
             },
+                         { 
+                to: '/drep', label: 'Drep', position: 'left'
+            },
                        
             {
                 href: 'http://openispo.cardano2vn.io/', label: 'Open ISPO', position: 'right'
