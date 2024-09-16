@@ -5,6 +5,23 @@ Việc đào tạo các nhà giáo dục trong trường đại học là điề
 
 ![](img/Blockchain_Lecturer.png)
 
+## Các video giới thiệu đến các trường đại học.
+
+Giới thiệu khóa học Blockchain cho giảng viên đến đại học Công nghệ Đông Á
+
+<iframe width="100%" height="615" src="https://www.youtube.com/embed/TuxMaVbAhsY" title="Giới thiệu khóa học Blockchain cho giảng viên đến đại học Công nghệ Đông Á" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+Giới thiệu khóa học Blockchain cho giảng viên đến Đại học UNETI
+
+<iframe width="100%" height="615" src="https://www.youtube.com/embed/4evmuFnoY-8" title="Giới thiệu khóa học Blockchain cho giảng viên đến Đại học UNETI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Giới thiệu khóa học Blockchain cho giảng viên đại học giao thông vận tải
+
+<iframe width="100%" height="615" src="https://www.youtube.com/embed/AFSGWLPdT9o" title="Giới thiệu khóa học Blockchain cho giảng viên đại học giao thông vận tải" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## Chi tiết khóa học
 
 - **Thời gian**: 3 tuần liên tục từ ngày 15/7/2024 đến ngày 3/8/2024
