@@ -141,7 +141,7 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Mang Cardano về Việt Nam">
-      <HomepageHeader />
+      {/* <HomepageHeader /> */}
       <main>
         <HomepageFeatures />
       </main>

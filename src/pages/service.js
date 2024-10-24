@@ -121,9 +121,9 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout description="Catalyst">
-      <HomepageHeader 
+      {/* <HomepageHeader 
       	title={'Dịch vụ của C2VN'}
-      />
+      /> */}
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
