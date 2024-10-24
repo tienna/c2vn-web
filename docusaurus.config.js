@@ -111,32 +111,20 @@ const config = {
                 type: 'doc',
                 docId: 'getting-started/overview',
                 position: 'left',
-                label: 'CTech hub',
+                label: 'Tech hub',
             },
-//            {
-//                type: 'doc',
-//                docId: 'Deep-funding/deep-funding-round-2',
-//                position: 'left',
-//                label: 'Deep funding',
-//            },
-	    {
-                to: 'Deep-funding/deep-funding-round-2', label: 'Deep funding', position: 'left'
-            },
-	    {
-                to: 'Marlowe/Overview', label: 'Marlowe', position: 'left'
-            },
+
+	    // {
+        //         to: 'Deep-funding/deep-funding-round-2', label: 'Deep funding', position: 'left'
+        //     },
+	    // {
+        //         to: 'Marlowe/Overview', label: 'Marlowe', position: 'left'
+        //     },
                         	    
-	    {
-                to: '/docs1/intro', label: 'Blog-iohk', position: 'left'
-            },
-            //{
-            //    to: '/blog', label: 'News', position: 'left' 
-            //},
-          
- 
-          //   {
-          //      href: 'http://cardano2vn.duckdns.org:9081', label: 'Vesting', position: 'left'
-          //  },  
+	    // {
+        //         to: '/docs1/intro', label: 'Blog-iohk', position: 'left'
+        //     },
+
              { 
                 to: '/service', label: 'Dịch vụ', position: 'left'
             },
@@ -144,12 +132,12 @@ const config = {
                 to: '/drep', label: 'Drep', position: 'left'
             },
                        
-            {
-                href: 'http://openispo.cardano2vn.io/', label: 'Open ISPO', position: 'right'
-            },
-            {
-                href: 'https://shop.cardano2vn.io', label: 'Cardano2vn Shop', position: 'right'
-            },
+            // {
+            //     href: 'http://openispo.cardano2vn.io/', label: 'Open ISPO', position: 'right'
+            // },
+            // {
+            //     href: 'https://shop.cardano2vn.io', label: 'Cardano2vn Shop', position: 'right'
+            // },
             {
                 href: 'http://blockchain-demo.cardano2vn.io', label: 'Blockchain Demo', position: 'right'
             },
@@ -176,14 +164,14 @@ const config = {
     footer: {
         style: 'dark',
         links: [{
-            title: 'Tài liệu',
+            title: 'Documents',
             items: [{
-                label: 'Bắt đầu',
+                label: 'Get started',
                 to: '/docs/getting-started/overview',
             },],
         },
         {
-            title: 'Cộng đồng',
+            title: 'Our channels',
             items: [{
                 label: 'Telegram',
                 href: 'https://t.me/cardano2vn',
@@ -209,7 +197,7 @@ const config = {
                 to: "/about-us",
             },],
         },],
-        copyright: `The content of this site is referenced and copied from the <a href="https://developers.cardano.org/" target="_blank" rel="noopener noreferrer">Cardano Developer</a>, ${new Date().getFullYear()}`,
+        copyright: `Made with ❤️ by Carrdano2vn (C2VN) team, ${new Date().getFullYear()}`,
     },
     prism: {
         theme: lightCodeTheme,
