@@ -51,7 +51,6 @@ my-website
 ├── package.json
 ├── README.md
 ├── sidebars.js
-└── yarn.lock
 ```
 
 Diễn giải:
