@@ -111,7 +111,7 @@ const config = {
                 type: 'doc',
                 docId: 'getting-started/overview',
                 position: 'left',
-                label: 'Tech hub',
+                label: 'Tech docs',
             },
 
 	    // {
@@ -126,7 +126,7 @@ const config = {
         //     },
 
              { 
-                to: '/service', label: 'Dịch vụ', position: 'left'
+                to: '/service', label: 'Services', position: 'left'
             },
                          { 
                 to: '/drep', label: 'Drep', position: 'left'
