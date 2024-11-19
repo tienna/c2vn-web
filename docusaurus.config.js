@@ -121,13 +121,13 @@ const config = {
         //         to: 'Marlowe/Overview', label: 'Marlowe', position: 'left'
         //     },
                         	    
-	    // {
-        //         to: '/docs1/intro', label: 'Blog-iohk', position: 'left'
-        //     },
-
-             { 
-                to: '/service', label: 'Services', position: 'left'
+	    {
+                to: '/blog', label: 'Blog', position: 'left'
             },
+
+            //  { 
+            //     to: '/service', label: 'Services', position: 'left'
+            // },
                          { 
                 to: '/drep', label: 'Drep', position: 'left'
             },
