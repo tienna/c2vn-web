@@ -153,11 +153,8 @@ const config = {
             //    label: 'Shop Pay tADA',
             //    position: 'left',
             //},
-            {
-                href: 'https://github.com/cardano2vn',
-                label: 'GitHub',
-                position: 'right',
-            },
+    
+
 
         ],
     },

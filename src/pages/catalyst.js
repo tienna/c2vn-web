@@ -49,10 +49,9 @@ const features = [
 
   
 function Feature({ imageUrl, title, description, targetUrl, name , score}) {
-
   const imgUrl = useBaseUrl(imageUrl); // not used right now 
   const trgUrl = useBaseUrl(targetUrl);
-  //const href=useBaseUrl("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+  
   return (
     <div className={clsx("col col--4", styles.featurePadding)}>
       <div> 
