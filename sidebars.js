@@ -334,6 +334,7 @@ const sidebars = {
       "Cardano-summit-2022/Cardano-summit-2022-hanoi",
       "Cardano-summit-2023/Cardano-summit-2023-hanoi",
       "events/F12",
+      "events/Khoa_hoc_Blockchain_nang_cao_F13",
       
 	    
     ],
