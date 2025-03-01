@@ -1,7 +1,7 @@
-🚀 CHINH PHỤC BLOCKCHAIN CARDANO - KHÓA HỌC NÂNG CAO 🎯
+🚀 KHÓA HỌC NÂNG CAO CHO NHÀ PHÁT TRIỂN VÀ GIẢNG VIÊN 🎯
 ========================================
 
-## 🔥 **Bạn đã sẵn sàng trở thành chuyên gia/Giảng viên Blockchain?**
+## 🔥 **Bạn đã sẵn sàng trở thành nhà phát triển/Giảng viên Blockchain?**
 
 Bạn có kiến thức cơ bản về Blockchain và muốn **nâng cao kỹ năng lập trình** On-Chain & Off-Chain trên Cardano? Đây chính là cơ hội dành cho bạn!
 
@@ -45,10 +45,37 @@ Bạn có kiến thức cơ bản về Blockchain và muốn **nâng cao kỹ n�
 
 📢 Cộng đồng: [Link Telegram](https://t.me/cardano2vn)
 
-![Hình ảnh minh họa khóa học](img/Blockchain_Lecturer5.jpg)
 
 
 ## Các hình ảnh/video giới thiệu đến các trường đại học.
 
-*Chúng tôi rất vui mừng thông báo đến cộng đồng về sự kiện này và hy vọng rằng khóa học sẽ góp phần nâng cao kiến thức và kỹ năng về công nghệ Blockchain cho các giảng viên, từ đó đào tạo nên những thế hệ kỹ sư blockchain xuất sắc trong tương lai.*
+### 1. Giới thiệu khóa học Blockchain cho giảng viên đến Đại học UNETI
+
+![](img/2025UNETI_1.jpg)
+
+![](img/2025UNETI_2.jpg)
+
+Hình ảnh C2VN làm việc với Trưởng khoa và các giáo viền Khoa CNTT trường đại học Kinh Tế kỹ thuật Công nghiệp về việc triển khai đào tạo Blockchain cho Giảng viên, Sinh viên trong khoa.
+
+![](img/2025UNETI_4.jpg)
+
+*Nhóm làm việc tham quan phòng thực hành của khoa CNTT*
+
+### 2.Giới thiệu khóa học Blockchain cho giảng viên đến đại học Công nghệ Đông Á
+
+![](img/2025_EAUT.png)
+
+Hình ảnh C2VN làm việc với Trưởng khoa và các giáo viền Khoa CNTT trường đại học Công nghệ Đông Á về việc triển khai đào tạo Blockchain cho Giảng viên, Sinh viên trong khoa
+
+![](img/2025_EAUT1.png)
+
+*Chia sẻ Nội dung khóa học cho Nhà phát triển/Giảng viên*
+
+
+
+<iframe width="100%" height="615" src="https://www.youtube.com/embed/2LRBfH1dC6c" title="Giới thiệu khóa học Blockchain cho giảng viên đến đại học Công nghệ Đông Á" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Video buổi chia sẻ
+
+*Chúng tôi rất vui mừng thông báo đến cộng đồng về sự kiện này và hy vọng rằng khóa học sẽ góp phần nâng cao kiến thức và kỹ năng về công nghệ Blockchain cho các giảng viên/Nhà phát triển, từ đó đào tạo nên những thế hệ kỹ sư blockchain xuất sắc trong tương lai.*
 
