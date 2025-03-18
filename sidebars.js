@@ -322,6 +322,9 @@ const sidebars = {
       
 
     ],
+    "Education": [
+    "Education/Khoa_hoc_Lap_trinh_Blockchain_nang_cao_BK02",
+    ],
     "Các sự kiện": [     
       "events/CBCA01",
       "events/overview",
