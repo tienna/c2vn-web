@@ -1,35 +1,278 @@
-CAPABILITY & FEASIBILITY
+Capability & Feasibility of C2VN
 ==========================
 
-What is your capability to deliver your project with high levels of trust and accountability? How do you intend to validate if your approach is feasible?
+*Over the past years, we have carried out a wide range of initiatives in education, research, and community building around blockchain and Cardano in Vietnam.*
 
-## The team
+*Our journey so far reflects both our commitment to education and our contribution to the Cardano ecosystem through impactful projects and community-led activities.*
 
+*Here are some highlights of the activities and achievements we have accomplished with students, universities, and the wider blockchain community.*
 
-- **Nguyen Van Hieu**
+## The C2VN Team  
 
-	Bio: Founder of HADA stake pool, member of Plutus Pioneer Program, and Lead Technical Support at many successful startups, proposal of F6,7,8, 11,12, and 13.
+---
 
-	Email: nvhieu1978@gmail.com
+#### **Nguyen Van Hieu**  
+**Bio:**  
+- Founder of HADA stake pool  
+- Member of Plutus Pioneer Program  
+- Proposer of multiple funded Catalyst projects (F6–13)  
 
-	Telegram: t.me/nvhieu1978
+**Contact:**  
+- Email: nvhieu1978@gmail.com  
+- Telegram: [t.me/nvhieu1978](https://t.me/nvhieu1978)  
+- LinkedIn: [Nguyen Van Hieu](https://www.linkedin.com/in/nguyen-van-hieu-b4410121b/)  
+- Facebook: [Profile](https://www.facebook.com/hieu.nguyenvan.794628)  
 
-	Linkedin: https://www.linkedin.com/in/nguyen-van-hieu-b4410121b/
+---
 
-	Facebook: https://www.facebook.com/hieu.nguyenvan.794628
+#### **Nguyen Anh Tien**  
+**Bio:**  
+- Founder of VILAI stake pool  
+- Cardano Ambassador, Proposer, Plutus & Atala Prism Pioneer  
+- Experienced blockchain developer since 2018  
 
+**Contact:**  
+- Email: tienna@gmail.com  
+- Telegram: [t.me/Tiennguyenanh](https://t.me/Tiennguyenanh)  
 
-- **Nguyen Kim Sao**
+---
 
-	Lecturer (since 2011) of Faculty of Information Technology, University of Transportation and Communications, received a PhD in system information at the Vietnam National University, Hanoi (since 2021), data hiding experts, developed many applications. Fields research: watermarking, data hiding.
+#### **Nguyen Duy Khanh**  
+**Bio:**  
+- 3+ years of building on Cardano  
+- Experienced with Aiken smart contracts  
+- Proposer funded in Fund 11 & 12  
 
-	LinkedIn: https://www.linkedin.com/in/nguyen-kim-sao/
+**Contact:**  
+- Email: nguyenkhanh17112003@gmail.com  
+- Telegram: [t.me/khanhnguyen1711](https://t.me/khanhnguyen1711)  
+- GitHub: [independenceee](https://github.com/independenceee)  
+- Facebook: [Profile](https://www.facebook.com/independenceeeee)  
 
-	Email: saonkoliver@utc.edu.vn
+---
 
-	Facebook: https://www.facebook.com/nguyenkim.sao
+#### **Phan Dinh Nghia**  
+**Bio:**  
+- Final-year student, UTC  
+- Full-stack developer, experienced with Aiken & Move  
+- Winner of Cardano Hackathon (2nd place, Student Track 2025)  
 
-## CAPABILITY & FEASIBILITY
+**Contact:**  
+- Email: nghiaphan04dev@gmail.com  
+- GitHub: [nghiaphan04](https://github.com/nghiaphan04)  
+- Telegram: t.me/nghia0415  
+- Facebook: [Profile](https://www.facebook.com/dinhnghia.phan.524?locale=vi_VN)  
+
+---
+
+#### **Dao Manh Tung**  
+**Bio:**  
+- Student at UTC, full-stack & blockchain developer  
+- Experienced with Aiken and Move smart contracts  
+- Hackathon 2025 (2nd place, Student Track)  
+
+**Contact:**  
+- Email: daomanhtung4102003@gmail.com  
+- GitHub: [dmt041104111003](https://github.com/dmt041104111003)  
+- Telegram: [@daomanhtung041104](https://t.me/daomanhtung041104)  
+- Facebook: [Profile](https://www.facebook.com/daomanhtung111003)  
+
+---
+
+#### **Thanh Khuat Dinh**  
+**Bio:**  
+- President, Blockchain Pioneer Student Club  
+- Project Catalyst proposer (Fund 10–13)  
+- Experienced in project & team management on Cardano  
+
+**Contact:**  
+- Email: khuatthanh456@gmail.com  
+- LinkedIn: [Robert Khuat](https://linkedin.com/in/robertkhuat)  
+
+---
+
+#### **Cao Xuan Truong**  
+**Bio:**  
+- Stake pool owner & Cardano Foundation CBCA certified  
+- Completed Haskell & Plutus training programs  
+- Community mentor & supporter  
+
+**Contact:**  
+- Email: truongxuanc@gmail.com  
+- Telegram: [t.me/truongcx](https://t.me/truongcx)  
+- GitHub: [truongcaoxuan](https://github.com/truongcaoxuan)  
+
+---
+
+#### **Hoang Van Tam**  
+**Bio:**  
+- Experienced Cardano developer, Plutus Project-Based Learning 2023  
+- CBCA certified by Cardano Foundation  
+- Community administrator & mentor  
+
+**Contact:**  
+- Email: tam.hvan@gmail.com  
+- Telegram: [t.me/tam_hv](https://t.me/tam_hv)  
+- GitHub: [tamhoang89](https://github.com/tamhoang89)  
+- LinkedIn: [Tam Hoang](https://www.linkedin.com/in/tam-hoang-67396b195/)  
+
+---
+
+#### **Phung Tien Dung**  
+**Bio:**  
+- Full-stack & blockchain developer with 5+ years experience  
+- Skilled in Next.js, Rust, Haskell, Aiken smart contracts  
+- Multiple projects funded by Catalyst  
+
+**Contact:**  
+- Email: tiendung0325@gmail.com  
+- GitHub: [tidvn](https://github.com/tidvn)  
+- Telegram: [t.me/tidvn](https://t.me/tidvn)  
+- LinkedIn: [Tien Dung](https://www.linkedin.com/in/tidvn25/)  
+
+---
+
+## C2VN Collaborators  
+
+---
+
+#### **Dr. Hoang Van Thong**  
+**Bio:**  
+- Lecturer since 2001, Dean of Faculty of IT (since 2020), UTC  
+- Computer science expert, developed multiple websites  
+- Research fields: fuzzy logic, soft computing, data mining, machine learning  
+
+**Contact:**  
+- Email: thonghv@utc.edu.vn  
+
+---
+
+#### **Dr. Cao Thi Luyen**  
+**Bio:**  
+- Lecturer since 2001, Faculty of IT, UTC  
+- PhD in Mathematical Assurance in Computational Systems (2018)  
+- Research fields: watermarking, data hiding, machine learning, blockchain  
+
+**Contact:**  
+- Email: luyenct@utc.edu.vn  
+
+---
+
+#### **Dr. Mai Manh Trung**  
+**Bio:**  
+- Lecturer since 2007, Dean of Faculty of IT (since 2004), University of Economics and Industry  
+- Computer science expert with focus on application programming and security  
+- Research fields: security, application programming, data mining, machine learning  
+
+**Contact:**  
+- Email: mmtrung@uneti.edu.vn  
+
+---
+
+#### **Dr. Ngoc Dung Bui**  
+**Bio:**  
+- Senior researcher in AI and computer vision  
+- Senior lecturer, Faculty of IT, UTC  
+- 16 years of experience in AI research and applications  
+
+**Contact:**  
+- [Google Scholar](https://scholar.google.com.vn/citations?user=zxiSmOAAAAAJ&hl=en)  
+
+---
+
+#### **Dr. Pham Van Khanh**  
+**Bio:**  
+- Lecturer, Military Technical Academy, Hanoi  
+- Researcher with multiple scientific publications  
+
+---
+
+#### **Dr. Do Ngoc Minh**  
+**Bio:**  
+- Computer Science Researcher & Lecturer, ITI – VNU Hanoi  
+- Advisor for UNESCO OER programs in Asia and Vietnam  
+- Research in computer science & open educational resources  
+
+**Contact:**  
+- Email: minhdn@vnu.edu.vn  
+
+---
+
+#### **MSc. Trinh Van Chung**  
+**Bio:**  
+- Founder of DEVMaster Academy  
+- Dean, Faculty of IT, Nguyen Trai University  
+- Experienced in IT education & software development  
+
+**Contact:**  
+- Email: chung.tv@daihocnguyentrai.edu.vn  
+
+---
+
+#### **Dr. Nguyen Kim Sao**  
+**Bio:**  
+- Lecturer, Faculty of IT, UTC  
+- PhD in Information Systems, VNU Hanoi  
+- Cardano Foundation CBCA certified  
+
+**Contact:**  
+- Email: saonkoliver@gmail.com  
+- GitHub: [saonkoliver](https://github.com/saonkoliver)  
+
+---
+
+#### **Dr. Le Thi Anh**  
+**Bio:**  
+- Lecturer, ICT Faculty, Hanoi University of Industry  
+- Researcher in computer science and ICT education  
+
+**Contact:**  
+- Email: leanh@haui.edu.vn  
+
+---
+
+#### **Dr. Duong Thi Hang**  
+**Bio:**  
+- Lecturer, ICT Faculty, Hanoi University of Industry  
+- Computer Science researcher  
+
+---
+
+#### **Dr. Mai Xuan Trang**  
+**Bio:**  
+- Deputy Head of Faculty of IT, Phenikaa University  
+- Researcher in computer science and applications  
+
+**Contact:**  
+- Email: trang.maixuan@phenikaa-uni.edu.vn  
+
+---
+
+#### **Dr. Nguyen Hoang Chien**  
+**Bio:**  
+- Head of IT Department, University of Economics and Technology  
+- Experienced in IT research & education  
+
+**Contact:**  
+- Email: nhchien@uneti.edu.vn  
+
+---
+
+#### **MSc. Nguyen Duc Thien**  
+**Bio:**  
+- Lecturer, Faculty of IT, East Asia University of Technology  
+- Expertise in computer science and IT education  
+
+**Contact:**  
+- Email: thiennd@eaut.edu.vn  
+
+## Our Past Activities and Achievements
+
+*Over the past years, we have carried out a wide range of initiatives in education, research, and community building around blockchain and Cardano in Vietnam.*
+
+*Our journey so far reflects both our commitment to education and our contribution to the Cardano ecosystem through impactful projects and community-led activities.*
+
+*Here are some highlights of the activities and achievements we have accomplished with students, universities, and the wider blockchain community.*
 
 - Every year, we have the opportunity to engage with thousands of students majoring in Information Technology. They are third and fourth-year students from major universities in Vietnam. At these universities, we are supporting the development of Blockchain course frameworks, curricula, student clubs, and training. Below are some images [depicting our activities](https://www.cardano2vn.io/docs/Cardano4uni/daihoc-kinhte-kythuat-congnghiep)
 
