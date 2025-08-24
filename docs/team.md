@@ -268,11 +268,6 @@ Capability & Feasibility of C2VN
 
 ## Our Past Activities and Achievements
 
-*Over the past years, we have carried out a wide range of initiatives in education, research, and community building around blockchain and Cardano in Vietnam.*
-
-*Our journey so far reflects both our commitment to education and our contribution to the Cardano ecosystem through impactful projects and community-led activities.*
-
-*Here are some highlights of the activities and achievements we have accomplished with students, universities, and the wider blockchain community.*
 
 - Every year, we have the opportunity to engage with thousands of students majoring in Information Technology. They are third and fourth-year students from major universities in Vietnam. At these universities, we are supporting the development of Blockchain course frameworks, curricula, student clubs, and training. Below are some images [depicting our activities](https://www.cardano2vn.io/docs/Cardano4uni/daihoc-kinhte-kythuat-congnghiep)
 
